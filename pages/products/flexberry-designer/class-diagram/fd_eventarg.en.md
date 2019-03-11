@@ -1,77 +1,79 @@
----
-title: События и параметры событий (классы со стереотипом eventarg)
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Flexberry ORM, eventarg, стереотип, события, генерация, атрибуты, методы, пример
-summary: Особенности генерации событий и их параметров, пример генерации
-toc: true
-permalink: en/fd_eventarg.html
-lang: en
----
+--- 
+title: Events and parameters of events (classes with the stereotype eventarg) 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Designer, Flexberry ORM, eventarg, stereotype, event, generation, attributes, methods, example 
+summary: peculiarities of generation of events and their parameters, illustrates 
+toc: true 
+permalink: en/fd_eventarg.html 
+lang: en 
+autotranslated: true 
+hash: 574a55b724959d9e51d17e7afc77f73fa3a0c1534795d64cea4e932b8cd227e1 
+--- 
 
-## Описание события
+## event Description 
 
-[Flexberry Designer](fd_landing_page.html) позволяет пользователю описывать события и их аргументы, для возможной последующей генерации в исходный код на CLR-совместимом языке (в частности, `C#`).
+[Flexberry Designer](fd_landing_page.html) allows the user to describe the events and their arguments, for possible subsequent generation of source code in a CLR-compatible language (in particular, `C#`). 
 
-События описываются [внутри UML-классов, в секции методов](fd_class-diagram-constraction.html), в следующем виде:
+The events described [inside the UML classes in the section methods](fd_class-diagram-constraction.html), as follows: 
 
 ``` csharp
 /[AccessModifier)Name([ParamName:TypeEventArgs)
-```
+``` 
 
-{% include note.html content="Параметр должен быть один и его тип был UML-классом со [стереотипом](fd_key-concepts.html) eventarg, если это не так, в процессе генерации произойдёт ошибка." %}
+{% include note.html content="the Parameter must be one and the type was a UML class with the [stereotype](fd_key-concepts.html) eventarg, if it is not, in the generation process will fail." %} 
 
-Пример описания аргументов события и самого события:
+An example of the description of the event arguments and the event itself: 
 
-![](/images/pages/products/flexberry-designer/class-diagram/eventeventargs.png)
+![](/images/pages/products/flexberry-designer/class-diagram/eventeventargs.png) 
 
-### Генерация класса аргументов события
+### Generation class event arguments 
 
-Класс, наследующийся от `System.EventArgs.` Также генерируется определение делегата.
+Class that are inherited from `System.EventArgs.` Also generates the delegate definition. 
 
 ```csharp
-   // *** Start programmer edit section *** (Аргументы CustomAttributes)
-    // *** End programmer edit section *** (Аргументы CustomAttributes)
+   // *** Start programmer edit section *** (Arguments CustomAttributes) 
+    // *** End programmer edit section *** (Arguments CustomAttributes) 
     public class Аргументы : System.EventArgs
     {        
         private string fарг1;
-        // *** Start programmer edit section *** (Аргументы CustomMembers)
+        // *** Start programmer edit section *** (Arguments CustomMembers) 
         
-        // *** End programmer edit section *** (Аргументы CustomMembers)
-        // *** Start programmer edit section *** (Аргументы.арг1 CustomAttributes)
-        // *** End programmer edit section *** (Аргументы.арг1 CustomAttributes)
+        // *** End programmer edit section *** (Arguments CustomMembers) 
+        // *** Start programmer edit section *** (the Arguments.arg1 CustomAttributes) 
+        // *** End programmer edit section *** (the Arguments.arg1 CustomAttributes) 
         public virtual string арг1
         {
             get
             {
-                // *** Start programmer edit section *** (Аргументы.арг1 Get start)
-                // *** End programmer edit section *** (Аргументы.арг1 Get start)
+                // *** Start programmer edit section *** (the Arguments.arg1 Get start) 
+                // *** End programmer edit section *** (the Arguments.arg1 Get start) 
                 string result = this.fарг1;
-                // *** Start programmer edit section *** (Аргументы.арг1 Get end)
-                // *** End programmer edit section *** (Аргументы.арг1 Get end)
+                // *** Start programmer edit section *** (the Arguments.Get arg1 end) 
+                // *** End programmer edit section *** (the Arguments.Get arg1 end) 
                 return result;
             }
             set
             {
-                // *** Start programmer edit section *** (Аргументы.арг1 Set start)
-                // *** End programmer edit section *** (Аргументы.арг1 Set start)
+                // *** Start programmer edit section *** (the Arguments.arg1 Set start) 
+                // *** End programmer edit section *** (the Arguments.arg1 Set start) 
                 this.fарг1 = value;
-                // *** Start programmer edit section *** (Аргументы.арг1 Set end)
-                // *** End programmer edit section *** (Аргументы.арг1 Set end)
+                // *** Start programmer edit section *** (the Arguments.Set arg1 end) 
+                // *** End programmer edit section *** (the Arguments.Set arg1 end) 
             }
         }
     }
     public delegate void АргументыHandler(object sender, ICSSoft.Product.Аргументы e);
-```
+``` 
 
-## Что генерируется в классе, где определено событие
+## That is generated in the class where the event is defined 
 
-В исходный код класса генерируется событие, объявленное типом делегата, а также метод, взводящий это событие.
+In the class source code is generated by the event declared a delegate type and the method swadesi this event. 
 
 ```csharp
  public event ICSSoft.Product.АргументыHandler Событие;
         
-        // *** Start programmer edit section *** (OnСобытие CustomAttributes)
-        // *** End programmer edit section *** (OnСобытие CustomAttributes)
+        // *** Start programmer edit section *** (Epsomite CustomAttributes) 
+        // *** End programmer edit section *** (Epsomite CustomAttributes) 
         private void OnСобытие(ICSSoft.Product.Аргументы ea)
         {
             if ((this.Событие != null))
@@ -79,47 +81,50 @@ lang: en
                 this.Событие(this, ea);
             }
         }
-```
+``` 
 
-## Основные свойства аргументов события
+## Basic properties of the event arguments 
 
-![](/images/pages/products/flexberry-designer/class-diagram/argpropsclass.jpg)
+![](/images/pages/products/flexberry-designer/class-diagram/argpropsclass.jpg) 
 
-Свойство | Описание | Генерация в .Net-язык
-:--------------------|:--------------------|:---------------------------------------------------------
-`Name` | Имя UML-класса | Имя `.Net`-класса
-`Description` | Некоторое описание класса | `DocComment` перед определением класса
-`GenerateCatcher` | | Если установлено, генерируется класс-перехватчик события для использования событийно-ориентированным интерпретатором сценариев (EBSI). Если не планируется EBSI, галочку устанавливать не нужно.
-`Packet, NamespacePostfix` | Позволяют настроить сборку и пространство имен, в которое должен генерироваться тип | см. [Расположение сборок после генерации кода](fo_location-assembly.html).
-`PBMembers` | Позволяет указать, необходима ли скобка программиста внутри класса для "ручного" внесения членов класса | Если галочка указана - генерируется скобка программиста для "ручного" внесения членов класса.
+Property | Description | Generation .Net language 
+:--------------------|:--------------------|:--------------------------------------------------------- 
+`Name` | Name UML class | Name `.Net` class 
+`Description` | a class description | `DocComment` before the class definition 
+`GenerateCatcher` | | If set, the generated class interceptor events to use event-oriented script interpreter (EBSI). If you do not plan EBSI, the checkmark must not be set. 
+`Packet, NamespacePostfix` | Allow to set the Assembly and namespace in which to generate the type of | see [the Location of assemblies after code generation](fo_location-assembly.html). 
+`PBMembers` | Allows you to specify whether to brace the programmer within the class to "manual" introduction of the members of the class | If the option is specified - generated bracket programmer for "manual" introduction of the members of the class. 
 
-## Свойства атрибутов аргументов события
+## attribute Properties of the event arguments 
 
-![](/images/pages/products/flexberry-designer/class-diagram/argpropsattrs.jpg)
+![](/images/pages/products/flexberry-designer/class-diagram/argpropsattrs.jpg) 
 
-Свойство | Описание | Генерация в .Net-язык
-:-------------------|:---------------------------|:----------------------------------------------
-`AccessModifier` | Модификатор сгенерированного в .Net-язык свойства | Соответствующий модификатор свойства (# - protected, + - public, - - private)
-`Name`, `Type`| |Виртуальное свойство с тем же именем и приватный член класса для этого свойства. Тип свойства и приватного члена - тип атрибута, преобразованный от исходного согласно [карте отображения типов](fd_typedef.html).
-`DefaultValue` | Значение по-умолчанию | Приватному члену прописывается инициализатор с указанным значением по-умолчанию. Если указано значение перечислимого типа, то генерируется инициализация значением этого типа. Если тип не перечислимый, то берётся соответствующий .Net-тип и проверяется, есть ли публичное статическое свойство с имением `DefaultValue`. Далее, если тип простой стандартный (из namespace System), генерируется простая инициализация константой (напр: int idx=0). В противном случае генерация останавливается с ошибкой
-`Description` | | `DocComment` перед определением свойства
-`PBCustomAttributes` | Скобка программиста | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения .Net атрибутов перед кодом свойства.
-`PBGetEnd` | Скобка программиста | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения кода перед концом аксессора `get`.
-`PBGetStart` | Скобка программиста | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения кода после начала аксессора `get`.
-`PBSetEnd` | Скобка программиста | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения кода перед концом аксессора `set`.
-`PBSetStart` | Скобка программиста | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения кода после начала аксессора set.
+Property | Description | Generation .Net language 
+:-------------------|:---------------------------|:---------------------------------------------- 
+`AccessModifier` | Modifier generated .Net language properties | Corresponding modifier properties (# - protected, - public, - private) 
+`Name`, `Type`| |Virtual property with the same name and a private member of the class for this property. The type of the property and a private member - type attribute are converted from the source according to [the map display types](fd_typedef.html). 
+`DefaultValue` | default | Private member registers an initializer with the specified default value. If the value is an enumerated type that is generated to initialize the value of this type. If the type is not enumerable, then it is appropriate .Net-type and checks whether there is a public static property with the name of `DefaultValue`. Further, if a standard type (of namespace System), generated a simple initialization of a constant (e.g.: int idx=0). Otherwise generation halts with error 
+`Description` | | `DocComment` before property definition 
+`PBCustomAttributes` | Parenthesis programmer | If the option is given, it is generated [bracket programmer](fo_programmer-brackets.html) for manual application .Net attributes before the code properties. 
+`PBGetEnd` | Parenthesis programmer | If the option is given, it is generated [bracket programmer](fo_programmer-brackets.html) for manual entering of code before the end of the accessor `get`. 
+`PBGetStart` | Parenthesis programmer | If the option is given, it is generated [bracket programmer](fo_programmer-brackets.html) for manual entering the code after accessors `get`. 
+`PBSetEnd` | Parenthesis programmer | If the option is given, it is generated [bracket programmer](fo_programmer-brackets.html) for manual entering of code before the end of the accessor `set`. 
+`PBSetStart` | Parenthesis programmer | If the option is given, it is generated [bracket programmer](fo_programmer-brackets.html) for manual entering the code after the set accessor. 
 
-## Свойства методов аргументов события
+## Properties methods event arguments 
+Properties and generation methods, see [article class Methods and method parameters](fd_methods-parameters.html). 
 
-Свойства и генерация методов, см. в [статье Методы классов и параметры методов](fd_methods-parameters.html).
+![](/images/pages/products/flexberry-designer/class-diagram/eventprops.jpg) 
 
-![](/images/pages/products/flexberry-designer/class-diagram/eventprops.jpg)
+Property | Description | Generation .Net language 
+:-------------------|:----------------------------|:------------------------------------------- 
+`AccessModifier` | Modifier | event modifier Corresponding to the event definition (# - protected, - public, - private) 
+`Name` | event Name | event Name 
+`Description` | Description | `DocComment` before the method definition, Epsomite 
+`Type` | | Not applicable 
+`IsEvent` | Indicates that this is an event, not the method, duplicates the "/" in the definition of the event. | Event is generated, not the method. 
+`PBCustomAttributes` | | If the option is on, - is generated by the programmer bracket prior to the method definition Epsomite 
 
-Свойство | Описание | Генерация в .Net-язык
-:-------------------|:----------------------------|:-------------------------------------------
-`AccessModifier` | Модификатор события | Соответствующий модификатор в определении события (# - protected, + - public, - - private)
-`Name` | Имя события | Имя события
-`Description` | Описание | `DocComment` перед определением метода OnСобытие
-`Type` | | Не учитывается 
-`IsEvent` | Указывает, что это - событие, а не метод, дублирует "/" в определении события. | Генерируется событие, а не метод.
-`PBCustomAttributes` | | Если флажок выставлен, - генерируется скобка программиста перед определением метода OnСобытие
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

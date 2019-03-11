@@ -6,10 +6,10 @@ toc: true
 permalink: en/gbt_jbpm.html 
 lang: en 
 autotranslated: true 
-hash: 89443cdecd7b4069a009634c40ee4ba0caccc8f0f192507d31f714be56bd22ad 
+hash: 27d43dce35e07e014f185db9c97c0359a1832ca0e1b80a8b769f9f47e607a719 
 --- 
 
 jBPM
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

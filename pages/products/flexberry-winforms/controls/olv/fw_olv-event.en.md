@@ -1,49 +1,51 @@
----
-title: Events ObjectListView
-sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Winforms, controls, OLV, events
-summary: Особенности обработки событий, события загрузки и состояния списка, свойства, методы
-toc: true
-permalink: en/fw_olv-event.html
-lang: en
----
+--- 
+title: Events ОbjectListView 
+sidebar: flexberry-winforms_sidebar 
+keywords: Flexberry Winforms, controls, list, events 
+summary: handle events, load events and the state of the list, properties, methods, 
+toc: true 
+permalink: en/fw_olv-event.html 
+lang: en 
+autotranslated: true 
+hash: 6f0b345b3fdbb9e42cb5136e10dd65a8fd008c536a31be851768d86ebca3de85 
+--- 
 
-`ObjectListView` не содержит никакой функциональности по действиям (создание, сохранение и т.д.) с объектами данных, отображаемыми в списке. Программист должен написать код, «ловящий» события, происходящие в `ObjectListView`, и отрабатывающий соответствующую реакцию. Наоборот, если в программе произошло некоторое действие, необходимо сообщить о нём `ObjectListView` для адекватного отображения объектов.
+`ObjectListView` does not contain any functionality for actions (creation, preservation, etc.) with the data objects displayed in the list. The programmer must write code that catches» «events in `ObjectListView`, and work out an appropriate response. On the contrary, if there has been some action, you need to report it `ObjectListView` for adequate display of objects. 
 
-Для перехвата событий, необходимо:
-* Повесить обработчик на событие `CreateObject` при реализации действий по созданию объекта данных, событие происходит, когда пользователь нажимает в панели инструментов кнопку создания объекта;
-* Повесить обработчик на событие `EditObject` при реализации действий по редактированию объекта данных, событие происходит, когда пользователь нажимает в панели инструментов кнопку редактирования объекта;
-* Повесить обработчик на событие `DeleteObject` при реализации действий по созданию объекта данных, событие происходит, когда пользователь нажимает в панели инструментов кнопку удаления объекта;
+To catch events, you must: 
+* Hang up the handler on event `CreateObject` in the implementation of actions to create the data object, the event occurs when the user clicks the toolbar button create объекта; 
+* Hang up the handler on event `EditObject` in the implementation of action to edit the data object, the event occurs when the user clicks the toolbar button edit объекта; 
+* Hang up the handler on event `DeleteObject` in the implementation of actions to create the data object, the event occurs when the user clicks the toolbar button removal объекта; 
 
-Для информирования `ObjectListView` о произошедших действиях, необходимо:
+For information about `ObjectListView` occurred, you must: 
 
-* Вызвать метод `AddObject`, если объект данных был добавлен, он отобразится в `ObjectListView` (Важно! Вызов до обработки объекта данных сервисом данных приведет к ошибке, т.к. `ObjectListView` попытается прочитать объект данных из хранилища, где его ещё нет);
-* Вызвать метод `UpdateObject`, если объект данных был изменён, тогда поля в `ObjectListView` поменяют значения на соответствующие в объекте данных;
-* Вызвать метод `DeleteObject`, если объект данных был удалён, тогда он исчезнет из `ObjectListView`.
+* Call method `AddObject` if the data object has been added, it will appear in `ObjectListView` (Important! The call, prior to processing the data object service data will result in an error, because `ObjectListView` will attempt to read object data from storage, where it does not); 
+* Call method `UpdateObject` if the data object has been modified, then the fields in `ObjectListView` change the value to the appropriate object данных; 
+* Call method `DeleteObject` if the data object was deleted, then it will disappear from `ObjectListView`. 
 
-## События загрузки списка
+## load Events list 
 
-### Информация о загрузке списка
+### download Information list 
 
-В обработчике события `ОbjectListView.AfterFillData` существует возможность получить информацию об успешности загрузки. В качестве параметра события вместо типа `EventArgs` передается его наследник `AfterFillDataEventArgs`.
-Тип `AfterFillDataEventArgs` имеет три свойства:
+In the event handler `ОbjectListView.AfterFillData` there is a possibility to obtain information about the success of the download. As the event parameter is of type `EventArgs` is transferred to his heir `AfterFillDataEventArgs`. 
+Type `AfterFillDataEventArgs` has three properties: 
 
 ```csharp
-        /// <summary>
-        /// Исключение, произошедшее во время загрузки
-        /// </summary>
+        /// <summary> 
+        /// An exception occurred while downloading 
+        /// </summary> 
         public Exception Exception { get; private set;}
-        /// <summary>
-        /// Загрузка отменена пользователем
-        /// </summary>
+        /// <summary> 
+        /// Download canceled by the user 
+        /// </summary> 
         public bool CanceledByUser { get; private set; }
-        /// <summary>
-        /// Загрузка успешно завершена
-        /// </summary>
+        /// <summary> 
+        /// Download completed successfully 
+        /// </summary> 
         public bool IsFillSuccessfullyCompleted { get; private set; }
-```
+``` 
 
-Пример:
+Example: 
 
 ```csharp
         private void objectListView1_AfterFillData(object sender, EventArgs e)
@@ -56,64 +58,68 @@ lang: en
                     afterFillDataEventArgs.CanceledByUser, afterFillDataEventArgs.Exception, afterFillDataEventArgs.IsFillSuccessfullyCompleted));
             }
         }
-```
+``` 
 
-### Отслеживание окончания загрузки данных
+### Tracking data is being loaded 
 
-Отследить окончание загрузки данных в `ObjectListView` возможно с помощью события `AfterFillData` и свойства `IsDataLoaded`. Событие `AfterFillData` происходит при окончании загрузки, а свойство `IsDataLoaded` принимает истинное значение, в случае если данные загружены и `ObjectListView` не находится в состоянии обновления.
+To track the load data in `ObjectListView` possible with the help of events `AfterFillData` and properties `IsDataLoaded`. Event `AfterFillData` occurs at the end of loading, and `IsDataLoaded` property is true if the data is loaded and `ObjectListView` is not in the status updates. 
 
-## Состояние списка
+## state of the list 
 
-### Выделение строки
+### row Selection 
 
-Отследить изменение состояния строки (выделена или нет) у `ObjectListView` возможно с помощью события `MarkObjectChanged`. В качестве аргумента события передается `DataObjectDef` объекта и состояние строки.
+To monitor changes in the status of a line (selected or not) `ObjectListView` possible with the help of events `MarkObjectChanged`. As the event argument is passed `DataObjectDef` of the object and the state of the row. 
 
 ```csharp
 public event MarkObjectChangedEventHandler MarkObjectChanged;
-```
+``` 
 
-`ObjectListView` не содержит никакой функциональности по действиям (создание, сохранение и т.д.) с объектами данных, отображаемыми в списке. Программист должен написать код, «ловящий» события, происходящие в `ObjectListView`, и отрабатывающий соответствующую реакцию. Наоборот, если в программе произошло некоторое действие, необходимо сообщить о нём `ObjectListView` для адекватного отображения объектов.
+`ObjectListView` does not contain any functionality for actions (creation, preservation, etc.) with the data objects displayed in the list. The programmer must write code that catches» «events in `ObjectListView`, and work out an appropriate response. On the contrary, if there has been some action, you need to report it `ObjectListView` for adequate display of objects. 
 
-Для перехвата событий, необходимо:
-* Повесить обработчик на событие `CreateObject` при реализации действий по созданию объекта данных, событие происходит, когда пользователь нажимает в панели инструментов кнопку создания объекта;
-* Повесить обработчик на событие `EditObject` при реализации действий по редактированию объекта данных, событие происходит, когда пользователь нажимает в панели инструментов кнопку редактирования объекта;
-* Повесить обработчик на событие `DeleteObject` при реализации действий по созданию объекта данных, событие происходит, когда пользователь нажимает в панели инструментов кнопку удаления объекта;
+To catch events, you must: 
+* Hang up the handler on event `CreateObject` in the implementation of actions to create the data object, the event occurs when the user clicks the toolbar button create объекта; 
+* Hang up the handler on event `EditObject` in the implementation of action to edit the data object, the event occurs when the user clicks the toolbar button edit объекта; 
+* Hang up the handler on event `DeleteObject` in the implementation of actions to create the data object, the event occurs when the user clicks the toolbar button removal объекта; 
 
-Для информирования `ObjectListView` о произошедших действиях, необходимо:
+For information about `ObjectListView` occurred, you must: 
 
-* Вызвать метод `AddObject`, если объект данных был добавлен, он отобразится в `ObjectListView` (Важно! Не вызывайте данный метод до обработки объекта данных сервисом данных, поскольку это может вызвать ошибку, т.к. `ObjectListView` попытается прочитать объект данных из хранилища, где его ещё нет);
-* Вызвать метод `UpdateObject`, если объект данных был изменён, тогда поля в `ObjectListView` поменяют значения на соответствующие в объекте данных;
-* Вызвать метод `DeleteObject`, если объект данных был удалён, тогда он исчезнет из `ObjectListView`.
+* Call method `AddObject` if the data object has been added, it will appear in `ObjectListView` (Important! Do not call this method before processing the data object service data, as this may cause an error, because `ObjectListView` will attempt to read object data from storage, where it does not); 
+* Call method `UpdateObject` if the data object has been modified, then the fields in `ObjectListView` change the value to the appropriate object данных; 
+* Call method `DeleteObject` if the data object was deleted, then it will disappear from `ObjectListView`. 
 
-### Отображение подсказки для отдельных строк
+### Display prompts for the individual lines 
 
-В `ObjectListView` реализована возможность отображения подсказки для отдельных строк.
-Для включения данного режима необходимо установить свойство `ObjectListView.ShowToolTip`.
-Для задания текста подсказки необходимо обработать событие `ObjectListView.BeforeToolTipRequired`. Для настройки параметров отображения подсказки (задержки появления, длительности отображения внешнего вида) следует изменить свойства объекта `ObjectListView.ToolTip`.
+In `ObjectListView` implemented the ability to display tooltips for individual lines. 
+To enable this mode, you must set the property `ObjectListView.ShowToolTip`. 
+To set the tooltip text you need to handle the event `ObjectListView.BeforeToolTipRequired`. To configure settings to display a tooltip (delay of occurrence, duration of display, appearance) should change the properties of an object `ObjectListView.ToolTip`. 
 
-Пример:
+Example: 
 
-В данном примере выводится подсказка к ячейкам первых 5-ти столбцов.
+This example displays the hint to the cells of the first 5 columns.
 
 ```csharp
 private void objectListView1_BeforeToolTipRequired(object sender, BeforeToolTipRequiredEventArgs e)
 {
-     e.TipText = string.Format("Строка {0}, столбец {1}", e.Row, e.Column);
+     e.TipText = string.Format("Line {0}, column {1}", e.Row, e.Column);
      if (e.Column>5)
          e.Cancel = true;
 }
-```
+``` 
 
-## Дополнительные события, свойства и методы
+## Additional events, properties and methods 
 
-* `OnChangeCurrentObject` — происходит, когда пользователь выбирает объект (перемещает курсор) в списке.
-* `ObjectDblClick` — gроисходит, когда на текущем объекте выполнен `DblClick`.
-* `ObjectCount` — получить количество объектов в списке.
-* `GetObject` — получение объекта данных непосредственно из списка по различным критериям.
-* `FillData` — заполнение списка данными (обновление).
-* `HideToolBar` — показать/спрятать тулбар.
-* `UseToolBar` — использовать нестандартный тулбар, какой-то другой, снаружи, на него автоматически «намазываются» кнопки от `ObjectListView`.
-* `ClearCache` — очистка внутреннего кеша.
-* `ObjectListView.BeforeRefresh` - происходит перед обновлением данных в списке. Обновление данных может быть инициировано нажатием пользователем кнопки «Обновить» или вызовом метода `Refresh`.
-* `SetObject` - метод для добавления объекта в список.
-* `SetObjects` - метод для добавления нескольких объектов в список.
+* `OnChangeCurrentObject` — occurs when the user selects an object (moves the cursor) in the list. 
+* `ObjectDblClick` — proishodit where the current object is made `DblClick`. 
+* `ObjectCount` — get the number of objects in the list. 
+* `GetObject` — receiving the data object directly from the list by various criteria. 
+* `FillData` — populate list data (update). 
+* `HideToolBar` — show/hide the toolbar. 
+* `UseToolBar` is to use a custom toolbar, some other, outside, it automatically» «spread buttons from `ObjectListView`. 
+* `ClearCache` — cleaning. 
+* `ObjectListView.BeforeRefresh` occurs before the data is updated in the list. Data refresh can be initiated when the user clicks a button to Update the» «or method call `Refresh`. 
+* `SetObject` - method to add an object to the list. 
+* `SetObjects` - method to add multiple objects to the list. 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

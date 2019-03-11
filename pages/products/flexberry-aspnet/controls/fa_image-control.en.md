@@ -1,27 +1,32 @@
----
-title: ImageControl
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Web UI (Контролы)
-toc: true
-permalink: en/fa_image-control.html
-lang: en
----
+--- 
+title: ImageControl 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET, Web UI (Controls) 
+toc: true 
+permalink: en/fa_image-control.html 
+lang: en 
+autotranslated: true 
+hash: b9428811afb879dac483ef2dad5566ec8f9f314ee9f032feda91b53382f68178 
+--- 
 
-## Описание
+## Description 
 
-## Подключение
+## Connection 
 
-## Использование
+## Use 
 
-### Пример кода
+### Sample code 
 
-### Настройки контрола
+### Settings control 
 
-### Настройки оформления
+### formatting Settings 
 
-### ...полезные способы использования...
+### ...useful ways to use... 
 
-## JS API
+## JS API 
 
-## Возможные ошибки
- 
+## Possible errors 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

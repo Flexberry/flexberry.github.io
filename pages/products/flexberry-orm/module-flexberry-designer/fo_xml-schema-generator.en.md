@@ -1,22 +1,29 @@
----
-title: Plugin for generating XSD schema
-sidebar:  flexberry-orm_sidebar
-keywords: Flexberry Designer, Flexberry ORM, plugins
-summary: XMLSchemaGenerator Features
-toc: true
-permalink: en/fo_xml-schema-generator.html
-lang: en
----
+--- 
+title: Plugin to generate XSD schema 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry Designer, Flexberry ORM, plugins 
+summary: Features XMLSchemaGenerator 
+toc: true 
+permalink: en/fo_xml-schema-generator.html 
+lang: en 
+autotranslated: true 
+hash: f93ce0d13685b437544449c9b24bda7761a68040007478d8c6859f5c8227c6db 
+--- 
 
-`XMLSchemaGenerator` - плагин Flexberry для генерации XSD-схемы базы данных. Результатом работы генератора является XSD-файл со схемой базы данных и XML-файл с пустой базой данных.
 
-`XMLSchemaGenerator` включает следующие настройки:
+`XMLSchemaGenerator` - Flexberry plugin to generate XSD schema of the database. The result of the operation of the generator is an XSD file with the schema of the database and an XML file with an empty database. 
 
-* Включение\отключение ограничений ссылочной целостности (в том числе и уникальность первичного ключа). За это отвечает свойство EnforceConstraints в XSD-файле.
-* Включение\отключение строгих имен для сборок (данная настройка необходима для генерации схемы для разных версий сборок). Эта настройка подменяет PublickKeyToken в cгенерированной XSD-схеме на null.
+`XMLSchemaGenerator` includes the following settings: 
 
-`XMLSchemaGenerator` поддерживает любые пользовательские типы данных для свойств объектов. Для корректной работы с ними необходимо, чтобы пользовательский тип данных поддерживал интерфейс `System.Xml.Serialization.IXmlSerializable`.
+* Enable\disable referential integrity constraints (including unique and primary key). It is the EnforceConstraints property in the XSD file. 
+* Enable\disable strong name for the assemblies (this setting is necessary to generate schemas for different versions of assemblies). This setting replaces PublickKeyToken in the generated XSD schema for null. 
 
-По умолчанию в схему базы данных попадут стандартные таблицы: `STORMAdvLimit`, `STORMFILTERDETAIL`, `STORMFILTERLOOKUP`, `STORMFILTERSETTING`, `STORMNETLOCKDATA`, `STORMSETTINGS`. Изменять их описание в XSD-файле не рекомендуется.
+`XMLSchemaGenerator` supports any user-defined data types for object properties. To work correctly they need to make a custom data type supported interface `System.Xml.Serialization.IXmlSerializable`. 
 
-Сгенерированная схема содержит теги с настройками для работы с XML базой данных через `System.Data.DataSet`. Его поддержка осуществлена в [XMLFileDataService](fo_xml-file-ds.html).
+By default, the database schema will get the standard table: `STORMAdvLimit`, `STORMFILTERDETAIL`, `STORMFILTERLOOKUP`, `STORMFILTERSETTING`, `STORMNETLOCKDATA`, `STORMSETTINGS`. Change its description in the XSD file is not recommended. 
+
+The generated schema contains tags is set up to work with the XML database through `System.Data.DataSet`. Its support is implemented in [XMLFileDataService](fo_xml-file-ds.html). 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -1,32 +1,38 @@
----
-title: Reading objects belonging to different classes in one view
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, class, object, view
-summary: Features of reading objects from different classes
-toc: true
-permalink: en/fo_reading-several-types-objects.html
-lang: en
----
+--- 
+title: Reading belonging to different object classes in a single view 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, class, object, idea 
+summary: Features reading objects from different classes 
+toc: true 
+permalink: en/fo_reading-several-types-objects.html 
+lang: en 
+autotranslated: true 
+hash: 2efa48c54a2f879324cb6a1d56202ea773146b2905a56c6d6e0e6b7239166be1 
+--- 
 
-Для того чтобы прочитать множество объектов, необходимо (как минимум) произвести настройки [LoadingCustomizationStruct](fo_loading-customization-struct.html):
+To read many objects, you need (at least) to make settings [LoadingCustomizationStruct](fo_loading-customization-struct.html): 
 
-* указать [классы данных](fo_data-object.html), для которых выполняется чтение ([LoadingTypes](fo_loading-customization-struct.html));
-* указать общее для них [представление](fd_view-definition.html) ([View](fo_loading-customization-struct.html)).
+* specify [data classes](fo_data-object.html), which reads ([LoadingTypes](fo_loading-customization-struct.html)); 
+* specify common [view](fd_view-definition.html) ([View](fo_loading-customization-struct.html)). 
 
-Таким образом, если имеется ситуация вида:
+Thus, if there is a situation: 
 
-![](/images/pages/products/flexberry-orm/additional-features/primer-8.jpg)
+![](/images/pages/products/flexberry-orm/additional-features/primer-8.jpg) 
 
-и необходимо прочитать все экземпляры CDDD и CDDA в представлении «Главное» для Ресурса, то `LoadingCustomizationStruct` параметризуется следующим образом:
+and you must read all instances of the CDDD and the CDDA in the presentation of the Main» «for life, then `LoadingCustomizationStruct` parameterized in the following way: 
 
 ```csharp
 lcs = new LoadingCustomizationStruct(null);			
-lcs.View=Information.GetView("Главное", typeof(Ресурс));
+lcs.View=Information.GetView("The main thing", typeof(Ресурс));
 lcs.LoadingTypes=new Type[]{typeof(CDDD), typeof(CDDA)};
-```
+``` 
 
-Затем необходимо вызвать метод [LoadObjects(lcs)](fo_data-service.html).
+Then you must call [LoadObjects(lcs)](fo_data-service.html). 
 
-Пример доступен по адресу: [на GitHub](https://github.com/Flexberry/FlexberryORM-DemoApp/blob/master/FlexberryORM/CDLIB/CDADMTEST/Form1.cs).
+An example is available at [GitHub](https://github.com/Flexberry/FlexberryORM-DemoApp/blob/master/FlexberryORM/CDLIB/CDADMTEST/Form1.cs). 
 
-Для решения противоположной задачи, а именно, для вычитки объектов-наследников по более широкому набору свойств, нежели у предков, могут использоваться [адаптивные представления](fo_adaptive-views-details.html).
+To solve the opposite problem, namely, for editing objects-successors in a wider range of properties than the ancestors, could be used [adaptive view](fo_adaptive-views-details.html). 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

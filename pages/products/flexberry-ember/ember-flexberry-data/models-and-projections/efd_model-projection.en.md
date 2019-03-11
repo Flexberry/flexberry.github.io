@@ -1,34 +1,36 @@
----
-title: Представления в ember-flexberry-приложении
-sidebar: ember-flexberry-data_sidebar
-keywords: Flexberry Ember
-toc: true
-permalink: en/efd_model-projection.html
-folder: products/ember-flexberry-data/models-and-projections/
-lang: en
-summary: Представлено детализированное описание того, как задаются представления в ember-flexberry-приложении.
----
+--- 
+title: Views in ember-flexberry application 
+sidebar: ember-flexberry-data_sidebar 
+keywords: Flexberry Ember 
+toc: true 
+permalink: en/efd_model-projection.html 
+folder: products/ember-flexberry-data/models-and-projections/ 
+lang: en 
+autotranslated: true 
+hash: 0b524de44859f4e5f2c52075a4e27a46434e5599e5a41950bc611b61b05b71a3 
+summary: Presents a detailed description of how to set view in ember-flexberry application. 
+--- 
 
-## Определение представлений
+## Define views 
 
-Представления определяются для [моделей](efd_model.html).
-Представления используются для определения, какие свойства будут запрошены с сервера или отправлены на него. Определение представлений для модели осуществляется следующим образом:
+Views are defined for [models](efd_model.html). 
+Views are used to determine which properties are requested from the server or sent to it. Define views for the model is as follows: 
 
 ```javascript
 Model.defineProjection('<Имя представления>', '<Имя класса>', '<Атрибуты представления>');
-```
+``` 
 
-*Имя представления* может быть произвольным. Чаще всего для форм редактирования используют представления с именем "<Короткое имя класса>E", а для списковых форм - "<Короткое имя класса>L".
+*The name of the view* can be arbitrary. Most edit forms use a view with name "<Short name of the class>E", and list forms - "<Short name of the class>L". 
 
-*Имя класса* - это имя текущего класса, для которого [определяется модель](efd_model.html). Например, `new-platform-someproject-somemodel`.
+*The class name* is the name of the current class, for which [the defined model](efd_model.html). For example, `new-platform-someproject-somemodel`. 
 
-*Атрибуты представления* - это атрибуты [модели и зависимых моделей](efd_model.html), которые входят в представление.
+*View attributes* - attributes [models and dependent models](efd_model.html), which are included in the presentation. 
 
-Рассмотрим представленный ниже пример. Здесь для модели `flexberry-ember-demo-suggestion` определяется представление `SuggestionE`.
+Consider the example below. Here for models `flexberry-ember-demo-suggestion` the view is defined `SuggestionE`. 
 
-`address: Proj.attr('Address')` - в представление добавляется свойство `address` модели `flexberry-ember-demo-suggestion` с заголовком `Address`.
+`address: Proj.attr('Address')` - view adds a property `address` model `flexberry-ember-demo-suggestion` with the title `Address`. 
 
-`type: Proj.belongsTo('flexberry-ember-demo-suggestion-type', 'Type', { name: Proj.attr('Name') })` - в представление добавляется ссылка на мастера `type` модели `flexberry-ember-demo-suggestion` на тип `flexberry-ember-demo-suggestion-type` с заголовком `Type`, а также свойство `name` с заголовком `Name` модели `flexberry-ember-demo-suggestion-type`.
+`type: Proj.'s belongsto('flexberry-ember-demo-suggestion-type', 'Type', { name: Proj.attr('Name') })` - in the view you add a reference to the wizard `type` model `flexberry-ember-demo-suggestion` type `flexberry-ember-demo-suggestion-type` with the title `Type` and property `name` with the title `Name` model `flexberry-ember-demo-suggestion-type`. 
 
 ```javascript
 comments: Proj.hasMany('flexberry-ember-demo-comment', 'Comments', { 
@@ -39,9 +41,9 @@ comments: Proj.hasMany('flexberry-ember-demo-comment', 'Comments', {
 			name: Proj.attr('Name', { hidden: true }) 
 		}) 
 	})
-```
+``` 
 
-- в представление добавляется ссылка на детейлы `comments` модели 'flexberry-ember-demo-suggestion' с заголовком 'Comments'. Детейлы имеют тип 'flexberry-ember-demo-comment'. Из детейлов в представление попадают собственные свойства детейла, а также ссылка на мастера детейлов `author`, у которого свойство `name` скрыто (такое скрытие свойств мастеров часто используется для работы [лукапов](ef_lookup.html)).
+in the view you add a reference to detaily `comments` model 'flexberry-ember-demo-suggestion' with the heading 'Comments'. Detaili have a type of 'flexberry-ember-demo-comment'. Of datalow into view get own properties of detail and also the link to the master detailov `author`, whose property `name` hidden (this hides the properties of the masters is frequently used for [lyapov](ef_lookup.html)). 
 
 ```javascript
 Model.defineProjection('SuggestionE', 'flexberry-ember-demo-suggestion', { 
@@ -75,4 +77,8 @@ Model.defineProjection('SuggestionE', 'flexberry-ember-demo-suggestion', {
 		}) 
 	})
 })
-```
+``` 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

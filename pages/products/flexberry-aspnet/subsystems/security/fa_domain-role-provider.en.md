@@ -1,17 +1,19 @@
----
-title: CaseberryDomainRoleProvider
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_domain-role-provider.html
-lang: en
----
+--- 
+title: CaseberryDomainRoleProvider 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_domain-role-provider.html 
+lang: en 
+autotranslated: true 
+hash: ec533d6fa48aa0c8a7655cb43cea626757c7331d2c959f6b283c25e044ce6371 
+--- 
 
-`CaseberryDomainRoleProvider` - это наследник [System.Web.Security.RoleProvider](http://msdn.microsoft.com/ru-ru/library/system.web.security.roleprovider.aspx). Находится в `CheckingLibrary.dll` и осуществляет проверку ролей пользователя с учётом его домена.
+`CaseberryDomainRoleProvider` is the heir to the [System.Web.Security.RoleProvider](http://msdn.microsoft.com/ru-ru/library/system.web.security.roleprovider.aspx). Is `CheckingLibrary.dll` and checks the user roles with regard to its domain. 
 
-## Подключение
+## Connection 
 
-Подключение `CaseberryDomainRoleProvider` осуществляется аналогично тому, как описано [в статье CaseberryMembershipProvider - полномочия](fa_membership-provider.html).
+Connection `CaseberryDomainRoleProvider` is carried out similarly to that described [in the article CaseberryMembershipProvider - powers](fa_membership-provider.html). 
 
 ```xml
 <membership defaultProvider="CaseberryMembershipProvider">
@@ -27,10 +29,14 @@ lang: en
 	<add name="CaseberryRoleProvider" type="CheckingLibrary.CaseberryDomainRoleProvider"/>
   </providers>
 </roleManager>
-```
+``` 
 
-## Пример использования
+## Example usage 
 
-Пусть через [консоль управления полномочиями](efs_security-console.html) создана группа `SOME_HOME`, в неё добавлен пользователь с логином `VPupkin`, которому определена роль "Администратор". 
+Let through [management authority](efs_security-console.html) `SOME_HOME` created a group, added a user with login `VPupkin`, which defines the role of "Administrator". 
 
-Если [в качестве MembershipProvider] используется класс `CaseberryDomainMembershipProvider`, то вход в web-приложение будет осуществляться по логину с доменом `SOME_HOME\VPupkin`. Если в этом случае использовать `CaseberryRoleProvider`, то назначенные роли будут определяться для пользователя с логином `SOME_HOME\VPupkin`, а если прописать класс `CaseberryDomainRoleProvider` в качестве RoleProvider - для пользователя `VPupkin`, состоящего в группе `SOME_HOME`.
+If [as MembershipProvider] used class `CaseberryDomainMembershipProvider`, the web application will be login with the domain `SOME_HOME\VPupkin`. If you do this, use `CaseberryRoleProvider`, the assigned roles will be determined for the user with login `SOME_HOME\VPupkin`, and if you register a class `CaseberryDomainRoleProvider` as RoleProvider for user `VPupkin` playgroup `SOME_HOME`. 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

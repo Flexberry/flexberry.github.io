@@ -1,116 +1,118 @@
----
-title: Restrictions on the part of the date
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, restriction, ExternalLangDef
-summary: Rules for the formation of restrictions for the year, month, day, hour, minute, specific date, time and day of the week, the parameters used
-toc: true
-permalink: en/fo_restriction-datetime.html
-lang: en
----
+--- 
+title: Restrictions on date part 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, Constraints, ExternalLangDef 
+summary: the Rules of formation restrictions on the year, month, day, hour, minute, particular date, time and day of the week, the parameters used 
+toc: true 
+permalink: en/fo_restriction-datetime.html 
+lang: en 
+autotranslated: true 
+hash: 34a032d8c0032497c553526001ceeee4118ea31b849350b0a91ce463a66defb4 
+--- 
 
-## Ограничения на части даты
+## Restrictions on date part 
 
-Ограничения на части даты используются, когда необходимо получить данные по части даты.
+Restrictions on date part is used when you want to get data for part of the date. 
 
-Функции для получения частей даты доступны в [ExternalLangDef](fo_external-lang-def.html).
-В примерах ниже будем использовать следующий код:
+The function to retrieve parts of dates are available in [ExternalLangDef](fo_external-lang-def.html). 
+In the examples below we will use the following code: 
 
 ```csharp
 var langdef = ExternalLangDef.LanguageDef;
 var order = LoadingCustomizationStruct.GetSimpleStruct(typeof (Заказ), Заказ.Views.ЗаказL);
-```
+``` 
 
-### Ограничение на год (funcYearPart)
+### Limit for the year (funcYearPart) 
 
-**Найти заказы, оформленные в 2014 году.**
+**Find orders placed in 2014.** 
 
-SQL-выражение выглядит следующим образом:
+The SQL statement looks like the following: 
 
 ```sql
 SELECT * FROM [dbo].[Заказ] WHERE YEAR([ДатаВыдачи]) = 2014
-```
+``` 
 
-Через [ExternalLangDef](fo_external-lang-def.html)
+[ExternalLangDef](fo_external-lang-def.html) 
 
 ```csharp
 order.LimitFunction = langdef.GetFunction(langdef.funcEQ, 
                                           langdef.GetFunction(langdef.funcYearPart, new VariableDef(langdef.DateTimeType, Information.ExtractPropertyPath<Заказ>(x => x.ДатаВыдачи))),
                                           "2014");
-```
+``` 
 
-### Ограничение на месяц (funcMonthPart)
+### the limit for the month (funcMonthPart) 
 
-**Найти заказы, оформленные в мае.**
+**Find orders placed in may.** 
 
-SQL-выражение выглядит следующим образом:
+The SQL statement looks like the following: 
 
 ```sql
 SELECT * FROM [dbo].[Заказ] WHERE Month([ДатаВыдачи]) = 05
-```
+``` 
 
-Через [ExternalLangDef](fo_external-lang-def.html)
+[ExternalLangDef](fo_external-lang-def.html) 
 
 ```csharp
 order.LimitFunction = langdef.GetFunction(langdef.funcEQ,
                                           langdef.GetFunction(langdef.funcMonthPart, new VariableDef(langdef.DateTimeType, Information.ExtractPropertyPath<Заказ>(x => x.ДатаВыдачи))),
                                           "05");
-```
+``` 
 
-### Ограничение на день (funcDayPart)
+### the Restriction on day (funcDayPart) 
 
-**Найти заказы, оформленные 13 числа.**
+**Find orders placed on the 13th.** 
 
-SQL-выражение выглядит следующим образом:
+The SQL statement looks like the following: 
 
 ```sql
 SELECT * FROM [dbo].[Заказ] WHERE Day([ДатаВыдачи]) = 13
-```
+``` 
 
-Через [ExternalLangDef](fo_external-lang-def.html)
+[ExternalLangDef](fo_external-lang-def.html) 
 
 ```csharp
 order.LimitFunction = langdef.GetFunction(langdef.funcEQ,
                                           langdef.GetFunction(langdef.funcDayPart, new VariableDef(langdef.DateTimeType, Information.ExtractPropertyPath<Заказ>(x => x.ДатаВыдачи))),
                                           "13");
-```
+``` 
 
-### Ограничение на час (funcHHPart)
+### a limitation on the hours (funcHHPart) 
 
-**Найти заказы, оформленные в 10 утра.**
+**Find orders placed at 10 am.** 
 
-SQL-выражение выглядит следующим образом:
+The SQL statement looks like the following: 
 
 ```sql
 SELECT * FROM [dbo].[Заказ] WHERE DatePart(hh, [ДатаВыдачи]) = 10
-```
+``` 
 
-Через [ExternalLangDef](fo_external-lang-def.html)
+[ExternalLangDef](fo_external-lang-def.html) 
 
 ```csharp
 order.LimitFunction = langdef.GetFunction(langdef.funcEQ,
                                           langdef.GetFunction(langdef.funcHHPart, new VariableDef(langdef.DateTimeType, Information.ExtractPropertyPath<Заказ>(x => x.ДатаВыдачи))),
                                           "10");
-```
+``` 
 
-### Ограничение на минуты (funcMIPart)
+### Restriction on minutes (funcMIPart) 
 
-**Найти заказы, оформленные в 20 минут.**
+**Find orders placed in 20 minutes.** 
 
-SQL-выражение выглядит следующим образом:
+The SQL statement looks like the following: 
 
 ```sql
 SELECT * FROM [dbo].[Заказ] WHERE DatePart(MINUTE, [ДатаВыдачи]) = 20
-```
+``` 
 
-Через [ExternalLangDef](fo_external-lang-def.html)
+[ExternalLangDef](fo_external-lang-def.html) 
 
 ```csharp
 order.LimitFunction = langdef.GetFunction(langdef.funcEQ,
                                           langdef.GetFunction(langdef.funcMIPart, new VariableDef(langdef.DateTimeType, Information.ExtractPropertyPath<Заказ>(x => x.ДатаВыдачи))),
                                           "20");
-```
+``` 
 
-Если необходимо точное время, то ограничение будет выглядеть так:
+If you want the exact time, the constraint will look like this: 
 
 ```csharp
 order.LimitFunction = langdef.GetFunction(
@@ -127,11 +129,11 @@ order.LimitFunction = langdef.GetFunction(
 									langdef.funcMIPart, 
 									new VariableDef(langdef.DateTimeType, Information.ExtractPropertyPath<Заказ>(x => x.ДатаВыдачи))), 
 								20));
-```
+``` 
 
-### Ограничение на дату (funcOnlyDate)
+### a date Restriction (funcOnlyDate) 
 
-**Вывести тех, у кого сегодня день рождения.**
+**To bring those who have a birthday today.** 
 
 ```csharp
 var langDef = new ExternalLangDef();
@@ -140,11 +142,11 @@ Function function = langDef.GetFunction(langDef.funcEQ,
                                                             new VariableDef(langDef.DateTimeType, Information.ExtractPropertyPath<Человек>(x => x.ДатаРождения))),
                                         langDef.GetFunction(langDef.funcOnlyDate,
                                                             langDef.GetFunction("TODAY")));
-```
+``` 
 
-### Ограничение на время (funcOnlyDate)
+### time Limit (funcOnlyDate) 
 
-**Вывести тех, кто родился в 01:00:00.**
+**Bring those born at 01:00:00.** 
 
 ```csharp
 var langDef = new ExternalLangDef();
@@ -153,200 +155,204 @@ Function function = langDef.GetFunction(langDef.funcEQ,
                                                             new VariableDef(langDef.DateTimeType, Information.ExtractPropertyPath<Человек>(x => x.ДатаРождения))),
                                         langDef.GetFunction(langDef.funcOnlyTime,
                                                             DateTime.Parse("01:00:00")));
-```
+``` 
 
-### Ограничение на день недели (funcDayOfWeek)
+### limit on the day of the week (funcDayOfWeek) 
 
-Функция, возвращающая день недели числом. (1 = Понедельник, ..., 7 = Воскресенье)
+Function to return day of week number. (1 = Monday, ..., 7 = Sunday) 
 
-**Вывести только те числа которые попали на понедельник.**
+**Display only those numbers which fell on Monday.** 
 
 ```csharp
-// Создаем ограничение на объект.
+// Create a restriction object. 
  lcs.LimitFunction = 
-           // Ограничение, что функция возвращает объекты.  
+           // The constraint that the function returns a objects. 
            ldef.GetFunction(
-                    // В которых значения параметра 1 (=) значению параметра 2.
+                    // Where parameter value 1 (=) to the value 2. 
                     ldef.funcEQ,
-                    // Параметр 1: получаем даты и преобразовываем её в число.
+                    // Option 1: get the date and convert it to a number. 
                     ldef.GetFunction(
                         ldef.funcDayOfWeek,
                         new VariableDef(ldef.DateTimeType,
                             Information.ExtractPropertyPath<FullTypesMainAgregator>(x => x.PoleDateTime))),
-                    // Параметр 2.
+                    // Option 2. 
                     1);
-```
+``` 
 
 
-### Ограничение на день недели (funcDayOfWeekZeroBased)
+### limit on the day of the week (funcDayOfWeekZeroBased) 
 
-Функция, возвращающая день недели числом. (0 = Воскресенье, 1 = Понедельник, ...)
+Function to return day of week number. (0 = Sunday, 1 = Monday, ...) 
 
-**Найти все заказы которые были сделаны в Воскресенье.**
+**Find all orders that were made on Sunday.** 
 
 ```csharp
-// Создаем ограничение на объект.
+// Create a restriction object. 
 LimitFunction =
-        // Ограничение, что функция возвращает объекты.  
+        // The constraint that the function returns a objects. 
         ldef.GetFunction(
-                   // В которых значения параметра 1 (=) значению параметра 2.
+                   // Where parameter value 1 (=) to the value 2. 
                    ldef.funcEQ,
-                   // Параметр 1: Ограничение, что из поля "Дата", возвращаются день недели числом.
-                   ldef.GetFunction(ldef.funcDayOfWeekZeroBased, new VariableDef(ldef.DateTimeType, "Дата")),
-                   // Параметр 2: Возвращающийся день недели числом должен быть = 0 (Воскресенье).
+                   // Option 1: Limit that from a "date" field, returns the day of the week. 
+                   ldef.GetFunction(ldef.funcDayOfWeekZeroBased, new VariableDef(ldef.DateTimeType, Date)),
+                   // Option 2: Returning the day of the week number should be 0 (Sunday). 
                    0)
-```
+``` 
 
 
-<!-- ### Ограничение на разницу дат (funcDATEDIFF)
+<!-- ### a Limit on the difference of dates (funcDATEDIFF) 
 
-**Пример в разработке.**
+**Example in development.** 
 
-### Ограничение на количество дней в месяце (funcDaysInMonth)
+### a limit on the number of days in the month (funcDaysInMonth) 
 
-**Пример в разработке.** !-->
+**Example in development.** !--> 
 
-### Полный аналог SQL функции dateadd (funcDateAdd)
+### Full analogue of SQL functions dateadd (funcDateAdd) 
 
-**Найти все заказы которые были сделаны за все время, кроме тех которые были сделаны за последний год.**
+**Find all orders which have been made for all time, except for those which have been made over the last year.** 
 
 ```csharp
-// Создаем ограничение на объект.
+// Create a restriction object. 
 LimitFunction  =
-         // Ограничение, что функция возвращает объекты.  
+         // The constraint that the function returns a objects. 
          ldef.GetFunction(
-                // В которых значения параметра 1 (<) значению параметра 2.
+                // Which parameter values 1 (<) the value of the parameter 2. 
                 ldef.funcL,
-                // Параметр 1: Ограничение, что из поля "Дата", возвращаются дата значение года, которой увеличено на 1.
+                // Parameter 1: the constraint that the from date field, date return the year value, which is increased by 1. 
                 ldef.GetFunction(
-                    ldef.funcDateAdd, // Полный аналог SQL функции dateadd.
+                    ldef.funcDateAdd, // Full analog of the SQL dateadd function. 
                     ldef.GetFunction(ldef.paramYearDIFF),
                     1,
-                    new VariableDef(ldef.DateTimeType, "Дата")),
-                // Параметр 2: Ограничение, что из сегодняшней даты, возвращаются только дату(без времени).
+                    new VariableDef(ldef.DateTimeType, Date)),
+                // Option 2: Limit that from today's date, return the date only(without time). 
                 ldef.GetFunction(ldef.funcOnlyDate, DateTime.Now));
-```
+``` 
 
-### Параметры для работы с датой
+### Options for working with date 
 
-##### paramTODAY - параметр для получения сегодняшней даты
+##### paramTODAY - option to get today's date 
 
-**Найти все заказы которые были сделаны за прошедшие месяцы (+ текущий).**
+**Find all orders which have been made over the past months ( ongoing).** 
 
 ```csharp
-// Создаем ограничение на объект ("Дата"<=paramTODAY).
+// Create the restriction object ("date"<=paramTODAY). 
 LimitFunction =
-      // Ограничение, что функция возвращает объекты. 
+      // The constraint that the function returns a objects. 
       ldef.GetFunction(   
-                   // В которых значения параметра 1 (<=) значению параметра 2.
+                   // Which parameter values 1 (<=) to the value 2. 
                    ldef.funcLEQ, 
-                   // Параметр 1: Ограничение, что из поля "Дата", возвращаются только значения месяца.
-                   ldef.GetFunction(ldef.funcMonthPart, new VariableDef(ldef.DateTimeType, "Дата")),
-                   // Параметр 2: Ограничение, что из сегодняшней даты, возвращаются только значения месяца.
+                   // Parameter 1: the constraint that the from date field and return only the values of the month. 
+                   ldef.GetFunction(ldef.funcMonthPart, new VariableDef(ldef.DateTimeType, Date)),
+                   // Option 2: Limit that from today's date, return only values for the month. 
                    ldef.GetFunction(ldef.funcMonthPart, ldef.GetFunction(ldef.paramTODAY)));
-```
+``` 
 
-##### paramYearDIFF - параметр для получения значения года от даты
+##### paramYearDIFF parameter to get the value of year from the date 
 
-**Найти все заказы которые были сделаны за все время, кроме тех которые были сделаны за последний год.**
+**Find all orders which have been made for all time, except for those which have been made over the past year.** 
 
 ```csharp
-// Создаем ограничение на объект.
+// Create a restriction object. 
 lcs.LimitFunction = 
-              // Ограничение, что функция возвращает объекты.  
+              // The constraint that the function returns a objects. 
               ldef.GetFunction(
-                    // В которых значения параметра 1 (<) значению параметра 2.
+                    // Which parameter values 1 (<) the value of the parameter 2. 
                     ldef.funcL,
-                    // Параметр 1: Ограничение, что из поля "Дата", возвращается значение года даты, которое увеличено на 1.
+                    // Option 1: Limit that from a "date" field returns the year of date, which is increased by 1. 
                     ldef.GetFunction(
                         ldef.funcDateAdd,
                         ldef.GetFunction(ldef.paramYearDIFF),
                         1,
                         new VariableDef(ldef.DateTimeType, Information.ExtractPropertyPath<FullTypesMainAgregator>(x => x.PoleDateTime))),
-                    // Параметр 2: Ограничение, что из сегодняшней даты, возвращаются только дату(без времени).
+                    // Option 2: Limit that from today's date, return the date only(without time). 
                     ldef.GetFunction(ldef.funcOnlyDate, DateTime.Now));
-```
+``` 
 
-##### paramMonthDIFF - параметр для получения значения месяца от даты
+##### paramMonthDIFF parameter to retrieve the value of month from the date 
 
-**Найти все заказы которые были сделаны за все время, кроме тех которые были сделаны за последний месяц.**
+**Find all orders which have been made for all time, except for those which have been made over the last month.** 
 
 ```csharp
-// Создаем ограничение на объект.
+// Create a restriction object. 
 lcs.LimitFunction = 
-           // Ограничение, что функция возвращает объекты.  
+           // The constraint that the function returns a objects. 
            ldef.GetFunction(
-                    // В которых значения параметра 1 (<) значению параметра 2.
+                    // Which parameter values 1 (<) the value of the parameter 2. 
                     ldef.funcL,
-                    // Параметр 1: Ограничение, что из поля PoleDateTime, возвращается значение месяца даты, которое увеличено на 1.
+                    // Option 1: Limit that from the field PoleDateTime returns the month value of the date, which is increased by 1. 
                     ldef.GetFunction(
                         ldef.funcDateAdd,
                         ldef.GetFunction(ldef.paramMonthDIFF),
                         1,
                         new VariableDef(ldef.DateTimeType, Information.ExtractPropertyPath<FullTypesMainAgregator>(x => x.PoleDateTime))),
-                    // Параметр 2: Ограничение, что из сегодняшней даты, возвращаются только дату(без времени).
+                    // Option 2: Limit that from today's date, return the date only(without time). 
                     ldef.GetFunction(ldef.funcOnlyDate, DateTime.Now));
-```
+``` 
 
-##### paramWeekDIFF - параметр для получения значения недели от даты
+##### paramWeekDIFF parameter to retrieve the value of week from date 
 
-**Найти все заказы которые были сделаны за все время, кроме тех которые были сделаны за последнюю неделю.**
+**Find all orders which have been made for all time, except for those which have been made over the last week.** 
 
 ```csharp
-// Создаем ограничение на объект.
+// Create a restriction object. 
 lcs.LimitFunction = 
-             // Ограничение, что функция возвращает объекты.  
+             // The constraint that the function returns a objects. 
              ldef.GetFunction(
-                    // В которых значения параметра 1 (<) значению параметра 2.
+                    // Which parameter values 1 (<) the value of the parameter 2. 
                     ldef.funcL,
-                    // Параметр 1: Ограничение, что из поля PoleDateTime, возвращается значение недели даты, которое увеличено на 1.
+                    // Option 1: Limit that from the field PoleDateTime returns the week date that is increased by 1. 
                     ldef.GetFunction(
                         ldef.funcDateAdd,
                         ldef.GetFunction(ldef.paramWeekDIFF),
                         1,
                         new VariableDef(ldef.DateTimeType, Information.ExtractPropertyPath<FullTypesMainAgregator>(x => x.PoleDateTime))),
-                    // Параметр 2: Ограничение, что из сегодняшней даты, возвращаются только дату(без времени).
+                    // Option 2: Limit that from today's date, return the date only(without time). 
                     ldef.GetFunction(ldef.funcOnlyDate, DateTime.Now));
-```
+``` 
 
-##### paramQuarterDIFF - параметр для получения значения четверти от даты
+##### paramQuarterDIFF parameter to retrieve the value of quarters from the date 
 
-**Найти все заказы которые были сделаны за все время, кроме тех которые были сделаны за последнюю четверть.**
+**Find all orders which have been made for all time, except for those which have been made over the last quarter.** 
 
 ```csharp
-// Создаем ограничение на объект.
+// Create a restriction object. 
 lcs.LimitFunction = 
-             // Ограничение, что функция возвращает объекты.   
+             // The constraint that the function returns a objects. 
              ldef.GetFunction(
-                    // В которых значения параметра 1 (<) значению параметра 2.
+                    // Which parameter values 1 (<) the value of the parameter 2. 
                     ldef.funcL,
-                    // Параметр 1: Ограничение, что из поля PoleDateTime, возвращается значение четверти даты, которое увеличено на 1.
+                    // Option 1: Limit that from the field PoleDateTime returns quarter to date, which is increased by 1. 
                     ldef.GetFunction(
                         ldef.funcDateAdd,
                         ldef.GetFunction(ldef.paramQuarterDIFF),
                         1,
                         new VariableDef(ldef.DateTimeType, Information.ExtractPropertyPath<FullTypesMainAgregator>(x => x.PoleDateTime))),
-                    // Параметр 2: Ограничение, что из сегодняшней даты, возвращаются только дату(без времени).
+                    // Option 2: Limit that from today's date, return the date only(without time). 
                     ldef.GetFunction(ldef.funcOnlyDate, DateTime.Now));
-```
+``` 
 
-##### paramDayDIFF - параметр для получения значения дня от даты
+##### paramDayDIFF parameter to get the value of days from the date 
 
-**Найти все заказы которые были сделаны за все время, кроме тех которые были сделаны за последние три дня.**
+**Find all orders which have been made for all time, except for those which have been made over the past three days.** 
 
 ```csharp
-// Создаем ограничение на объект.
+// Create a restriction object. 
 LimitFunction  =
-         // Ограничение, что функция возвращает объекты.  
+         // The constraint that the function returns a objects. 
          ldef.GetFunction(
-                // В которых значения параметра 1 (<) значению параметра 2.
+                // Which parameter values 1 (<) the value of the parameter 2. 
                 ldef.funcL,
-                // Параметр 1: Ограничение, что из Даты берется только дни и их количество увеличивается на 3.
+                // Parameter 1: the Restriction that the Date is the days and their number increases by 3. 
                 ldef.GetFunction(
-                    ldef.funcDateAdd, // Полный аналог SQL функции dateadd.
+                    ldef.funcDateAdd, // Full analog of the SQL dateadd function. 
                     ldef.GetFunction(ldef.paramDayDIFF),
                     3,
                     new VariableDef(ldef.DateTimeType, Information.ExtractPropertyPath<FullTypesMainAgregator>(x => x.PoleDateTime))),
-                // Параметр 2: Ограничение, что из сегодняшней даты, возвращаются только дату(без времени).
+                // Option 2: Limit that from today's date, return the date only(without time). 
                 ldef.GetFunction(ldef.funcOnlyDate, DateTime.Now));             
-```
+``` 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

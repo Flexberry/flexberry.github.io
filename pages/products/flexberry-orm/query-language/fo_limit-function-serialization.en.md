@@ -1,27 +1,29 @@
----
-title: Сериализация LimitFunction
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Ограничения
-summary: Подход и пример сериализации функции ограничения
-toc: true
-permalink: en/fo_limit-function-serialization.html
-lang: en
----
+--- 
+title: Serialization LimitFunction 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM Limitations 
+summary: Approach and example of serialization functions limitations 
+toc: true 
+permalink: en/fo_limit-function-serialization.html 
+lang: en 
+autotranslated: true 
+hash: 10c44078343eb52029784a9f3c430961e36878845be289ddf555de9f46c4e95e 
+--- 
 
-## Подход к сериализации LimitFunction
+## Approach to serialization LimitFunction 
 
-Класс [`Function`](fo_limit-function.html) реализует интерфейс `ISerializable`. Поэтому для функций ограничения доступна как `SOAP`, так и бинарная сериализация. 
+Class [`Function`](fo_limit-function.html) implements the interface `ISerializable`. Therefore, for functions of limited available as `SOAP` and binary serialization. 
 
-Рекомендуется использовать инструменты библиотеки [ICSSoft.STORMNET.Tools.XmlTools](fo_ics-soft-stormnet-tools.html) вместо прямого обращения к `System.Runtime.Serialization.Formatters.Soap.SoapFormatter` или `System.Runtime.Serialization.Formatters.Binary.BinaryFormatter`.
+It is recommended to use library tools [ICSSoft.STORMNET.Tools.XmlTools](fo_ics-soft-stormnet-tools.html) instead of a direct appeal to `System.Runtime.Serialization.Formatters.Soap.SoapFormatter` or `System.Runtime.Serialization.Formatters.Binary.BinaryFormatter`. 
 
-В указанной библиотеке доступны классы:
+In the specified library classes available: 
 
-* `ToolXML` - позволяет выполнить сериализацию средствами `SoapFormatter`,
-* `ToolBinarySerializer` - позволяет выполнить сериализацию средствами `BinaryFormatter`.
+* `ToolXML` - allows to serialize means `SoapFormatter`, 
+* `ToolBinarySerializer` - allows to serialize means `BinaryFormatter`. 
 
-## Пример сравнения бинарной и SOAP сериализации LimitFunction
+## Example comparing binary and SOAP serialization LimitFunction 
 
-Бинарный вид сериализации более производительный и строки получаются короче.
+Binary form serialization is more productive and the rows get shorter. 
 
 ```csharp
 [TestMethod]        
@@ -41,12 +43,12 @@ private void Serialize(bool binary)
     Function fn = ldef.GetFunction(
                 ldef.funcAND,
                 ldef.GetFunction(
-                ldef.funcEQ, new VariableDef(ldef.StringType,"ПарамПамПам"), "кто ходит в гости по утрам"
+                ldef.funcEQ, new VariableDef(ldef.StringType,"Parampampam"), "who goes to visit in the morning"
                 ),
                 ldef.GetFunction(
                 ldef.funcOR,
-                ldef.GetFunction(ldef.funcEQ, new VariableDef(ldef.StringType, "ТотПоступаетМудро"), Environment.UserName),
-                ldef.GetFunction(ldef.funcIsNull, new VariableDef(ldef.StringType, "НаТоОноИУтро"))
+                ldef.GetFunction(ldef.funcEQ, new VariableDef(ldef.StringType, "Compositepicture"), Environment.UserName),
+                ldef.GetFunction(ldef.funcIsNull, new VariableDef(ldef.StringType, "Nationair"))
                 )
                 );
 
@@ -74,9 +76,13 @@ private void Serialize(bool binary)
             восставшийИзНебытия = externalLangDef.FunctionFromSimpleStruct(ToolXML.ObjectFromString(serializedFn));
         }
         Assert.IsNotNull(восставшийИзНебытия);
-        fnStr = "Длина сериализованной строки: " + serializedFn.Length + Environment.NewLine
-                + serializedFn.Substring(0, 50) + Environment.NewLine + " lf: " + восставшийИзНебытия;
+        fnStr = "The length of the serialized string: " + serializedFn.Length + Environment.NewLine
+                + serializedFn.Substring(0, 50) + Environment.NewLine + "lf: " + восставшийИзНебытия;
     }            
-    Console.WriteLine("Время выполнения " + (DateTime.Now - start).TotalMilliseconds);
+    Console.WriteLine("Run time " + (DateTime.Now - start).TotalMilliseconds);
 }
-```
+``` 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

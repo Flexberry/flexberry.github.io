@@ -1,13 +1,15 @@
----
-title: External-классы в расширенном редакторе ограничений
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Ограничения
-toc: true
-permalink: en/fa_web-limit-editor-external-class.html
-lang: en
----
+--- 
+title: External classes in the advanced editor limitations 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET Restrictions 
+toc: true 
+permalink: en/fa_web-limit-editor-external-class.html 
+lang: en 
+autotranslated: true 
+hash: f8b3351e378fa6324ee52b22dd8af3eba1e11ed6efd998ea76379d2478344ee1 
+--- 
 
-При десериализации [ограничения](fa_advanced-limit-editor.html) система должна найти использованные в [ограничении](fa_advanced-limit-editor.html) типы. Для поиска типов используется набор системных сборок, а также текущая исполняемая сборка. Если в [ограничении](fa_advanced-limit-editor.html) есть класс, например, наследуемый от [external-класса](fd_external-classes.html), то при десериализации может произойти ошибка, поскольку система не сможет найти тип, указанный в [ограничении](fa_advanced-limit-editor.html). Для решения данной проблемы можно указывать в config-файлы сборки, в которых могут присутствовать типы, используемые в [ограничении](fa_advanced-limit-editor.html).
+When deserializing [limitations](fa_advanced-limit-editor.html) the system must find used to [limit](fa_advanced-limit-editor.html) types. For type search uses a set of system assemblies, as well as the current executable Assembly. If [the limitation](fa_advanced-limit-editor.html) there is a class, for example, inherits from [external-class](fd_external-classes.html), then when deserializing, an error may occur because the system can't find the type specified in [limit](fa_advanced-limit-editor.html). To solve this problem you can specify in the. config file of the Assembly, which can have the types used in [the limitation](fa_advanced-limit-editor.html). 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -20,26 +22,26 @@ lang: en
   <!-- ... -->
   <WebLimitSerializer>
     <searchedAssemblies>
-      <add assembly="ПолноеИмяСборки" />
+      <add assembly="Pornoamaterke" />
     </searchedAssemblies>
   </WebLimitSerializer>
   <!-- ... -->
 </configuration>
-```
+``` 
 
-# Пример
+# Example 
 
-Пусть есть класс `MyClass`, расположенный в сборке `StageWithBaseClassProduct(Objects)`, который является [external-классом](fd_external-classes.html) для класса `SonClass`, расположенного в сборке `StageWithExternalClassProduct(Objects)`. При задании ограничения в приложении `StageWithExternalClassProduct` на класс `SonClass` без указания дополнительных настроек произойдёт ошибка, поскольку системе не удастся найти базовый класс `MyClass` в известных ей сборках.
+Suppose there is a class `MyClass` located in the Assembly `StageWithBaseClassProduct(Objects)`, which is [external-class](fd_external-classes.html) for a class `SonClass` located in the Assembly `StageWithExternalClassProduct(Objects)`. When you set limitations in the application `StageWithExternalClassProduct` class `SonClass` without specifying additional settings, an error will occur because the system fails to find base class `MyClass` in known assemblies. 
 
-Для того, чтобы ошибки не было, необходимо в файле web-config указать следующее: зарегистрировать секцию
+To ensure that there was no error, it is necessary in the web-config to specify the following: register section 
 
 ```xml
 <configSections>
     <section name="WebLimitSerializer" type="IIS.ExpressionSerialization.Configuration.WebLimitSerializer, IIS.ExpressionSerialization" />
 </configSections>
-```
+``` 
 
-и указать, в каких сборках могут находиться [external-классы](fd_external-classes.html)
+and specify which assemblies can be [external-classes](fd_external-classes.html) 
 
 ```xml
 <WebLimitSerializer>
@@ -47,4 +49,8 @@ lang: en
 		<add assembly="StageWithBaseClassProduct(Objects), Version=1.0.0.1, Culture=neutral, PublicKeyToken=null" />
 	</searchedAssemblies>
 </WebLimitSerializer>
-```
+``` 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

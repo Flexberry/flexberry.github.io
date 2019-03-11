@@ -1,140 +1,146 @@
----
-title: Description of variables when constructing constraint functions
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Ограничения
-summary: Примеры использования VariableDef и DetailVariableDef
-toc: true
-permalink: en/fo_variable-def.html
-lang: en
----
+--- 
+title: description of the variables in the build functions limitations 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM Limitations 
+summary: examples of the use VariableDef and DetailVariableDef 
+toc: true 
+permalink: en/fo_variable-def.html 
+lang: en 
+autotranslated: true 
+hash: 23ea816cedb1e06d8904289e5b6fa1c1d66242fe69c16e688e757d4bc664e846 
+--- 
 
-При построении ограничений с помощью метода `GetFunction` параметром этому методу в зависимости от типа применяемой функции может передаваться описание переменной:
+When constructing constraints using the method `GetFunction` argument to this method depending on the type of applied functions may be passed a description of the variable: 
 
-* при задании ограничения с помощью [SQLWhereLanguageDef](fo_function-list.html) используется класс `VariableDef`,
-* при наложении ограничения на детейл с помощью [ExternalLangDef](fo_external-lang-def.html) для описания переменной-детейла применяется класс `DetailVariableDef`.
+* when setting limits with [SQLWhereLanguageDef](fo_function-list.html) class is used `VariableDef`, 
+* when imposing restrictions on detail with [ExternalLangDef](fo_external-lang-def.html) to describe the variable-detail used class `DetailVariableDef`. 
 
-## VariableDef
+## VariableDef 
 
-Класс `VariableDef` служит для определения переменной в ограничении (обычно указывает на атрибут в [объекте](fo_data-object.html)). Используется вместе с [SQLWhereLanguageDef](fo_function-list.html).
+Class `VariableDef` is used to define the variable in the restriction (usually indicates an attribute [object](fo_data-object.html)). Used together with [SQLWhereLanguageDef](fo_function-list.html). 
 
-Определен в пространстве имен: `ICSSoft.STORMNET.FunctionalLanguage`.
+Defined in namespace: `ICSSoft.STORMNET.FunctionalLanguage`. 
 
-Сборка: `ICSSoft.STORMNET.FunctionalLanguage.dll`.
+Build: `ICSSoft.STORMNET.FunctionalLanguage.dll`. 
 
-Самый распространённый конструктор, который используется при построении ограничений:
+The most common constructor that is used when building constraints: 
 
 ```csharp
 public VariableDef(ObjectType objType, string objStringedView)
-```
+``` 
 
-Ему передаются параметры:
+He is passed the parameters: 
 
-* `objType` - ObjectType-тип переменной (например, `langdef.StringType`),
-* `objStringedView` - имя свойства объекта, по которому планируется ограничение.
+* `objType` - ObjectType-the type of the variable (for example, `langdef.StringType`), 
+* `objStringedView` - the property name of the object on which the plan limitation. 
 
-Примеры конструирования `VariableDef` при задании ограничений доступны в статье [SQLWhereLanguageDef](fo_function-list.html).
+Examples of design `VariableDef` when specifying constraints, see [SQLWhereLanguageDef](fo_function-list.html). 
 
-### VariableDef для PrimaryKey
+### VariableDef to PrimaryKey 
 
-При построении ограничений на [первичные ключи](fo_primary-keys-objects.html) вычитываемых объектов (собственные ключи) стоит учитывать, что [SQLWhereLanguageDef](fo_function-list.html) не обрабатывает константу `PrimaryKey`. Вместо константы `PrimaryKey` лучше использовать `StormMainObjectKey` (определена соответствующая константа).
+When building restrictions on [primary keys](fo_primary-keys-objects.html) deducted objects (private keys) it is worth considering that [SQLWhereLanguageDef](fo_function-list.html) ignores constant `PrimaryKey`. Instead of a constant `PrimaryKey` better to use `StormMainObjectKey` (determined by the corresponding constant). 
 
-__Неверно__:
+__Wrong__: 
 
 ```csharp
 var ld = SQLWhereLanguageDef.LanguageDef;
 ld.GetFunction(ld.funcEQ, new VariableDef(ld.GuidType, "PrimaryKey"), "64F45BC3-339B-4FBA-A036-C5E9FE9EAE53");
-```
+``` 
 
-__Верно__:
+__True__: 
 
 ```csharp
 var ld = SQLWhereLanguageDef.LanguageDef;
 ld.GetFunction(ld.funcEQ, new VariableDef(ld.GuidType, SQLWhereLanguageDef.StormMainObjectKey), "64F45BC3-339B-4FBA-A036-C5E9FE9EAE53");
-```
+``` 
 
-Стоит отметить, что ограничение на [первичный ключ](fo_primary-keys-objects.html) __мастера__ накладывается следующим образом:
+It should be noted that the restriction on [primary key](fo_primary-keys-objects.html) __masters__ is imposed as follows: 
 
 ``` csharp
 var ld = SQLWhereLanguageDef.LanguageDef;
 ld.GetFunction(ld.funcEQ, new VariableDef(ld.GuidType, Information.ExtractPropertyPath<СамОбъект>(x => x.СсылкаНаМастера)), "84F456C1-312F-30C0-A238-11E3FE68E852");
-```
+``` 
 
-где "СсылкаНаМастера" - ссылка на мастера.
+where "Silentmaster" - a reference to the master. 
 
-## DetailVariableDef
+## DetailVariableDef 
 
-Класс `DetailVariableDef` служит для определения переменной ограничения, предназначенного для описания детейлов. Используется совместно с [ExternalLangDef](fo_external-lang-def.html).
+Class `DetailVariableDef` is used to determine the variable restrictions, to describe detailov. Used in conjunction with [ExternalLangDef](fo_external-lang-def.html). 
 
-Определен в пространстве имен: `ICSSoft.STORMNET.Windows.Forms`.
-Сборка: `ExternalLangDef.dll`.
+Defined in namespace: `ICSSoft.STORMNET.Windows.Forms`. 
+Build: `ExternalLangDef.dll`. 
 
-При конструировании `DetailVariableDef` следует задать параметры:
+When designing `DetailVariableDef` specify the settings: 
 
-* `Type` - ObjectType-тип (можно получить `ldef.GetObjectType("Details")`),
-* `View` - имя представления детейла,
-* `ConnectMasterProp` - путь от детейла (см. описание далее),
-* `OwnerConnectProp` - к детейлу от объекта (см. описание далее).
+* `Type` - ObjectType-the type (you can get `ldef.GetObjectType("Details")`), 
+* `View` - the view name of detail, 
+* `ConnectMasterProp` - way from detail (see description below) 
+* `OwnerConnectProp` - detalu from the object (see the description later). 
 
-Примеры конструирования `DetailVariableDef` при задании ограничений доступны в статьях:
+Examples of design `DetailVariableDef` when setting restrictions is available in the article: 
 
-* [Ограничения на детейлы](fo_exist-details.html),
-* [Ограничение на детейлы с использованием свойств агрегатора](fo_limit-details.html).
+* [Restrictions on detali](fo_exist-details.html), 
+* [The limit on detaily using the properties of aggregator](fo_limit-details.html). 
 
-### Задание OwnerConnectProp и ConnectMasterProp
+### Job OwnerConnectProp and ConnectMasterProp 
 
-Часто возникают сложности при определении, что указывать в качестве `ConnectMasterProp` и `OwnerConnectProp`.
+Problems often arise in determining what to specify as `ConnectMasterProp` and `OwnerConnectProp`. 
 
-`ConnectMasterProp` указывается путь от детейла, а в `OwnerConnectProp` - к детейлу от объекта. 
+`ConnectMasterProp` specifies the path from detail and `OwnerConnectProp` - detalu from the object. 
 
-Связка происходит следующим образом: **Детейл.ConnectMasterProp = Объект.OwnerConnectProp**.
+The bundle is as follows: **Detail.ConnectMasterProp = Object.OwnerConnectProp**. 
 
-Cтоит отметить, что свойство `OwnerConnectProp` определяет, к какому объекту относятся детейлы. Если свойство не указано (т.е. указан `null`), то связка происходит по [первичному ключу](fo_primary-keys-objects.html)(т.е. по `StormMainObjectKey`).
+It is worth noting that the property `OwnerConnectProp` determines what objects are detaily. If the property is not specified (i.e., specified `null`), the conjunction occurs on the [primary key](fo_primary-keys-objects.html)(i.e. `StormMainObjectKey`). 
 
-#### Примеры использования
+#### Examples of usage 
 
-##### Пример1
+##### Example 1 
 
-![](/images/pages/products/flexberry-orm/query-language/diagramm.JPG)
+![](/images/pages/products/flexberry-orm/query-language/diagramm.JPG) 
 
-Необходимо отфильтровать УдостоверяющиеДокументы для ЗаявленияАбитуриента. 
-При задании `DetailVariableDef` следует указать: `OwnerConnectProp` = Личность, `ConnectMasterProp` = Личность.
+It is necessary to filter Odottamattomasti for Salenatural. 
+When setting `DetailVariableDef` should specify: `OwnerConnectProp` = Person, `ConnectMasterProp` = Identity. 
 
-##### Пример2
+##### Example 2 
 
-![](/images/pages/products/flexberry-orm/query-language/diagramm-2.PNG)
+![](/images/pages/products/flexberry-orm/query language/diagramm-2.PNG) 
 
-Необходимо отфильтровать ОбразовательныеДокументы для СтрокиРекомендательногоСписка. 
-При задании `DetailVariableDef` следует указать: `OwnerConnectProp` = ЗаявлениеАбитуриента.Личность, `ConnectMasterProp` = Личность.
+It is necessary to filter Obrazovatelnogo for Stroyrekonstruksiya. 
+When setting `DetailVariableDef` should specify: `OwnerConnectProp` = Zaveniaghina.Personality `ConnectMasterProp` = Identity. 
 
-Необходимо отфильтровать ОбразовательныеДокументы для СтрокиРекомендательногоСписка. 
-При задании `DetailVariableDef` следует указать: `OwnerConnectProp` = ЗаявлениеАбитуриента.Личность, `ConnectMasterProp` = Личность.
+It is necessary to filter Obrazovatelnogo for Stroyrekonstruksiya. 
+When setting `DetailVariableDef` should specify: `OwnerConnectProp` = Zaveniaghina.Personality `ConnectMasterProp` = Identity. 
 
-### Задание ограничений на псевдодетейлы
+### setting limits on pseudometal 
 
-Например, сущности "Клиент" и "Кредит" связаны представленным на изображении образом.
+For example, the entity "Customer" and "Credit" are connected shown in the image. 
 
-![](/images/pages/products/flexberry-orm/query-language/pseudo-details.png)
+![](/images/pages/products/flexberry-orm/query language/pseudo-details.png) 
 
-Нужно ограничить клиентов, задав при этом ограничение на ссылающихся на них кредиты.
- 
-Очевидно, что с точки зрения хранения данной объектной модели в БД в соответствии с [существующими правилами](fo_storing-data-objects.html), нет различия между агрегацией и простой ассоциацией. Поэтому запросы, ограничивающие выборку по критериям из дочерней таблицы, не отличаются в случае агрегации и ассоциации. Следовательно для построения ограничения в случае всевдодетейла необходимо использовать `DetailVariableDef` совместно с [ExternalLangDef](fo_external-lang-def.html). 
- 
-Если в описанном примере надо выбрать клиентов, у которых есть кредиты на срок более 15 лет, код будет выглядеть следующим образом:
+You need to restrict clients by setting the limit to reference them loans. 
+
+It is obvious that from the point of view of storage of this object model in the database in accordance with [existing rules](fo_storing-data-objects.html), there is no distinction between aggregation and simple Association. However, restricting the sample according to the criteria of the child table do not differ in the case of aggregation and Association. Therefore to build restrictions in the case of pseudometal you must use `DetailVariableDef` together with [ExternalLangDef](fo_external-lang-def.html). 
+
+If in the above example, it is necessary to select customers that have loans for more than 15 years, the code will look as follows: 
 
 ``` csharp
 ExternalLangDef ldef = ExternalLangDef.LanguageDef;
-LoadingCustomizationStruct lcsДолгосрочныеКлиенты = LoadingCustomizationStruct.GetSimpleStruct(typeof(Клиент), "КлиентE");
+LoadingCustomizationStruct lcsДолгосрочныеКлиенты = LoadingCustomizationStruct.GetSimpleStruct(typeof(Клиент), "Client");
 lcsДолгосрочныеКлиенты.LoadingTypes = new[) { typeof(Клиент) };
-var view = Information.GetView("КредитE", typeof(Кредит));
+var view = Information.GetView("Loan", typeof(Кредит));
 var dvd = new DetailVariableDef
 {
-    ConnectMasterPorp = "Клиент",
+    ConnectMasterPorp = "Client",
     OwnerConnectProp = new[) { SQLWhereLanguageDef.StormMainObjectKey },
     View = view,
     Type = ldef.GetObjectType("Details")
 };
 lcsДолгосрочныеКлиенты.LimitFunction = ldef.GetFunction(ldef.funcExist, dvd,
                                                         ldef.GetFunction(ldef.funcGEQ, 
-                                                        new VariableDef(ldef.GuidType, "СрокКредита"), 15));
+                                                        new VariableDef(ldef.GuidType, "Loanyears"), 15));
 ICSSoft.STORMNET.DataObject[) dobjsДолгосрочныеКлиенты = DataServiceProvider.DataService.LoadObjects(lcsДолгосрочныеКлиенты);
-```
+``` 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

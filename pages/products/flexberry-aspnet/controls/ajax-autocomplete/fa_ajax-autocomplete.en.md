@@ -1,58 +1,60 @@
----
-title: Автодополнение в веб-системах (AjaxAutocomplete)
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Web UI (Контролы)
-toc: true
-permalink: en/fa_ajax-autocomplete.html
-lang: en
----
+--- 
+title: auto-Completion in web systems (AjaxAutocomplete) 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET, Web UI (Controls) 
+toc: true 
+permalink: en/fa_ajax-autocomplete.html 
+lang: en 
+autotranslated: true 
+hash: 2276ac97f8ec78ce32dc6a4e0991bdf08979eafea25c0dfa77e6a7f5cf64bb51 
+--- 
 
-При помощи `AjaxAutocomplete` возможно, например, при редактировании имени объекта получить автодополнение для данного поля, в котором будут предлагаться имена существующих объектов, начинающихся на введенные символы. `AjaxAutocomplete` используется из библиотеки jquery ui, поэтому библиотека jquery ui должна быть подключена.
+With `AjaxAutocomplete` possible, for example, when you edit the object name to get auto-completion for this field, which will offer the names of existing objects that begin with the entered characters. `AjaxAutocomplete` use of jquery ui so jquery ui will need to be connected. 
 
-Также, имеется возможность связать [автодополнение с лукапом](fa_link-ajax-autocomplete-ajax-lookup.html). Либо включить автодополнение у [Ajax-лукапа](fa_master-editor-ajax-lookup.html).
+Also, it is possible to associate [with autocompletion lukapa](fa_link-ajax-autocomplete-ajax-lookup.html). Either enable auto-completion from [Ajax lucapa](fa_master-editor-ajax-lookup.html). 
 
-# Подключение
+# Connection 
 
-Если необходимые файлы не подключены, то необходимо выполнить следущее:
-1. Обновить версию `ICSSoft.STORMNET.Web.AjaxControls.dll`
-2. Добавить стили `jquery-ui.css` и картинку с индикатором загрузки `indicator.gif`;
-3. Добавить библиотеку `jquery ui`;
-4. Обновить версию `ICSSoft.STORMNET.Web.Tools.dll`
+If the file is not connected, you must perform the following: 
+1. To update the version `ICSSoft.STORMNET.Web.AjaxControls.dll` 
+2. Add styles `jquery-ui.css` and a picture with the loading `indicator.gif`; 
+3. Add library `jquery ui`; 
+4. To update the version `ICSSoft.STORMNET.Web.Tools.dll` 
 
-# Использование
+# Use 
 
-Следует убедиться, что настройки для [ServiceSecurityProvider](fa_service-security-provider.html) указаны верно.  
-Для того чтобы указать контрол, к которому будет применятся авдотополнение, необходимо добавить метод 
+You should make sure that the settings for [ServiceSecurityProvider](fa_service-security-provider.html) are correct. 
+In order to specify the control to which to apply autotopagnosia, you add a method 
 
 ```csharp
 AjaxAutocomplete.AddControlAutocomplete(контрол, тип_объектов, свойство_объекта)
-```
+``` 
 
-например, в `Page_Load()`;
+for example, in `Page_Load()`; 
 
-Имеется возможность указать, использовать ли поиск по подстроке и ограничение.
-
-```csharp
-//AjaxAutocomplete.AddControlAutocomplete(контрол, тип_объектов, свойство_объекта, использовать_ли_поиск_по_подстроке, ограничение);
-AjaxAutocomplete.AddControlAutocomplete(ctrlЦена, typeof(Кошка), "Цена", false, func2);
-```
-
-## Пример
+You can specify whether to use search for a substring and limiting. 
 
 ```csharp
-AjaxAutocomplete.AddControlAutocomplete(ctrlКличка, typeof(Кошка), "Кличка");
-AjaxAutocomplete.AddControlAutocomplete(ctrlЦена, typeof(Кошка), "Цена");
-```
+//AjaxAutocomplete.AddControlAutocomplete(control, typoberlin, svoistvakh, использовать_ли_поиск_по_подстроке, limit); 
+AjaxAutocomplete.AddControlAutocomplete(ctrlЦена, typeof(Кошка), "The price", false, func2);
+``` 
 
-## Сортировка и Distinct
+## Example 
 
-Если для ввода указано представление, то все поля попадут под Distinct. Накладывать сортировку можно на любое свойство в представлении.
+```csharp
+AjaxAutocomplete.AddControlAutocomplete(ctrlКличка, typeof(Кошка), "Nickname");
+AjaxAutocomplete.AddControlAutocomplete(ctrlЦена, typeof(Кошка), "The price");
+``` 
 
-## Раскраска совпадающих символов в выпадающем списке
+## Sorting and Distinct 
 
-Весь javascript, связанный с автодополнением находится в файле `AjaxDataService.js`.
+If input is specified in the view, then all the fields will fall under Distinct. To apply sorting on any property in view. 
 
-Для раскраски символов был переопределен `renderItem` у прототипа автокомплита.
+## Coloring matching characters in the dropdown list 
+
+All the javascript associated with the autocomplete file is `AjaxDataService.js`. 
+
+Coloring characters were redefined `renderItem` the prototype autocomplete. 
 
 ```javascript
 $(function () {
@@ -67,4 +69,8 @@ $(function () {
             .appendTo(ul);
     };
 });
-```
+``` 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

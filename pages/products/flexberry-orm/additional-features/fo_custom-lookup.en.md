@@ -1,67 +1,69 @@
----
-title: Custom control as LookUp
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, control, generation, stage, example
-summary: Recommendations for creating custom control as LookUp
-toc: true
-permalink: en/fo_custom-lookup.html
-lang: en
----
+--- 
+title: Arbitrary control as lucapa 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, control, generation, stage, example 
+summary: Guidelines for creating a custom control as lucapa 
+toc: true 
+permalink: en/fo_custom-lookup.html 
+lang: en 
+autotranslated: true 
+hash: 37a9c1b39a3f5622470add8b404ff64f6ef489406d75d3567d13914e73b29533 
+--- 
 
-## Требования к контролу
+## Requirements for control 
 
-Для того чтобы возможно было генерировать произвольный контрол в качестве лукапа, необходимо, чтобы он реализовывал интерфейс `ICSSoft.STORMNET.Windows.Forms.ILookup`. Если контрол не реализует интерфейс `ICSSoft.STORMNET.Windows.Forms.ICustomizableControl`, то он будет просто сгенерирован без адекватной настройки собственных свойств.
+In order to be able to generate arbitrary control as lucapa, it is necessary to implement interface `ICSSoft.STORMNET.Windows.Forms.ILookup`. If the control does not implement the interface `ICSSoft.STORMNET.Windows.Forms.ICustomizableControl`, it is simply generated without adequate settings of their own properties. 
 
-В примере будет рассмотрена генерация `ExtLookUpTextControl`.
+In the example we will generate `ExtLookUpTextControl`. 
 
-{% include important.html content="В настоящее время лучше использовать [ExtendedLookUp](fw_extended-lookup.html) вместо `ExtLookUpTextControl` (оба контрола находятся в одной библиотеке)." %} 
+{% include important.html content="currently it is better to use [ExtendedLookUp](fw_extended-lookup.html) instead `ExtLookUpTextControl` (both control are in the same library)." %} 
 
-## Генерация
+## Generation 
 
-В настройках стадии нужно выбрать вкладку "Дополнительно" и нажать кнопку "Дополнительные настройки".
-![](/images/pages/products/flexberry-orm/additional-features/i-lookup1.JPG)
+In the settings stage you need to choose the "Advanced" tab and click "advanced settings". 
+![](/images/pages/products/flexberry-orm/additional-features/i-lookup1.JPG) 
 
-Выбрать сборку, содержащую контрол.
-Значение в колонке "Название" можно изменить.
+Select the Assembly that contains the control. 
+The value in column "Name" can be changed. 
 
-![](/images/pages/products/flexberry-orm/additional-features/i-lookup2.JPG)
+![](/images/pages/products/flexberry-orm/additional-features/i-lookup2.JPG) 
 
-Открыть представление объекта, где есть ссылка на мастера. И в настройках лукапа указать:
+To open the object representation where there is a link to the wizard. And in the settings lucapa specify: 
 
-* `Тип лукапа` - custom
-* В ComboBox `Имя Лукапа` - имя контрола, которое было указано в настройках стадии
-* `Свойство мастера` - свойство мастера, к которому будет привязываться (binding) контрол. Например, для предиктивного ввода.
+* `Тип лукапа` - custom 
+* In the ComboBox `Имя Лукапа` is the name of the control that was specified in the settings of the stage 
+* `Свойство мастера` - property master, to which will be attached (binding) control. For example, for predictive. 
 
-![](/images/pages/products/flexberry-orm/additional-features/i-lookup3.JPG)
+![](/images/pages/products/flexberry-orm/additional-features/i-lookup3.JPG) 
 
-Сгенерировать приложение как обычно. Запустить. В итоге будет получена форма со сгенерированным контролом.
+Generate the application as usual. Start. In the end, you will receive a form with the generated control. 
 
-![](/images/pages/products/flexberry-orm/additional-features/i-lookup4.JPG)
+![](/images/pages/products/flexberry-orm/additional-features/i-lookup4.JPG) 
 
-## Полученный код
+## the resulting code 
 
-В сгенерированной форме создается контрол
+In the generated form is created control 
 
 ```csharp
 protected ICSSoft.STORMNET.Windows.Forms.ExtLookUpTextControl ctrlПорода;
-```
+``` 
 
-Добавляется информация о контроле
-
-```csharp
-m_arrLookupInformations.Add(new ICSSoft.STORMNET.UI.LookupInformation(this.ctrlПорода, "Порода", "STORMCASE.STORMNET.Generator.SerializeNewEditForm/EditPanel(Panel)/ctrlПорода(Ext" + "LookUpTextControl)", null));
-```
-
-Прописываются биндинги для `EditManager`
+Added information about control 
 
 ```csharp
-EditManager.Bindings = new ICSSoft.STORMNET.Windows.Forms.Design.Binds("КИЛ_КошкаE", typeof(IIS.КошкиСЛапами.Кошка), new ICSSoft.STORMNET.Windows.Forms.Design.OneBind[] {
-            new ICSSoft.STORMNET.Windows.Forms.Design.OneBind(ctrlПорода, typeof(ICSSoft.STORMNET.Windows.Forms.ExtLookUpTextControl), "Value", null, "Порода"),
+m_arrLookupInformations.Add(new ICSSoft.STORMNET.UI.LookupInformation(this.ctrlПорода, "Breed", "STORMCASE.STORMNET.Generator.SerializeNewEditForm/EditPanel(Panel)/ctrlПорода(Ext" + "LookUpTextControl)", null));
+``` 
+
+Prescribed binding for `EditManager` 
+
+```csharp
+EditManager.Bindings = new ICSSoft.STORMNET.Windows.Forms.Design.Binds("Kilkuskie", typeof(IIS.КошкиСЛапами.Кошка), new ICSSoft.STORMNET.Windows.Forms.Design.OneBind[] {
+            new ICSSoft.STORMNET.Windows.Forms.Design.OneBind(ctrlПорода, typeof(ICSSoft.STORMNET.Windows.Forms.ExtLookUpTextControl), "Value", null, "Breed"),
             ...
             );
-```
+``` 
 
-Проставляются свойства контролу
+Tabulated properties of the control 
 
 ```csharp
 ctrlПорода.DataObjectTypes = null;
@@ -88,4 +90,8 @@ ctrlПорода.ОтображаемоеСвойство = null;
 ctrlПорода.ОтображатьВсеПоляПриLookup = true;
 ctrlПорода.РежимВводаЗначений = false;
 ctrlПорода.РежимМастерСтрокой = false;
-```
+``` 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

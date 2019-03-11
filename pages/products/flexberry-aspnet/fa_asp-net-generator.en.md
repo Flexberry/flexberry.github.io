@@ -1,87 +1,93 @@
----
-title: Плагин генерации Flexberry ASP.NET
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_asp-net-generator.html
-lang: en
----
+--- 
+title: generation Plugin Flexberry ASP.NET 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_asp-net-generator.html 
+lang: en 
+autotranslated: true 
+hash: 7a7e5425c8719b3566ed76aa1e70b1fbf81a683a60d796354bee1812ceafc735 
+--- 
 
-## Пример использования Flexberry ASP.NET
+## Example of using Flexberry ASP.NET 
 
-Для того чтобы сгенерировать web-приложение при помощи Flexberry Desinger нужно:
-1. Создать диаграмму классов.
-2. Создать диаграмму с формами
-3. Сгенерировать объекты
-4. Скомпилировать объекты
-5. Сгенерировать web-приложение
+To generate a web application using Flexberry Desinger you need to: 
+1. To create a class diagram. 
+2. To create a diagram with shapes 
+3. To generate objects 
+4. To compile the objects 
+5. To generate a web application 
 
-*Замечание*: Для ускорения процесса создания приложения можно воспользоваться прототипизацией
+*Note: To accelerate the process of creating the application, you can use prototypical 
 
-Пример:
+Example: 
 
-![](/images/pages/products/flexberry-aspnet/aspnet/cat-object.png)
+![](/images/pages/products/flexberry-aspnet/aspnet/cat-object.png) 
 
-![](/images/pages/products/flexberry-aspnet/aspnet/cat-form.png)
+![](/images/pages/products/flexberry-aspnet/aspnet/cat-form.png) 
 
-Далее необходимо сгенерировать код при помощи плагина `ASP.NET`, только объекты(objects). Нужно привести в соответствие структуру БД, перед этим, нажав на пункт `SQL` -> (выбрать тип БД) -> `Привести БД в соответствие с моделью`, задать еобходимые настройки подключения. Также нужно скомпилировать проект.
+Next, you need to generate code using the plugin `ASP.NET`, only the objects(objects). You need to align the structure of the database before doing this by clicking `SQL` -> (select database) -> database `Привести in accordance with моделью`, to specify required connection settings. You also need to compile the project. 
 
-## Генерация объектов
+## Generation of objects 
 
-Для генерации объектов используется меню Стадии `ASP.NET`
+To generate objects using the menu Stage `ASP.NET` 
 
-![](/images/pages/products/flexberry-aspnet/genmenu.png)
+![](/images/pages/products/flexberry-aspnet/genmenu.png) 
 
-Чтобы сгенерировать объекты, необходимо выбрать пункт меню `ASP.NET` -> `C#` -> `Генерировать` и выбрать объекты.
+To generate objects, you must select the menu item `ASP.NET` -> `C#` -> `Генерировать` and select objects. 
 
-![](/images/pages/products/flexberry-aspnet/gen-object-web.png)
+![](/images/pages/products/flexberry-aspnet/gen-object-web.png) 
 
-В результате в папке, в которую генерируется код этого приложения, появится проект с объектами.
+As a result, in the folder to which generated code for this application, you will see a project with objects. 
 
-## Компиляция объектов
+## Compilation of objects 
 
-Чтобы скомпилировать объекты, необходимо выбрать пункт меню `ASP.NET` -> `C#` -> `Компилировать` и выбрать Объекты.
+To compile objects, you must select the menu item `ASP.NET` -> `C#` -> `Компилировать` and select Objects. 
 
-![](/images/pages/products/flexberry-aspnet/compilation-object-web.png)
+![](/images/pages/products/flexberry-aspnet/compilation-object-web.png) 
 
-В результате проект Объектов скомпилируется в .DLL файл.
+As a result, the project sites will be compiled in .The DLL file. 
 
-## Подключение плагина ASP.NET к Flexberry Desinger
+## plugin Connection ASP.NET to Flexberry Desinger 
 
-По умолчанию плагин обычно подключен. Если плагина нет, то его можно подключить следующим образом: выбрать в тулбаре Flexberry Desinger пункт `Настройки` -> `Модули` и добавить в список плагин `ASP.NET`.
+By default, the plugin usually connected. If the plugin is not, then it can be connected in the following way: select in the toolbar Flexberry Desinger item `Настройки` -> `Модули` and add to the list of plugin `ASP.NET`. 
 
-## Генерация проекта и конфигурирование базы
+## Generation of project and configuration database 
 
-1. Генерируем проект нажатием на пункт меню `ASP.NET` -> `C#` -> `Генерировать`, выбрать `ASP.NET Application`
-2. Далее нужно создать полномочия `SQL` -> (выбрать тип БД) -> `Полномочия` -> `Создать полномочия`.
-3. Если нужно создать пользователя по умолчанию (admin, admin), это можно сделать пунктом меню `SQL` -> (выбрать тип БД) -> `Полномочия` -> `Создать пользователя по умолчанию`
-4. После того как генерация успешно завершена, можно нажать на пункт меню `ASP.NET` -> `C#` -> `Открыть в Visual Studio...`
+1. The generated project by clicking on the menu item `ASP.NET` -> `C#` -> `Генерировать`, choose `ASP.NET Application` 
+2. Next you need to create authority `SQL` -> (select database) -> `Полномочия` -> `Создать полномочия`. 
+3. If you want to create a default user (admin, admin), you can do menu item `SQL` -> (select database) -> `Полномочия` -> `Создать user умолчанию` 
+4. After generation is successfully completed, you can click on the menu item `ASP.NET` -> `C#` -> `Открыть in Visual Studio...` 
 
-*Замечание : Все формы с кириллическими именами при генерации транслитерируются. Это сделано для избежания ошибок, связанных с кириллическими URL в адресной строке.*
+*Note : All forms with Cyrillic names when generating transliterated. This is done to avoid errors associated with Cyrillic URL in the address bar.* 
 
-## Повторная генерация ASP.NET-приложения
+## Re-generation ASP.NET applications 
 
-При повторном запуске генератора происходит перезапись кода всех веб-форм, для которых не был использован соответствующим образом комментарий `FlexberryAutogenerated` (см. ниже "Отключение перегенерации форм"). Для избежания случайной потери изменений, внесенных разработчиком, при перегенерации (генерация считается повторной если существует непустой файл проекта) разработчику выводится предупреждение:
+When you re-run the generator overwrites the code in all the web forms were not used appropriately review `FlexberryAutogenerated` (see below "disable the generation of forms"). To avoid accidental loss of changes made by the developer, by generation (generation considered repeated if there is a non-empty project file), the developer displays a warning: 
 
-![](/images/pages/products/flexberry-aspnet/aspnet/asp-genwarning.png)
+![](/images/pages/products/flexberry-aspnet/aspnet/asp-genwarning.png) 
 
-При выборе варианта `Нет` дальнейшая генерация не выполняется. 
+If you select `Нет` the future generation is not performed. 
 
-## Отключение перегенерации форм
+## disable the generation of forms 
 
-Если требуется, чтобы файл с кодом веб-формы не перезаписывался при повторной генерации, нужно добавить в начало этого файла комментарий 
-  
+If you want the code file of the web form is not overwritten when you regenerate, you need to add in the beginning of the file review 
+
 ```csharp
   /* FlexberryAutogenerated="False" */ 
-```
+``` 
 
-  для cs-файлов и 
+for cs files and 
 
 ```xml
   <%-- FlexberryAutogenerated="False" --%>
-```
-  для aspx-файлов.
+``` 
+for. aspx files. 
 
-## Описание работы генератора ASP.NET
+## job Description generator ASP.NET 
 
-* Нюансы генерации веб-форм описаны в статье [Генерация форм во Flexberry ASP.NET](fa_form-generation.html)
+* The nuances of generating web forms described in the article [Generate forms in Flexberry ASP.NET](fa_form-generation.html) 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

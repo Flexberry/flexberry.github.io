@@ -1,44 +1,50 @@
----
-title: Подключение монитора запросов к базе данных
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, БД
-toc: true
-permalink: en/fa_connect-task-monitor.html
-lang: en
----
+--- 
+title: monitor Connection requests to the database 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP NET database 
+toc: true 
+permalink: en/fa_connect-task-monitor.html 
+lang: en 
+autotranslated: true 
+hash: 9e372a03c44e72c82889a5833d9d3f5f908b488776a9d7f25032bcf75c5de26a 
+--- 
 
-## Монитор запросов к SQL
+## Monitor queries to SQL 
 
-Зачастую бывает необходимо посмотреть запросы, которые выполняет сервис данных к хранилищу. Чтобы не подключать сторонние приложения (по типу SQL-profiler), можно воспользоваться [монитором задач Flexberry ASP.NET](fa_monitor-tasks.html).
+It is often necessary to see the queries that are performed by the service data to the repository. Not to connect third-party applications (like SQL profiler), you can use the [monitor task Flexberry ASP.NET](fa_monitor-tasks.html). 
 
-### Подключение монитора задач
+### monitor Connection task 
 
-Чтобы мониторить запросы к хранилищу данных можно
+To monitor a data warehouse query can 
 
-* Написать [собственный монитор задач](fo_creating-connection-bt-monitor.html)
-* Подключить существующий
+* Write [private task monitor](fo_creating-connection-bt-monitor.html) 
+* Attach existing 
 
-Подробнее о втором варианте:
+Read more about the second option: 
 
-Чтобы подключить монитор задач `ASPContextBusinessTaskMonitor.ASPContextBusinessTaskMon` необходимо:
+To connect the monitor task `ASPContextBusinessTaskMonitor.ASPContextBusinessTaskMon` should: 
 
-1. Добавить в файл конфигурации Web.Config строчку 
+1. To add to the configuration file Web.Config line 
 
 ```html
 <br><appSettings>
 <br><add key="BusinessTaskMonitorType" value="ICSSoft.STORMNET.Web.Tools.WebBusinessTaskMon, ICSSoft.STORMNET.Web.Tools" />
 <br></appSettings>
 <br>
-```
+``` 
 
-После чего при загрузке любой страницы будет появляться [ErrorBox](fa_exception-handling.html), содержащий все запросы, которые были выполнены при загрузке данной страницы. Если запросов было несколько, они будут помещены на различные "уровни".
+Then when loading any page will appear [ErrorBox](fa_exception-handling.html) containing all queries that were executed when loading the page. If requests were few, they will be placed on different "levels". 
 
-К примеру, при загрузке стартовой страницы происходит 2 запроса:
+For example, when loading the start page 2 request: 
 
-![](/images/pages/products/flexberry-aspnet/aspnet/monitor1.png)
+![](/images/pages/products/flexberry-aspnet/aspnet/monitor1.png) 
 
-![](/images/pages/products/flexberry-aspnet/aspnet/monitor2.png)
+![](/images/pages/products/flexberry-aspnet/aspnet/monitor2.png) 
 
-При загрузке списковой формы будет происходить значительно больше запросов:
+When you load list forms will be significantly more requests: 
 
-![](/images/pages/products/flexberry-aspnet/aspnet/monitor3.png)
+![](/images/pages/products/flexberry-aspnet/aspnet/monitor3.png) 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

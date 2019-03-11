@@ -1,17 +1,19 @@
----
-title: Отображение ошибок на формах
-sidebar: ember-flexberry_sidebar
-keywords: Flexberry Ember, errors
-toc: true
-permalink: en/ef_displaying-errors-on-forms.html
-folder: products/ember-flexberry/forms/
-lang: en
-summary: Управление отображением ошибок в списковых формах и формах редактирования.
----
+--- 
+title: Display errors on the forms 
+sidebar: ember-flexberry_sidebar 
+keywords: Flexberry Ember, errors 
+toc: true 
+permalink: en/ef_displaying-errors-on-forms.html 
+folder: products/ember-flexberry/forms/ 
+lang: en 
+autotranslated: true 
+hash: 38b030c3c4a6f0b3441b5aa125c37f379dfa1e16bd54a762255b0ee91623ea20 
+summary: control the display of errors in list forms and edit forms. 
+--- 
 
-## Настройка отображения ошибок в формах
+## customize the display of errors in forms 
 
-Для того что бы изменить поведение по умолчанию, необходимо переопределить действие `error` в контроллере соответствующей формы. Единственным параметром этого метода будет объект ошибки, который необходимо установить в свойство, связанное с ошибкой в компоненте `flexberry-error` (по умолчанию `error`).
+In order to change the default behavior, you must override the action controller `error` in the appropriate form. The only parameter of this method will be the error object, which must be set to the property associated with the error in the component `flexberry-error` (default `error`). 
 
 ```javascript
 import Ember from 'ember';
@@ -27,11 +29,11 @@ export default Ember.Controller.extend({
     },
   },
 });
-```
+``` 
 
-## Настройка создания ошибок в адаптере
+## the setting error in the adapter 
 
-Для того что бы изменить поведение по умолчанию, необходимо переопределить метод `handleResponse` в адаптере, в котором можно создавать ошибки преобразуя ответ сервера в понятные пользователю сообщения.
+In order to change the default behavior, you must override the method `handleResponse` in the adapter, in which you can create error converting the response from the server in a user-friendly message. 
 
 ```javascript
 import DS from 'ember-data';
@@ -50,4 +52,8 @@ export default DS.RESTAdapter.extend({
     return this._super(...arguments);
   },
 });
-```
+``` 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -1,66 +1,66 @@
----
-title: Layout web pages
-keywords: Programming
-sidebar: guide-base-tech_sidebar
-toc: true
-permalink: en/gbt_layout.html
-folder: guides/base-tech/frontend/
+--- 
+title: Layout web pages 
+keywords: Programming 
+sidebar: guide-base-tech_sidebar 
+toc: true 
+permalink: en/gbt_layout.html 
+folder: guides/base-tech/frontend/ 
 lang: en 
 autotranslated: true 
-hash: cd8a36891f214ddccb408efa12d8f654139011eb76a23f296b0344ed773fdfa6
----
+hash: 455c5965136725e25b78b0aaabc6f6f86bc347c5bf180bf16b7069767589bdd5 
+--- 
 
-## Brief description
+## Brief description 
 
-## Links to materials for the study
+## Links to materials for the study 
 
-* [-]()
-* [-]()
+* [-]() 
+* [-]() 
 
-### Presentation
+### Presentation 
 
-### Recommended books
+### Recommended books 
 
-* [-]()
-* [-]()
+* [-]() 
+* [-]() 
 
-## Software
+## Software 
 
-* [-]()
-* [-]()
+* [-]() 
+* [-]() 
 
-## Laboratory work and practical tasks
+## Laboratory work and practical tasks 
 
-* [-]()
-* [-]()
+* [-]() 
+* [-]() 
 
-Variants of tasks for independent performance, and then reviewing on the part of the teacher.
+Variants of tasks for independent performance, and then reviewing on the part of the teacher. 
 
-### Option # 1
+### Option # 1 
 
-### Option # 2
+### Option # 2 
 
-### Option # 3
+### Option # 3 
 
-### Option # 4
+### Option # 4 
 
-### Option # 5
+### Option # 5 
 
-## Examples
+## Examples 
 
-* [-]()
-* [-]()
+* [-]() 
+* [-]() 
 
-## Opportunities for certification
+## Opportunities for certification 
 
-* [-]()
-* [-]()
+* [-]() 
+* [-]() 
 
-## Go
+## Go 
 
-* [Ember.js](gbt_emberjs.html)
-* [Course home page](gbt_landing-page.html)
+* [Ember.js](gbt_emberjs.html) 
+* [Course home page](gbt_landing-page.html) 
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

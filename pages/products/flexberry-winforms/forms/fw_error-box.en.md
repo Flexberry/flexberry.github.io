@@ -1,98 +1,104 @@
----
-title: ErrorBox
-sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (формы)
-summary: Рассматриваются способы обработки ошибочных ситуаций в приложении, указаны способы изменения стандартного поведения в прикладном коде
-toc: true
-permalink: en/fw_error-box.html
-folder: products/flexberry-winforms/
-lang: en
----
+--- 
+title: ErrorBox 
+sidebar: flexberry-winforms_sidebar 
+keywords: Windows UI (forms) 
+summary: Discusses the ways of handling error situations in the application, shows you how to change the default behavior in the application code 
+toc: true 
+permalink: en/fw_error-box.html 
+folder: products/flexberry-winforms/ 
+lang: en 
+autotranslated: true 
+hash: a6a50c9fc8c9860ddb647412758bcfd9cef5703c167132eafba751e3a15cb1e8 
+--- 
 
-## Работа с исключительными ситуациями в приложениях
-Flexberry Platform в сборке `ICSSoft.STORMNET.UI.dll` содержит классы для обработки исключительных ситуаций. 
+## Work with exceptions in applications 
+Flexberry Platform in the Assembly `ICSSoft.STORMNET.UI.dll` contains classes to handle exceptional situations. 
 
-## Простое отображение ошибки
-Стандартный сценарий отображения Exception в специальной форме выглядит так:
+## a Simple mapping error 
+The standard scenario display the Exception in a special form looks like this: 
 
 ```csharp
 try
 {
-  throw new Exception("Опаньки!");
-  //...
+  throw new Exception("Aw, snap!");
+  //... 
 }
 catch(Exception ex)
 {
   ErrorBox.Show(ex);
 }
-```
+``` 
 
-## Более сложный сценарий выдачи информации об исключениях
-Иногда чтобы понять что случилось в системе недостаточно знать номер строки в исходном коде. Для таких случаев есть возможность сделать ряд снимков экрана, добавить дополнительную информацию об ошибках и передать это всё на форму отображения ошибки. Оговоримся, что вся эта информация не будет использована пока пользователь не выгрузит её с помощью какого-либо провайдера отчётов об ошибках.
+## More complicated scenario of release of information about exceptions 
+Sometimes to understand what happened in the system not enough to know the line number in the source code. For such cases, it is possible to make a number of screen shots, add additional information about the error and pass it to the form, display the error. First of all, all of this information will not be used until the user uploads it with the help of some provider error reports. 
 
-Итак, чтобы получить снимки экрана:
+So, to get the screen shots: 
 
 ```csharp
-//Сделаем снимок только формы
+//Make the only form 
 Bitmap screen1 = ErrorBox.CaptureScreenShot(formToCapture);
-//или снимем весь экран
+//or create the whole screen 
 Bitmap screen2 = ErrorBox.CaptureScreenShot();
-```
+``` 
 
-Для того чтобы вывести эти снимки и сообщение:
+In order to bring these pictures and the message: 
 
 ```csharp
-//...
+//... 
 catch(Exception ex)
 {
   List<Bitmap> screens = new List<Bitmap>();
   screens.Add(screen1);
   screens.Add(screen2);
-  ErrorBox.Show(ex, screens, "Дополнительная информация об ошибке: переменная Х имеет значение:" + X);
+  ErrorBox.Show(ex, screens, "More information error: variable X has value:" + X);
 }
-```
+``` 
 
-## Провайдеры отчётов об ошибках
-Пользователь имеет возможность выгрузить информацию об ошибке, нажав на кнопку с синей дискеткой. По-умолчанию доступны 3 провайдера отчётов об ошибках: 
-* Сохранить отчёт об ошибке на диск
-* [Отправить отчет по электронной почте](fw_send-to-email-bug-report-provider.html)
-* Скопировать информацию в буфер обмена
+## Providers error reporting 
+The user has the option to upload the error information by clicking on the button with a blue floppy disk. Default available 3 provider error reporting: 
+* Save the error report to disk 
+* [Send report by email](fw_send-to-email-bug-report-provider.html) 
+* To copy information to the clipboard 
 
-Первые 2 варианта поддерживают сохранение изображений экрана (вся информация помещается в один zip-файл). В буфер обмена попадает только текстовая информация.
-
-
-Чтобы добавить свой провайдер отчёта об ошибке, нужно унаследоваться от интерфейса `IBugReportProvider` и в конфигурационном файле добавить настройку `BugReportProviders`, в которой указать полные имена типов провайдеров, разделённые вертикальной чертой. 
-
-__Важно:__ нельзя подключить 2 провайдера с одинаковым MenuItemName (будет подключен только первый из них).
-
-Для работы с данными ошибки можно использовать статические методы класса `ErrorBox`.
+The first 2 options supports saving screen images (all the information is in one zip file). In the clipboard only the text information. 
 
 
-## Добавление информации о прикладной системе
-Класс `ICSSoft.STORMNET.Windows.Forms.ErrorBox` содержит статический делегат, который позволяет собрать информацию о системе для того, чтобы она попала в информацию об ошибке.
+To add your provider to report the error, you need to unasledovala `IBugReportProvider` from the interface and in the configuration file add setting `BugReportProviders` in which to specify the full names of types of providers, separated by a vertical bar. 
+
+__Important:__ never connect 2 providers with the same are defined (to be connected only the first one). 
+
+To work with the data errors you can use the static methods of the class `ErrorBox`. 
+
+
+## Adding information about the application 
+Class `ICSSoft.STORMNET.Windows.Forms.ErrorBox` contains a static delegate that allows you to collect system information in order to get the information about the error. 
 
 ```csharp
-/// <summary>
-/// Делегат для сбора информации о прикладной системе
-/// </summary>
-/// <returns></returns>
+/// <summary> 
+/// Delegate to collect information about the application 
+/// </summary> 
+/// <returns></returns> 
 public delegate string GetCurrentAppInfoDelegate();
 
-/// <summary>
-/// Делегат, который должен собрать информацию о прикладном приложении. Его результат будет присобачен к общей информации о системе.
-/// </summary>
+/// <summary> 
+/// Delegate to collect information on the applied application. The result will be prisobachit to General information about the system. 
+/// </summary> 
 public static GetCurrentAppInfoDelegate GetCurrentAppInfo = null;
-```
+``` 
 
-## Обработка неотловленных исключений в прикладных системах
-Чтобы пользователям не показывалась "страшная" форма с информацией об ошибке, если случилось неотловленное исключение, нужно подписаться на события `Application.ThreadException` и `System.AppDomain.CurrentDomain.UnhandledException` для того чтобы обработать их правильным образом.
+## Handling uncaught exceptions in application systems 
+So that users do not show "terrible" form with error information, if there was uncaught exception, you need to subscribe to events `Application.ThreadException` and `System.AppDomain.CurrentDomain.UnhandledException` to treat them properly.
 
-Генератор приложений Flexberry добавляет строки
+The application generator adds the string Flexberry 
 
 ```csharp
 System.Windows.Forms.Application.ThreadException += ICSSoft.STORMNET.Windows.Forms.ErrorBox.ApplicationThreadException;
 System.AppDomain.CurrentDomain.UnhandledException += ICSSoft.STORMNET.Windows.Forms.ErrorBox.CurrentDomainUnhandledException;
-```
+``` 
 
-в метод `Main` приложения (в скобках программиста). Обработчики `ICSSoft.STORMNET.Windows.Forms.ErrorBox.ApplicationThreadException` и `ICSSoft.STORMNET.Windows.Forms.ErrorBox.CurrentDomainUnhandledException` просто запускают стандартную `ErrorForm` с информацией об исключении. Если требуется особая логика, то можно использовать собственный обработчик события. 
+in the method `Main` applications (in parenthesis the programmer). Handlers `ICSSoft.STORMNET.Windows.Forms.ErrorBox.ApplicationThreadException` and `ICSSoft.STORMNET.Windows.Forms.ErrorBox.CurrentDomainUnhandledException` just run standard `ErrorForm` with information about the exception. If you need a custom logic, then you can use your own event handler. 
 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

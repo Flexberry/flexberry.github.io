@@ -1,30 +1,32 @@
----
-title: Data object locking
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, DataObject, LockService
-summary: Description, methods and example of locks
-toc: true
-permalink: en/fo_blocking-object-data.html
-lang: en
----
+--- 
+title: Block of the data object 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, object data, lock 
+summary: Description, methods, and sample locks 
+toc: true 
+permalink: en/fo_blocking-object-data.html 
+lang: en 
+autotranslated: true 
+hash: b483216d92711a6a708dda05bb21239de25132349b03f32a237a4ae8832c7d53 
+--- 
 
-Следует отметить, что механизм блокировок реализуется [сервисом блокировок](fo_lock-service.html) `LockService`, который сохраняет информацию об устанавливаемой на объект данных блокировке в хранилище данных. Это позволяет защитить от изменения объект данных, даже если он редактируется другим пользователем.
+It should be noted that the locking mechanism is implemented [service locks](fo_lock-service.html) `LockService` that stores information about the selected data object to the lock in the data store. This is to protect against changes in the data object, even if it is being edited by another user. 
 
-Однако возникают ситуации, когда удобно временно защитить какой-либо объект данных от изменения, например, от изменения по ошибке из какого-либо другого места программы. В этом случае вместо использования сервиса блокировок можно применить описываемый в данной статье способ.
+However, there are situations when it is convenient temporarily to protect any data object from being modified, for example, from the change in error from any other place in the program. In this case, instead of using the service of locks, you can apply described in this article method. 
 
-При использовании описываемого метода информация о блокировке хранится непосредственно в экземпляре [объекта данных](fo_data-object.html): установка блокировки не отразится на других инстанциях данного объекта.
+When using the described method, information on lock is stored directly in the instance of [data object](fo_data-object.html): lock setting will not affect other instances of the object. 
 
-Пример использования: в Windows-приложении блокировка устанавливается данным образом для объекта данных, если открывается его форма редактирования, а у пользователя недостаточно полномочий на изменение объекта.
+Usage example: in a Windows application lock is set in this manner for the data object, if it opens the edit form and the user does not have authority to modify the object. 
 
-## Методы блокировки в DataObject
+## blocking Methods in the DataObject 
 
-Для блокировки необходимо вызвать у объекта данных метод `DataObject#LockObject` с каким-либо ключом блокирования (любое значение любого типа).
+To lock you need to call the data object method `DataObject#LockObject` with any key block (any value of any type). 
 
-Разблокировать можно вызовом метода `DataObject#LockObject` с передачей того же ключа. Таким образом, разблокировать объект можно, только зная ключ блокирования, что исключает возможность случайного изменения объекта данных.
+Unblock can call the method `DataObject#LockObject` passing the same key. Thus, to unlock the object only knowing the key lock that prevents accidental changes to the object data. 
 
-Всё время, пока объект заблокирован, свойство `IsReadOnly` возвращает `true`, а защищённый (`protected`) метод объекта данных `CheckReadOnly` выдаёт исключение `DataObjectIsReadOnlyException`. Соответственно, проверку на заблокированность программист должен либо проводить «снаружи» объекта данных вызовом свойства `IsReadOnly`, либо добавить внутри свойства объекта данных перед изменением значения вызов метода `CheckReadOnly`. Не следует злоупотреблять данной возможностью (добавлять `CheckReadOnly` во много мест), поскольку это вызовет падение производительности при обращении к свойствам - лучше явно проверять `IsReadOnly`.
+All the time while the object is locked, the property `IsReadOnly` returns `true` and protected (`protected`) method of the data object throws an exception `CheckReadOnly` `DataObjectIsReadOnlyException`. Accordingly, checking for blockages, the programmer must either hold «outside» data object with a call to `IsReadOnly` properties, or add properties inside of the data object before changing values in the method call `CheckReadOnly`. You should not abuse this opportunity (add `CheckReadOnly` in many places), as this will cause a performance drop when accessing the properties - it is better to explicitly check `IsReadOnly`. 
 
-## Пример
+## Example 
 
 ```csharp 
 using System;
@@ -83,7 +85,7 @@ namespace Locking
 
 			my.LockObject(1);
 			myover.LockObject(2);
-			//Для my необходима явная проверка
+			//Necessary for my clear test 
 			if (my.IsReadOnly) 
 			{
 				Console.WriteLine("my Locked");
@@ -93,7 +95,7 @@ namespace Locking
 				my.MyAttr = "STORM.NET Framework";
 			}
 
-			//Для myover - нет
+			//For myover - no 
 			try
 			{
 				myover.MyAttr= "STORM.NET Framework";
@@ -113,9 +115,13 @@ namespace Locking
 
 			prv_PrintObjects();
 
-			Console.WriteLine("\n\n\nPress Enter to exit.");
+			Console.WriteLine("\n\n\press Enter to exit.");
 			Console.Read();
 		}
 	}
 }
-```
+``` 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

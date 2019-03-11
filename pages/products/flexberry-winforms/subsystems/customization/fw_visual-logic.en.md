@@ -1,27 +1,33 @@
----
-title: Визуальная логика
-sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (формы)
-summary: Перечислены наиболее часто применяемые на прикладных проектах варианты доработки визуальной логики, приведены ссылки на статьи по реализации данных возможностей
-toc: true
-permalink: en/fw_visual-logic.html
-folder: products/flexberry-winforms/
-lang: en
----
+--- 
+title: Visual logic 
+sidebar: flexberry-winforms_sidebar 
+keywords: Windows UI (forms) 
+summary: Lists the most frequently used in the application project options improvements in visual logic, and provides links to articles on the implementation of these opportunities 
+toc: true 
+permalink: en/fw_visual-logic.html 
+folder: products/flexberry-winforms/ 
+lang: en 
+autotranslated: true 
+hash: 3cbad87dfff51dcf4792c0df7c8901918585f02274770396cc584b9f67800dcd 
+--- 
 
-Доработка визуальной логики направлена на ускорение работы пользователя с интерфейсом и на уменьшение количества ошибок при работе с приложением.
+Development of visual logic aims at improving the user experience with the interface and to reduce the number of errors when working with the application. 
 
-Визуальная логика тесно пересекается с [настройкой пользовательского интерфейса](fw_customizing-the-user-interface.html).
+Visual logic is closely connected with [user interface customization](fw_customizing-the-user-interface.html). 
 
-## Сценарии доработки
+## Scenario refinement 
 
-* Добавление подсветки полей ([HighLighter](fw_high-lighter.html))
-* Настройка [лукапов](fa_lookup-overview.html) и [детейлов](fo_detail-associations-properties.html)
-* Настройка стилей и кнопок списков ([подробнее](fd_listform.html) см. раздел `ListFormOperations`)
-* Добавление [всплывающих подсказок](http://msdn.microsoft.com/ru-ru/library/system.windows.forms.tooltip.aspx)
-* Генерация контролов предиктивного ввода ([Win](fw_predict-input.html), [Web](fa_predict-input-web.html))
-* Настройка [сортировки списков](fw_list-sort.html)
-<!--* Добавление поиска по списку и\или собственных фильтров для списков-->
-* Реализация режима “ReadOnly” ([Win](fw_readonly-win.html), [Web](fa_read-only-web.html))
-<!--* Добавление плоского списка к иерархическому-->
-* Настройка переходов между закладками (к примеру, можно реализовать загрузку данных закладки не при инициализации формы, а только при открытии закладки пользователем)
+* Add fields highlight ([HighLighter](fw_high-lighter.html)) 
+* Configure [lyapov](fa_lookup-overview.html) and [datalow](fo_detail-associations-properties.html) 
+* Customize styles button ([more](fd_listform.html) see `ListFormOperations`) 
+* Add [tooltip](http://msdn.microsoft.com/ru-ru/library/system.windows.forms.tooltip.aspx) 
+* Generate predictive controls ([Win](fw_predict-input.html), [Web](fa_predict-input-web.html)) 
+* To set [sort the lists](fw_list-sort.html) 
+<!--* Adding search through the list and\or your own custom filters for lists--> 
+* Implementation of “mode ReadOnly” ([Win](fw_readonly-win.html), [Web](fa_read-only-web.html)) 
+<!--* Adding a flat list to a hierarchical--> 
+* Setup transitions between the tabs (for example, you can implement data upload tabs at form initialization, but only when you open the bookmarks by the user) 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

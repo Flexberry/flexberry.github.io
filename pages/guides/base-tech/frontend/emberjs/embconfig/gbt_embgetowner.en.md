@@ -1,24 +1,24 @@
----
-title: Ember.getOwner and properties of the instance of the application
-keywords: Programming
-sidebar: guide-base-tech_sidebar
-toc: true
-permalink: en/gbt_embgetowner.html
-folder: guides/base-tech/frontend/emberjs/embconfig/
+--- 
+title: Ember.getOwner and properties of the instance of the application 
+keywords: Programming 
+sidebar: guide-base-tech_sidebar 
+toc: true 
+permalink: en/gbt_embgetowner.html 
+folder: guides/base-tech/frontend/emberjs/embconfig/ 
 lang: en 
 autotranslated: true 
-hash: f755cf178dca69fdd8233fb8ba9ed6d27545e41819b62b76c5efde298ffcebad
----
+hash: a8fe768397935cfae3a831429b13437a0a400bd7ca6462054df07d007b1f8496 
+--- 
 
-## Brief description
+## Brief description 
 
-The contents of this page:
+The contents of this page: 
 
-* How to get to these settings without importing (via Ember.getOwner and properties of the instance of the application)
+* How to get to these settings without importing (via Ember.getOwner and properties of the instance of the application) 
 
-## Go
+## Go 
 
 * [Back](gbt_emberjs.html)
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

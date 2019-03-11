@@ -1,29 +1,31 @@
----
-title: Открытие лукап-формы с поддержкой иерархии 
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_lookup-form-hierarchy.html
-lang: en
----
+--- 
+title: Opening lookup-shape with the support of the hierarchy 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_lookup-form-hierarchy.html 
+lang: en 
+autotranslated: true 
+hash: 7b1e84de2fe8898af59a2e26a23fa6f05e049753829455df541fe89cbd4c6357 
+--- 
 
-Два способа, с помощью которых можно вывести данные на LookUp-форму в иерархическом виде:
+Two ways by which you can display the data on the LookUp form a hierarchical view: 
 
-* Использование свойства `LookUpFormURL`;
-* Использование `WOLVSettApplyer`.
+* Use properties `LookUpFormURL`; 
+* Use `WOLVSettApplyer`. 
 
-## Использование свойства LookUpFormURL
+## the use of the LookUpFormURL 
 
-Контрол `MasterEditorAjaxLookUp` позволяет задавать URL той формы, которая будет отображаться для выбора элемента с путем указания свойства `LookUpFormURL`.
+Control `MasterEditorAjaxLookUp` allows you to specify a URL of the form that will be displayed to select the element by specifying the properties `LookUpFormURL`. 
 
-Прежде чем задавать значение данного свойства, необходимо убедиться, что списковая форма с поддержкой иерархии уже разработана, а также во избежание возможных ошибок указания адреса, для данной списковой формы, на которой данные отображаются в иерархическом виде, необходимо определить свойство `FormPath`, содержащее путь до списковой формы с иерархией.
+Before you set the value of this property, you must ensure that the list form with the support of the hierarchy has been developed, and also to avoid possible errors, specify the address for the list form that displays data in hierarchical form, it is necessary to define a property `FormPath` that contains the path to the list forms a hierarchy. 
 
-К примеру, есть списковая форма `TestHierarchy.aspx`, у которой следующим образом задано свойство `FormPath`:
+For example, there is a list form `TestHierarchy.aspx`, which has the following property set `FormPath`: 
 
 ```csharp
-/// <summary>
-/// Путь до формы.
-/// </summary>
+/// <summary> 
+/// The path to the forms. 
+/// </summary> 
 public static string FormPath
 {
     get
@@ -31,21 +33,21 @@ public static string FormPath
         return "~/forms/Controls/WOLV/HierarchyTests/TestHierarchy.aspx";
     }
 }
-```
+``` 
 
-Тогда на той странице, на которой используется лукап, необходимо будет контролу-лукапу задать свойства `LookUpFormURL` следующим образом (помимо задания других основных необходимых настроек):
+Then on that page where you used lookup, you will need to control-lucapa to set properties `LookUpFormURL` the following (in addition to other essential settings): 
 
 ```csharp
 lookupTest.LookUpFormURL = TestHierarchy.FormPath;
-```
+``` 
 
-## Использование WOLVSettApplyer
+## Use WOLVSettApplyer 
 
-Также можно воспользоваться специальным тюнером для WOLV, который позволяет задавать дополнительные настройки для WOLV на прикладном уровне, - `WOLVSettApplyer`, который в свою очередь находится в `корне` сборки с ASP.NET приложением.
+You can also use a special tuner for WOLV, which allows you to specify additional settings for WOLV in the application layer, - `WOLVSettApplyer`, which in turn is `корне` Assembly ASP.NET app. 
 
-Однако необходимо проверить, что в конфигурационном файле веб-приложения указан правильный обработчик для лукап-формы, а именно той, которая была сгенерирована. То есть, если имеется сборка `SomeAssambly(ASP.NET Application)`, то правильным указанием обработчика лукап-формы будут следующие:
+However, you should verify that in the configuration file of the web application you specify the correct handler for lookup-shape, namely that which was generated. That is, if you have an Assembly `SomeAssambly(ASP.NET Application)`, the correct indication handler lookup forms will be as follows: 
 
-__Для IIS 7:__
+__For IIS 7:__ 
 
 ```xml
 <handlers>
@@ -53,9 +55,9 @@ __Для IIS 7:__
 <add name="LookUpForm" path="LookUpForm.aspx" verb="*" type="ICSSoft.STORMNET.Web.AjaxControls.HandlerFactories.PageHandlersFactory`1[[ICSSoft.STORMNET.Web.Controls.LookUpForm, SomeAssambly(ASP.NET Application)]], ICSSoft.STORMNET.Web.AjaxControls" resourceType="Unspecified" preCondition="integratedMode" />
 ...
 </handlers>
-```
+``` 
 
-__Для IIS 6:__
+__For IIS 6:__ 
 
 ```csharp
 <httpHandlers>
@@ -63,4 +65,8 @@ __Для IIS 6:__
 <add verb="*" path="LookUpForm.aspx" type="ICSSoft.STORMNET.Web.AjaxControls.HandlerFactories.PageHandlersFactory`1[[ICSSoft.STORMNET.Web.Controls.LookUpForm, SomeAssambly(ASP.NET Application)]], ICSSoft.STORMNET.Web.AjaxControls" validate="false" />
 ...
 </httpHandlers>
-```
+``` 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

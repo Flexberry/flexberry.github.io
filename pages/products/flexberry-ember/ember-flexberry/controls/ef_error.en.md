@@ -1,16 +1,18 @@
----
-title: Displaying errors in the application
-sidebar: ember-flexberry_sidebar
-keywords: Flexberry Ember
-toc: true
-permalink: en/ef_error.html
-lang: en
-summary: Отображение flexberry-error, использование t-хелперов (локализации)
----
+--- 
+title: Display of errors in the application 
+sidebar: ember-flexberry_sidebar 
+keywords: Flexberry Ember 
+toc: true 
+permalink: en/ef_error.html 
+lang: en 
+autotranslated: true 
+hash: 64998e6856d405a528e4a8f2693aef566e45921a6db505f81cbf0255de1acd8b 
+summary: Display flexberry-error, the use of t-helpers (localization) 
+--- 
 
-[flexberry-error](https://github.com/Flexberry/ember-flexberry/blob/master/addon/components/flexberry-error.js) - компонент который отображает в «дружелюбном» для пользователя виде сообщение об ошибке.
+[flexberry-error](https://github.com/Flexberry/ember-flexberry/blob/master/addon/components/flexberry-error.js) is a component which displays in the» «friendly user error message. 
 
-[По умолчанию](https://github.com/Flexberry/ember-flexberry/blob/master/addon/components/flexberry-error.js#L8), для отображения сообщений об ошибках используется модальное окно, это поведение можно изменить, указав компоненту параметр `modal` со значением `false`: 
+[Umolchaniu](https://github.com/Flexberry/ember-flexberry/blob/master/addon/components/flexberry-error.js#L8)to display error messages to the modal window, this behavior can be changed by specifying a component parameter with a value of `modal` `false`: 
 
 ```hbs
 {% raw %}
@@ -18,9 +20,13 @@ summary: Отображение flexberry-error, использование t-х
     error=error
     modal=false}}
 {% endraw %}
-```
+``` 
 
-В этом случае для отображения ошибок будут использоваться компоненты [ui-message](ef_ui-message.html).
+In this case, the display error will be used the components of [ui-message](ef_ui-message.html). 
 
-Если в объекте ошибки есть свойство «messageLocaleKey» то для его отображения используется «t»-хелпер, т.е. можно добавить локализации для этих сообщений.
-Если в объекте ошибки есть свойство «errors», подобное массиву, компонент перебирает его элементы и отображает все в компоненте `flexberry-toggler`.
+If the error object has a property» «messageLocaleKey then to display it use» «t-helper, ie you can add localizations for these messages. 
+If the error object has a property» «errors like array, the component loops through its elements and displays all component `flexberry-toggler`. 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -1,17 +1,19 @@
----
-title: WebLockHelper
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_web-lock-helper.html
-lang: en
----
+--- 
+title: WebLockHelper 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_web-lock-helper.html 
+lang: en 
+autotranslated: true 
+hash: 10b81d7e164a9dec6cc6ed2d0c42c16a71166db1599278bb920f561fe2a50763 
+--- 
 
-`ICSSoft.STORMNET.Web.Tools.WebLockHelper` - класс для работы с web-блокировками объектов данных в веб-приложениях. Использует дату и время жизни блокировки для определения ее актуальности, блокировки хранит в БД.
+`ICSSoft.STORMNET.Web.Tools.WebLockHelper` class to work with web-locks of data objects in web applications. Uses the date and lifetime of a lock to determine its relevance, the lock is stored in the database. 
 
-## Интерфейс
+## Interface 
 
-Класс реализует интерфейс `ILockHelper`:
+A class implements an interface `ILockHelper`: 
 
 ```csharp
 public interface ILockHelper
@@ -21,21 +23,21 @@ public interface ILockHelper
     string GetLock(string dataObjectKey);
     TimeSpan LockTimeout { get; set; }
 }
-```
+``` 
 
-* `LockDataObject` - попытаться установить блокировку на объект по переданному ключу и имени пользователя. В случае удачной блокировки возвращает `true`, если объект уже заблокирован - `false`. При этом в параметр `lockUserName` записывается имя пользователя, установившего блокировку.
-* `ClearWebLock` - удалить блокировку, если она была установлена текущим пользователем. В случае удачной очистки вернет `true`, иначе `false`.
-* `GetLock` - возвращает имя пользователя, заблокировавшего объект, по ключу. Если объект не заблокирован, возвращается пустая строка.
-* `LockTimeout` - время жизни блокировки. Необходимо для того, чтобы удалять старые блокировки. Если страница редактирования открыта, то она периодически посылает ajax-запросы на продление блокировки. При закрытии страницы запросы прекращаются, и блокировка стареет. Периодичность запросов соответствует времени жизни блокировки.
+* `LockDataObject` is to try to establish a lock on the object by the given key and user name. In the event of a lock `true` returns if the object is already locked - `false`. In this case, the parameter `lockUserName` is written the name of the user that set the lock. 
+* `ClearWebLock` - remove a lock if it was installed by the current user. In case a good cleaning will return `true`, otherwise `false`. 
+* `GetLock` - returns the name of the user that has locked the object by key. If the object is not locked, an empty string is returned. 
+* `LockTimeout` the lifetime of a lock. You need to remove the old lock. If the edit page is open, it periodically sends ajax requests to extend the lock. When you close the page requests are canceled, and the lock is aging. The frequency of requests corresponds to the lifetime of the lock. 
 
-## Использвание
+## Uses 
 
-Если нужен прикладной сервис блокировок, можно реализовать интерфейс `ILockHelper` и использовать собственный класс, где нужно, например, задать его для блокировок в [WebObjectListView](fa_web-object-list-view.html). 
+If the desired application service locks, you can implement an interface `ILockHelper` and use your own class where you have, for example, to ask for locks in [WebObjectListView](fa_web-object-list-view.html). 
 
-Пример использования `WebLockHelper` в WOLV:
+An example of using `WebLockHelper` in WOLV: 
 
 ```csharp
-        // Свойство, хранящее LockHelper
+        // A property that stores LockHelper 
         public static ILockHelper LockHelper
         {
             get
@@ -48,17 +50,21 @@ public interface ILockHelper
             }
             set { _lockHelper = value; }
         }
-```
+``` 
 
-Установка блокировки:
+Setting the lock: 
 
 ```csharp
 if (lockHelper.LockDataObject(PK, Context.User.Identity.Name, out lockUserName))
 {
-    MessageBox.Show("Объект успешно заблокирован");
+    MessageBox.Show("The object was successfully locked");
 } 
 else
 {
-    MessageBox.Show("Объект уже заблокирован пользователем " + lockUserName);
+    MessageBox.Show("The object is already locked by user " + lockUserName);
 }
-```
+``` 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

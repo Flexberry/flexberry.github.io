@@ -1,28 +1,30 @@
----
-title: Converting the data object property type to a storage type
-sidebar: flexberry-orm_sidebar
-keywords: DataObject, Flexberry ORM, data types
-summary: Description of the transformation of data types and an example of its use
-toc: true
-permalink: en/fo_convert-type-property.html
-lang: en
----
+--- 
+title: type Conversion properties of the data object to the storage type 
+sidebar: flexberry-orm_sidebar 
+keywords: DataObject Flexberry ORM data types 
+summary: Description of data type conversion and an example of its use 
+toc: true 
+permalink: en/fo_convert-type-property.html 
+lang: en 
+autotranslated: true 
+hash: d183f00be5b25b539507629708e20e4c08ba12c24d39ad7ab565aa63a663a72d 
+--- 
 
-Свойства классов данных могут иметь самый различный тип, как стандартный для `.Net framework` (например, такой как `System.Int32 — int` в `C#, System.String — string` в `C#`), так и нестандартный (какой-либо пользовательский, не `.Net`-тип).
+Properties of data classes can have the different type as standard `.Net framework` (such as `System.Int32 — int` in `C#, System.String — string` in `C#`) and custom (any user, not `.Net`-type). 
 
-Значения [стандартных типов](fo_flexberry-orm-types.html) преобразуются [сервисами данных](fo_data-service.html) в типы хранилища некоторым предопределённым образом, например, `System.Int32` в `LONG, System.String` в `VARCHAR`.  Однако, сервис данных никак «не знает», каким образом должно преобразовываться значение некоторого пользовательского типа (иначе говоря, какого типа значение в хранилище). Следовательно, значение пользовательского типа должно приводиться к значению стандартного типа `.Net` и обратно, а со значением стандартного типа сервис данных уже «разберётся».
+[Standard types](fo_flexberry-orm-types.html) is converted to the [data services](fo_data-service.html) to store types some predefined way, for example, `System.Int32` in `LONG, System.String` in `VARCHAR`. However, data services does not knows» qmo, how to evaluate the value of some custom type (in other words, what type the value in storage). Therefore, the value of the user-defined type must be the value of the standard type `.Net` and back, and with the value of a standard type data service already» «will understand. 
 
-Как именно такое приведение должно выполняться конкретным сервисом данных, указывается непосредственно пользовательскому типу атрибутом [StoreInstancesInTypeAttribute](fd_data-types-properties.html). Параметрами указываются: тип сервиса данных и стандартный тип, к которому должно выполняться приведение.
+How exactly such a cast must be performed by a specific data service, specified user-defined type attribute [StoreInstancesInTypeAttribute](fd_data-types-properties.html). The details include: type of service data and a standard type to be cast. 
 
-От пользовательского типа требуется следующее:
+From a user-defined type requires the following: 
 
-* Поддержка явного (`explicit`) или неявного (`implicit`) преобразования к стандартному типу.
-* Поддержка явного (`explicit`) или неявного (`implicit`) обратного преобразования от стандартного типа.
-* Перегрузка метода `ToString()`.
+* Support for explicit (`explicit`) or implicit (`implicit`) conversion to standard types. 
+* Support for explicit (`explicit`) or implicit (`implicit`) the inverse transformation from the standard type. 
+* Method overloading `ToString()`. 
 
-Разумеется, если различные сервисы данных требуют приведения к различным типам, необходимо несколько раз указывать атрибут для каждого сервиса данных, а пользовательский тип должен поддерживать преобразования ко всем типам.
+Of course, if different data services require a cast to different types, it is necessary to repeatedly specify an attribute for each data service, and a user-defined type must support conversion for all types. 
 
-## Пример пользовательского типа
+## an Example of a custom type 
 
 ```csharp
 [StoreInstancesInType(typeof(SQLDataService),typeof(decimal)))
@@ -78,9 +80,13 @@ public struct Деньги
 	
 	public override string ToString()
 	{
-			return Рубли.ToString()+" руб. "+Копейки.ToString()+" коп.";
+			return Рубли.ToString()+"RUB."+Копейки.ToString()+"COP.";
 	}
 }
-```
+``` 
 
-Также доступен пример на [GitHub](https://github.com/Flexberry/FlexberryORM-DemoApp/blob/master/FlexberryORM/CDLIB/Objects/Dollar.cs).
+Is also available example [GitHub](https://github.com/Flexberry/FlexberryORM-DemoApp/blob/master/FlexberryORM/CDLIB/Objects/Dollar.cs). 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

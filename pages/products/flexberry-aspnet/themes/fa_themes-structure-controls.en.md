@@ -1,74 +1,76 @@
----
-title: Структура тем Flexberry ASP.NET для контролов
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_themes-structure-controls.html
-lang: en
----
+--- 
+title: Structure of the Flexberry ASP.NET for controls 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_themes-structure-controls.html 
+lang: en 
+autotranslated: true 
+hash: 1973f3ac8a455783c947a669c4099c866d16d6e911380bd719e12c0298ee621f 
+--- 
 
-## Структура файлов
+## file Structure 
 
-Для удобства редактирования тем, была создана отдельная базовая тема `BaseTheme`, содержащая стандартные стили и настройки общие для всех тем и могут быть переопределены в каждой. В данной статье будет рассматриваться пример реализации одного контрола и не будут затронуты формы.
+To edit those, created a separate base theme `BaseTheme` that contain standard styles and settings common to all themes and can be overridden in each. In this paper, we focus on an example implementation of one control and will not be affected shape. 
 
-Структура файлов в общем виде выглядит так:
+The file structure in a General view looks so: 
 
 
-* BaseTheme
-    * Controls
-        * SomeControl
-            * Images
-            * _Variables.less
-            * Lookup.less
-* Theme
-    * Controls
-        * SomeControl
-            * Images
-            * _Settings.less
-            * _Variables.less
-            * Lookup.less
-    * Base.less
-    * Base.css
+* - BaseTheme 
+* Controls 
+* SomeControl 
+* Images 
+* _Variables.less 
+* Lookup.less 
+* Theme 
+* Controls 
+* SomeControl 
+* Images 
+* _Settings.less 
+* _Variables.less 
+* Lookup.less 
+* Base.less 
+* Base.css 
 
-В данной структуре в качестве примера используется только одна тема `Theme`, которая содержит в себе один единственный контрол `SomeControl`. Что означает каждый файл будет рассмотрена ниже.
+In this structure example, there is only one theme `Theme`, which contains a single control `SomeControl`. That means each file will be discussed below. 
 
-## Уровень BaseTheme
+## Level-BaseTheme 
 
-Внутри базовой темы хранится папка `Controls`, которая содержит в себе какие-либо контролы. В данном случае это один единственный контрол `SomeControl`. Внутри этой папки содержаться папка `Images`, в которой хранятся картинки для контрола и два .less файла.
+Inside the base theme folder is stored `Controls`, which contains any controls. In this case, a single control `SomeControl`. Inside this folder contain a folder `Images` that stores pictures for control and two .less file. 
 
-`_Variables.less` - содержит в себе набор переменных для использования в стилях. К переменным относятся: названия классов и идентификаторов, цвета и отступы.
+`_Variables.less` - contains a set of variables for use in styles. Variables include: class names and IDs, colors, and indentation. 
 
-`SomeControl.less` - содержит в себе стандартные стили для контрола. К ним относятся расположение элементов на странице, стандартные цвета и отступы.
+`SomeControl.less` - contains standard styles for the control. These include the location of elements on the page, standard colors, and indentation. 
 
-## Уровень Theme
+## Level Theme 
 
-`Theme` соответствует одной из существующих тем.  Внутри темы, как и в случае с `BaseTheme`, хранится папка `Controls`, в которой содержится `SomeControl`. Внутри данной папке есть папка `Images`, которая содержит картинки конкретно для этого контрола и три .less файла.
+`Theme` corresponds to one of the existing themes. Inside the theme, as in the case of `BaseTheme`, a folder is stored `Controls`, which contains `SomeControl`. Inside this folder there is a folder `Images` that contains images specifically for the control and three .less file. 
 
-Назначение `_Variables.less` и `SomeControl.less` остается неизменным. Файл `_Settings.less` используется для переопределения существующих стилей и для доработок в прикладных проектах
+The purpose `_Variables.less` and `SomeControl.less` remains unchanged. File `_Settings.less` is used to override existing styles and improvements in applied projects 
 
-## Реализация на примере контрола Lookup
+## Implementation on the example control Lookup 
 
-В качестве примера будет рассмотрен простой лукап, состоящий из `input` типа `text` и двух кнопок.
+As an example, will be considered simple lookup consisting of `input` type `text` and two buttons. 
 
-Файловая структура будет выглядеть следующим образом:
+The file structure will look as follows: 
 
-* BaseTheme
-    * Controls
-        * Lookup
-            * Images
-            * _Variables.less
-            * SomeControl.less
-* Theme
-    * Controls
-        * Lookup
-            * Images
-            * _Settings.less
-            * _Variables.less
-            * SomeControl.less
-    * Base.less
-    * Base.css
+* - BaseTheme 
+* Controls 
+* Lookup 
+* Images 
+* _Variables.less 
+* SomeControl.less 
+* Theme 
+* Controls 
+* Lookup 
+* Images 
+* _Settings.less 
+* _Variables.less 
+* SomeControl.less 
+* Base.less 
+* Base.css 
 
-`Разметка лукапа`
+`Разметка лукапа` 
 
 ```html
 <body>
@@ -85,9 +87,9 @@ lang: en
         </div>
     </div>
 </body>
-```
+``` 
 
-Для начала будет рассмотрена реализация на уровне базовой темы. Все названия классов необходимо вынести в переменные и добавить в `_Variables.less`. Этот файл необходимо импортировать в `Lookup.less` в самом начале - до определения стилей - с ключевым словом (reference) - позволяет импортировать содержимое файла, при этом не добавлять его физически. Это позволяет не импортировать одни и те же записи по нескольку раз.
+For a start, will be discussed the implementation at the level of basic themes. All class names must be put into variables and add to `_Variables.less`. This file must be imported into `Lookup.less` at the beginning - to define styles - keyword (reference) allows you to import the contents of the file, not add it physically. This allows us not to import the same record several times. 
 
 ```css
 @parentControlClass: control;
@@ -97,9 +99,9 @@ lang: en
 
 @inputBorderColor: #B9B9B9;
 @btnHoveredBackgroundColor: #f0f0f0;
-```
+``` 
 
-Далее, в `Lookup.less` надо прописать стандартные стили для контрола, а именно: базовые цвета, расположение элементов на странице. В итоге получится нечто такое:
+Further, in `Lookup.less` need to register the default styles for a control, namely the base color, location of elements on the page. The end result is something like this: 
 
 ```css
 .@import (reference) '_Variables.less';
@@ -159,32 +161,32 @@ lang: en
         }
     }
 }
-```
+``` 
 
-Также необходимо в `_Variables.less` добавить переменные, содержащие в себе основные цвета лукапа. В данном примере рассмотрена одна переменная, отвечающая за цвет границы input`a.
+You also need to `_Variables.less` add variables containing the basic colors lucapa. In this example, one variable is considered responsible for the color of the border input`a. 
 
 ```css
 @inputBorderColor: #B9B9B9;
-```
+``` 
 
-В результате всех действий получится стандартный контрол. Далее его можно изменять и расширять в зависимости от темы, в которой он находится.
+As a result of all of the action happens standard control. Further, it is possible to change and extend depending on the topic, in which it is located. 
 
-### Пример на уровне темы `Theme`.
+### Example at the level of themes `Theme`. 
 
-В `Lookup.less` до определения стилей необходимо импортировать `Lookup.less` из `BaseTheme`. Далее можно добавлять новые стили. Все новые отступы, цвета, классы, идентификаторы необходимо вынести в `_Variables.less`, который находится в `Theme`. Также в этот же файл выносятся цвета, использующиеся в контроле. `_Variables.less` необходимо подключить в самом конце - после стилей - для того, чтобы перегружать существующие переменные. Кроме того в `Lookup` - также в самом конце - нужно подключить `_Settings.less`. Этот файл используется для прикладных проектов. Чтобы в нем срабатывали переменные, использующиеся в теме, необходимо импортировать `_Variables.less` как из `Theme` так и из `BaseTheme`.
+In `Lookup.less` to the style definitions you want to import `Lookup.less` of `BaseTheme`. Next, you can add new styles. All new padding, colors, classes, IDs should be taken in `_Variables.less`, which is `Theme`. Also in this same file are submitted to the colors used in control. `_Variables.less` you need to connect at the very end - after styles in order to overload the existing variables. Additionally, `Lookup` - in the end - you need to connect `_Settings.less`. This file is used for applied projects. To work the variables used in the theme, you need to import `_Variables.less` as of `Theme` and `BaseTheme`. 
 
-В результате:
+The result: 
 
-`_Variables.less`
+`_Variables.less` 
 
 ```css
 @textColor: red;
 @inputFocusedBackgroundColor: yellow;
 @inputBorderColor: #000;
 @inputTextColor: blue;
-```
+``` 
 
-`Lookup.less`
+`Lookup.less` 
 
 ```css
 @import '../../../BaseTheme/Controls/Lookup/Lookup.less';
@@ -232,9 +234,9 @@ lang: en
 
 @import (reference) '_Variables.less';
 @import '_Settings.less';
-```
+``` 
 
-Пример `_Settings.less` выглядит следующим образом:
+Example `_Settings.less` as follows: 
 
 ```css
 @import (reference) '../../../BaseTheme/Controls/Lookup/_Variables.less';
@@ -246,8 +248,12 @@ lang: en
         }
     }
 }
-```
+``` 
 
-В результате иконка кнопки удаления будет отображаться иначе.
+As a result, the icon of the button will display differently. 
 
-После полной настройки лукапа, файл `Lookup.less` (в `Theme`) необходимо импортировать в `Base.less`. После компиляции будет получен `Base.css`. При этом будут учтены как правила в базовой теме, так и в отдельной. Кроме того, будут подгруженs все настройки для прикладных проектов и общие настройки для тем.
+After full adjustment lucapa, file `Lookup.less` (`Theme`) must be imported into `Base.less`. After compilation will be obtained `Base.css`. Will be thus considered as rules in the basic theme and. In addition, we will podprugin all the settings on applied projects and General settings for the. 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -1,56 +1,62 @@
----
-title: ObjectTile
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_ajax-controls-object-tile.html
-lang: en
----
+--- 
+title: ObjectTile 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_ajax-controls-object-tile.html 
+lang: en 
+autotranslated: true 
+hash: b9ccf8c9a4e8ade716cac03be431b65cdcb7eb896413eeadc7cc5d98689106c9 
+--- 
 
-Контрол служит для отображения объектов, являющихся `DataObject`, согласно заданному представлению, в виде тайлов на веб-странице. По умолчанию происходит приведение значений атрибутов к строке, для изменения этого нужно использовать свойство `AttributeRenderers`. Реализует интерфейсы `IObjectTile`, `IHavingResources`.
+Control is used to display objects that are `DataObject`, according to a given representation, in the form of tiles on a web page. The default is to cast the attribute values to string, to change this you need to use a property `AttributeRenderers`. Implements interfaces `IObjectTile`, `IHavingResources`. 
 
-## Интерфейс
+## Interface 
 
-### Методы
+### Methods 
 
-| Сигнатура | Описание|
-|----------------|--------------------|
-| `protected override void OnLoad(EventArgs e)` | Перегрузка метода класса `WebControl`, вызывается при загрузке контрола|
-| `protected override void RenderContents(HtmlTextWriter writer)` | Перегрузка метода класса `WebControl`, используется для рендеринга контрола при размещении его непосредственно на веб-форме|
-| `public string GetMarkup()` | Реализация интерфейса `IObjectTile`. Метод для получения html-разметки контрола в виде строки, используется при необходимости работы непосредственно с разметкой|
+| Signature | Description| 
+|----------------|--------------------| 
+| `protected override void OnLoad(EventArgs e)` | Overload a class method `WebControl` is called when the download control| 
+| `protected override void RenderContents(HtmlTextWriter writer)` | Overload a class method `WebControl` used for rendering the control when placing it directly on the web form| 
+| `public string GetMarkup()` | interface Implementation `IObjectTile`. Method to retrieve the html markup of the control as a string, used when you need to work directly with the markup| 
 
-### Свойства
+### Properties 
 
-| Название | Тип | Описание|
-|---------------|-------------------|----------------------------|
-| `View` | `ICSSoft.STORMNET.View` | Реализация интерфейса `IObjectTile`. Используется для задания или получения представления, согласно которому отображаются объекты|
-| `DataObject` | `ICSSoft.STORMNET.DataObject` | Реализация интерфейса `IObjectTile`. Используется для задания или получения объекта данных, который отображается данным тайлом|
-| `AttributeRenderers` | `Dictionary&#60;string, AjaxControls.AttributeRenderer&#62;` | Используется для настройки отображения конкретных атрибутов|
-| `Styles` | `IEnumerable&#60string&#62` | Реализация интерфейса `IHavingResources`. Используется для получения коллекции связанных с контролом ресурсов (CSS). Но при вызове метода `OnLoad` ресурсы автоматически добавляются на страницу|
+| Name | Type | Description| 
+|---------------|-------------------|----------------------------| 
+| `View` | `ICSSoft.STORMNET.View` | interface Implementation `IObjectTile`. Used to set or retrieve the view according to which objects are displayed| 
+| `DataObject` | `ICSSoft.STORMNET.DataObject` | interface Implementation `IObjectTile`. Used to set or retrieve a data object that is displayed according to the tile| 
+| `AttributeRenderers` | `Dictionary&#60;string, AjaxControls.AttributeRenderer&#62;` | Used to customize the display of individual attributes| 
+| `Styles` | `IEnumerable&#60string&zgl62` | interface Implementation `IHavingResources`. Use to retrieve collections related to control of resources (CSS). But when you call a method `OnLoad` resources are automatically added to the page| 
 
-## AttributeRenderers
+## AttributeRenderers 
 
-`AttributeRenderers` - свойство, позволяющее изменять отображение отдельных атрибутов объекта с помощью использования пользовательских функций. Оно представляет собой словарь с ключами типа `string` (имя атрибута) и значениями типа `AttributeRenderer` (пользовательская функция, принимающая `object` и возвращающая `string`). Возвращаемая строка должна содержать html-разметку, которая будет отображена вместо простого приведения значения атрибута к строке. `AttributeRenderer` - делегат, объявленный в `AjaxControls`:
+`AttributeRenderers` - property that allows to change the display of individual object attributes by using user-defined functions. It is a dictionary with keys of type `string` (attribute name) and values of type `AttributeRenderer` (user-defined function that takes and returns `object` `string`). The returned string should contain html markup that will be displayed instead of just cast the attribute value to the string. `AttributeRenderer` - delegate declared in `AjaxControls`: 
 
 ```csharp
 public delegate string AttributeRenderer(object attribute);
-```
+``` 
 
-## Пример инициализации
+## Example of initializing 
 
 ```csharp
-//tempCat - экземпляр класса Кошка
+//tempCat - an instance of the class Cat 
 ObjectTile tile = new ObjectTile();
 tile.View = Information.GetView("КошкаL", typeof(Кошка));
 tile.DataObject = tempCat;
 
 tile.AttributeRenderers = new Dictionary<string, AttributeRenderer>();
-tile.AttributeRenderers.Add("Кличка", delegate (object val)
+tile.AttributeRenderers.Add("Nickname", delegate (object val)
                                       {
                                           return string.Format("<b>{0}</b>", val);
                                       });
-```
+``` 
 
-## Вид контрола
+## Kind of control 
 
-![](/images/pages/products/flexberry-aspnet/controls/object-tile.png)
+![](/images/pages/products/flexberry-aspnet/controls/object-tile.png) 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

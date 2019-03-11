@@ -1,22 +1,24 @@
----
-title: FlexGrid
-sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Winforms, Controls, GroupEdit, FlexGrid
-summary: Получение FlexGrid из GroupEdit
-toc: true
-permalink: en/fw_flex-grid.html
-lang: en
----
+--- 
+title: FlexGrid 
+sidebar: flexberry-winforms_sidebar 
+keywords: Flexberry Winforms, Controls, GroupEdit, FlexGrid 
+summary: getting a FlexGrid from a GroupEdit 
+toc: true 
+permalink: en/fw_flex-grid.html 
+lang: en 
+autotranslated: true 
+hash: bf343cca3b18634af83535eca40a8d458a6b094717149c3f81ef1e12db7fa31a 
+--- 
 
-[FlexGrid](http://www.componentone.com/SuperProducts/FlexGridWinForms/) - простой в использовании контрол-таблица от компании ComponentOne. Позволяет отображать, редактировать, форматировать, организовывать и печатать данные в виде таблицы.
+[FlexGrid](http://www.componentone.com/SuperProducts/FlexGridWinForms/) - easy to use control-table from company ComponentOne. Allows you to display, edit, format, organize and print the data in a table. 
 
-Контрол используется в [GroupEdit](fw_group-edit.html), [ObjectListView](fw_objectlistview.html), а также в Статиторе.
+The control used in [GroupEdit](fw_group-edit.html), [ObjectListView](fw_objectlistview.html), as well as in Staticone. 
 
-## Получение FlexGrid из GroupEdit
+## getting a FlexGrid from a GroupEdit 
 
 ```csharp
 public static C1.Win.C1FlexGrid.C1FlexGrid GetGridFromGE(ICSSoft.STORMNET.Windows.Forms.GroupEditBase groupEdit)
-// Ищем FlexGrid
+// Search For FlexGrid 
 {
  for(int i =0; i < groupEdit.Controls.Count;i++)
  {
@@ -33,4 +35,8 @@ public static C1.Win.C1FlexGrid.C1FlexGrid GetGridFromGE(ICSSoft.STORMNET.Window
  }
  return null;
 }
-```
+``` 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

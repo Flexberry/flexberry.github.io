@@ -1,16 +1,95 @@
----
-title: Поддержка протокола OData v4
-sidebar: ember-flexberry-data_sidebar
-keywords: Flexberry Ember
-toc: true
-permalink: en/efd_odata.html
-folder: products/ember-flexberry-data/odata-and-jsonapi/
-lang: en
-summary: 
----
+--- 
+title: Support for OData v4 
+sidebar: ember-flexberry-data_sidebar 
+keywords: function, action, callAction, callFunction 
+toc: true 
+permalink: en/efd_odata.html 
+lang: en 
+autotranslated: true 
+hash: 839ae5fe919c81b106cdd2cfbeb1f539f1cad817e615dae090d0a378b87e852d 
+summary: the Components for communicating with the backend via OData. 
+--- 
 
-## OData
+## OData 
 
-ember-flexberry-data поддерживает протокол OData v4.
+ember-flexberry-data supports the OData Protocol v4. 
 
-* OData adapter
+* OData adapter 
+
+## Call functions and actions via Ajax 
+
+To facilitate references to the functions and action of the backend via ajax OData adapter provides two similar methods: `callFunction` and `callAction`. 
+
+### callFunction 
+
+This method is intended to call functions on the backend. This method takes the following parameters: 
+
+* `url`: address OData backend. If not given, it is taken to the address specified in `environment.js` 
+* `functionName`: name the functions of the backend 
+* `params`: an object containing query parameters 
+* `successCallback`: method or `Promise` executed upon successful execution of the request 
+* `failCallback`: method or `Promise` performed in case of unsuccessful execution of the request 
+* `alwaysCallback`: method or `Promise` executed in any case. 
+
+#### Examples of usage callAction 
+
+* Without the callback functions, URL of the backend are taken from `environment.js`: 
+```
+adapter.callFunction('test', { someData: 'someData' })
+``` 
+* Callback functions: 
+
+```
+adapter.callFunction(
+  'test',
+  { someData: 'someData' },
+  () => {
+    console.log("This is a successCallback function");
+  },
+  () => {
+    console.log("This is a function failCallback");
+  },
+  () => {
+    console.log("This is an alwaysCallback function");
+  }
+)
+``` 
+
+### callAction 
+
+This method is to call a backend action. This method takes the following parameters: 
+
+* `url`: address OData backend. If not given, it is taken to the address specified in `environment.js` 
+* `actionName`: name of action backend 
+* `data`: an object containing query parameters 
+* `successCallback`: method or `Promise` executed upon successful execution of the request 
+* `failCallback`: method or `Promise` performed in case of unsuccessful execution of the request 
+* `alwaysCallback`: method or `Promise` executed in any case. 
+
+#### Examples of usage callAction 
+
+* Without the callback functions, URL of the backend are taken from `environment.js`: 
+```
+adapter.callAction('test', { someData: 'someData' })
+``` 
+* Callback functions: 
+
+```
+adapter.callAction(
+  'test',
+  { someData: 'someData' },
+  () => {
+    console.log("This is a successCallback function");
+  },
+  () => {
+    console.log("This is a function failCallback");
+  },
+  () => {
+    console.log("This is an alwaysCallback function");
+  }
+)
+``` 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

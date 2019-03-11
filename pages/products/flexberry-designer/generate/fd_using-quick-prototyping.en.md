@@ -1,80 +1,86 @@
----
-title: Использование быстрой прототипизации
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, прототип, прототипизация, генерация, стереотип, приложение, объекты, формы, сборки
-summary: Генерация кода прототипа приложения
-toc: true
-permalink: en/fd_using-quick-prototyping.html
-lang: en
----
+--- 
+title: the Use of quick prototypization 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Designer, prototype, prototypical, generation, stereotype, app, objects, forms, assemblies 
+summary: code Generation of a prototype application 
+toc: true 
+permalink: en/fd_using-quick-prototyping.html 
+lang: en 
+autotranslated: true 
+hash: 05b049fdbf81435a042bdd19dc305d0cff673855dccdc246782090bc50951bcf 
+--- 
 
-Быстрая прототипизация удобна, когда требуется очень быстро создать и запустить систему.
+Fast prototypical handy when you need to quickly create and run the system. 
 
-Что генерируется при прототипизации:
+That is generated prototypical: 
 
-1. Генерирует класс со стереотипом [Application](fd_application.html)
-2. Генерирует [L-](fd_l-view.html) и [E-](fd_e-view.html) представления для каждого класса данных
-3. Генерирует классы со стереотипом [ListForm](fd_listform.html) для каждого класса данных
-4. Генерирует классы со стереотипом [EditForm](fd_editform.html) для каждого класса данных
-''__Примечание__: классом данных являются классы со стереотипом [implementation](fd_data-classes.html) или без стереотипа.''
+1. Generates a class with the stereotype [Application](fd_application.html) 
+2. Generates [L-](fd_l-view.html) and [E-](fd_e-view.html) representation for each data class 
+3. Generates classes with the stereotype [ListForm](fd_listform.html) for each data class 
+4. Generates classes with the stereotype [EditForm](fd_editform.html) for each data class 
+"__Note__: data class are classes with the stereotype [implementation](fd_data-classes.html) or no stereotype." 
 
-Для воспроизведения нижеприведённого примера требуется иметь установленный `MS SQL Server`.
+For playback the following example requires that you have installed SQL `MS Server`. 
 
-### Пример создания информационной системы
+### Example of creating an information system 
 
-Приложение "Телефонный справочник"  
-1.Создать новый проект, назовите его "ТелефонныйСправочник".  
-2.Создать в проекте последовательно конфигурацию, стадию, с любыми именами.  
-3.Создать в стадии систему, назовите "Главная".
-4.Создать в системе диаграмму классов, назовите "Структура".
-5.Поместить на диаграмму и связать между собой классы.
+The application "Telephone directory" 
+1.To create a new project, name it "View". 
+2.To create consistently in the project configuration stage, with any names. 
+3.To create under a system call "Home". 
+4.To create a class diagram, name "Structure". 
+5.To put on the chart and linked classes. 
 
-![Диаграмма Телефонный справочник](/images/pages/products/flexberry-designer/generate/phonebook1.png)
+![Chart Telephone directory](/images/pages/products/flexberry-designer/generate/phonebook1.png) 
 
-сохранить диаграмму.
-6.Установить курсор на систему, где расположена диаграмма, затем выбрать пункт меню `Winforms\Утилиты\Создать представленияб формы и приложение` (для данного примера):
+to save the graph. 
+6.Position the cursor on a system where a chart, then select the menu item `Winforms\Utilities\Create predstavleniyam forms and приложение` (for this example): 
 
-![Начало прототипизации](/images/pages/products/flexberry-designer/generate/startprototyping.png)
+![Beginning of prototypical](/images/pages/products/flexberry-designer/generate/startprototyping.png) 
 
-*Для ASP.NET-приложения следует использовать плагин ASP.NET.*
+*For ASP.NET applications should use the plugin ASP.NET.* 
 
-7.Ввести имя приложения в открывшемся окне и нажать кнопку "ОК":
+7.Enter the application name in the window that appears and click "OK": 
 
-![Прототипизация](/images/pages/products/flexberry-designer/generate/startprototyping1.png)
+![Prototypical](/images/pages/products/flexberry-designer/generate/startprototyping1.png) 
 
-Рядом с диаграммой "Структура" (в той же системе) автоматически создастся диаграмма "ТелефонныйСправочник", которая содержит классы форм (для редактирования и для списка), а также класс-приложение:
+Next to the chart "Structure" (in the same system) will automatically create a graph "View" that contains the classes of the forms (edit and list) and the class app: 
 
-![Диаграмма Телефонный справочник](/images/pages/products/flexberry-designer/generate/phonebook2.png)
+![Chart Telephone directory](/images/pages/products/flexberry-designer/generate/phonebook2.png) 
 
-Для каждого объекта создастся 2 представления:
+For each object will be created 2 views: 
 
-* списковое и для формы редактирования
-* добавится описание (Description, Caption).  
-8.Открыть свойства класса-приложения и изменить в конфигурации параметры соединения с источником данных: имя сервера (**SERVER=**) и базы данных (**DATABASE=**, база данных необязательно должна существовать).
+* list and edit form 
+* add a description (Description, Caption). 
+8.To access the class properties-applications and change configuration connection settings to the data source: server name (**SERVER=**) and database (**DATABASE=** database does not have to exist). 
 
-__Примечание__: Адресом сервера является может являться личный компьютер (**localhost**).
+__Note__: the server Address is can be a personal computer (**localhost**).
 
-![Свойства конфигурации](/images/pages/products/flexberry-designer/generate/configprops.png)
+![Configuration properties](/images/pages/products/flexberry-designer/generate/configprops.png) 
 
-9.Отредактировать в свойствах стадии [настройки для MS SQL Server direct generator](fd_configure-ms-sql-generator.html) (строка соединения с источником данных должна полностью соответствовать указанной в конфигурации приложения).
+9.To edit the properties of a stage [settings for MS SQL Server direct generator](fd_configure-ms-sql-generator.html) (connection string to the data source must match that specified in application configuration). 
 
-![Соединение с Базой данных](/images/pages/products/flexberry-designer/generate/configbase.png)
+![Database connection](/images/pages/products/flexberry-designer/generate/called configbase.png) 
 
-10.Отредактировать в [свойства стадии](fd_configure-ms-sql-generator.html) (указать название компании и продукта, а также установить каталог генерации)
-11.Выбрать пункт меню "MS SQL Server direct generator\Привести в соответствие...". Flexberry создаст базу данных и сгенерирует скрипты для создания структур данных, примените их.
+10.To edit [property phase](fd_configure-ms-sql-generator.html) (provide company name and product, as well as set the directory generation) 
+11.To select "MS SQL Server direct generator\align...". Flexberry will create the database and generates the scripts to create data structures, apply them. 
 
-__Примечание__: если во время генерации происходит ошибка, необходимо
+__Note__: if a generation error occurs, it is necessary 
 
-* Проверить, выполнен ли п. 9 (не указано ли в строке соединения SERVER=server;DATABASE=database - если указано, необходимо изменить в соответствии с действительностью)
-* Если все настроено верно, но ошибка продолжает возникать, необходимо обратиться в Службу поддержки.
+* Verify p. 9 (not specified in the connection string SERVER=server;DATABASE=database - if specified, must change in accordance with reality) 
+* If everything is configured correctly, but the error continues to occur, contact support. 
 
-12.Сборка приложения
+12.Build the application 
 
-* Web-приложение: статья [Плагин генерации Flexberry ASP.NET](fa_asp-net-generator.html)
-* Windows-приложение: выбрать пункт меню "Winforms/C#/Генерировать и компелировать". Flexberry сгенерирует - скомпилирует систему и затем предложит запустить готовое приложение:
+* Web application: article [generation Plugin Flexberry ASP.NET](fa_asp-net-generator.html) 
+* Windows application: select the menu item "Winforms/C#/Generate and kapeliovich". Flexberry will generate a - compile system and then prompts you to launch the app: 
 
-![Запуск приложения](/images/pages/products/flexberry-designer/generate/startapp.png)
+![Launch application](/images/pages/products/flexberry-designer/generate/startapp.png) 
 
-Нажать "ОК", приложение запустится:
+Click "OK", the application will start: 
 
-![Приложение Телефонный справочник](/images/pages/products/flexberry-designer/generate/phonebookapp.png)
+![Phone book app](/images/pages/products/flexberry-designer/generate/phonebookapp.png) 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -1,49 +1,51 @@
----
-title: События AjaxGroupEdit
-sidebar: flexberry-aspnet_sidebar
-keywords: CASE Plugins, Flexberry ASP-NET, Web UI (Контролы)
-toc: true
-permalink: en/fa_age-events.html
-lang: en
----
+--- 
+title: Events AjaxGroupEdit 
+sidebar: flexberry-aspnet_sidebar 
+keywords: CASE Plugins, Flexberry ASP-NET, Web UI (Controls) 
+toc: true 
+permalink: en/fa_age-events.html 
+lang: en 
+autotranslated: true 
+hash: cb6f06b8359ddf82569096d9a8dcfe1092863eb897a1af8e7b690a09cff15fc9 
+--- 
 
-## Описание событий
+## description of the event 
 
-Все обработчики событий имеют одинаковый тип:
+All event handlers have the same type: 
 
 ```csharp
-/// <summary>
-/// Делегат обработчиков событий WGE
-/// <summary>
-/// <param name="sender">WGE, которому принадлежат события>/param>
-/// <param name="args">Параметры события</param>
+/// <summary> 
+/// Delegate event handlers WGE 
+/// <summary> 
+/// <param name="sender">WGE, which owns event>/param> 
+/// <param name="args">event Parameters</param> 
 public delegate void WGEEventHandler(AjaxGroupEdit sender, WGEEventArgs args);
 
-/// <summary>
-/// Тип аргумента для событий WGE
-/// </summary>
+/// <summary> 
+/// Argument type for events WGE 
+/// </summary> 
 public class WGEEventArgs : CancelEventArgs
     {
-        /// <summary>
-        /// DataObject
-        /// </summary>
+        /// <summary> 
+        /// The DataObject 
+        /// </summary> 
         public DataObject DataObj { get; set; }
 
-        /// <summary>
-        /// Исключение
-        /// </summary>
+        /// <summary> 
+        /// The exception 
+        /// </summary> 
         public Exception Exception { get; set; }
     }
 ``` 
 
-Любое событие можно отменить, установив свойство у аргументов `Cancel = true`, т.к. все аргументы наследуются от `CancelEventArgs`.
+Any event can be cancelled by selecting the arguments `Cancel = true`, because all the arguments are inherited from `CancelEventArgs`. 
 
-## Обработка событий AGE
+## event Handling AGE 
 
-### Событие rowdeleting
+### Event rowdeleting 
 
-Возникает при удалении строки в [AGE](fa_ajax-group-edit.html).
-Вызов триггера при удалении строки в [AGE](fa_ajax-group-edit.html):
+Occurs when a row is deleted in the [AGE](fa_ajax-group-edit.html). 
+The trigger is called when a row is deleted in the [AGE](fa_ajax-group-edit.html): 
 
 ```xml
 <asp:Content ID="Content2" ContentPlaceHolderID="TestContentPlaceHolder" runat="server">
@@ -63,12 +65,12 @@ public class WGEEventArgs : CancelEventArgs
             });
     </script>
 </asp:Content>
-```
+``` 
 
-### Событие rowdeleted
+### Event rowdeleted 
 
-Возникает после удалении строки в AGE.  
-Вызов триггера после удаления строки в [AGE](fa_ajax-group-edit.html):
+Occurs after a row is deleted in AGE. 
+Call trigger after delete a row in the [AGE](fa_ajax-group-edit.html): 
 
 ```xml
 <asp:Content ID="Content2" ContentPlaceHolderID="TestContentPlaceHolder" runat="server">
@@ -88,27 +90,27 @@ public class WGEEventArgs : CancelEventArgs
             });
     </script>
 </asp:Content>
-```
+``` 
 
-### Событие rowadded
+### the rowadded Event 
 
-Возникает в момент добавления новой строки в AGE. Может использоваться для операций со строками AGE в момент их добавления в список [детейлов](fd_d-view.html).
+Occurs when adding a new row to AGE. Can be used for operations with strings AGE at the time of adding them to the list [of datalow](fd_d-view.html). 
 
-Например, для наложения ограничения на строки.
+For example, for imposing restrictions on the line. 
 
 ```javascript
-/**
-* Если добавлена новая строка в АГЕ, сразу назначим limit function.
-* @param  {Element} row Элемент добавленой строки в DOM.
+/** 
+* If new row added in Agay, just assign the limit function. 
+* @param {Element} row Element of the row added to the DOM. 
 */
 $('#<%=ctrlCompanyEmployee.ClientID%>').on('rowadded.ajaxgroupedit', function(row) {
     $('[id$=ctrlCompany]', row).icsMasterEditorAjaxLookup('updateOptions', { lookup: { LFName: lfName } });
 });
-```
+``` 
 
-## Методы
+## Methods 
 
-### Удаление всех строк в AGE - `deleteAllRows`.
+### Deleting all rows in AGE - `deleteAllRows`. 
 
 ```xml
 <asp:Content ID="Content2" ContentPlaceHolderID="TestContentPlaceHolder" runat="server">
@@ -129,9 +131,9 @@ $('#<%=ctrlCompanyEmployee.ClientID%>').on('rowadded.ajaxgroupedit', function(ro
         });
     </script>
 </asp:Content>
-```
+``` 
 
-### Получение количества видимых строк в списке - getDataRows
+### get number of visible rows in the list - getDataRows 
 
 ```xml
 <asp:Content ID="Content2" ContentPlaceHolderID="TestContentPlaceHolder" runat="server">
@@ -159,9 +161,9 @@ $('#<%=ctrlCompanyEmployee.ClientID%>').on('rowadded.ajaxgroupedit', function(ro
         };
     </script>
 </asp:Content>
-```
+``` 
 
-### Настройка LinkedLookUp в AGE - addDependedLookups
+### setting LinkedLookUp in AGE - addDependedLookups 
 
 ```xml
 <asp:Content ID="Content2" ContentPlaceHolderID="TestContentPlaceHolder" runat="server">
@@ -184,7 +186,10 @@ $('#<%=ctrlCompanyEmployee.ClientID%>').on('rowadded.ajaxgroupedit', function(ro
         });
     </script>
 </asp:Content>
-```
+``` 
 
-Подробнее об AjaxGroupEdit можно прочитать в данной [статье AjaxGroupEdit](fa_ajax-group-edit.html).
- 
+Read more about AjaxGroupEdit can be read in this [article AjaxGroupEdit](fa_ajax-group-edit.html). 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

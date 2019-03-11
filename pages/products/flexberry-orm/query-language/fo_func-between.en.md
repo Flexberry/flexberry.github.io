@@ -1,28 +1,30 @@
----
-title: FuncBETWEEN
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Ограничения
-summary: Parameters and an example of using the function FuncBETWEEN
-toc: true
-permalink: en/fo_func-between.html
-lang: en
----
+--- 
+title: FuncBETWEEN 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM Limitations 
+summary: Parameters and example FuncBETWEEN 
+toc: true 
+permalink: en/fo_func-between.html 
+lang: en 
+autotranslated: true 
+hash: c0ab093a82eb016f31cce5b23862b23ba2725e3b22ed3e9aafa715c9c34c37e6 
+--- 
 
-`FuncBETWEEN` - функция, аналогичная проверке на попадание элемента в диапазон значений в SQL, в построителе [функций ограничения](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html).
+`FuncBETWEEN` function is the same as testing for hit element in the range of values in the SQL Builder [function limitations](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html). 
 
-## Параметры GetFunction
+## Parameters GetFunction 
 
-Функция [GetFunction](fo_function-list.html) принимает первым параметром тип функции `funcBETWEEN`, а дальше принимает 3 параметра. Первым посылается описание переменной (Variable Definition), по которому будут определяться объекты для сравнения; а вторым и третьим - границы диапазона.
+[GetFunction](fo_function-list.html) accepts the first argument type of a function `funcBETWEEN`, and then takes 3 parameters. The first is sent to the variable description (Variable Definition), which will determine the objects to сравнения; and the second and third end of the range. 
 
-Например, требуется вычитать все **Кредиты**, сумма которых находится в диапазоне от 50000 рублей до 75000 рублей.
+For example, you want to subtract all the****, which amount is in the range of 50,000 rubles to 75,000 rubles. 
 
-SQL-выражение выглядело бы следующим образом:
+The SQL statement would look as follows: 
 
 ```sql
 SELECT * FROM Клиент WHERE СуммаКредита BETWEEN 50000 AND 75000@@
-```
+``` 
 
-Через [SQLWhereLanguageDef](fo_function-list.html):
+[SQLWhereLanguageDef](fo_function-list.html): 
 
 ```csharp 
 SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
@@ -30,4 +32,8 @@ Function lf = langdef.GetFunction(langdef.funcBETWEEN,
 			new VariableDef(langdef.StringType, Information.ExtractPropertyPath<Кредит>(x => x.СуммаКредита)),
 							50000,
 							75000);
-```
+``` 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

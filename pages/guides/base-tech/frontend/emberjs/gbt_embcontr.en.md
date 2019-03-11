@@ -1,24 +1,24 @@
----
-title: Controllers
-keywords: Programming
-sidebar: guide-base-tech_sidebar
-toc: true
-permalink: en/gbt_embcontr.html
-folder: guides/base-tech/frontend/emberjs/
+--- 
+title: Controllers 
+keywords: Programming 
+sidebar: guide-base-tech_sidebar 
+toc: true 
+permalink: en/gbt_embcontr.html 
+folder: guides/base-tech/frontend/emberjs/ 
 lang: en 
 autotranslated: true 
-hash: b265163a50e89dad12649c09dd9a6f21432e48e4229dec2ac5789a6a7f6657b8
----
+hash: ec3489e3de49ce8530baf916aa5d24861cf088e0fb9404d2a004882e4f5908de 
+--- 
 
-## Brief description
+## Brief description 
 
-The contents of this page:
+The contents of this page: 
 
-* describe the features, for example, that controllers are singletons and stored condition until then, until the application is restarted, describe publicly available hooks controller
+* describe the features, for example, that controllers are singletons and stored condition until then, until the application is restarted, describe publicly available hooks controller 
 
-## Go
+## Go 
 
 * [Back](gbt_emberjs.html)
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

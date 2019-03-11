@@ -1,52 +1,54 @@
----
-title: GroupEdit
-sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Winforms, Controls, GroupEdit
-summary: Свойства, изменение значений, отображение мастера, настройка внешнего вида, тулбара и сортировки
-toc: true
-permalink: en/fw_group-edit.html
-lang: en
----
+--- 
+title: GroupEdit 
+sidebar: flexberry-winforms_sidebar 
+keywords: Flexberry Winforms, Controls, GroupEdit 
+summary: Properties, change values, the display of the wizard, customize the appearance, toolbar, and sorting 
+toc: true 
+permalink: en/fw_group-edit.html 
+lang: en 
+autotranslated: true 
+hash: c1e6220acf6bd7c4f25c11d665fca1ddba371708fba4d72df1cb6b4cc7bcb773 
+--- 
 
-`GroupEdit` - Winforms-контрол для создания и редактирования [детейлов](fo_detail-associations-properties.html).
+`GroupEdit` - Winforms-control for creating and editing [datalow](fo_detail-associations-properties.html). 
 
-### Свойства GroupEdit
+### Properties GroupEdit 
 
-| Свойство  | Описание |
-| ------------- | ------------- |
-| `AdvansedMarks`  | Добавление дополнительных кнопок управления выделением строк и меток на панель управления GroupEdit.  |
-| `AllowRowLocking`  | Поддержка режима редактирования с блокировками.  |
-| `AlternativeColor`  | Альтернативный цвет для раскраски строк.  |
-| `BackOnShiftEnter` | Переход на следующую ячейку по нажатию `Shift` + `Enter` при выключенном режиме `EditOnEnter`.
-| `DoNotAutoLoadItems` | Не загружать данные из базы автоматически.
-| `EnableValueDisplayResponsibility` | Поддержка режима `ValueDisplayResponsibility`.
-| `EditOnEnter` | Редактирование содержимого ячейки по нажатию на клавишу `Enter`
-| `GenerateValueChangedEventOnRowOperations` | Генерировать события изменения при добавлении или удалении строки.
-| `KeepFocus` | По умолчанию "false". Если установлено "true", то при сохранении будет установлен фокус на той же строке, где он был до сохранения. Запоминается не номер строки, а идентификатор выделенного объекта.
-| `LeaveOnLastEnter` | Переходить к следующему контролу при нажатии на клавишу `Enter` в последней строке.
-| `MoveNextOnEnter` | Переходить к следующей ячейке по клавише `Enter` при включенном режиме `EditOnEnter`.
-| `NewRowOnInsert` | Переходить на первую ячейку новой строки при нажатии `Enter`.
-| `NextOnEnter` | Перемещать активную ячейку по клавише `Enter` при выключенном режиме `EditOnEnter`.
-| `ReadOnly` | Режим "только чтение".
-| `SortOrder` | Настройка сортировки столбца: Asc (по возрастанию), Desc (по убыванию), None (без сортировки). 
-| `SortPriority` | Настройка приоритета сортировки столбца.
-| `ShowStatusBar` | Отображение полосы состояния, на которой показывается количество элементов.
-| `UseAlernativeColoring` | Использовать чередующуюся окраску строк (базовый/альтернативный цвет). |
+| Property | Description | 
+| ------------- | ------------- | 
+| `AdvansedMarks` | Adding extra control buttons to highlight rows and labels on the control panel GroupEdit. | 
+| `AllowRowLocking` | Support edit mode with the locks. | 
+| `AlternativeColor` | Alternative color for coloring lines. | 
+| `BackOnShiftEnter` | move to the next cell by pressing `Shift` `Enter` in the enabled mode `EditOnEnter`. 
+| `DoNotAutoLoadItems` | do Not load the data from the database automatically. 
+| `EnableValueDisplayResponsibility` | mode Support `ValueDisplayResponsibility`. 
+| `EditOnEnter` | Edit contents of a cell pressing `Enter` 
+| `GenerateValueChangedEventOnrowoperations` | Generate change events when adding or deleting a row. 
+| `KeepFocus` | default is "false". If set to true, then the save will be focused on the same line where it was before the save. Remembered not the line number, and the ID of the selected object. 
+| `LeaveOnLastEnter` | go to next control when you press the `Enter` in the last line. 
+| `MoveNextOnEnter` | go to next cell by pressing `Enter` when this mode is enabled `EditOnEnter`. 
+| `NewRowOnInsert` | go to first cell of new row when clicking `Enter`. 
+| `NextOnEnter` | Move the active cell by pressing `Enter` in the enabled mode `EditOnEnter`. 
+| `ReadOnly` | Mode "read only". 
+| `SortOrder` | adjustment column to sort: Asc (ascending) Desc (descending), None (no sorting). 
+| `SortPriority` | setting the sort priority column. 
+| `ShowStatusBar` | bar Display state, showing the number of items. 
+| `UseAlernativeColoring` | Use alternating color rows (base/alternative color). | 
 
-### Изменение значения в контроле
+### Change the values in the control 
 
-Для того чтобы выполнить настройку контрола, встраемового в ячейку `GroupEdit`, нужно использовать событие `gr_SetupEditorEventHandler`, обработчик которого автоматически генерируется на формах редактирования. В аргументы данного события передаются объект данных, контрол и имя редактируемого в данный момент свойства.
+In order to perform the setting control stranovogo in cell `GroupEdit`, you need to use the `gr_SetupEditorEventHandler` event handler which is automatically generated in the edit forms. In the arguments of the event are passed a data object, control and name currently being edited properties.
 
-Пример:
+Example: 
 
 ```csharp
 protected override void gr_SetupEditorEventHandler(object sender, ICSSoft.STORMNET.Windows.Forms.SetupEditorEventArgs e)
 {
-    // *** Start programmer edit section *** (gr_SetupEditorEventHandler( object sender, ICSSoft.STORMNET.Windows.Forms.SetupEditorEventArgs e ))
+    // *** Start programmer edit section *** (gr_SetupEditorEventHandler( object sender, ICSSoft.STORMNET.Windows.Forms.SetupEditorEventArgs e )) 
             
-    // *** End programmer edit section *** (gr_SetupEditorEventHandler( object sender, ICSSoft.STORMNET.Windows.Forms.SetupEditorEventArgs e ))
+    // *** End programmer edit section *** (gr_SetupEditorEventHandler( object sender, ICSSoft.STORMNET.Windows.Forms.SetupEditorEventArgs e )) 
     base.gr_SetupEditorEventHandler(sender, e);
-    // *** Start programmer edit section *** (gr_SetupEditorEventHandler( object sender, ICSSoft.STORMNET.Windows.Forms.SetupEditorEventArgs e ) End)
+    // *** Start programmer edit section *** (gr_SetupEditorEventHandler( object sender, ICSSoft.STORMNET.Windows.Forms.SetupEditorEventArgs e ) End) 
     DateTimePicker dateTimePicker = e.control as DateTimePicker;
     ICSSoft.STORMNET.DataObject dataObject = e.dataObject;
     string propertyName = e.propertyName;
@@ -56,16 +58,16 @@ protected override void gr_SetupEditorEventHandler(object sender, ICSSoft.STORMN
         dateTimePicker.Value = DateTime.Now.AddMonths(1);
     }
 
-    // *** End programmer edit section *** (gr_SetupEditorEventHandler( object sender, ICSSoft.STORMNET.Windows.Forms.SetupEditorEventArgs e ) End)
+    // *** End programmer edit section *** (gr_SetupEditorEventHandler( object sender, ICSSoft.STORMNET.Windows.Forms.SetupEditorEventArgs e ) End) 
 }
-```
+``` 
 
-## Отображение мастера в GroupEdit
+## Display wizard in GroupEdit 
 
-При необходимости отображения в ячейке `GroupEdit` «презентационного» атрибута мастера (т.е. некоторого выражения из атрибутов мастера) можно воспользоваться одним из описанных ниже решений.
- 
-1. Переопределить метод `ToString()` у объекта данных. Особенность данного решения в том, что переопределение повлияет всюду, где используется метод `ToString()`.
-2. Реализовать у контрола, который связан со столбцом `GroupEdit`, интерфейс `IValueDisplayResponsible`. Единственный метод  `GetDisplayValue` данного интерфейса должен вернуть отображаемое в ячейке значение. У `GroupEdit` установить свойство `EnableValueDisplayResponsibility` в `true`.
+If you want to display in the cell `GroupEdit`» «presentation attribute of the master (i.e., a certain expression of the attributes of the wizard), you can use one of the following solutions. 
+
+1. Override method `ToString()` the data object. The peculiarity of this solution is that the override will affect everywhere, where the method is used `ToString()`. 
+2. To implement the control that is associated with the column `GroupEdit` interface `IValueDisplayResponsible`. PstrfGetDisplayValue` the only method of this interface should return displayed in the cell value. PstrfGroupEdit` have to set the property `EnableValueDisplayResponsibility` in `true`. 
 
 ```csharp
 #region IValueDisplayResponsible Members
@@ -80,64 +82,64 @@ public string GetDisplayValue(ICSSoft.STORMNET.DataObject dataObject)
 		Tools.IsNull(ICSSoft.STORMNET.Information.GetPropValueByName(curObject, Код), "").ToString()).TrimStart();
 }
 #region IValueDisplayResponsible Members
-```
+``` 
 
-## Настройка ToolBar в GroupEdit
+## customize ToolBar GroupEdit 
 
-Особенностью настройки тулбара в `GroupEdit` вляется то, что после указания необходимых операций в дизайнере, необходимо закрыть его и открыть снова - вертикальный размер при этом будет пересчитан.
+Feature configure toolbar in `GroupEdit` is that after specifying the necessary operations in the designer, you must close it and open again - the vertical dimension in this case will be recalculated. 
 
-## Сортировка
+## Sorting 
 
-Как и [ObjectListView](fw_objectlistview.html) `GroupEdit` позволяет отсортировать содержимое по различным столбцам. Чтобы быстро настроить многоуровневую сортировку, можно щелкать по столбцам левой кнопокой мыши, зажав клавишу `Ctrl`.
+As [ObjectListView](fw_objectlistview.html) `GroupEdit` allows you to sort on various columns. To quickly configure multi-level sorting, you can click on the columns button with the left mouse, holding down the `Ctrl`. 
 
-Чтобы многоуровневая сортировка не сбросилась при случайном нажатии на столбец, добавлен уточняющий вопрос о смене сортировки.
+To multi-level sorting is not reset when accidentally clicking on the column, added a clarifying question about the change sort. 
 
-## Именованные настройки отображения столбцов
+## Named display settings column 
 
-Существует возможность сохранения именованых настроек отображения столбцов по аналогии с `ObjectListView`. Настройки сохраняются в базе данных отдельно для каждого пользователя.
+There is the ability to save named settings in which the columns appear by analogy with `ObjectListView`. The settings are stored in the database separately for each user. 
 
-{% include note.html content="Данная опция работает только при включенной настройке `UseSettings = true` в файле конфигурации." %}
+{% include note.html content="This option only works when the setting `UseSettings = true` in the configuration file." %} 
 
-## Прорисовка границ ячеек
+## Drawing cell borders 
 
-Сделать рамки в `GroupEdit` можно, используя следующий код:
+To make the frame in `GroupEdit` using the following code: 
 
 ```csharp
 C1FlexGrid ge = GetGridFromGE(Лапа);
 ge.Styles.Normal.Border.Direction = BorderDirEnum.Both;
 ge.Styles.Normal.Border.Style = BorderStyleEnum.Flat;
-```
+``` 
 
-`GroupEdit` с прорисованными границами будет выглядеть следующим образом:
+`GroupEdit` with drawn borders will look like the following: 
 
-![](/images/pages/products/flexberry-winforms/controls/groupedit/groupedit-explain.png)
+![](/images/pages/products/flexberry-winforms/controls/groupedit/groupedit-explain.png) 
 
-## EditManager
+## EditManager 
 
-Обычно `GroupEdit` располагается на [форме редактирования](fd_editform.html), имеющей свой `EditManager`. Однако, у `GroupEdit'а` есть __свой__ `EditManager`, отвечающий за связывание и события.
+Usually `GroupEdit` is on [edit form](fd_editform.html) with your `EditManager`. However, `GroupEdit'а` __your__ `EditManager` responsible for binding and events. 
 
-К примеру, для того чтобы отловить событие возврата значения при выборе мастера, то необходимо подписаться на событие `AfterChangeProperty` EditManager, относящегося к `GroupEdit`, а не к странице редактирования:
+For example, in order to catch the event of the return value when you select master, you must subscribe to the event `AfterChangeProperty` EditManager related to `GroupEdit`, and not to the edit page: 
 
 ```csharp
 GroupEdit1.EditManager.AfterChangeProperty += (o, s) => 
 {
-    // Обработчики
+    // Handlers 
 };
-```
+``` 
 
-{% include note.html content="Стоит учесть, что событие `AfterChangeProperty` при выборе мастера сработает _дважды_: 1ый раз при нажатии на кнопку [лукапа](fa_lookup-overview.html), а 2ой раз при возврате значения." %}
+{% include note.html content="it's Worth noting that the event `AfterChangeProperty` when choosing a master work dwaggy: 1st time you press the button [lucapa](fa_lookup-overview.html), and the 2nd time the return value." %} 
 
-В `GroupEdit` добавлена полоса состояния, отображающая количество элементов.
+In `GroupEdit` added status bar that displays the number of items.
 
-Чтобы включить отображение полосы состояния, необходимо установить свойство `ShowStatusBar = true;`
+To enable the display of the strip condition, you need to set the property `ShowStatusBar = true;` 
 
-## Обработка нажатий клавиш контролами
+## Processing keystrokes controls 
 
-Интерфейс `ISpecialKeysEditable` предназначен для передачи контролам редактирования нажатых клавиш, не являющихся алфавитно-цифровыми. Например, контрол при нажатии `F3` поднимает список для выбора значения. Обработчик, определённый в контроле, срабатывает только, когда контрол находится в состоянии редактирования. Реализация контролом `ISpecialKeysEditable` позволяет предать нажатые клавиши в контрол из GE. При нахождении фокуса на ячейке GE и нажатии указанных клавиш контрол перейдет в режим редактирования, и затем ему будут переданы нажатые клавиши.
+Interface `ISpecialKeysEditable` intended to convey the controls editing keys pressed non-alphanumeric. For example, control clicking `F3` raises the list to select a value. The handler defined in the control, only works when the control is in the editing state. Implementation of control `ISpecialKeysEditable` allows you to bring the key pressed in the control of GE. While the focus on the GE cell and press these keys, the control goes into edit mode, and then will be transferred to the pressed key. 
 
-Интерфейс содержит единственный метод `List<Keys> GetSpecialEditKeys()`, который должен вернуть список обрабатываемых контролом сочетаний. 
+The interface contains a single method `List<Keys> GetSpecialEditKeys()`, which should return the list of source control combinations. 
 
-Пример реализации интерфейса представлен ниже. Обрабатываются сочетания `F2+Shift+Ctrl` и `F3`.
+A sample implementation of the interface is presented below. Processed combination `F2 Shift Ctrl` and `F3`. 
 
 ```csharp
         #region ISpecialKeysEditable Members
@@ -148,22 +150,26 @@ GroupEdit1.EditManager.AfterChangeProperty += (o, s) =>
         }
 
         #endregion
-```
+``` 
 
-## Полезные ссылки по GroupEdit
+## Useful links GroupEdit 
 
-* Некоторые часто задаваемые вопросы освящены в статье [FAQ по вводному обучению](gbt_initial-trainig-faq.html), а также в статье [WinForms UI FAQ](fw_winforms-ui-faq.html).
-* [Блокировка редактирования отдельных записей в `GroupEdit`](fw_lock-rows-in-groupedit.html).
-* [Формат даты в GroupEdit](fw_groupedit-date-format.html)
-* [Получение FlexGrid из GroupEdit](fw_flex-grid.html).
-* Обработка событий:
-    * [События в GroupEdit](fw_events-groupedit.html).
-* [Ограничение-тип-лукапа-combo-в-GroupEdit](fw_restriction-type-lookup-combo-in-groupedit.html).
-* [Функциональность при работе с массивами детеиловых объектов DetailArray](fo_functionality-work-detail-array.html).
-* [Наложение ограничений на GroupEdit](fw_add-limit-to-groupedit.html).
+* Some frequently asked questions was published in article [FAQ in introductory training](gbt_initial-trainig-faq.html) and in [WinForms UI FAQ](fw_winforms-ui-faq.html). 
+* [Edit locking individual records in `GroupEdit`](fw_lock-rows-in-groupedit.html). 
+* [Date format GroupEdit](fw_groupedit-date-format.html) 
+* [Getting FlexGrid from GroupEdit](fw_flex-grid.html). 
+* Event handling: 
+* [The events in GroupEdit](fw_events-groupedit.html). 
+* [Restriction-type-lucapa-combo-in-GroupEdit](fw_restriction-type-lookup-combo-in-groupedit.html). 
+* [Functionality when working with arrays of objects detailbug DetailArray](fo_functionality-work-detail-array.html). 
+* [The imposition of restrictions on GroupEdit](fw_add-limit-to-groupedit.html). 
 
-## Расширения GroupEdit
+## Extensions GroupEdit 
 
-Для `GroupEdit` существует ряд расширений, например:
-* [GEEditorExt](fw_ge-editor-ext.html) (редактирование детейлов в отдельном окне).
-* [GEEmptyDetailRemover](fw_ge-empty-detail-remover.html) (удаление пустых строк).
+For `GroupEdit` there are a number of extensions, for example: 
+* [GEEditorExt](fw_ge-editor-ext.html) (edit detailov in a separate window). 
+* [GEEmptyDetailRemover](fw_ge-empty-detail-remover.html) (delete blank lines). 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

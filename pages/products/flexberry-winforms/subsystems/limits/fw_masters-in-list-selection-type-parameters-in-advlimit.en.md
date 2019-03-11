@@ -1,20 +1,26 @@
----
-title: Мастера в списке выбора типа параметров в редакторе AdvLimit
-sidebar: flexberry-winforms_sidebar
-keywords: Ограничения
-summary: Перечислены условия отображения мастера в списке параметров на форме задания ограничений
-toc: true
-permalink: en/fw_masters-in-list-selection-type-parameters-in-advlimit.html
-folder: products/flexberry-winforms/
-lang: en
----
+--- 
+title: the Wizard in the select list parameter type in the editor AdvLimit 
+sidebar: flexberry-winforms_sidebar 
+keywords: Constraints 
+summary: Lists the conditions of display of the wizard in the parameter list in the form of job restrictions 
+toc: true 
+permalink: en/fw_masters-in-list-selection-type-parameters-in-advlimit.html 
+folder: products/flexberry-winforms/ 
+lang: en 
+autotranslated: true 
+hash: b518b8e173d85d7a9ab8723ccfe9f594ed62a58571dc5aa22399a3d15be4307d 
+--- 
 
-## Указание типа мастера в качестве типа параметра в редакторе ограничений
-### Область применения
-Форма задания ограничений. Параметры визуального дизайнера формы редактирования параметров ограничений.
+## specify the type of master as the type of the parameter in the constraint editor 
+### Scope 
+Setting form constraints. The parameters of the visual designer's form editing restrictions settings. 
 
-### Содержание
-Чтобы мастер оказался доступным в списке параметров:
+### Content 
+To the master was available in the parameter list: 
 
-* Он должен быть указан в представлении, которое используется для настройки ограничений (сам мастер, а не одно из его свойств)
-* В настройке фильтра для списка (FilterSettings, которые доступны через административную консоль) должен быть настроен LookUp для этого мастера.
+* It must be specified in the view, which is used to set restrictions (the master himself, not one of its properties) 
+* Configuring a filter for a list (FilterSettings, which are available via the administrative console) must be configured to LookUp this master. 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

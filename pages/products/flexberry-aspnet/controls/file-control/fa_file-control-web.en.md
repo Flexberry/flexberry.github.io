@@ -1,58 +1,60 @@
----
-title: FileControl для Flexberry ASP.NET
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, JavaScript API, Web UI (Контролы)
-toc: true
-permalink: en/fa_file-control-web.html
-lang: en
----
+--- 
+title: FileControl for Flexberry ASP.NET 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP NET, JavaScript API, Web UI (Controls) 
+toc: true 
+permalink: en/fa_file-control-web.html 
+lang: en 
+autotranslated: true 
+hash: 1f1901fd2cee393e31ff4e9b3061bdf35204fac560005dde48296a03126a80e0 
+--- 
 
-Это контрол для работы с типом данных `ICSSoft.STORMNET.FileType.File` в веб-приложении. Файлы сохраняются в БД в виде сериализованной 
-строки, поэтому данный контрол предназначен для работы с небольшими файлами.
+This control for working with data type `ICSSoft.STORMNET.FileType.File` in the web application. Files are saved in the database as the serialized 
+line, so this control is designed to work with small files. 
 
-В браузере пользователь имеет возможность выбрать файл из своей файловой системы и сохранить его в БД в соответствующем поле объекта данных, на которое установлен биндинг.
+In the browser the user is able to select a file from your file system and save it in the database in the corresponding field of the data object to which the set binding. 
 
-Выглядит контрол следующим образом:
-![](/images/pages/products/flexberry-aspnet/aspnet/file-control.png)
+The control looks as follows: 
+![](/images/pages/products/flexberry-aspnet/aspnet/file-control.png) 
 
-Вначале указывается наименование текущего сохраненного или выбранного файла.Далее идут кнопки: 
+First, you specify the name of the current saved or selected file.Next come the buttons: 
 
-* Выбрать файл - открыть диалог для выбора файла,
-* Скачать файл - скачать текущий сохраненный файл из БД,
-* Сбросить файл - сбросить сохраненный или только что выбранный файл.
+* Choose file - open dialog for file selection 
+* Download file - download the current saved file from database 
+* Reset file to reset saved or just the selected file. 
 
-Кнопка `Скачать файл` будет недоступна, если файл отсутствует в БД (т.е. соответствующее поле объекта данных равно null).
+PstrfСкачать файл` button is dimmed if the file is missing from the database (i.e. the corresponding field of the data object is null). 
 
-{% include important.html content="При выборе новго файла или щелчка по кнопке `Сбросить файл`, кнопка `Скачать файл` будет скачивать старый файл (из БД) до тех пор, пока не будет сохранен объект данных (форма редактирования)." %}
+{% include important.html content="When you select new file or click on `Сбросить файл` button `Скачать файл` to download the old file (from DB) until then, until you save the object data (the edit form)." %} 
 
-{% include note.html content="Нажатие на любую из трех кнопок не производит никаких изменений в БД, изменения произойдут только при сохранении формы редактирования." %}
+{% include note.html content="click on any of the three buttons does not produce any changes in the database, the changes will happen only when you save the editing form." %} 
 
-Кнопка `Сбросить файл` сбрасывает текущий выбор, после чего в компоненте отобразится надпись "(нет файла)". При сохранении формы редактирования старый файл в БД будет удален, на его место запишется значение `null`.
+Button `Сбросить файл` resets the current selection, then the component will display "(no file)". When you save the form edit the old file in the database will be deleted, and in its place is written the value `null`. 
 
-Компонент поддерживается в [AjaxGroupEdit](fa_ajax-group-edit.html).
+The component is supported in [AjaxGroupEdit](fa_ajax-group-edit.html). 
 
-## Ограничение на размер загружаемого файла
+## a Limit on file upload size 
 
-По умолчанию ограничение берется из опции [maxRequestLength](https://msdn.microsoft.com/en-us/library/e1f13641(v=vs.100).aspx) в файле конфигурации приложения (web.config). Значение данного атрибута `по умолчанию - 4 МБ`, если он отсутствует в файле конфигурации.
-Данное ограничение может быть переопределено в свойстве `FileControl.MaxValueSize`. Новое значение не может быть меньше 1 и больше `maxRequestLength`, в противном случае возникнет исключение.
+The default limit is taken from [maxRequestLength](https://msdn.microsoft.com/en-us/library/e1f13641(v=vs.100).aspx) in the application configuration file (web.config). The value of this attribute `по default - 4 МБ` if it is not present in the configuration file. 
+This limitation can be overridden in the property `FileControl.MaxValueSize`. The new value cannot be less than 1 and more `maxRequestLength`, otherwise an exception will occur. 
 
-Если пользователь выберет файл, размер которого превышает заданное ограничение, то он получит сообщение о превышении допустимого размера файла, после чего выбранный файл будет сброшен: 
+If the user selects a file that exceeds the specified limit, he will receive a message about exceeding the allowable file size, then the selected file will be reset: 
 
-![](/images/pages/products/flexberry-aspnet/aspnet/file-control-max-file-size.png).
+![](/images/pages/products/flexberry-aspnet/aspnet/file-control-max-file-size.png). 
 
-{% include note.html content="ограничение на размер запроса может быть установлено средствами IIS, которое может расходиться с атрибутом `maxRequestLength`. Такая ситуация не контролируется компонентом `FileControl`." %}
+{% include note.html content="a limit on the request size can be set by the IIS features, which may differ from the attribute `maxRequestLength`. This situation is not controlled component `FileControl`." %} 
 
-## Подключение FileControl (Web) к приложению
+## Connection FileControl (Web) app 
 
-Для того, чтобы `FileControl` появился на форме редактирования, нужно его добавить в `aspx-разметку`. 
+In order to `FileControl` appeared on the edit form, need to add it to `aspx-разметку`. 
 
 ```html
 <ac:FileControl ID="ctrlFile" runat="server"/>
-```
+``` 
 
-Контрол располагается в сборке `ICSSoft.STORMNET.Web.AjaxControls.dll`.
+Control is in the Assembly `ICSSoft.STORMNET.Web.AjaxControls.dll`. 
 
-Для добавления в контролы, которые формируются динамически (например, [AjaxGroupEdit](fa_ajax-group-edit.html)), нужно прописать в [WebControlProvider](fa_web-control-provider.html) следующие строки:
+To add to the controls that are generated dynamically (e.g., [AjaxGroupEdit](fa_ajax-group-edit.html)) you need to register in [WebControlProvider](fa_web-control-provider.html) the following lines: 
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -64,9 +66,9 @@ lang: en
   </propertytype>
 <!-- ... -->
 </root>
-```
+``` 
 
-Также необходимо в `web.config` добавить следующие строки:
+You also need to `web.config` to add the following lines: 
 
 ```xml
 <configuration>
@@ -75,7 +77,7 @@ lang: en
     <!-- ... -->
     <httpHandlers>
       <!-- ... -->
-      <add verb="POST" path="FileControlService.axd" type="ICSSoft.STORMNET.Web.HttpHandlers.FileControlHandler" validate="false" />
+      <add verb=POST path="FileControlService.axd" type="ICSSoft.STORMNET.Web.HttpHandlers.FileControlHandler" validate="false" />
       <!-- ... -->
     </httpHandlers>
     <!-- ... -->
@@ -84,41 +86,41 @@ lang: en
     <!-- ... -->
     <handlers>
       <!-- ... -->
-      <add verb="POST" name="FileControlService" path="FileControlService.axd" type="ICSSoft.STORMNET.Web.HttpHandlers.FileControlHandler" resourceType="Unspecified" preCondition="integratedMode" />
+      <add verb=POST name="FileControlService" path="FileControlService.axd" type="ICSSoft.STORMNET.Web.HttpHandlers.FileControlHandler" resourceType="Unspecified" preCondition="integratedMode" />
       <!-- ... -->
     </handlers>
     <!-- ... -->
   </system.webServer>
 </configuration>
-```
+``` 
 
-Для сгенерированных "начисто" проектов данные настройки создаются автоматически.
+For the generated "clean" projects these settings are created automatically. 
 
-## FileControl в WOLV
+## FileControl in WOLV 
 
-Контрол можно расположить в ячейках столбца WOLV в режиме ReadOnly (только возможность скачивания файла).
+The control can be placed in the column cells WOLV in ReadOnly mode (only download file). 
 
-Необходимо указать, что для отображения типа File нужно использовать FileControl:
+You need to specify what to display the type of File you need to use FileControl: 
 
 ```xml
 <customproperty class="BugReport" property="Attachment">
     <control typename="ICSSoft.STORMNET.Web.AjaxControls.FileControl, ICSSoft.STORMNET.Web.AjaxControls" property="Value" codefile=""/>
   </customproperty>
-```
+``` 
 
-В `WOLVSettApplyer.cs` необходимо подписаться на событие `WebControlProvider.TuneControlDelegateMethod`, чтобы настроить свойство `FileControl.ReadOnly = true` для всех контролов FileControl, расположенных в WOLV:
+In `WOLVSettApplyer.cs` you must subscribe to the event `WebControlProvider.TuneControlDelegateMethod` to configure the property `FileControl.ReadOnly = true` for all controls FileControl, located in WOLV: 
 
 ```csharp
 wolv.WebControlProvider.TuneControlDelegateMethod += TuneControlDelegateMethod;
 
-/// <summary>
-/// Донастройка контролов в WOLV.
-/// </summary>
-/// <param name="control">Созданный контрол в WOLV.</param>
-/// <param name="createdControlData">Информация о созданном контроле.</param>
+/// <summary> 
+/// Ponastroila controls in WOLV. 
+/// </summary> 
+/// <param name="control">the control Created in WOLV.</param> 
+/// <param name="createdControlData">Information about the created control.</param> 
 private void TuneControlDelegateMethod(Control control, CreatedControlData createdControlData)
 {
-    // FileControl в WOLV должен быть в режиме "Только для чтения".
+    // FileControl to WOLV should be in the "read-Only". 
     var fileControl = control as FileControl;
     if (fileControl != null)
     {
@@ -126,12 +128,16 @@ private void TuneControlDelegateMethod(Control control, CreatedControlData creat
         fileControl.EmptyFileNameText = string.Empty;
     }
 }
-```
+``` 
 
-## FileControlView
+## FileControlView 
 
-Подробнее о `FileControlView` в [статье](fa_file-control-view.html).
+Read more about `FileControlView` in [article](fa_file-control-view.html). 
 
-## Использование FileControl на формах редактирования
+## Using FileControl on the edit forms 
 
-Использование FileControl на формах редактирования описано в соответствующей [статье](fa_file-control-description.html).
+Using FileControl on the edit forms described in the corresponding [article](fa_file-control-description.html). 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -1,59 +1,64 @@
----
-title: Передача параметров от ContRunner до формы редактирования
-sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (формы)
-summary: Указано какие методы и как следует переопределить, чтобы принять параметр от DesktopCustomizer в списковой форме и передать на форму редактирования
-toc: true
-permalink: en/fw_parameters-from-cont-runner-to-editform.html
-folder: products/flexberry-winforms/
-lang: en
----
+--- 
+title: passing parameters from ContRunner to edit form 
+sidebar: flexberry-winforms_sidebar 
+keywords: Windows UI (forms) 
+summary: See what methods and how to override to take a parameter from DesktopCustomizer in list form and pass to the edit form 
+toc: true 
+permalink: en/fw_parameters-from-cont-runner-to-editform.html 
+folder: products/flexberry-winforms/ 
+lang: en 
+autotranslated: true 
+hash: e03e182f4b90573ec842c33f359998092905f1f149c74fde5882fee8fb4894cb 
+--- 
 
-## Передача параметров в DesktopCustomizer
-Для того чтобы передать параметр контейнеру запуска используйте перегруженный метод создания `ContRunner`.
-
-```csharp
-arr.Add(new ICSSoft.STORMNET.UI.ContRunner(typeof(IIS.LimitsTesting_Blog.LTB_БлогL), "MyTag1FromContRunner", "LimitsTesting_Blog", "Блог", ""));
-```
-
-## Приём параметра в списковой форме и передача на форму редактирования
-Параметр в списковую форму попадает в метод `Activate(object tag)`. 
-Обратите внимание на количество параметров в перегруженном методе `OnNewEvent()`. Перегрузить следует метод с 2мя параметрами, а вызвать в нём метод с 3мя. По-умолчанию создание объектов происходит без передачи тега.
+## passing parameters in DesktopCustomizer 
+In order to pass a variable to the container startup use the overloaded method of creating `ContRunner`. 
 
 ```csharp
-// *** Start programmer edit section *** (LTB_БлогL CustomMembers)
+arr.Add(new ICSSoft.STORMNET.UI.ContRunner(typeof(IIS.LimitsTesting_Blog.LTB_БлогL), "MyTag1FromContRunner", "LimitsTesting_Blog", "Blog", ""));
+``` 
+
+## Reception parameter in a list form and the edit form 
+Parameter in list form gets in the method `Activate(object tag)`. 
+Pay attention to the number of parameters in overloaded method `OnNewEvent()`. You should overload a method with 2 parameters and call it with method 3. Default object creation occurs without the transfer of the tag. 
+
+```csharp
+// *** Start programmer edit section *** (LTB_БлогL CustomMembers) 
 private object _tagFromRunner;
 
 public override void Activate(object tag)
 {
     _tagFromRunner = tag;
-    // MessageBox.Show("Activate " + (tag??"<пусто>"));
+    // MessageBox.Show("Activate" (tag??"<empty>")); 
     base.Activate(tag);
 }
 
 protected override void OnNewEvent(Type dataobjecttype, string contpath)
 {
-    // MessageBox.Show("OnNewEvent");
+    // MessageBox.Show("OnNewEvent"); 
     base.OnNewEvent(dataobjecttype, contpath, _tagFromRunner);
 }
 
 protected override void OnEditEvent(string propertyname, ICSSoft.STORMNET.DataObject dataobject, string contpath, object tag)
 {
-    // MessageBox.Show("OnEditEvent " + (tag ?? "<пусто>"));
+    // MessageBox.Show("OnEditEvent" (tag ?? "<empty>")); 
     base.OnEditEvent(propertyname, dataobject, contpath, _tagFromRunner);
 }
-// *** End programmer edit section *** (LTB_БлогL CustomMembers)
-```
+// *** End programmer edit section *** (LTB_БлогL CustomMembers) 
+``` 
 
-## Приём параметра на форме редактирования
-В метод `Edit` с самым большим числом параметров придёт тот самый тег.
+## Receiving option on the edit form 
+In the method `Edit` with the largest number of options comes the same tag. 
 
 ```csharp
-// *** Start programmer edit section *** (WinformLTB_БлогE CustomMembers)
+// *** Start programmer edit section *** (WinformLTB_БлогE CustomMembers) 
 public override void Edit(ICSSoft.STORMNET.DataObject dataobject, string contpath, string propertyname, object tag)
 {
-    // MessageBox.Show("БлогE tag: " + (tag??"<пусто>"));
+    // MessageBox.Show("Blog tag:" (tag??"<empty>")); 
     base.Edit(dataobject, contpath, propertyname, tag);
 }
-// *** End programmer edit section *** (WinformLTB_БлогE CustomMembers)
+// *** End programmer edit section *** (WinformLTB_БлогE CustomMembers) 
 ```
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

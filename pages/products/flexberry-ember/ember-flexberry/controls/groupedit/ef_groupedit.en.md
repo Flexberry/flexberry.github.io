@@ -1,16 +1,20 @@
----
-title: Flexberry Groupedit
-sidebar: flexberry-ember_sidebar
-keywords: Flexberry Ember, groupedit
-toc: true
-permalink: en/fe_groupedit.html
-lang: en
-summary: Свойства, особенности реализации, настройка сортировки и встраивание прикладных компонентов, реализация в отдельном роуте
----
+--- 
+title: Flexberry Groupedit 
+sidebar: ember-flexberry_sidebar 
+keywords: Flexberry Ember 
+toc: true 
+permalink: en/ef_groupedit.html 
+lang: en 
+autotranslated: true 
+hash: acd52f751380ee76ff4bfdffa409c8e875e3d1b287ca3692cdaf7a259a1bc9f9 
+summary: Properties, implementation details, configuring the sorting and integration of application components 
+--- 
 
-`flexberry-groupedit` предназначен для работы с [детейлами](fo_detail-associations-properties.html) на форме редактирования.
+## Description 
 
-Чтобы добавить groupedit на страницу, в шаблоне нужно указать:
+`flexberry-groupedit` is designed to work with [detaylari](fo_detail-associations-properties.html) on the edit form. 
+
+To add groupedit page, in the template you need to specify: 
 
 ```hbs
 {% raw %}{{flexberry-groupedit
@@ -21,36 +25,38 @@ summary: Свойства, особенности реализации, наст
   readonly=readonly
   orderable=false
 }}{% endraw %}
-```
+``` 
 
-### Свойства Flexberry Groupedit
+### Properties Flexberry Groupedit 
 
-Свойство | Краткое описание
-:--------|:----------------
-Свойства `componentName` и `readonly`| Свойства из [базового контрола](ef_controls.html).
-`modelProjection`| Определяет представление, которое будет отображаться.
-`content`| Определяет записи, редактируемые в контроле.
-`cellComponent`| Метод, определяющий, каким контролом редактируется компонент.
-`orderable`| Флаг, определяющий, возможно ли производить сортировку по столбцам в компоненте (если значение флага будет изменено на "true", потребуются дополнительные настройки, о чём ниже).
-`showDeleteMenuItemInRow`| Флаг, определяющий, отображать ли пункт контекстного, меню мобильного шаблона f-ge, "Удалить запись". Значение по умолчанию: false.
-`showEditMenuItemInRow`| Флаг, определяющий, отображать ли пункт контекстного, меню мобильного шаблона f-ge, "Редактировать запись". Значение по умолчанию: false.
-`showDeleteButtonInRow`| Флаг, определяющий, отображать кнопку "-" для удаления записи в браузерном и мобильном шаблоне. Значение по умолчанию: false.
-`singleColumnHeaderTitle`| Заголовок для мобильного представления f-ge, вместо названий колонок.
+Property | Brief description 
+:--------------------|:-------------- 
+Properties `componentName` and `readonly`| Properties from the [basic control](ef_controls.html). 
+`modelProjection`| Defines the view to be displayed. 
+`content`| Single records, an editable control. 
+`cellComponent`| Method that determines how the control component is edited. 
+`orderable`| a Flag that determines whether to sort by columns in the component (if the flag value is changed to "true" will require additional configuration, see below). 
+`showDeleteMenuItemInRow`| a Flag that determines whether to display the item in the context menu mobile template f-ge, "Delete record". The default value is false. 
+`showEditMenuItemInRow`| a Flag that determines whether to display the item in the context menu mobile template f-ge, the "Edit record". The default value is false. 
+`showDeleteButtonInRow`| Flag specifying to display the "-" button to delete the record in the browser and mobile template. The default value is false. 
+`singleColumnHeaderTitle `| Header for mobile view f-ge, instead of column names. 
 
-Свойства, используемые для настройки редактирования в отдельном роуте:
+Can also be used properties: 
 
-* `rowClickable`
-* `rowClick`
-* `editOnSeparateRoute`
+* `rowClickable` 
+* `rowClick` 
+* `editOnSeparateRoute` 
 
-## Особенности реализации
+For details, see [article](ef_groupedit-detail-in-route.html)). 
 
-* Flexberry Groupedit состоит из двух компонент: `GroupeditToolbar` и `ObjectListView`.
-* Свойство `class` применяется к `ObjectListView`.
+## features of the implementation 
 
-## Сортировка элементов
+* Flexberry Groupedit consists of two components: `GroupeditToolbar` and `ObjectListView`. 
+* Property `class` applies to `ObjectListView`. 
 
-Если для флага `orderable` выставить значение "true", то требуется дополнительно задать настройки:
+## of flag orderable 
+
+If the flag `orderable` set the value to "true", requires to specify settings: 
 
 ```hbs
 {% raw %}{{flexberry-groupedit
@@ -59,24 +65,24 @@ summary: Свойства, особенности реализации, наст
   sortByColumn=(action "sortByColumn")
   addColumnToSorting=(action "addColumnToSorting")
 }}{% endraw %}
-```
+``` 
 
-* `sortByColumn` - действие (action) контроллера, которое должно быть выполнено для сортировки по столбцу.
-* `addColumnToSorting` - действие (action) контроллера, которое должно быть выполнено для добавления сортировки по столбцу.
+* `sortByColumn` - action (action) of the controller that should be executed to sort by column. 
+* `addColumnToSorting` - action (action) of the controller that should be executed to add a sort by column. 
 
-Использовать сортировку в шаблоне можно, если в контроллере шаблона были определены действия (action) с именами `sortByColumn` и `addColumnToSorting`. Синтаксис `addColumnToSorting=(action \"addColumnToSorting\")` определяет, что используется ember closure action.
+Use the sorting in the template, if the controller template has been defined, the actions (action) with names `sortByColumn` and `addColumnToSorting`. Syntax `addColumnToSorting=(action \"addColumnToSorting\")` determines that you are using the ember closure action.
 
-## Встраивание компонентов в groupedit
+## Embedding components in groupedit 
 
-Компонент `flexberry-groupedit` - это таблица, в ячейки которой можно встраивать любые компоненты, наследуемые от [flexberry-base-component](ef_controls.html).
+Component `flexberry-groupedit` is a table in which the cells can be embedded on any component that inherits from [flexberry-base-component](ef_controls.html). 
 
-Для встраивания компонентов flexberry-groupedit находит метод `getCellComponent` в текущем контроллере, и вызывает его при формировании каждой ячейки таблицы.
+For embedding components flexberry-groupedit `getCellComponent` finds a method in the current controller, and causes in the formation of each cell of the table. 
 
-Метод `getCellComponent` уже определен в базовом контроллере формы редактирования (`ember-flexberry/controllers/edit-form.js`), его логика направлена
-на встраивание компонентов в зависимости от типа данных в ячейке, и выглядит следующим образом:
+PstrfgetCellComponent` method already defined in the base controller edit form (`ember-flexberry/controllers/edit-form.js`), his logic is aimed 
+on the embedding of components, depending on the type of data in the cell, and is as follows: 
 
 ```javascript
-// ...
+// ... 
   getCellComponent: function(attr, bindingPath, modelClass) {
   var cellComponent = {
     componentName: 'flexberry-textbox',
@@ -102,10 +108,10 @@ summary: Свойства, особенности реализации, наст
         break;
       default:
 
-        // Current cell type is possibly custom transform.
+        // Current cell type is possibly custom transform. 
         var modelAttrType = getOwner(this)._lookupFactory('transform:' + modelAttr.type);
 
-        // Handle enums (extended from transforms/enum-base.js).
+        // Handle enums (extended from transforms/enum-base.js). 
         if (modelAttrType && modelAttrType.isEnum) {
           cellComponent.componentName = 'flexberry-dropdown';
           cellComponent.componentProperties = {
@@ -119,10 +125,10 @@ summary: Свойства, особенности реализации, наст
 
   return cellComponent;
 }
-```
+``` 
 
-Если на прикладной форме редактирования требуется встраивать прикладной компонент в ячейки groupedit-а, то необходимо будет переопределить метод `getCellComponent` в прикладном контроллере,
-унаследованном от базового контроллера формы редактирования (`ember-flexberry/controllers/edit-form.js`).
+If you applied the edit form you want to embed the application component in the cell groupedit-but, you will need to override the method `getCellComponent` in the application controller 
+inherited from base controller edit form (`ember-flexberry/controllers/edit-form.js`). 
 
 ```javascript
 import EditFormController from 'ember-flexberry/controllers/edit-form';
@@ -130,7 +136,7 @@ import EditFormController from 'ember-flexberry/controllers/edit-form';
 export default EditFormController.extend({
   title: 'My edit form',
 
-  //...
+  //... 
 
   getCellComponent: function(attr, bindingPath, model) {
     if (...) {
@@ -153,114 +159,20 @@ export default EditFormController.extend({
     return this._super(...arguments);
   }
 
-  //...
+  //... 
 });
-```
+``` 
 
-При этом важно, чтобы встраиваемый компонент наследовался от базового компонента (`ember-flexberry/components/flexberry-base-component.js`),
-и если в компоненте переопределен метод `init`, то в конце прикладной инициализации обязательно должен вызываться метод инициализации из базового класса, т.к. там определена логика, инициализирующая свойства компонента из объекта переданного в возвращаемом значении метода getCellComponent по ключу componentProperties.
+It is important that the embedded component inherits from basic component (`ember-flexberry/components/flexberry-base-component.js`), 
+and if a component of the overridden method `init`, at the end of application initialization, must be called by the initialization method from the base class, because there is a defined logic that initializes component properties from the object passed in the return value of the method getCellComponent key componentProperties. 
 
-## Редактирование детейлов в отдельном роуте
+## Editing detailov in a separate roat 
 
-Настройка шаблонов и моделей агрегатора и детейла, сериализатора агрегатора и контроллера детейла для реализации возможности редактирования в отдельном роуте является частным случаем использования компонента (например, при работе на мобильных устройствах).
+Configuring templates and models aggregator and detail, serializer aggregator and controller of detail to implement editing options in a separate route described in the article [Edit detailov in a separate rout](ef_groupedit-detail-in-route.html) 
 
-При этом следует учитывать некоторые особенности приминения:
+## Computable properties in getCellComponent 
 
-* Изменения в агрегаторе и детейлах сохраняются в БД только при нажатии кнопки "Сохранить" на форме агрегатора.
-* На странице детейла есть только две кнопки: "Сохранить" и "Закрыть" (на форме нет кнопки, чтобы откатить состояние детейла на момент захода на форму).
-* При нажатии на кнопку "Сохранить" на странице детейла происходит возврат на страницу агрегатора без сохранения изменений в БД.
-
-### Настройка шаблона агрегатора и роутера
-
-В [шаблоне](ef_template.html) формы редактирования агрегатора у контрола `flexberry-groupedit` определить следующие свойства:
-
-```hbs
-{% raw %}
-{{flexberry-groupedit
-  ...
-  rowClickable=true
-  rowClick='rowClick'
-  editOnSeparateRoute=true
-}}{% endraw %}
-```
-
-* `rowClickable` - флаг, определяющий, следует ли обрабатывать нажатие на строчку. По умолчанию имеет значение "false", для редактирования детейла в отдельном роуте нужно задать "true".
-* `rowClick` - действие, выполняемое при нажатии на строчку. По умолчанию имеет значение "rowClick", для редактирования детейла в отдельном роуте нужно, чтобы действие (action) с заданным в свойстве именем было определено в [контроллере](ef_controller.html) или [роуте](ef_route.html) ("rowClick" определено в базовом роуте формы редактирования).
-
-{% include note.html content="Текущий обработчик метода `rowClick` реализован таким образом, что в случае, если детейл сохранён, то будет произведена переадресация на роут как `modelName/:id`, а если не сохранён, то `modelName.new` (соответственно, [роутер](ef_router.html) должен быть настроен, чтобы переадресация могла пройти корректно)." %}
-
-* `editOnSeparateRoute` - флаг, определяющий, следует ли редактировать детейл в отдельном роуте. По умолчанию имеет значение "false". При задании значения "true" изменяется внешний вид `flexberry-groupedit`: отключается возможность редактирования непосредственно в контроле, при нажатии на кнопку "Добавить" теперь создаётся новая запись и сразу происходит переадресация на роут редактирования.
-
-### Настройка шаблона детейла
-
-Чтобы была возможность редактировать детейл в отдельном роуте, соответствующая форма должна быть создана.
-
-Если предполагается, что форма редактирования детейла может быть использована не только с формы агрегатора, но и со списковой формы детейлов, то для настройки отображения кнопок "Сохранить", "Удалить", "Закрыть" можно использовать условия, представленные в статье [Формы редактирования и создания](ef_edit-form.html).
-
-### Настройка контроллера детейла
-
-Контроллер формы редактирования детейла должен наследоваться от "detail-edit-form" вместо "edit-form". В "detail-edit-form" присутствует дополнительная логика, организующая корректное взаимодействие между формами агрегатора и детейла. В случае, если определено, что пользователь попал на форму детейла не с формы агрегатора, то будет выполняться логика базового контроллера "edit-form".
-
-```javascript
-import DetailEditFormController from 'ember-flexberry/controllers/detail-edit-form';
-
-export default DetailEditFormController;
-```
-
-### Настройка моделей агрегатора и детейла
-
-При описании [модели](efd_model.html) _агрегатора_ важно проверить, что проставлена детейловая [inverse-связь](https://guides.emberjs.com/v2.4.0/models/relationships/#toc_reflexive-relations).
-
-```javascript
-var Model = BaseModel.extend({
-  ...
-  orders: DS.hasMany('order', { inverse: 'employee', async: false }),
-});
-```
-
-При описании модели _детейла_ важно проверить, что проставлена [inverse-связь](https://guides.emberjs.com/v2.4.0/models/relationships/#toc_reflexive-relations) на агрегатора.
-
-```javascript
-var Model = BaseModel.extend({
-  ...
-  employee: DS.belongsTo('employee', { inverse: 'orders', async: false })
-});
-```
-
-### Настройка сериализатора агрегатора
-
-Важно, чтобы [сериализаторы](efd_serializer.html) для агрегатора и детейла были настроены корректно.
-
-### Дополнительные особенности реализации
-
-* У базового контроллера формы редактирования есть свойство `returnToAgregatorRoute`, которое определяет, следует ли производить настройки для потенциального возвращения на предыдущий роут агрегатора. По умолчанию в базовом контроллере значение "false". В базовом контроллере детейла данное значение переопределено на "true" (при необходимости можно в прикладном контроллере детейла поменять его обратно на "false", чтобы не происходило возвращение). Вычитка данного флага происходит в методе роута [setupController](http://devdocs.io/ember/classes/ember.route#method_setupController).
-* Для организации сохранения информации между роутами агрегатора и детейла используется специальный сервис `detail-interaction`. Данный сервис не предназначен для использования на прикладных проектах.
-* В базовый роут формы редактирования миксинится свойство `newRoutePath`, где определяется, каким образом по роуту модели определяется роут для новой записи. Сейчас метод реализован как "currentPath + '.new'". Потенциально этот метод можно переопределить на прикладном роуте.
-
-### Редактирование детейлов в отдельном роуте во Flexberry Groupedit с сохранением
-
-Существует режим работы `flexberry-groupedit`, при котором редактирование детейла происходит на отдельном роуте, при этом, при переходе с роута агрегатора на роут детейла, происходит сохранение агрегатора, а при переходе обратно - сохранение детейла.
-
-Настройка данного варианта аналогичная описываемому выше способу. В шаблоне контрола при этом нужно выставить один дополнительный флаг `saveBeforeRouteLeave`.
-
-```hbs
-{% raw %}
-{{flexberry-groupedit
-  ...
-  rowClickable=true
-  rowClick='rowClick'
-  editOnSeparateRoute=true
-  saveBeforeRouteLeave=true
-}}{% endraw %}
-```
-
-`saveBeforeRouteLeave` - флаг, определяющий, следует ли сохранять текущую модель при переходах между агрегатором и детейлом. По умолчанию имеет значение "false".
-
-О том, как функционируют кнопки на такой детейловой форме, описано в статье [Формы редактирования и создания](ef_edit-form.html).
-
-## Вычислимые свойства в getCellComponent
-
-Чтобы создать вычисляемое свойство нужно, в `controllers`, в `getCellComponent` добавить свойство `computedProperties: { thisController: this }`:
+To create a computed property need to `controllers`, `getCellComponent` add property `computedProperties: { thisController: this }`: 
 
 ```javascript
 getCellComponent(attr, bindingPath, model) {
@@ -281,9 +193,9 @@ getCellComponent(attr, bindingPath, model) {
 
    return cellComponent;
  },
-```
+``` 
 
-Таким образом в свойстве `computedProperties` у текущего controller-а будет `this` из [dynamic-properties](https://github.com/Flexberry/ember-flexberry/blob/develop/addon/mixins/dynamic-properties.js) со всеми своими observer-ами. Теперь чтобы поменять любое из свойств встраимого компонента достаточно изменить значение в `computedProperties`:
+Thus in the property `computedProperties` the current controller and will be `this` of [dynamic-properties](https://github.com/Flexberry/ember-flexberry/blob/develop/addon/mixins/dynamic-properties.js) with all your observer-AMI. Now to change any of the properties strimage component is sufficient to change the value in `computedProperties`: 
 
 ```javascript
 checkboxValue: false,
@@ -299,4 +211,8 @@ lookupReadonly: Ember.observer('checkboxValue', function() {
 
   return this.get('checkboxValue');
 }),
-```
+``` 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

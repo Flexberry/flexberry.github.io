@@ -1,55 +1,61 @@
----
-title: Search function
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry Designer, Flexberry ORM, plugins
-summary: Features of using the search for fragments of diagrams for selected projects
-toc: true
-permalink: en/fo_intelli-search-plugin.html
-lang: en
----
+--- 
+title: search Function 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry Designer, Flexberry ORM, plugins 
+summary: the Features of the search of fragments of diagrams for selected projects 
+toc: true 
+permalink: en/fo_intelli-search-plugin.html 
+lang: en 
+autotranslated: true 
+hash: fd052034d0dc5463bc677fc826e4b09c1f281856f5364ffe1aac5ffc3272efa7 
+--- 
 
-Модуль расширения [Flexberry Designer](fd_landing_page.html): `IntelliSearch` разработан для поиска фрагментов диаграмм по выбранным проектам репозитория.
+Expansion module [Flexberry Designer](fd_landing_page.html): `IntelliSearch` developed to search for pieces of diagrams for selected projects of the repository. 
 
-## Подключение
+## Connection 
 
-Подключение осуществляется по следующему алгоритму:
+The connection is made according to the following algorithm: 
 
-* Зарегистрировать плагин в CASEBERRY
-    * Открыть меню `Полезности` - `Модули`
-    * Нажать `Создать`
-    * Указать путь к библиотеке `IntelliSearch.dll`
+* Register the plugin in CASEBERRY 
+* Open menu `Полезности` - `Модули` 
+* Click `Создать` 
+* Specify the library path `IntelliSearch.dll` 
 
-* Добавить плагин к репозиторию
-    * Открыть свойства репозитория, выбрав пункт меню `Репозитарий` - `Редактировать свойства`
-    * В разделе `Модули` нажать `Создать`, в добавившейся строке в колонке `Модуль` выбрать `IntelliSearchPlugin`
-    * Сохранить изменения
+* Add a plugin to the repository 
+* Open the properties of the repository by selecting the menu item `Репозитарий` - `Редактировать свойства` 
+* In section `Модули` `Создать` click in the added row in column `Модуль` to choose `IntelliSearchPlugin` 
+* Save changes 
 
-{% include note.html content="Подробнее о модулях и их подключении можно посмотреть в статье [Модули расширения функциональности](fd_flexberry-plugins.html)." %}
+{% include note.html content="More on modules and their connection can be found in the article [Modules extend the functionality](fd_flexberry-plugins.html)." %} 
 
-После этого появится пункт меню Стадии `IntelliSearchPlugin`, позволяющий переформировать индекс для конкретной Стадии, а также кнопка `Искать в других стадия` на диаграмме классов.
+This will bring up a menu Stage `IntelliSearchPlugin` that allows you to rebuild the index for a particular Stage and a button `Искать in other стадия` on the class diagram. 
 
-## Использование поиска
+## Using search 
 
-Чтобы воспользоваться поиском, необходимо:
+To use search, you need to: 
 
-* Создать пустую диаграмму классов в любой стадии
-* Нарисовать объекты (классы, связи и пр.), которые необходимо найти
-* Нажать кнопку `Искать в других стадиях` 
+* Create an empty class diagram at any stage 
+* Draw objects (classes, relationships, etc.) that need to be found 
+* Click `Искать in other стадиях` 
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/search-example.png)
+![](/images/pages/products/flexberry-orm/module-flexberry-designer/search-example.png) 
 
-* В открывшемся окне "Стадии для поиска" выбрать интересующие стадии 
+* In the window "Stage to search" to select the desired stage 
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/search-studys.png)
+![](/images/pages/products/flexberry-orm/module-flexberry-designer/search-studys.png) 
 
-* При необходимости настроить параметры поиска (порог релевантности и важность совпадения имен\типов данных\значений по умолчанию\кардинальностей) нажав на кнопку `Параметры поиска`
+* If necessary, configure the search parameters (the threshold of relevance and the importance of name matching\data types\defaults\cardinalities) by clicking on the button `Параметры поиска` 
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/search-params.png)
+![](/images/pages/products/flexberry-orm/module-flexberry-designer/search-params.png) 
 
-* Нажать кнопку `Поиск`.
+* Click `Поиск`. 
 
-{% include note.html content="Поиск требует индексации стадий, если будет выбрано большое количество непроиндексированных стадий, то процесс индексации может занять длительное время." %}
+{% include note.html content="Search indexing requires the stages, if you have selected a large number neyroendokrinnykh stages, the indexing process can take a long time." %} 
 
-Результат представляется в виде дерева стадий со скриншотами диаграмм, на которых найдены схожие фрагменты. Скриншот диаграммы можно открыть в натуральную величину.
+The result is a tree of stages with screenshots of charts, which found similar fragments. A screenshot of the chart to open in full size. 
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/search-results.png)
+![](/images/pages/products/flexberry-orm/module-flexberry-designer/search-results.png) 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

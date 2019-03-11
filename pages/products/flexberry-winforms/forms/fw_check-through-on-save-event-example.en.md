@@ -1,20 +1,22 @@
----
-title: Пример проверки данных на форме через OnSave/OnSaveEvent
-sidebar: flexberry-winforms_sidebar
-keywords: DataObject (объекты данных)
-summary: Приведен пример переопределения OnSave/OnSaveEvent для проверки данных на форме
-toc: true
-permalink: en/fw_check-through-on-save-event-example.html
-folder: products/flexberry-winforms/
-lang: en
----
+--- 
+title: Example of data validation on the form using OnSave/OnSaveEvent 
+sidebar: flexberry-winforms_sidebar 
+keywords: DataObject (object data) 
+summary: Shows an example of overriding the OnSave/OnSaveEvent to validate data on the form 
+toc: true 
+permalink: en/fw_check-through-on-save-event-example.html 
+folder: products/flexberry-winforms/ 
+lang: en 
+autotranslated: true 
+hash: 782721f0a858403b6044d06c3f9aedea71ccb9848344ab4c85d8c7b4e8230248 
+--- 
 
-<!-- Данная статья ещё редактируется -->
+<!-- This article is still being edited --> 
 
-Cуть проверки состоит в том, что событие [`OnSave`](fw_form-interaction.html)/[`OnSaveEvent`](fw_form-interaction.html) переопределяется и, если данные не удовлетворяют некоторым условиям, базовый метод вызван не будет.
+The essence of the test is that the event [`OnSave`](fw_form-interaction.html)/[`OnSaveEvent`](fw_form-interaction.html) is overridden and if the data does not satisfy certain conditions, the base method does not get called. 
 
 
-[`OnSaveEvent`](fw_form-interaction.html) зависимой формы:
+[`OnSaveEvent`](fw_form-interaction.html) dependent forms: 
 
 ```csharp
 protected override void OnSaveEvent()
@@ -24,21 +26,21 @@ protected override void OnSaveEvent()
 	if (vЗаяв.ДатаНачалаНачисл != null && vЗаяв.ЛгКатЛичн != null && vЗаяв.ЛгКатЛичн.ДатаНазначения != null &&
 		   vЗаяв.ДатаНачалаНачисл.Value < vЗаяв.ЛгКатЛичн.ДатаНазначения.Value)
 	{
-		   if (System.Windows.Forms.MessageBox.Show("Выплата может быть назначена с " + vЗаяв.ЛгКатЛичн.ДатаНазначения.Value.ToString("dd.MM.yyyy") + ". Сохранить изменения? ","Внимание",
+		   if (System.Windows.Forms.MessageBox.Show("The payment may be designated with a " + vЗаяв.ЛгКатЛичн.ДатаНазначения.Value.ToString("dd.MM.yyyy") + ". Save changes? ","Attention",
 				  System.Windows.Forms.MessageBoxButtons.YesNo,System.Windows.Forms.MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.No)
 				  bContinueSave = false;
 	}						
 	if (bContinueSave)
-		   base.OnSaveEvent (); //вызов базового метода
-	if (!m_bFailedSave) //значение переменной могло измениться в базовом методе
+		   base.OnSaveEvent (); //call the base method 
+	if (!m_bFailedSave) //the value of the variable could change in the base method 
 	{
 		   olПереплата.FillData();
 		   olУдержания.FillData();
 	}
 }
-```
+``` 
 
-[`OnSave`](fw_form-interaction.html) независимой формы:
+[`OnSave`](fw_form-interaction.html) independent of the form: 
 
 ```csharp
 protected override void OnSave(ICSSoft.STORMNET.UI.SaveEventArgs e)
@@ -51,13 +53,16 @@ protected override void OnSave(ICSSoft.STORMNET.UI.SaveEventArgs e)
 		   ОбъектыДанных.Личность vПолучатель = заявка.Получатель;
 		   if (!vСпециалист.ПроверитьСпеца(vПолучатель))
 		   {
-				  FailedSave(new Exception ("Сохранение изменений не возможно!")); //генерация исключения о том, что сохранение невозможно
+				  FailedSave(new Exception ("Saving changes is not possible!")); //generate the exception that you cannot save 
 				  return;
 		   }
 	}
-	base.OnSave(e); //вызов базового метода
+	base.OnSave(e); //call the base method 
 }
-```
+``` 
 
-{% include important.html content=" Следует различать `OnSave()` и `OnSave(ICSSoft.STORMNET.UI.SaveEventArgs e)` независимой формы. Если говорить [упрощённо](fw_form-interaction.html), то если закрытие формы осуществлялось по крестику и пользователь согласился сохранить объект, то будет вызван `OnSave()`, после чего `OnSave(ICSSoft.STORMNET.UI.SaveEventArgs e)`, а если сохранение формы осуществлялось через тулбар, то сначала будет вызван `OnSaveEvent()` зависимой формы, после чего `OnSave(ICSSoft.STORMNET.UI.SaveEventArgs e)` независимой формы. 
-" %}
+{% include important.html content=" we Must distinguish between `OnSave()` and `OnSave(ICSSoft.STORMNET.UI.SaveEventArgs e)` independent. Speaking [simplified](fw_form-interaction.html), if the closing of the forms was carried out on the cross and the user has agreed to store the object that will be invoked `OnSave()`, then `OnSave(ICSSoft.STORMNET.UI.SaveEventArgs e)`, but if the shape was carried out through the toolbar, the first will be called `OnSaveEvent()` dependent form, and then `OnSave(ICSSoft.STORMNET.UI.SaveEventArgs e)` independent. 
+"%}
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

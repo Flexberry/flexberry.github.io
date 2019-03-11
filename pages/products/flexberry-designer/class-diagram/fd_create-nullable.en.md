@@ -1,28 +1,34 @@
----
-title: Настройка Flexberry Designer для Nullable-типов
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, nullable, typedef, карта типов, пример
-summary: Особенности настройки nullable-типов на примере nullbool
-toc: true
-permalink: en/fd_create-nullable.html
-lang: en
----
+--- 
+title: setup Flexberry Designer for Nullable types 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Designer, nullable, typedef, map types, example 
+summary: Features setting nullable type for example nullbool 
+toc: true 
+permalink: en/fd_create-nullable.html 
+lang: en 
+autotranslated: true 
+hash: 08e7224784a5d08e4dfb18bbe141247fe767d898b7f8cab5e13eb76b0b5fd1e9 
+--- 
 
-Порядок настройки [Flexberry Designer](fd_landing_page.html) для поддержки [Nullable-типов](fd_nullable-types.html) на примере создания типа `bool?`.
+Setting procedure [Flexberry Designer](fd_landing_page.html) to support [Nullable-types](fd_nullable-types.html) by building type `bool?`. 
 
-Требуется использовать на [диаграмме классов](fd_class-diagram.html) тип `bool?`. Для этого необходимо:
+You want to use [the class diagram](fd_class-diagram.html) type `bool?`. To do this: 
 
-1.создать класс NullBool [со стереотипом typedef](fd_typedef.html)  
-2.на [карте типов](fd_types-map.html) генератора объектов добавить строку вида: 
+1.to create a class NullBool [with stereotype typedef](fd_typedef.html) 
+2.[card types](fd_types-map.html) generator objects to add the line: 
 
-Тип | Отображается в
-:---------------|:---------------------------------------
-NullBool | System.Nullable<esc><System.Boolean></esc>
+Type | Appears to 
+:---------------|:--------------------------------------- 
+NullBool | System.Nullable<esc><System.Boolean></esc> 
 
-3.на [карте типов](fd_types-map.html) генератора базы данных добавить строку вида: 
+3.[card types](fd_types-map.html) generator database add the line: 
 
-Тип | Отображается в
-:---------------|:-----------
+Type | Appears to 
+:---------------|:----------- 
 NullBool | BIT 
 
-После этого становится возможным использовать на [диаграммах классов](fd_class-diagram.html) тип `NullBool`, который после генерации будет работать как `bool?`.
+After that, it becomes possible to use the [diagrams](fd_class-diagram.html) type `NullBool`, which when generated will work as `bool?`. 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

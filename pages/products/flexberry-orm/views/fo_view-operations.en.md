@@ -1,22 +1,28 @@
----
-title: Operations with views
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, View
-summary: Операторы объединения, пересечения, разности и исключения для представлений
-toc: true
-permalink: en/fo_view-operations.html
-lang: en
----
+--- 
+title: Operations with representations 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, performance 
+summary: the Operators of Union, intersection, difference, and exclusion of representations 
+toc: true 
+permalink: en/fo_view-operations.html 
+lang: en 
+autotranslated: true 
+hash: fa3fa97eeaf34fc8d6c179b999b44e9fe3ee72ad235ccaf39048063b33e5c460 
+--- 
 
-Над [представлениями](fd_view-definition.html), как над множествами свойств связанных объектов данных, возможны следующие операции:
+Over the [views](fd_view-definition.html) as on sets properties of related data objects, the following operations are possible: 
 
-* Объединение, оператор `|`.
-* Пересечение, оператор &.
-* Разность, оператор -.
-* Исключающее объединение, оператор ^.
+* The Union operator `|`. 
+* The intersection operator &. 
+* The difference operator -. 
+* Excluding the Union, the ^ operator. 
 
-Связанные [представления детейлов](fd_view-definition.html) обрабатываются рекурсивно.
+Associated [submission of datalow](fd_view-definition.html) are processed recursively. 
 
-Операции с представлением являются очень удобной возможностью при выполнении [дочитывания объектов данных сервисами данных](fo_additional-loading.html) (например, если имеется объект данных с частью проинициализированных свойств, а требуется отобразить его в представлении с более широким набором свойств, можно вычислить разницу и дочитать объект данных только по ней).
+Operations performance are a very convenient opportunity when performing a [pochityvaya objects data services, data](fo_additional-loading.html) (for example, if a data object initialized with the part properties and want to display it in the view with a wider set of properties, you can calculate the difference and to read a data object only through it). 
 
-Пример работы с операциями над представлениями доступен по адресу [https://github.com/Flexberry/FlexberryORM-DemoApp/blob/master/FlexberryORM/CDLIB/CDADMTEST/Form1.cs](https://github.com/Flexberry/FlexberryORM-DemoApp/blob/master/FlexberryORM/CDLIB/CDADMTEST/Form1.cs).
+An example of working with operations on views is available at [https://github.com/Flexberry/FlexberryORM-DemoApp/blob/master/FlexberryORM/CDLIB/CDADMTEST/Form1.cs](https://github.com/Flexberry/FlexberryORM-DemoApp/blob/master/FlexberryORM/CDLIB/CDADMTEST/Form1.cs). 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

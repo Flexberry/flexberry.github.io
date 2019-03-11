@@ -1,63 +1,69 @@
----
-title: Этап создания прототипа 
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Desinger, ключевые понятия, прототип, прототипирование, UML, генерация, этапы создания приложения, модули
-summary: Операция быстрого прототипирования, генрация прототипа, подключение модулей
-toc: true
-permalink: en/fd_prototype-creation.html
-lang: en
----
+--- 
+title: prototyping Phase 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Desinger, key concepts, prototype, prototyping, UML, generation, steps for creating application modules 
+summary: Operation rapid prototyping, prototype genrace, connectivity modules 
+toc: true 
+permalink: en/fd_prototype-creation.html 
+lang: en 
+autotranslated: true 
+hash: 65efb2af83ef1a2b39c542610e248eed1f1fa09c56612fee3342d2d1c808ecf8 
+--- 
 
-В данной статье будет описан процесс создания рабочего прототипа приложения из диаграммы классов, полученной на [этапе анализа](fd_analys.html).
+This article describes the process of creating working prototype applications from class diagrams, obtained on the [analysis phase](fd_analys.html). 
 
-Результатом выполнения этого этапа станет прототип приложения.
+The result of this phase a prototype of the application. 
 
-## Алгоритм создания прототипа
+## Algorithm prototyping 
 
-1.	Создать UML-описание форм при помощи [операции быстрого прототипирования](fd_using-quick-prototyping.html)
-2.	Построить прототип приложения  
-*На данном этапе приложение уже можно запустить*  
-3.	Подключить необходимые функциональные модули
-4.	[Выбрать тему визуального оформления приложения](fa_choose-theme.html)
+1. Create a UML description of the shapes using [the rapid prototyping](fd_using-quick-prototyping.html) 
+2. To build the application prototype 
+*At this point, the application can run on* 
+3. To connect functional modules 
+4. [Choose the theme of the visual design of the app](fa_choose-theme.html) 
 
-### Создание UML-описания форм при помощи операции быстрого прототипирования
+### Create UML descriptions of the forms through a process of rapid prototyping 
 
-Чтобы управлять формами ввода/вывода данных, а также пользовательскими и другими формами, в языке UML предусмотрено описание этих форм. Чтобы не появлялось необхоимости создавать это описание вручную была создана операция быстрого прототипирования, которая автоматически создает формы на основе существующих классов данных.
+To control the forms of input/output data, and custom and other forms, UML provides description of these forms. That did not appear necessary to create this description was manually created by the operation of rapid prototyping, which automatically generates form based on existing data classes. 
 
-Подробнее о быстром прототипировании можно посмотреть в [статье Использование быстрой прототипизации](fd_using-quick-prototyping.html).
+Read more about rapid prototyping it is possible to look in [Use quick prototypization](fd_using-quick-prototyping.html). 
 
-### Генерация прототипа приложения
+### Generation of prototype applications 
 
-Если диаграмма классов была составлена корректно (см. [этап анализа](fd_analys.html)) и операция быстрого прототипирования успешно сработала, то создание прототипа приложения выполнится автоматически при запросе соответствующей команды.
+If the class diagram was drawn correctly (see [analysis phase](fd_analys.html)) and the operation of rapid prototyping has successfully worked, the prototype application will be executed automatically when the corresponding request command. 
 
-Создание прототипа включает в себя:
-* Создание необходимых баз данных (приложения, полномочий, аудита).
-* Генерация исполняемых кодов приложения.
-* Публикация приложения в [Windows Azure](http://www.windowsazure.com)/в Git-репозитории.
+Prototyping includes: 
+* Establishment of the necessary databases (applications, permissions, audit). 
+* Generation of executable codes of the application. 
+* Publish apps in the [Windows Azure](http://www.windowsazure.com)/in the Git repository. 
 
-Таким образом, приложение становится доступным для использования.
+Thus, the application becomes available for use. 
 
-В созданном приложении уже можно работать: добавлять/удалять/редактировать данные в базе, создавать пользователей и роли, раздавать полномочия и пр.
+In the generated application may be: add/delete/edit data in the database, create users and roles, to give authority, etc. 
 
-{% include note.html content="После дальнейших изменений в модели необходимо снова выполнить генерацию приложения, чтобы изменения вступили в силу." %}
+{% include note.html content="following further changes to the model, you must re-generate the application for the changes to take effect." %} 
 
-### Подключение функциональных модулей
+### the Connection of functional modules 
 
-Функциональность созданного приложения можно расширить при помощи подключаемых модулей. На данный момент доступны следующие модули:
+The functionality of the generated application you can extend with plugins. At the moment the following modules are available: 
 
-1. **Подсистема полномочий**. Отвечает за создание пользователей и разграничение прав доступа к различным данным приложения ([подробнее](efs_secutity.html)).
-2. **Подсистема аудита**. Отвечает за ведение аудита всех изменений, происходящих с данными приложения ([подробнее](fa_audit-web.html)).
-3. **Подсистема интеграции и запуска отчетов**. Отвечает за создание отчетов ([подробнее](fp_flex-reports.html)).
-4. **Подсистема ГИС**. Обеспечивает работу с электронными картами ([подробнее](fg_landing_page.html)).
+1. **Subsystem powers**. Responsible for creating users and access rights to various data applications ([more](efs_secutity.html)). 
+2. **Audit**. Responsible for auditing of all changes to application data ([more](fa_audit-web.html)). 
+3. **Subsystem integration and running reports**. Responsible for creating reports ([more](fp_flex-reports.html)). 
+4. **GIS sub-system**. Designed to work with electronic maps ([more](fg_landing_page.html)). 
 
-### Выбор темы оформления
+### Choice of themes 
 
-Тема оформления отвечает за внешний вид приложения. Изменения затрагивают цветовую гамму, шрифты, отступы, иконки и прочее.
+Themes are responsible for appearance of the application. The changes affect the colors, fonts, spacing, icons, etc. 
 
-Подробнее о темах оформления можно узнать из [статьи Выбор темы Web-приложения](fa_choose-theme.html).
+Read more about skins can be learned from [articles, the Choice of theme of Web apps](fa_choose-theme.html). 
 
-## Следующий этап
+## the Next stage 
 
-После создания прототипа приложения дальнейшая его доработка осуществляется путем модификации сгенерированного кода с использованием API, предоставляемого технологией `Flexberry`.
+After creating a prototype application, further refinement is carried out by modifying the generated code using the APIs provided by technology `Flexberry`. 
 
-Описание принципов доработки приложений, а также основных сценариев доработки можно найти в [этой статье](fd_application-development.html).
+Description of principles of re-engineering of applications, as well as basic scripting improvements can be found in [this article](fd_application-development.html). 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

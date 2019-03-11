@@ -1,30 +1,32 @@
----
-title: Сервис логирования
-sidebar: ember-flexberry_sidebar
-keywords: Flexberry Ember
-toc: true
-permalink: en/ef_log-service.html
-folder: products/ember-flexberry/services/
-lang: en
-summary: Представлено описание сервиса логирования
----
+--- 
+title: logging Service 
+sidebar: ember-flexberry_sidebar 
+keywords: Flexberry Ember 
+toc: true 
+permalink: en/ef_log-service.html 
+folder: products/ember-flexberry/services/ 
+lang: en 
+autotranslated: true 
+hash: f85c69577334c99cb9cb73b38049e3cb56f636d5537ae129a956c91cb8884a17 
+summary: Presents a description of the logging service 
+--- 
 
-## Описание
+## Description 
 
-Сервис логирования обеспечивает запись сообщений различного Ember-приложений уровня в базу данных.
+The logging service provides a record of messages to different Ember-application level to the database. 
 
-При инициализации приложения данный сервис автоматически внедряется под именем `logService` на уровни: 
+When initializing the application, the service automatically is introduced under the name `logService` levels: 
 
-* component,
-* controller,
-* route,
-* view.
+* component, 
+* controller, 
+* route, 
+* view. 
 
-## Включение и отключение сервиса
+## Enabling and disabling of the service 
 
-По умолчанию сервис выключен.
+By default, the service is off. 
 
-Для того, чтобы включить сервис, необходимо в конфигурационном файле ember-приложения задать настройку: `config.APP.log`.
+In order to enable service, it is required in the configuration file ember-application to set: `config.APP.log`. 
 
 ```javascript
 module.exports = function(environment) {
@@ -41,32 +43,32 @@ module.exports = function(environment) {
         }
         ...
     };
-```
+``` 
 
-По умолчанию сервис логирования выключен (enabled=false). 
-Разработчик может динамически включать данный сервис оператором:
+By default, the logging service is disabled (enabled=false). 
+The developer can dynamically enable the service operator: 
 
 ```javascript
 logService.enabled = true;
-```
+``` 
 
-## Уровни логирования
+## of the following log Levels 
 
-Сервис логирования поддерживает шесть уровней логирования:
+Service logging supports six levels of logging: 
 
-* `storeErrorMessages` - уровень ошибок;
-* `storeWarnMessages` - уровень предупреждений;
-* `storeLogMessages`- уровень логов;
-* `storeInfoMessages`- уровень информационных сообщений;
-* `storeDebugMessages`- уровень отладочных сообщений;
-* `storeDeprecationMessages`- уровень сообщений о подозрительных и устарелых участков исходного кода. 
+* `storeErrorMessages` - level ошибок; 
+* `storeWarnMessages` - level предупреждений; 
+* `storeLogMessages` - level логов; 
+* `storeInfoMessages` - level information сообщений; 
+* `storeDebugMessages` - level debug сообщений; 
+* `storeDeprecationMessages` - the level of reporting of suspicious and outdated portions of the source code. 
 
 
-### storeErrorMessages - уровень ошибок
+### storeErrorMessages error level 
 
-На данный уровень выводятся сообщения об ошибках в исходном коде, сообщения о невыполнения условий оператора Ember.assert() сообщения формируемый при обработке исключительных ситуаций в методе new Error(...), ...
+At this level displays messages about errors in the source code, reporting of the breach of the operator's Ember.assert() messages generated during processing of exceptional situations in a method new Error(...), ... 
 
-Для включения сервиса необходимо в конфигурационном файле ember-приложения задать настройку: `config.APP.log.storeErrorMessages`.
+To activate the service you need in the configuration file ember-application to set: `config.APP.log.storeErrorMessages`. 
 
 ```javascript
 module.exports = function(environment) {
@@ -84,32 +86,32 @@ module.exports = function(environment) {
         }
         ...
     };
-```
+``` 
 
-Для динамического включения логировния данного уровня используйте оператор:
+For dynamic inclusion of legirovanija this level, use the statement: 
 
 ```javascript
 logService.storeErrorMessages = true;
-```
+``` 
 
-Разработчик может самостоятельно сгенерировать сообщение данного уровня используя функцию:
+The developer can generate the message level using this function: 
 
 ```javascript
 Ember.Logger.error(«Текст сообщения об ошибке»);
-```
+``` 
 
-В отличие от стандартного метода метод error() сервиса логирования возвращает Promise. Пользователь в случае необходимости может дождаться выполнения асинхронной операции записи сообщения об ошибке в базу используя оператор:
+In contrast to the standard method error() of the logging service returns a Promise. The user, if necessary, can wait for the asynchronous write operation of the error message into the database using the statement: 
 
 ```javascript
  Ember.Logger.error(«Текст сообщения об ошибке»).then(result =&gt; {«действия после записи сообщения»});
-```
+``` 
 
-### storeWarnMessages - уровень предупреждений
+### storeWarnMessages - level warnings 
 
-На данный уровень выводятся предупреждения формируемые методом Ember.Logger.warn().
+At this level displays warnings generated by the method of Ember.Logger.warn(). 
 
 
-Для включения сервиса необходимо в конфигурационном файле Эмбер-приложения задать настройку: "config.APP.log.storeWarnMessages".
+To activate the service you need in the configuration file ember-application to set settings: "config.APP.log.storeWarnMessages". 
 
 ```javascript
 module.exports = function(environment) {
@@ -127,31 +129,31 @@ module.exports = function(environment) {
         }
         ...
     };
-```
+``` 
 
-Для динамического включения логировния данного уровня используйте оператор:
+For dynamic inclusion of legirovanija this level, use the statement: 
 
 ```javascript
 logService.storeWarnMessages = true;
-```
+``` 
 
-Разработчик может самостоятельно сгенерировать сообщение данного уровня используя функцию:
+The developer can generate the message level using this function: 
 
 ```javascript
 Ember.Logger.warn(«Текст предупреждения»);
-```
+``` 
 
-В отличие от стандартного метода метод warn() сервиса логирования возвращает Promise. Пользователь в случае необходимости может дождаться выполнения асинхронной операции записи сообщения об ошибке в базу используя оператор:
+In contrast to the standard method warn() logging service returns a Promise. The user, if necessary, can wait for the asynchronous write operation of the error message into the database using the statement: 
 
 ```javascript
 Ember.Logger.warn(«Текст предупреждения»).then(result =&gt; {«действия после записи сообщения»});
-```
+``` 
 
-### storeLogMessages - уровень логов 
+### storeLogMessages - level logs 
 
-На данный уровень выводятся предупреждения формируемые методом Ember.Logger.log().
+At this level displays warnings generated by the method of Ember.Logger.log(). 
 
-Для включения сервиса необходимо в конфигурационном файле Эмбер-приложения задать настройку: "config.APP.log.storeLogMessages".
+To activate the service you need in the configuration file ember-application to set settings: "config.APP.log.storeLogMessages". 
 
 ```javascript
 module.exports = function(environment) {
@@ -169,31 +171,31 @@ module.exports = function(environment) {
         }
         ...
     };
-```
+``` 
 
-Для динамического включения логировния данного уровня используйте оператор:
+For dynamic inclusion of legirovanija this level, use the statement: 
 
 ```javascript
 logService.storeLogMessages = true;
-```
+``` 
 
-Разработчик может самостоятельно сгенерировать сообщение данного уровня используя функцию
+The developer can generate the message level using the 
 
 ```javascript
 Ember.Logger.log(«Текст лога»);
-```
+``` 
 
-В отличие от стандартного метода метод log() сервиса логирования возвращает Promise. Пользователь в случае необходимости может дождаться выполнения асинхронной операции записи сообщения об ошибке в базу используя оператор:
+In contrast to the standard method the log() method of the logging service returns a Promise. The user, if necessary, can wait for the asynchronous write operation of the error message into the database using the statement: 
 
 ```javascript
 Ember.Logger.log(«Текст лога»).then(result =&gt; {«действия после записи сообщения»});
-```
+``` 
 
-### storeInfoMessages - уровень информационных сообщений 
+### storeInfoMessages - level informational messages 
 
-На данный уровень выводятся предупреждения формируемые методом Ember.Logger.info().
+At this level displays warnings generated by the method Ember.Logger.info(). 
 
-Для включения сервиса необходимо в конфигурационном файле Эмбер-приложения задать настройку: "config.APP.log.storeInfoMessages".
+To activate the service you need in the configuration file ember-application to set settings: "config.APP.log.storeInfoMessages". 
 
 ```javascript
 module.exports = function(environment) {
@@ -211,31 +213,31 @@ module.exports = function(environment) {
         }
         ...
     };
-```
+``` 
 
-Для динамического включения логировния данного уровня используйте оператор:
+For dynamic inclusion of legirovanija this level, use the statement: 
 
 ```javascript
 logService.storeInfoMessages = true;
-```
+``` 
 
-Разработчик может самостоятельно сгенерировать сообщение данного уровня используя функцию
+The developer can generate the message level using the 
 
 ```javascript
 Ember.Logger.info(«Информационный текст»);
-```
+``` 
 
-В отличие от стандартного метода метод log() сервиса логирования возвращает Promise. Пользователь в случае необходимости может дождаться выполнения асинхронной операции записи сообщения об ошибке в базу используя оператор:
+In contrast to the standard method the log() method of the logging service returns a Promise. The user, if necessary, can wait for the asynchronous write operation of the error message into the database using the statement: 
 
 ```javascript
 Ember.Logger.info(«Информационный текст»).then(result =&gt; {«действия после записи сообщения»});
-```
+``` 
 
-### storeDebugMessages- уровень отладочных сообщений 
-На данный уровень выводятся предупреждения формируемые методом Ember.Logger.debug().
+### storeDebugMessages - level debug messages 
+At this level displays warnings generated by the method of Ember.Logger.debug(). 
 
 
-Для включения сервиса необходимо в конфигурационном файле Эмбер-приложения задать настройку: "config.APP.log.storeDebugMessages".
+To activate the service you need in the configuration file ember-application to set settings: "config.APP.log.storeDebugMessages". 
 
 ```javascript
 module.exports = function(environment) {
@@ -253,30 +255,30 @@ module.exports = function(environment) {
         }
         ...
     };
-```
+``` 
 
-Для динамического включения логировния данного уровня используйте оператор:
+For dynamic inclusion of legirovanija this level, use the statement: 
 
 ```javascript
 logService.storeDebugMessages = true;
-```
+``` 
 
-Разработчик может самостоятельно сгенерировать сообщение данного уровня используя функцию
+The developer can generate the message level using the 
 
 ```javascript
 Ember.Logger.debug(«Отладочный текст»);
-```
+``` 
 
-В отличие от стандартного метода метод log() сервиса логирования возвращает Promise. Пользователь в случае необходимости может дождаться выполнения асинхронной операции записи сообщения об ошибке в базу используя оператор:
+In contrast to the standard method the log() method of the logging service returns a Promise. The user, if necessary, can wait for the asynchronous write operation of the error message into the database using the statement: 
 
 ```javascript
 Ember.Logger.debug(«Отладочный текст»).then(result =&gt; {«действия после записи сообщения»});
-```
+``` 
 
-### storeDeprecationMessages - уровень сообщений о подозрительных и устарелых участков исходного кода 
-На данный уровень выводятся предупреждения формируемые методом Ember.Logger.warn() начинающиеся с префикса 'DEPRECATION'.
+### storeDeprecationMessages - the level of reporting of suspicious and outdated portions of the source code 
+At this level displays warnings generated by the method of Ember.Logger.warn() starting with the prefix 'DEPRECATION'. 
 
-Для включения сервиса необходимо в конфигурационном файле Эмбер-приложения задать настройку: "config.APP.log.storeDeprecationMessages".
+To activate the service you need in the configuration file ember-application to set settings: "config.APP.log.storeDeprecationMessages".
 
 ```javascript
 module.exports = function(environment) {
@@ -294,59 +296,63 @@ module.exports = function(environment) {
         }
         ...
     };
-```
+``` 
 
-Для динамического включения логировния данного уровня используйте оператор:
+For dynamic inclusion of legirovanija this level, use the statement: 
 
 ```javascript
 logService.storeDeprecationMessages = true;
-```
+``` 
 
-Разработчик может самостоятельно сгенерировать сообщение данного уровня используя функцию
+The developer can generate the message level using the 
 
 ```javascript
 Ember.Logger.warn('DEPRECATION«Текст лога»');
-```
+``` 
 
-В отличие от стандартного метода метод log() сервиса логирования возвращает Promise. Пользователь в случае необходимости может дождаться выполнения асинхронной операции записи сообщения об ошибке в базу используя оператор:
+In contrast to the standard method the log() method of the logging service returns a Promise. The user, if necessary, can wait for the asynchronous write operation of the error message into the database using the statement: 
 
 ```javascript
 Ember.Logger.warn('DEPRECATION«Текст лога»').then(result =&gt; {«действия после записи сообщения»});
-```
+``` 
 
-## Просмотр сообщений
+## View messages 
 
-ember-flexberry включает в себя model, router и template для отображения таблицы логов.
-Для включения данного сервиса в приложение необходимо:
-# добавить строку роутинга в /app/router.js
+ember-flexberry includes model, router and template to display a table of logs. 
+To enable this service, the application should: 
+# add line routing in /app/router.js 
 
 ```javascript
        this.route('i-i-s-caseberry-logging-objects-application-log-l');
-```
+``` 
 
-# добавить ссылку в sitemap файла app/controllers/application.js
+# add a link to your sitemap file app/controllers/application.js 
 
 ```javascript
 link: 'i-i-s-caseberry-logging-objects-application-log-l',caption: ...,title: ... 
-```
+``` 
 
-По умолчанию на страница отображаются столбцы:
-* Время - время получения сообщения;
-* Категория - ERROR, WARN, INFO, LOG, DEBUG, DEPRECATION;
-* Сервер - DNS Ember-сервера;
-* Браузер - информация по браузкру клиента;
-* URL -адрес странцы при отображении которой пришло ссобщение;
-* Сообщение - текст сообщения;
-![](/images/pages/kaf/log1.png)
+By default, the page displays the columns: 
+* Time: time when the сообщения; 
+* Category - ERROR, WARN, INFO, LOG, DEBUG, DEPRECATION; 
+* Server - DNS Ember-сервера; 
+* Browser - information on broukro клиента; 
+* The URL for the page when displaying it ссобщение; 
+* Message - the text сообщения; 
+![](/images/pages/kaf/log1.png) 
 
 
-Роутер включает в себя две предопределенные настройки пользователя:
-* Message
-* FormattedMessage
-![](/images/pages/kaf/log2.png)
-По умолчанию отображается настройка Message.
+The router includes two predefined user preferences: 
+* Message 
+* FormattedMessage 
+![](/images/pages/kaf/log2.png) 
+Default setting Message. 
 
-При необходимости разработчик может настройку FormattedMessage при которой отображается столбец "Форматированное сообщение" в котором для сообщений уровня Error может содержаться имя файла, строка, стек вызовов места возникновения ошибки.
-![](/images/pages/kaf/log3.png)
+If necessary, the developer can configure FormattedMessage in which is shown the column "Formatted message" for messages with the level Error can contain file name, line, call stack of where the error occurred. 
+![](/images/pages/kaf/log3.png) 
 
-Воспользовавшись сервисом пользовательских настроей разработчик может донастроить необходимый ему режим отображения спсика сообщений.
+Using the service user nastroy the developer can fix the display mode of Spica messages. 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}
