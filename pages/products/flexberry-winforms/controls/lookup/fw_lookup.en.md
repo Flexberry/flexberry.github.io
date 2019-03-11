@@ -1,43 +1,45 @@
----
-title: LookUp
-sidebar: flexberry-winforms_sidebar
-keywords:  Flexberry Winforms, Controls, LookUp
-summary: Внешний вид, множественный выбор, переопределение методов, возможные проблемы использования и пути их решения
-toc: true
-permalink: en/fw_lookup.html
-lang: en
----
+--- 
+title: LookUp 
+sidebar: flexberry-winforms_sidebar 
+keywords: Flexberry Winforms, Controls, LookUp 
+summary: appearance, multiple choice, overriding methods, it is possible to use problems and their solutions 
+toc: true 
+permalink: en/fw_lookup.html 
+lang: en 
+autotranslated: true 
+hash: 1ce2e32267c352514585ba24eb0882042747c6e589ea67ce127d3155e43ec053 
+--- 
 
-`LookUp` (действие) - выбор мастерового объекта (проставление ссылки на мастеровой объект).
+`LookUp` (action) - select a craftsman of the object (putting links to the workman the object). 
 
-`LookUp` (контрол) - контрол для выбора мастерового объекта, возвращающий ссылку на него.
+`LookUp` (control) - control for selection of artisan object that returns a reference to it. 
 
-## Возврат нескольких объектов
+## Return multiple objects 
 
-Существует возможность получать все объекты, выбранные на списке по Lookup.
+There is a possibility to get all the objects selected on the list for Lookup. 
 
-Это используется в [редакторе ограничений](fw_limit-editor-advanced-view.html), где для вида ограничения `Среди значений` возвращаются все выбранные на списке по лукапу объекты.
+It is used in the [constraint editor](fw_limit-editor-advanced-view.html), where for the limit `Среди значений` returns all selected on list lucapa objects. 
 
-Все выбранные объекты можно получить, обратившись к `DynamicProperties` стандартно возвращаемого объекта. А именно:
+All selected objects can be obtained by contacting `DynamicProperties` standard of the returned object. Namely: 
 
 ```csharp
 o.DynamicProperties["retFromObjectListView"] as List<DataObject>
-```
+``` 
 
-Полученный список не будет содержать первого выбранного объекта `o`.
+The resulting list will not contain the first selected object `o`. 
 
-__Замечание:__ на формах, имеющих несколько [ObjectListView](fw_objectlistview.html) или `ObjectHierarchicalView`, нужно убрать перегрузку `prv_EditData` и подписку на `OLV.ReturnData`.
+__Note:__ for forms with multiple [ObjectListView](fw_objectlistview.html) or `ObjectHierarchicalView`, you need to remove the overload `prv_EditData` and a subscription to `OLV.ReturnData`. 
 
-## Переопределить метода Edited
+## Override method Edited 
 
-На примере показано как можно переопределить метод __Edited__, чтобы использовать полученные  от LookUp данные.
+The example shows how you can override the __Edited__ to use the information received from the LookUp data. 
 
 ```csharp
 public override void Edited(ICSSoft.STORMNET.DataObject dataobject, string contpath, string propertyname)
     {
         base.Edited (dataobject, contpath, propertyname);
 
-        if (propertyname == "Сотрудник")
+        if (propertyname == "Employee")
         {
             Объекты.ДвижениеГруппыОтказнМатер Э = (Объекты.ДвижениеГруппыОтказнМатер)EditManager.DataObject;
             Объекты.Сотрудник р = (Объекты.Сотрудник)Э.Сотрудник;
@@ -50,11 +52,11 @@ public override void Edited(ICSSoft.STORMNET.DataObject dataobject, string contp
             }
             else Э.Должность = "";
 
-            EditManager.Change("ФИОСотрудника");
-            EditManager.Change("Должность");
+            EditManager.Change("Posotrudnichat");
+            EditManager.Change(Title);
         }
 
-        if (propertyname == "Сотрудник")
+        if (propertyname == "Employee")
         {
             Объекты.ДвижениеГруппыОтказнМатер Э = (Объекты.ДвижениеГруппыОтказнМатер)EditManager.DataObject;
             Объекты.ОтвЗаРешение р = (Объекты.ОтвЗаРешение)Э.УКогоНаходится;
@@ -66,15 +68,15 @@ public override void Edited(ICSSoft.STORMNET.DataObject dataobject, string contp
             else extTextControl1.Text = "";
         }
     }
-```
+``` 
 
-## Кнопка отображения списка
+## Button list display 
 
-Для того чтобы добавить кнопку отображения мастерового списка к Lookup, нужно:
+To add a button to display artisan list to a Lookup, you need to: 
 
-* Создать плоский контрол __button__
-* Добавить иконку из __ImageList__.
-* На нажатие кнопки добавить __вызов__ следующей функции:
+* To create flat control __button__ 
+* Add icon from __ImageList__. 
+* At the push of a button to add a __call__ the following functions: 
 
 ```csharp
 public void ПоказатьСписок()
@@ -82,7 +84,7 @@ public void ПоказатьСписок()
         SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
         Function lf = null;
 
-        // формируем lf
+        // generated lf 
         LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Лицо), "ЛицоL");
         lcs.LimitFunction = lf;
 
@@ -90,50 +92,50 @@ public void ПоказатьСписок()
 
         if (objs.Length == 0)
         {
-            Tools.ShowInformation("Не найдено ни одного лица с заданными параметрами");
+            Tools.ShowInformation("Not one person with the specified parameters");
             return;
         }
-        else // хоть кого-то нашли
+        else // at least someone found 
         {
             string contpath = "STORMCASE.STORMNET.Generator.SerializeNewEditForm/EditPanel(Panel)/TabControl(Tab" + "Control)/panel(TabPage)/panel(GroupBox)/ctrlЛицо(LookUp)";
-            base.OnEdit("Лицо", EditManager.DataObject, contpath, lf);
+            base.OnEdit("Person", EditManager.DataObject, contpath, lf);
         }
     }
-```
+``` 
 
-## Изменение внешнего вида
+## Change in appearance 
 
-Существует два способа изменить изображения на кнопках LookUp.
+There are two ways to change the images on the buttons LookUp. 
 
-1.В случае если требуется изменить изображения в рамках всего приложения, необходимо инициализировать _статический ImageList_ при запуске приложения. В этом списке должны присутствовать изображения с именами "LookUp", "Clear" и "Edit".
+1.If you want to change the image within the application, you must initialize staticheskie ImageList_ when the application starts. This list must be present if the image name "LookUp", "Clear" and "Edit". 
 
-__Пример:__
+__Example:__ 
 
 ```csharp
 LookUp.UserImageList.Images.Add("LookUp", Properties.Resources.LookUpImage);
 LookUp.UserImageList.Images.Add("Clear", Properties.Resources.ClearImage);
 LookUp.UserImageList.Images.Add("Edit", Properties.Resources.EditImage);
-```
+``` 
 
-2.Для конкретного экземпляра `LookUp` с помощью свойства `UserImageList` можно назначить _пользовательский ImageList_, в котором также должны быть изображения с именами "LookUp", "Clear" и "Edit".
+2.For a specific instance `LookUp` using the properties `UserImageList` you can assign polzovateli ImageList_, which also needs to be images with names "LookUp", "Clear" and "Edit". 
 
-### Размер и границы кнопок
+### the Size and borders of the buttons 
 
-Размер кнопок задается с помощью свойства `ButtonSize`, при изменении данного свойства должно выполнится перевычисление размера всего контрола.
+The size of the buttons is set using the properties `ButtonSize`, changing this property should be complete recalculation of the size of the entire control. 
 
-За отображение границ кнопок отвечает свойство `ButtonBorder`.
+For the display of the buttons property `ButtonBorder`. 
 
-## Запрет изменения в BeforeChangeProperty
+## Ban changes in BeforeChangeProperty 
 
-Уставновка признака Cancel в методе BeforeChangeProperty при изменении мастерового поля не блокирует Lookup и последующее изменение свойства.
+Ustanovka trait Cancel in a method BeforeChangeProperty if you change artisan field is not blocking Lookup, and then change the properties.
 
-## Смена обработчика look_LookUpEvent
+## Change handler look_LookUpEvent 
 
-Для того чтобы заменить обработчик `look_LookUpEvent` на свой, нужно:
+To replace the processor on your `look_LookUpEvent`, you need to: 
 
-* создать контейнер-runner,
-* подписаться на события сохранения (отказа от сохранения),
-* задать свои действия при наступлении событий.
+* create a container-runner 
+* to subscribe to events preserve (to keep), 
+* ask your actions when events occur. 
 
 ```csharp
 private void look_LookUpEvent1(object sender, System.EventArgs e)
@@ -143,80 +145,84 @@ private void look_LookUpEvent1(object sender, System.EventArgs e)
     SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
     Function lf = langdef.GetFunction(langdef.funcSQL,"1=1");
 
-    //создадим контейнер-раннер
+    //create a container-runner 
     ICSSoft.АдресноеБюро.ЛичностьL FormЛичностьL = (ICSSoft.АдресноеБюро.ЛичностьL)      ICSSoft.STORMNET.UI.ContRunner.RunForm(typeof(ICSSoft.АдресноеБюро.ЛичностьL));
-    FormЛичностьL.Edit(oПосетитель, "Личность", "Личность",lf);
+    FormЛичностьL.Edit(oПосетитель, "Personality", "Personality",lf);
 
-    //подпишемся на события
+    //subscribe to events 
     FormЛичностьL.SaveEvent+=new ICSSoft.STORMNET.UI.SaveEventArgsHandler(FormЛичностьL_SaveEvent);FormЛичностьL.CancelEvent+=new ICSSoft.STORMNET.UI.CancelEventArgsHandler(FormЛичностьL_CancelEvent);
 }
 
 private void FormЛичностьL_SaveEvent(object sender, ICSSoft.STORMNET.UI.SaveEventArgs e)
 {
-    //наши действия
+    //our action 
 }
 
 private void FormЛичностьL_CancelEvent(object sender, ICSSoft.STORMNET.UI.CancelEventArgs e)
 {
-    //наши действия
+    //our action 
 }
-```
+``` 
 
-## Возможные проблемы использования
+## Possible problems of using 
 
-### Стандартно сгенерированный lookup
+### Standard generated lookup 
 
-#### На форме
+#### On the form 
 
-Если не срабатывает обработчик события `look_LookUpEvent` (в зависимой форме).
+If not triggered, the event handler `look_LookUpEvent` (dependent form). 
 
-* Правильно указать путь на форме до `Lookup` в методе `prv_TuneLookupInformations` (в зависимой форме).
-* Указать форму вызова в методе `GetEditor` независимой формы.
-* На кнопку `LookUp` (например, для Гражданства это будет ctrlГражданство) навесить обработчик __события__ LookUp.
+* Correctly specify the path on the form before `Lookup` in the method `prv_TuneLookupInformations` (dependent form). 
+* Specify the form of the call in the method `GetEditor` independent. 
+* The button `LookUp` (for example, for Citizenship it will be ctrlГражданство) to hang the handler __events__ LookUp. 
 
 ```csharp
 this.ctrlГражданство.LookUpEvent += look_LookUpEvent
-```
+``` 
 
-#### В GroupEdit
+#### In GroupEdit 
 
-* Привязка [GropEdit](fw_group-edit.html) к EditManager формы
-* Наличие обработчика `this.gr_SetupEditorEventHandler` типа `OnSetupEditorEventHandler` для события `SetupEditor`
-* Упоминание `GroupEdit` в методе `prv_TuneLookupInformations` (в зависимой форме), _например_:
+* Snap [GropEdit](fw_group-edit.html) to form EditManager 
+* Presence of the handler `this.gr_SetupEditorEventHandler` type `OnSetupEditorEventHandler` for the event `SetupEditor` 
+* Mention `GroupEdit` in the method `prv_TuneLookupInformations` (dependent form), naprimer: 
 
 ```csharp
 m_arrGroupEditInformations.Add(
                new ICSSoft.STORMNET.UI.GroupEditInformation(this.ПредметыИзъятия,
-               "ИтогиИзъятия.ПредметыИзъятия",
-               "STORMCASE.STORMNET.Generator.SerializeNewEditForm/EditPanel(Panel)/TabControl(TabControl)/panel(TabPage)/ПредметыИзъятия(GroupEditBase)"));
-```
+               "Imageshare.Predmestie",
+               "STORMCASE.STORMNET.Generator.SerializeNewEditForm/EditPanel(Panel)/TabControl(TabControl)/panel(TabPage)/Predmestie(GroupEditBase)"));
+``` 
 
-### Нестандартные случаи использования Lookup
+### non-standard use cases Lookup 
 
-#### Не поднимается форма по Lookup
+#### does Not raise a form on Lookup 
 
-Нужно учесть особенности контрола:
+It is necessary to consider features of the control: 
 
-* Если не существует свойство, имя которого передаётся в качестве `PropertyName`, то лучше указать пустую строку, иначе метод `Save` не будет вызываться.
-* Нехранимые объекты, поднимаемые по Lookup, scriptizer обрабатываются нестандартно и событие необходимо прописывать вручную.
+* If there is no property whose name is passed as `PropertyName`, it is best to specify an empty string, otherwise the method `Save` will not be called. 
+* Nahranie objects that are raised on Lookup scriptizer handled outside the box and the event needs to be written manually. 
 
-Также следует проверить:
+You should also check: 
 
-* Хранимый ли объект, с которого поднимается LookUp.
-* Какие формы поднимаются и с какой формы.
-* Поднимается ли с формы по кнопке LookUp. Если да, то поднимается ли с формы LookUp. Если да, то _неправильно указываются параметры_. Если не поднимается ни по кнопке, ни из метода, то есть ошибка, скорее всего, носит системный характер.
+* If the object is stored, from which rises a LookUp. 
+* What forms are raised and with what shape. 
+* Rises with the form on the button LookUp. If Yes, then rises with forms LookUp. If Yes, specify nepravilno parametry. If not raised, neither the button nor from the method, that is, the error most likely is systemic. 
 
-#### Не выдаётся сообщение о сохранении объекта при закрытии формы
+#### Not issued a message about the preservation of the object when the form is closed 
 
-Необходимо проверить:
+You need to check: 
 
-* Объект имеет статус _Altered_
-* Объект изменил свои свойства с момента поднятия формы по Lookup. При поднятии по Lookup форма-инициатор в методе `PrepareDataObjectForEdit` создаёт копию данных, и при закрытии сравнивается эта копия с текущим на момент закрытия объектом. Сохранение произойдёт только в случае наличия разницы между объектом и его копией.
-* Форма корректно поднята по Lookup:
-  * передаётся объект формы-инициатора LookUp, а не тот, который надо редактировать
-  * указано существующее свойство или пустая строка
+* Object has the status _Altered_ 
+* The object has changed its properties from the moment of manual forms for Lookup. When picked up by the Lookup form is the initiator in the method `PrepareDataObjectForEdit` creates a copy of the data, and at the close compared this copy with the current on the close object. Conservation will only occur if there is a difference between an object and its copy. 
+* Properly raised for Lookup: 
+* passes the form object-initiator of the LookUp, not the one that should be edited 
+* indicated the existing property or the empty string 
 
-## Дополнительно
+Additionally ## 
 
-* [Лукап с предиктивным вводом](fw_extended-lookup.html)
-* [Вызов независимого мастера](fw_lookup-another-object.html)
+* [Lucap predictive](fw_extended-lookup.html) 
+* [The call to independent artists](fw_lookup-another-object.html) 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

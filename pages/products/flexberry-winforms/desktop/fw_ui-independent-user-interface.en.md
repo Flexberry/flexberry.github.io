@@ -1,16 +1,22 @@
----
-title: UI-независимый пользовательский интерфейс
-sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (формы)
-toc: true
-permalink: en/fw_ui-independent-user-interface.html
-folder: products/flexberry-winforms/
-lang: en
----
+--- 
+title: UI-independent user interface 
+sidebar: flexberry-winforms_sidebar 
+keywords: Windows UI (forms) 
+toc: true 
+permalink: en/fw_ui-independent-user-interface.html 
+folder: products/flexberry-winforms/ 
+lang: en 
+autotranslated: true 
+hash: c6b1b5925aa839d77435bf2233c8f401247325544a67c964dccb0d35850be7e9 
+--- 
 
-## UI-независимая форма редактирования
-Данный раздел находится в стадии разработки. Обратитесь к разработчику за обновлённой версией.
-## UI-независимая форма списка
-Данный раздел находится в стадии разработки. Обратитесь к разработчику за обновлённой версией.
-## UI-независимая печатная форма
-Данный раздел находится в стадии разработки. Обратитесь к разработчику за обновлённой версией.
+## UI-independent edit form 
+This section is under development. Contact the developer for an updated version. 
+## UI-independent form of the list 
+This section is under development. Contact the developer for an updated version. 
+## UI-independent print form 
+This section is under development. Contact the developer for an updated version. 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

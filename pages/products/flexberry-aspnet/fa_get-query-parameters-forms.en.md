@@ -1,21 +1,27 @@
----
-title: Параметры GET-запроса для форм
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Web UI (Контролы)
-toc: true
-permalink: en/fa_get-query-parameters-forms.html
-lang: en
----
+--- 
+title: GET-request for forms 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET, Web UI (Controls) 
+toc: true 
+permalink: en/fa_get-query-parameters-forms.html 
+lang: en 
+autotranslated: true 
+hash: 7df82cf344f4b98ecde0e422d225dc5eca4752154b62dddd5356898a00e96140 
+--- 
 
-Параметры GET-запроса для LookUp-формы и формы редактирования в модальном окне разделены.
+The GET-request for a LookUp form and the edit form in a modal window. 
 
-Раньше в том и в другом случае использовался параметр с названием "LookUp":
+Before in that and in other case we used a parameter called "LookUp": 
 
-1. На базовой форме редактирования для определения того, что форма открыта в отдельном окне.
-2. В скрипте MasterEditorAjaxLookup для тех случаев, когда вместо технологической LookUp-формы используется произвольная списковая форма:
-    * на основе этого флага устанавливалось значение WOLV.LookUp (в технологической форме флаг не обрабатывается, считается что WOLV на ней всегда редактор LookUp);
-    * на основе этого флага настраивалась форма (например для режима ReadOnly) при предпросмотре объекта.
+1. The basic editing form to determine which form opened in a separate window. 
+2. In the script MasterEditorAjaxLookup for those occasions when, instead of technological LookUp form uses arbitrary list form: 
+* based on this flag is set WOLV.LookUp (in technological form, the flag is not processed, it is considered that WOLV have a LookUp editor); 
+* based on this flag is configured (for example ReadOnly) if the preview object. 
 
-Рекомендуется использовать **разные флаги** для этих целей.
+It is recommended to use a **different flags** for these purposes. 
 
-{% include note.html content="В коде прикладных приложений не стоит явно использовать константы `LookUp` и др., так как их значение может измениться в будущем. Для получения специальных технологических параметров из запроса следует использовать класс WebParamController." %}
+{% include note.html content="In the code of applications is not necessary to explicitly use constants `LookUp` etc., as their value may change in the future. For special technological parameters from the request, use class WebParamController." %} 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -28,7 +28,7 @@ lang: en
 | `NewRowOnInsert` | Переходить на первую ячейку новой строки при нажатии `Enter`.
 | `NextOnEnter` | Перемещать активную ячейку по клавише `Enter` при выключенном режиме `EditOnEnter`.
 | `ReadOnly` | Режим "только чтение".
-| `SortOrder` | Настройка сортировки столбца: Asc (по возрастанию), Desc (по убыванию), None (без сортировки). 
+| `SortOrder` | Настройка сортировки столбца: Asc (по возрастанию), Desc (по убыванию), None (без сортировки).
 | `SortPriority` | Настройка приоритета сортировки столбца.
 | `ShowStatusBar` | Отображение полосы состояния, на которой показывается количество элементов.
 | `UseAlernativeColoring` | Использовать чередующуюся окраску строк (базовый/альтернативный цвет). |
@@ -43,7 +43,6 @@ lang: en
 protected override void gr_SetupEditorEventHandler(object sender, ICSSoft.STORMNET.Windows.Forms.SetupEditorEventArgs e)
 {
     // *** Start programmer edit section *** (gr_SetupEditorEventHandler( object sender, ICSSoft.STORMNET.Windows.Forms.SetupEditorEventArgs e ))
-            
     // *** End programmer edit section *** (gr_SetupEditorEventHandler( object sender, ICSSoft.STORMNET.Windows.Forms.SetupEditorEventArgs e ))
     base.gr_SetupEditorEventHandler(sender, e);
     // *** Start programmer edit section *** (gr_SetupEditorEventHandler( object sender, ICSSoft.STORMNET.Windows.Forms.SetupEditorEventArgs e ) End)
@@ -63,7 +62,7 @@ protected override void gr_SetupEditorEventHandler(object sender, ICSSoft.STORMN
 ## Отображение мастера в GroupEdit
 
 При необходимости отображения в ячейке `GroupEdit` «презентационного» атрибута мастера (т.е. некоторого выражения из атрибутов мастера) можно воспользоваться одним из описанных ниже решений.
- 
+
 1. Переопределить метод `ToString()` у объекта данных. Особенность данного решения в том, что переопределение повлияет всюду, где используется метод `ToString()`.
 2. Реализовать у контрола, который связан со столбцом `GroupEdit`, интерфейс `IValueDisplayResponsible`. Единственный метод  `GetDisplayValue` данного интерфейса должен вернуть отображаемое в ячейке значение. У `GroupEdit` установить свойство `EnableValueDisplayResponsibility` в `true`.
 
@@ -72,12 +71,12 @@ protected override void gr_SetupEditorEventHandler(object sender, ICSSoft.STORMN
 
 public string GetDisplayValue(ICSSoft.STORMNET.DataObject dataObject)
 {
-	if (curObject == null)
-		return string.Empty;
+  if (curObject == null)
+    return string.Empty;
 
-	return string.Format(Формат,
-		Tools.IsNull(ICSSoft.STORMNET.Information.GetPropValueByName(curObject, Наименование), "").ToString(),
-		Tools.IsNull(ICSSoft.STORMNET.Information.GetPropValueByName(curObject, Код), "").ToString()).TrimStart();
+    return string.Format(Формат,
+    Tools.IsNull(ICSSoft.STORMNET.Information.GetPropValueByName(curObject, Наименование), "").ToString(),
+    Tools.IsNull(ICSSoft.STORMNET.Information.GetPropValueByName(curObject, Код), "").ToString()).TrimStart();
 }
 #region IValueDisplayResponsible Members
 ```
@@ -110,7 +109,7 @@ ge.Styles.Normal.Border.Style = BorderStyleEnum.Flat;
 
 `GroupEdit` с прорисованными границами будет выглядеть следующим образом:
 
-![](/images/pages/products/flexberry-winforms/controls/groupedit/groupedit-explain.png)
+![Пример GroupEdit с прорисованными границами](/images/pages/products/flexberry-winforms/controls/groupedit/groupedit-explain.png)
 
 ## EditManager
 
@@ -119,7 +118,7 @@ ge.Styles.Normal.Border.Style = BorderStyleEnum.Flat;
 К примеру, для того чтобы отловить событие возврата значения при выборе мастера, то необходимо подписаться на событие `AfterChangeProperty` EditManager, относящегося к `GroupEdit`, а не к странице редактирования:
 
 ```csharp
-GroupEdit1.EditManager.AfterChangeProperty += (o, s) => 
+GroupEdit1.EditManager.AfterChangeProperty += (o, s) =>
 {
     // Обработчики
 };
@@ -135,7 +134,7 @@ GroupEdit1.EditManager.AfterChangeProperty += (o, s) =>
 
 Интерфейс `ISpecialKeysEditable` предназначен для передачи контролам редактирования нажатых клавиш, не являющихся алфавитно-цифровыми. Например, контрол при нажатии `F3` поднимает список для выбора значения. Обработчик, определённый в контроле, срабатывает только, когда контрол находится в состоянии редактирования. Реализация контролом `ISpecialKeysEditable` позволяет предать нажатые клавиши в контрол из GE. При нахождении фокуса на ячейке GE и нажатии указанных клавиш контрол перейдет в режим редактирования, и затем ему будут переданы нажатые клавиши.
 
-Интерфейс содержит единственный метод `List<Keys> GetSpecialEditKeys()`, который должен вернуть список обрабатываемых контролом сочетаний. 
+Интерфейс содержит единственный метод `List<Keys> GetSpecialEditKeys()`, который должен вернуть список обрабатываемых контролом сочетаний.
 
 Пример реализации интерфейса представлен ниже. Обрабатываются сочетания `F2+Shift+Ctrl` и `F3`.
 
@@ -157,7 +156,7 @@ GroupEdit1.EditManager.AfterChangeProperty += (o, s) =>
 * [Формат даты в GroupEdit](fw_groupedit-date-format.html)
 * [Получение FlexGrid из GroupEdit](fw_flex-grid.html).
 * Обработка событий:
-    * [События в GroupEdit](fw_events-groupedit.html).
+  * [События в GroupEdit](fw_events-groupedit.html).
 * [Ограничение-тип-лукапа-combo-в-GroupEdit](fw_restriction-type-lookup-combo-in-groupedit.html).
 * [Функциональность при работе с массивами детеиловых объектов DetailArray](fo_functionality-work-detail-array.html).
 * [Наложение ограничений на GroupEdit](fw_add-limit-to-groupedit.html).
@@ -165,5 +164,6 @@ GroupEdit1.EditManager.AfterChangeProperty += (o, s) =>
 ## Расширения GroupEdit
 
 Для `GroupEdit` существует ряд расширений, например:
+
 * [GEEditorExt](fw_ge-editor-ext.html) (редактирование детейлов в отдельном окне).
 * [GEEmptyDetailRemover](fw_ge-empty-detail-remover.html) (удаление пустых строк).

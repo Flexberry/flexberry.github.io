@@ -1,63 +1,68 @@
----
-title: Наиболее интересные свойства LookUp'ов для Flexberry ASP.NET
-sidebar: flexberry-aspnet_sidebar
-keywords: JavaScript API, Windows UI (Контролы)
-toc: true
-permalink: en/fa_interesting-lookup-settigs.html
-lang: en
----
+--- 
+title: the Most interesting properties LookUp's for Flexberry ASP.NET 
+sidebar: flexberry-aspnet_sidebar 
+keywords: JavaScript, Windows UI (Controls) 
+toc: true 
+permalink: en/fa_interesting-lookup-settigs.html 
+lang: en 
+autotranslated: true 
+hash: d01fb31dfafb46ee368f0e493fa0061f81d707d0f4011ee47c8f78640bc750be 
+--- 
 
-Наиболее интересные свойства LookUp'ов:
+The most interesting properties LookUp's: 
 
-* PropertyToShow
-* MasterViewName
-* MasterTypeName
-* ObjectTypeName
-* ObjectViewName
+* PropertyToShow 
+* MasterViewName 
+* MasterTypeName 
+* ObjectTypeName 
+* ObjectViewName 
 
-Ниже они описываются подробно.
+Below they are described in detail. 
 
-### PropertyToShow
+### PropertyToShow 
 
-Отвечает за отображаемое свойство __мастера__ после выбора лукапа. 
+Responsible for the display property __masters__ after selecting lucapa. 
 
-Не работает при включеном [AutoComplete](fa_predict-input-web.html).
+Does not work when exposed to [AutoComplete](fa_predict-input-web.html). 
 
-Устанавливается в методе `PostApplyToControls` или `PostLoad` формы редактирования. Если установить в методах, срабатывающих раньше, то изменения перезапишутся WebBinder'ом.
+Set in the method `PostApplyToControls` or `PostLoad` edit form. If you set in the methods that are triggered before, the changes will overwrite WebBinder'ohms. 
 
-Принимает составные свойства (свойства мастеров). К примеру, можно указать:
+Accepts composite properties (properties masters). For example, you can specify: 
 
 ```csharp
-ctrlКлиент.PropertyToShow = "Прописка.Город";
-```
+ctrlКлиент.PropertyToShow = "Registration.City";
+``` 
 
-Таким образом, при выборе мастера `Клиент` будет отображаться свойство `Клиент.Прописка.Город`.
+Thus, when choosing a master `Клиент` will display the property `Клиент.Registration.Город`. 
 
-### MasterViewName
+### MasterViewName 
 
-Устанавливает представление, которое будет использоваться на открываемой форме лукапа.
+Sets the view that will be used to open the form lucapa. 
 
-В отличии от `PropertyToShow`, может устанавливаться в любом месте и не зависит от `AutoComplete`.
+Unlike `PropertyToShow`, can be installed anywhere and does not depend on `AutoComplete`. 
 
-### MasterTypeName
+### MasterTypeName 
 
-Устанавливает тип объекта, который необходимо выбрать на LookUp. Актуально, когда мастеровой объект связан наследованием. То есть если есть два класса, связанных наследованием (класс A наследуется от класса B), и необходимо, чтобы на LookUp открывался класс А (а по умолчанию открывается класс B), то необходимо установить `MasterTypeName` следующим образом:
+Sets the type of object you want to select on the LookUp. True when a master object is associated with inheritance. That is, if there are two classes, related by inheritance (class a inherits from class B), and you need to LookUp had a class A (instead of the default open class B), you must install `MasterTypeName` as follows: 
 
 ```
 ctrlM1.MasterTypeName = typeof(M1).AssemblyQualifiedName;
-```
+``` 
 
-не забыв при этом установить `MasterViewName`
+do not forget to set `MasterViewName` 
 
-{% include note.html content="Для означивания `MasterTypeName` следует использовать `typeof(Тип).AssemblyQualifiedName`.  
-Подробнее можно посмотреть [в статье Проблема используемых типов (TypeUsage)](fo_type-usage-problem.html)." %}
+{% include note.html content="For signification `MasterTypeName` use `typeof(Type).AssemblyQualifiedName`. 
+More details can be found [in the article the Problem of types (a typeusage)](fo_type-usage-problem.html)." %} 
 
-### ObjectTypeName
+### ObjectTypeName 
 
-Устанавливает тип объекта, для которого устанавливается мастер.  
-Аналогично `MasterTypeName`, актуально для случаев наследования, но на сей раз в наследовании участвует базовый объект, а не мастер. Устанавливается в паре с `ObjectViewName`.
+Sets the object type for which you are installing the master. 
+Similarly `MasterTypeName` relevant to cases of succession, but this time involved in the inheritance base object and not the master. Set in a pair of `ObjectViewName`. 
 
-### ObjectViewName
+### ObjectViewName 
 
-Устанавливает представление базового объекта.  
-Аналогично `MasterViewName`, актуально для случаев наследования, но на сей раз в наследовании участвует базовый объект, а не мастер. Устанавливается в паре с `ObjectTypeName`.
+Sets the representation of the underlying object. 
+Similarly `MasterViewName` relevant to cases of succession, but this time involved in the inheritance base object and not the master. Set in a pair of `ObjectTypeName`.
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -1,55 +1,57 @@
----
-title: Формы редактирования и создания Flexberry Ember
-sidebar: flexberry-ember_sidebar
-keywords: Flexberry Ember
-toc: true
-permalink: en/ef_edit-form.html
-lang: en
-summary: Предназначение, структура, функции и отображение ошибок на форме редактирования
----
+--- 
+title: Form for editing and creating Flexberry Ember 
+sidebar: flexberry-ember_sidebar 
+keywords: Flexberry Ember 
+toc: true 
+permalink: en/ef_edit-form.html 
+lang: en 
+autotranslated: true 
+hash: 43263dc9eb19f22536b09de956338fbaf73b6703e4b7e1bbe87f7e5f4bfc0c69 
+summary: Purpose, structure, functions and error displays on the edit form 
+--- 
 
-## Описание
+## Description 
 
-Форма редактирования предназначена для редактирования объекта. Форма создания - для создания нового объекта (хотя в общем случае это очень близкие по логике работы формы).
+Edit form is used to edit the object. Creation form to create a new object (although in the General case is very similar in logic forms). 
 
-Чтобы создать форму редактирования [модели](efd_model.html) по [представлению](efd_model-projection.html), необходимо определить соответствующие [роуты](ef_route.html), [контроллеры](ef_controller.html) и [шаблоны](ef_template.html).
+To create the edit form - [models](efd_model.html) [view](efd_model-projection.html), define the appropriate [ranting](ef_route.html), [controllers](ef_controller.html) and [templates](ef_template.html). 
 
-Реализованные в технологии [формы](ef_forms.html) базовые элементы представляют собой один [контроллер](ef_controller.html), один [шаблон](ef_template.html) и разные [роуты](ef_route.html) (роут для формы создания унаследован от роута для формы редактирования).
+Implemented technology [form](ef_forms.html) the basic elements are a [controller](ef_controller.html), [template](ef_template.html) and different [ranting](ef_route.html) (for route creation form inherited from the roat for the editing form). 
 
-## Формы создания
+## creation Form 
 
-Формы создания можно использовать, чтобы задавать [значения по умолчанию для свойств модели](ef_default-value.html).
+The creation form can be used to set the [default values for model properties](ef_default-value.html). 
 
-## Функциональность форм создания и редактирования
+## Functionality, forms creation and editing 
 
-В таблице ниже представлены сведения об особенностях работы различных режимов для разных вариантов работы форм создания и редактирования.
+The table below provides information about the features of different modes for different types of forms create and edit. 
 
-`Обычная форма` (edit-form) - основной вариант работы формы редатирования.
+`Обычная форма` (edit form) - the primary work of the form of redaktirovaniya. 
 
-`Детейловая форма без сохранения или с сохранением` (detail-edit-form) - это особый вид форм, когда требуется [редактировать детейлы в отдельных роутах](ef_groupedit-detail-in-route.html).
+`Детейловая form without saving or сохранением` (detail-edit-form) is a special kind of forms, when required [edit detaily in a separate ranting](ef_groupedit-detail-in-route.html). 
 
-`ReadOnly`/`Not ReadOnly` - открывается или нет [форма в режиме только для чтения](ef_read-only-form.html).
+`ReadOnly`/`Not ReadOnly` - opens or not [the form in read-only mode](ef_read-only-form.html). 
 
-`IsNew`/`Saved` - является ли объект новым или уже сохранён.
+`IsNew`/`Saved` - if the object is new or already stored. 
 
-Операции:
+Operations: 
 
-* Save (Сохранение)
-* Save and close (Сохранение и закрытие)
-* Delete (Удаление)
-* Close (Закрытие)
+* Save (Save) 
+* Save and close (Save and close) 
+* Delete (Delete) 
+* Close (Close) 
 
-Состояние объекта| Обычная форма | Детейловая форма без сохранения | Детейловая форма c сохранением |
--| (edit-form) |(detail-edit-form) | (detail-edit-form)
-:------------| :---------------| :-------------------| :-----------------
-`ReadOnly IsNew `| Только закрытие. Модель не меняется. | Только закрытие. При этом состояние недоступно. | Только закрытие. При этом состояние недоступно.
-`ReadOnly Saved` |Только закрытие. Модель не меняется.|Только закрытие. Модель не меняется.|Только закрытие. Модель не меняется.
-`Not ReadOnly IsNew` | Сохранение, сохранение и закрытие, закрытие (откат модели).| Удаление (полное) и закрытие (без отката модели).| Сохранение, сохранение и закрытие, закрытие (откат модели).
-`Not ReadOnly Saved` |Сохранение, сохранение и закрытие, удаление (полное), закрытие (откат модели).|Удаление (пометка об удалении) и закрытие (без отката модели).| Сохранение, сохранение и закрытие, удаление (полное), закрытие (откат модели).
+| Normal form | Dealova form without saving | Dealova form c saving | 
+| (edit form) |(detail-edit-form) | (detail-edit-form) 
+:------------| :---------------| :-------------------| :----------------- 
+`ReadOnly IsNew `| close Only. The model does not change. | Close only. The status of unavailable. | Close only. The status of unavailable. 
+`ReadOnly Saved` |close Only. The model does not change.|Only a close. The model does not change.|Only a close. The model does not change. 
+`Not ReadOnly IsNew` | save, Save and close, close (rollback models).| Removal (full) and closing (without rolling back the model).| Save, save and close, close (rollback models). 
+`Not ReadOnly Saved` |save, Save and close, delete (complete), closure (rollback models).|Removal (mark) and closing (without rolling back the model).| Save, save and close, delete (complete), closure (rollback models).
 
-### Шаблон для обычной формы редактирования
+### the Template for a generic edit form 
 
-Таким образом, при оформлении [шаблона](ef_template.html) формы редактирования обычной формы с учётом режима только для чтения достаточно следующей конструкции:
+Thus, in the design [template](ef_template.html) the edit form is the usual form given the read-only mode only the following designs: 
 
 ```hbs
 `#unless readonly`
@@ -60,17 +62,17 @@ summary: Предназначение, структура, функции и о�
 	`/unless`
 `/unless`
 <button type="submit" class="ui primary button" `action 'close'`>Close</button>
-```
+``` 
 
-### Шаблон для формы редактирования детейла
+### Template for the editing form of detail 
 
-Таким образом, при оформлении шаблона формы редактирования детейла с учётом режима только для чтения и возможности работы в обычном режиме достаточно следующей конструкции.
+Thus, when you make the template edit form of detail given the read-only mode and the possibility to work in normal mode, only the following construction. 
 
-`hasParentRoute` - это вычислимое свойство контроллера, определяющее, откуда пользователь пришёл на текущую форму: с агрегатора или нет.
+`hasParentRoute` is a computable property of the controller that defines how the user came to the current form: with the aggregator or not. 
 
-* Форма `обычная`, если `hasParentRoute = false`, `saveBeforeRouteLeave = false`.
-* Форма `детейловая без сохранения`, если `hasParentRoute = true`, `saveBeforeRouteLeave = false`.
-* Форма `детейловая с сохранением`, если `hasParentRoute = true`, `saveBeforeRouteLeave = true`.
+* Form `обычная` if `hasParentRoute = false`, `saveBeforeRouteLeave = false`. 
+* Form `детейловая without сохранения` if `hasParentRoute = true`, `saveBeforeRouteLeave = false`. 
+* Form `детейловая with сохранением` if `hasParentRoute = true`, `saveBeforeRouteLeave = true`. 
 
 ```hbs
 `#unless readonly`
@@ -85,8 +87,12 @@ summary: Предназначение, структура, функции и о�
 	`/unless`
 `/unless`
 <button type="submit" class="ui button" `action 'close'`>Close</button>
-```
+``` 
 
-### Отображение ошибок на форме редактирования
+### error Display on the edit form 
 
-Если ошибка появилась при загрузке объекта до открытия формы редактирования - будет отображен шаблон `error.hbs`. Для изменения этого поведения можно использовать стандартное поведение ember'а.
+If the error appeared when loading the object to open the form, the edit template is displayed `error.hbs`. To change this behavior you can use the default behavior of ember. 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

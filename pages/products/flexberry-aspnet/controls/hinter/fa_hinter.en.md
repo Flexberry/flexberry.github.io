@@ -1,31 +1,36 @@
----
-title: Hinter
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Web UI (Контролы)
-toc: true
-permalink: en/fa_hinter.html
-lang: en
----
+--- 
+title: Hinter 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET, Web UI (Controls) 
+toc: true 
+permalink: en/fa_hinter.html 
+lang: en 
+autotranslated: true 
+hash: 133838d1f48ebceb34014ed7e7bc392f8f888e7835e93395eaa350bba6661c20 
+--- 
 
-## Описание
+## Description 
 
-## Подключение
+## Connection 
 
-## Использование
+## Use 
 
-### Подсказки к полям данных
+### Hints to the data fields 
 
-Использование подсказок к полям данных описано в соответствующей [статье](fa_hints-attributes.html).
+Use the tips to the data fields described in the corresponding [article](fa_hints-attributes.html). 
 
-### Пример кода
+### Sample code 
 
-### Настройки контрола
+### Settings control 
 
-### Настройки оформления
+### formatting Settings 
 
-### ...полезные способы использования...
+### ...useful ways to use... 
 
-## JS API
+## JS API 
 
-## Возможные ошибки
- 
+## Possible errors 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

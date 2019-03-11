@@ -1,27 +1,32 @@
----
-title: HierarchicalListView
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Web UI (Контролы)
-toc: true
-permalink: en/fa_hierarchical-listview.html
-lang: en
----
+--- 
+title: HierarchicalListView 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET, Web UI (Controls) 
+toc: true 
+permalink: en/fa_hierarchical-listview.html 
+lang: en 
+autotranslated: true 
+hash: 03bc60cd5bb07e8b9573b796e53720eefd2437b3943b8a758d9eef6d592739bf 
+--- 
 
-## Описание
+## Description 
 
-## Подключение
+## Connection 
 
-## Использование
+## Use 
 
-### Пример кода
+### Sample code 
 
-### Настройки контрола
+### Settings control 
 
-### Настройки оформления
+### formatting Settings 
 
-### ...полезные способы использования...
+### ...useful ways to use... 
 
-## JS API
+## JS API 
 
-## Возможные ошибки 
- 
+## Possible errors 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

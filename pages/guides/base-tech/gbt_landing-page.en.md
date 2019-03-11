@@ -6,7 +6,7 @@ toc: false
 permalink: en/gbt_landing-page.html 
 lang: en 
 autotranslated: true 
-hash: 4cc30674f2c53e1298f9ee50cdb1a95ac3a7f9b9ebef742e4dfa6f21b0d644bc 
+hash: aba36d47b8ce5481c51414c5a4db4b13c1eec5b1250bb0fd3a08a39f09cedcb1 
 summary: course on the basic technologies used in the platform Flexberry. 
 --- 
 
@@ -102,4 +102,4 @@ Below are a list of resources where you can find courses in various fields. Some
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

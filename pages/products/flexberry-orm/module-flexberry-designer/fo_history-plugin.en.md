@@ -1,255 +1,261 @@
----
-title: Functions of creating a backup and history of changes
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry Designer, Flexberry ORM, plugins
-summary: The purpose of the History plugin, creating a back-up, comparing the stages, restoring the stage
-toc: true
-permalink: en/fo_history-plugin.html
-lang: en
----
+--- 
+title: Functions for creating backup and change history 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry Designer, Flexberry ORM, plugins 
+summary: the purpose of the History plugin, create bekap, compare the stages, the restoration stage 
+toc: true 
+permalink: en/fo_history-plugin.html 
+lang: en 
+autotranslated: true 
+hash: 7a10d669559de8fa2bebab044d407b89124e06c89c10a78616bede08bac21311 
+--- 
 
-Функции `создания бэкапа` и `истории изменений` разработаны для хранения истории изменения Стадий с возможностью восстановления состояния стадии на момент сохранения.
+Function `создания бэкапа` and `истории изменений` designed to store the history of changes of Stages with the ability to recover a stage at the moment of saving. 
 
-## Возможности функции
+## Capabilities 
 
-Данные функции позволяют выполнять следующий набор операций с записями об изменениях стадии:
+These functions allow you to perform following set of operations that change records stage: 
 
-* Создание бэкапа стадии
-* Просмотр информации о созданных бэкапах
-    * Просмотр историй изменений стадий Конфигурации;
-    * Просмотр истории изменений конкретной стадии.
-* Восстановление стадии
-    * Восстановление в текущую стадию
-    * Восстановление в новую стадию
-    * Восстановление в любую существующую стадию
-* Сравнение двух записей истории
-    * Сравнение записи в истории с любой существующей стадией;
-    * Сравнение записи в истории с текущим состоянием стадии.
-* Подключение модуля расширения
+* Creating a backup stage 
+* View information about the generated bekapai 
+* View history of changes stages Конфигурации; 
+* View the history of changes to a particular stage. 
+* Restoration stage 
+* Recovery in the current stage 
+* Restore to a new stage 
+* The establishment in any existing stage 
+* Compare two records of history 
+* Comparing the history record with any existing стадией; 
+* Comparing recorded history with the current state of the stage. 
+* Connectivity expansion module 
 
-## Подключение модуля расширения
+## Connection of extension module 
 
-Подключение осуществляется по следующему алгоритму:
+The connection is made according to the following algorithm: 
 
-* Зарегистрировать плагин в Flexberry Designer;
-    * Открыть меню `Настройки - Модули`;
-    * Нажать `Создать`;
-    * Указать путь к библиотеке `History Case Tool plugin.dll`.
-* Добавить плагин к репозиторию:
-    * Открыть свойства репозитория, выбрав пункт меню `Репозиторий - Редактировать свойства`;
-    * В разделе Модули нажать `Создать`, в добавившейся строке в колонке `Модуль` выбрать `HistoryPlugin`;
-    * Сохранить изменения.
+* Register the plugin in Flexberry Designer; 
+* Open menu `Настройки - Модули`; 
+* Click `Создать`; 
+* Specify the library path `History Case Tool plugin.dll`. 
+* Add a plugin to the repository: 
+* Open the properties of the repository by selecting the menu item `Репозиторий - Edit свойства`; 
+* Under Modules, click `Создать`, adding line in column `Модуль` to choose `HistoryPlugin`; 
+* To save the changes. 
 
-{% include note.html content="Подробнее о модулях и их подключении можно посмотреть в этой статье [Модули расширения функциональности](fd_flexberry-plugins.html)." %}
+{% include note.html content="More on modules and their connection can be viewed in this article [Modules extend the functionality](fd_flexberry-plugins.html)." %} 
 
-После этого появится пункты меню Стадии `HistoryPlugin`:
+This will bring up a menu Stage `HistoryPlugin`: 
 
-* `История изменения стадии`;
-* `Создать бекап`.
+* `История changes стадии`; 
+* `Создать бекап`. 
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/add-item-history.png)
+![](/images/pages/products/flexberry-orm/module-flexberry-designer/add-item-history.png) 
 
-Также, наряду с кнопками `Сохранить` и `Сохранить и закрыть` появится кнопка `Сохранить с созданием бекапа`, которая сохраняет стадию и автоматически создает для неё бекап.
+Also, along with the buttons `Сохранить` and `Сохранить and закрыть` button will appear `Сохранить creating бекапа`, which saves stage and automatically creates a backup for it. 
 
-## Создание бекапов
+## Creating backups 
 
-При создании бекапа создается запись о состоянии стадии на текущий момент. 
+When you create a backup entry is created on the state stage at the moment. 
 
-{% include note.html content="Так как процесс создания бекапа для больших стадий занимает значительное время, не рекомендуется создавать бекапы при каждом внесении изменений в Стадию." %}
+{% include note.html content="as the process of creating a backup for big stages takes considerable time, it is not recommended to create backups every time you make changes to the Stage." %} 
 
-Создать бекап можно двумя способами:
+To create a backup in two ways: 
 
-* Выбрать пункт меню Стадии `Утилиты - Создать бекап`
+* Select the menu item Phase `Утилиты to Create бекап` 
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/create-backup.png)
- 
-* Нажать на кнопку `Сохранить с созданием бекапа` на любой форме, привязанной к стадии (любая диаграмма, класс и пр.).
+![](/images/pages/products/flexberry-orm/module-flexberry-designer/create-backup.png) 
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/save-backup.jpg)
+* Click `Сохранить creating бекапа` in any form, linked to stages (any chart, class, etc.). 
 
-{% include note.html content="Бекап создается для всей стадии сразу, независимо от формы, на которой была нажата кнопка `Сохранить с созданием бекапа`. К примеру, если нажать эту кнопку на форме редактирования класса, то создастся бекап для всей стадии, к которой привязан этот класс, а не для класса и не для диаграммы." %}
+![](/images/pages/products/flexberry-orm/module-flexberry-designer/save-backup.jpg) 
 
-## Просмотр информации о бекапах
+{% include note.html content="a Backup is created for the whole stage at once, regardless of the form on which the button was pressed `Сохранить creating бекапа`. For example, if you press this button on the edit form class, it will create backup for the whole stage, which is tied to this class and not for class and not for the chart." %} 
 
-Созданные бекапы доступны на форме просмотра бекапов, которую можно открыть двумя способами:
+## View information about bekapai 
 
-* Выбрать пункт меню Конфигурации - `Утилиты - История стадий конфигурации`.
-Откроется форма просмотра бэкапов всех стадий выбранной Конфигурации.
+Created backups available in the display form of backup that can be opened in two ways: 
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/history-configuration.png)
+* Choose the menu item Configuration - `Утилиты - History stages конфигурации`. 
+Opens the display form of backups at all stages of the selected Configuration. 
 
-* Выбрать пункт меню Стадии `Утилиты - История изменения стадии`.
-Откроется форма просмотра бэкапов конкретной Стадии.
+![](/images/pages/products/flexberry-orm/module-flexberry-designer/history-configuration.png) 
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/add-item-history.png)
+* Select the menu item Phase `Утилиты - History стадии`. 
+Opens the display form of backup concrete Stage. 
 
-На форме `История изменений стадии` представлен список с указанием:
+![](/images/pages/products/flexberry-orm/module-flexberry-designer/add-item-history.png) 
 
-*   Даты создания бекапа
-*   Пользователя, создавшего бекап
-*   Операции, совершенной со стадией (Created, Changed, Deleted)
-*   PrimaryKey стадии
-*   Наименования стадии
-*   Пути до стадии
+On the form `История changes стадии` presented with a list showing: 
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/history-change-stage.jpg)
+* The creation date of the backup 
+* User that created the backup 
+* Transacted with the stage (Created, Changed, Deleted) 
+* PrimaryKey stage 
+* The name of the stage 
+* Journey to the stage 
 
-## Восстановление состояния стадии
+![](/images/pages/products/flexberry-orm/module-flexberry-designer/history-change-stage.jpg) 
 
-При восстановлении стадии из записи истории производится разархивация и десериализация данных, хранящихся в поле Содержимое. При этом восстанавливаются все классы, ассоциации, представления и диаграммы стадии. Восстановление стадии может производиться в любую из существующих стадий, либо в новую стадию. При восстановлении в существующую стадию, она сначала удаляется, а затем в базу с тем же именем и ключом сохраняется восстановленная из истории стадия.
+## the state Restore phase 
 
-Для восстановления стадии из бекапа, необходимо на форме просмотра бекапов нажать кнопку `Восстановить в текущую`. Также можно восстановить бекап в любую другую, в том числе и новую стадию.
+During the recovery stage of history is uncompressing and deserializing data stored in the Content field. This restores all of the classes, associations, views, and charts the stage. The recovery stage can be made in any of the existing stages, or a new stage. When restoring to an existing stage, it is first removed, and then in the database with the same name and the key is restored from the history stage. 
 
-{% include note.html content="При восстановлении Стадии текущая стадия удаляется и создается новая, поэтому в списке бекапов появляется еще одна запись. Отличительной особенностью таких записей является отсутствие информации в колонке `Имя стадии`." %}
+To restore from backup stage, it is necessary for the display form of backups click `Восстановить in текущую`. You can also restore a backup to any other, including new stage. 
 
-### Алгоритм восстановления в текущую стадию
+{% include note.html content="If you restore the Stage current stage is deleted and a new one is created, so the list of backups, you receive another entry. A distinctive feature of these records is the lack of information in column `Имя стадии`."%} 
 
-*   Перейти на форму `История изменений стадии`
-    *   Выбрать пункт меню Стадии `Утилиты - История изменения стадии`
-    *   Открылась форма `История изменений стадии`
-*   Выделить строку бэкапа из которого нужно восстановить состояние стадии
-*   В разворачивающемся списке на панели инструментов выбрать пункт `Восстановить в текущую`
+### recovery Algorithm in the current stage 
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/restore-current.jpg)
+* Go to the form `История changes стадии` 
+* Select the menu item Phase `Утилиты - History стадии` 
+* Open a form `История changes стадии` 
+* Select the line of the backup from which to restore the state of the stage 
+* In the drop-down list on the toolbar, select `Восстановить in текущую` 
 
-*   Во всплвающем окне с предупреждением нажать `ОК`
+![](/images/pages/products/flexberry-orm/module-flexberry-designer/restore-current.jpg) 
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/warning-window.jpg)
+* In splashes the warning, click `ОК` 
 
-### Алгоритм восстановления состояния стадии, которая была удалена
+![](/images/pages/products/flexberry-orm/module-flexberry-designer/warning-window.jpg) 
 
-* Выбрать пункт меню Конфигурации `Утилиты - История стадий конфигурации`
-    * Открылась форма `История изменений стадии`
-* Выделить строку бэкапа из которого нужно восстановить состояние удаленной стадии
-* В разворачивающемся списке на панели инструментов выбрать пункт `Восстановить как...`
+### Algorithm state restore stage, which has been removed 
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/restore-as.jpg)
+* Choose the menu item Configuration `Утилиты - History stages конфигурации` 
+* Open a form `История changes стадии` 
+* Select the line of the backup from which to restore the state of the remote stage 
+* In the drop-down list on the toolbar, select `Восстановить as...` 
 
-* В появившемся окне указать имя, с которым стадия будет восстановлена. Далее есть несколько вариантов:
-    * Оставить имя, которое было у стадии до удаления. Стадия будет восстановлена со старым именем
-    * Ввести новое имя. Стадия будет создана с новым именем
-    * Выбрать существующую стадию из списка (данные в выбранной стадии будут перезаписаны!)
+![](/images/pages/products/flexberry-orm/module-flexberry-designer/restore-as.jpg) 
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/choose-stage-name.jpg)
+* In the opened window specify the name with which the stage will be restored. Further, there are several options: 
+* Leave the name as the stage before deletion. The stage will be restored with the old name 
+* Enter a new name. Stage will be created with the new name 
+* Select an existing stage from the list (the data in the selected stage will be overwritten!) 
 
-* Нажать ОК.
+![](/images/pages/products/flexberry-orm/module-flexberry-designer/choose-stage-name.jpg) 
 
-## Сравнение стадий
+* Click OK. 
 
-### Сравнение изменений между бэкапом стадии и текущим состоянием стадии
+## Comparison stages 
 
-*Доступно только из просмотра бэкапов конкретной стадии.*
+### Comparison of changes between the backup stage and the current stage status 
 
-Алгоритм сравнения бэкапа стадии и текущим состоянием стадии:
+*Only available from safe backups of a specific stage.* 
 
-*   Перейти на форму `История изменений стадии`
-*   Выделить бэкап для сравнения, кликнув по строке правой клавишей мыши;
-*   Выбрать в раскрывающемся списке пункт `Сравнить с текущей`
-*   Будут открыты окно с логом выполнения сравнения и окно с результатом сравнения
+The comparison algorithm backup stage and the current stage status: 
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/compare-current.jpg)
+* Go to the form `История changes стадии` 
+* Provide backup for comparison by clicking on the line right button мыши; 
+* Choose from the drop-down list item `Сравнить with текущей` 
+* Will open a window with the log comparison and the window with the result of the comparison 
 
-### Сравнение двух бэкапов одной стадии/кофигурации
+![](/images/pages/products/flexberry-orm/module-flexberry-designer/compare-current.jpg) 
 
-Для сравнения двух стадий необходимо на форме просмотра бекапов выделить 2 бекапа и нажать кнопку `Сравнить`.
-Таким способом можно сравнить два бэкапа одной стадии, или бэкапы двух разных стадий, находящихся в одной конфигурации. 
-Доступно из просмотра бэкапов конкретной стадии и из просмотра бэкапов стадий конфигурации.
+### Comparing two backups one stage/configuration 
 
-Алгоритм сравнения двух бэкапов:
+For comparison, two stages are required on the form viewer backup 2 backup to select and click `Сравнить`. 
+This way you can compare two backup one stage, or backups of two different stages in the same configuration. 
+Available from safe backups of a particular stage and view the backup configuration stages.
 
-*   Перейти на форму `История изменений стадии`
-*   Выделить первый бэкап, кликнув по строке правой клавишей мыши
-*   Выделить второй бэкап, зажав `Ctrl` и кликнув правой клавишей мыши по другой строке
-*   Выбрать в раскрывающемся списке пункт `Сравнить`
+Algorithm to compare two backups: 
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/compare-two-backups.jpg)
+* Go to the form `История changes стадии` 
+* Select the first backup by clicking on the line with the right mouse button 
+* To allocate a second backup, holding `Ctrl` and clicking the right button of the mouse on the other line 
+* Choose from the drop-down list item `Сравнить` 
 
-*   Будут открыты окно с логом выполнения сравнения и окно с результатом сравнения.
+![](/images/pages/products/flexberry-orm/module-flexberry-designer/compare-two-backups.jpg) 
 
-### Сравнение бэкапа стадии с текущим состоянием любой другой стадии
+* Will open a window with the log comparison and the window with the result of the comparison. 
 
-Позволяет сравнить сохраненное состояние стадии, с текущим состоянием другой стадии в данном Репозитории, даже если она находится в другой Конфигурации или другом Проекте.
-Доступно из просмотра бэкапов конкретной стадии и из просмотра бэкапов стадий конфигурации.
+### Comparison backup stage with the current state of any other stage 
 
-Алгоритм сравнения бэкапа стадии с текущим состоянием любой другой стадии:
+Allows you to compare the saved state of the stage, with the current state of another stage in this Repository, even if it is in a different Configuration or a different Project. 
+Available from safe backups of a particular stage and view the backup configuration stages. 
 
-*   Перейти на форму `История изменений стадии`
-*   Выбрать бэкап, для которого необходимо провести сравнение (выбрана только 1 строка)
-*   Выбрать в раскрывающемся списке пункт `Сравнить`
-*   В открывшемся окне из списка всех существующих в данном репозитории стадий выбрать ту, с которой будем сравнивать.
+The comparison algorithm backup stage with the current state of any other stage: 
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/compare-stage.jpg)
+* Go to the form `История changes стадии` 
+* Choose the backup that you want to compare (only selected 1 row) 
+* Choose from the drop-down list item `Сравнить` 
+* In the opened window, from the list of all available in this repository stages to choose the one with which we will compare. 
 
-*   Нажать ОК
-*   удут открыты окно с логом выполнения сравнения и окно с результатом сравнения.
+![](/images/pages/products/flexberry-orm/module-flexberry-designer/compare-stage.jpg) 
 
-### Отображение результатов сравнения
+* Click OK 
+* Udut open a window with the log comparison and the window with the result of the comparison. 
 
-Результаты сравнения отображаются на форме:
+### Displaying results of the comparison 
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/showing-comparison-results.jpg)
+The results of the comparison are displayed on the form: 
 
-На форме отображено между какими стадиями происходит сравнение. Подписан путь для каждой стадии в формате `Репозиторий/Проект/Конфигурация/Стадия`.
+![](/images/pages/products/flexberry-orm/module-flexberry-designer/showing-comparison-results.jpg) 
 
-Ниже доступны для  просмотра 5 вкладок:
+On the form displayed between which stages are compared. A signed path for each stage format `Репозиторий/Project/Configuration/Стадия`. 
 
-* Результат сравнения (при открытии отображена именно она)
-* Объекты совпадают
-* Объекты только стадии 1
-* Объекты различаются
-* Объекты только стадии 2
+Below are available for viewing 5 tab: 
 
-#### Вкладка Результат сравнения
+* The result of the comparison (displayed when you open it) 
+* Objects are 
+* Objects only stage 1 
+* Facilities vary 
+* Objects only stage 2 
 
-* В виде круговой диаграммы выводится информация о процентном соотношении совпадающих, различающихся и уникальных для каждой стадии классов (`Classes`) и представлений (`Views`).
-* Голубым цветом на диаграмме показываются классы и представления представленные только в первой сравниваемой стадии (`Стадия 1`). Детальную информацию о них можно получить на вкладке `Объекты только стадии 1`
-* Желтым цветом на диаграмме показываются классы и представления представленные только во второй сравниваемой стадии (`Стадия 2`). Детальную информацию о них можно получить на вкладке `Объекты только стадии 2`
-* Красным цветом на диаграмме показываются классы и представления, которые есть в обеих сравниваемых стадиях и являются одинаковыми. Детальную информацию о них можно получить на вкладке `Совпадают`
-* Синим цветом на диаграмме показываются классы и представления, которые есть в обеих сравниваемых стадиях, но имеют некоторые отличия. Получить детальную информацию о них и посмотреть, в чем именно состоят отличия можно на вкладке `Совпадают`
+#### Tab is the result of the comparison 
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/comparison-chart.jpg)
+* A pie chart displays information about the percentage matching, differing and unique for each stage class (`Classes`) and views (`Views`). 
+* Blue color on the diagram shows classes and the submission are presented only in the first compare phase (`Стадия 1`). Detailed information on these is available on the tab `Объекты only stage 1` 
+* Yellow color on the diagram shows classes and the submission are presented only in the second compare phase (`Стадия 2`). Detailed information on these is available on the tab `Объекты only stage 2` 
+* Red color on the diagram shows classes and views that are in both compare the stages are the same. Detailed information on these is available on the tab `Совпадают` 
+* Blue color on the diagram shows classes and views that are in both compare the stages, but have some differences. To obtain detailed information about them and see what exactly are the differences on the tab `Совпадают` 
 
-#### Вкладка Объекты различаются
+![](/images/pages/products/flexberry-orm/module-flexberry-designer/comparison-chart.jpg) 
 
-Информация о классах и представлениях, которые есть в обеих сравниваемых стадиях, но имеют некоторые отличия.
-На вкладке расположена таблица, в которой в столбце `Тип объекта` видим 2 раскрывающихся списка с классами (`Classes`) и представлениями (`Views`). В столбце `Наименование объекта`, напротив свернутых списков написано количество найденных классов и представлений имеющих отличия.
+#### the Objects Tab vary 
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/number-different-objects.jpg)
+Information about classes and performances, which are in both compare the stages, but have some differences. 
+Tab is a table in which the column `Тип объекта` see 2 drop-down list with classes (`Classes`) and views (`Views`). In column `Наименование объекта` opposite folded written a number of classes and ideas which differ. 
 
-Раскрыть список `Classes` и выбрать один из найденных классов, например `Дом`.
+![](/images/pages/products/flexberry-orm/module-flexberry-designer/number-different-objects.jpg) 
 
-В нижнем окне есть 2 вкладки: `Поля` и `Ассоциации`.  
+To expand the list `Classes` and select one of the found classes, such as `Дом`. 
 
-##### Вкладка `Поля` 
+In the lower window there are 2 tabs: `Поля` and `Ассоциации`. 
 
-Позволяет посмотреть какие поля имеет класс в стадии 1 и в стадии 2. Показан стереотип, родитель, значения атрибутов. Элементы, которых нет в одной из сравниваемых стадий выделены красным цветом.
+##### Tab `Поля` 
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/field-compare.jpg)
+Allows you to see which fields have class in stage 1 and stage 2. Shown a stereotype, a parent attribute values. Items that are not in one of the compared phases are highlighted in red. 
 
-##### Вкладка `Ассоциации` 
+![](/images/pages/products/flexberry-orm/module-flexberry-designer/field-compare.jpg) 
 
-Позволяет посмотреть какие у данного класса есть мастеры, детейлы, агрегаторы, роли, кардинальность связи. Элементы, которых нет в одной из сравниваемых стадий выделены красным цветом (в данном примере у класса `Дом` нет отличий в ассоциациях).
+##### Tab `Ассоциации` 
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/association-compare.jpg)
+Allows you to see what this class is wizards, detaily, aggregators, roles, cardinality of relationships. Items that are not in one of the compared phases are highlighted in red (in this example, the class `Дом` no differences in associations). 
 
-Раскрыть список `Views` и выбрать одно из найденных представлений, например `Заказ.ЗаказЕ`.
+![](/images/pages/products/flexberry-orm/module-flexberry-designer/association-compare.jpg) 
 
-Вкладка `Свойства` позволяет посмотреть какие свойства имеет представление в стадии 1 и в стадии 2. Элементы, которых нет в одной из сравниваемых стадий выделены красным цветом.
+To expand the list `Views` and select one of the found concepts, such as `Заказ.ЗаказЕ`. 
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/views-compare-attribute.jpg)
+PstrfСвойства` tab allows you to look at what properties has an idea in stage 1 and stage 2. Items that are not in one of the compared phases are highlighted in red. 
 
-Вкладка `Детейлы` позволяет посмотреть какие Детейлы имеет представление в стадии 1 и в стадии 2. Элементы, которых нет в одной из сравниваемых стадий выделены красным цветом. В данном примере представление `Заказ.ЗаказЕ` не имеет детейлов в стадии `TestStandWin`.
+![](/images/pages/products/flexberry-orm/module-flexberry-designer/views-compare-attribute.jpg) 
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/views-compare-detail.jpg)
+PstrfДетейлы` tab allows you to see what Detaily has an idea in stage 1 and stage 2. Items that are not in one of the compared phases are highlighted in red. In this example, the performance `Заказ.ЗаказЕ` has no datalow under `TestStandWin`. 
 
-#### Вкладка Объекты только стадии 1
+![](/images/pages/products/flexberry-orm/module-flexberry-designer/views-compare-detail.jpg) 
 
-Показывает объекты, которые есть только в первой из сравниваемых стадий. Можно посмотреть детальную информацию о них, аналогично тому, как это описано вкладки «Объекты различаются».
+#### Tab Objects only stage 1 
 
-#### Вкладка «Объекты только стадии 2 
+Shows objects that are only in the first of the compared stages. You can view detailed information about them, similar to that described tabs «Objects vary».
 
-Показывает объекты, которые есть только во второй из сравниваемых стадий. Можно посмотреть детальную информацию о них, аналогично тому, как это описано для вкладки «Объекты различаются».
+#### Tab «Objects only stage 2 
 
-#### Вкладка «Объекты совпадают»
+Shows objects that exist only in the second of the compared stages. You can view detailed information about them, in the same way as described for the tab «Objects vary». 
 
-Показывает объекты, которые есть в обеих сравниваемых стадиях и полностью совпадают по всем параметрам. Можно посмотреть детальную информацию о них, аналогично тому, как это описано вкладки «Объекты различаются».    
+#### Tab «Objects match» 
+
+Shows the objects that are in both compare the stages and are identical in all respects. You can view detailed information about them, similar to that described tabs «Objects vary». 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

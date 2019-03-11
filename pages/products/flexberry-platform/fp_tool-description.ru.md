@@ -8,6 +8,8 @@ lang: ru
 summary: Список инструментов, рекомендуемых к применению разработчиками.
 ---
 
+Описание основных инструментов.
+
 ## Инструменты для работы с ASP.NET приложениями
 
 ### Обязательный набор
@@ -45,18 +47,19 @@ summary: Список инструментов, рекомендуемых к п
 ### Остальные инструменты
 
 * **Браузер** и расширение Ember inspector, которое помогает отлаживать ember-приложение:
-    * [chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-    * [firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector)
+
+  * [chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
+  * [firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector)
 * **Консоль** для работы с git, npm, bower, ember-cli и др.
-    * **linux**, возможно, пойдет любой терминал.
-    * **windows** стандартный cmd.exe не лучший выбор.
+  * **linux**, возможно, пойдет любой терминал.
+  * **windows** стандартный cmd.exe не лучший выбор.
         Рекомендуются:
         * PowerShell.
         * ConEmu.
         * Cmder.
 * **IDE и текстовый редактор**. IDE для js очень ресурсно затратна, поэтому рекомендуется использовать текстовые редакторы такие как:
-    * Visual Studio Code
-    * Atom (к нему рекомендуется установить расширения, облегающие работу)
+  * Visual Studio Code
+  * Atom (к нему рекомендуется установить расширения, облегающие работу)
         * [file-icons](https://atom.io/packages/file-icons)
         * [platformio-ide-terminal](https://atom.io/packages/platformio-ide-terminal)
         * [language-markdown](https://atom.io/packages/language-markdown)
@@ -92,8 +95,9 @@ summary: Список инструментов, рекомендуемых к п
 Как минимум:
 
 * Нужно указать имя и email, прикрепленный к Вашему аккаунту на GitHub:
-    * Имя: `git config --global user.name "John Doe"`
-    * Email: `git config --global user.email johndoe@example.com`
+
+  * Имя: `git config --global user.name "John Doe"`
+  * Email: `git config --global user.email johndoe@example.com`
 
 Следующим шагом необходимо стать участником команды [Flexberry на GitHub](https://github.com/Flexberry).
 Это необходимо для отправки коммитов в удаленный репозиторий на GitHub.
@@ -113,7 +117,7 @@ summary: Список инструментов, рекомендуемых к п
 
 [Разворачивание решений в контейнерах Docker](gbt_deployment_docker.html)
 
-#### Алгоритм установки
+### Алгоритм установки
 
 1. Установить Docker Desktop.
 2. Включить виртуализацию в BIOS-е.

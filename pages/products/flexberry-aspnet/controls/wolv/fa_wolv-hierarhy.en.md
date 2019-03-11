@@ -1,64 +1,70 @@
----
-title: Иерархический WebObjectListView
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_wolv-hierarhy.html
-lang: en
----
+--- 
+title: Hierarchical WebObjectListView 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_wolv-hierarhy.html 
+lang: en 
+autotranslated: true 
+hash: 7cef92af4f8b13700e4124a437fc38da563d1eef2c6db7c00e820012385bbd4a 
+--- 
 
-Иерархический WOLV не является отдельным контролом, это обычный [WebObjectListView](fa_web-object-list-view.html), настроенный особым образом.
+Hierarchical WOLV is not a separate control, it is common [WebObjectListView](fa_web-object-list-view.html) that is configured in a special way. 
 
-Иерархический WOLV позволяет отображать иерархические данные.
+Hierarchical WOLV allows you to display hierarchical data. 
 
-## Пример
+## Example 
 
-Пример диаграммы:
+An example of a chart: 
 
-![](/images/pages/products/flexberry-aspnet/controls/wolv/wolv-hierarhy-diagramm.png)
+![](/images/pages/products/flexberry-aspnet/controls/wolv/wolv-hierarhy-diagramm.png) 
 
-### Настройка иерархического WOLV
+### configure hierarchical WOLV 
 
-Отображение списка `Территории` в иерархическом виде.
+Display a list of `Территории` in a hierarchical manner. 
 
-1. Настроить [L-представление](fd_l-view.html) Территории.
-2. Настроть WOLV.
+1. Configure [L-view](fd_l-view.html) Territory. 
+2. Kastrati WOLV. 
 
-#### Настройка L-представления
+#### configuring L-view 
 
-Чтобы WOLV заработал, необходимо, чтобы свойство `Иерархия` попадало в L-представление. По умолчанию в него входит только `Иерархия.Наименование`, необходимо добавить ссылку на `Иерархию` и снять с неё видимость, чтобы не показывать пользователю на списковой форме ключи (`PrimaryKey`) Территорий.
+To WOLV earned, you want the property `Иерархия` fell in L-view. By default it includes only `Иерархия.Наименование`, you must add a reference to `Иерархию` and to remove from it the visibility to not show the user list on the form keys (`PrimaryKey`) Territories. 
 
-#### Настройка WOLV
+#### setting WOLV 
 
-Настройка WOLV заключается в указании иерархического свойства. В код загрузки страницы `ТерриторияL` в метод `PreLoad()` добавляется следующий код (включение иерархического режима):
+Setting WOLV is to specify the hierarchical properties. In the code download page `ТерриторияL` method `PreLoad()` following code is added (enable hierarchical mode): 
 
 ```csharp
 protected override void Preload()
 {
-    WebObjectListView1.HierarchyProperty = "Иерархия";
+    WebObjectListView1.HierarchyProperty = Hierarchy;
 }
-```
+``` 
 
-#### Результат
+#### Result 
 
-На панель добавлена кнопка переключения вида WOLV: ![](/images/pages/products/flexberry-aspnet/controls/wolv/wolv-hierarhical-panel.png)
+The panel added button to toggle the view WOLV: ![](/images/pages/products/flexberry-aspnet/controls/wolv/wolv-hierarhical-panel.png) 
 
-Если кнопку нажать, то WOLV преобретает следующий вид:
+If the button is pressed, the WOLV acquires the following form: 
 
-![](/images/pages/products/flexberry-aspnet/controls/wolv/wolv-hierarhical-view.png)
+![](/images/pages/products/flexberry-aspnet/controls/wolv/wolv-hierarhical view.png) 
 
-В этом виде у WOLV'а (пока) отсутствуют Pager'ы, а также добавляются кнопки для сворачивания и разворачивания иерархии.
+In this view WOLV'a (yet) missing Pager's, and add the buttons to collapse and expand the hierarchy. 
 
-При повторном нажатии на кнопки WOLV приобретает обычный вид:
+When you press the button WOLV acquires the usual form: 
 
-![](/images/pages/products/flexberry-aspnet/controls/wolv/wolv-simple-view.png)
+![](/images/pages/products/flexberry-aspnet/controls/wolv/wolv-simple-view.png) 
 
-## Отображение родителей, не которых наложено ограничение
+## displays the parents, not which a constraint 
 
-Иерархический WOLV поддерживает возможность отображения иерархии в случае наложенного ограничения на родительские элементы по аналогии с [OLV](fw_objectlistview.html) в Windows-приложениях.
+Hierarchical WOLV supports the ability to display the hierarchy in the case of the restrictions imposed on parent elements by analogy with [OLV](fw_objectlistview.html) in Windows applications. 
 
-Для включения данного режима требуется свойству `UseLimitFunctionExtension` соответствующего экземпляра WOLV присвоить значение `true`.
+To enable this mode requires the property `UseLimitFunctionExtension` corresponding instance WOLV assign a value `true`. 
 
-Ограничение на родительские элементы может накладываться как в самом WOLV-е, так и в лукапе, если WOLV в иерархическом режиме используется для выбора элемента на форме, поднимаемой по лукапу (с использованием [WOLVSettApplyer](fa_wolv-sett-applyer.html)).
+The restriction on parent elements may be superimposed as in the WOLV-e and lucapa if WOLV in the hierarchical mode is used to select object on the form, raised on luckau (using [WOLVSettApplyer](fa_wolv-sett-applyer.html)). 
 
 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

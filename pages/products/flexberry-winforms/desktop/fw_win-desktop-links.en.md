@@ -1,24 +1,26 @@
----
-title: Ярлыки рабочего стола
-sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (формы)
-summary: Подробно рассмотрен механизм применения ярлыков, предназначенный для работы с экземплярами объектов данных с рабочего стола, указано как его применять, примеры
-toc: true
-permalink: en/fw_win-desktop-links.html
-folder: products/flexberry-winforms/
-lang: en
----
+--- 
+title: desktop Shortcuts 
+sidebar: flexberry-winforms_sidebar 
+keywords: Windows UI (forms) 
+summary: in Detail the mechanism for applying labels designed to work with instances of data objects from the desktop, specified how to apply it, examples 
+toc: true 
+permalink: en/fw_win-desktop-links.html 
+folder: products/flexberry-winforms/ 
+lang: en 
+autotranslated: true 
+hash: b05dea11e7aa6df7635cc612ced6dcf66e8c7c1bd38a1d5a0c8fbea1c9c47206 
+--- 
 
-Механизм ярлыков позволяет работать с экземплярами объектов данных с рабочего стола.
- 
-Ярлыки стоит применять, если с каким-либо экземпляром приходится работать очень часто. Это позволит не загружать списковую форму и не искать экземпляр на ней.
+The mechanism of labels allows you to work with instances of data objects from the desktop. 
 
-Ярлыки можно применять для экземпляра любого класса, который является наследником  ICSSoft.STORMNET.DataObject.
+Labels should be applied, if in any instance it is necessary to work very often. It will not load the list form and do not look for instance at her. 
 
-## Папки для ярлыков
-Папки, в которых можно создавать ярлыки указываются с помощью переопределения метода GetShortCutFolders() класса DesktopCustomizer. Этот метод возвращает ArrayList, элементами которого являются строки, в которых указывается полный путь к папке. По умолчанию этот метод возвращает только папку «Избранное».  
+Labels can be applied to an instance of any class that is the successor ICSSoft.STORMNET.DataObject. 
 
-Пример
+## Folders for shortcuts 
+The folder in which you can create labels can be specified by overriding a method GetShortCutFolders() class DesktopCustomizer. This method returns an ArrayList whose elements are strings that specify the full path to the folder. By default, this method returns only the folder favorites» qmo. 
+
+Example 
 
 ```csharp
 public class NewDesktopCustomizer : ICSSoft.STORMNET.UI.DesktopCustomizer
@@ -32,16 +34,16 @@ public class NewDesktopCustomizer : ICSSoft.STORMNET.UI.DesktopCustomizer
         }
         …
 }
-```
+``` 
 
-## Имя ярлыка
-При создании ярлыка по умолчанию берется имя списковой формы. Для присвоения ярлыку адекватного имени нужно сделать следующее:
-Класс соответствующего объекта необходимо пометить атрибутом ShortCutCaption. Параметром этого атрибута служит имя, с которым будет отображаться ярлык. В имени ярлыка можно указать @name@, где в качестве name выступает имя свойства или поля данного класса, тогда при определении имени ярлыка вместо данной конструкции будет подставлено значение указанного свойства или поля соответствующего объекта данных.
+## the name of the shortcut 
+When you create a shortcut by default takes the name of a list form. To assign a label adequate name, do the following: 
+The class of the corresponding object, you need to mark an attribute ShortCutCaption. Setting this attribute is the name that will appear with the label. In the name of the shortcut you can specify @name@ where name is the name of a property or field of this class, then the name of the label instead of this design will be substituted the value of the specified property or field of the corresponding data object. 
 
-Пример:
+Example: 
 
 ```csharp
-[ShortCutCaption("Кошка по кличке @Кличка@")]
+[ShortCutCaption("A cat by nickname @Nickname@")]
 public class Кошка : ICSSoft.STORMNET.DataObject
 {
         …
@@ -58,33 +60,33 @@ public class Кошка : ICSSoft.STORMNET.DataObject
         }
         …
 }
-```
+``` 
 
-В результате имя ярлыка для объекта данных «Кошка» будет, например, таким: «Кошка по кличке Мурка».
+As a result, the name of the label for the data object «Cat» will, for example, «a Cat named Murka». 
 
-## Раннеры
-Раннер – класс, реализующий методы для запуска ярлыка. В конструкторе раннер принимает ярлык. Чтобы добавить новый раннер, нужно создать новый класс, наследующийся от DesktopShortCutRunner. Методы раннера, помеченные атрибутом RunnerMethodAttribute можно запустить из контекстного меню ярлыка, с данным типом раннера. Параметром атрибута является строка, которая будет отображаться в соответствующем пункте контекстного меню ярлыка.
-В базовом классе DesktopShortCutRunner реализованы два стандартных метода:
+## Runners 
+Runner – a class that implements the methods for running a label. In the designer, a runner takes a shortcut. To add a new runner, you need to create a new class that are inherited from DesktopShortCutRunner. The methods of the runner, marked RunnerMethodAttribute can be started from the context menu of the label, with this type of runner. The attribute parameter is a string that will be displayed in the corresponding item in the context menu of the shortcut. 
+In the base class DesktopShortCutRunner implemented two standard methods: 
 
-	RunEditForm – запуск формы редактирования. Параметром передается название типа формы редактирования.
+RunEditForm – launch the edit form. A parameter is passed the name of the type editing form. 
 
-	RunObjectMethod – Запуск метода объекта. Параметром передается название метода.
+RunObjectMethod – Start method of the object. A parameter is passed the name of the method. 
 
-Вторым параметром обоих методов может быть передано имя представления для загрузки объекта (этот параметр не обязателен, но в некоторых случаях его отсутствие может привести к ошибкам).
-В раннере можно задать дефолтную картинку для ярлыков с данным типом.
+The second parameter of both methods can be passed the name of the view to load the object (this option is not mandatory, but in some cases its absence may lead to errors). 
+In runner, you can specify default picture labels with the given type.
 
-## Как применить раннер для ярлыков
+## How to apply runner for labels 
 
-Раннер, которым будет запускаться ярлык, определяется автоматически при создании ярлыка.
-Для того, чтобы раннер применялся для ярлыков объектов определенного типа, нужно сделать следующее:
+Runner, who will run the shortcut that is automatically defined when you create the shortcut. 
+In order for a runner used to label objects of a particular type, do the following: 
 
-1)	В раннере реализовать статический метод GetObjectTypes, возвращающий массив типов, для которых следует применять данных раннер.
+1) the runner GetObjectTypes implement a static method that returns an array of types for which you want to apply data runner. 
 
-2)	Переопределить метод GetShortCutRunners() класса DesktopCustomizer. Этот метод возвращает словарь, у которого ключ – это имя класса раннера, а значение – это массив поддерживаемых типов объектов, которые возвращает метод GetObjectTypes().
+2) Override the method GetShortCutRunners() class DesktopCustomizer. This method returns a dictionary whose key is the class name of the runner, and the value is an array of supported types of objects that the method returns GetObjectTypes(). 
 
-По умолчанию этот метод возвращает только раннер для отчетов (ReportRunner).
+By default, this method returns only runner for the report (ReportRunner). 
 
-Пример:
+Example: 
 
 ```csharp
 public class NewRunner : DesktopShortCutRunner
@@ -108,7 +110,10 @@ public class NewDesktopCustomizer : ICSSoft.STORMNET.UI.DesktopCustomizer
         }
         …
 }
-```
+``` 
 
-## Создание ярлыка из кода
-Ярлык создается вызовом статического метода CreateShortCut. Метод принимает имя ярлыка, путь к папке, в которой отображать ярлык, тип раннера, объект данных, которому соответствует ярлык, тип формы редактирования и картинку, для отображения ярлыка. Если в качестве этого параметра передать null, то ярлык будет отображаться с дефолтной картинкой. Еще один необязательный параметр указывает является ли создаваемый ярлык общим или нет. Если ярлык общий, то в базе данных в поле User будет значение null и в дальнейшем его будут видеть все пользователи. Если же ярлык не является общим, то в базе данных ярлык сохранится с текущим пользователем.
+## create a label from code 
+The label is created by calling the static method CreateShortCut. The method takes the name of the shortcut, the path to the folder in which to display the label, the type of runner, a data object corresponding to the label type edit form and picture to display the shortcut. If this parameter is null, the label will be displayed by the default picture. Another optional parameter specifies whether the created shortcut, common or not. If the label is common, it is in a database in the User field will be null in the future it will be seen by all users. If the label is not shared, in the database the label will remain with the current user.
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

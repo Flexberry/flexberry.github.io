@@ -1,78 +1,85 @@
----
-title: LookUp'ы
-sidebar: flexberry-aspnet_sidebar
-keywords: JavaScript API, Windows UI (Контролы)
-toc: true
-permalink: en/fa_lookup-overview.html
-lang: en
----
+--- 
+title: LookUp's 
+sidebar: flexberry-aspnet_sidebar 
+keywords: JavaScript, Windows UI (Controls) 
+toc: true 
+permalink: en/fa_lookup-overview.html 
+lang: en 
+autotranslated: true 
+hash: fef79e60ea758b8a33f7f3c8d11fcba7b38498c3e1983602b59f882fe96d73b3 
+--- 
 
-`LookUp` (действие) - выбор мастерового объекта (проставление ссылки на мастеровой объект).
+`LookUp` (action) - select a craftsman of the object (putting links to the workman the object). 
 
-`LookUp` (контрол) - контрол для выбора мастерового объекта, возвращающий ссылку на него.
+`LookUp` (control) - control for selection of artisan object that returns a reference to it. 
 
-![](/images/pages/products/flexberry-aspnet/controls/lookup/lookup.jpg)
+![](/images/pages/products/flexberry-aspnet/controls/lookup/lookup.jpg) 
 
-## Свойства LookUp'ов
+## Properties LookUp's 
 
-Свойства LookUp'ов для Flexberry ASP.NET изложены в соответствующей [статье](fa_lookup-settigs.html).
+Properties LookUp's for Flexberry ASP.NET set forth in the relevant [article](fa_lookup-settigs.html). 
 
-### Наиболее интересные свойства LookUp'ов
+### the Most interesting properties LookUp's 
 
-Наиболее интересные свойства LookUp'ов описаны в соответствующей [статье](fa_interesting-lookup-settigs.html).
+The most interesting properties LookUp's described in the relevant [article](fa_interesting-lookup-settigs.html). 
 
-## MasterEditorAjaxLookUp
+## MasterEditorAjaxLookUp 
 
-Контрол `MasterEditorAjaxLookUp` позволяет выбирать объект в лукапе без перезагрузки страницы, используя технологию AJAX. Контрол находится в сборке `ICSSoft.STORMNET.Web.AjaxControls`. Он использует веб сервис `ICSSoft.STORMNET.Web.AjaxControls.AjaxDataService.asmx`.
+Control `MasterEditorAjaxLookUp` allows you to select an object in lucapa without reloading the page using AJAX. The control is in an Assembly `ICSSoft.STORMNET.Web.AjaxControls`. It uses the web service `ICSSoft.STORMNET.Web.AjaxControls.AjaxDataService.asmx`. 
 
-Подробнее в [статье MasterEditorAjaxLookUp](fa_master-editor-ajax-lookup.html).
+Read more in [article MasterEditorAjaxLookUp](fa_master-editor-ajax-lookup.html). 
 
-### BaseMasterEditorLookUp
+### BaseMasterEditorLookUp 
 
-**BaseMasterEditorLookUp** - это абстрактный класс, от которого наследуются MasterEditorLookUp, MasterEditorAjaxLookUp.
+**BaseMasterEditorLookUp** is an abstract class from which inherit MasterEditorLookUp, MasterEditorAjaxLookUp. 
 
-Подробнее `BaseMasterEditorLookUp` описан в соответствующей [статье](fa_base-master-editor-lookup.html).
+Read more `BaseMasterEditorLookUp` described in the corresponding [article](fa_base-master-editor-lookup.html). 
 
-### MasterEditorLinkedAjaxLookUp
+### MasterEditorLinkedAjaxLookUp 
 
-Данный контрол позволяет редактировать и свойство и мастера в одной ячейке [AjaxGroupEdit](fa_ajax-group-edit.html).  
+This control allows you to edit the property and the master in a single cell [AjaxGroupEdit](fa_ajax-group-edit.html). 
 
-Подробнее о `MasterEditorLinkedAjaxLookUp` в [статье MasterEditorLinkedAjaxLookUp](fa_master-editor-linked-ajax-lookup.html).
+Read more about `MasterEditorLinkedAjaxLookUp` in [article MasterEditorLinkedAjaxLookUp](fa_master-editor-linked-ajax-lookup.html). 
 
-### Связывание AjaxAutocomplete и AjaxLookup
+### Bondage AjaxAutocomplete and AjaxLookup 
 
-Связывание AjaxAutocomplete и AjaxLookup описано в соответствующей [статье](fa_link-ajax-autocomplete-ajax-lookup.html).
+Binding AjaxAutocomplete and AjaxLookup described in the corresponding [article](fa_link-ajax-autocomplete-ajax-lookup.html). 
 
-### Связывание контролов редактирования мастеров
+### Binding controls edit masters 
 
-Связывание контролов редактирования мастеров описано в соответствующей [статье](fa_linked-master-editors.html).
+Linking of controls of the edit masters are described in the corresponding [article](fa_linked-master-editors.html). 
 
-## Наложение ограничений на LookUp'ы
+## the Imposition of restrictions on LookUp's 
 
-Наложение ограничений на LookUp описано в соответствующей [статье](fa_lookup-limit-web.html).
+The imposition of restrictions on the LookUp described in the corresponding [article](fa_lookup-limit-web.html). 
 
-## Стилизация иконок кнопок у LookUp'а
+## Styling of the icons of the buttons LookUp'and 
 
-Стилизация иконок кнопок LookUp в соответствующей [статье](fa_lookup-stylization.html).
+The stylization of the icons of the buttons in the corresponding LookUp [article](fa_lookup-stylization.html). 
 
-## Открытие лукап-формы с поддержкой иерархии 
+## Opening lucap-shape with the support of the hierarchy 
 
-Открытие лукап-формы с поддержкой иерархии описано в соответствующей [статье](fa_lookup-form-hierarchy.html).
+Opening lucap-shape with the support of the hierarchy described in the corresponding [article](fa_lookup-form-hierarchy.html). 
 
-## Передача параметров на LookUp-форму в Web-приложениях
+## passing parameters into a LookUp form in a Web application 
 
-Особенности передачи параметров на LookUp-форму в Web-приложениях описаны в соответствующей [статье](fa_lookup-form-send-params.html).
+Transmission characteristics parameters in a LookUp-form Web applications described in the corresponding [article](fa_lookup-form-send-params.html).
 
-## Сортировка на списковой LookUp-форме
+## Sorting on LookUp list form 
 
-Сортировка на списковой LookUp-форме описана в [статье Сортировка в списковой форме, поднятой по лукапу](fa_lookup-form-sort.html).
+Sorting on a list LookUp form described in [article Sorting in list form, raised on locapo](fa_lookup-form-sort.html). 
 
-## Предиктивный ввод в Web-приложениях
+## Predictive Web applications 
 
-Предиктивный ввод позволяет модифицировать контролы для выбора мастера или ввода текста таким образом, чтобы система подсказывала пользователю возможные варианты по мере ввода данных в поле LookUp`а.
+Predictive text input allows you to modify the controls to select the wizard, or text input so that the system suggests to the user possible options as you type data in a field LookUp'. 
 
-Подробнее в [статье Предиктивный ввод в Web-приложениях](fa_predict-input-web.html).
+Read more in [article Predictive Web applications](fa_predict-input-web.html). 
 
-## Настройка WOLV'а на LookUp-форме
 
-Описание применения настроек описано в [статье Операции WebObjectListView](fa_wolv-operations.html)
+## setting WOLV'and LookUp form 
+
+Description apply the settings described in [article Operation WebObjectListView](fa_wolv-operations.html) 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -1,85 +1,88 @@
----
-title: Ограничение с параметрами (для пользователя) в Win
-sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (формы), Ограничения
-summary: Описание части функциональности редактора ограничений в Windows-приложениях
-toc: true
-permalink: en/fw_limit-editor-params.html
-folder: products/flexberry-winforms/
-lang: en
----
+--- 
+title: Limitation settings (for the user) in Win 
+sidebar: flexberry-winforms_sidebar 
+keywords: Windows UI (forms), Limitations 
+summary: the Description part of the editor's functionality to limitations in Windows applications 
+toc: true 
+permalink: en/fw_limit-editor-params.html 
+folder: products/flexberry-winforms/ 
+lang: en 
+autotranslated: true 
+hash: 38553cee5761a0b96535d4bb3fc499530e5df5067b565131c24474883288c0c9 
+--- 
 
-## Редактор ограничений
-Данная статья описывает часть функциональности редактора ограничений в Windows-приложениях.
+## Settings 
+In the constraint editor you can create a parameter and including it in the query. Parameter requested from the user with application restrictions. Thus, it is possible to create many identical requests for 1 field with different values, and to create 1 query parameter to request it from the user. 
 
-## Параметры
-В редакторе ограничений существует возможность создания параметра и включения его в запрос. Параметр запрашивается у пользователя при применении ограничения. Таким образом, можно не создавать множество идентичных запросов на 1 поле с разными значениями, а создать 1 запрос с параметром и запрашивать его у пользователя.
+### Create parameters 
+Parameters are created in the form of restrictions in `Стандартном` or `Расширенном`. 
 
-### Создание параметров
-Параметры создаются на форме создания ограничений в `Стандартном` или `Расширенном` виде.
+Block creation options as follows: 
 
-Блок создания параметров выглядит следующим образом:
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit params.png) 
 
-![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-params.png)
+Each line is a separate parameter. 
 
-Каждая строка это отдельный параметр.
+The option is characterized by 4 properties: 
+* Title 
+* Type 
+* Multiplicity 
+* Optional 
 
-Параметр характеризуется 4 свойствами:
-* Название
-* Тип
-* Множественность
-* Дополнительно
+First we need to ask `имя параметра`. The parameter name must meet the following requirements: 
+* Parameter must only contain letters and numbers. 
+* The parameter must begin with a letter. 
 
-Для начала необходимо задать `имя параметра`. Имя параметра должно удовлетворять следующим требованиям:
-* Параметр должен содержать только буквы и цифры.
-* Параметр должен начинаться с буквы.
+Then choose `тип параметра` from the drop-down list. In the list only types that are present in the tree of Available Properties. 
 
-Затем следует выбрать `тип параметра` из выпадающего списка. В список попадают только типы, присутствующие в дереве Доступных Свойств.
+{% include important.html content="your Own custom app will be available only after the creation of [filters](fw_filter-example.html)." %} 
 
-{% include important.html content="Собственные типы приложения будут доступны только после создания [фильтров](fw_filter-example.html)." %}
+Setting `Множественность` we point out that the user is able to specify not one value but several. In this case, the form you select will appear [GroupEdit](fw_group-edit.html) to create an array of possible options. 
 
-Настройка `Множественность` указыват на то, что у пользователя будет возможность указать не одно значение, а несколько. В таком случае на форме выбора параметра будет отображаться [GroupEdit](fw_group-edit.html) для создания массива возможных вариантов.
-
-Чтобы указать дружественное пользователю наименование параметра (которое будет отображаться на форме выбора параметра) необходимо заполнить столбец `Дополнительно`.
-
+To specify a user friendly name of the parameter (which will appear on the form you select) you must fill in the column `Дополнительно`. 
 
 
-### Форма выбора параметра
-Форма выбора параметра генерируется автоматически исходя из количества и типа параметров.
 
-К примеру, если форма создания ограничения выглядит следующим образом:
+### Form option 
+The form you select is automatically generated based on the number and type of parameters. 
 
-![](/images/pages/products/flexberry-winforms/subsystems/limits/limit01.png)
+For example, if the form creation limitations as follows: 
 
-то форма выбора параметров не отобразится, т.к. параметры отсутствуют.
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit01.png) 
 
-Если ограничение выглядит вот так:
+the selection options are not displayed, because there are no parameters. 
 
-![](/images/pages/products/flexberry-winforms/subsystems/limits/limit02.png)
+If the restriction looks like this: 
 
-то форма выбора параметров будет выглядеть следующим образом:
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit02.png) 
 
-![](/images/pages/products/flexberry-winforms/subsystems/limits/limit03.png)
+the choice of parameters will look as follows: 
 
-Соответственно, если в параметре проставлена `Множественность`:
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit03.png) 
 
-![](/images/pages/products/flexberry-winforms/subsystems/limits/limit04.png)
+Accordingly, if the parameter indicated `Множественность`: 
 
-то форма выбора параметров будет выглядеть следующим образом:
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit04.png) 
 
-![](/images/pages/products/flexberry-winforms/subsystems/limits/limit05.png)
+the choice of parameters will look as follows: 
 
-то есть появится возможность выбрать несколько элементов, которые будут объединены условием ИЛИ.
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit05.png) 
+
+that is, it will be possible to select multiple elements to be combined OR condition. 
 
 
-### Создание ограничения
-Для задания ограничения по параметру нужно:
-* Добавить параметр в ограничение:
-	* __Если стандартный вид:__ при выборе значения для ограничения указать не значение из базы, а выбрать в списке нужный параметр.<br>
-    ![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/24.png)
-    * __Если расширенный вид:__ указать в качестве значения параметр.<br>
-    ![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/25.png)
-Тип параметра должен совпадать с типом операции в ограничении.
-* Нажать кнопку «Сохранить и применить». Форма редактирования ограничения закрывается. Открывается форма «Параметры ограничения», где нужно ввести значения параметров.<br>
+### creating the constraint 
+To set the limit parameter: 
+* Add the parameter to the limit: 
+* __If the standard form:__ if you select to limit to specify the value from the database, and select the desired option.<br> 
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/24.png) 
+* __If the extended form:__ specify as the value parameter.<br> 
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/25.png) 
+The parameter type must match the type of operation in the constraint. 
+* Click «Save and apply». Form editing restrictions closed. Form opens «Parameters restrictions», where you enter the parameter values.<br> 
 ![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/26.png) 
-* Нажать «Применить». Значение параметров вставлено в ограничение. Список ограничен.
+* Click to Apply» qmo. The value of the parameters inserted in the restriction. The list is limited. 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

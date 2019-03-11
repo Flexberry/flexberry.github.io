@@ -6,7 +6,7 @@ toc: true
 permalink: en/gbt_dbms.html 
 lang: en 
 autotranslated: true 
-hash: d4b7f845dd09e7f347cab6b4adb99f491fb248fc8a4053c6fabfea03d4513abf 
+hash: e867ec52506123c7339bc986ea7c8a56b0eea7ed0175328c45e1d0cdfdfdb33c 
 --- 
 
 ## Brief description 
@@ -45,7 +45,7 @@ hash: d4b7f845dd09e7f347cab6b4adb99f491fb248fc8a4053c6fabfea03d4513abf
 
 * [Database](https://www.youtube.com/playlist?list=PLrCZzMib1e9obOz5K695ugYuiOOCBciEi) 
 * [The methods of the DBMS in Internet applications](https://www.youtube.com/playlist?list=PLrCZzMib1e9r6c-j8aW1JuETSyCBp9iAg) 
-* [Algorithms of the intelligent large-scale data processing"](https://www.youtube.com/playlist?list=PLrCZzMib1e9pyyrqknouMZbIPf4l3CwUP) 
+* [Algorithms of the intelligent processing of large amounts of data»](https://www.youtube.com/playlist?list=PLrCZzMib1e9pyyrqknouMZbIPf4l3CwUP) 
 * [Technopark Mail.ru Group: Databases](http://www.intuit.ru/studies/courses/3499/741/info) 
 * [Design database](https://www.youtube.com/playlist?list=PLrCZzMib1e9pq_sbw7ZEcEU3Yyz1AvE--) 
 
@@ -80,4 +80,4 @@ hash: d4b7f845dd09e7f347cab6b4adb99f491fb248fc8a4053c6fabfea03d4513abf
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

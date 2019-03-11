@@ -1,28 +1,34 @@
----
-title: ColorPicker
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Web UI (Контролы)
-toc: true
-permalink: en/fa_color-picker.html
-lang: en
+--- 
+title: ColorPicker 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET, Web UI (Controls) 
+toc: true 
+permalink: en/fa_color-picker.html 
+lang: en 
+autotranslated: true 
+hash: a44076d0998be00628470150fa7ce61003cbe51de2e9c9eb414c1cf362e38924 
 
----
+--- 
 
-## Описание
+## Description 
 
-## Подключение
+## Connection 
 
-## Использование
+## Use 
 
-### Пример кода
+### Sample code 
 
-### Настройки контрола
+### Settings control 
 
-### Настройки оформления
+### formatting Settings 
 
-### ...полезные способы использования...
+### ...useful ways to use... 
 
-## JS API
+## JS API 
 
-## Возможные ошибки
- 
+## Possible errors 
+
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

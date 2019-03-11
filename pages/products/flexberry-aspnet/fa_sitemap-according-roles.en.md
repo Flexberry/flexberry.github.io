@@ -1,37 +1,39 @@
----
-title: Настройка карты сайта по ролям
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_sitemap-according-roles.html
-lang: en
----
+--- 
+title: setup site map by role 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_sitemap-according-roles.html 
+lang: en 
+autotranslated: true 
+hash: 3d2868cb3cee2aee9ff6fda728ecda8609041b44191f588587bbcf7129b9f2eb 
+--- 
 
-Пример: имеется веб-приложение `Гостиница`, доступ к которому имеют пользователи с двумя возможными ролями `Приемщик` и `admin`.
+Example: a web application `Гостиница`, to be accessed by users with two possible roles `Приемщик` and `admin`. 
 
-Если текущий пользователь имеет роль `admin`, то его карта сайта должна выглядеть следующим образом: 
+If the current user has a role `admin`, the site map should look like the following: 
 
-![](/images/pages/products/flexberry-aspnet/admin-menu.png)
+![](/images/pages/products/flexberry-aspnet/admin-menu.png) 
 
-Если текущий пользователь имеет роль `Приемщик`, то его карта сайта должна выглядеть следующим образом:
+If the current user has a role `Приемщик`, the site map should look like the following: 
 
-![](/images/pages/products/flexberry-aspnet/priem-menu.png)
+![](/images/pages/products/flexberry-aspnet/priem-menu.png) 
 
-Необходимо разграничить доступ к соответствующим формам приложения. Для этого указываем роль пользователя, который должен иметь доступ к элементцу карты сайта, в атрибуте `roles`. Имеем следующую карту сайта (содержимое файла `web.sitemap`):
+You want to restrict access to the relevant application forms. To do this, specify the user role that should have access elementz site map, attribute `roles`. Have the following site map (contents of the file `web.sitemap`): 
 
 ```xml
-<siteMapNode title="Гостиница" roles="Приемщик,admin" xmlns="">
-      <siteMapNode title="Бронирования" description="" url="~/forms/Bronirovanie/G_BronirovanieL.aspx" roles="admin"/> 
-      <siteMapNode title="Номерной фонд" description="" url="~/forms/KomnataGostinicy/G_KomnataGostinicyL.aspx" roles="Приемщик"/> 
-      <siteMapNode title="Вид животного" description="" url="~/forms/ZHivotnoe/G_ZHivotnoeL.aspx" roles="Приемщик"/>
+<siteMapNode title="Hotel" roles="Inspector,admin" xmlns="">
+      <siteMapNode title="Booking" description="" url="~/forms/Bronirovanie/G_BronirovanieL.aspx" roles="admin"/> 
+      <siteMapNode title="License plate Fund" description="" url="~/forms/KomnataGostinicy/G_KomnataGostinicyL.aspx" roles="Inspector"/> 
+      <siteMapNode title="Kind of animal" description="" url="~/forms/ZHivotnoe/G_ZHivotnoeL.aspx" roles="Inspector"/>
 </sitemapNode> 
-```
+``` 
 
-Необходимо обратить внимание на то, что у узла карты сайта верхнего уровня (`Гостиница`) указаны все роли пользователей, которые могут иметь доступ к этому меню (и `Приемщик`, и `admin`).
+You need to pay attention to the fact that the node maps the top-level site (`Гостиница`) lists all the user roles that can have access to this menu (and `Приемщик`, and `admin`). 
 
-Для того чтобы обеспечить корректное отображение вложенных пунктов меню в зависимости от роли пользователя, необходимо в папки веб-приложения, которые соответствуют указанным в `url` формам, добавить файлы `web.config`.
+To ensure correct display of sub-menu items depending on user role, need to folders of the web application that match the specified in `url` forms, add files `web.config`. 
 
-В папку `forms/Bronirovanie` добавить `web.config` следующего содержания:
+Folder `forms/Bronirovanie` add `web.config` follows: 
 
 ```xml
 <configuration>
@@ -42,24 +44,24 @@ lang: en
       </authorization>  
     </system.web>
 </configuration>
-```
+``` 
 
-В папку `forms/KomnataGostinicy` и `forms/ZHivotnoe` добавить `web.config` следующего содержания:
+Folder `forms/KomnataGostinicy` and `forms/ZHivotnoe` add `web.config` follows: 
 
 ```xml
 <configuration>
     <system.web>
       <authorization>
-        <allow roles="Приемщик"/>
+        <allow roles="Inspector"/>
         <deny users="*"/>
       </authorization>
     </system.web>
 </configuration>
-```
+``` 
 
-В результате вложенные пункты меню будут отображаться в зависимости от того, какова роль текущего пользователя веб-приложения.
+In the result sub-menu items will appear depending on what role the current user of the web application. 
 
-При __windows-аутентификации__ пользователи обрабатываются вместе с доменом. Поэтому необходимо использовать провайдеры, которые учитывают домен. Для этого в конфигурационном файле приложения нужно указать следующее:
+If __windows-authentication__ users are processed together with the domain. Therefore, you must use providers that take into account domain. To do this in the application's configuration file must specify the following: 
 
 ```xml
 <membership defaultProvider="CaseberryMembershipProvider">
@@ -74,18 +76,22 @@ lang: en
     <add name="CaseberryRoleProvider" type="CheckingLibrary.CaseberryDomainRoleProvider" />
   </providers>
 </roleManager>
-```
+``` 
 
-Кроме того стоит __обратить внимание на особенность обработки sitemap-файла__ при windows-аутентификации. А именно обработку `sitemapNode`, у которой указан `url` и `roles`.
+In addition there is a __to pay attention to the feature of processing the sitemap file__ with windows authentication. Namely, the processing `sitemapNode`, which is `url` and `roles`. 
 
 ```xml
-<siteMapNode title="Роли" url="~/flexberry/DvorecList" roles="tsar" />
-```
+<siteMapNode title=Roles url="~/flexberry/DvorecList" roles="tsar" />
+``` 
 
-При использовании __стандартного sitemap-провайдера__ данная вершина будет всегда видимой, так как при наличии атрибута `url` выполняется проверка доступности url-узла для текущего пользователя.
+If you use the __standard sitemap provider__ the vertex is always visible, as in the presence of the attribute `url` checks availability of url node for the current user. 
 
-Для решения данной проблемы существуют следующие способы:
+To solve this problem in the following ways: 
 
-1. Использовать собственный sitemap-провайдер.
-2. Добавить промежуточную вершину без атрибута url.
-3. Настроить параметры доступа к файлам.
+1. To use a custom sitemap provider. 
+2. Add an intermediate vertex without a url attribute. 
+3. To configure the settings of file access. 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

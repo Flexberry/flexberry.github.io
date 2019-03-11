@@ -1,124 +1,126 @@
----
-title: JavaScript jQuery API для WebObjectListView
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, JavaScript API
-toc: true
-permalink: en/fa_js-api-wolv.html
-lang: en
----
+--- 
+title: JavaScript jQuery API for WebObjectListView 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP NET, JavaScript API 
+toc: true 
+permalink: en/fa_js-api-wolv.html 
+lang: en 
+autotranslated: true 
+hash: 380f49759c70812b19133f895debf3795353969655dc7d04c8bb44b9af417cbe 
+--- 
 
-Для манипуляций с [WOLV](fa_web-object-list-view.html) на стороне клиента следует использовать `WOLV JS API`, который представляет собой jQuery плагин (`icsWolv`).
+To manipulate [WOLV](fa_web-object-list-view.html) on the client side, use JS `WOLV API`, which is a jQuery plugin (`icsWolv`). 
 
-## Методы
+## Methods 
 
-| Наименование | Параметры | Описание |
-| ------------ | ------------------- | -------- |
-| **Общее** |||
-| chooseDataObject | PrimaryKey объекта | Генерация клика по строке с объектом, переданным в этот метод. | 
-| refresh | Нет | Обновление содержимого WOLV. | 
-| scroll | Нет | Прокрутка экрана к WOLV. | 
-| scrollToObject | PrimaryKey объекта | Прокрутка списка к выбранному объекту. | 
-| **Сортировка** |||
-| resetSort | Нет | Метод для сброса пользовательской сортировки WOLV. | 
-| sort | `append` - добавлять сортировку или установить заново <br> `colNum` - номер столбца | Изменить сортировку по столбцу WOLV. Последовательность смены параметров: `None -> ASC -> DESC -> None`. | 
-| **Флажки WOLV** |||
-| getSelectedItems | Нет | Получить идентификаторы всех выбранных элементов на всех страницах. ''__Если выбраны все элементы на всех страницах (при помощи соответствующей кнопки, а не ручным выбором), то придет '''пустой массив'''__''. | 
-| getSelectedAllObjectsValue | Нет | Позволяет узнать, выделены ли все объекты на всех страницах. Возвращает `boolean`. | 
-| selectAllObjects | Нет | Отметить все объекты на всех страницах. | 
-| unselectAllObjects | Нет | Снять выделение со всех объектов на всех страницах. | 
-| selectObjectsOnCurrentPage | Нет | Отметить все объекты на текущей странице. | 
-| unselectObjectsOnCurrentPage | Нет | Снять выделение со всех объектов на текущей странице. | 
+| Name | Parameters | Description | 
+| ------------ | ------------------- | -------- | 
+| **Total** ||| 
+| chooseDataObject | PrimaryKey object | Generate a click on the string object passed to this method. | 
+| refresh | No | refresh the contents of WOLV. | 
+| scroll | scroll the screen to WOLV. | 
+| scrollToObject | PrimaryKey object | Scroll to the selected object. | 
+| **Sorting** ||| 
+| resetSort | No | Method to reset a custom sort WOLV. | 
+| sort | `append` - add sort or re-install <br> `colNum` is the column number to sort by column WOLV. The sequence of shift parameters: `None -> ASC -> DESC -> None`. | 
+| **Flags WOLV** ||| 
+| getSelectedItems | No | Get the IDs of all selected items on all pages. "__If you selected all items on all pages (using the appropriate button, not manual selection), then come "'an empty array"'__". | 
+| getSelectedAllObjectsValue | No | Allows to know whether the allocated all objects on all pages. Returns `boolean`. | 
+| selectAllObjects | No | Mark all objects on all pages. | 
+| unselectAllObjects | No | deselect all objects on all pages. | 
+| selectObjectsOnCurrentPage | No | Mark all objects on the current page. | 
+| unselectObjectsOnCurrentPage | No | deselect all objects on the current page. | 
 
-Пример использования:
+Example usage: 
 
 ```javascript
-// Обновить содержимое WOLV.
+// Update the contents of WOLV. 
 $('#wolvid').icsWolv('refresh');
-```
+``` 
 
-Генерация клика по строке:
+Generation click on the row: 
 
 ```javascript
 $('#LookUpFormWOLV').icsWolv('chooseDataObject', '{4c6bf554-41d5-4cc6-b526-21bed9867a5a}');
-```
+``` 
 
-## События
+## Events 
 
-| Наименование | Параметры | Описание |
-| ------------ | --------- | -------- |
-| `deleting.wolv` | `selectAll` - флаг "выделенности" всех объектов на всех страницах; <br> `selectedItems` - список первичных ключей выделенных объектов данных; | Удаление элемента(-ов) списка. |
-| `editformclose.wolv` | `objectKey` - первичный ключ объекта, который редактировался на этой форме; | Закрытие формы редактирования. |
-| `refreshing.wolv` | - | Обновление списка. |
-| `rowclick.wolv` | `pk` - первичный ключ объекта, соответствующего строке, по которой кликнул пользователь; | Клик по строке списка. |
-| `showaddingpage.wolv` | `addingUrl` - URL-адрес формы создания объекта; | Отображение страницы создания нового объекта данных. |
-| `showeditingpage.wolv` | `pk` - первичный ключ редактируемого объекта; <br> `editingUrl` - URL-адрес страницы редактирования; | Отображение страницы редактирования объекта данных. |
-| `showprototypingpage.wolv`  | `pk` - первичный ключ прототипируемого объекта; <br> `prototypingUrl` - URL-адрес страницы прототипирования; | Отображение формы прототипирования. |
-| `showviewingpage.wolv` | `pk` - первичный ключ просматриваемого объекта; <br> `viewingUrl` - URL-адрес страницы просмотра; | Отображение страницы просмотра объекта данных. |
+| Name | Parameters | Description | 
+| ------------ | --------- | -------- | 
+| `deleting.wolv` | `selectAll` - flag "prominence" of all objects on all страницах; <br> `selectedItems` - list of primary keys of selected objects данных; | Delete item (s) list. | 
+| `editformclose.wolv` | `objectKey` - the primary key of the object that is edited on this форме; | close the form editing. | 
+| `refreshing.wolv` | - | Update list. | 
+| `rowclick.wolv` | `pk` - the primary key of the object corresponding to the row in which the clicked пользователь; | Click on the row of the list. | 
+| `showaddingpage.wolv` | `addingUrl` - the URL of the creation form объекта; | display the page create a new data object. | 
+| `showeditingpage.wolv` | `pk` is the primary key editable объекта; <br> `editingUrl` - the URL of the page редактирования; | edit page Displays object data. | 
+| `showprototypingpage.wolv` | `pk` - primary key prototyperaptor объекта; <br> `prototypingUrl` - the URL of the page прототипирования; | Display forms of prototyping. | 
+| `showviewingpage.wolv` | `pk` is the primary key of the viewing объекта; <br> `viewingUrl` - the URL of the page просмотра; | Display the view page of the data object. | 
 
-Пример использования:
+Example usage: 
 
 ```javascript
 $('.ics-wolv').on('showeditingpage.wolv', function() {
     alert('Была отображена форма редактирования объекта.');
 });
-```
+``` 
 
-#### Клик по строке (rowclick.wolv)
+#### Click on the line (rowclick.wolv) 
 
-При использовании события `rowclick.wolv` можно получить `PrimaryKey` объекта, по строке которого был произведен `click`:
+When using events `rowclick.wolv` you can get `PrimaryKey` object, the line which was made `click`: 
 
 ```javascript
 $('.ics-wolv').on('rowclick.wolv', function(e, d) { 
      e.preventDefault();
      alert('primaryKey: ' + d.data.pk);
 });
-```
+``` 
 
-#### Клиентская обработка обновления списка
+#### Client processing the upgrade list 
 
 ```javascript
-// Подписка на событие обновления WOLV.
-// Событие сработает при нажатии пользователем кнопки "Обновить" на панели WOLV.
-// Событие также сработает при вызове JS API метода $('#wolvid').icsWolv('refresh');
+// Subscribe to event updates from WOLV. 
+// Event work when the user clicks the Refresh button on the panel WOLV. 
+// The event also works when calling JS API method $('#wolvid').icsWolv('refresh'); 
 $('.ics-wolv').on('refreshing.wolv', function(e) { 
-    // Отменим обновление WOLV.
+    // Cancel update WOLV. 
     e.preventDefault(); 
     
-    // Здесь можно описать свою логику обновления.
+    // Here you can describe your logic updates. 
     alert('Список не был обновлен');
 });
-```
+``` 
 
-#### Клиентская обработка удаления
+#### Client removal treatment 
 
-Имеется возможность подписаться на события перед удалением элементов и, если нужно, отменить его.
+There is a possibility to subscribe to events before deleting items and, if necessary, cancel it. 
 
-Обработчику передаются два аргумента: объект события и данные. У объекта данных в поле `data` содержится флаг `selectAll`, если он равен `false`, то также
-передается массив первичных ключей выделенных объектов `selectedItems`.
+The handler receives two arguments: the event object and data. The object data field contains `data` flag `selectAll`, if it is `false`, also 
+is passed an array of primary keys of selected objects `selectedItems`. 
 
-Пример использования:
+Example usage: 
 
 ```javascript
 $('#wolvid').on('deleting.wolv', function(e, eventData) { 
     if(eventData.data.selectAll)
         alert('Выделены все объекты на всех страницах');
     else
-        alert(eventData.data.selectedItems); // Вывод выделенных ПК.
+        alert(eventData.data.selectedItems); // Output a dedicated PC. 
     
     alert('Удаление отменено');
     return false; 
 });
-```
+``` 
 
-#### Клиентская обработка закрытия всплывающего окна формы редактирования
+#### Client processing close the popup edit form 
 
-По умолчанию, при закрытии формы редактирования, открытой во всплывающем окне, происходит обновление списковой формы, с которой была открыта форма
-редактирования. Имеется возможность отменить это действие, аналогично удалению. Нужно подписать `WOLV`, с которого происходит открытие формы редактирования
-(или `WOLV`, id которого задан в параметре `WolvId` к ней), на событие `editformclose.wolv`. В переданном обработчику объекте события будет содержаться поле
-`objectKey`, хранящее первичный ключ объекта, редактировавшегося на закрытой форме. Отменить действие по умолчанию можно с помощью `return false;`
-или `e.preventDefault();`.
+By default, when you close the edit form open in a popup window, updates a list form with which the form was opened 
+edit. You have the option to cancel this action, similar to deletion. You need to sign `WOLV` of the editing form 
+(or `WOLV` whose id is specified in the parameter `WolvId` to it), `editformclose.wolv`. Passed to the handler in the event object will contain the field 
+`objectKey` that stores the primary key of the object that is opened in a closed form. To cancel the default action by using `return false;` 
+or `e.preventDefault();`. 
 
-Пример:
+Example: 
 
 ```javascript
 $('#wolvid').on('editformclose.wolv', function (e) {
@@ -126,4 +128,8 @@ $('#wolvid').on('editformclose.wolv', function (e) {
     alert('Обновления списковой формы не будет');
     return false;
 });
-```
+``` 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

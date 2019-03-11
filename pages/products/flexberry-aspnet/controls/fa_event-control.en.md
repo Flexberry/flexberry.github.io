@@ -1,26 +1,32 @@
----
-title: Event control
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Web UI (Контролы)
-toc: true
-permalink: en/fa_event-control.html
-lang: en
----
+--- 
+title: Event control 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET, Web UI (Controls) 
+toc: true 
+permalink: en/fa_event-control.html 
+lang: en 
+autotranslated: true 
+hash: f55dad256336be3e444abaecef79416c4483f82467ef2c500614b9eee2fbaebb 
+--- 
 
-## Описание
+## Description 
 
-## Подключение
+## Connection 
 
-## Использование
+## Use 
 
-### Пример кода
+### Sample code 
 
-### Настройки контрола
+### Settings control 
 
-### Настройки оформления
+### formatting Settings 
 
-### ...полезные способы использования...
+### ...useful ways to use... 
 
-## JS API
+## JS API 
 
-## Возможные ошибки
+## Possible errors 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

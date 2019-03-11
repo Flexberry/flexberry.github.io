@@ -227,6 +227,11 @@ entries:
       url: /fe_lookup-component.html
       output: web, pdf
 
+    - title: Components for edit-forms
+      title_ru: Компоненты для работы с данными на форме редактирования
+      url: /fe_edit-form-components.html
+      output: web, pdf
+
     - title: File
       title_ru: File
       url: /ef_file.html

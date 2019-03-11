@@ -1,104 +1,110 @@
----
-title: LINQPad
-sidebar: flexberry-orm_sidebar
-keywords: DataObject, БД, Ограничения
-summary: Установка, подключение, использование LINQPad и работа с запросами
-toc: true
-permalink: en/fo_linq-pad.html
-lang: en
----
+--- 
+title: LINQPad 
+sidebar: flexberry-orm_sidebar 
+keywords: data Objects, database, Constraints 
+summary: Installation, connection, use LINQPad and work with queries 
+toc: true 
+permalink: en/fo_linq-pad.html 
+lang: en 
+autotranslated: true 
+hash: 41bdf6dd112e8f1635c52981e170f1c50e0f40cef6c89bc16efc605568d5b6e3 
+--- 
 
-[LINQPad](http://linqpad.net) позволяет писать запросы на LINQ и проверять результаты выполнения на реальных данных без особых хлопот. В качестве бонуса LINQPad позволяет быстро увидеть SQL-запрос, который уходит в базу при использовании LINQ в реальных условиях.
+[LINQPad](http://linqpad.net) allows you to write queries in LINQ and test execution results on real data without much hassle. As a bonus, LINQPad allows you to quickly see the SQL query that goes to database when using LINQ in a real world environment. 
 
-Для Flexberry DataService написан специальный провайдер, который сильно упрощает работу в LINQPad с нашими проектами.
+For Flexberry DataService written a special provider, which greatly simplifies the work in LINQPad with our projects. 
 
-## Установка LINQPad и подключение к рабочей базе
+## Install LINQPad and connect to working database 
 
- Установить LINQPad и провайдер с [официального сайта](http://linqpad.net).
-* Файл `LINQPad4.zip` или `LINQPad4-AnyCPU.zip` (для 64-разрядного процессора).
-* Файл драйвера, поддерживающего Flexberry DataService: `SQLDataServiceLinqPadDriver.lpx`
-* Распаковывать архив в удобное место и положить рядом провайдер.
-* Запустить `LINQPad.exe`
-* В открывшемся окне нажать `Add connection`
+To install LINQPad and the provider [the official website](http://linqpad.net). 
+* File `LINQPad4.zip` or `LINQPad4 is AnyCPU.zip` (for 64-bit CPU). 
+* The driver file that supports Flexberry DataService: `SQLDataServiceLinqPadDriver.lpx` 
+* Unpack the archive to a convenient place and put next provider. 
+* Run `LINQPad.exe` 
+* In the opened window, click `Add connection` 
 
- ![](/images/pages/products/flexberry-orm/query-language/acc-connection.PNG)
+![](/images/pages/products/flexberry-orm/query-language/acc-connection.PNG) 
 
-* В следующем открывшемся окне нажать `View more drivers...`
-* Нажать `Browse...` и указать путь к файлу с провайдером (`SQLDataServiceLinqPadDriver.lpx`).
-* В окне `Choose Data Context` выбрать `Flexberry SQLDataService` и нажать `Next >`
-* В появившемся окне указать путь к сборке с объектами данных, а также к файлу конфигураци приложения (из него используется строка соединения с базой данных). После нажатия кнопки `OK` новое подключение появится в главном окне программы в списке подключений.
+* In the next window click `View more drivers...` 
+* Click `Browse...` and specify the path to the file with the provider (`SQLDataServiceLinqPadDriver.lpx`). 
+* In the window `Choose Data Context` to choose `Flexberry SQLDataService` and click `Next >` 
+* In the appeared window specify the path to the Assembly data objects, and the file of configurations of the application (because it uses the connection string to the database). After clicking `OK` the new connection will appear in the main window of the program in the list of connections. 
 
-_Примечание_: у пользователей ОС Windows XP в этом месте программа может быть выдана критическая ошибка. Следует перезапустить программу, соединение будет добавлено.
+Primechanie: users of Windows XP at this point, the program may be issued a critical error. You should restart the program, the connection will be added. 
 
-## Использование LINQPad
+## Using LINQPad 
 
-Добавленное подключение можно развернуть, чтобы увидеть список классов. Каждый класс также можно развернуть, чтобы увидеть список полей и представлений (представления показываются из внутреннего класса Views объекта данных).
+Added a connection you can expand to see a list of classes. Each class also can be expanded to see the list of fields and views (views are shown from the inner class object data Views). 
 
-![](/images/pages/products/flexberry-orm/query-language/expanded-tree.png)
+![](/images/pages/products/flexberry-orm/query language/expanded-tree.png) 
 
-Чтобы написать запрос, необходимо вызвать контекстное меню подключения и выбрать пункт меню `New Query`
+To write a query, you must call the context menu of the connection and select the menu item `New Query` 
 
-В окне справа написать запрос вида
+In the right window to write the query 
 
 ```sql
 from k in Кредит
 select k 
-```
-выбрав  `C# Expression` из выпадающего списка `Language`.
+``` 
+`C# Expression` selecting from the drop-down list `Language`. 
 
-_Однако_, ввиду некоторых проблем при использовании динамических представлений, рекомендуется использовать запросы вида
+Odnako, due to some problems when using dynamic views, it is recommended to use queries of the form 
 
 ```csharp
 ds.Query<IIS.Кредиты.Кредит>(IIS.Кредиты.Кредит.Views.КредитE).Dump();
-```
+``` 
 
-с явным указанием представления, по которому вычитываются данные.
+with explicit representation, which shall be deducted the data.
 
-_Примечание 1_: необходимо выбрать `C# Statement(s)` из выпадающего списка `Language`
+Primechanie 1_: you must select `C# Statement(s)` from the drop-down list `Language` 
 
-_Примечание 2_: Dump() в конце обязателен для написания, без него просто сконструируется запрос, но в базу не уйдет и результатов не предоставит.
+Primechanie 2_: Dump() at the end of compulsory writing, without just konstruiruet the request, but database will not go away and the results do not provide. 
 
-Здесь `ds` - это константа драйвера, указывающая на инстанцию сервиса данных для упрощения написания запросов.
+Here `ds` is a constant driver that points to the instance of the data service to simplify writing queries. 
 
-Чтобы определить пространство имен класса достаточно навести на него в дереве слева, вылезет подсказка с указанием полного имени класса.
+To determine the namespace of the class it is enough to put him in the tree on the left, will come out a tooltip with the full name of the class. 
 
-Запрос с указанием ограничений будет выглядеть как обычный запрос с использованием [LINQProvider](fo_linq-provider.html):
+A request indicating the constraints will look like a regular query using [LINQProvider](fo_linq-provider.html): 
 
 ```sql
 ds.Query<IIS.Кредиты.Кредит>(IIS.Кредиты.Кредит.Views.КредитE).Where(k => k.СуммаКредита >= 100000).Dump();
-```
+``` 
 
-![](/images/pages/products/flexberry-orm/query-language/query.png)
+![](/images/pages/products/flexberry-orm/query language/query.png) 
 
-### Контекст исполнения запросов
+### the Context of execution of requests 
 
-Текст запроса, который пишется в редакторе фактически вставляется в динамически компилируемый класс - контекст данных. Запрос является одним из методов этого контекста. К данному контексту подключены using-и для всех неймспейсов, которые имеются у классов объектов данных из сборки. Также к компилируемому контексту подключается ряд сборок из Flexberry необходимых для работы LINQProvider. Эти сборки сначала ищутся в каталоге со сборкой объектов данных, если их там нет, то берутся сборки из драйвера. Кроме этого, автоматически добавляются ссылки на сборки, от которых зависит сборка объектов данных и которые располагаются в том же каталоге.
+The query text that is written in the editor is actually inserted in a dynamically compiled class - data context. The request is one of the methods to this context. In this context connected using-and for all namespaces, which have classes of data objects from the Assembly. Also to the compiled context connects a number of assemblies from Flexberry required to work LINQProvider. These assemblies are first searched in the directory with the Assembly of data objects, if they are not there, then take the Assembly out of the driver. In addition, automatically added the Assembly references depends on the Assembly of data objects, and which are located in the same directory. 
 
-Ещё одна важная деталь: в конструкторе контекста данных выполняется метод для отключения проверки полномочий т.к. авторизация недоступна.
+Another important detail: in the constructor of the context data, this is a method to disable the authorization checks because authorization is not available. 
 
 ```csharp
 ICSSoft.STORMNET.RightManager.DisableAllRightChecks();
-```
+``` 
 
-### Добавление ссылок на дополнительные сборки с объектами
+### Add references to additional assemblies with objects 
 
-Если есть необходимость использовать несколько файлов со сборками объектов, то можно добавить их следующим образом:
+If there is a need to use multiple files with assemblies of objects, you can add them as follows: 
 
-* Вызвать `контекстное меню` в поле ввода запроса и выбрать `Query Properties...`
-* На вкладке `Additional References` указать пути к дополнительным сборкам объектов
-* На вкладке `Additional Namespace Imports` указать необходимые пространства имен (можно выбрать из добавленных сборок).
+* Call `контекстное меню` in the input field of the query and choose Properties...`Query ` 
+* Tab `Additional References` point the way to additional assemblies of objects 
+* Tab `Additional Imports` Namespace specify the namespace (you can choose from attached assemblies). 
 
-### Вывод результатов
+### Output 
 
-По умолчанию результаты выводятся в интересном, но неудобочитаемом виде. Чтобы переключить на табличный метод вывода достаточно нажать на кнопку в верхней части области построения запросов.
+By default, the results are interesting, but unreadable. To switch to tabular output method, just click on the button at the top of the plot area requests. 
 
-_Примечание_: автоматического переключения формата вывода уже выполненного запроса при этом не произойдет, необходимо выполнить запрос еще раз.
+Primechanie: automatic switching of output format has already been done request is not going to happen, you must run the query again. 
 
-## SQL
+## SQL 
 
-В качестве приятного бонуса предоставляется возможность просмотра формируемого при запросе SQL-выражения.
+As a nice bonus given the option of viewing generated SQL query-expression. 
 
-Чтобы просмотреть SQL-выражение достаточно перейти на вкладку SQL области результатов выполнения запроса.
-Если в базу идёт несколько запросов, например, если в представлении участвуют детейлы, то на вкладке покажутся все запросы, разделённые пустой строкой.
+To view the SQL statement, it is sufficient to switch to the SQL tab of the results pane of the query. 
+If the database is a few queries, for example, if the submission involves detaily, the tab will show all the queries, separated by an empty line. 
 
-![](/images/pages/products/flexberry-orm/query-language/sql.png)
+![](/images/pages/products/flexberry-orm/query language/sql.png) 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -1,31 +1,33 @@
----
-title: Сервис настроек пользователя
-sidebar: flexberry-ember_sidebar
-keywords: Flexberry Ember, Flexberry ORM ODataService
-toc: true
-permalink: en/ef_model-user-settings-service.html
-lang: en
-summary: Представлено описание сервиса настроек пользователя
----
+--- 
+title: Service user settings 
+sidebar: flexberry-ember_sidebar 
+keywords: Flexberry Ember, Flexberry ORM ODataService 
+toc: true 
+permalink: en/ef_model-user-settings-service.html 
+lang: en 
+autotranslated: true 
+hash: 6175ae1dd9d0c672f2dce276be132ff81ce038fe06af2fa3fff38aca73148429 
+summary: the description of the service user settings 
+--- 
 
-## Описание
+## Description 
 
-Сервис настроек пользователя (`user-settings-service`) предназначен для конфигурации, редактирования, сохранения и применения пользовательских настроек.
-На текущий момент сервис позволяет конфигугрировать режим отображения компонента `flexberry-objectlistview`.
-В дальнейшем возможно расширение списка поддерживаемых компонент.
+Service user settings (`user-settings-service`) is designed for configuring, editing, saving and applying custom settings. 
+At the moment the service allows you to konfigurirovanii the display mode of the component `flexberry-objectlistview`. 
+In the future, a possible extension of the list of the supported component. 
 
-Внедрение данного сервиса осуществляется стандартным для Ember способом:
+The introduction of this service is standard for the Ember way: 
 
 ```javascript
 userSettingsService: Ember.inject.service('user-settings-service'),
-```
+``` 
 
-## Включение и отключение сервиса сохранения настроек пользователя
+## Enabling and disabling service save user settings 
 
-По умолчанию сервис сохранения настроек пользователя выключен (взаимодействие с БД не происходит).
-В этом режиме все установленные в пользовательском интерефейсе настройки сохраняются только в рамках текущей сессии или до перезагрузки одной из страниц.
+By default, the service save user settings off (the interaction with the database occurs). 
+In this mode, all installed in the user interface settings are only saved within the current session or until you reboot one of the pages. 
 
-Для того чтобы включить сервис, необходимо в конфиге Ember-приложения задать настройку: `config.APP.useUserSettingsService`.
+In order to enable the service, you need in the config Ember-application to set: `config.APP.useUserSettingsService`. 
 
 ```javascript
 module.exports = function(environment) {
@@ -33,8 +35,8 @@ module.exports = function(environment) {
   var ENV = {
     ...
     APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
+      // Here you can pass flags/options to your application instance 
+      // when it is created 
 
       useUserSettingsService: true
     }
@@ -42,21 +44,21 @@ module.exports = function(environment) {
   ...
   return ENV;
 };
-```
+``` 
 
-## Переопределение метода получения текущего пользователя
+## Override the method of obtaining the current user 
 
-Важным моментом является то, для какого пользователя задаётся (или ищется) текущая настройка.
+The important point is which user sets (or looked up) the current setting. 
 
-Имя текущего пользователя возвращается методом `getCurrentUser`, который по умолчанию возвращает пустую строку (на случай, если система пользователей не включена).
+The name of the current user is returned by the method `getCurrentUser`, which by default returns an empty string (in case system users are not included). 
 
-Если настроена какая-то система пользователей, то требуется переопределить данный метод, чтобы система возвращала правильного пользователя.
+If you set up some kind of system user, you must override this method to return the correct user. 
 
-На сервере имя пользователя определяется как: `System.Web.HttpContext.Current.User.Identity.Name`.
+On the server, the user name is defined as: `System.Web.HttpContext.Current.User.Identity.Name`. 
 
-## Конфигурация для flexberry-objectlistview
+## Configuration for flexberry-objectlistview 
 
-Для использования сервиса настроек пользователя компонент `flexberry-objectlistview` должен содержать следующие атрибуты:
+For using the service user settings component `flexberry-objectlistview` must contain the following attributes: 
 
 ```hbs
 {% raw %}{{flexberry-objectlistview
@@ -65,77 +67,77 @@ module.exports = function(environment) {
   colsConfigButton=true
   ...
 }}{% endraw %}
-```
+``` 
 
-* `componentName` - обязательный атрибут служащий для привязки пользовательских настроек. Он должен быть уникальным в пределах одной отображаемой страницы.
-* `colConfigButton` - флаг, определющий отображать или нет кнопки Online-конфигурации настроек пользователем.
+* `componentName` - a mandatory attribute used to anchor user settings. It must be unique within a single displayed page. 
+* `colConfigButton` - flag opredeli or not to display buttons Online configuration settings by the user. 
 
-Сохраняются все произведенные настройки, в том числе и настройки сортировки столбцов.
+Saves all of the configuration, including setting the sort column. 
 
-## Конфигурация для flexberry-toggler
+## Configuration for flexberry-toggler 
 
-Для того чтобы для [flexberry-toggler](ef_flexberry-toggler.html) были применимы пользовательские настройки, он должен находиться в шаблоне роута, являющимся наследником `list-form` и `edit-form` `ember-flexberry`.
+In order for [flexberry-toggler](ef_flexberry-toggler.html) applicable custom settings, it should be in the template routes, the heir `list-form` and `edit-form` `ember-flexberry`. 
 
-В тех случаях, когда данные условия не выполнимы, необходимо пользовательские настройки загружать в сервис. Например, так:
+In cases where these conditions cannot be met, need custom settings to upload service. For example: 
 
 ```javascript
 this.get('userSettingsService').setDeveloperUserSettings(this.get('developerUserSettings') || {}).then(...)
-```
+``` 
 
-## Работа с сервисом
+## Work with the service 
 
-Для Online-работы с сервисом предназначены две кнопки. ![](/images/pages/kaf/menu1.png)
+For Online service designed two buttons. ![](/images/pages/kaf/menu1.png) 
 
-* Первая служит для редактирования текущих (DEFAULT) настроек пользователя.
-* Вторая обеспечивает работу (создание, корректировка, применение, удаление) именованных настроек пользователя.
+* First click to edit the current (DEFAULT) settings of the user. 
+* The second provides the work (creating, updating, applying, removing) named user settings. 
 
-Данные кнопки отображаются при установке атрибута `colsConfigButton=true`.
+These buttons are displayed when the attribute is set `colsConfigButton=true`. 
 
-При клике на первую кнопку отображется интерфейс по корректировке параметров отображения столбцов компоненты `flexberry-objectlistview`.
+When you click on the first button displays the interface for adjusting the parameters of column display components `flexberry-objectlistview`. 
 
-![](/images/pages/kaf/list0.png)
+![](/images/pages/kaf/list0.png) 
 
-Каждая строка интерфейса определяет конфигурацию столбца с именем, указанным в третьем столбце "Название столбца".
+Each line interface identifies the configuration of the column with the name specified in the third column "column Name". 
 
-* Первый столбец таблицы служит для конфигурирования отображения/сокрытия указанного столбца.
-* Второй столбец позволяет используя клавиши Up/Down менять месторасположение столбца.
-* Третий столбец хранит имя редактируемого столбца.
-* Четвертый столбец  задает направление сортировки столбца при отображении (без сортировки, в порядке увеличения, в порядке уменьшения).
-* Пятый столбец определяет приоритет в котором сортируются столбцы.
-* Шестой столбец позволяет задать ширину столбца. Checkbox расположенный в последней строке столбца позволяет включать/выключать режим задания ширины столбцов при отображении.
+* The first column of the table is used to configure to show/hide the specified column. 
+* The second column allows using the keys Up/Down to change the location of the column. 
+* The third column stores the name of the column being edited. 
+* The fourth column specifies the sort direction of a column when it is displayed (without sorting, in ascending order, in descending order). 
+* The fifth column defines the priority in which columns are sorted. 
+* The sixth column allows you to specify the column width. A Checkbox located in the last row of the column allows you to enable/disable define the width of the columns when displayed. 
 
-*Примечание*: Для того, чтобы в столбце ширины столбца отобразились значения ширины столбцов достаточно до вызова окна конфигурации используя мышь сместить одну из границ столбцов.
+*Note*: to make the column width of the column display the column width is sufficient to invoke the configuration window using the mouse to shift one of the column borders. 
 
-После конфигурации режима отображения столбцов пользователь может сохранить настройки как
+After the configuration mode display the columns the user can save the settings as 
 
-* настройку по умолчанию нажав клавишу Применить (Use). При этом производится обновление текущей страницы по указанным параметрам конфигурации.
+* the default setting by pressing Apply (Use). When this is an update of the current page on the specified configuration parameters. 
 
-![](/images/pages/kaf/list1.png)
+![](/images/pages/kaf/list1.png) 
 
-* Именованную настройку введя имя настройки и нажав клавишу Сохранить (Save). На экран выводится сообщение о сохранении указанной настройки, перегрузка страницы не производится.
+* Named setting by entering setting name and press Save (Save). The system displays a message about saving the specified settings, reloading the page is not performed. 
 
-![](/images/pages/kaf/list2.png)
+![](/images/pages/kaf/list2.png) 
 
-При клике на вторую кнопку пользователю предоставляется интерфейс по работе с именованными настройками.
+When you click on the second button provides the user with the interface for working with named settings. 
 
-![](/images/pages/kaf/menu2.png)
+![](/images/pages/kaf/menu2.png) 
 
-Функционал пункта "Новая настройка" совпадает с описанным выше функционалом по редактированию текущей настройки.
-
-
-* При выборе настройки из пункта "Применить" указанная настройка становится текущей (DEFAULT) настройкой.
-* При выборе настройки из пункта "Редактировать" отображается интерфейс по редактированию настройки.
-* При выборе настройки из пункта "Удалить" указанная настройка удаляется.
-* Выбор пункта "Установка по умолчанию" приводит к установлению параметров настроек, заданным разработчиком и перегрузке текущей страницы.
+The functionality of the item "New setting" is the same as the above-described functionality for editing the current setting. 
 
 
-Пункт "Показать установки" отображается только в режиме разработки (переменная `config.ENV.envirinment` в файле `/config/envoironment` имеет значение develop) и служит для установки разрабочиком начальных значений параметров отображения (см. ниже).
+* When you select settings from the item "Apply" this setting becomes the current (DEFAULT) setting. 
+* When you select settings from the Edit item displays the interface for editing settings. 
+* If you select from "Delete" the specified setting is deleted. 
+* Select "default Setting" leads to the establishment of the settings specified by the developer and reloading the current page. 
 
-![](/images/pages/kaf/info.png)
 
-## Установка начальных значений разработчиком
+The "Display setup" is displayed only in development mode (variable `config.ENV.envirinment` in the file `/config/envoironment` matters develop) and installs as software developer initial values of display parameters (see below). 
 
-Разработчик имеет возможность задать начальные настройки отображаемых столбцов в файле описания роутинга `/app/routes/...js` в свойстве `developerUserSettings`:
+![](/images/pages/kaf/info.png) 
+
+## set the initial values of the developer 
+
+The developer is able to set the initial configuration of columns to display in the description file routing `/app/routes/...js` in the property `developerUserSettings`: 
 
 ```javascript
 import ListFormRoute from 'ember-flexberry/routes/list-form';
@@ -144,33 +146,33 @@ modelProjection: '...',
 modelName: '...',
 developerUserSettings: ...
 });
-```
+``` 
 
-При стандартных пользовательских настройках формат свойства `developerUserSettings`
+In standard customizing, format properties `developerUserSettings` 
 
 ```javascript
 developerUserSettings: { «componentName»: { } }
-```
+``` 
 
-Где «componentName» - имя компоненты, указанное в `flexberry-objectlistview`.
-Для роутера, принадлежащем подклассу роутера `routes/list-form`, допустимо описание только одного отображаемого компонента.
-Для других классов роутеров в дальнейшем возможно описание начальных настроек нескольких компонент.  
+Where» «componentName - component name specified in `flexberry-objectlistview`. 
+For the router belonging to the subclass of router `routes/list-form`, a valid description display only one component. 
+For other classes of routers in the later description of initial configuration of several components. 
 
-Если разработчику необходимо предопределить порядок и видимость столбцов, направление и порядок их сортировки, их ширину, то он может их описать в свойствах «componentName»:
+If a developer has to predetermine the order and visibility of columns, direction and sort order, their width, it can describe properties of» «componentName: 
 
-* `colsOrder` - порядок и видимость столбцов. Формат:
+* `colsOrder` - the order and visibility of columns. Format: 
 
 ```javascript
 [{ propName: «columnName», hide: false}, { propName: «columnName», hide: true}, ...]
-```
+``` 
 
-* `sorting` - направление и порядок сортировки. Формат:
+* `sorting` - direction and sort order. Format: 
 
 ```javascript
 [{ propName: «columnName», direction: "asc",  propName: «columnName», direction: "desc", ...]
-```
+``` 
 
-* `columnWidths` - ширина столбцов. С помощью свойства `fixed` можно запретить изменение ширины отдельных столбцов. Если нужно запретить изменять размер столбца инструментов или столбца меню, то в качестве «columnName» нужно указывать `OlvRowToolbar` или `OlvRowMenu` соответственно. Форматы:
+* `columnWidths` - width columns. Using the properties `fixed` you can prevent changing the width of individual columns. If you want to forbid to resize the column or column tools menu, the» «columnName need to specify `OlvRowToolbar` or `OlvRowMenu` respectively. Formats: 
 
 ```javascript
 [{ propName: «columnName», width: ... }, { propName: «columnName», width: ... }, ...]
@@ -178,56 +180,60 @@ developerUserSettings: { «componentName»: { } }
 [{ propName: «columnName», fixed: true }, { propName: «columnName», fixed: false }, ...]
 
 [{ propName: «columnName», width: ..., fixed: true }, { propName: «columnName», width: ..., fixed: false }, ...]
-```
+``` 
 
-«componentName» может включать любой набор указанных свойств.
+componentName» «may include any set of specified properties. 
 
-Для упрощения инициализации свойств `developerUserSettings` разработчик может получить текущее описание настроек выбрав пункт "Показать установки" в выпадающем меню (см. выше).
-Возможно два формата описания свойства «componentName»:
+To simplify initialization properties `developerUserSettings` the developer can obtain the current settings by selecting the "Show settings" from the drop-down menu (see above). 
+There are two format description properties componentName» qmo: 
 
 
-* Как объект:
+* As an object: 
 
 ```javascript
 «componentName»: { colsOrder: [ ... ],  sorting: [ ... ] ,  columnWidths: ... }
-```
+``` 
 
-* Как строка:
+* As a string: 
 
 ```javascript
 «componentName»: `{  colsOrder: [ ... ],  sorting: [ ... ],  columnWidths: [ ... ]}`
-```
+``` 
 
-Первый вариант предпочтителен при ручном вводе свойств `colsOrder`, `sorting`, `columnWidth`.
+The first option is preferable if you manually set the properties `colsOrder`, `sorting`, `columnWidth`. 
 
-При копировании настроек из пункта "Показать установки" строковые константы обрамляются в двойный кавычки ("). Так как текущий стандарт JSCS требует при описании объекта обрамления строковых констант в одинарные кавычки ('), то в режиме Copy/Paste более удобен второй вариант описания свойства  «componentName» в виде строки.
+When you copy settings from "Show setup" string constants are enclosed in double quotation marks ("). Because the current standard requires JSCS with the description of object of framing of the string constants in single quotation marks ('), Copy/Paste more convenient the second option descriptions properties» «componentName as a string. 
 
-## Сортировка и указание ширины столбцов в интерфейсе отображаемой таблицы
+## Sort and specify the column widths displayed in the interface table 
 
-Пользователь имеет возможность задавать порядок сортировки и ширину столбцов непосредственно в интерфейсе отображаемой таблицы.
+The user has the option to set the sort order and column widths directly in the interface displayed in the table. 
 
-При клике, удержании левой кнопки мыши по границе столбца и перемещении курсора размеры столбца изменятся динамически. Измененние размеры при  включенном сервисе сохранения настроек пользователя записываются в БД.
+When you click, hold the left mouse button on the column boundary and drag the column sizes will change dynamically. Change sizes when the service save the user's preferences are recorded in the database. 
 
-При клике левой кнопки мыши по заголовку столбца текущие параметры сортировки сбрасываются, а текущий порядок сортировки выбранного столбца циклически изменятся в порядке: увеличение, уменьшение, без сортировки.
+When you click the left mouse button on the column header the current collation reset the current sort order of the selected column will change cyclically in the order: increase, decrease, no sorting. 
 
-При клике левой кнопки мыши по заголовку столбца с удержанной клавишей Ctrl текущие параметры сортировки не сбрасываюся. К ним добавляется указанная сортировка по выбранному столбцу.
+When you click the left mouse button on the column header with the Ctrl withheld the current collation is not sbrasivaya. Adds the specified sorting for the selected column. 
 
-При изменении порядка сортировки столбцов производится перезагрузка страницы с указанными параметрами сортировки. При этом порядок сортировки указывется в параметре sort адреса страницы.
+If you change the column sort order is reloading the page with the specified collation. The sort order ukazyvaetsya parameter sort page address. 
 
-## Уровни пользовательских настроек
+## Levels of user settings 
 
-Текущий режим настроек формируется на основе следующих уровней:
+The current mode is based on the following levels: 
 
-* режим настройки заданный разработчиком;
-* режим настройки установленный пользователем в интерфейсе;
-* режим сортировки, заданный в параметраз URL страницы.
+* mode settings specified разработчиком; 
+* mode settings set by the user in интерфейсе; 
+* sort mode specified in parameters the URL of the page. 
 
-Параметры каждого последующего уровня перекрывают параметры предыдущего.
+The parameters of each subsequent level block the previous settings. 
 
-## Настройка ODataService
+## Configure ODataService 
 
-Если серверная часть представляет собой приложение с подключённым [Flexberry ORM ODataService](fo_orm-odata-service.html), то для корректной работы сервиса необходимо, чтобы, помимо прикладных сборок с объектами, дополнительно передавались имена двух технологических сборок: "UserSettingsService", "NewPlatform.Flexberry.ORM.ODataService".
+If the server part is connected [Flexberry ORM ODataService](fo_orm-odata-service.html) for correct operation of the service requires that, in addition to the application Assembly facilities, additionally passed down the names of the two technological assemblies: "UserSettingsService", "NewPlatform.Flexberry.ORM.ODataService". 
 
 ```csharp
 config.MapODataServiceDataObjectRoute(new[] { "SomeApp.Objects", ..., "UserSettingsService", "NewPlatform.Flexberry.ORM.ODataService" });
-```
+``` 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

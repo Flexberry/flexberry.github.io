@@ -1,16 +1,18 @@
----
-title: Flexberry Objectlistview
-sidebar: flexberry-ember_sidebar
-keywords: Flexberry Ember, OLV, list
-toc: true
-permalink: en/fe_object-list-view.html
-lang: en
-summary: Используемые компоненты и настройки списков в приложениях с использованием технологии Flexberry Ember, экспорт, удаление элементов
----
+--- 
+title: Flexberry Objectlistview 
+sidebar: flexberry-ember_sidebar 
+keywords: Flexberry Ember, OLV, lists 
+toc: true 
+permalink: en/fe_object-list-view.html 
+lang: en 
+autotranslated: true 
+hash: cfd8388668f326b8f6cd31d5b5e51903795f292018b79d2d37e62b0b51fe97a5 
+summary: Used components and configuration lists in applications using the technology Flexberry Ember, export, delete items 
+--- 
 
-Основное предназначение __flexberry-ojectlistview__ - просмотр списка доступных объектов с возможностью их последующего открытия и редактирования (в контрол встроен пейджинг, позволяющий просматривать данные порционно).
+The main purpose of __flexberry-ojectlistview__ - view the list of available objects with the possibility of subsequent open and edit (in the built-paging control that allows you to view the data portion). 
 
-Для добавления контрола на страницу, можно воспользоваться [шаблоном](ef_template.html) (ниже представлен шаблон для добавления на [списковую форму](ef_forms.html)):
+To add a control to the page, you can use the [template](ef_template.html) (this is a template to add a [list form](ef_forms.html)): 
 
 ```hbs
 {% raw %}{{flexberry-objectlistview
@@ -40,63 +42,63 @@ summary: Используемые компоненты и настройки с�
   gotoPage = (action "gotoPage")
   nextPage = (action "nextPage")
 }}{% endraw %}
-```
+``` 
 
-{% include note.html content="Синтаксис вида `addColumnToSorting=(action \"addColumnToSorting\")` определяет, что используется _ember closure action_. Если требуемое действие не определено, то при вызове соответствующей функциональности в консоли браузера появится ошибка." %}
+{% include note.html content="the Syntax `addColumnToSorting=(action \"addColumnToSorting\")` determines that closure is used _ember action_. If the requested action is not defined, then the call to the appropriate functionality in the browser console you will see error." %} 
 
-Если на форме используются дополнительные события, в шаблон может быть передано как имя события
+If the form is used for more events in the template can be passed as the event name 
 
 ```hbs
 {% raw %}{{flexberry-objectlistview
 ...
 componentName="castomActionName"
 }}{% endraw %}
-```
+``` 
 
-так и собственно само событие:
+and in fact the event itself: 
 
 ```hbs
 {% raw %}{{flexberry-objectlistview
 ...
 componentName=castomActionName
 }}{% endraw %}
-```
+``` 
 
-### Список компонентов flexberry-ojectlistview
+### the List of components flexberry-ojectlistview 
 
-Наименование компонента |Краткое описание компонента  
-:-----------------------|:------------------------------  
-`componentName`| Имя компонента. Должно быть уникальное в пределах однойстраницы.  
-`modelController`| Текущий контроллер страницы.  
-`modelName`| Имя текущей модели (список каких объектов отображается).  
-`modelProjection`| Текущее используемое представление.  
-`content`| Отображаемые в контроле данные.  
-`createNewButton`| Флаг, определяющий, отображать ли кнопку создания на [панели управления](fe_setting-lists.html).  
-`refreshButton`| Флаг, определяющий, отображать ли кнопку обновления на панели управления.  
-`deleteButton`| Флаг, определяющий, отображать ли кнопку удаления на панели управления.  
-`showCheckBoxInRow`| Флаг, определяющий, отображать ли чекбоксы для выделения записей в каждой строчке.  
-`showDeleteButtonInRow`| Флаг, определяющий, отображать ли кнопку удаления строки в каждой строчке.  
-`showDeleteMenuItemInRow`| Флаг, определяющий, отображать ли пункт контекстного, меню мобильного шаблона f-olv, "Удалить запись".  
-`showEditMenuItemInRow`| Флаг, определяющий, отображать ли пункт контекстного, меню мобильного шаблона f-olv, "Редактировать запись".  
-`rowClickable`| Флаг, определяющий, следует ли обрабатывать нажатие на строчку.  
-`action`| Действие, выполняемое при нажатии на строчку.  
-`orderable`| Флаг, определяющий, возможно ли производить сортировку по столбцам в компоненте.  
-`sorting`| Метод определения текущей сортировки.  
-`sortByColumn`| Действие (`action`) контроллера, которое должно быть выполнено для сортировки по столбцу.  
-`addColumnToSorting`| Действие (`action`) контроллера, которое должно быть выполнено для добавления сортировки по столбцу.  
-`pages`| Метод определения доступных страниц для отображения в пейджинге.  
-`perPageValue`| Метод определения текущей настройки, где указано, по сколько записей отображается на странице.  
-`perPageValues`| Массив, определяющий, по сколько записей на странице можно отображать.  
-`hasPreviousPage`| Флаг, определяющий, есть ли у текущей страницы предшествующая.  
-`hasNextPage`| Флаг, определяющий, есть ли у текущей страницы последующая.  
-`previousPage`| Метод для перехода на предыдущую страницу.  
-`gotoPage`| Метод для перехода на заданную страницу.  
-`nextPage`| Метод для перехода на следующую страницу.  
-`editFormRoute`| Задаёт имя роута формы редактирования, в котором будет открываться модель.  
-`singleColumnHeaderTitle`| Заголовок для мобильного представления компонента, вместо названий колонок. Если не задан или равен "", то шапка таблицы в компоненте скрывается.  
-`colsConfigButton`| Флаг (`true`/`false`) включающий/выключающий отображение кнопок пользовательских настроек.  
+The component name |description 
+:-----------------------|:------------------------------ 
+`componentName`| the name of the component. Must be unique within odnostranichnik. 
+`modelController`| Current page controller. 
+`modelName`| the name of the current model (a list of which objects are displayed). 
+`modelProjection`| Current used view. 
+`content`| Displayed in the control data. 
+`createNewButton`| a Flag that determines whether to display the button to create on [control panel](fe_setting-lists.html). 
+`refreshButton`| a Flag that determines whether to display the refresh button on the control panel. 
+`deleteButton`| a Flag that determines whether to display the delete button on the control panel. 
+`showCheckBoxInRow`| a Flag that determines whether to display checkboxes for selection of records in each line. 
+`showDeleteButtonInRow`| a Flag that determines whether to display the delete button of the row in each line. 
+`showDeleteMenuItemInRow`| a Flag that determines whether to display the item in the context menu mobile template f-olv, "Delete record". 
+`showEditMenuItemInRow`| a Flag that determines whether to display the item in the context menu mobile template f-olv, "Edit record". 
+`rowClickable`| a Flag that determines whether to treat depression is on the line. 
+`action`| the Action to perform when clicking the line. 
+`orderable`| a Flag that determines whether to sort by columns in the component. 
+`sorting`| Method of determining the current sorting.
+`sortByColumn`| Action (`action`) of the controller that should be executed to sort by column. 
+`addColumnToSorting`| Action (`action`) of the controller that should be executed to add a sort by column. 
+`pages`| Method for the determination of available pages to display in the paging. 
+`perPageValue`| Method definitions for the current setting, which indicates the number of records displayed on the page. 
+`perPageValues`| an Array defining the number of records per page can be displayed. 
+`hasPreviousPage`| a Flag that determines whether the current page is the last. 
+`hasNextPage`| a Flag that determines whether the current page later. 
+`previousPage`| Method to move to the previous page. 
+`gotoPage`| Method to move on a given page. 
+`nextPage`| Method to move to the next page. 
+`editFormRoute`| Specifies the name of the route edit form, which will open the model. 
+`singleColumnHeaderTitle`| Header for mobile view component, instead of column names. If not specified or equal to "" then the header of the table in the component is hidden. 
+`colsConfigButton`| Flag (`true`/`false`) enable/disable the display of buttons in the user settings. 
 
-Значения по умолчанию:
+Default values: 
 
 ```javascript
 action: 'rowClick',
@@ -109,36 +111,36 @@ showDeleteButtonInRow: false,
 showDeleteMenuItemInRow: false,
 showEditMenuItemInRow: true
 colsConfigButton - true
-```
+``` 
 
-## Настройка списков
+## customize lists 
 
-В состав контрола Flexberry Objectlistview входит тулбар, который можно настраивать и добавлять пользовательские кнопки.
+Part of Flexberry Objectlistview control includes a toolbar that you can customize and add custom buttons. 
 
-Панель управления, как и кнопки в строках, мжет быть дополнена пользовательскими кнопками, реализующими необходимые прикладные функции для работы со списком. Подробнее описано в статье [Настройки списков](fe_setting-lists.html).
+Control panel, and buttons in rows, might be supplemented with custom buttons that implement the necessary functions to work with list. Described in detail in [Settings list](fe_setting-lists.html). 
 
-## Экспорт в Excel
+## Export to Excel 
 
-Технология `Ember Flexberry` предоставляет возможность экспорта списков. Для того чтобы экспорт стал доступен в приложении, необходимо осуществить [настройки на бакэнде](fan_odata-export-to-excel.html).
+Technology `Ember Flexberry` provides the ability to export lists. To export became available in the app, you need to implement [settings backend](fan_odata-export-to-excel.html). 
 
-В шаблоне непосредственно формы должно быть указано
+In the template directly form must be specified 
 
 ```hbs
 {% raw %}{{flexberry-objectlistview
 ...
 exportExcelButton=true
 {% endraw %}
-```
+``` 
 
-Настройки экспорта можно сохранять, задав наименование. Также можно изменять наименование столбцов для экспорта.
+Export settings can be saved by specifying a name. You can also change the name of the exported columns. 
 
-## Удаление элементов списка
+## Deletion of list items 
 
-Для удаления элементов списка используется метод `beforeDeleteRecord`. Метод поддерживает асинхронный режим, то есть можно возвращать `promises` в качестве значения результата.
+To remove items from the list method is used `beforeDeleteRecord`. The method supports asynchronous mode, it is possible to return `promises` as the value of the result. 
 
-### Удаление всех выделенных элементов
+### Delete all selected elements 
 
-Для настройки одновременного удаления всех выделенных элементов списка нужно в контроллере прописать событие `beforeDeleteAllRecords`:
+To configure simultaneous removal of all selected list items you need in the controller to register event `beforeDeleteAllRecords`: 
 
 ```javascript
 import ListFormController from './list-form';
@@ -152,9 +154,9 @@ export default ListFormController.extend({
     }
   }
 });
-```
+``` 
 
-и указать его в шаблоне списка:
+and specify it in the template list: 
 
 ```hbs
 {% raw %}
@@ -163,37 +165,41 @@ export default ListFormController.extend({
   beforeDeleteAllRecords=(action 'beforeDeleteAllRecords')
   ...
 }}{% endraw %}
-```
+``` 
 
-## Проверка списков перед удалением элементов
+## Check list before removing items 
 
-При работе со списком есть возможность возвращать promise через `return` в теле обработчика `beforeDeleteRecord`, то есть можно реализовать асинхронную логику. Если сделать return <промис>- тогда операция удаления будет вызываться после того, как будет выполнен promise . Если он выполнение будет прервано, то удаление выполнено не будет.
+When working with the list can return a promise using `return` in the handler's body `beforeDeleteRecord`, it is possible to implement asynchronous logic. If you do return <promise> then the delete operation will be called after promise is fulfilled . If he will be terminated, the deletion will fail. 
 
-## Отображение ошибок списка
+## Display of error list 
 
-Если список содержит ошибки, то будет отображена форма с указанием ошибки:
+If the list contains errors, it will display indicating the error: 
 
-* при загрузке списка с ошибкой в первый раз будет отображен шаблон `error.hbs`
-* в контроллере есть список ранее загруженных объектов - ошибка будет показана через компонент.
+* when loading a list with an error the first time you will see a pattern `error.hbs` 
+* the controller has a list of previously downloaded items, error will be shown through the component. 
 
-Изменить это на прикладном уровне можно с помощью метода `onModelLoadingRejected` в роуте.
+To change this in the application layer by using the method `onModelLoadingRejected` in the router. 
 
-## Ограничения списков
+## Restrictions lists 
 
-Особенности настройки ограничений на списках описаны в статье [Инструменты ограничения списка](fe_list-restriction-tools.html).
+Features to configure the limits on the lists described in the article [Tools limit the list](fe_list-restriction-tools.html). 
 
-## Изменение ширины столбцов
+## change the width of columns 
 
-Изменение ширины столбцов для списка и [детейлов](fe_groupedit.html) на форме редактирования осуществляется по общим принципам.
+Change the width of columns for the list and [datalow](fe_groupedit.html) on the edit form is implemented according to General principles. 
 
-Для того чтобы включить/отключить изменение шири ны столбцов, необходимо задать у контрола в шаблоне свойство `allowColumnResize` (для обычных приложений это свойство по умолчанию имеет значение `true`, для мобильных - `false`.
+To enable/disable changing of width HN of the columns, you must specify the control in the template property `allowColumnResize` (for normal applications this property has a default value `true` for mobile - `false`. 
 
-{% include note.html content="Не смотря на то, что для мобильных приложений изменение ширины столбцов доступно, включать данный флаг для данного типа приложений не рекомендуется." %}
+{% include note.html content="despite the fact that mobile applications changing the width of columns available to include the flag for this type of application is not recommended." %} 
 
-Если плагин инициализировался правильно, то после загрузки контрола при наведении курсора на границу между столбцами курсор меняет свой внешний вид и появляется возможность изменять ширину столбцов.
+If the plugin was initialized correctly, after you download the control when you hover over the border between columns, the cursor changes its appearance and you can change the width of columns. 
 
-Возможно запретить изменение размеров отдельных столбцов, используя [начальные настройки отображаемых столбцов](ef_model-user-settings-service.html) в свойстве `columnWidths`.
+It is possible to prevent resizing of individual columns using the [initial configuration of columns to display](ef_model-user-settings-service.html) in the property `columnWidths`. 
 
-## Сервис настроек пользователя
+## Service user settings 
 
-Если [cервис настроек пользователя](ef_model-user-settings-service.html) включён, то при загрузке спискового контрола вычитывается сохранённая настройка ширины столбцов, а при изменении ширины столбцов - настройка сохраняется.
+If [service user settings](ef_model-user-settings-service.html) is enabled, when loading the list control to read the saved setting width of columns, and changing column width - the setting is saved. 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

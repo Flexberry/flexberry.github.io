@@ -1,34 +1,40 @@
----
-title: Прототипизация для Flexberry ASP.NET
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_web-data-object-prototyping.html
-lang: en
----
+--- 
+title: Prototypical for Flexberry ASP.NET 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_web-data-object-prototyping.html 
+lang: en 
+autotranslated: true 
+hash: ef7f89a8e6fde68d07ab754f3f88d3ea765ff5557f345a14a2cfb4b9b17e94f2 
+--- 
 
-## Как работает прототипизация во Flexberry ASP.NET
+## How prototypical in Flexberry ASP.NET 
 
-Если в параметрах GET-запроса на форму редактирования передано, помимо первичного ключа редактируемого объекта, что `Prototyping=true`, то система понимает, что необходимо будет создать новый объект на основе объекта с указанным первичным ключом.
+If the GET-request for the form transmitted, in addition to the primary key of editable object that `Prototyping=true`, the system understands that you will need to create a new object based on the object with the specified primary key. 
 
-## Особенности реализации
+## features of the implementation 
 
-* Сама прототипизация выполняется при сохранении объекта с помощью метода [Prototyping](fo_data-object-prototype.html).
-* На исходный объект выставляется блокировка, которая снимается при первом сохранении объекта-прототипа.
+* The very prototypical is executed when the object is saved using the method of [Prototyping](fo_data-object-prototype.html). 
+* In the original, there is a lock that is removed when you first save the object's prototype. 
 
-## WOLV и "создание на основе"
+## WOLV and "basing" 
 
-[WOLV](fa_web-object-list-view.html) предоставляет возможность выполнения прототипизации объекта. Для этого у соответствующего [WOLV](fa_web-object-list-view.html) необходимо включить операцию [NewByExampleInRow](fa_wolv-operations.html):
+[WOLV](fa_web-object-list-view.html) provides the ability to perform prototypical object. To do this, the appropriate [WOLV](fa_web-object-list-view.html) must include [NewByExampleInRow](fa_wolv-operations.html): 
 
 ```csharp
 public partial class КредитL : BaseListForm<Кредит>
 {
-	//...
+	//... 
 	protected override void Preload()
 	{
 		WebObjectListView1.Operations.NewByExampleInRow = true;
 	}
 }
-```
+``` 
 
-При этом в каждой строчке web-контрола появится дополнительная иконка, после нажатия на которую будет выполнено не редактирование выбранного объекта, а его прототипизация.
+Each line of the web control will have an additional icon, clicking on which will be done no editing of the selected object, and its prototypical. 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

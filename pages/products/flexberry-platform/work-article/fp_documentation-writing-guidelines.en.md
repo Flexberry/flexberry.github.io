@@ -1,52 +1,54 @@
----
-title: Documentation writing guidelines
-sidebar: flexberry-platform_sidebar
-keywords: Flexberry Platform, registration of articles, documentation, regulations
-summary: Structure, style, rules for the design of notes, pictures, links and code examples
-toc: true
-permalink: en/fp_documentation-writing-guidelines.html
-lang: en
----
+--- 
+title: Guidelines for writing documentation 
+sidebar: flexberry-platform_sidebar 
+keywords: Flexberry Platform, design articles, documentation, regulations 
+summary: Structure, style, rules, registration of notes, images, links, and code examples 
+toc: true 
+permalink: en/fp_documentation-writing-guidelines.html 
+lang: en 
+autotranslated: true 
+hash: c1277accf704be8ea95c004304e42cdb1d3aaa9011ca1c49c6bcdf5c25bbca39 
+--- 
 
-Документация является неотемлемой частью любого успешного продукта, поэтому необходимо подходить к документированию разрабатываемых продуктов с максимальной ответственностью и своевременно актуализировать информацию.
+Documentation is an integral part of any successful product, so you need to approach the documentation of developed products with the utmost responsibility and to promptly update the information. 
 
-Ниже приведены рекомендации по написанию документации для продуктов платформы [Flexberry](https://flexberry.github.io/ru//fp_landing_page.html).
+The following are guidelines for writing documentation for platform products [Flexberry](https://flexberry.github.io/ru//fp_landing_page.html). 
 
-Документация создается с использованием генератора статических сайтов [Jekyll](https://jekyllrb.com/), соответственно необходимо иметь представление о [Markdown синтаксисе](https://daringfireball.net/projects/markdown/syntax) для создания статей.
+Documentation is generated using the generator of static sites [Jekyll](https://jekyllrb.com/) and therefore needs to have an idea about [Markdown syntax](https://daringfireball.net/projects/markdown/syntax) to create articles. 
 
-## Правила оформления
+## design Rules 
 
-Исходный код документации храниться в репозитории <https://github.com/Flexberry/flexberry.github.io>.
+Source code documentation stored in the repository <https://github.com/Flexberry/flexberry.github.io>. 
 
-* Все статьи увязаны в общую структуру статей в соответствии с наименованием продукта и его особенностями.
-* Требуется соблюдать единообразие терминов, для этого существует специальный [Глоссарий](fp_glossary.html).
-* Все фразы статьи строятся в __обезличенной форме__ с использованием литературной и профессиональной лексики.
+* All articles are linked to the overall structure of articles in accordance with the name of the product and its features. 
+* Required to observe the consistency of terminology, for this there is a special [Glossary](fp_glossary.html). 
+* All phrases the articles are constructed in __anonymously__ with the literature and professional vocabulary. 
 
-### Формирование каталогов
+### directories 
 
-Файлы с текстами статей распологаются в подкаталогах, по соответсвтующим продуктам и категориям, в каталоге _pages/products_, и именуются по шаблону _\[product-prefix\]\_\[article-name\].\[lang\].md_, где:
+The file with the texts of articles are placed in subdirectories, sootvetstvuyuschim products and categories in the directory _pages/products_, and are named according to the pattern _\[product-prefix\]\_\[article-name\].\[lang\].md_ where: 
 
-* `product-prefix` - префикс, сокращение от названия продукта
-* `article-name` - название статьи на английском языке
-* `lang` - язык статьи, допустимые значения **ru** и **en**
+* `product-prefix` prefix, the abbreviation of the product 
+* `article-name` the title of the article in English 
+* `lang` - language articles, valid values are **** and **en** 
 
-Например, файл с текстом данной статьи имеет следующее имя: _pages/products/flexberry-platform/work-article/fp_how-create-article.ru.md_.
+For example, a file with the text of the article has the following name: _pages/products/flexberry-platform/work-article/fp_how-create-article.EN.md_. 
 
-Скриншоты следует располагать соответственно расположению продукта (_pages\products\product-name\product-catalog\product-catalog_). Картинкам должны быть присвоены уникальные имена или номера, чтобы в тексте статьи можно было легко ссылаться на них. Предпочтителен формат `.png`.
+The screenshots should be placed according to the placement of the product (_pages\products\product-name\product-catalog\product-catalog_). The pictures must be assigned unique names or numbers to the text of the article could easily refer to them. The preferred format `.png`. 
 
-### Оглавление (sidebars)
+### table of contents (sidebars) 
 
-При добавлении статьи, необходимо добавить запись о ней, в оглавление раздела соответствующего продукта.
+When adding an article, you need to add an entry for it in the contents section of the relevant product. 
 
-Оглавления разделов описываются на языке [YAML](https://yaml.org/) в файлах _\_data/sidebars/\[product-name\]\_sidebar.yml_.
-Запись о статье должна содержать следующую информацию:
+Table of contents sections are described in the language of [YAML](https://yaml.org/) in the file _\_data/sidebars/\[product name\]\_sidebar.yml_. 
+The article should contain the following information: 
 
-* `title` - имя ссылки на статью в оглавлении на английском языке
-* `title_ru` - имя ссылки на статью в оглавлении на русском языке
-* `url` - ссылка на статью, без указания языка, в формате _/\[product-prefix\]\_\[article-name\].html_
-* `output` - форматы генерации статьи, перечисленные через запятую, допустимые значения **web** и **pdf**
+* `title` - the name links to the article in the table of contents in English 
+* `title_ru` - the name links to the article in the table of contents in Russian 
+* `url` - link to the article, without specifying the language, format, _/\[product-prefix\]\_\[article-name\].HTML 
+* `output` formats generation of article, comma-separated, valid values **web** and **pdf** 
 
-Например, в файле _\_data/sidebars/flexberry-platform\_sidebar.yml_ содержиться следующая запись об этой статье:
+For example, in the file _\_data/sidebars/flexberry-platform\_sidebar.yml_ contains the following entry about this article: 
 
 ```yml
 # ...
@@ -55,23 +57,23 @@ lang: en
       url: /fp_documentation-writing-guidelines.html
       output: web, pdf
 # ...
-```
+``` 
 
-{% include note.html content="Больше информации об оглавлении и навигации можно найти на [idratherbewriting.com](https://idratherbewriting.com/documentation-theme-jekyll/mydoc_sidebar_navigation.html)." %}
+{% include note.html content="More information about the table of contents and navigation can be found on [idratherbewriting.com](https://idratherbewriting.com/documentation-theme-jekyll/mydoc_sidebar_navigation.html)." %} 
 
-### Метаданные статьи
+### Metadata article 
 
-В начале каждого файла с текстом статьи должен быть расположен блок с метаданными, он окружается тремя символами тире (`---`), и включают следующую информацию:
+At the beginning of each file with the text of the article should be a block with metadata, it is surrounded by three characters dash (`---`), and include the following information: 
 
-* `title` (название статьи). Название статьи должно быть достаточно кратким и исчерпывающим, отражающим основную суть.
-* `summary` (описание). Краткое описание содержания статьи должно дать понимание читателю о содержании - позволит быстро оценить правильно ли он перешёл. Используется в индексе поиска статей.
-* `sidebar` (привязка к оглавлению раздела, смотрите как указано в соседних статьях)
-* `keywords` (ключевые слова, заполнять через запятую - по ним работает поиск)
-* `toc` (добавить ли оглавление со ссылками по заголовкам (под основным меню слева), обычно `true`)
-* `permalink` - уникальная ссылка на статью, в формате _\[lang\]/\[product-prefix\]\_\[article-name\].html_
-* `lang` - язык статьи, допустимые значения **ru** и **en**
+* `title` (name of article). Title of the article should be fairly concise and comprehensive, reflecting the main thrust. 
+* `summary` (description). Brief description of the content of the article should give understanding to the reader about the content - will allow you to quickly assess whether he passed. Use the index to search for articles. 
+* `sidebar` (linked to table of contents section, see as indicated in the adjoining articles) 
+* `keywords` (keywords, fill in a comma - search) 
+* `toc` (to add a table of contents with links in the headers (under the main menu on the left), usually `true`) 
+* `permalink` is a unique link to the article in format _\[lang\]/\[product-prefix\]\_\[article-name\].HTML 
+* `lang` - language articles, valid values are **** and **en** 
 
-Например, блок с метаданными для данной статьи, бедет выглядеть следующим образом:
+For example, a block with metadata for the article, will link as follows: 
 
 ```md
 ---
@@ -82,33 +84,37 @@ toc: true
 permalink: en/fp_documentation-writing-guidelines.html
 lang: en
 ---
-```
+``` 
 
-{% include note.html content="Больше информации о блоке с метаданными можно найти на [idratherbewriting.com](https://idratherbewriting.com/documentation-theme-jekyll/mydoc_pages.html#frontmatter)." %}
+{% include note.html content="More information about the unit metadata can be found at [idratherbewriting.com](https://idratherbewriting.com/documentation-theme-jekyll/mydoc_pages.html#frontmatter)." %} 
 
-### Оформление содержания статьи
+### Making the content of the article 
 
-* Блоки статьи начинаются со второго уровня заголовков (##). До и после заголовка следует оставить пустую строку.
-* Ссылки оформляются следующим образом: `[текст](ссылка)`. Если фраза предполагает ссылку на несколько статей, в резуольтате чего предложение выглядит как одна большая ссылка, то термины рекомендуется вынести в отдельный абзац. Таким образом терминам можно будет дать краткое пояснение и ссылку на определение, не перегружая основной текст.
-* Скриншоты вставляются следующим образом _\!\[\]\(/images/pages/products/product-name/product-name]/image-name.png)_. Отделяются пустой строкой до и после скриншота (исключение составляют примеры кнопок в тексте).
-* Если на часть текста необходимо обратить особое внимание, можно добавить [заметку](https://flexberry.github.io/mydoc_alerts.html):
+* Blocks articles begin with second level header (##). Before and after the title should leave a blank line. 
+* References are made in the following way: `[text](link)`. If the phrase includes a link to a few articles in resultate what the offer looks like one big link, the terms are recommended to be put in a separate paragraph. Therefore, the terms can be given a brief explanation and a link to the definition without overloading a main text. 
+* Screenshots are inserted in the following way _\!\[\]\(/images/pages/products/product-name/product-name]/image-name.png)_. Separated by a blank line before and after screenshot (with the exception of examples of the buttons in the text). 
+* If the text part need to pay special attention, you can add [note](https://flexberry.github.io/mydoc_alerts.html): 
 
-{% include note.html content="Текст заметки" %}
+{% include note.html content="Text" %} 
 
-* [Примеры кода](https://flexberry.github.io/mydoc_code_samples.html) отделяются пустой строкой и тремя апострофами (на букве Ё) до и после кода. Также можно указать [язык примера](http://idratherbewriting.com/documentation-theme-jekyll/mydoc_syntax_highlighting.html#available-lexers).  Язык для примеров на c# обозначается как `csharp`.
+* [Code examples](https://flexberry.github.io/mydoc_code_samples.html) are separated by a blank line and three apostrophes (the letter E) before and after the code. You can also specify [language Primera](http://idratherbewriting.com/documentation-theme-jekyll/mydoc_syntax_highlighting.html#available-lexers). The language for the examples on the c# referred to as `csharp`. 
 
-{% include note.html content="Перед началом работы со статье следует сделать pull (синхронизация версии). **Перед коммитом статьи также следует делать pull!** В противном случае будет осуществлен merge, который может удалить внесенные изменения." %}
+{% include note.html content="Before you proceed with the article should do a pull (sync version). **Before the commit of the article should also make pull!** Otherwise merge will be implemented that can remove the changes." %} 
 
-## Полезные ссылки
+## Useful links 
 
-* [Краткое руководство по Маркдауну](https://paulradzkov.com/2014/markdown_cheatsheet/).
-* [Линтер](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) - указывает на ошибки форматирования в стиле `markdown`.
-* [Jekyll Doc Theme](https://idratherbewriting.com/documentation-theme-jekyll/) которую мы используем для оформления документации.
-* [GitHowTo](https://githowto.com/ru) - интерактивный тур по возможностям _git_.
-* [GitHub Help](https://help.github.com/) - помощь в работе с _git_.
-* [Cписок открытых вопросов](https://github.com/Flexberry/flexberry.github.io/issues) в репозитории с документацией.
+* [Quick guide to Markdown](https://paulradzkov.com/2014/markdown_cheatsheet/). 
+* [Linter](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) - indicates that a formatting error in style `markdown`. 
+* [Doc Jekyll Theme](https://idratherbewriting.com/documentation-theme-jekyll/) which we use for documentation. 
+* [GitHowTo](https://githowto.com/ru) - interactive tour of the capabilities of the _git_. 
+* [GitHub Help](https://help.github.com/) - help with _git_. 
+* [Open issues](https://github.com/Flexberry/flexberry.github.io/issues) in the repository with the documentation. 
 
-## Это интересно
+## It's interesting 
 
-* [7 правил написания технической документации мирового класса](https://habr.com/ru/post/303760/) - интересная статья, но необходимо учитывать специфику аудитории, для которой пишется та или иная статья. То, что будет благосклонно воспринято начинающим (раздел [Практические руководства](https://flexberry.github.io/ru//gpg_landing-page.html)), с высокой долей вероятности вызовет недоумение у профессионала (статьи о продуктах платформы Flexberry).
-* [Пишем техническую документацию: руководство для непрофессионала](https://habr.com/ru/post/421549/) - достаточно подробно описан процесс создания документации, даны ценные советы о создании "благоприятной обстановки", не скатываясь при этом до публицистики.
+* [7 of the rules of writing technical documentation world-class](https://habr.com/ru/post/303760/) - interesting article, but it is necessary to consider specificity of audience for which written or another article. That will be favorably perceived by beginners (section [Practical guide](https://flexberry.github.io/ru//gpg_landing-page.html)) with high probability will lead to confusion for the professional (article about platform products Flexberry). 
+* [Writing technical documentation: a guide for the layman](https://habr.com/ru/post/421549/) - have described the process of creating the documentation, this valuable tips on creating an "enabling environment", not while slipping to journalism. 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

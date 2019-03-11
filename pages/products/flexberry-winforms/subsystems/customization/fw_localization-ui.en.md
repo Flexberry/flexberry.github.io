@@ -1,26 +1,32 @@
----
-title: Локализация пользовательского интерфейса
-sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (формы)
-summary: Указано как в приложении установить локализацию
-toc: true
-permalink: en/fw_localization-ui.html
-folder: products/flexberry-winforms/
-lang: en
----
+--- 
+title: Localization of user interface 
+sidebar: flexberry-winforms_sidebar 
+keywords: Windows UI (forms) 
+summary: as Stated in the application to establish the localization of 
+toc: true 
+permalink: en/fw_localization-ui.html 
+folder: products/flexberry-winforms/ 
+lang: en 
+autotranslated: true 
+hash: 8604c2851ab0b7888cca5a96849bfd4a0d3343e4ca479860125362bedfbcfa41 
+--- 
 
-Локализация состоит из двух следующих задач:
-* Локализация `WinForms` (непосредственно форм).
-* Локализация строковых констант, записанных непосредственно в код (сообщения пользователю и т.п.)
+Localization consists of the following two tasks: 
+* Localization `WinForms` (directly). 
+* Localization string constants written directly into the code (messages to the user, etc.) 
 
-Первое обеспечивается средствами `Microsoft Visual Studio .NET`.
-Для второго в `Flexberry Platform` существуют следующие средства:
-* Получение-установка текущей культуры `.Net Framework (ICSSoft.STORMNET.Windows.Forms.WinApplication.SetUICultureAsRussian(), ICSSoft.STORMNET.Windows.Forms.WinApplication.SetUICulture(), ICSSoft.STORMNET.Windows.Forms.WinApplication.GetUICulture())`;
-* Возможность создать класс-локализатор, куда приходят вызовы для получения соответствующих строк, а также подключить какой-либо стандартный локализатор;
-* Получение обработанной локализатором строки.
+The first is provided by means `Microsoft Visual Studio .NET`. 
+For the second `Flexberry Platform` there are the following tools: 
+* Receiving-to set the current culture `.Net Framework (ICSSoft.STORMNET.Windows.Forms.WinApplication.SetUICultureAsRussian(), ICSSoft.STORMNET.Windows.Forms.WinApplication.SetUICulture(), ICSSoft.STORMNET.Windows.Forms.WinApplication.GetUICulture())`; 
+* The ability to create class-a localizer, where do the calls to retrieve the relevant rows, as well as connect any standard локализатор; 
+* Getting processed the localizer lines. 
 
-Итак, для того, чтобы устроить в своём приложении локализацию, необходимо:
-1. Выбрать  стандартный `ICSSoft.STORMNET.Windows.Forms.XMLLocalizator`, либо создать свой собственный (имплементировать интерфейс `ICSSoft.STORMNET.Windows.Forms. ILocalizator`)
-0. Установить сборке локализатор;
-0. Если есть необходимость, установить явно культуру;
-0. Заменить(написать) все константы в коде на вызовы ICSSoft.STORMNET.Windows.Forms.WinApplication. GetLocalString.
+So, in order to arrange in your app localization, you must: 
+1. Select standard `ICSSoft.STORMNET.Windows.Forms.XMLLocalizator`, or create your own (to implement the interface `ICSSoft.STORMNET.Windows.Forms. ILocalizator`) 
+0. To install the Assembly локализатор; 
+0. If there is a need to establish clearly культуру; 
+0. Replace(write) all the constants in your code in calls to ICSSoft.STORMNET.Windows.Forms.WinApplication. GetLocalString. 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

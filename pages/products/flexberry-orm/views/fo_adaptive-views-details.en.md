@@ -1,30 +1,34 @@
----
-title: Adaptive representations for details
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, View
-summary: Предназначение и правила использования адаптивных детейлов
-toc: true
-permalink: en/fo_adaptive-views-details.html
----
+--- 
+title: Adaptive representations for detailov 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, views 
+summary: the Purpose and rules of using adaptive detailov 
+toc: true 
+permalink: en/fo_adaptive-views-details.html 
+--- 
 
-Например, имеется следующая ситуация:
+For example, you have the following situation: 
 
-![](/images/pages/products/flexberry-orm/views/adaptive-views-for-details.jpg)
+![](/images/pages/products/flexberry-orm/views/adaptive-views-for-details.jpg) 
 
-Класс A имеет детейлы D, связанные агрегацией DA. Для A определено [представление](fd_view-definition.html), в которое связано представление детейла D.
+Class a is detaily D associated aggregation of DA. For A specified [view](fd_view-definition.html), which is connected with the idea of detail D. 
 
-Например, выполняется чтение объекта данных типа A по представлению `AView`.  Соответственно, поскольку объекты классов D1, D2 [унаследованы](fd_inheritance.html) от D, они также будут читаться по представлению `DView` (представления наследуются). Однако, что же делать, если они имеют более полный атрибутный состав, который _обязательно_ нуждается в прочитке?
+For example, you are reading a data object of type A on presentation `AView`. Accordingly, as objects of classes D1, D2 [legacy](fd_inheritance.html) from the D, they will also be read by performance `DView` (inherited view). However, what to do if they have a better attribute composition, which obyazatelno needs pracitce? 
 
-Для того, чтобы разрешить данную проблему, существуют **адаптивные** представления. Если объявить представление `DView` адаптивным, а для детейлов D1 и D2 объявить представления с теми же именами (`DView`), но с собственным атрибутным составом, то [сервис данных](fo_data-service.html) будет прочитывать детейлы D1 и D2 в соответствии с ним.
+In order to solve the problem, there are **adaptive** performance. If you declare the view `DView` adaptive and datalow D1 and D2 to announce the submission of the same names (`DView`), but with its own attribute structure, then the [service data](fo_data-service.html) will read detaily D1 and D2 in accordance with it. 
 
-Для того, чтобы указать, что представление адаптивно, необходимо при ассоциировании детейлового представления в атрибуте [AssociatedDetailViewAttribute](fd_view-definition.html) проинициализировать свойство `UseAdaptiveViewsLoading=true`.
+In order to specify that the view is adaptive, it is necessary for the Association metalowego view in the attribute [AssociatedDetailViewAttribute](fd_view-definition.html) to initialize the property `UseAdaptiveViewsLoading=true`. 
 
-Пример:
+Example: 
 
 ```csharp
 [AssociatedDetailView("AView", "D", "DView", UseAdaptiveViewsLoading=true)]
-```
+``` 
 
-{% include note.html content="Не следует злоупотреблять адаптивными представлениями, т.к. это негативно влияет на производительность. Во многих случаях лучше отдельно дочитывать детейловые объекты данных."%}
+{% include note.html content="should Not be overused adaptive representations, because it affects the performance. In many cases, it is better to separately read Decalogue data objects."%} 
 
-Реализация вычитки объектов-наследников по общему представлению предка описана в статье [Чтение принадлежащих различным классам объектов в одном представлении](fo_reading-several-types-objects.html).
+Implementation of the proofreading and editing of objects-successors as a General representation of the ancestor described in the article [Read belonging to different object classes in a single view](fo_reading-several-types-objects.html). 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

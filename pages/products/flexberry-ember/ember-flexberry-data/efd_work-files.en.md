@@ -1,54 +1,56 @@
----
-title: Файлы в odata
-sidebar: flexberry-ember_sidebar
-keywords: Flexberry Ember, odata, файлы
-summary: OData-service files support specificities
-toc: true
-permalink: en/efd_work-files.html
-lang: en
----
+--- 
+title: Files in odata 
+sidebar: flexberry-ember_sidebar 
+keywords: Flexberry Ember, odata, files 
+summary: Features working with files using OData service 
+toc: true 
+permalink: en/efd_work-files.html 
+lang: en 
+autotranslated: true 
+hash: 73cdcf459544dc60ee2f5629a2c5a5ff9f67024feee6cb9124f2e913b769119a 
+--- 
 
-## Описание
+## Description 
 
-OData-сервис предоставляет возможность загружать какие-либо файлы на сервер, скачивать их, а также осуществлять их привязку к свойствам объектов данных.
-Клиентская часть, в свою очередь, содержит специальную трансформацию для представления файловых свойств на клиенте, и компонент [flexberry-file](ef_file.html) для работы с ними, далее подробнее.
+The OData service provides the ability to upload any files to the server, download them, and perform them to bind to properties of data objects. 
+The client, in turn, contains a special transformation to represent the file properties on the client, and the component [flexberry-file](ef_file.html) to work with them, then read more. 
 
-## Быстрый старт
+## Quick start 
 
-Если вам нужно по быстрому наладить работу с файлами через OData-сервис, не изучая всех подробностей того как в сервисе реализована работа с ними, то краткий алгоритм будет таким:
-* Проставьте файловому свойству .NET-класса объекта данных тип `ICSSoft.STORMNET.FileType.File` (если хотите хранить файлы в БД) или `ICSSoft.STORMNET.UserDataTypes.WebFile` (если хотите хранить файлы в файловой системе)
-* Проставьте файловому свойству ember-модели тип `DS.attr('file')`
-* В БД проставьте этому свойству тип `NVARCHAR(MAX)` (если работаете с MS SQL Server) или тип `TEXT` (если работаете с PostrgreSQL)
-* Зарегистрируйте файловый контроллер в OData-сервисе, прописав в классе `App_Start\ODataConfig.cs` в методе `Configure` следующую команду:
-  ```csharp
+If you need to work with the files via OData service without learning all the details of how the service is implemented to work with them, then brief the algorithm is as follows: 
+* Select the file properties .NET object class data type `ICSSoft.STORMNET.FileType.File` (if you want to store files in the database) or `ICSSoft.STORMNET.UserDataTypes.WebFile` (if you want to store files in the file system) 
+* Select the file property of the ember model type `DS.attr('file')` 
+* In the database select this property type `NVARCHAR(MAX)` (if you work with MS SQL Server) or type `TEXT` (if you work with PostrgreSQL) 
+* Register file controller in OData service, writing in class `App_Start\ODataConfig.cs` in the method `Configure` the following command: 
+```csharp
   config.MapODataServiceFileRoute("File", "api/File", HttpContext.Current.Server.MapPath("~/Uploads"), container.Resolve<IDataService>());
-  ```
-* В `hbs`-шаблоне ember-формы "скормите" файловое свойство объекта данных свойству `value` компонента [flexberry-file](ef_file.html), модель, с которой ассоциировано файловое свойство свойству `relatedModel` компонента, и сконфигурируйте компонент указав ему как минимум URL-для для загрузки файлов:
-  * Либо прямо в `hbs`-шаблоне:
+  ``` 
+* Pstrfhbs`-template ember-forms "feed" file object property data property `value` component [flexberry-file](ef_file.html), the model with which the associated property file property `relatedModel` component and configure the component with the at least URL for file uploads: 
+* Either directly in `hbs`-template: 
 
-    Шаблон:
+Template: 
 
-    ```hbs
+```hbs
     {% raw %}{{flexberry-file
       relatedModel=model
       value=model.myFileProperty
-      uploadUrl="<Адрес узла, на котором развернут OData-сервис>/api/File"
+      uploadUrl="<The address of the node on which the deployed OData service>/api/File"
     }}{% endraw %}
-    ```
+    ``` 
 
-  * Либо `value` и `relatedModel` в шаблоне, а `uploadUrl` в конфигурационном файле приложения (чтобы не указывать его каждый раз, когда используем компонент):
+* Either `value` and `relatedModel` in the template, and `uploadUrl` in the application's configuration file (not to specify it every time we use the component): 
 
-    Шаблон:
+Template: 
 
-    ```hbs
+```hbs
     {% raw %}{{flexberry-file
       relatedModel=model
       value=model.myFileProperty
     }}{% endraw %}
-    ```
+    ``` 
 
-    Конфигурационный файл приложения (`config/environment.js`):
-    ```javascript
+The application configuration file (`config/environment.js`): 
+```javascript
     {
       ...
       APP: {
@@ -62,37 +64,37 @@ OData-сервис предоставляет возможность загру�
       }
       ...
     }
-    ```
-* Успех! Работа с файлами через OData-сервис налажена.
+    ``` 
+* Success! Working with files using OData service established. 
 
-Если хотите знать подробности того как в OData-сервисе реализована работа с файлами, читайте продолжение статьи.
+If you want to know the details of how OData service is implemented to work with files, read the rest of the article. 
 
-## Файловые свойства объектов данных в .NET и в СУБД
+## File properties of data objects .NET and DBMS 
 
-Для работы с файлами в привязке к свойствам объектов данных, первое что необходимо сделать, это определиться с типом данных, который будет использоваться файловыми свойствами объектов данных.
-OData-сервис поддерживает два типа данных для таких свойств:
-* `ICSSoft.STORMNET.FileType.File` - тип данных, который будет хранить файлы прямо в объекте данных base64-строкой, а значит и в базе данных, файлы будут храниться base64-строкой в таблице соответствующей типу объекта данных.
-  * Плюсы использования этого типа данных - файл гарантированно является частью объекта данных, и не может существовать отдельно от него, если удаляется объект данных, то гарантированно будет удален и файл, не оставив никаких следов в системе.
-  * Минусы использования этого типа данных - большие файлы не получится хранить таким образом.
-  * `ICSSoft.STORMNET.UserDataTypes` - сборка, в которой находится .NET-тип данных, её нужно указывать в карте типов в свойствах стадии.
-  * `NVARCHAR(MAX)` - cоответствующий тип данных для карты типов MS SQL Server-а.
-  * `TEXT` - cоответствующий тип данных для карты типов PostgreSQL Server-а.
-* `ICSSoft.STORMNET.UserDataTypes.WebFile` - тип данных, который будет хранить файлы в файловой системе сервера, в объекте данных только его метаописание (наименование с расширением, размер, и url, по которому файл можно скачать)
-  * Плюсы использования этого типа данных  - таким образом можно хранить в привязке к объектам данных любые файлы каких угодно размеров.
-  * Минусы использования этого типа данных - файлы в этом случае отделены от объектов данных и целостность связи файла с объектом данных не гарантируется на все 100%. Файл теоретически может быть изменен/перемещен/удален из файловой системы без изменений в метаописании, которое хранится в объекте данных. При удалении объекта данных, ORM не всегда может проверить есть ли где-то в файловой системе какой-нибудь файл ассоциированный с ним, если файловой свойство в объекте данных не загружено, или если объект данных является одним из детейлов удаляемого объекта данных/агрегатора, а детейлы опять же не загружены, тогда объект данных удалится, а ассоциированные с ним файлы так и останутся "жить" в файловой системе.
-  * `ICSSoft.STORMNET.UserDataTypes` - сборка, в которой находится .NET-тип данных, её нужно указывать в карте типов в свойствах стадии.
-  * `NVARCHAR(MAX)` - cоответствующий тип данных для карты типов MS SQL Server-а.
-  * `TEXT` - cоответствующий тип данных для карты типов PostgreSQL Server-а.
+To work with files in relation to the properties of data objects, the first thing you need to do is determine the type of data that will be used by the file object properties data. 
+OData service supports two data types for such properties: 
+* `ICSSoft.STORMNET.FileType.File` - the data type that will store files directly in the object data base64-string, and hence in the database, the files will be stored base64 string in the table corresponding to the type of the data object.
+* The benefits of using this type of data file is guaranteed to be part of the data object, and cannot exist separately from him, if you delete a data object, it is guaranteed to be deleted and file, leaving no traces in the system. 
+* Cons of using this type of data - large files will not work to keep that way. 
+* `ICSSoft.STORMNET.UserDataTypes` - the Assembly in which it is situated .NET-data type, it is necessary to specify the map types in the properties for the stage. 
+* `NVARCHAR(MAX)` - corresponding data type for the card types MS SQL Server. 
+* `TEXT` - corresponding data type for the card types PostgreSQL Server. 
+* `ICSSoft.STORMNET.UserDataTypes.WebFile` - the data type that will store the files in a file system server a data object only the meta-description (name with extension, size and url where the file can be downloaded) 
+* The pros of using this type of data thus can be stored in the bind to data objects of any files of any size. 
+* Cons of using this type of data files in this case is separated from the data objects and the integrity of the connection file to a data object cannot be guaranteed at 100%. The file can theoretically be changed/moved/deleted from the file system without any changes to the meta description, which is stored in the data object. When deleting a data object, ORM cannot always check whether there is somewhere in the file system with a file associated with it, if the file property in the data object is not loaded, or if the data object is one of datalow deleted object data aggregator, and detaily again is not loaded, then the data object will be deleted, and its associated files will remain "live" in the file system. 
+* `ICSSoft.STORMNET.UserDataTypes` - the Assembly in which it is situated .NET-data type, it is necessary to specify the map types in the properties for the stage. 
+* `NVARCHAR(MAX)` - corresponding data type for the card types MS SQL Server. 
+* `TEXT` - corresponding data type for the card types PostgreSQL Server. 
 
-Когда с типом данных определились, нужно указать соответствующий тип у свойства объекта данных, к которому будут привязаны какие-либо файлы, и прописать этот тип в карте типов в свойствах стадии (указать там полный путь к типу данных и сборку, в которой он находится), а также прописать нужный тип в карте типов используемой СУБД (см. рисунок ниже).
+When the data type determined, you need to specify the appropriate type from the properties of the data object, to which are attached any files, and to register this type in the map types in the properties of the stage (specify there the full path to the data type and the Assembly where it is) and prescribe the right type in the card types used by the DBMS (see figure below). 
 
-![](/images/pages/products/flexberry-ember/ember-flexberry-data/efd_work-files/flexberry-designer-files-types.jpg)
+![](/images/pages/products/flexberry-ember/ember-flexberry-data/efd_work-files/flexberry-designer-files-types.jpg) 
 
-## Файловые свойства объектов данных в ember
+## File properties of data objects in ember 
 
-В клиентских моделях ember-а файлы, независимо от выбранного .NET-типа данных, всегда представляются сериализованным JSON-объектом, который содержит метаописание файла. Т.к. метаописание приходит сериализованным, т.е. строкой, то с точки зрения ember-а оно совершенно ничем не отличается от любого другого строкового свойства типа `string`, однако в аддоне [ember-flexberry-data](https://github.com/Flexberry/ember-flexberry-data/blob/develop/addon/transforms/file.js) под него все-таки сделана специальная трансформация `file`, для того чтобы файловые свойства можно было отличать от остальных (таким образом, например, компонент `flexberyy-groupedit` понимает, что для работы со свойством такого типа нужно встраивать компонент `flexberry-file`, а не просто `flexberry-textbox`).
+In client models ember-files regardless .NET-data type are always serialized JSON object that contains the meta-description file. Because the meta description comes serialized, i.e. line, from the point of view ember-and it is absolutely no different from any other string type properties `string`, but in the addon [ember-flexberry-data](https://github.com/Flexberry/ember-flexberry-data/blob/develop/addon/transforms/file.js) it has made a special transformation `file` to file properties can be distinguished from the others (thus, for example, a component `flexberyy-groupedit` understands that to work with a property of this type need to embed the component `flexberry-file`, not just `flexberry-textbox`). 
 
-Клиентская модель объекта данных с файловым свойством (с изображения выше) будет выглядеть следующим образом:
+Client model data object with a file property (image above) will look like the following: 
 
 ```javascript
 import DS from 'ember-data';
@@ -111,10 +113,10 @@ Model.defineProjection('SuggestionFileE', 'flexberry-ember-demo-suggestion-file'
 });
 
 export default Model;
-```
+``` 
 
-## Провайдеры файловых свойств в OData-сервисе
-Со стороны OData-сервиса работа с файлами ведется единообразно, благодаря провайдерам файловых типов, реализующим общий интерфейс `NewPlatform.Flexberry.ORM.ODataService.Files.Providers.IDataObjectFileProvider` из сборки `NewPlatform.Flexberry.ORM.ODataService`:
+## Providers a file of the properties in the OData service 
+From the OData service file is maintained uniformly, thanks to the providers of file types that implement a common interface `NewPlatform.Flexberry.ORM.The ODataService.Files.Providers.IDataObjectFileProvider` from the Assembly `NewPlatform.Flexberry.ORM.ODataService`: 
 
 ```csharp
 namespace NewPlatform.Flexberry.ORM.ODataService.Files.Providers
@@ -125,349 +127,349 @@ namespace NewPlatform.Flexberry.ORM.ODataService.Files.Providers
 
     using ICSSoft.STORMNET;
 
-    /// <summary>
-    /// Интерфейс для провайдеров файловых свойств объектов данных.
-    /// </summary>
+    /// <summary> 
+    /// Interface for service providers to file object properties data. 
+    /// </summary> 
     public interface IDataObjectFileProvider
     {
-        /// <summary>
-        /// Получает тип файловых свойств объектов данных, обрабатываемых провайдером.
-        /// </summary>
+        /// <summary> 
+        /// Gets the type of file object properties data processed by the provider. 
+        /// </summary> 
         Type FilePropertyType { get; }
 
-        /// <summary>
-        /// Получает или задает путь к каталогу, в котором должны храниться файлы, загруженные на сервер при помощи провайдера.
-        /// </summary>
+        /// <summary> 
+        /// Gets or sets the path to the directory in which to store the files uploaded to the server using the provider. 
+        /// </summary> 
         string UploadsDirectoryPath { get; set; }
 
-        /// <summary>
-        /// Получат или задает базовую часть URL-а для ссылок на скачивание / удаление файлов.
-        /// </summary>
+        /// <summary> 
+        /// Get or sets the base part of the URL for links to the download / delete files. 
+        /// </summary> 
         string FileBaseUrl { get; set; }
 
-        /// <summary>
-        /// Осуществляет получение метаданных с описанием файлового свойства объекта данных.
-        /// </summary>
-        /// <param name="fileProperty">
-        /// Файловое свойство объекта данных, для которого требуется получить метаданные файла.
-        /// </param>
-        /// <returns>
-        /// Метаданные с описанием файлового свойства объекта данных.
-        /// </returns>
+        /// <summary> 
+        /// Performs the retrieve metadata describing the file properties of the data object. 
+        /// </summary> 
+        /// <param name="fileProperty"> 
+        /// The file property of the data object for which you want to obtain the file metadata. 
+        /// </param> 
+        /// <returns> 
+        /// Metadata describing the file properties of the data object. 
+        /// </returns> 
         FileDescription GetFileDescription(object fileProperty);
 
-        /// <summary>
-        /// Осуществляет получение метаданных с описанием файлового свойства объекта данных.
-        /// </summary>
-        /// <remarks>
-        /// При необходимости будет произведена дочитка объекта данных.
-        /// </remarks>
-        /// <param name="dataObject">
-        /// Объект данных, содержащий файловое свойство.
-        /// </param>
-        /// <param name="dataObjectFilePropertyName">
-        /// Имя файлового свойства в объекте данных.
-        /// </param>
-        /// <returns>
-        /// Метаданные с описанием файлового свойства объекта данных.
-        /// </returns>
+        /// <summary> 
+        /// Performs the retrieve metadata describing the file properties of the data object. 
+        /// </summary> 
+        /// <remarks> 
+        /// If necessary, will be produced dochitcu data object. 
+        /// </remarks> 
+        /// <param name="dataObject"> 
+        /// A data object containing file properties. 
+        /// </param> 
+        /// <param name="dataObjectFilePropertyName"> 
+        /// The name of the file property in the data object. 
+        /// </param> 
+        /// <returns> 
+        /// Metadata describing the file properties of the data object. 
+        /// </returns> 
         FileDescription GetFileDescription(DataObject dataObject, string dataObjectFilePropertyName);
 
-        /// <summary>
-        /// Осуществляет получение списка метаданных с описанием файловых свойств объекта данных, соответствующих типу <see cref="FilePropertyType"/>.
-        /// </summary>
-        /// <remarks>
-        /// При необходимости будет произведена дочитка объекта данных.
-        /// </remarks>
-        /// <param name="dataObject">
-        /// Объект данных, содержащий файловые свойства.
-        /// </param>
-        /// <returns>
-        /// Список метаданных с описанием файловых свойств объекта данных, соответствующих типу <see cref="FilePropertyType"/>.
-        /// </returns>
+        /// <summary> 
+        /// Performs getting a list of metadata describing the file properties of the object data corresponding to the type <see cref="FilePropertyType"/>. 
+        /// </summary> 
+        /// <remarks> 
+        /// If necessary, will be produced dochitcu data object. 
+        /// </remarks> 
+        /// <param name="dataObject"> 
+        /// A data object containing file properties. 
+        /// </param> 
+        /// <returns> 
+        /// The list of metadata describing the file properties of the object data corresponding to the type <see cref="FilePropertyType"/>. 
+        /// </returns> 
         List<FileDescription> GetFileDescriptions(DataObject dataObject);
 
-        /// <summary>
-        /// Осуществляет получение файлового свойства объекта данных.
-        /// </summary>
-        /// <remarks>
-        /// При необходимости будет произведена дочитка объекта данных.
-        /// </remarks>
-        /// <param name="dataObject">
-        /// Объект данных, содержащий файловое свойство.
-        /// </param>
-        /// <param name="dataObjectFilePropertyName">
-        /// Имя файлового свойства в объекте данных.
-        /// </param>
-        /// <returns>
-        /// Значение файлового свойства объекта данных.
-        /// </returns>
+        /// <summary> 
+        /// Performs the receiving file object properties data. 
+        /// </summary> 
+        /// <remarks> 
+        /// If necessary, will be produced dochitcu data object. 
+        /// </remarks> 
+        /// <param name="dataObject"> 
+        /// A data object containing file properties. 
+        /// </param> 
+        /// <param name="dataObjectFilePropertyName"> 
+        /// The name of the file property in the data object. 
+        /// </param> 
+        /// <returns> 
+        /// Value of the file object properties data. 
+        /// </returns> 
         object GetFileProperty(DataObject dataObject, string dataObjectFilePropertyName);
 
-        /// <summary>
-        /// Осуществляет получение файлового свойства из файла, расположенного по заданному пути.
-        /// </summary>
-        /// <param name="filePath">
-        /// Путь к файлу.
-        /// </param>
-        /// <returns>
-        /// Значение файлового свойства объекта данных.
-        /// </returns>
+        /// <summary> 
+        /// Provides getting file properties from a file located at the specified path. 
+        /// </summary> 
+        /// <param name="filePath"> 
+        /// The path to the file. 
+        /// </param> 
+        /// <returns> 
+        /// Value of the file object properties data. 
+        /// </returns> 
         object GetFileProperty(string filePath);
 
-        /// <summary>
-        /// Осуществляет получение файлового свойства объекта данных, по его метаданным.
-        /// </summary>
-        /// <remarks>
-        /// При необходимости будет  вычитан объект данных.
-        /// </remarks>
-        /// <param name="fileDescription">
-        /// Метаданные с описанием файлового свойства объекта данных.
-        /// </param>
-        /// <returns>
-        /// Значение файлового свойства объекта данных.
-        /// </returns>
+        /// <summary> 
+        /// Performs retrieving file properties of a data object, its metadata. 
+        /// </summary> 
+        /// <remarks> 
+        /// If necessary, will proofread the data object. 
+        /// </remarks> 
+        /// <param name="fileDescription"> 
+        /// Metadata describing the file properties of the data object. 
+        /// </param> 
+        /// <returns> 
+        /// Value of the file object properties data. 
+        /// </returns> 
         object GetFileProperty(FileDescription fileDescription);
 
-        /// <summary>
-        /// Осуществляет получение списка файловых свойств объекта данных, соответствующих типу <see cref="FilePropertyType"/>.
-        /// </summary>
-        /// <remarks>
-        /// При необходимости будет произведена дочитка объекта данных.
-        /// </remarks>
-        /// <param name="dataObject">
-        /// Объект данных, содержащий файловые свойства.
-        /// </param>
-        /// <returns>
-        /// Список файловых свойств объекта данных, соответствующих типу <see cref="FilePropertyType"/>.
-        /// </returns>
+        /// <summary> 
+        /// Performs receive list of file properties of a data object corresponding to the type <see cref="FilePropertyType"/>. 
+        /// </summary> 
+        /// <remarks> 
+        /// If necessary, will be produced dochitcu data object. 
+        /// </remarks> 
+        /// <param name="dataObject"> 
+        /// A data object containing file properties. 
+        /// </param> 
+        /// <returns> 
+        /// The list of file properties of a data object corresponding to the type <see cref="FilePropertyType"/>. 
+        /// </returns> 
         List<object> GetFileProperties(DataObject dataObject);
 
-        /// <summary>
-        /// Осуществляет получение имени файла для файлового свойства объекта данных.
-        /// </summary>
-        /// <param name="fileProperty">
-        /// Файловое свойство объекта данных, для которого требуется получить имя файла.
-        /// </param>
-        /// <returns>
-        /// Имя файла.
-        /// </returns>
+        /// <summary> 
+        /// Performs the receiving file name for the file object properties data. 
+        /// </summary> 
+        /// <param name="fileProperty"> 
+        /// The file property of the data object for which you want to get the file name. 
+        /// </param> 
+        /// <returns> 
+        /// The file name. 
+        /// </returns> 
         string GetFileName(object fileProperty);
 
-        /// <summary>
-        /// Осуществляет получение имени файла для файлового свойства объекта данных.
-        /// </summary>
-        /// <remarks>
-        /// При необходимости будет произведена дочитка объекта данных.
-        /// </remarks>
-        /// <param name="dataObject">
-        /// Объект данных, содержащий файловое свойство, для которого требуется получить имя.
-        /// </param>
-        /// <param name="dataObjectFilePropertyName">
-        /// Имя файлового свойства в объекте данных.
-        /// </param>
-        /// <returns>
-        /// Имя файла.
-        /// </returns>
+        /// <summary> 
+        /// Performs the receiving file name for the file object properties data. 
+        /// </summary> 
+        /// <remarks> 
+        /// If necessary, will be produced dochitcu data object. 
+        /// </remarks> 
+        /// <param name="dataObject"> 
+        /// A data object containing a file property for which you want to name. 
+        /// </param> 
+        /// <param name="dataObjectFilePropertyName"> 
+        /// The name of the file property in the data object. 
+        /// </param> 
+        /// <returns> 
+        /// The file name. 
+        /// </returns> 
         string GetFileName(DataObject dataObject, string dataObjectFilePropertyName);
 
-        /// <summary>
-        /// Осуществляет получение MIME-типа для файлового свойства объекта данных.
-        /// </summary>
-        /// <param name="fileProperty">
-        /// Файловое свойство объекта данных, для которого требуется получить MIME-тип.
-        /// </param>
-        /// <returns>
-        /// MIME-тип файла, соответствующего заданному файловому свойству.
-        /// </returns>
+        /// <summary> 
+        /// Performs the obtaining MIME type for the file object properties data. 
+        /// </summary> 
+        /// <param name="fileProperty"> 
+        /// The file property of the data object for which you want to obtain the MIME type. 
+        /// </param> 
+        /// <returns> 
+        /// The MIME type of the file corresponding to the target file. 
+        /// </returns> 
         string GetFileMimeType(object fileProperty);
 
-        /// <summary>
-        /// Осуществляет получение MIME-типа для файлового свойства объекта данных.
-        /// </summary>
-        /// <remarks>
-        /// При необходимости будет произведена дочитка объекта данных.
-        /// </remarks>
-        /// <param name="dataObject">
-        /// Объект данных, содержащий файловое свойство, для которого требуется получить MIME-тип.
-        /// </param>
-        /// <param name="dataObjectFilePropertyName">
-        /// Имя файлового свойства в объекте данных.
-        /// </param>
-        /// <returns>
-        /// MIME-тип файла, соответствующего заданному файловому свойству.
-        /// </returns>
+        /// <summary> 
+        /// Performs the obtaining MIME type for the file object properties data. 
+        /// </summary> 
+        /// <remarks> 
+        /// If necessary, will be produced dochitcu data object. 
+        /// </remarks> 
+        /// <param name="dataObject"> 
+        /// A data object containing a file property for which to get the MIME-type. 
+        /// </param> 
+        /// <param name="dataObjectFilePropertyName"> 
+        /// The name of the file property in the data object. 
+        /// </param> 
+        /// <returns> 
+        /// The MIME type of the file corresponding to the target file. 
+        /// </returns> 
         string GetFileMimeType(DataObject dataObject, string dataObjectFilePropertyName);
 
-        /// <summary>
-        /// Осуществляет получение размера файла, связанного с объектом данных, в байтах.
-        /// </summary>
-        /// <param name="fileProperty">
-        /// Файловое свойство объекта данных, для которого требуется получить размер файла.
-        /// </param>
-        /// <returns>
-        /// Размер файла в байтах.
-        /// </returns>
+        /// <summary> 
+        /// Provides getting size of the file associated with the data object in bytes. 
+        /// </summary> 
+        /// <param name="fileProperty"> 
+        /// The file property of the data object for which you want to get the file size. 
+        /// </param> 
+        /// <returns> 
+        /// Size of file in bytes. 
+        /// </returns> 
         long GetFileSize(object fileProperty);
 
-        /// <summary>
-        /// Осуществляет получение MIME-типа для файлового свойства объекта данных.
-        /// </summary>
-        /// <remarks>
-        /// При необходимости будет произведена дочитка объекта данных.
-        /// </remarks>
-        /// <param name="dataObject">
-        /// Объект данных, содержащий файловое свойство, для которого требуется получить MIME-тип.
-        /// </param>
-        /// <param name="dataObjectFilePropertyName">
-        /// Имя файлового свойства в объекте данных.
-        /// </param>
-        /// <returns>
-        /// MIME-тип файла, соответствующего заданному файловому свойству.
-        /// </returns>
+        /// <summary> 
+        /// Performs the obtaining MIME type for the file object properties data. 
+        /// </summary> 
+        /// <remarks> 
+        /// If necessary, will be produced dochitcu data object. 
+        /// </remarks> 
+        /// <param name="dataObject"> 
+        /// A data object containing a file property for which to get the MIME-type. 
+        /// </param> 
+        /// <param name="dataObjectFilePropertyName"> 
+        /// The name of the file property in the data object. 
+        /// </param> 
+        /// <returns> 
+        /// The MIME type of the file corresponding to the target file. 
+        /// </returns> 
         long GetFileSize(DataObject dataObject, string dataObjectFilePropertyName);
 
-        /// <summary>
-        /// Осуществляет получение потока данных для файлового свойства объекта данных.
-        /// </summary>
-        /// <param name="fileProperty">
-        /// Значение файлового свойства объекта данных, для которого требуется получить поток данных.
-        /// </param>
-        /// <returns>
-        /// Поток данных.
-        /// </returns>
+        /// <summary> 
+        /// Performs the receiving of the data stream for the file object properties data. 
+        /// </summary> 
+        /// <param name="fileProperty"> 
+        /// Value of the file object properties data, for which you want to receive a stream of data. 
+        /// </param> 
+        /// <returns> 
+        /// Stream data. 
+        /// </returns> 
         Stream GetFileStream(object fileProperty);
 
-        /// <summary>
-        /// Осуществляет получение потока данных для файлового свойства объекта данных.
-        /// </summary>
-        /// <remarks>
-        /// При необходимости будет произведена дочитка объекта данных.
-        /// </remarks>
-        /// <param name="dataObject">
-        /// Объект данных, содержащий файловое свойство, для которого требуется получить поток данных.
-        /// </param>
-        /// <param name="dataObjectFilePropertyName">
-        /// Имя файлового свойства в объекте данных.
-        /// </param>
-        /// <returns>
-        /// Поток данных.
-        /// </returns>
+        /// <summary> 
+        /// Performs the receiving of the data stream for the file object properties data. 
+        /// </summary> 
+        /// <remarks> 
+        /// If necessary, will be produced dochitcu data object. 
+        /// </remarks> 
+        /// <param name="dataObject"> 
+        /// A data object containing a file property for which you want to receive a stream of data. 
+        /// </param> 
+        /// <param name="dataObjectFilePropertyName"> 
+        /// The name of the file property in the data object. 
+        /// </param> 
+        /// <returns> 
+        /// Stream data. 
+        /// </returns> 
         Stream GetFileStream(DataObject dataObject, string dataObjectFilePropertyName);
 
-        /// <summary>
-        /// Осуществляет получение потока данных для файлового свойства объекта данных.
-        /// </summary>
-        /// <remarks>
-        /// При необходимости будет  вычитан объект данных.
-        /// </remarks>
-        /// <param name="fileDescription">Метаданные с описанием файлового свойства объекта данных, для которого требуется получить поток данных.</param>
-        /// <returns>Поток данных.</returns>
+        /// <summary> 
+        /// Performs the receiving of the data stream for the file object properties data. 
+        /// </summary> 
+        /// <remarks> 
+        /// If necessary, will proofread the data object. 
+        /// </remarks> 
+        /// <param name="fileDescription">metadata describing the file properties of a data object for which you want to receive a stream of data.</param> 
+        /// <returns>the data Stream.</returns> 
         Stream GetFileStream(FileDescription fileDescription);
 
-        /// <summary>
-        /// Осуществляет удаление из файловой системы файла, соответствующего файловому свойству объекта данных.
-        /// </summary>
-        /// <param name="fileDescription">
-        /// Метаданные удаляемого файла.
-        /// </param>
+        /// <summary> 
+        /// Performs the removal from the file system of the file corresponding to the file property of the data object. 
+        /// </summary> 
+        /// <param name="fileDescription"> 
+        /// The metadata of the file to be deleted. 
+        /// </param> 
         void RemoveFile(FileDescription fileDescription);
 
-        /// <summary>
-        /// Осуществляет удаление из файловой системы файла, соответствующего файловому свойству объекта данных.
-        /// </summary>
-        /// <param name="fileProperty">
-        /// Значение файлового свойства объекта данных, для которого требуется выполнить удаление.
-        /// </param>
+        /// <summary> 
+        /// Performs the removal from the file system of the file corresponding to the file property of the data object. 
+        /// </summary> 
+        /// <param name="fileProperty"> 
+        /// Value of the file object properties data, for which you want to delete. 
+        /// </param> 
         void RemoveFile(object fileProperty);
 
-        /// <summary>
-        /// Осуществляет удаление из файловой системы файла, соответствующего файловому свойству объекта данных.
-        /// </summary>
-        /// <remarks>
-        /// При необходимости будет произведена дочитка объекта данных.
-        /// </remarks>
-        /// <param name="dataObject">
-        /// Объект данных, содержащий файловое свойство.
-        /// </param>
-        /// <param name="dataObjectFilePropertyName">
-        /// Имя файлового свойства в объекте данных.
-        /// </param>
+        /// <summary> 
+        /// Performs the removal from the file system of the file corresponding to the file property of the data object. 
+        /// </summary> 
+        /// <remarks> 
+        /// If necessary, will be produced dochitcu data object. 
+        /// </remarks> 
+        /// <param name="dataObject"> 
+        /// A data object containing file properties. 
+        /// </param> 
+        /// <param name="dataObjectFilePropertyName"> 
+        /// The name of the file property in the data object. 
+        /// </param> 
         void RemoveFile(DataObject dataObject, string dataObjectFilePropertyName);
     }
 }
-```
+``` 
 
-Этот интерфейс реализуют два провайдера:
-* `NewPlatform.Flexberry.ORM.ODataService.Files.Providers.DataObjectFileProvider` из сборки `NewPlatform.Flexberry.ORM.ODataService`
-* `NewPlatform.Flexberry.ORM.ODataService.Files.Providers.DataObjectWebFileProvider` из сборки `NewPlatform.Flexberry.ORM.ODataService`
+This interface implements two providers: 
+* `NewPlatform.Flexberry.ORM.The ODataService.Files.Providers.DataObjectFileProvider` from the Assembly `NewPlatform.Flexberry.ORM.ODataService` 
+* `NewPlatform.Flexberry.ORM.The ODataService.Files.Providers.DataObjectWebFileProvider` from the Assembly `NewPlatform.Flexberry.ORM.ODataService` 
 
-При желании можно реализовать собственный произвольный файловый тип данных, и реализовать для него подобный провайдер.
+If desired, you can implement your own arbitrary file data type, and implement it for such provider. 
 
-Каждый из этих провайдеров, по сути, просто stateless-набор утилит для работы с соответствующим файловым типом данных, поэтому OData-сервис инстанцирует их только по одному разу и регистрирует в специальном файловом контроллере.
+Each of these providers, in fact, a stateless set of utilities to work with the appropriate file data type, so OData service instantiates them only once and registers them in a special file controller. 
 
-## Файловый контроллер в OData-сервисе
+## File controller in OData service 
 
-Работа с файлами в OData-сервисе обеспечивается специальным файловым контроллером `NewPlatform.Flexberry.ORM.ODataService.Controllers.FileController` из сборки `NewPlatform.Flexberry.ORM.ODataService`.
-Через него осуществляется доступ к упомянутым выше файловым провайдерам, и с их помощью он обеспечивает загрузку файлов на сервер, и их скачивание.
+Working with files in the OData service is provided by a special file controller `NewPlatform.Flexberry.ORM.The ODataService.Controllers.FileController` from the Assembly `NewPlatform.Flexberry.ORM.ODataService`. 
+Through it you can access the above mentioned file providers, and with their help, he provides the download of files to the server and download them. 
 
-Для того чтобы через OData-сервис была возможность работать с файловым контроллером, его необходимо зарегистрировать в сервисе и определить маршрут, по которому он будет доступен, для этого в `HttpConfiguration` предусмотрен метод расширения:
+Order via OData service had the opportunity to work with the file controller, it is necessary to register in the service and to determine the route by which he will be available for this `HttpConfiguration` provides an extension method: 
 
 ```csharp
-/// <summary>
-/// Осуществляет регистрацию маршрута для загрузки/скачивания файлов.
-/// </summary>
-/// <param name="httpConfiguration">Используемая конфигурация.</param>
-/// <param name="routeName">Имя регистрируемого маршрута.</param>
-/// <param name="routeTemplate">Шаблон регистрируемого маршрута.</param>
-/// <param name="uploadsDirectoryPath">Пути к каталогу, который предназначен для хранения файлов загружаемых на сервер.</param>
-/// <param name="dataService">Сервис данных для операций с БД.</param>
-/// <returns>Зарегистрированный маршрут.</returns>
+/// <summary> 
+/// Registers the route to upload/download files. 
+/// </summary> 
+/// <param name="httpConfiguration">the configuration.</param> 
+/// <param name="routeName">the Name of a registered route.</param> 
+/// <param name="routeTemplate">the route Template is logged.</param> 
+/// <param name="uploadsDirectoryPath">the Path to the directory which is designed to store files uploaded to the server.</param> 
+/// <param name="dataService">data Service for transactions with the database.</param> 
+/// <returns>Was the route.</returns> 
 public static IHttpRoute MapODataServiceFileRoute(
     this HttpConfiguration httpConfiguration,
     string routeName,
     string routeTemplate,
     string uploadsDirectoryPath,
     IDataService dataService)
-```
+``` 
 
-Его вызов обычно производится в файле конфигурации OData-сервиса после регистрации основного маршрута для доступа к объектам данным, и выглядит следующим образом:
+His challenge is usually done in the configuration file for the OData service after registering the primary route to access the objects data and is as follows: 
 
 ```csharp
 config.MapODataServiceFileRoute("File", "api/File", HttpContext.Current.Server.MapPath("~/Uploads"), container.Resolve<IDataService>());
-```
+``` 
 
-Этот вызов сопоставит файловый контроллер адресу `<Адрес узла, на котором развернут OData-сервис>/api/File`, и зарегистрирует в контроллере файловые провайдеры `NewPlatform.Flexberry.ORM.ODataService.Files.Providers.DataObjectFileProvider` и `NewPlatform.Flexberry.ORM.ODataService.Files.Providers.DataObjectWebFileProvider`.
+This challenge will compare the file controller address `<address of the host where you deployed the OData-service>/api/File`, and registers in the controller file providers `NewPlatform.Flexberry.ORM.The ODataService.Files.Providers.DataObjectFileProvider` and `NewPlatform.Flexberry.ORM.The ODataService.Files.Providers.DataObjectWebFileProvider`.
 
-Для регистрации файловых провайдеров контроллер содержит статический метод:
+To register file providers the controller contains a static method: 
 
 ```csharp
-/// <summary>
-/// Осуществляет регистрацию провайдера файловых свойств для объекта данных.
-/// </summary>
-/// <param name="dataObjectFileProvider">
-/// Провайдер файловых свойств для объекта данных.
-/// </param>
+/// <summary> 
+/// Performs the registration of a provider file properties for the data object. 
+/// </summary> 
+/// <param name="dataObjectFileProvider"> 
+/// Provider file properties for the data object. 
+/// </param> 
 public static void RegisterDataObjectFileProvider(IDataObjectFileProvider dataObjectFileProvider)
-```
+``` 
 
-При необходимости его можно вызвать вручную, и зарегистрировать собственные файловые провайдеры.
+If necessary it can be invoked manually, and register own file providers. 
 
-Или при регистрации контроллера, сразу вручную указать желаемый набор файловых провайдеров, только для регистрации потребуется обращаться к той перегрузке метода `MapODataServiceFileRoute`, которая это позволяет:
+Or when you check the controller at once manually specify the desired set of file providers to register need to contact the `MapODataServiceFileRoute` method overload that allows you to: 
 
 ```csharp
-/// <summary>
-/// Осуществляет регистрацию маршрута для загрузки/скачивания файлов.
-/// </summary>
-/// <param name="httpConfiguration">Используемая конфигурация.</param>
-/// <param name="routeName">Имя регистрируемого маршрута.</param>
-/// <param name="routeTemplate">Шаблон регистрируемого маршрута.</param>
-/// <param name="uploadsDirectoryPath">Пути к каталогу, который предназначен для хранения файлов загружаемых на сервер.</param>
-/// <param name="dataObjectFileProviders">
-/// Провайдеры файловых свойств объектов данных, которые будут использоваться для связывания файлов с объектами данных.
-/// </param>
-/// <param name="dataService">Сервис данных для операций с БД.</param>
-/// <returns>Зарегистрированный маршрут.</returns>
+/// <summary> 
+/// Registers the route to upload/download files. 
+/// </summary> 
+/// <param name="httpConfiguration">the configuration.</param> 
+/// <param name="routeName">the Name of a registered route.</param> 
+/// <param name="routeTemplate">the route Template is logged.</param> 
+/// <param name="uploadsDirectoryPath">the Path to the directory which is designed to store files uploaded to the server.</param> 
+/// <param name="dataObjectFileProviders"> 
+/// Providers file object properties data that will be used to associate files with the data objects. 
+/// </param> 
+/// <param name="dataService">data Service for transactions with the database.</param> 
+/// <returns>Was the route.</returns> 
 public static IHttpRoute MapODataServiceFileRoute(
     this HttpConfiguration httpConfiguration,
     string routeName,
@@ -475,184 +477,184 @@ public static IHttpRoute MapODataServiceFileRoute(
     string uploadsDirectoryPath,
     IEnumerable<IDataObjectFileProvider> dataObjectFileProviders,
     IDataService dataService)
-```
+``` 
 
-Помимо метода `RegisterDataObjectFileProvider` файловый контроллер содержит еще несколько вспомогательных статических методов, которые используются в основном для тестирования, и скорей всего, в ручную их использовать не потребуются.
+In addition to the method `RegisterDataObjectFileProvider` file controller contains several auxiliary static methods that are mainly used for testing, and probably in the manual to use them is not required. 
 
-### Загрузка файла на сервер
+### file Download to the server 
 
-Загрузка файлов на сервер осуществляется обработчиком POST-запросов файлового контроллера:
+Upload files to the server is performed by the handler POST requests file controller: 
 
 ```csharp
-/// <summary>
-/// Осуществляет загрузку файлов на сервер.
-/// </summary>
-/// <remarks>
-/// Файлы загружаются в файловую систему, в каталог <see cref="UploadsDirectoryPath"/>/{UploadedFileKey},
-/// где UploadedFileGuid - <see cref="Guid"/>, идентифицирующий загруженный файл.
-/// </remarks>
-/// <returns>
-/// Описание загруженного файла.
-/// </returns>
+/// <summary> 
+/// Performs the uploading of files to the server. 
+/// </summary> 
+/// <remarks> 
+/// The files are downloaded to the file system in the directory <see cref="UploadsDirectoryPath"/>/{UploadedFileKey}, 
+/// where UploadedFileGuid - <see cref="Guid"/> that identifies the downloaded file. 
+/// </remarks> 
+/// <returns> 
+/// Description of uploaded file. 
+/// </returns> 
 [HttpPost]
 public Task<FileDescription> Post()
-```
+``` 
 
-Обработчик действует следующим образом:
-* Асинхронно вычитывает загружаемый файл из тела POST-запроса
-* В случае, если файл успешно вычитан из тела POST-запроса, "идет" в тот каталог, который при регистрации контроллера был указан в качестве каталога для загружаемых файлов (для наглядности пусть это будет "~/Uploads"), создает там подкаталог, который именует только что сгенерированным GUID-ом (например так "~/Uploads/0d57629c-7d6e-4847-97cb-9e2fc25083fe") и сохраняет загруженный файл в этом каталоге (если загруженный файл называется image.png, то после того как обработчик закончит работу картина будет такой "~/Uploads/0d57629c-7d6e-4847-97cb-9e2fc25083fe/image.png"). GUID используется из-за того что имена различных файлов в принципе могут и совпадать, и если их складывать прямо в каталог "~/Uploads", то потенциально они будут друг-друга перетирать.
-* Затем обработчик возвращает метаописание загруженного файла, по которому клиент сможет его скачать, либо связать с файловым свойством какого-нибудь объекта данных, для только что загруженного файла это метаописание будет выглядеть следующим образом:
+The handler functions are as follows: 
+* Asynchronously reads the uploaded file from the body of a POST request 
+* If the file is successfully deducted from the body of a POST request, the "is" in the directory when you register a controller was specified as the directory for the downloaded files (for clarity let it be "~/Uploads"), it creates a subdirectory that refers to the newly generated GUID-Ohm (e.g. "~/Uploads/0d57629c-7d6e-4847-97cb-9e2fc25083fe") and stores the downloaded file in this directory (if the downloaded file is called image.png, after the handler is finished, the picture will be like this "~/Uploads/0d57629c-7d6e-4847-97cb-9e2fc25083fe/image.png"). This GUID is used due to the fact that the names of the various files can basically be the same, and if they are put directly into the directory "~/Uploads", then potentially they will have each other to talk. 
+* Then the handler returns the meta description of the uploaded file, which the client will be able to download it, or associate with the file a property of some object data for the newly uploaded file is the meta description will look as follows: 
 
 ```javascript
 {
-  // URL для скачивания файла.
+  // URL for downloading the file. 
   "fileUrl":"https://flexberry-ember-dummy.azurewebsites.net/api/File?fileUploadKey=0d57629c-7d6e-4847-97cb-9e2fc25083fe&fileName=image.png",
 
-  // URL для скачивания preview (если файл это изображение).
+  // URL for download of a preview (if the file is an image). 
   "previewUrl":"https://flexberry-ember-dummy.azurewebsites.net/api/File?fileUploadKey=0d57629c-7d6e-4847-97cb-9e2fc25083fe&fileName=image.png&getPreview=true",
 
-  // Наименование файла.
+  // The file name. 
   "fileName":"image.png",
 
-  // Размер файла в байтах.
+  // File size in bytes. 
   "fileSize": 12345,
 
-  // MIME-тип файла.
+  // The MIME type of the file. 
   "fileMimeType": "image/png"
 }
-```
+``` 
 
-Также в обработчике предусмотрена возможность, при загрузке очередного файла, удалить ранее загруженный файл, который не пригодился (например пользователь выбрал один файл, загрузил его на сервер, но еще не связывал с объектом данных, а потом передумал и решил загрузить какой-то другой файл) в этом случае можно отправить в теле запроса, в свойстве `formData.previousFileDescription` ранее загруженного файла, и он будет удален из файловой системы сервера, после успешной загрузки нового файла (ранее упомянутый компонент [flexberry-file](ef_file.html) так и делает, указывает `formData.previousFileDescription` при необходимости).
+Also, the processor provides the possibility, when you download another file, delete the previously uploaded file that is not useful (for example, the user chose one file, uploaded it to the server but not yet linked to a data object, and then changed his mind and decided to upload some other file) in this case, you can send in the request body, in the property `formData.previousFileDescription` previously downloaded file and it will be removed from the file system of the server, after successful upload the new file (the previously mentioned component [flexberry-file](ef_file.html) does so, indicates `formData.previousFileDescription` if necessary). 
 
-### Привязка файла к свойству объекта данных
+### Binding a file to a property of the data object 
 
-Файл просто загруженный в файловую систему сервера, сам по себе не представляет большой ценности, нужно еще связать его с файловым свойством объекта данных. Этим занимается `DataObjectController`, обеспечивающий всю работу с объектами данных в OData-сервисе, при обработке создания/обновления объектов данных.
-Как это происходит разберем на примере сохранения объекта данных типа `Suggestion` с детейлами типа `SuggestionFile`, в которых имеется файловое свойство `File` типа `ICSSoft.STORMNET.FileType.File` (см. диаграмму классов в начале статьи).
+The file is simply uploaded to the file system of the server itself is of little value, you should still associate it with the file property of the data object. This deals `DataObjectController` for all with the data objects in the OData service, the processing of create/update data objects.
+As it happens we consider an example of a save data object type `Suggestion` with detaylari type `SuggestionFile` that have the file property `File` type `ICSSoft.STORMNET.FileType.File` (see class diagram at the beginning of the article). 
 
-Пусть у агрегатора `Suggestion` имеется один детейл `SuggestionFile`, и у этого детейла в качестве файла выбран описанный в предыдущем разделе файл "image.png", уже загруженный на сервер по пути "~/Uploads/0d57629c-7d6e-4847-97cb-9e2fc25083fe/image.png" и имеющий метаописание:
+Let the aggregator `Suggestion` there is one detail `SuggestionFile`, and this detail as the file is selected described in the previous section the file "image.png" has already been uploaded to the server path "~/Uploads/0d57629c-7d6e-4847-97cb-9e2fc25083fe/image.png" and having a meta description: 
 
 ```javascript
 {
-  "fileUploadKey": "0d57629c-7d6e-4847-97cb-9e2fc25083fe", // GUID, который использован в качестве наименования для каталога, в котором хранится файл.
-  "fileName": "image.png", // Наименование файла.
-  "fileSize": 12345, // Размер файла в байтах.
-  "fileMimeType": "image/png" // MIME-тип, соответствующий файлу.
+  "fileUploadKey": "0d57629c-7d6e-4847-97cb-9e2fc25083fe", // GUID that is used as a name for the directory in which the file is stored. 
+  "fileName": "image.png", // The file name. 
+  "fileSize": 12345, // File size in bytes. 
+  "fileMimeType": "image/png" // The MIME type corresponding to the file. 
 }
-```
+``` 
 
-Этот агрегатор отправляется на сохранение через OData-сервис, и попадает в обработчик POST-запрсов (в случае сохранения нового объекта) или в обработчик PATCH-запросов (в случае обновления существующего объекта), в `DataObjectController`-е.
-Объект данных в этот обработчик приходит в виде JSON-объекта, у которого помимо прочих свойств, в свойстве `file` содержится приведенное выше метаописание файла "image.png".
-Чтобы осуществить сохранение объекта через ORM, `DataObjectController` создает объект данных (и в случае, если обновляется уже существующий объект проставляет ему первичный ключ через вызов метода [`SetExistObjectPrimaryKey`](fo_data-object.html#SetExistObjectPrimaryKey)).
-Затем контроллер начинает перебирать свойства полученного JSON-объекета, сопоставляет их свойствам объекта данных, извлекает из объекта данных информацию о типе этих свойств, и наконец когда известен тип, осуществляет приведение типов, и означивает свойства объекта данных значениями полученными из JSON-объекта.
-Когда этот разбор свойств доходит до свойства `file`, `DataObjectController` проверяет зарегистрирован ли в файловом контроллере провайдер для типа `ICSSoft.STORMNET.FileType.File`, который имеет это свойство, и если такой провайдер зарегистрирован, `DataObjectController` делает вывод что это файловое свойство, извлекает из файлового контроллера ссылку на нужный провайдер, и обращается к нему, чтобы тот на основе имеющегося метаописания сформировал значение нужного типа (в данном случае `ICSSoft.STORMNET.FileType.File`), провайдер по метаописанию восстанавливает путь, по которому файл расположен в файловой системе, преобразует его в base64-строку, создает объект типа `ICSSoft.STORMNET.FileType.File`, и кладет base64-строку в него, затем полученный объект типа `ICSSoft.STORMNET.FileType.File` проставляет в свойство `file` объекта данных, а файл находящийся в файловой системе помечает на удаление, и в случае успешного сохранения объекта данных, он будет удален из файловой системы.
-Часть логики `DataObjectController`-а отвечающая за работу с файловыми свойствами при создании/изменении объектов выглядит следующим образом:
+This aggregator is sent to the preserve via the OData service, and into the processor POST-taprov (in the case of saving a new object) or to the handler PATCH requests (in the case of updating an existing object), in `DataObjectController`. 
+A data object in this handler comes in the form of a JSON object, which in addition to other properties, in the property `file` contains the above meta-description file "image.png". 
+To carry out the preservation of the object through the ORM, `DataObjectController` creates a data object (and in the case that updated an existing object shall he the primary key by calling a method [`SetExistObjectPrimaryKey`](fo_data-object.html#SetExistObjectPrimaryKey)). 
+The controller then begins to iterate through the properties of the obtained JSON object, maps them to the properties of the data object, retrieves from the data object information about the type of these properties, and finally when you know the type, provides type conversion and oznachaet properties of the data object with values obtained from the JSON object. 
+When this analysis comes to properties properties `file`, `DataObjectController` checks if file controller provider for the type `ICSSoft.STORMNET.FileType.File` that has this property, and if such provider is registered, `DataObjectController` concludes that it is a file property, retrieves from the file controller link for the desired provider, and refers to him, so that on the basis of existing meta descriptions formed the value of the appropriate type (in this case `ICSSoft.STORMNET.FileType.File`), the provider's meta description restores the path where the file is located in the file system, converts it to base64 string, creates an object of type `ICSSoft.STORMNET.FileType.File`, and puts base64 string, then the returned object type `ICSSoft.STORMNET.FileType.File` affix to the property `file` data object and the file on the file system marks for deletion, and, if successful, save the data object, it will be deleted from the file system.
+Part of the logic `DataObjectController`-responsible for working with the file properties when creating/altering objects as follows: 
 
 ```javascript
-// Если тип свойства относится к одному из зарегистрированных провайдеров файловых свойств,
-// значит свойство файловое, и его нужно обработать особым образом.
+// If the property type is one of the registered providers in the file properties 
+// means the property file, and it should be processed in a special way. 
 if (FileController.HasDataObjectFileProvider(dataObjectPropertyType))
 {
     IDataObjectFileProvider dataObjectFileProvider = FileController.GetDataObjectFileProvider(dataObjectPropertyType);
 
-    // Обработка файловых свойств объектов данных.
+    // Processing the file properties of data objects. 
     string serializedFileDescription = value as string;
     if (serializedFileDescription == null)
     {
-        // Файловое свойство было сброшено на клиенте.
-        // Ассоциированный файл должен быть удален, после успешного сохранения изменений.
-        // Для этого запоминаем метаданные ассоциированного файла, до того как свойство будет сброшено
-        // (для получения метаданных свойство будет дочитано в объект данных).
-        // Файловое свойство типа File хранит данные ассоциированного файла прямо в БД,
-        // соответственно из файловой системы просто нечего удалять,
-        // поэтому обходим его стороной, чтобы избежать лишных вычиток файлов из БД.
+        // File has been flushed to the client. 
+        // The associated file must be deleted after saving the changes. 
+        // Remember to do this, the metadata of the associated file before the property will be reset 
+        // (for the metadata property is read into the data object). 
+        // File property File stores the data in the associated file in the database 
+        // from the file system there is simply nothing to delete 
+        // so we bypass it and avoid superfluous vizitok of files from the database. 
         if (dataObjectPropertyType != typeof(File))
         {
             _removingFileDescriptions.Add(dataObjectFileProvider.GetFileDescription(obj, dataObjectPropName));
         }
 
-        // Сбрасываем файловое свойство в изменяемом объекте данных.
+        // Reset file property in the mutable data object. 
         Information.SetPropValueByName(obj, dataObjectPropName, null);
     }
     else
     {
-        // Файловое свойство было изменено, но не сброшено.
-        // Если в метаданных файла присутствует FileUploadKey значит файл был загружен на сервер,
-        // но еще не был ассоциирован с объектом данных, и это нужно сделать.
+        // The file property was changed, but not reset. 
+        // If metadata file exists FileUploadKey means the file has been uploaded to the server 
+        // but has not yet been associated with the data object, and it should be done. 
         FileDescription fileDescription = FileDescription.FromJson(serializedFileDescription);
         if (!(string.IsNullOrEmpty(fileDescription.FileUploadKey) || string.IsNullOrEmpty(fileDescription.FileName)))
         {
             Information.SetPropValueByName(obj, dataObjectPropName, dataObjectFileProvider.GetFileProperty(fileDescription));
 
-            // Файловое свойство типа File хранит данные ассоциированного файла прямо в БД,
-            // поэтому после успешного сохранения объекта данных, оссоциированный с ним файл должен быть удален из файловой системы.
-            // Для этого запоминаем описание загруженного файла.
+            // File property File stores the data in the associated file in the database 
+            // therefore, after successfully saving the data object, assotsiirovannye with it the file should be deleted from the file system. 
+            // For this memorable description of the uploaded file. 
             if (dataObjectPropertyType == typeof(File))
             {
                 _removingFileDescriptions.Add(fileDescription);
             }
         }
     }
-```
+``` 
 
-Как видно из приведенной выше части кода `DataObjectController`-а, для удаления файла достаточно проставить `null` в качестве значения файлового свойства объекта данных (тогда, в случае успешного сохранения изменений, файловое свойство будет сброшено, а ассоциированный файл будет удален).
+As can be seen from the above part of the code `DataObjectController`-and for deleting the file is enough to put `null` as the value of the file object properties data (then, if successful, save the changes, the file property will be reset and the associated file will be deleted). 
 
-Если бы свойство `file` имело тип `ICSSoft.STORMNET.FileType.WebFile` смысл был бы тот же самый, только файл бы не преобразовывался в base64-строку и не удалялся бы потом из файловой системы, а так бы и остался на "постоянном месте жительства" по пути "~/Uploads/0d57629c-7d6e-4847-97cb-9e2fc25083fe/image.png", а в файловом свойстве объекта данных (и соответственно в БД) сохранилось бы метаописание файла, содержащее URL-адрес файлового контроллера и fileUploadKey (`<Адрес узла, на котором развернут OData-сервис>/api/File?fileUploadKey=0d57629c-7d6e-4847-97cb-9e2fc25083fe`).
+If the property `file` had type `ICSSoft.STORMNET.FileType.WebFile` the meaning would be the same, only the file would not be converted to base64 string and not removed then from the file system, and would remain on "permanent residence" on the path "~/Uploads/0d57629c-7d6e-4847-97cb-9e2fc25083fe/image.png" and in the file property of the data object (and the database) would remain the meta-description file that contains the URL of the file controller and fileUploadKey (`<Address of the host where the deployed OData service>/api/File?fileUploadKey=0d57629c-7d6e-4847-97cb-9e2fc25083fe`). 
 
-После успешного сохранения объекта данных, `DataObjectController` возвращает его на клиент в виде JSON-объекта, и после того как осуществлено связывание файла с файловым свойством в объекте данных, метаописание файла, которое вернется на клиент в свойстве `file` несколько изменится, в нем уже не будет ключа загрузки `fileUploadKey`, вместо него будут свойства указывающие на тип объекта данных, его первичный ключ, и имя свойства, в котором хранится файл:
+After the successful saving of the data object, `DataObjectController` returns it to the client as a JSON object, and carried out the binding file with the file property in the data object, the meta-description of the file, which will return to client property `file` will change, it will not be download key `fileUploadKey`, instead it will have properties specifying the type of the data object, its primary key, and the name of the property that holds the file: 
 
 ```javascript
 {
-  // URL для скачивания файла.
-  "fileUrl":"<Адрес узла, на котором развернут OData-сервис>/api/File?entityTypeName=MyNameSpace.SuggestionFile, MyAssembly, Version=1.0.0.0, Culture=neutral, PublicKeyToken=xxxxxxxxxxxxxxxx&entityPrimaryKey=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&entityPropertyName=File&fileName=image.png",
+  // URL for downloading the file. 
+  "fileUrl":"<The address of the node on which the deployed OData service>/api/File?entityTypeName=MyNameSpace.SuggestionFile, MyAssembly, Version=1.0.0.0, Culture=neutral, PublicKeyToken=xxxxxxxxxxxxxxxx&entityPrimarykey=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&entityPropertyname=File&fileName=image.png",
 
-  // URL для скачивания preview (если файл это изображение).
-  "previewUrl":"<Адрес узла, на котором развернут OData-сервис>/api/File?entityTypeName=MyNameSpace.SuggestionFile, MyAssembly, Version=1.0.0.0, Culture=neutral, PublicKeyToken=xxxxxxxxxxxxxxxx&entityPrimaryKey=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&entityPropertyName=File&fileName=image.png&getPreview=true",
+  // URL for download of a preview (if the file is an image). 
+  "previewUrl":"<The address of the node on which the deployed OData service>/api/File?entityTypeName=MyNameSpace.SuggestionFile, MyAssembly, Version=1.0.0.0, Culture=neutral, PublicKeyToken=xxxxxxxxxxxxxxxx&entityPrimarykey=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&entityPropertyname=File&fileName=image.png&getPreview=true",
 
-  // Наименование файла.
+  // The file name. 
   "fileName":"image.png",
 
-  // Размер файла в байтах.
+  // File size in bytes. 
   "fileSize": 12345,
 
-  // MIME-тип файла.
+  // The MIME type of the file. 
   "fileMimeType": "image/png"
 }
-```
+``` 
 
-### Скачивание файла
+### file Download 
 
-Скачивание файлов с сервера осуществляется обработчиком GET-запросов файлового контроллера:
+Downloading files from the server is carried out by the handler for GET requests file controller: 
 
 ```csharp
-/// <summary>
-/// Осуществляет скачивание файлов с сервера.
-/// В зависимости от значения флага <paramref name="getPreview"/> возвращается либо содержимое файла, либо файл в виде приложения.
-/// </summary>
-/// <param name="fileDescription">Описание запрашиваемого файла.</param>
-/// <param name="getPreview">Параметр, определяющий, требуется ли файл просто для предпросмотра (если значение <c>true</c>), либо требуется его скачать и сохранить.</param>
-/// <returns>Описание загруженного файла.</returns>
+/// <summary> 
+/// Performs the downloading of files from the server. 
+/// Depending on flag values in <paramref name="getPreview"/> returns either the file content or the file as attachment. 
+/// </summary> 
+/// <param name="fileDescription">Description of the requested file.</param> 
+/// <param name="getPreview">Parameter that determines whether the file is just for preview (if the value is <c>true</c>), or you want to download and save.</param> 
+/// <returns>the Description of the uploaded file.</returns> 
 [HttpGet]
 public HttpResponseMessage Get([FromUri] FileDescription fileDescription = null, [FromUri] bool getPreview = false)
-```
+``` 
 
-В качестве основного параметра обработчик принимает метаописание скачиваемого файла (`fileDescription`),
-а в качестве опционального параметра принимает флаг определяющий, требуется ли файл просто для предпросмотра, или же его требуется скачать в виде вложения с последующим сохранением на клиентском устройстве (`getPreview`), по умолчанию флаг имеет значение `false`, а значит по умолчанию запрашиваемые файлы будет скачиваться в виде вложения, но если этот флаг имеет значение `true`, то файл будет возвращаться в виде base64-строки представленной через [Data URL](https://ru.wikipedia.org/wiki/Data:_URL), в случае изображений такие данные можно подставлять в качестве атрибута `src` тега `img` (`<img src=...></img>`), в ранее упомянутом компоненте [flexberry-file](ef_file.html) так и реализован предпросмотр для файлов изображений.
+As the main parameter handler takes the meta description of the downloaded file (`fileDescription`), 
+and the optional parameter is a flag which determines whether the file just to preview, or you need to download the attachment and then save on the client device (`getPreview` default) flag value is set to `false`, and therefore, by default, the requested file will be downloaded as attachments, but if this flag is set to `true`, the file will be returned as a base64-string is represented using the [Data URL](https://ru.wikipedia.org/wiki/Data:_URL), in the case of such image data can be expose as attribute `src` tag `img` (`<img src=...></img>`), in the previously mentioned component [flexberry-file](ef_file.html) and implement preview for image files.
 
-Получив метаописание файла, обработчик смотрит на состав свойств в нем, и в зависимости от состава действует немного по разному:
-* При наличии свойств `entityTypeName`, `entityPrimaryKey`, `entityPropertyName` в метаописании, обработчик понимает что файл уже был связан с объектом данных, вычитывает его, извлекает из него файловое свойство, и с помощью соответствующего свойству файлового провайдера извлекает поток данных файла (`FileStream`).
-* При наличии свойства `fileUploadKey` в метаописании, обработчик понимает что файл еще не был был связан с объектом данных, а значит хранится в файловой системе, в каталоге именуемом так же как `fileUploadKey`, значит не нужно предварительно вычитывать никакой объект данных, а можно сразу получить поток данных файла (`FileStream`). А поскольку тип `ICSSoft.STORMNET.FileType.WebFile` как раз хранит файлы в файловой системе по ключу `fileUploadKey`, обработчик использует `NewPlatform.Flexberry.ORM.ODataService.Files.Providers.DataObjectWebFileProvider` для этих целей.
+Having a meta description of the file, the handler looks at the composition properties in it, and depending on the composition acts a bit differently: 
+* If you have properties `entityTypeName`, `entityPrimaryKey`, `entityPropertyName` in the meta description, the handler understands that the file was already associated with the data object, reads it, retrieves the file, and using the appropriate property file the provider extracts the data stream of the file (`FileStream`). 
+* If you have properties `fileUploadKey` in the meta description, the handler understands that the file has not yet been associated with the data object, and then stored in the file system directory referred to as `fileUploadKey`, so no need to read any data object, we can immediately obtain a data stream of the file (`FileStream`). And because the type `ICSSoft.STORMNET.FileType.WebFile` just stores files in the file system on the key `fileUploadKey`, the handler uses `NewPlatform.Flexberry.ORM.The ODataService.Files.Providers.DataObjectWebFileProvider` for these purposes. 
 
-Часть логики обработчика отвечающая за получения потока данных файла, на основе метаописания выглядит следующим образом:
+Part of the logic of the handler responsible for receiving a data stream file based on the meta descriptions as follows: 
 
 ```csharp
-/// <summary>
-/// Осуществляет получение потока данных для запрашиваемого файла (а также имя файла, MIME-тип, и размер в байтах).
-/// </summary>
-/// <param name="fileDescription">Описание файла.</param>
-/// <param name="fileName">Имя файла.</param>
-/// <param name="fileMimeType">MIME-тип файла.</param>
-/// <param name="fileSize">Размер файла в байтах.</param>
-/// <returns>Поток данных для запрашиваемого файла.</returns>
+/// <summary> 
+/// Performs receive data stream for the requested file (and the file name, MIME type, and size in bytes). 
+/// </summary> 
+/// <param name="fileDescription">file Description.</param> 
+/// <param name="fileName">file Name.</param> 
+/// <param name="fileMimeType">the MIME type of the file.</param> 
+/// <param name="fileSize">file Size in bytes.</param> 
+/// <returns>a data Stream for the requested file.</returns> 
 private Stream GetFileStream(
     FileDescription fileDescription,
     out string fileName,
@@ -670,15 +672,15 @@ private Stream GetFileStream(
 
     if (!string.IsNullOrEmpty(fileDescription.EntityPrimaryKey))
     {
-        // Запрашиваемый файл уже был связан с объектом данных, и нужно вычитать из него файловое свойство.
+        // The requested file has already been associated with the data object, and subtract from it the file property. 
         dataObjectType = Type.GetType(fileDescription.EntityTypeName, true);
         filePropertyType = Information.GetPropertyType(dataObjectType, fileDescription.EntityPropertyName);
     }
     else
     {
-        // Запрашиваемый файл еще не был связан с объектом данных, а значит находится в каталоге загрузок,
-        // в подкаталоге с именем fileDescription.FileUplodKey.
-        // Получение файлов по ключу загрузки реализовано в DataObjectWebFileProvider.
+        // The requested file has not yet been associated with the data object, and so is in the directory downloads 
+        // in a subdirectory with the name of fileDescription.FileUplodKey. 
+        // Get a file download key is implemented in DataObjectWebFileProvider. 
         filePropertyType = typeof(WebFile);
     }
 
@@ -697,4 +699,8 @@ private Stream GetFileStream(
 
     return fileStream;
 }
-```
+``` 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

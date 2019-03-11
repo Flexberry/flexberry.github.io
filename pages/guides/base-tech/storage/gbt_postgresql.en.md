@@ -6,7 +6,7 @@ toc: true
 permalink: en/gbt_postgresql.html 
 lang: en 
 autotranslated: true 
-hash: 3ce7d72b0d4a56ebd309ff76a16125214fb44f570974d0df94f4707cfe99993e 
+hash: 2c26759dfa894bb55ec74ce2efae8ce65edc325119326b47cd63635107ea50b7 
 --- 
 
 ## Brief description 
@@ -56,7 +56,7 @@ Basic references on the page [Wiki](https://wiki.postgresql.org/wiki/Russian)
 * [Support PostgreSQL](https://www.youtube.com/watch?v=A--R5Q3bNNM&index=16&list=PLaFqU3KCWw6KzGwUubZm-9-vKsi6vh5qC) 
 * [Logical rezervirovaniya](https://www.youtube.com/watch?v=LXC15K4pV0o&index=17&list=PLaFqU3KCWw6KzGwUubZm-9-vKsi6vh5qC) 
 * [Physical rezervirovaniya](https://www.youtube.com/watch?v=xWtuIwfdSH0&index=18&list=PLaFqU3KCWw6KzGwUubZm-9-vKsi6vh5qC) 
-* [DBA 2. "Administering PostgreSQL 9.5. Advanced course"](https://www.youtube.com/playlist?list=PLaFqU3KCWw6JgufXBiW4dEB2-tDpmOXPH) 
+* [DBA 2. «Administration PostgreSQL 9.5. Advanced course»](https://www.youtube.com/playlist?list=PLaFqU3KCWw6JgufXBiW4dEB2-tDpmOXPH) 
 * [The architecture of PostgreSQL](https://www.youtube.com/watch?v=iODeKnTD1kA&list=PLaFqU3KCWw6JgufXBiW4dEB2-tDpmOXPH) 
 * [Izolyatsia](https://www.youtube.com/watch?v=QU2PVSnBGEY&list=PLaFqU3KCWw6JgufXBiW4dEB2-tDpmOXPH&index=2) 
 * [Page and version Strok](https://www.youtube.com/watch?v=PTWk0SVKYOA&list=PLaFqU3KCWw6JgufXBiW4dEB2-tDpmOXPH&index=3) 
@@ -200,4 +200,4 @@ In addition, the structure of the database must provide the ability to store oth
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

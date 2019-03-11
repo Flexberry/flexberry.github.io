@@ -1,41 +1,47 @@
----
-title: Copying Data Objects
-sidebar: flexberry-orm_sidebar
-keywords: DataObject, Flexberry ORM, methods
-summary: Methods of copying data and their features
-toc: true
-permalink: en/fo_copying-data-objects.html
-lang: en
----
+--- 
+title: Copy data objects 
+sidebar: flexberry-orm_sidebar 
+keywords: data Objects, Flexberry ORM methods 
+summary: Methods of copying the data and their characteristics 
+toc: true 
+permalink: en/fo_copying-data-objects.html 
+lang: en 
+autotranslated: true 
+hash: 3928fc86c30cc78e898e3f26d887ff3498605c1fa7a21fd4d21ba7b5b993e8c2 
+--- 
 
-## Метод CopyTo()
+## Method CopyTo() 
 
-Чтобы получить отдельную инстанцию объекта данных, можно использовать метод `CopyTo`, объявленный в [DataObject](fo_data-object.html).
+To get a separate instance of the data object, you can use the method `CopyTo` declared in [DataObject](fo_data-object.html). 
 
-### CreateDataObjectsCopy = true
+### CreateDataObjectsCopy = true 
 
-Этот флаг включает копирование связанных объектов (детейлов и мастеров).
+This is a flag that enables copying related objects (datalow and masters). 
 
-*Причём мастера копируются именно как объекты, а не просто ставится ссылка на них.* 
+*And the master are copied as objects, and not just put a link to them.* 
 
-* Если копируется объект, у которого есть детейлы, то для них тоже будет создана копия.
-* Если копируется объект-детейл, то будет создана полная копия и для его агрегатора (соответственно со всеми его детейлами).
+* If you copy an object that has detaily, then they too will make a copy. 
+* If the copied object detail will create a full backup and its aggregator (with all its detaylari). 
 
-### PrimaryKeyCopy
+### PrimaryKeyCopy 
 
-Управляет копированием [первичных ключей](fo_primary-keys-objects.html) (*действует на свой ключ, ключи мастеров и ключи детейловых объектов*).
+Manages copy [primary key](fo_primary-keys-objects.html) (*valid on your key, keys, master keys metalowych objects*). 
 
-* `true`: первичные ключи будут взяты из исходного объекта
-* `false`: первичные ключи будут заново сгенерированы
+* `true`: primary keys will be taken from the source object 
+* `false`: primary keys are re-generated 
 
-### Копия объектов данных
+### copy of the data objects 
 
-Ещё одной важной особенностью этого метода является то, что копируется и __ссылка__ на [копию данных](fo_data-object-copy.html) (будет один объект копии данных на 2 инстанции объекта данных). Причём флаг `PrimaryKeyCopy` на это никак не влияет - в копии данных останется тот первичный ключ, который был до копирования.
+Another important feature of this method is that is copied and __link__ [your data](fo_data-object-copy.html) (is a single object copies the data to 2 instances of the data object). And the flag `PrimaryKeyCopy` is not affected - in copies of the data will remain the primary key, which was to be copied. 
 
-**Не гарантируется адекватное состояние копии данных после вызова метода `CopyTo`. Следует использовать методы `InitDataCopy` или `clearDataCopy` после вызова `CopyTo` .**
+**We do not guarantee adequate condition copy of the data after the method call `CopyTo`. Use the methods `InitDataCopy` or `clearDataCopy` after calling `CopyTo` .** 
 
-### Контекстно-зависимый кэш объектов данных (DataObjectCache)
+### Context-dependent cache data objects (DataObjectCache) 
 
-Копирование происходит с применением кэша объектов данных. Это означает, что при повторном обращении к объекту, проверяется его наличие в кэше (по ключу "тип + первичный-ключ объекта") и только после этого происходит либо создание, либо используется уже созданный, найденный в кэше.
+Reproduction occurs with the use of the object cache data. This means that with repeated reference to the object, verify its availability in the cache (the key is "the type of the primary key of the object") and only after this, is either create or use already created is found in the cache. 
 
-**Если стоит задача скопировать объект данных один в один без использования кэша (например, если 2 мастера одного типа с одним ключом были загружены с разными наборами данных и нужно предотвратить повсеместное использование первого из них), то рекомендуется применять метод `CopyToObjectWithoutCache`.**
+**If the task is to copy the data object is one to one without using the cache (for example, if 2 masters of the same type with the same key has been downloaded with different data sets and the need to prevent the widespread use of the first of them), it is recommended to apply the method `CopyToObjectWithoutCache`.** 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

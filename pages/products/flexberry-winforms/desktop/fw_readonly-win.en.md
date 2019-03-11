@@ -1,58 +1,64 @@
----
-title: Режим "Только чтение" в Windows-приложениях
-sidebar: flexberry-winforms_sidebar
-keywords: DataObject (объекты данных), Windows UI (формы)
-summary: Описано, что предполагает собой режим "Только чтение" в приложении. Рассмотрены методы блокировки пользовательского интерфейса с помощью EditManager, указано как блокировать объект в памяти приложения, и за счет чего достигается блокировка в базе
-toc: true
-permalink: en/fw_readonly-win.html
-lang: en
----
+--- 
+title: "read Only" in Windows applications 
+sidebar: flexberry-winforms_sidebar 
+keywords: DataObject (object data) Windows UI (forms) 
+summary: is Described, which implies a "read Only" in the app. Methods of blocking the UI with EditManager, listed as lock object in application memory, and thereby achieving a lock in the database 
+toc: true 
+permalink: en/fw_readonly-win.html 
+lang: en 
+autotranslated: true 
+hash: 888345665728ccd351b916734a1f5e2d1f1d2b3569809cd115431a405d701aac 
+--- 
 
-Объект, открытый в режиме "Только чтение" (Read-only) не может быть изменен пользователем, данные, хранящиеся в объекте, будут доступны только для чтения.
+The object is opened in "read Only" (Read-only) cannot be changed by the user, the data stored in the object will be read-only. 
 
-Режим `ReadOnly` может понадобиться в разных ситуациях, к примеру:
+Mode `ReadOnly` may need in different situations, for example: 
 
-* Один пользователь открыл объект на редактирование, в это время другой пользователь пытается также открыть этот же объект на редактирование.
-* У пользователя нет прав изменять какое-либо поле объекта, или сам объект, но есть право просматривать данные.
+* One user opened the object for editing, at this time another user tries to open the object for editing. 
+* The user does not have rights to change any field of an object, or the object itself, but has the right to view the data. 
 
-## Составляющие режима ReadOnly
+## Components of ReadOnly 
 
-Режим можно условно поделить на 3 составляющие:
+Mode can be divided into 3 components: 
 
-* Блокировка интерфейса пользователя
-* Блокировка объекта данных в памяти приложения
-* Блокировка объекта данных в базе данных
+* Lock user interface 
+* Lock a data object in application memory 
+* Lock a data object in the database 
 
-### Блокировка интерфейса пользователя
+### Lock user interface 
 
-Если пользователь не может вносить изменения в объект, он должен это осознавать в момент открытия формы редактирования. Если объект в данный момент недоступен из-за блокировки другим пользователем, рекомендуется вывести предупреждение типа "Объект заблокирован другим пользователем. Вы желаете открыть объект только на чтение? Да\Нет". Если пользователь все же желает открыть объект в режиме ReadOnly, необходимо заблокировать контролы для редактирования полей объекта. Также необходимо скрыть кнопки `Сохранить` и `Сохранить и закрыть` (только для случая полной блокировки, а не блокировки отдельных полей объекта).
+If the user cannot make changes to the object, it must realize it at the time of opening the edit form. If the object is currently unavailable because another user is advisable in the prevention of type "Object locked by another user. You want to access object read-only? Yes / No". If the user still wants to open it in ReadOnly mode, you must lock the controls to edit the fields of the object. You also need to hide the buttons `Сохранить` and `Сохранить and закрыть` (only for the case of full lock, and not lock the individual fields of the object). 
 
-Для блокировки интерфейса пользователя в Windows-приложениях используется класс [EditManager](fw_editmanager.html).
+To lock the user interface in Windows-based applications use the class [EditManager](fw_editmanager.html). 
 
-EditManager позволяет либо заблокировать объект полностью, либо заблокировать только некоторые его поля.
+EditManager allows you to either lock the object completely, or to block only some of its fields. 
 
-__Важно__: Стоит отметить, что EditManager блокирует только те поля объекта, которые зарегистрированы в EditManager'e.
+__Important__: it Should be noted that EditManager blocks only those fields of the object that was in EditManager'e. 
 
-* Полная блокировка объекта через EditManager осуществляется установкой свойства
+* Full lock of the object through the EditManager is the setting of the 
 
 ```csharp
  EditManager.ReadOnly = true;
-```
+``` 
 
-* Частичная блокировка объекта (блокировка отдельных полей) осуществляется вызовом метода [EditManager.SetReadonlyFlagProperties](fw_editmanager.html), подробнее можно почитать в [этой статье](fw_different-applications-and-fields.html).
+* Partial lock object (lock individual fields) by calling [EditManager.SetReadonlyFlagProperties](fw_editmanager.html), more details can be read in [this article](fw_different-applications-and-fields.html). 
 
-### Блокировка объекта данных в памяти приложения
+### Lock a data object in application memory 
 
-Блокировка объекта в памяти осуществляется вызовом метода объекта `DataObject.LockObject(Key)`, где `Key` - некий ключ блокировки типа `Guid`. Разблокировать объект можно ''только этим ключом'' при помощи метода `DataObject.UnLockObject(Key)`.
+Lock object in memory by calling the object method `DataObject.LockObject(Key)` where `Key` a key lock type `Guid`. To unlock an object can "only this key" method on the `DataObject.UnLockObject(Key)`.
 
-При вызове метода `LockObject` блокировка в базу не отправляется.
+When you call a method `LockObject` lock in the database is not sent. 
 
-Пример можно посмотреть [здесь](fo_read-only-object.html).
+An example can be found [here](fo_read-only-object.html). 
 
-### Блокировка объекта данных в базе данных
+### Lock a data object in the database 
 
-Для блокировки используется поддерживаемый технологией [Сервис блокировок](fo_lock-service.html).
+To lock using a supported technology [Service locks](fo_lock-service.html). 
 
-Блокировка объекта в базе данных железно защищает объект от изменений объекта другими пользователями. Создается запись в таблице `STORMNETLOCKDATA` и, пока она там существует, изменить объект может только пользователь, заблокировавший объект.
+Lock object in the database iron protects the object against changes of the object by other users. Creates a record in the table `STORMNETLOCKDATA` and while it exists there, change the object, only the user that has locked the object. 
 
-Пример можно посмотреть [здесь](fo_lock-service.html).
+An example can be found [here](fo_lock-service.html). 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

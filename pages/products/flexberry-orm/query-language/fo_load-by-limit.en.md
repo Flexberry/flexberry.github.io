@@ -1,26 +1,32 @@
----
-title: Чтение объектов с наложенным ограничением
-sidebar: flexberry-orm_sidebar
-keywords:  Flexberry ORM, Ограничения
-summary: Пример на основе SQLWhereLanguageDef
-toc: true
-permalink: en/fo_load-by-limit.html
-lang: en
----
+--- 
+title: Read objects with superimposed restriction 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM Limitations 
+summary: an Example based on the SQLWhereLanguageDef 
+toc: true 
+permalink: en/fo_load-by-limit.html 
+lang: en 
+autotranslated: true 
+hash: cdd6396758459888997ab24ca9865bd2cddf867661bdf8ba516dda8532a58b91 
+--- 
 
-Для того чтобы наложить ограничение, требуется в свойство `LimitFunction` структуры `LoadingCustomizationStruct` установить ограничивающую функцию (`ICSSoft.STORMNET.FunctionalLanguage.Function`) любого языка ограничений.
+In order to impose the restriction that requires the property `LimitFunction` structure `LoadingCustomizationStruct` limiting set function (`ICSSoft.STORMNET.FunctionalLanguage.Function`) any language restrictions. 
 
-В примере ниже берётся язык `ICSSoft.STORMNET.FunctionalLanguage.SQLWhere. SQLWhereLanguageDef` для задания ограничений SQL-запросов и формируется ограничение (выбираются все «Иваны Ивановичи»):
+In the example below, taken language `ICSSoft.STORMNET.FunctionalLanguage.SQLWhere. SQLWhereLanguageDef` for specifying constraints in SQL queries, and is formed by a limit (select all «Ivana Ivanovic»): 
 
 ```csharp
 	LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Автор), Автор.Views.Главное);				
-	/*Другая инициализация*/
+	/*Other initialization*/
 	SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
 	Function lf = langdef.GetFunction(langdef.funcAND,
 				langdef.GetFunction(langdef.funcLike, 
-				new VariableDef(langdef.StringType, "Имя"), "Иван"),
+				new VariableDef(langdef.StringType, "Name"), "Ivan"),
 				langdef.GetFunction(langdef.funcLike, 
-				new VariableDef(langdef.StringType, "Отчество"), "Иванович"));		
+				new VariableDef(langdef.StringType, "Patronymic"), "I."));		
     lcs.LimitFunction = lf;
-	/*Чтение*/
-```
+	/*Read*/
+``` 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

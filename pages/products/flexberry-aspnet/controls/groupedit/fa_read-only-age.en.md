@@ -1,43 +1,45 @@
----
-title: Включение режима Read-only для отдельных столбцов AGE
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Web UI (Контролы)
-toc: true
-permalink: en/fa_read-only-age.html
-lang: en
----
+--- 
+title: Enable Read-only mode for an individual column AGE 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET, Web UI (Controls) 
+toc: true 
+permalink: en/fa_read-only-age.html 
+lang: en 
+autotranslated: true 
+hash: 7902ec5b187ed076a4d5eb9f8a30e0f756928d00f6dbf025bddb4174a974de88 
+--- 
 
-Так как технологией не предусматривается сценарий, когда какой-либо отдельный столбец [AGE](fa_ajax-group-edit.html) доступен только для чтения, то стандартного способа нет.
+Since technology does not provide for the scenario where any individual column [AGE](fa_ajax-group-edit.html) read-only, standard method no. 
 
-Однако, есть обходной путь: 
+However, there is a workaround: 
 
-1. Добавить в детейл [вычислимое поле](fo_not-stored-attributes.html).
-2. Задать функцию вычисления поля так, чтобы она дублировала столбец, который необходимо сделать только для чтения.
-3. В [E-представление](fd_e-view.html) детейла созданное вычислимое поле, снять видимость с оригинального поля.
+1. To add to detail [calculated field](fo_not-stored-attributes.html). 
+2. To determine the function of the calculation field so that it duplicated the column that you want to make read-only. 
+3. [E-view](fd_e-view.html) detail created a calculated field to remove the visibility of the original field. 
 
-После перегенерации объектов все будет работать.
+After the generation of all objects will work. 
 
-### Пример
+### Example 
 
-Пусть дан следующий детейл:
+Suppose that we are given the following detail: 
 
-![](/images/pages/products/flexberry-aspnet/controls/groupedit/read-only-age1.png)
+![](/images/pages/products/flexberry-aspnet/controls/groupedit/read-only-age1.png) 
 
-Необходимо сделать поле `Field2` доступным только для чтения.
+You must `Field2` make a field read-only. 
 
-Для начала необходимо добавить вычислимое поле в класс:
+First we need to add a calculated field to the class: 
 
-![](/images/pages/products/flexberry-aspnet/controls/groupedit/read-only-age2.png)
+![](/images/pages/products/flexberry-aspnet/controls/groupedit/read-only-age2.png) 
 
-Затем, настроить представление:
+Then, configure the view: 
 
-1. Добавить вычислимое поле
-2. Снять видимость со "старого" поля
-3. Настроить заголовок вычислимого поля
+1. Add a calculated field 
+2. To remove visibility from the "old" field 
+3. To customize the header of computable fields 
 
-![](/images/pages/products/flexberry-aspnet/controls/groupedit/read-only-age3.png)
+![](/images/pages/products/flexberry-aspnet/controls/groupedit/read-only-age3.png) 
 
-Перегенерировать объекты. После перегенерации надо модифицировать `getter` вычислимого поля так, чтобы он возвращал значение поля, которое должно отображаться только для чтения:
+To regenerate the objects. After regeneration it is necessary to modify `getter` a calculated field so that it returns the value of the field that should be displayed read-only: 
 
 ```csharp
 [ICSSoft.STORMNET.NotStored()]
@@ -47,22 +49,25 @@ public virtual string Field2ReadOnly
 {
     get
     {
-        // *** Start programmer edit section *** (Side.Field2ReadOnly Get)
-        return Field2; // Здесь указываем поле.
-        // *** End programmer edit section *** (Side.Field2ReadOnly Get)
+        // *** Start programmer edit section *** (Side.Field2ReadOnly Get) 
+        return Field2; // Here you specify the field. 
+        // *** End programmer edit section *** (Side.Field2ReadOnly Get) 
     }
     set
     {
-        // *** Start programmer edit section *** (Side.Field2ReadOnly Set)
+        // *** Start programmer edit section *** (Side.Field2ReadOnly Set) 
 
-        // *** End programmer edit section *** (Side.Field2ReadOnly Set)
+        // *** End programmer edit section *** (Side.Field2ReadOnly Set) 
     }
 }
-```
+``` 
 
-{% include note.html content="`DataServiceExpression` в данном случае устанавливать не обязательно: при загрузке AGE берется реальное значение, а не `StringedView`. Однако, рекомендуется установить и его." %}
+{% include note.html content="`DataServiceExpression` in this case is not necessary: when the AGE takes a real value and not `StringedView`. However, it is recommended to install it." %} 
 
-После этого AGE будет выглядеть следующим образом:
+After this AGE will look like the following: 
 
-![](/images/pages/products/flexberry-aspnet/controls/groupedit/read-only-age4.png)
- 
+![](/images/pages/products/flexberry-aspnet/controls/groupedit/read-only-age4.png) 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -1,29 +1,34 @@
----
-title: NullableDatePicker
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Web UI (Контролы)
-toc: true
-permalink: en/fa_nullable-date-picker.html
-folder: products/flexberry-aspnet/
-lang: en
----
+--- 
+title: NullableDatePicker 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET, Web UI (Controls) 
+toc: true 
+permalink: en/fa_nullable-date-picker.html 
+folder: products/flexberry-aspnet/ 
+lang: en 
+autotranslated: true 
+hash: c4845016ac0c07fc461325ac2b6052597342c18d0f3267d632cf0b3648111aa7 
+--- 
 
-# Описание
+# Description 
 
-# Подключение
+# Connection 
 
-# Использование
+# Use 
 
-## Пример кода
+## Sample code 
 
-## Настройки контрола
+## Settings control 
 
-## Настройки оформления
+## formatting Settings 
 
-## ...полезные способы использования...
+## ...useful ways to use... 
 
-# JS API
+# JS API 
 
-# Возможные ошибки
- 
- 
+# Possible errors 
+
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

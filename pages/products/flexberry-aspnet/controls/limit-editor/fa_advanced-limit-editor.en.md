@@ -1,140 +1,146 @@
----
-title: Расширенный редактор ограничений для Flexberry ASP.NET
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Web UI (Контролы), Ограничения
-toc: true
-permalink: en/fa_advanced-limit-editor.html
-lang: en
----
+--- 
+title: Advanced constraint editor for Flexberry ASP.NET 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET, Web UI (Controls), Limitations 
+toc: true 
+permalink: en/fa_advanced-limit-editor.html 
+lang: en 
+autotranslated: true 
+hash: 6f8d2f6c675b493a406127a07d7d0fc1bbc59aefe4cff1eb2cca8a04e0eebfed 
+--- 
 
-## Список пользовательских функций
+## a List of user-defined functions 
 
-* Открыть редактор
-* Закрыть редактор (*ситуации когда он закрывается сам)
-* Создать ограничение
-* Создать ограничение на основе текущего
-* Составить ограничение
-    * Добавить условие
-        * объединение (ИЛИ)
-        * пересечение (И)
-        * отрицание (НЕ)
-    * Изменить операцию в условии
-        * логические операции:
-            * объединение (ИЛИ)
-            * пересечение (И)
-        * строковые операции:
-            * ПоМаске (По маске)
-            * Пусто
-            * НеПусто (Заполнено)
-        * операции сравнения:
-            * больше
-            * больше или равно
-            * меньше
-            * меньше или равно
-            * равно
-            * неравно
-    * Составить ограничение с детейлом
-    * Удалить условие
-    * Очистить ограничение
-    * Использовать параметр
-        * добавить параметр
-        * указать тип праметра
-        * удалить параметр
-    * Указать значение для условия
-        * вручную ввести
-        * выбрать параметр
-        * выбрать значение из базы
-* Применить ограничение
-* Ввести значение параметра
-* Изменить значение параметра
-* Сбросить ограничение
-* Сохранить ограничение
-* Редактировать ограничение
-* Удалить ограничение
+* Open the editor 
+* Close the editor (*situations when it is closed itself) 
+* Create the constraint 
+* Create a constraint based on the current 
+* Be the restriction 
+* Add condition 
+* Union (OR) 
+* the intersection (And) 
+* negation (NOT) 
+* To change the operation in the condition 
+* logical operations: 
+* Union (OR) 
+* the intersection (And) 
+* string operations: 
+* Pomaska (mask) 
+* Empty 
+* Is Non-Empty (Filled) 
+* comparison operations: 
+* more 
+* greater than or equal to 
+* less 
+* less than or equal to 
+* equal 
+* unequally 
+* Be the restriction detalam 
+* Remove the condition 
+* Clear restriction 
+* Use 
+* add option 
+* to specify the type of option 
+* remove the parameter 
+* Specify a value for the condition 
+* manually enter 
+* select 
+* select a value from the database 
+* Apply the constraint 
+* Enter the value of the parameter 
+* To change the setting 
+* To reset the limit 
+* Save limit 
+* Edit restriction 
+* Remove the restriction 
 
-## Программный сброс наложенного ограничения
+## soft reset restrictions 
 
-Для программного сброса наложенного на список ограничения на серверной стороне достаточно вызвать метод
+For software reset superimposed on the restrictions list on the server side it is sufficient to call the method 
 
 ```csharp
 WebObjectListView1.DropLimitFromLimitEditor();
-```
+``` 
 
-## Выбор значения из базы
+## select a value from the database 
 
-*При выборе значения из базы для оптимизации отображаются только первые 100 значений, удовлетворяющих условию.* 
-Существует возможность фильтрации значений из базы данных. Для этого в специальное поле вводится значение, которое должно являться подстрокой в итоговых найденных элементах.
+*When choosing values from the database to optimize displays only the first 100 values that meet the condition.* 
+There is the possibility to filter the values from the database. For this special field to enter a value, which must be a substring in the resulting found elements. 
 
-## Поиск по маске
+## wildcard Search 
 
-Существует возможность задавать ограничение по маске. Соответствующий элемент добавлен на риббон редактора. 
+You can set a limit on the mask. The corresponding element is added to the ribbon editor. 
 
-![](/images/pages/products/flexberry-aspnet/controls/limit-editor/limit-editor.png)
+![](/images/pages/products/flexberry-aspnet/controls/limit-editor/limit-editor.png) 
 
-На настоящий момент наложены некоторые ограничения на шаблон:
-* "*" - это 0 и более любых символов.
-* "_" - это ровно 1 символ.
-* Чтобы осуществлять поиск подстроки, необходимо в начале и конце строки указать символ "*". Например, для поиска подстроки, содержащей последовательность 123, нужно задать шаблон вида "*123*".
-* Экранирование символов и некоторые спецсимволы на настоящий момент не поддерживаются (это связано в том числе с [ограничениями, накладываемыми использованием Regex в запросах к LinqProvider](fo_linq-provider.html)).
+At the moment, imposed some limitations on the pattern: 
+* "*" - 0 or more any characters. 
+* the " _ " is exactly 1 character. 
+* To search for a substring, you must at the beginning and end of a string to specify the character "*". For example, to search for substrings that contain the sequence 123, you need to set a wildcard "*123*". 
+* Escaping characters and some special characters are currently not supported (this is including [the limitations of using Regex in queries to LinqProvider](fo_linq-provider.html)).
 
-## Подсчитать количество строк
+## to Count the number of rows 
 
-На вкладке `Главная` есть кнопка `Подсчитать количество строк`, по нажатию на которую выдается количество объектов, удовлетворяющих текущему ограничению.
+On the tab there is a button `Главная` `Подсчитать number строк`, by pressing on which is issued the number of objects satisfying the current constraint. 
 
-{% include note.html content="Подсчет количества строк не учитывает наложенные на [WebObjectListView](fa_web-object-list-view.html) [фильтры](fa_wolv-filters.html)." %}
+{% include note.html content="Counting the number of lines does not take into account imposed on [WebObjectListView](fa_web-object-list-view.html) [filters](fa_wolv-filters.html)." %} 
 
-## Параметры расширенного редактора ограничений
+## Settings the advanced editor limitations 
 
-Параметры в расширенном редакторе ограничений описаны в соответствующей [статье](fa_advanced-limit-editor-parameters.html)
+Parameters in the advanced editor of the limitations described in the relevant [article](fa_advanced-limit-editor-parameters.html) 
 
-### Подстановка значений параметров в ограничивающую функцию
+### Substitution of parameter values in the bounding function 
 
-Подстановка значений параметров в ограничивающую функцию описана в соответствующей [статье](fa_limit-function-parameters.html).
+Substitution of parameter values in the bounding function described in the corresponding [article](fa_limit-function-parameters.html). 
 
-### Ограничение с параметрами для пользователя
+### Limitation parameters to the user 
 
-Редактор ограничений поддерживает возможность формирования условий с параметрами, другими словами пользователь имеет возможность использовать вместо константы имя параметра), конкретное значение параметра будет запрошено у пользователя перед выполнением запроса.
+The constraint editor supports the possibility of forming conditions with parameters, in other words, the user has the option to use a constant instead of the parameter name), the specific value of the parameter will be requested from the user before executing the query. 
 
-Подробнее об ограничении с параметрами для пользователя в [статье Ограничения с параметрами для пользователя](fa_limit-parameters-user.html)
+Read more about restriction settings for a user in [article Restriction settings for a user](fa_limit-parameters-user.html) 
 
-### Ограничения с параметрами для программиста
+### Constraints with parameters for the programmer 
 
-Особенности работы с ограничениями с параметрами для программиста описано в [статье](fa_limit-parameters-developer.html).
+Features of work with constraints with parameters for the programmer are described in [article](fa_limit-parameters-developer.html). 
 
-## Возможности редактора ограничений
+## editor limitations 
 
-### Глобальные настройки расширенного редактора ограничений
+### Global settings the advanced editor limitations 
 
-Глобальные настройки расширенного редактора ограничений описаны в [статье](fa_global-limit-editor-settings.html).
+Global settings the advanced editor restrictions is described in [article](fa_global-limit-editor-settings.html). 
 
-### Запуск редактора ограничений без WOLV
+### the editor without restrictions WOLV 
 
-Запуск редактора ограничений без WOLV описан в [статье](fa_limit-editor-without-wolv.html).
+Edit restrictions without WOLV described in [article](fa_limit-editor-without-wolv.html). 
 
-### Задание заголовка класса в расширенном редакторе ограничений
+### specifies the title of the class in the advanced editor limitations 
 
-Задание заголовка класса в расширенном редакторе ограничений описано в [статье](fa_web-limit-editor-class-caption.html)
+Specifies the title of the class in the advanced editor of the limitations described in [article](fa_web-limit-editor-class-caption.html) 
 
-### Работа с детейлами в расширенном редакторе ограничений
+### Work with detaylari in the advanced editor limitations 
 
-Особенности работы с детейлами в расширенном редакторе ограничений описаны в соответствующей [статье](fa_details-limit-editor.html).
+Features of work with detaylari in the advanced editor of the limitations described in the relevant [article](fa_details-limit-editor.html). 
 
-### Работа с псевдодетейлами в расширенном редакторе ограничений
+### Work with pseudocatalase in the advanced editor limitations 
 
-Особенности работы с псевдодетейлами в расширенном редакторе ограничений описаны в соответствующей [статье](fa_pseudo-detail-extended-view.html).
+Features of work with pseudocatalase in the advanced editor of the limitations described in the relevant [article](fa_pseudo-detail-extended-view.html). 
 
-### Преобразование функции ограничения в linq-ограничение
+### Conversion functions restrictions in linq-restriction 
 
-Преобразование функции ограничения в linq-ограничение описано в [статье](fo_lcs-to-linq.html).
+Conversion functions restrictions in linq-restriction described in [article](fo_lcs-to-linq.html). 
 
-### Задание порядка отображения свойств в расширенном редакторе ограничений
+### set the display order of the properties in the advanced editor limitations 
 
-Задание порядка отображения свойств в расширенном редакторе ограничений описано в [статье](fa_prop-order-limit-editor.html).
+Set the display order of the properties in the advanced editor of the limitations described in [article](fa_prop-order-limit-editor.html). 
 
-### Выражения Пусто/Непусто в расширенном редакторе ограничений
+### Expression is Empty/is non-empty in the advanced editor limitations 
 
-Выражения Пусто/Непусто в расширенном редакторе ограничений описаны в соответствующей [статье](fa_web-limit-editor-null.html).
+Expression is Empty/is non-empty in the advanced editor of the limitations described in the relevant [article](fa_web-limit-editor-null.html).
 
-## External-классы в расширенном редакторе ограничений
+## External classes in the advanced editor limitations 
 
-External-классы в расширенном редакторе ограничений описаны в [статье](fa_web-limit-editor-external-class.html)
+External classes in the advanced editor of the limitations described in [article](fa_web-limit-editor-external-class.html) 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

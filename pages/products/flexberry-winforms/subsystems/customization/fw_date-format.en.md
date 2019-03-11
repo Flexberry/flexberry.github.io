@@ -1,18 +1,23 @@
----
-title: Формат отображения даты по умолчанию
-sidebar: flexberry-winforms_sidebar
-keywords: DateTime (работа с датами)
-summary: Указано как с помощью настройки в конфиге задать формат даты для отображения в ObjectListView
-toc: true
-permalink: en/fw_date-format.html
-lang: en
----
+--- 
+title: date display Format by default 
+sidebar: flexberry-winforms_sidebar 
+keywords: DateTime (for dates) 
+summary: See how to use the settings in the config to set the date format to display in ObjectListView 
+toc: true 
+permalink: en/fw_date-format.html 
+lang: en 
+autotranslated: true 
+hash: 04372c0413c8134fd77c002b93b01e3f8f5919346ee70f8212b22530008f00d4 
+--- 
 
-Чтобы задать формат отображения даты по умолчанию(например, `dd.MM.yyyy HH:mm`) в приложении(в GroupEdit'ах, в ObjectListView), в конфиге надо добавить строку
+To set the date display format by default(for example, `dd.MM.yyyy HH:mm`) in the application(in GroupEdit'Ah, in ObjectListView), the config need to add a line 
 
 
-`<add key="NullableDateTimeDefaultFormat" value="dd.MM.yyyy HH:mm" />`
+`<add key="NullableDateTimeDefaultFormat" value="dd.MM.yyyy HH:mm" />` 
 
-По умолчанию, формат `short`.
+By default, the format `short`. 
 
-Так как DateTimePicker, расположенные на форме и в GroupEdit, имеют собственные настройки формата, то эта настройка в конфиге фактически влияет лишь на отображение в ObjectListView.
+As DateTimePicker, located in GroupEdit form and have its own settings format, this setting in the config actually only affects the display in ObjectListView.
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

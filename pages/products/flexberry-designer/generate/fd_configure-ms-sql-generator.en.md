@@ -1,26 +1,32 @@
----
-title: Настройки базы данных
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, стадия, карта типов, БД, модель
-summary: Возможности плагинов в настройке БД
-toc: true
-permalink: en/fd_configure-ms-sql-generator.html
-lang: en
----
+--- 
+title: database Settings 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Designer, stage, map types, database, model 
+summary: the Possibility of plugins in the configuration database 
+toc: true 
+permalink: en/fd_configure-ms-sql-generator.html 
+lang: en 
+autotranslated: true 
+hash: f153e7a3203eb3fd2267b879c0e1be1cc24647aec698adf396f24c647d44fb24 
+--- 
 
-Форма настроек базы данных позволяет настроить БД в соответствии с требованиями приложения, выставить основные настройки, которые будут учитываться при генерации базы данных по модели. Данная форма вызывается через меню [плагина](fo_orm-case-plugin.html).
+Form database settings allows you to configure the database in accordance with the requirements of the application, set the basic settings to be considered when generating the database model. This form is called via the menu [plugin](fo_orm-case-plugin.html). 
 
-* `Название стадии` и `Описание` аналогичны [соответствующим настройкам модели](fd_project-customization.html).
-* `Карта типов` - [карта типов](fd_types-map.html).
-* `Строка соединения` - указание местоположения БД.
-* `Не удалять существующие таблицы`. По умолчанию включено. (Используется при [приведении базы данных в соответствие с моделью](fd_matching-db.html)).
-* Pre-скрипт - скрипт, который вставляется в начало генерируемого скрипта.
-* Post-скрипт - скрипт, который вставляется в конец генерируемого скрипта.
+* `Название стадии` and `Описание` the same [corresponding settings of the model](fd_project-customization.html). 
+* `Карта типов` - [map types](fd_types-map.html). 
+* `Строка соединения` - specify the location of the database. 
+* `Не remove existing таблицы`. Enabled by default. (Used when [bringing the database into line with the model](fd_matching-db.html)). 
+* Pre-script - script that is inserted at the beginning of the generated script. 
+* Post-script - script that is inserted into the end of the generated script. 
 
-Следующие настройки используются в подсистемах, которые __не поставляются__ в базовой поставке [Flexberry Designer](fd_landing_page.html):
+The following settings are used in subsystems that are __not available__ in the base installation [Flexberry Designer](fd_landing_page.html): 
 
-* `БД аудита в БД приложения` - если галочка установлена, то в БД при генерации появятся таблицы аудита.
-* `БД web-отчётов в БД приложения` - если галочка установлена, то в БД при генерации появятся таблицы web-отчётов.
-* `БД полномочий в БД приложения` - если галочка установлена, то в БД при генерации появятся таблицы полномочий.
+* `БД audit database приложения` - if the option is set in the database when you generate appear in the audit tables. 
+* `БД web database reports приложения` - if the option is set in the database when generating the table will appear in the web reports. 
+* `БД powers in DB приложения` - if the option is set in the database when you generate will appear in the table of powers. 
 
-![Свойства скриптов](/images/pages/products/flexberry-designer/generate/sql-properties.png)
+![Property script](/images/pages/products/flexberry-designer/generate/sql properties.png) 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

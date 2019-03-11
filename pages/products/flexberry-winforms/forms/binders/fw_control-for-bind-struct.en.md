@@ -1,70 +1,76 @@
----
-title: ControlForBindStruct
-sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Winforms, Controls, binders
-summary: Конструкторы, свойства, маппинг
-toc: true
-permalink: en/fw_control-for-bind-struct.html
-lang: en
----
+--- 
+title: ControlForBindStruct 
+sidebar: flexberry-winforms_sidebar 
+keywords: Flexberry Winforms, Controls, binders 
+summary: Constructors, properties, mapping 
+toc: true 
+permalink: en/fw_control-for-bind-struct.html 
+lang: en 
+autotranslated: true 
+hash: 197ccf603b8ce1bf54bdf197f61d8e264ec42023dab1cee739f106949f670685 
+--- 
 
-`ICSSoft.STORMNET.Windows.Forms.Binders.ControlForBindStruct` - структура, определяющая контрол для редактирования некоторого свойства (используется, например, при создании [провайдера контролов](fw_control-provider-winforms.html): пример см. [Обработка даты в ControlProvider](fw_processing-date-in-control-provider.html)).
+`ICSSoft.STORMNET.Windows.Forms.Binders.ControlForBindStruct` - structure that defines a control for editing some properties (used, for example, when you create a [provider controls](fw_control-provider-winforms.html): for an example, see [Handling dates in ControlProvider](fw_processing-date-in-control-provider.html)). 
 
-## Конструкторы
+## Designers 
 
-Для данной структуры определены три конструктора:
+For this structure defines three constructors: 
 
-* `ControlForBindStruct(object control, string controlPropName)`
-* `ControlForBindStruct(object control, string controlPropName, Type[] typeMapping)`
-* `ControlForBindStruct(object control, string controlPropName, Type[] typeMapping, IComponent[] additionalControls)`
+* `ControlForBindStruct(object control, string controlPropName)` 
+* `ControlForBindStruct(object control, string controlPropName, Type[] typeMapping)` 
+* `ControlForBindStruct(object control, string controlPropName, Type[] typeMapping, IComponent[] additionalControls)` 
 
-Общее описание аргументов конструктора приведено в статье [Провайдер контролов для Flexberry Winforms](fw_control-provider-winforms.html). Остановимся более подробно на аргументах конструктора.
+General description of the constructor arguments is presented in [Provider controls for Winforms Flexberry](fw_control-provider-winforms.html). Let's focus on the constructor arguments. 
 
-### Control
+### Control 
 
-`control` - экземпляр контрола, который будет редактировать значение.
+`control` - an instance of the control that will edit the value. 
 
 ```csharp
 var txtbox = new System.Windows.Forms.TextBox();
 var dateTimePicker = new ICSSoft.STORMNET.Windows.Forms.DateTimePicker();
-```
+``` 
 
-### ControlPropName
+### ControlPropName 
 
-`controlPropName` - имя значимого свойства контрола, т.е. то, в которое устанавливается и возвращается значение.
+`controlPropName` - name significant properties of the control, i.e., which is set and returns the value. 
 
-_Например:_
+Naprimer:_ 
 
-* для контрола типа `System.Windows.Forms.TextBox` : "Text".
-* для контрола типа `System.Windows.Forms.CheckBox` : "Checked".
-* для контрола типа `System.Windows.Forms.ComboBox` : "Text".
-* для контрола типа `ICSSoft.STORMNET.Windows.Forms.DateTimePicker` : "ObjectValue".
-* ...
+* for control type `System.Windows.Forms.TextBox` : "Text". 
+* for control type `System.Windows.Forms.CheckBox` : "Checked". 
+* for control type `System.Windows.Forms.ComboBox` : "Text". 
+* for control type `ICSSoft.STORMNET.Windows.Forms.DateTimePicker` : "ObjectValue". 
+* ... 
 
-### TypeMapping
+### TypeMapping 
 
-`typeMapping` - это массив, используемый для [маппирования](fw_control-provider-winforms.html) типов значений, с которыми должен работать `control`.
+`typeMapping` is an array used for [mepyramine](fw_control-provider-winforms.html) types of values, which should work `control`. 
 
-_Например:_
+Naprimer:_ 
 
-1.Если значение типа `System.String` будет обрабатываться с помощью `System.Windows.Forms.TextBox`, то маппинг можно опустить:
+1.If the value of type `System.String` will be processed using `System.Windows.Forms.TextBox`, the mapping can be omitted: 
 
 ```csharp
 new ControlForBindStruct(new System.Windows.Forms.TextBox(), "Text")
-```
+``` 
 
-2.Если значение типа `ICSSoft.STORMNET.UserDataTypes.NullableDateTime` будет обрабатываться с помощью `ICSSoft.STORMNET.Windows.Forms.DateTimePicker`, который работает с типом `System.DateTime`, то необходимо выполнить маппинг (полный пример  в статье [Обработка даты в ControlProvider](fw_processing-date-in-control-provider.html)):
+2.If the value of type `ICSSoft.STORMNET.UserDataTypes.NullableDateTime` will be processed using `ICSSoft.STORMNET.Windows.Forms.DateTimePicker` that works with the type `System.DateTime`, it must implement the mapping (a complete example in the article [Processing date ControlProvider](fw_processing-date-in-control-provider.html)): 
 
 ```csharp
 ControlForBindStruct(new ICSSoft.STORMNET.Windows.Forms.DateTimePicker(), "ObjectValue",
                             new System.Type[] {typeof(ICSSoft.STORMNET.UserDataTypes.NullableDateTime),
                                         typeof(System.DateTime)})
-```
+``` 
 
-3.Если значение типа `ICSSoft.STORMNET.UserDataTypes.NullableDecimal` будет обрабатываться с помощью `System.Windows.Forms.TextBox`, который работает с типом `System.String`, то необходима цепочка маппинга, поскольку системе известно, как перевести `ICSSoft.STORMNET.UserDataTypes.NullableDecimal` в `System.Decimal`, а из `System.Decimal` уже в `System.String`.
+3.If the value of type `ICSSoft.STORMNET.UserDataTypes.NullableDecimal` will be processed using `System.Windows.Forms.TextBox` that works with the type `System.String`, the required chain mapping, because the system knows how to translate `ICSSoft.STORMNET.UserDataTypes.NullableDecimal` in `System.Decimal`, and `System.Decimal` already in `System.String`.
 
 ```csharp
 ControlForBindStruct(new System.Windows.Forms.TextBox(), "Text",
                         new Type[] { typeof(ICSSoft.STORMNET.UserDataTypes.NullableDecimal),
                                         typeof(Decimal), typeof(string) }
-```
+``` 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

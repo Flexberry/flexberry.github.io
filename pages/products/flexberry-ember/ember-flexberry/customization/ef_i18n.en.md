@@ -1,29 +1,35 @@
----
-title: Интернационализация в ember-flexberry-приложении
-sidebar: flexberry-ember_sidebar
-keywords: Flexberry Ember
-toc: true
-permalink: en/ef_i18n.html
-folder: products/ember-flexberry/customization/
-lang: en
+--- 
+title: Internationalization in ember-flexberry application 
+sidebar: flexberry-ember_sidebar 
+keywords: Flexberry Ember 
+toc: true 
+permalink: en/ef_i18n.html 
+folder: products/ember-flexberry/customization/ 
+lang: en 
+autotranslated: true 
+hash: 291f86f88132ec32aa170317532f4cdf88f50d5ec4aac714b26c7a3476e4510a 
 summary: 
----
+--- 
 
-## Описание
+## Description 
 
-Интернационализация в аддоне ember-flexberry основана на [ember-i18n](https://github.com/jamesarosen/ember-i18n).
-Ember-сервис `i18n`, описанный [здесь](https://github.com/jamesarosen/ember-i18n/wiki/Doc:-i18n-Service), внедряется при инициализации приложения во все компоненты, контроллеры, роуты, модели и представления.
+Internationalization in the addon ember-flexberry based on [ember-i18n](https://github.com/jamesarosen/ember-i18n). 
+Ember-service `i18n` described [here](https://github.com/jamesarosen/ember-i18n/wiki/Doc:-i18n-Service), is introduced during application initialization in all components, controllers, ranting, models and views. 
 
-## Инициализация локали
-По умолчанию при запуске приложения устанавливается локаль, соответствующая языку браузера: `navigator.language || navigator.userLanguage`. Чтобы изменить текущую локаль, нужно в коде присвоить свойство `locale` сервиса `i18n`:
+## Initialize locale 
+By default, when you run the application sets the locale corresponding to the language of the browser: `navigator.language || navigator.userLanguage`. To change the current locale you need in your code to assign the property `locale` service `i18n`: 
 
 ```javascript
 this.set('i18n.locale', 'ru');
-```
+``` 
 
-Все локализованные значения в приложении будут изменены на соответствующие установленной локали.
-По умолчанию доступны локали, расположенные в папке `app/locales` аддона ember-flexberry. Там же можно посмотреть доступные ключи для локализации, назначение которых следует из названия и иерархии.
+All localized values in the app will be changed to the corresponding locale installed. 
+By default the locale to located in the folder `app/locales` addon ember-flexberry. There you can see available keys for localization, the purpose of which the names and the hierarchy. 
 
-## Подмена значений для текущей локали
+## Substitution of values for the current locale 
 
-Если требуется осуществить изменение конкретной надписи, это можно сделать с помощью метода `addTranslations` сервиса `i18n`, указав локаль, ключ и его значение, как описано [здесь](https://github.com/jamesarosen/ember-i18n/wiki/Doc:-Defining-Translations#defining-translations-at-runtime).
+If you want to implement the change specific labels, it can be done using the method `addTranslations` service `i18n`, putting the locale key and its value as described [sdes](https://github.com/jamesarosen/ember-i18n/wiki/Doc:-Defining-Translations#defining-translations-at-runtime). 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -1,60 +1,65 @@
----
-title: Status and loading state of the data object
-sidebar: flexberry-orm_sidebar
-keywords: DataObject, Flexberry ORM, status
-summary: Description and features of generation and loading state of data objects
-toc: true
-permalink: en/fo_object-status.html
-lang: en
----
+--- 
+title: the Status and the download status of the data object 
+sidebar: flexberry-orm_sidebar 
+keywords: DataObject Flexberry ORM, status 
+summary: Description and characteristics of generation and load status data objects 
+toc: true 
+permalink: en/fo_object-status.html 
+lang: en 
+autotranslated: true 
+hash: a4fdaf1b3a35d264e37cfba1a69dec10b7c45c3a5282a08baa6e8f9f09302b46 
+--- 
 
-## Статусы объектов данных
+## the statuses of the data objects 
 
-Статусы объектов данных могут быть:
+The statuses of the data objects can be: 
 
-* `ObjectStatus.UnAltered` — объект данных не изменён.
-* `ObjectStatus.Created` — объект данных создан.
-* `ObjectStatus.Altered` — объект данных изменён.
-* `ObjectStatus.Deleted` — объект данных удалён.
+* `ObjectStatus.UnAltered` object data is not changed. 
+* `ObjectStatus.Created` — a data object created. 
+* `ObjectStatus.Altered` object data changed. 
+* `ObjectStatus.Deleted` — data object deleted. 
 
-Статус объекта можно выяснить методом объекта данных `GetStatus`, а установить — `SetStatus`. Статус позволяет выяснить, какие именно изменения были внесены в объект данных.
+The object status can be ascertained by the method of the data object `GetStatus` and set — `SetStatus`. Status allows you to determine exactly what changes were made to the data object. 
 
-### AutoAltered
+### AutoAltered 
 
-Статус `Altered` может вычисляться автоматически в момент вызова метода `GetStatus`. Для этого необходимо классу объекта данных приписать атрибут `AutoAltered`. Если этот атрибут не приписан, то установку статуса `Altered` программист должен выполнять «вручную». Следует внимательно пользоваться данной возможностью, помнить, что установка `AutoAltered` замедляет работу, поскольку *при каждом получении статуса происходит реальная проверка свойств объекта данных на изменение*. По-умолчанию `AutoAltered=True;`
+Status `Altered` can be calculated automatically at the time you call `GetStatus`. This requires the class of the data object attribute to the attribute `AutoAltered`. If this attribute is not assigned, then set status `Altered` programmer must perform» «manually. You should carefully use this opportunity to remember that the installation `AutoAltered` slows down because *each time the status of the real test object properties data on the change*. Default `AutoAltered=True;` 
 
-Существует возможность не перевычислять статус при установленном `AutoAltered`, для этого необходимо вызывать метод `GetStatus(false)`.
+There is a possibility not to be recalculated after the status of the established `AutoAltered`, it is necessary to call the method `GetStatus(false)`. 
 
-Проверить, установлен ли атрибут `AutoAltered`, можно методом [Information](fo_methods-class-information.html)`.AutoAlteredClass`.
+To check if the attribute `AutoAltered` by using [Information](fo_methods-class-information.html)`.AutoAlteredClass`. 
 
-### Проверка на изменение свойств пользовательского типа
+### Test to modify the properties of a custom type 
 
-Если объект данных содержит свойства пользовательского типа (например, тип Деньги), то по-умолчанию сравнение значений такого атрибута самого объекта и его [копии данных](fo_data-object-copy.html) будет производиться через приведение этого атрибута к строке методом `ToString()`, а затем сравнением строк. Не для всех типов данный подход верен и работает быстро, поэтому существует интерфейс `IComparableType`, который содержит метод для сравнения. Если пользовательский тип унаследован от этого типа, то сравнение будет осуществляться не через строки, а вызовом специального метода, содержащегося в интерфейсе. Рекомендуется применять этот интерфейс для всех пользовательских типов атрибутов.
+If the data object contains the properties of a custom type (e.g., type of Money), then the default value comparison of an attribute of the object itself and [copy data](fo_data-object-copy.html) will be made through the implementation of this attribute to a string by `ToString()` and then comparing strings. Not for all types the approach is correct and works fast, so there is a `IComparableType` interface that contains method for comparison. If a custom type inherited from the type the comparison is not to be through strings, and calling a special method contained in the interface. It is recommended to use this interface, all user attribute types. 
 
-## Состояния загрузки объекта данных
+## download Status of the data object 
 
-Состояние загрузки объекта данных:
+The loading state of the data object: 
 
-* `LoadingState.NotLoaded` — объект данных не загружен.
-* `LoadingState.Loaded` — вычитаны все собственные атрибуты объекта данных, все мастеровые первого уровня, все детейловые первого уровня.
-* `LoadingState.LightLoaded` — объект данных частично загружен, подробности могут быть выяснены вызовом у объекта методов [GetLoadedProperties и CheckLoadedProperty](fo_definition-loaded-properties.html).
+* `LoadingState.NotLoaded` object data is not loaded. 
+* `LoadingState.Loaded` — proofread all native attributes of the data object, all the artisans of the first level, all dealove the first level. 
+* `LoadingState.LightLoaded` object data is partially loaded, the details can be clarified by calling object methods [GetLoadedProperties and CheckLoadedProperty](fo_definition-loaded-properties.html). 
 
-Состояние загрузки можно выяснить через метод `GetLoadingState`, а установить — `SetLoadingState`.
+The download status can be ascertained through the method `GetLoadingState` and set — `SetLoadingState`. 
 
-## Особенности отношений статуса и состояния загрузки
+## Features of relationship status and download status 
 
-Ниже представлены некоторые особенности связи между статусами и состояниями загрузки объектов данных:
+Below are some features of the relationship between status and status of the download of data objects: 
 
-* Когда объект данных создан, он всегда `NotLoaded Created` (то же самое происходит и при вызове метода Clear). Если объект `NotLoaded`, то он может быть только `Created`.
-* Если объект имеет состояние `Loaded/LightLoaded`, то он ни при каких условиях не может иметь статус `Created`. 
-* Объект не бывает `NotLoaded UnAltered`.
-* [Особым образом обрабатываются статус и состояние загрузки объекта при его обновлении](fo_processing-status-condition-load.html).
-* Если нужно перевести объект из состояния `Created` в состояние `Altered`, то достаточно вызвать метод `SetLoadingState(LoadingState.LightLoaded)` тем самым указав, что объект в базе присутствует. Более правильный способ - это вызвать `SetExistObjectPrimaryKey(object primaryKey)` - это не только указывает на то, что объект в БД присутсвует, но и сразу задаёт правильный [ключ](fo_primary-keys-objects.html) этого самого объекта в базе.
-* Метод установки статуса объекту данных DataObject.SetStatus() имеет специальную логику, которая срабатывает при переключении статуса. 
+* When a data object is created, it always `NotLoaded Created` (the same thing happens when you call the Clear method). If the object `NotLoaded`, it can only be `Created`. 
+* If the object has a status `Loaded/LightLoaded`, it under no circumstances cannot have the status of `Created`. 
+* Object does not happen `NotLoaded UnAltered`. 
+* [In a special way processed status and the download status of the object when it is refreshed](fo_processing-status-condition-load.html). 
+* If you need to move the object from state to state `Created` `Altered`, it is enough to call the method `SetLoadingState(LoadingState.LightLoaded)` thereby putting that object in the database is present. More correct way is to call `SetExistObjectPrimaryKey(object primaryKey)` is not only indicates that the object in the database is present, but immediately sets the right [key](fo_primary-keys-objects.html) of the object in the database. 
+* Method to set the status of the data object DataObject.SetStatus() has special logic that is triggered when the switching status. 
 
-| **Устанавливаемое \ Старое** | UnAltered | Created | Altered | Deleted|
-|:---------------|:---------------|:---------------|:---------------|:---------------
-| UnAltered | UnAltered | **Created** | UnAltered | **Created если NotLoaded, иначе UnAltered**|
-| Created | Created **+ NotLoaded** | Created **+ NotLoaded** | Created **+ NotLoaded** | Created **+ NotLoaded**|
-| Altered| Altered | **Created** | Altered | **Created если NotLoaded, иначе Altered**|
+| **Set The \ Old** | UnAltered | Created | Altered | Deleted| 
+|:---------------|:---------------|:---------------|:---------------|:--------------- 
+| UnAltered | UnAltered | **Created** | UnAltered | **if are not loaded are Created, UnAltered otherwise**| 
+| Created | Created ** Are Not Loaded Are** | Created ** Are Not Loaded Are** | Created ** Are Not Loaded Are** | Created ** Are Not Loaded Are**| 
+| Altered| Altered | **Created** | Altered | **Created if are not loaded are otherwise Altered**| 
 | Deleted | Deleted | Deleted | Deleted | Deleted|
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

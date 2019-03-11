@@ -1,36 +1,42 @@
----
-title: Бизнес-серверы (классы со стереотипом businessserver) 
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Businessserver, бизнес-сервер, стереотип, генерация, свойства, бизнес-фасад
-summary: Особенности генеации классов со стереотипом businessserver, свойства бизнес-сервера
-toc: true
-permalink: en/fd_business-servers.html
-lang: en
----
+--- 
+title: Business servers (classes with the stereotype businessserver) 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Designer, Businessserver, business server, stereotype, generation, properties, business facade 
+summary: Features geniali classes with the stereotype businessserver, properties, business servers 
+toc: true 
+permalink: en/fd_business-servers.html 
+lang: en 
+autotranslated: true 
+hash: fb8d1256f5b4f0e8ea368f310b6bfa07f5df8d311d16910de4058d29b7d48aa7 
+--- 
 
-Для описания [бизнес-сервера](fo_bs-wrapper.html) необходимо создать на диаграмме класс со [стереотипом](fd_key-concepts.html) `businessserver`.
+To describe [business server](fo_bs-wrapper.html) you must create the chart class with the [stereotype](fd_key-concepts.html) `businessserver`. 
 
-Например:
+For example: 
 
-![](/images/pages/products/flexberry-designer/class-diagram/businessserver.png)
+![](/images/pages/products/flexberry-designer/class-diagram/businessserver.png) 
 
-## Что генерируется
+## generated 
 
-* Код бизнес-сервера: [класс, наследующийся от ICSSoft.STORMNET.Business.BusinessServer](fo_user-operations-dataservice.html), методы генерируются как виртуальные методы с соответствующими параметрами и модификаторами. Тело метода пустое со [скобкой программиста](fo_programmer-brackets.html) для внесения кода метода. UML-атрибуты не генерируются, т.к. объекты бизнес-сервера не имеют состояния, о чём генератором выдаётся соответствующее предупреждение. 
-* Указанные в свойствах заглушки для бизнес-сервера. 
+* Code business servers: [class that are inherited from ICSSoft.STORMNET.Business.BusinessServer](fo_user-operations-dataservice.html), methods are generated as virtual methods with the appropriate parameters and modifiers. The method body empty with [bracket programmer](fo_programmer-brackets.html) to make the code in the method. UML attributes are not generated, since the business objects servers are stateless, what a generator is issued a warning. 
+* Specified in the properties of plugs for your business servers. 
 
-# Свойства бизнес-сервера
+# Properties business server 
 
-![](/images/pages/products/flexberry-designer/class-diagram/bsprops1.jpg)
+![](/images/pages/products/flexberry-designer/class-diagram/bsprops1.jpg) 
 
-Свойство | Описание | Генерация в .Net-язык
-:----------------------|:----------------------------|:--------------------------------------------
-`Name` | имя UML-класса | Имя .Net-класса бизнес-сервера
-`Description` | некоторое описание класса | `DocComment` перед определением класса
-`Packet, NamespacePostfix` | позволяют настроить сборку и пространство имен, в которое должен генерироваться тип | см. [Расположение сборок после генерации кода](fo_location-assembly.html).
-`PBMembers` | позволяет указать, необходима ли скобка программиста внутри класса для "ручного" внесения членов класса | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения членов класса.
-`GenerateComPlusServer` | | Если галочка установлена, - генерируется класс-заглушка (обёртка) в отдельной сборке, для обращения к бизнес-серверу через COM+.
-`ComPlusServerOptions` | | Указывает для COM+ - заглушки управление транзакционностью COM+ по-умолчанию, в терминах COM+. Влияет на генерацию атрибута ``` [Transaction(TransactionOption.XXXXXXX)] ``` непосредственно перед классом заглушки
-`GenerateHTTPRemoteServer` | | Если галочка установлена, - генерируется класс-заглушка (обёртка) в отдельной сборке, для обращения к бизнес-серверу через Remoting, организованный через протокол HTTP.
+Property | Description | Generation .Net language 
+:----------------------|:----------------------------|:-------------------------------------------- 
+`Name` | name UML class Name .Net-class-business-servers 
+`Description` | a class description | `DocComment` before the class definition 
+`Packet, NamespacePostfix` | allow to set the Assembly and namespace in which to generate the type of | see [the Location of assemblies after code generation](fo_location-assembly.html). 
+`PBMembers` | allows you to specify whether to brace the programmer within the class to "manual" introduction of the members of the class | If the option is given, it is generated [bracket programmer](fo_programmer-brackets.html a) for "manual" introduction of the members of the class. 
+`GenerateComPlusServer` | | If the option is set, - generated class-stub (wrapper) in a separate Assembly to access the business server through COM . 
+`ComPlusServerOptions` | | Indicates to the COM stub management transactionally COM default, in terms of COM . Affects the generation of the attribute ``` [Transaction(TransactionOption.XXXXXXX)] ``` directly in front of the stub class 
+`GenerateHTTPRemoteServer` | | If the option is set, - generated class-stub (wrapper) in a separate Assembly to access the business server via Remoting, organized via the HTTP Protocol. 
 
-{% include note.html content="Свойства атрибутов бизнес-сервера не учитываются, так как не учитываются сами атрибуты. Свойства и генерация методов для бизнес-сервера происходит, как описано [в статье  Методы классов и параметры методов](fd_methods-parameters.html)." %}
+{% include note.html content="attribute Properties business servers do not count as not count the attributes. Properties and generation methods for your business server, as described [in the article class Methods and method parameters](fd_methods-parameters.html)." %} 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -1,18 +1,24 @@
----
-title: Processing of the status and status of object loading
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, data service
-summary: Processing of the status and state of loading an object by data services
-toc: true
-permalink: en/fo_processing-status-condition-load.html
-lang: en
----
+--- 
+title: Processing of status and the download status object 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, data services 
+summary: Processing status and download status of the object data services 
+toc: true 
+permalink: en/fo_processing-status-condition-load.html 
+folder: products/flexberry-orm/ 
+lang: en 
+autotranslated: true 
+hash: e955ef2f93dda7b020f1b888bb78441ef0c00f5079ad43849a6b65d151978737 
+--- 
 
-При обновлении в хранилище объекта данных, любой сервис данных учитывает статусы следующим образом:
+When you upgrade in the store data object, any data service account statuses the following way: 
 
-| **ObjectStatus**| **Хранилище**| **Объект данных**|
-|:----------------|:----------------|:----------------|
-| UnAltered| Не изменяет данные| Не меняется (остаётся Loaded/LightLoaded и UnAltered)|
-| Created| Создаёт данные в хранилище| Меняется статус на Loaded и UnAltered|
-| Altered| Изменяет данные в хранилище| Меняется статус на Loaded/LightLoaded и UnAltered|
-| Deleted| Удаляет данные из хранилища| Объект удаляется из массива обрабатываемых объектов (возвращается null в случае одного объекта)|
+| **ObjectStatus**| **Storage**| **data Object**| 
+|:----------------|:----------------|:----------------| 
+| UnAltered| Not modify the data| does Not change (remains Loaded/LightLoaded and UnAltered)| 
+| Created| Creates data in the store| Change status to Loaded and UnAltered| 
+| Altered| Modifies data in the storage| Changing status to Loaded/LightLoaded and UnAltered| 
+| Deleted| Removes data from the repository| the Object is deleted from the array of objects to process (null is returned in case of one object)|
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

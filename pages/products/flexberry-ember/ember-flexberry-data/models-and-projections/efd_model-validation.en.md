@@ -1,19 +1,21 @@
----
-title: Валидация модели
-sidebar: flexberry-ember_sidebar
-keywords: Flexberry Ember
-toc: true
-permalink: en/efd_model-validation.html
-folder: products/ember-flexberry-data/models-and-projections/
-lang: en
-summary: Описаны основные шаги по настройке валидации
----
+--- 
+title: validation of the model 
+sidebar: flexberry-ember_sidebar 
+keywords: Flexberry Ember 
+toc: true 
+permalink: en/efd_model-validation.html 
+folder: products/ember-flexberry-data/models-and-projections/ 
+lang: en 
+autotranslated: true 
+hash: d6871d7db9afd98befdd58db352ed1f0450f4fb87b2a1ef0a0aa8ed103198553 
+summary: Describes the basic steps for configuring validation 
+--- 
 
-## Описание
+## Description 
 
-Клиентская валидация настраивается в приложении на базе аддона [Ember Validations](https://github.com/dockyard/ember-validations) (в документации к данному аддону указано больше возможностей по заданию правил).
+Client validation is configured in the application based on addon [Ember Validations](https://github.com/dockyard/ember-validations) (the documentation for this addon more than the capacity to define rules). 
 
-Валидация задаётся на уровне модели (остальные манипуляции с настройкой компонента зашиты в технологию Flexberry ASP.NET Ember):
+The validation set of the model (other manipulation of configuration are sewn in technology Flexberry ASP.NET Ember): 
 
 ```javascript
 var Model = BaseModel.extend({
@@ -22,7 +24,7 @@ var Model = BaseModel.extend({
   визирование: DS.attr('boolean', {defaultValue: false}),
   примечание: DS.attr('string'),
 
-  // Validation rules.
+  // Validation rules. 
   validations: {
       номерПроекта: { presence: true },
       краткоеСодержание: { presence: true, length: { maximum: 255 } },
@@ -30,13 +32,13 @@ var Model = BaseModel.extend({
       примечание: { length: { maximum: 255 } },
   }
 });
-```
+``` 
 
-Для отображения валидации на форме редактирования в соответствующем шаблоне необходимо написать примерно следующее (стили и расположение элементов может отличаться):
+To display the validation on the edit form in the corresponding template you must write about the following (styles and position of elements may be different): 
 
 ```html
-<div class="ui grid `if model.errors.номерПроекта 'error' ''`">
-	<div class="ui two wide column right aligned middle aligned content">
+<div class="ui grid `if model.errors.samarpreet 'error' "`">
+	<div class="ui two wide column right aligned, middle aligned content">
 		<label>Номер проекта</label>
 	</div>
 	<div class="ten wide column">
@@ -44,46 +46,50 @@ var Model = BaseModel.extend({
 		`input type="text" placeholder="(no value)" value=model.номерПроекта`
 	</div>
 </div>
-```
+``` 
 
-{% include note.html content="Поскольку при валидации изначально считается, что у полей логического типа значение `null`, то, чтобы не отображались сообщения валидации, можно задать [значение по умолчанию](http://guides.emberjs.com/v2.4.0/models/defining-models/) (как это сделано в примере выше)." %}
+{% include note.html content="Since validation initially, it is believed that fields of type Boolean the value `null`, to not show the message validation, you can specify [default value](http://guides.emberjs.com/v2.4.0/models/defining-models/) (as is done in the example above)." %} 
 
-## Типы валидаторов
+## Types of validators 
 
-Существуют "стандартные" валидаторы, предоставляемые аддоном Ember Validations, а также кастомные валидаторы, предоставляемые вместе с аддоном [ember-flexberry](https://github.com/Flexberry/ember-flexberry).
+There are standard validators provided by the addon Ember Validations and custom validators provided with the addon [ember-flexberry](https://github.com/Flexberry/ember-flexberry). 
 
-### "Стандартные" валидаторы
+### Standard validators 
 
-Аддоном Ember Validations предоставляются следующие валидаторы:
+Addon Ember Validations include the following validators: 
 
-* `absence` - проверка того, что валидируемое свойство должно быть пустым. [Подробнее](https://github.com/dockyard/ember-validations#absence).
-* `acceptance` - проверка того, что в валидируемое свойство введено допустимое значение (задается в валидаторе). [Подробнее](https://github.com/dockyard/ember-validations#acceptance).
-* `confirmation` - проверка того, что значение валидируемого свойства совпадает со значением свойства propertyConfirmation, где property-имя валидируемого свойства. [Подробнее](https://github.com/dockyard/ember-validations#confirmation).
-* `exclusion` - проверка того, что значение валидируемого свойства не входит в перечень недопустимых значений. [Подробнее](https://github.com/dockyard/ember-validations#exclusion).
-* `format` - проверка того, что значение валидируемого свойства соответствует заданному регулярному выражению. [Подробнее](https://github.com/dockyard/ember-validations#format).
-* `inclusion` - проверка того, что значение валидируемого свойства входит в перечень допустимых значений. [Подробнее](https://github.com/dockyard/ember-validations#inclusion).
-* `length` - проверка того, что значение валидируемого свойства имеет заданную длину. [Подробнее](https://github.com/dockyard/ember-validations#length).
-* `numericality` - проверка того, что значение валидируемого свойства является числовым. [Подробнее](https://github.com/dockyard/ember-validations#numericality).
-* `presence` - проверка того, что валидируемое свойство должно быть не пустым. [Подробнее](https://github.com/dockyard/ember-validations#presence).
+* `absence` - verifying that validated the property must be empty. [Read more](https://github.com/dockyard/ember-validations#absence). 
+* `acceptance` - verifying that validated the property is a valid value (set in the validator). [Read more](https://github.com/dockyard/ember-validations#acceptance). 
+* `confirmation` - check that the value of the validated property is the value of the property propertyConfirmation, where property is the name you want to validate properties. [Read more](https://github.com/dockyard/ember-validations#confirmation). 
+* `exclusion` - check that the value of validated properties are not included in the list of invalid values. [Read more](https://github.com/dockyard/ember-validations#exclusion). 
+* `format` - check that the value you want to validate the property match the given regular expression. [Read more](https://github.com/dockyard/ember-validations#format). 
+* `inclusion` - check that the value you want to validate the properties included in the list of valid values. [Read more](https://github.com/dockyard/ember-validations#inclusion). 
+* `length` - check that the value of validated properties is the specified length. [Read more](https://github.com/dockyard/ember-validations#length).
+* `numericality` - check that the value of the validated property is numeric. [Read more](https://github.com/dockyard/ember-validations#numericality). 
+* `presence` - verifying that validated the property must not be empty. [Read more](https://github.com/dockyard/ember-validations#presence). 
 
-### Кастомные валидаторы
+### Custom validators 
 
-В рамках аддона ember-flexberry реализованы следующие валидаторы:
+In the framework of the addon ember-flexberry implemented the following validators: 
 
-* `datetime` - проверка корректности ввода даты/даты-времени. [Подробнее](efd_date-time-validator.html).
+* `datetime` - validation of date input/date / time. [Read more](efd_date-time-validator.html). 
 
-### Условные валидаторы
+### Conditional validators 
 
-Все валидаторы могут работать также в режиме условной валидации - их срабатывание будет зависеть либо от дополнительной логической функции, либо от логического свойства объекта. [Подробнее](https://github.com/dockyard/ember-validations#conditional-validators).
+All validators can work in the mode of conditional validation - their operation will depend either on an additional logical function, or Boolean property of an object. [Read more](https://github.com/dockyard/ember-validations#conditional-validators). 
 
-## Разработка кастомных валидаторов
+## Development of custom validators 
 
-Прикладные разработчики также могут создавать свои кастомные валидаторы, если имеющихся валидаторов не достаточно для реализации прикладной логики.
-Существует 2 способа реализовать кастомные валидаторы:
+Application developers can also create their own custom validators if the validator is not enough to implement the application logic. 
+There are 2 ways to implement custom validators: 
 
-* Реализовать отдельный валидатор, который будет возможно переиспользовать для моделей разных сущностей
-* Реализовать inline-валидатор, который будет проверять корректность данных для модели одной конкретной сущности
+* Implement your own validator, which can be reused for different entities 
+* Implement inline validator that checks the correctness of the data model for one specific entity 
 
-Подробнее о процессе создания кастомных валидаторов можно посмотреть [здесь](https://github.com/dockyard/ember-validations#custom-validators).
+Read more about the process of creating custom validators can be viewed [here](https://github.com/dockyard/ember-validations#custom-validators). 
 
-Кроме этого, можно посмотреть исходный код валидаторов в [репозитории аддона Ember Validations на GitHub](https://github.com/dockyard/ember-validations/tree/master/addon/validators).
+In addition, you can view the source code of validators in the [repository addon Ember Validations on GitHub](https://github.com/dockyard/ember-validations/tree/master/addon/validators). 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -1,23 +1,28 @@
----
-title: Проверка данных на форме во время редактирования
-sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (формы)
-summary: Сравнительная характеристика различных вариантов проверки данных на форме во время редактирования 
-toc: true
-permalink: en/fw_check-form-field-during-edit.html
-folder: products/flexberry-winforms/
-lang: en
----
-Проверка данных на форме во время редактирования может осуществляться за счёт:
-* [генерации исключения при неправильном вводе в методе `set` соответствующего поля объекта](fo_check-object-set.html);
-* определения обязательных для заполнения полей на диаграмме классов через атрибут [`NotNull`](fo_attributes-class-data.html);
-* проверки через [`DataObjectErrorProvider`](fw_data-object-error-provider.html).
+--- 
+title: data Validation on the form during editing 
+sidebar: flexberry-winforms_sidebar 
+keywords: Windows UI (forms) 
+summary: Comparative analysis of different variants of data validation on the form during editing 
+toc: true 
+permalink: en/fw_check-form-field-during-edit.html 
+folder: products/flexberry-winforms/ 
+lang: en 
+autotranslated: true 
+hash: 78d32698155ae3ca4918e624088c7d67f84467ec2af938a858ceff400ab52b1b 
+--- 
+Data validation on the form during editing can be carried out by: 
+* [an exception is thrown if an invalid entry in the method `set` the corresponding field of the object](fo_check-object-set.html); 
+* define required fields on the class diagram using the attribute [`NotNull`](fo_attributes-class-data.html); 
+* checks through the [`DataObjectErrorProvider`](fw_data-object-error-provider.html). 
 
-| Приём | Преимущества | Недостатки|
-|--|--|--|
-| [Генерация исключения при неправильном вводе в методе `set` соответствующего поля объекта](fo_check-object-set.html) | + позволяет организовать работу таким образом, что пользователь не выйдет из поля до тех пор, пока значение поля не будет введено корректно | - для начала проверки требуется, чтобы фокус попал на соответствующее поле
-| Определение обязательных для заполнения полей на диаграмме классов через атрибут [`NotNull`](fo_attributes-class-data.html) | + позволяет в модели задать обязательные для заполнения поля <br> + ненавязчивое сигнализирование о незаполненности поля | - не позволяет определять поля, обязательные только в некоторых ситуациях
-| Проверка через [`DataObjectErrorProvider`](fw_data-object-error-provider.html) | + позволяет быстро прописать в коде перечень обязательных полей и пользователи приложения не смогут его менять, <br> + ненавязчивое сигнализирование о незаполненности поля  | - не позволяет пользователям менять условия проверки данных на форме
-|||
+| Admission | Advantages | Disadvantages| 
+|--|--|--| 
+| [An exception if an invalid entry in the method `set` the corresponding field of the object](fo_check-object-set.html) | allows to organize work in such a way that the user will not leave the field until, until the field value is not entered correctly | - to start the verification process requires that the focus may fall on the corresponding field 
+| Define required fields on the class diagram using the attribute [`NotNull`](fo_attributes-class-data.html) | allows the model to define required fields <br> discreet flag of nezaposlenosti field | does not allow to define fields that are mandatory only in certain situations 
+| Check [`DataObjectErrorProvider`](fw_data-object-error-provider.html) | allows you to quickly prescribe in the code the list of mandatory fields and users of the application will not be able to change it, <br> discreet flag of nezaposlenosti field | does not allow users to change the validation criteria on the form 
+||| 
 
-Другие методы проверки данных на форме описаны [здесь](fw_edit-form-validation.html).
+Other methods of data validation on the form is described [here](fw_edit-form-validation.html).
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

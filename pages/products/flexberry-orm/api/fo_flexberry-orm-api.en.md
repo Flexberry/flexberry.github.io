@@ -1,13 +1,19 @@
----
-title: Flexberry ORM API
-sidebar: flexberry-orm_sidebar
-keywords: API
-toc: true
-permalink: en/ef_flexberry-orm-api.html
-lang: en
----
+--- 
+title: Flexberry ORM API 
+sidebar: flexberry-orm_sidebar 
+keywords: API 
+toc: true 
+permalink: en/ef_flexberry-orm-api.html 
+lang: en 
+autotranslated: true 
+hash: f7e95a53f40d8f9c3fc8c3d2c88822771afed3e35db62ea9b04efc6c993a0b9d 
+--- 
 
-## Autodocumentation for `Flexberry ORM`
+## Autodocumentary for `Flexberry ORM` 
 
-* [Flexberry ORM branch develop](https://flexberry.github.io/NewPlatform.Flexberry.ORM/autodoc/develop/)
-* [Flexberry ORM branch master](https://flexberry.github.io/NewPlatform.Flexberry.ORM/autodoc/master/)
+* [ORM Flexberry the develop branch](https://flexberry.github.io/NewPlatform.Flexberry.ORM/autodoc/develop/) 
+* [ORM Flexberry master branch](https://flexberry.github.io/NewPlatform.Flexberry.ORM/autodoc/master/) 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

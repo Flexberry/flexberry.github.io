@@ -1,34 +1,36 @@
----
-title: Шрифтовые иконки
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_font-icons.html
-lang: en
----
+--- 
+title: Font icons 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_font-icons.html 
+lang: en 
+autotranslated: true 
+hash: b93b625f77d9fbdcb27320f90c4b3e922c77620448fbc1bfccd614481ce3252d 
+--- 
 
-## Описание
+## Description 
 
-Шрифтовые иконки (иконочный шрифт) - это шрифт, который содержит в себе набор иконок различной тематики.
+Font icons (icon font) is a font which contains a set of icons on various subjects. 
 
-Преимущества:
+Advantages: 
 
-* вариативность цвета, и прочих свойств каскадных стилей;
-* изменение размера картинки без потери качества;
-* достаточное количество иконок, выполненных в одном стиле.
+* variability of color, and other properties of the cascade стилей; 
+* resize images without losing качества; 
+* a sufficient number of icons, made in the same style. 
 
-## Вставка иконки, используя разметку
+## Insert icons using the markup 
 
-В технологических стилях встроены шрифтовые иконки с сайта [Font Awesome](http://fortawesome.github.io/Font-Awesome/icons/). 
+In the technological styles of embedded font icons from [Font Awesome](http://fortawesome.github.io/Font-Awesome/icons/). 
 
-Для добавления иконки необходимо выполнить следующие действия:
+To add icons you must do the following: 
 
-* перейти на сайт [Font Awesome](http://fortawesome.github.io/Font-Awesome/icons/) и выбрать понравившуюся иконку;
-* перейти в описание иконки и посмотреть название класса;
-* вставить в разметку тег с соответствующими классами;
-* задать стили для иконки (цвет, размер и т.д.).
+* go to the website [Font Awesome](http://fortawesome.github.io/Font-Awesome/icons/) and choose иконку; 
+* go to the description of the icons and see the name класса; 
+* insert the markup tag with the appropriate классами; 
+* set styles for the icons (color, size, etc.). 
 
-# Вставка иконки, используя только стили
+# Insert icons using only styles 
 
 ```css
 .element-class {
@@ -45,15 +47,15 @@ lang: en
 .element-class:before {
    content: "\f083";
 }
-```
+``` 
 
-Код иконки можно посмотреть на сайте [Font Awesome](http://fortawesome.github.io/Font-Awesome/icons/).
+Icon code can be found on the [Font Awesome](http://fortawesome.github.io/Font-Awesome/icons/). 
 
-{% include note.html content="Шрифтовые иконки вставляются внутрь родительского элемента, до (:before) и после (:after) содержимого, как псевдоэлемент. Отсюда следует неочевидный вывод, что псевдоэлементы применимы только к элементам, к которых ЕСТЬ СОДЕРЖИМОЕ. Элементы, которые не имеют закрывающего тега (например, input, img), и, соответственно, не имеющие содержимого, никаких псевдоэлементов создавать не будут." %}
+{% include note.html content="a Font icons are inserted inside the parent element before (:before) and after (:after) content, as a pseudo-element. Hence the obvious conclusion that pseudo-elements apply only to elements which HAVE CONTENT. Elements that have no closing tag (for example, input, img), and, accordingly, have no content, no pseudo-elements will not be created." %} 
 
-## Ошибка в консоле браузера
+## Error in the console browser 
 
-Для устранения ошибки необходимо добавить MIME type в config, со следующим содержанием:
+To fix the error, you need to add MIME type in config with the following contents: 
 
 ```xml
 <system.webServer>    
@@ -64,21 +66,21 @@ lang: en
       <mimeMap fileExtension=".woff2" mimeType="application/x-font-woff2" />
     </staticContent>
 </system.webServer>
-```
+``` 
 
-## Скрытие шрифтовых иконок
+## Hide font icons 
 
-Если в Вашем проекте имеются свои иконки, которые Вы не хотели бы терять по каким-либо причинам, тогда Вам необходимо их скрыть нижеследующим образом.
+If Your project have their own icons that You don't want to lose for whatever reason, then You need to hide them in the following way. 
 
 ```css
-// Иконки WOLV'а
+// Icons WOLV'and 
 .ics-wolv-content .actions .ics-wolv-row-button,
 .ics-wolv-toolbar .ics-wolv-toolbar-button .ics-wolv-toolbar-button-icon,
 .miniToolbar .actions a {
     display: inline-block;
     background-repeat: no-repeat;
     transform: none;
-    //background: url(../images/icon.png);  // путь до файла с иконками, должен быть указан в Ваших селекторах
+    //background: url(../images/icon.png); // path to file with icons should be specified in Your selectors 
 }
 
 .ics-wolv-row-button {
@@ -90,7 +92,7 @@ lang: en
 .ics-wolv-toolbar-button-icon,
 .miniToolbar a {
   margin: 0;
-  width: 16px;   // ширина и высота возможно уже указаны в другом селекторе
+  width: 16px;   // width and height might exist in another selector 
   height: 16px;
   vertical-align: middle;
 }
@@ -112,10 +114,10 @@ lang: en
     content: none;
 }
 
-// Иконки lookup'а
+// Icons lookup'and 
 .ics-form-edit .ics-lookup-btn {
     background: url(../images/icon.png);
-    top: 6px;     // отступ сверху, ширина, высота зависят от Ваших иконок
+    top: 6px;     // the top margin, width, height depend on Your icons 
     width: 13px;
     height: 18px;
 }
@@ -124,8 +126,11 @@ lang: en
 .ics-lookup .ics-lookup-btn.ics-lookup-btn-lookup:before {
     content: none;
 }
-```
+``` 
 
-## Примеры использования
+## Examples of usage 
 
-[Примеры использования.](http://fortawesome.github.io/Font-Awesome/examples/)
+[Examples of usage.](http://fortawesome.github.io/Font-Awesome/examples/)
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -1,47 +1,53 @@
----
-title: Производительность ember-приложений
-sidebar: flexberry-ember_sidebar
-keywords: performance, bottleneck, perforator, perf, hbs
-toc: true
-permalink: en/ef_performance-tips.html
-lang: en
-summary: Советы по проектированию и разработке с применением EmberJS, касающиеся производительности приложений
----
+--- 
+title: Performance ember-application 
+sidebar: flexberry-ember_sidebar 
+keywords: performance, bottleneck, perforator, perf, hbs 
+toc: true 
+permalink: en/ef_performance-tips.html 
+lang: en 
+autotranslated: true 
+hash: a2f3920aecb930c59b05cdc59521fb980cc7518e27d669008ef5adbbd10fb44f 
+summary: Tips on designing and developing with the use of EmberJS relating to application performance 
+--- 
 
-## Золотые правила разработки приложений на EmberJS
+## Golden rules of developing applications in EmberJS 
 
-1. При проектировании компонентов или форм нужно использовать "отложенный рендеринг" блоков, которые пользователь не видит. Если у вас есть панель настроек, фильтров, и т.п. изначально скрытые для пользователя блоки - реализуйте [hbs-шаблон](https://guides.emberjs.com/v2.12.0/templates/handlebars-basics/) таким образом, чтобы рендеринг их производился по событию показа этого блока пользователю.
-2. При длительной (больше 0.3 сек.) загрузке некоторого блока - используйте ["Semantic UI компонент Loader"](https://semantic-ui.com/elements/loader.html), означающий загрузку. Пользователь увидит, что система не "зависла", что процесс идёт, значит система работает. Кроме того, ощущение переключения визуальной составляющей на Loader и обратно даёт эффект "сжатия времени" для пользователя - на коротких интервалах пользователь не чувствует что система заставляет его ожидать.
-3. При проектировании и реализации hbs-шаблонов по возможности следует избегать вложенных друг в друга компонент и хелперов. Как правило, можно разработать hbs-шаблон, который будет содержать только html-компоненты и базовые хелперы, такие как условия, циклы, биндинги. Глубокая вложенность компонентов гарантированно снижает производительность приложения.
-4. Для свойств, которые участвуют в hbs-шаблоне важно правильно спроектировать логику их изменения: каждое изменение такого поля может приводить к перерендерингу вложенной части шаблона. Правильный жизненный цикл, который работает оптимально, такой: сначала выполнили инициализацию свойств, которые могут несколько раз измениться, затем запустили рендеринг (см. п. 1 и 2). В самом плохом варианте изменение свойств будет выполняться в [хуках, связанных с рендерингом компонентов и страниц](https://guides.emberjs.com/v2.12.0/components/the-component-lifecycle/), что гарантированно приведёт к перерендерингу шаблона (EmberJS для такой ситуации также генерирует в консоль браузера Warning-сообщение о проблемах с производительностью).
-5. Используйте инструменты профилирования производительности Ember-приложений.
+1. When designing components or forms you need to use "deferred rendering" blocks that the user sees. If you have a settings panel, filters, etc. are initially hidden to the user units - implement [hbs-template](https://guides.emberjs.com/v2.12.0/templates/handlebars-basics/) so that their rendering was performed by event show this block to the user. 
+2. With prolonged (more than 0.3 sec.) download some block - use ["Semantic UI component Loader"](https://semantic-ui.com/elements/loader.html), meaning the download. The user will see that the system is not "stuck" that process is, it means the system works. In addition, the shift feel of the visual component on the Loader and back gives the effect of "time compression" to the user, for short intervals, the user feels that the system forces him to expect. 
+3. In the design and implementation of the hbs templates if possible, you should avoid nested in each other component and helpers. As a rule, it is possible to develop the hbs template, which will contain only html components and basic helpers, such as conditions, loops, binding. Deep nesting of components is guaranteed to degrade application performance. 
+4. For properties that participate in the hbs-template, it is important to design the logic of their changes: every change in this field may lead to prerendering subfolder of the template. The correct life-cycle, which works optimally like this: you first performed the initialization properties, which can change several times, then started the rendering (see 1 and 2). In the worst variant of change of properties will occur in the [hooks related to the rendering components and pages](https://guides.emberjs.com/v2.12.0/components/the-component-lifecycle/), which will lead to prerendering template (EmberJS for this situation also generates a browser console Warning message about the performance issues). 
+5. Use the profiling tools performance Ember applications. 
 
-## Инструменты профилирования производительности Ember-приложений
+## Tools performance profiling Ember applications 
 
-* [Perforator](https://chrome.google.com/webstore/detail/perforator-ember-performa/hfdilejiecmablifdkololalnbbmdcdb) - расширение к Google Chrome, показывающее время рендеринга ember-компонент.
-* Сервис `perf` - аналогичная Perforator функциональность, но встроенная в ember-flexberry (может использоваться в браузерах, отличных от Google Chrome).
-* Консоль браузеров - большинство современных браузеров позволяют выполнять профилирование JS-кода.
+* [Perforator](https://chrome.google.com/webstore/detail/perforator-ember-performa/hfdilejiecmablifdkololalnbbmdcdb) - an extension to Google Chrome that shows the rendering time ember component. 
+* Service `perf` - Perforator similar functionality, but built into ember-flexberry (can be used in browsers other than Google Chrome).
+* Console browsers - most modern browsers allow you to profile JavaScript code. 
 
-### Сервис perf
+### Service perf 
 
-Для ember-приложений, в которые установлен [аддон ember-flexberry](ef_landing_page.html) включение сервиса `perf` производится в файле `config/environment.js`.
+For ember apps, which installed [addon ember-flexberry](ef_landing_page.html) inclusion of service `perf` is in the file `config/environment.js`. 
 
 ``` js
 module.exports = function(environment) {
-  // ...
+  // ... 
   var ENV = {
-    // ...
+    // ... 
     APP: {
-      // ...
+      // ... 
       perf: {
         enabled: true,
       },
-      // ...
+      // ... 
     }
   };
-  // ...
+  // ... 
   return ENV;
 };
-```
+``` 
 
-После его включения нужно перезапустить `ember serve`, чтобы изменения в конфигурации были применены. Если всё сделано верно, то в консоли браузера при рендеринге hbs-шаблонов начнут появляться записи о времени рендеринга.
+After switching it on, you need to restart `ember serve` to configuration changes have been applied. If everything is correct, then in the browser console when rendering hbs-template will start to appear record of rendering time. 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

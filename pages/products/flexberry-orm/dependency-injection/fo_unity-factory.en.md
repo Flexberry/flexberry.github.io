@@ -1,39 +1,45 @@
----
-title: Flexberry UnityFactory
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, containers
-summary: Features of working with containers
-toc: true
-permalink: en/fo_unity-factory.html
-lang: en
----
+--- 
+title: Flexberry UnityFactory 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, containers 
+summary: Features container 
+toc: true 
+permalink: en/fo_unity-factory.html 
+lang: en 
+autotranslated: true 
+hash: 3423af19486e726006f650a67bfedfdaff2313bdf388446496f0d26ebf667a5d 
+--- 
 
-`Flexberry UnityFactory` является [продуктом платформы Flexberry](fp_platform-structure.html) и позволяет стандартным образом работать с разрешением контейнеров [Unity Container](https://msdn.microsoft.com/en-us/library/ff647202.aspx). Используется версия [Unity 2.1](https://msdn.microsoft.com/en-us/library/hh237493.aspx).
+`Flexberry UnityFactory` is [product platform Flexberry](fp_platform-structure.html) and allows a standard way to work with a resolution of containers [Unity Container](https://msdn.microsoft.com/en-us/library/ff647202.aspx). Use the version of [Unity 2.1](https://msdn.microsoft.com/en-us/library/hh237493.aspx). 
 
-{% include note.html content="Flexberry UnityFactory доступно для установки в проект через NuGet-пакет Flexberry ORM." %}
+{% include note.html content="Flexberry UnityFactory is available for installation in the project via the NuGet package Flexberry ORM." %} 
 
-Метод `CreateContainer()` создает контейнер по умолчанию, через который можно выполнить разрешение интерфейса в реальную инстанцию:
+Method `CreateContainer()` creates a default container to resolve the interface in real authority: 
 
 ```csharp
 IUnityContainer container = ICSSoft.Services.UnityFactory.CreateContainer();
 IService serviceInstance = container.Resolve<IService>();
-```
+``` 
 
-{% include note.html content="Проблема при использовании этого метода в следующем: при создании экземпляра зависимости учитываются настройки времени жизни объекта. Эта настройка говорит о том, как контейнер должен создавать объект при запросе: каждый раз новый, создать единственный и переиспользовтаь и т.п. Однако, все эти настройки работают внутри конкретного экземпляра контейнера, а метод CreateContainer каждый раз создает новый контейнер. Это приводит к тому, что объекты типа singleton (ContainerControlledLifetimeManager) на самом деле такими не являются." %}
+{% include note.html content="the Problem with this method: when you create the instance based on settings are taken into account the lifetime of the object. This setting tells how the container should create the object in question: every time a new, to create a single and priispolzovanii, etc. However, all these settings are working within a particular container instance, and each time CreateContainer creates a new container. This leads to the fact that objects of type singleton (ContainerControlledLifetimeManager) in fact are not." %} 
 
-### GetContainer
+### GetContainer 
 
-Метод `GetContainer()`, возвращает единственный (на уровне домена приложения) экземпляр контейнера, что позволяет корректно работать с объектами типа `ContainerControlledLifetimeManager`.
+Method `GetContainer()`, returns a single (application domain) of the container instance that allows to work correctly with objects of type `ContainerControlledLifetimemanager`. 
 
 ``` csharp
 IUnityContainer container = ICSSoft.Services.UnityFactory.GetContainer();
 IService serviceInstance = container.Resolve<IService>();
-```
+``` 
 
-{% include note.html content="При использовании UnityFactory рекомендуется использовать метод GetContainer()." %}
+{% include note.html content="When you use UnityFactory it is recommended to use the method GetContainer()." %} 
 
 
-### Примеры настройки unity через конфигурационный файл
+### Examples of how to configure unity via config file 
 
-* [Сервис текущего пользователя](fo_current-user-service.html).
-* [DRDataService](fo_dr-data-service.html)
+* [Service current user](fo_current-user-service.html). 
+* [DRDataService](fo_dr-data-service.html) 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

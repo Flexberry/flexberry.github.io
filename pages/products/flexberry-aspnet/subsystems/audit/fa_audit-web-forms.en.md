@@ -1,85 +1,91 @@
----
-title: Web-формы аудита
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Flexberry Audit
-toc: true
-permalink: en/fa_audit-web-forms.html
-lang: en
----
+--- 
+title: Web form auditing 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET Flexberry Audit 
+toc: true 
+permalink: en/fa_audit-web-forms.html 
+lang: en 
+autotranslated: true 
+hash: 64ccdc59c8653e5d689bdc05f76055b91eaaae23d2c5a3ade73d422c1440e415 
+--- 
 
-[Web-формы](fa_tech-forms-web.html) [аудита](fa_audit-web.html) были разработаны для отображения объектов, используемых [ICSSoft.STORMNET.Business.Audit.Audit](efs_i-audit.html). Формы расположены в сборке "ICSSoft.STORMNET.Web.AjaxControls.dll".
+[Web-form](fa_tech-forms-web.html) the [audit](fa_audit-web.html) was developed for displaying objects used [ICSSoft.STORMNET.Business.Audit.Audit](efs_i-audit.html). Located in the Assembly "ICSSoft.STORMNET.Web.AjaxControls.dll". 
 
-Существуют также [win-формы аудита](efs_audit-win-forms.html).
+There are also [win-form audit](efs_audit-win-forms.html). 
 
-### Записеориентированные формы аудита
+### Tapicerowane forms of audit 
 
-Записеориентированные формы аудита отображают записи аудита примерно в том же виде, в каком они есть в БД.
+Tapicerowane form audit display audit records in the same form in which they exist in the database. 
 
-**Списковая форма** позволяет просматривать как аудит по всей системе в целом, так и по конкретному объекту. 
-Чтобы просматривать данные по всей системе, достаточно просто подключить форму AuditEntityL к проекту (~/Forms/Audit/AuditEntityL.aspx).
-Для просмотра данных по конкретному объекту необходимо передать форме дополнительно параметр AuPK, где указан [первичный ключ объект](fo_primary-keys-objects.html), чей аудит необходимо отобразить. 
+**List form** allows you to view as auditing throughout the system as a whole and for each specific property. 
+To view data for the entire system, simply connect the form AuditEntityL to the project (~/Forms/Audit/AuditEntityL.aspx). 
+To view data for a specific object, you must pass the form of an extension option AuPK, wherein [primary key object](fo_primary-keys-objects.html), whose audit you want to display. 
 
-Например, адрес может быть следующим: http://some:1111/Forms/Audit/AuditEntityL.aspx?AuPK={1843fc3c-b4fc-4a37-bf6e-60a0ea84aead}.
+For example, the address may be as follows: http://some:1111/Forms/Audit/AuditEntityL.aspx?AuPK={1843fc3c-b4fc-4a37-bf6e-60a0ea84aead}. 
 
-**[Форма редактирования](fa_editform.html)** позволяет просмотреть детальную информацию по конкретной записи аудита. На данной форме присутствует таблица, где представлена информация об изменении полей объекта при проведении аудируемой операции. 
-Отдельной строкой идёт изменение [первичного ключа объекта](fo_primary-keys-objects.html) (такая строка формируется при изменении детейла или мастера). Доступно два режима отображения этих строчек: они совсем не отображаются или они скрываются в древовидную структуру (второй вариант был реализован в [старой версии аудита](efs_audit.html)). По умолчанию реализуется первый вариант, но это можно изменить следующей инициализацией:
+**[Edit form](fa_editform.html)** allows you to view detailed information on specific audit records. On this form there is a table that presents information about modifying fields of the object while conducting the audited operations. 
+A separate line is the change [primary key object](fo_primary-keys-objects.html) (this string is generated when you change detail or wizard). There are two modes of display these lines: they do not appear or they are hiding in a tree structure (the second option was implemented in [older versions of audit](efs_audit.html)). By default, implements the first option, but you can change the following initialization: 
 
 ```csharp
 AuditService.Current.ShowPrimaryKey = true;
-```
+``` 
 
-## Объектноориентированные формы аудита
+## object-oriented forms of audit 
 
-Объектноориентированные формы аудита ориентированы на отображение информации 
+Object-oriented forms of audit is focused on the display of information 
 
-**Списковая форма** AuditEntityByObjectsL (~/Forms/Audit/AuditEntityByObjectsL.aspx) позволяет просматривать сведения по объектам, над которыми производились аудируемые действия.
+**List form** AuditEntityByObjectsL (~/Forms/Audit/AuditEntityByObjectsL.aspx) allows you to view information on the objects on which was performed the audited action. 
 
-Форма содержит [следующие поля](fa_audit-web.html):
+The form contains [next field](fa_audit-web.html): 
 
-* Редактирование - дата последнего изменения объекта (создание, изменение или удаление).
-* Редактор - имя пользователя, который последний изменял объект.
-* Тип объекта - тип аудируемого объекта.
-* Идентификатор - идентификатор аудируемого объекта (обычно [первичный ключ](fo_primary-keys-objects.html)).
-* Создание - дата создания объекта.
-* Создатель - имя пользователя, который создал объект.
+* Edit - the last modification date of the object (create, modify, or delete). 
+* Editor - the user name who last modified the object. 
+* Object type - type of the audited object. 
+* ID - the ID of the audited object (usually [primary key](fo_primary-keys-objects.html)). 
+* Create - creation date of the object. 
+* Creator - name of the user who created the object. 
 
-Список по умолчанию отсортирован по дате "Редактирование" (сверху новые).
+The default list is sorted by date "Edit" (top new). 
 
-**Форма редактирования** AuditEntityByObjectsE позволяет просмотреть детальную информацию по конкретному аудируемому объекту.
+**Edit** AuditEntityByObjectsE allows you to view detailed information for a particular audited entity.
 
-Форма содержит [следующие поля](fa_audit-web.html):
+The form contains [next field](fa_audit-web.html): 
 
-* Идентификатор - идентификатор аудируемого объекта (обычно [первичный ключ](fo_primary-keys-objects.html)).
-* Тип объекта - тип аудируемого объекта.
-* Создание - дата создания объекта.
-* Создатель - имя пользователя, который создал объект.
-* Редактирование - дата последнего изменения объекта (создание, изменение или удаление).
-* Редактор - имя пользователя, который последний изменял объект.
-* Список полей аудита:
-    * Время операции - время, когда поле объекта было изменено.
-    * Тип операции - тип операции, которой было изменено поле.
-    * Имя - имя пользователя, который совершил аудируемую операцию.
-    * Логин - логин пользователя, который совершил аудируемую операцию.
-    * Имя поля - отображаемое имя поля.
-    * Старое значение - старое значение поля.
-    * Новое значение - новое значение поля.
-    * Источник - источник аудируемой операции.
-    * Результат - итог выполнения операции (удалось ли зафиксировать операцию, был ли провал и др.).
+* ID - the ID of the audited object (usually [primary key](fo_primary-keys-objects.html)). 
+* Object type - type of the audited object. 
+* Create - creation date of the object. 
+* Creator - name of the user who created the object. 
+* Edit - the last modification date of the object (create, modify, or delete). 
+* Editor - the user name who last modified the object. 
+* The list of fields in the audit: 
+* Operation time - time when the object was changed. 
+* Operation type - transaction type, which was modified by field. 
+* Name - the name of the user who performed the audited operation. 
+* Login - login of the user who performed the audited operation. 
+* Field name - display name of the field. 
+* Old value - old value of the field. 
+* New value - the new value of the field. 
+* Source - the source, the audited operations. 
+* Result - the result of the operation (whether to lock the operation was a failure, etc.). 
 
-Список полей аудита отсортирован по времени операции (сверху новые).
+The list of fields to audit is sorted by the time of the operation (top new). 
 
-Чтобы отключить отображение записей, содержащих [первичные ключи](fo_primary-keys-objects.html) [мастеров](fd_master-association.html) и [детейлов](fo_detail-associations-properties.html), можно выполнить следующую настройку:
+To disable the display of records containing [primary keys](fo_primary-keys-objects.html) [masters](fd_master-association.html) and [datalow](fo_detail-associations-properties.html), you can perform the following settings: 
 
 ```csharp
 AuditService.Current.ShowPrimaryKey = false;
-```
+``` 
 
-Если AuditService.Current.ShowPrimaryKey имеет значение true, то список изменений полей отображается [в виде иерархии](fa_wolv-hierarhy.html) аналогично тому, как это сделано в записеориентированных формах аудита.
+If AuditService.Current.ShowPrimaryKey is set to true, the list of fields displayed changes [in hierarchy](fa_wolv-hierarhy.html) same as in tapicerowane forms of audit. 
 
-{% include warning.html content="При использовании веб-форм аудита необходимо в файле WebControlProvider.xml добавить следующую информацию:" %}
+{% include warning.html content="When using web forms audit must be in the file WebControlProvider.xml add the following information:" %} 
 
 ```csharp
 <customproperty class="AuditEntity" property="ObjectType.Name">
   <control typename="NewPlatform.Flexberry.Web.Controls.DataObjectTypeCaption, ICSSoft.STORMNET.Web.AjaxControls" property="Value" codefile="" />
 </customproperty>
-```
+``` 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}
