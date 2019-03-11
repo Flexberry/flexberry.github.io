@@ -48,6 +48,7 @@ entries:
       url: /fe_lookup-component.html
       output: web
     - title: Components for edit-forms
+      title_ru: Компоненты для работы с данными на форме редактирования
       url: /fe_edit-form-components.html
       output: web
 

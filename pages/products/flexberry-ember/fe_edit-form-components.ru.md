@@ -288,7 +288,7 @@ flexberry-jsonarea - компонент для отображения JSON.
 }}{% endraw %}
 ```
 
-#### Свойства flexberry-jsonare
+#### Свойства flexberry-jsonarea
 
 Свойство | Краткое описание
 :--------|:----------------
