@@ -6,6 +6,7 @@ summary: Определение основных продуктов, часто 
 toc: true
 permalink: en/fp_glossary.html
 lang: en
+autotranslated: true
 ---
 
 | Употребляемое понятие | Значение |
