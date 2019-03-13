@@ -1,45 +1,51 @@
 ---
-title: Глоссарий
+title: a Glossary
 sidebar: flexberry-platform_sidebar
-keywords: Словарь, основные термины, определения
-summary: Определение основных продуктов, часто используемые универсальные термины
+keywords: Dictionary, terms, definitions
+summary: Definition of main products, commonly used generic terms
 toc: true
 permalink: en/fp_glossary.html
 lang: en
+autotranslated: true
+hash: 2aa23d657747c8ad8cb3bf91d20a206718a3f976999a9c980054157e8ceb5df4
 ---
 
-| Употребляемое понятие | Значение |
+| Use the concept | Value |
 |-----------------------| ---------|
-| [Платформа Flexberry](fp_landing_page.html) | Совокупность продуктов и подсистем, позволяющая разрабатывать широкий спектр приложений на базе различных фреймворков (от "настольного" до сложных мобильных вариантов, с использованием, в том числе, систем разграничения полномочий, отслеживания изменений и картографических данных) |
-| [Flexberry Designer](fd_landing_page.html) | это [CASE-инструмент](https://ru.wikipedia.org/wiki/CASE), который может быть использован как для бизнес-моделирования (анализ бизнес-процессов, реинжиниринг бизнес-процессов), так и для объектно-ориентированного проектирования программного обеспечения и баз данных. В качестве нотации используется [UML](http://www.uml.org) |
-| `Модули расширения Flexberry Designer` | Плагины генерации Flexberry Designer, позволяющие создавать приложени на базе Ember, ASP.NET или Wimforms по спроектированной модели, а также приложения, включающие в себя GIS-подсистему |
-| [Flexberry Ember](fe_landing_page.html) | Продукт платформы Flexberry, реализованный на javascript-фреймворке [EmberJS](http://emberjs.com/) |
-| [Flexberry ASP.NET](fa_landing_page.html) | Продукт платформы Flexberry, реализованный на базе фрейворка ASP.NET и позволяющий создавать WEB-приложения |
-| [Flexberry Wimforms](fw_landing_page.html) | Продукт платформы Flexberry, предоставляющий средства для разработки приложения, реализующего win-интерфейс ("настольное" приложение), а также содержащий набор библиотек, требуемых для функционирования такого приложения|
-| `Flexberry Foundation` | Функциональная подсистема платформы Flexberry для создания приложений учётного или фактографического характера. Эта подсистема реализована в фреймворках Flexberry Ember, Flexberry ASP.NET и Flexberry Winforms|
-| [Flexberry GIS](fg_landing_page.html) |  Продукт платформы Flexberry, представляющий собой компонент аналитической системы, используемый для хранения, создания, редактирования, анализа и отображения географической информации. Основное предназначение системы – это создание и настройка интерактивных карт на основе имеющихся пространственных данных, например о районах края и города, водных ресурсах, кварталах, улицах, зданиях, территориях предприятий, автомобильных дорогах, железнодорожных и трамвайных путях и т.д.|
-| Сервис [Flexberry Service Bus](fsb_landing_page.html) | Универсальное средство интеграции систем посредством обмена сообщениями |
-| [Flexberry Analytics](fan_landing_page.html) | функциональная подсистема отчётности и бизнес-аналитики |
-| `Flexberry BPM` | Технология для быстрой автоматизации рабочих процессов в компании. Она позволяет просто и эффективно выстраивать сложные процессы без применения программирования. Flexberry BPM позволяет решать задачи не только быстрой разработки процессов, но и их стабильной работы при высокой скорости основных операций. Уникальные средства перезапуска процессов позволяют не потерять результаты работы, даже если процесс был остановлен из-за ошибки |
-| `Flexberry Portal` | Функциональная подсистема для создания корпоративных порталов|
-| `Flexberry ORM` | Технологический компонент, реализующий слой доступа к данным. Основная функция компонента - это объектно-реляционное отображение (Object-Relational Mapping). |
-| `Flexberry Security` | Подсистема полномочий платформы Flexberry, обеспечивающая разграничение прав доступа к объектам данных на основе пользователей и ролей приложения |
-| `Flexberry Audit` | Технологический компонент, реализующий функцию журналирования изменения данных пользователями |
-| `Репозито́рий` | Хранилище — место, где хранятся и поддерживаются какие-либо данные, используется в рамках Flexberry Desinger и моделирования системы |
-| Компонент | |
-| `Контро́л` (web-контрол - ASP.NET)| Элемент управления в приложении |
-| `Форма редактирования` | Форма, обеспечивающая пользовательский интерфейс по вводу/редактированию экземпляра объекта данных в одном, либо нескольких представлениях |
-| `Списковая форма` | Форма, обеспечивающая пользовательский интерфейс по отображению списка объектов приложения |
-| `Lookup` | _Как действие_ - выбор мастерового объекта (проставление ссылки на мастеровой объект); _как контрол_ - контрол для выбора мастерового объекта, возвращающий ссылку на него|
-| Аддон | Технологическая часть, которая может быть переиспользована в приложении |
-| Фронтенд | Клиентская сторона пользовательского интерфейса к программно-аппаратной части сервиса, используется в рамках Flexberry Ember |
-| Бэкенд | Программно-аппаратная часть сервисакого интерфейса к программно-аппаратной части сервиса |
-| База данных (БД) | Определенный набор данных, которые, как правило, связаны объединяющим признаком либо свойством (или несколькими) |
-| Класс (объект, сущность) | Это элемент ПО, описывающий абстрактный тип данных и его частичную или полную реализацию |
-| Мастеровой класс (мастер, агрегатор) | Класс, включающий в себя один или более _дочерних_ объектов, являющихся его неотъемлемой частью |
-| Класс детейла (детейл) | Класс, представляющий собой часть класса более _высокого порядка_ |
-| NuGet-пакет(ы) | Библиотека(и) продуктов платформы Flexberry, позволяющие устанавливать и обновлять компоненты, инструменты, сервисы в приложение. |
-| Docker-образ(ы), Docker-контейнер, Docker-файл | _Docker-образ_ создаётся во время сборки, а _Docker-контейнер_ — во время запуска приложения. _Docker-файл_ — сердце Docker. Он указывает Docker как построить образ, который будет использоваться при создании контейнера.|
-| GroupEdit (AGE (ASP.NET), GE (Winforms), FGE (Flexberry Ember))| _Контрол_ для создания и редактирования детейлов |
-| ObjectListView (WOLV (ASP.NET), OLV (Winforms), FOLV (Flexberry Ember))| _Контрол_ для создания и редактирования списка объектов |
-| DatePicker | _Контрол_ для создания и редактирования  даты и времени |
+| [Platform Flexberry](fp_landing_page.html) | Set of products and subsystems that enable you to develop a broad range of applications based on various frameworks (from "Board" to complex mobile options, using, including, systems, lines of authority, change tracking and map data) |
+| [Flexberry Designer](fd_landing_page.html) | this [CASE tool](https://ru.wikipedia.org/wiki/CASE), which can be used for both business modeling (analysis of business-processes, reengineering of business processes) and object-oriented design of software and databases. As the notation used by [UML](http://www.uml.org) |
+| `Модули extensions Flexberry Designer` | Plugins generating Flexberry Designer, allowing to create applications on the basis of Ember, ASP.NET or Wimforms engineered models, and applications, including GIS subsystem |
+| [Flexberry Ember](fe_landing_page.html) | Product platform Flexberry implemented on javascript-framework [EmberJS](http://emberjs.com/) |
+| [Flexberry ASP.NET](fa_landing_page.html) | Product platform Flexberry based on freeware ASP.NET and allows you to create WEB-apps |
+| [Flexberry Wimforms](fw_landing_page.html) | Product Flexberry platform that provides tools for developing applications that implements the win-interface (the"desktop" application) and contains a set of libraries required for the functioning of such applications|
+| `Flexberry Foundation` | Functional subsystem Flexberry platform to create applications of accounting or factual nature. This subsystem is implemented in the frameworks Flexberry Ember, Flexberry ASP.NET and Flexberry Winforms|
+| [Flexberry GIS](fg_landing_page.html) | Product platform Flexberry, which is a component of the analytical system used to store, create, edit, analyze and display geographic information. The main purpose of the system is the authoring of interactive maps based on existing spatial data, such as the districts of the region and city, water, blocks, streets, buildings, facilities, roads, rail and tramways, etc.|
+| Service [Flexberry Service Bus](fsb_landing_page.html) | Universal means of integrating systems through messaging |
+| [Flexberry Analytics](fan_landing_page.html) | functional subsystem reporting and business intelligence |
+| `Flexberry BPM` | Technology for the rapid automation of business processes in the company. It allows you to simply and efficiently build complex processes without programming. Flexberry BPM allows to solve not only the rapid development of the processes, but also their stable operation at high speed. Unique-process recycling allows not to lose the results even if the process was stopped because of an error in |
+| `Flexberry Portal` | Functional subsystem to create corporate portals|
+| `Flexberry ORM` | Technological component that implements data access layer. The main function of a component is an object - relational mapping (Object-Relational Mapping). |
+| `Flexberry Security` | Subsystem powers Flexberry platform that provides differentiation of access rights to data objects based on users and application roles |
+| `Flexberry Audit` | Technological component that implements the function of logging data changes by users |
+| `Репозиторий` | Repository — the place where they are stored and maintained in any data used within Flexberry Desinger and system simulation |
+| Component | |
+| `Контрол` (web control ASP.NET)| control application |
+| `Форма редактирования` | Shape providing a user interface for entering/editing the instance of the data object in one or multiple views, |
+| `Списковая форма` | Shape providing a user interface for displaying a list of application objects |
+| `Lookup` | Kak deystvie - the choice of the workman of the object (hereinafter reference to a master object); CAC control - control to select artisan object that returns a reference to it|
+| Addon | Technological part, which can be priispolzovanii in the application |
+| Front-end | Client side user interface to the hardware and software part of the service, are employed in the Flexberry Ember |
+| Backend | Software-hardware part of servisnogo interface to the hardware and software part of the service |
+| Database (DB) | Defined set of data usually involve a unifying characteristic or property (or several) |
+| Class (object, entity) | Is an element FOR describing the abstract data type and its partial or full implementation |
+| Master class (the master aggregator) | Class that includes one or more dicerna objects that are an integral part of |
+| Class of detail (detail) | Class and a part class more vysokogo poryadka |
+| NuGet package(s) | Library(s) product platform Flexberry, allowing you to install and update components, tools, and services to the application. |
+| The Docker image(s), the Docker container, Docker-file | _Docker-obraz is created during Assembly, and _Docker-container — during startup of the application. _Docker-fail — the heart of the Docker. It specifies how to build a Docker image that will be used when creating a container.|
+| GroupEdit (AGE (ASP.NET), GE (Winforms), FGE (Flexberry Ember))| Control to create and edit datalow |
+| ObjectListView (WOLV (ASP.NET), OLV (Winforms), FOLV (Flexberry Ember))| Control to create and edit the list of objects |
+| DatePicker | Control to create and edit the date and time |
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

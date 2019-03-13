@@ -1,21 +1,21 @@
---- 
-title: Display ember-shape without any additional elements 
-sidebar: flexberry-ember_sidebar 
-keywords: Flexberry Ember 
-toc: true 
-permalink: en/ef_show-ember-form-in-frame.html 
-folder: products/ember-flexberry/forms/ 
-lang: en 
-autotranslated: true 
-hash: b6b30e33c36a5f86dd574ece9d32aba37de3804c875306705437189f6de2158e 
-summary: This feature enables you to display inside the frame exclusively ember-form without a menu and other additional elements. 
---- 
+---
+title: Display ember-shape without any additional elements
+sidebar: flexberry-ember_sidebar
+keywords: Flexberry Ember
+toc: true
+permalink: en/ef_show-ember-form-in-frame.html
+folder: products/ember-flexberry/forms/
+lang: en
+autotranslated: true
+hash: e1863e56eafa18b237a98b4f9b02659c211aa625953b3e591c6e052c69529e9e
+summary: This feature enables you to display inside the frame exclusively ember-form without a menu and other additional elements.
+---
 
-## Description 
+## Description
 
-If for some reason you want to display the» «naked form (that is, without the site menu and other additional элементов; for example, inside the frame), you can use the following method: 
+If for some reason you want to display the» «naked form (that is, without the site menu and other additional элементов; for example, inside the frame), you can use the following method:
 
-1. In the [controller `application.js`](ef_controller.html) ask [read parameter `inframe` Get-request](http://guides.emberjs.com/v2.4.0/routing/query-params/), create a property `shouldShowInFrame` that indicates that a specified parameter has a value `true`: 
+1. In the [controller `application.js`](ef_controller.html) ask [read parameter `inframe` Get-request](http://guides.emberjs.com/v2.4.0/routing/query-params/), create a property `shouldShowInFrame` that indicates that a specified parameter has a value `true`:
 
 ```javascript
 // ... 
@@ -32,11 +32,11 @@ export default Ember.Controller.extend({
   
 // ... 
 });
-``` 
+```
 
-2. In the template `application.hbs` with the «&#0123;&#0123;zgl[unless](http://guides.emberjs.com/v2.4.0/templates/conditionals/) shouldShowInFrame&#0125;&zgl0125; ... &#0123;&#0123;/unless&#0125;&zgl0125;» to set the fragments which are not to be displayed on» «naked form. 
+2. In the template `application.hbs` with the «&#0123;&#0123;#[unless](http://guides.emberjs.com/v2.4.0/templates/conditionals/) shouldShowInFrame&#0125;&#0125; ... &#0123;&#0123;/unless&#0125;&#0125;» to set the fragments which are not to be displayed on» «naked form.
 
-For example, lower left to display only the form itself, all other elements are hidden. 
+For example, lower left to display only the form itself, all other elements are hidden.
 
 ```hbs
 {% raw %}{{#unless shouldShowInFrame}}
@@ -68,21 +68,21 @@ For example, lower left to display only the form itself, all other elements are 
 		{{outlet 'modal'}}
   </div>
 </div>{% endraw %}
-``` 
+```
 
-3. When the form is to add a parameter «inframe=true». 
+3. When the form is to add a parameter «inframe=true».
 
-{% include note.html content=" 
-Important: 
+{% include note.html content="
+Important:
 
-* The implementation is not case-sensitive values `true`. 
-* Implementation of the case-sensitive parameter `inframe`. 
-* When passed as a value `inframe` values other than `true`, this logic will not work." 
-%} 
+* The implementation is not case-sensitive values `true`.
+* Implementation of the case-sensitive parameter `inframe`.
+* When passed as a value `inframe` values other than `true`, this logic will not work."
+%}
 
-![](/images/pages/img/page/ShowEmberFormInFrame/EmptyEmberForm.png) 
+![](/images/pages/img/page/ShowEmberFormInFrame/EmptyEmberForm.png)
 
-![](/images/pages/img/page/ShowEmberFormInFrame/FullEmberForm.png) 
+![](/images/pages/img/page/ShowEmberFormInFrame/FullEmberForm.png)
 
 
 

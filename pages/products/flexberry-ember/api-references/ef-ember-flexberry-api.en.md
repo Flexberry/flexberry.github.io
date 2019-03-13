@@ -1,18 +1,18 @@
---- 
-title: ember-flexberry API 
-sidebar: flexberry-ember_sidebar 
-keywords: API 
-toc: true 
-permalink: en/ef_ember-flexberry-api.html 
-lang: en 
-autotranslated: true 
-hash: e43fcef8ef34f56b5ea6cedd522aa2938d81bb563dcd51f6659c22e52441b197 
---- 
+---
+title: ember-flexberry API
+sidebar: flexberry-ember_sidebar
+keywords: API
+toc: true
+permalink: en/ef_ember-flexberry-api.html
+lang: en
+autotranslated: true
+hash: cf6b4277dfbca3ccffb4dc46d57b9ba306e129c63cd4146a30b927eed1e1e037
+---
 
-## Autodocumentary for `ember-flexberry` 
+## Autodocumentary for `ember-flexberry`
 
-* [ember-Ember flexberry with 2.4.3](http://flexberry.github.io/ember-flexberry/autodoc/develop/) 
-* [ember-Ember flexberry from 3.1.3](http://flexberry.github.io/ember-flexberry/autodoc/feature-ember-update/) 
+* [ember-Ember flexberry with 2.4.3](http://flexberry.github.io/ember-flexberry/autodoc/develop/)
+* [ember-Ember flexberry from 3.1.3](http://flexberry.github.io/ember-flexberry/autodoc/feature-ember-update/)
 
 
 
