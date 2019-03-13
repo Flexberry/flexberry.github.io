@@ -1,19 +1,19 @@
---- 
-title: Display errors on the forms 
-sidebar: flexberry-ember_sidebar 
-keywords: Flexberry Ember, errors 
-toc: true 
-permalink: en/ef_displaying-errors-on-forms.html 
-folder: products/ember-flexberry/forms/ 
-lang: en 
-autotranslated: true 
-hash: 38b030c3c4a6f0b3441b5aa125c37f379dfa1e16bd54a762255b0ee91623ea20 
-summary: control the display of errors in list forms and edit forms. 
---- 
+---
+title: Display errors on the forms
+sidebar: flexberry-ember_sidebar
+keywords: Flexberry Ember, errors
+toc: true
+permalink: en/ef_displaying-errors-on-forms.html
+folder: products/ember-flexberry/forms/
+lang: en
+autotranslated: true
+hash: 9aa48535b0b94a19d68fb8a5e375948b6c80b3a9cbd556f46e4c86ceb9837057
+summary: control the display of errors in list forms and edit forms.
+---
 
-## customize the display of errors in forms 
+## Customize the display of errors in forms
 
-In order to change the default behavior, you must override the action controller `error` in the appropriate form. The only parameter of this method will be the error object, which must be set to the property associated with the error in the component `flexberry-error` (default `error`). 
+In order to change the default behavior, you must override the action controller `error` in the appropriate form. The only parameter of this method will be the error object, which must be set to the property associated with the error in the component `flexberry-error` (default `error`).
 
 ```javascript
 import Ember from 'ember';
@@ -29,11 +29,11 @@ export default Ember.Controller.extend({
     },
   },
 });
-``` 
+```
 
-## the setting error in the adapter 
+## The setting error in the adapter
 
-In order to change the default behavior, you must override the method `handleResponse` in the adapter, in which you can create error converting the response from the server in a user-friendly message. 
+In order to change the default behavior, you must override the method `handleResponse` in the adapter, in which you can create error converting the response from the server in a user-friendly message.
 
 ```javascript
 import DS from 'ember-data';
@@ -52,7 +52,7 @@ export default DS.RESTAdapter.extend({
     return this._super(...arguments);
   },
 });
-``` 
+```
 
 
 

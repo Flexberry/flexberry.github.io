@@ -1,64 +1,64 @@
---- 
-title: a Client-side query language 
-sidebar: flexberry-ember_sidebar 
-keywords: Flexberry Ember, queries, predicate 
-toc: true 
-permalink: en/efd_query-language.html 
-lang: en 
-autotranslated: true 
-hash: 10bc404cf941c1aa7cd6e14acad3c43c2b6cb288da413c87b020095c7c2c958c 
-summary: Description the client language requests. 
---- 
+---
+title: a Client-side query language
+sidebar: flexberry-ember_sidebar
+keywords: Flexberry Ember, queries, predicate
+toc: true
+permalink: en/efd_query-language.html
+lang: en
+autotranslated: true
+hash: a75f20ad72f96f3667f33cce70dcc91b6649f855a5ffe4d21e759eb6d3578754
+summary: Description the client language requests.
+---
 
-## namespace Query 
+## The namespace of the Query
 
-In the expansion `ember-flexberry-data` exported namespace is Query, which contains classes for working with the query language. 
-Import namespace Query you must use the following code: 
+In the expansion `ember-flexberry-data` exported namespace is Query, which contains classes for working with the query language.
+Import namespace Query you must use the following code:
 
 ```javascript
 import { Query } from 'ember-flexberry-data';
-``` 
+```
 
-The Query namespace contains the following list of classes: 
+The Query namespace contains the following list of classes:
 
-* `BaseAdapter` - base class for adapters query language, which convert the request object to the request for a specific type of backend. 
-* `BaseBuilder` - base class for query Builder. 
-* `Builder` class to build queries (query Builder). 
-* `Condition` - listing with the logical operators for the Query.ComplexPredicate. 
-* `FilterOperator` - transfer operations for the Query.SimplePredicate. 
-* `IndexedDbAdapter` adapter query language to query the IndexedDB from the request object. 
-* `JsAdapter` adapter query language for building functions filtrations of JavaScript arrays from the request object. 
-* `OdataAdapter` adapter query language to construct queries according to the specification [OData](http://www.odata.org/) from the request object. 
-* `OrderByClause` class for the formation of the order-by part of the query. 
-* `BasePredicate` - the base class for classes of predicates. 
-* `SimplePredicate` class to create a filter in the query for the attribute value and the specified operation. 
-* `ComplexPredicate` class to create a filter in the request of several predicates combined with logical operations. 
-* `StringPredicate` class to create a filter in the query for string fields. 
-* `DetailPredicate` class to create a filter in the request for Dethalbum objects. 
-* `DatePredicate` class to create a filter in a query on fields of type date. 
-* `NotPredicate` class for the inversion of the nested predicate. 
-* `createPredicate` - method to create a predicate on the specified parameters. 
+* `BaseAdapter` - base class for adapters query language, which convert the request object to the request for a specific type of backend.
+* `BaseBuilder` - base class for query Builder.
+* `Builder` class to build queries (query Builder).
+* `Condition` - listing with the logical operators for the Query.ComplexPredicate.
+* `FilterOperator` - transfer operations for the Query.SimplePredicate.
+* `IndexedDbAdapter` adapter query language to query the IndexedDB from the request object.
+* `JsAdapter` adapter query language for building functions filtrations of JavaScript arrays from the request object.
+* `OdataAdapter` adapter query language to construct queries according to the specification [OData](http://www.odata.org/) from the request object.
+* `OrderByClause` class for the formation of the order-by part of the query.
+* `BasePredicate` - the base class for classes of predicates.
+* `SimplePredicate` class to create a filter in the query for the attribute value and the specified operation.
+* `ComplexPredicate` class to create a filter in the request of several predicates combined with logical operations.
+* `StringPredicate` class to create a filter in the query for string fields.
+* `DetailPredicate` class to create a filter in the request for Dethalbum objects.
+* `DatePredicate` class to create a filter in a query on fields of type date.
+* `NotPredicate` class for the inversion of the nested predicate.
+* `createPredicate` - method to create a predicate on the specified parameters.
 
-An example of using the classes in the namespace: 
+An example of using the classes in the namespace:
 
 ```javascript
 let builder = new Query.Builder(store);
-``` 
+```
 
-In order not to write anywhere in the code explicitly the namespace, you can use the following JavaScript: 
+In order not to write anywhere in the code explicitly the namespace, you can use the following JavaScript:
 
 ```javascript
 import { Query } from 'ember-flexberry-data';
 const { Builder, FilterOperator } = Query;
 
 let builder = new Builder(store, 'customer').where('firstName', FilterOperator.Eq, 'Vasya');
-``` 
+```
 
-## Query.Builder 
+## Query.Builder
 
-`Query.Builder` class to build the query. 
+`Query.Builder` class to build the query.
 
-### Designer 
+### Designer
 
 Designer `Query.Builder` can take 2 parameters: mandatory `store`, and `modelName` - the name of the request entity (the model name for editing).
 
@@ -66,456 +66,456 @@ Designer `Query.Builder` can take 2 parameters: mandatory `store`, and `modelNam
 let builder = new Query.Builder(store);
 
 let builder = new Query.Builder(store, 'customer');
-``` 
+```
 
-### Subtraction of object key 
+### Subtraction of object key
 
-PstrfbyId` method accepts a parameter string or a number as the object key (GUID should be passed in lower case). 
+PstrfbyId` method accepts a parameter string or a number as the object key (GUID should be passed in lower case).
 
 ```javascript
 let builder = new Query.Builder(this.store)
     .from(modelName)
     .selectByProjection(projectionName)
     .byId('3087fbdc-273e-4bae-b440-071fd1eab1e0');
-``` 
+```
 
-### the name of the entity 
+### The name of the entity
 
 ```javascript
 builder.from('employee');
-``` 
+```
 
-### Limit 
+### Restriction
 
-A predicate function that returns `true`/`false`. 
-The predicate may be: 
+A predicate function that returns `true`/`false`.
+The predicate may be:
 
-* Simple 
-* Complex 
-* String 
-* Dethalbum 
+* Simple
+* Complex
+* String
+* Dethalbum
 
 ```javascript
 builder.where(Query.SomePredicate);
-``` 
+```
 
-or 
+or
 
 ```javascript
 let builder = new Query.Builder(store, 'customer').where('firstName', Query.FilterOperator.Eq, 'Vasya');
-``` 
+```
 
-Dla mastera 
+Dla mastera
 
 ```javascript
 let builder = new Query.Builder(store, 'customer').where('manager', Query.FilterOperator.Eq, '3bcc4730-9cc1-4237-a843-c4b1de881d7c');
-``` 
+```
 
-Dla field master 
+Dla field master
 
 ```javascript
 let builder = new Query.Builder(store, 'customer').where('manager.firstName', Query.FilterOperator.Eq, 'Vasya');
-``` 
+```
 
-{% include note.html content="Please do not use the constraint values, the function `cast` and other OData-specific functions!<br/><br/> 
-In doing so, you are linked in requests to the specific backend type.<br/> 
-The language of the queries created in order to abstract from any type of backend.<br/> 
-Failure to comply with this rule, expect problems when you work offline or change the type of backend.<br/>" %} 
+{% include note.html content="Please do not use the constraint values, the function `cast` and other OData-specific functions!<br/><br/>
+In doing so, you are linked in requests to the specific backend type.<br/>
+The language of the queries created in order to abstract from any type of backend.<br/>
+Failure to comply with this rule, expect problems when you work offline or change the type of backend.<br/>" %}
 
-### Sorting 
+### Sorting
 
 ```javascript
 builder.orderBy('age desc, price asc');
-``` 
+```
 
-Po field masters:_ 
+Po field masters:_
 
 ```javascript
 builder.orderBy('creator.age desc, price asc');
-``` 
+```
 
-### Return the first N records 
+### Return the first N records
 
 ```javascript
 builder.top(N);
-``` 
+```
 
-### Skip N records 
+### Skip N records
 
 ```javascript
 builder.skip(N);
-``` 
+```
 
-## counting the number of results 
+## Counting the number of results
 
 ```javascript
 builder.count();
-``` 
+```
 
-## to set the attributes for the request 
+## To set the attributes for the request
 
-__Projection and set the attributes of this activity (select statements) are mutually exclusive, you must use one of these!__ 
+__Projection and set the attributes of this activity (select statements) are mutually exclusive, you must use one of these!__
 
 ```javascript
 builder.select('id,age,name');
-``` 
+```
 
-## the Job projection for a query 
+## Job projection for the query
 
-__Projection and set the attributes of this activity(select statements) are mutually exclusive, you must use one of these!__ 
+__Projection and set the attributes of this activity(select statements) are mutually exclusive, you must use one of these!__
 
 ```javascript
 builder.selectByProjection('EmployeeTestProjection');
-``` 
+```
 
-## the Creation of a query instance based on the specified data 
+## Create query instance based on the specified data
 
 ```javascript
 builder.build();
-``` 
+```
 
-## passing the instance to query 
+## Passing the instance to query
 
 ```javascript
 store.query(modelName, builder.build());
-``` 
+```
 
-## Predicates 
+## Predicates
 
-### Query.SimplePredicate 
+### Query.SimplePredicate
 
-`Query.SimplePredicate` class for simple predicates to filter the field value and the specified operator. 
+`Query.SimplePredicate` class for simple predicates to filter the field value and the specified operator.
 
-#### Designer 
+#### Designer
 
-Designer `Query.SimplePredicate` takes 3 parameters: `attributePath` - path attribute `operator` operator, `value` value. 
+Designer `Query.SimplePredicate` takes 3 parameters: `attributePath` - path attribute `operator` operator, `value` value.
 
 ```javascript
 let predicate = new Query.SimplePredicate('name', Query.FilterOperator.Eq, 'Vasya');
-``` 
+```
 
-### to derive properties of predicate 
+### To derive properties of predicate
 
-Get the path attribute: 
+Get the path attribute:
 
 ```javascript
 predicate.attributePath
-``` 
+```
 
-Obtaining operator: 
+Obtaining operator:
 
 ```javascript
 predicate.operator
-``` 
+```
 
-Getting the value of filtering: 
+Getting the value of filtering:
 
 ```javascript
 predicate.value
-``` 
+```
 
-### Query.ComplexPredicate 
+### Query.ComplexPredicate
 
-`Query.ComplexPredicate` class for complex predicates that combine multiple predicates by a logical conditions. 
+`Query.ComplexPredicate` class for complex predicates that combine multiple predicates by a logical conditions.
 
-#### Designer 
+#### Designer
 
-Designer `Query.ComplexPredicate` takes 2 parameters: `condition` - logical conditions for predicates, `...predicates` - list of predicates to be merged. 
+Designer `Query.ComplexPredicate` takes 2 parameters: `condition` - logical conditions for predicates, `...predicates` - list of predicates to be merged.
 
 ```javascript
 let sp1 = new Query.SimplePredicate('name', Query.FilterOperator.Eq, 'Vasya');
 let sp2 = new Query.SimplePredicate('surname', Query.FilterOperator.Eq, 'Ivanov');
 let cp1 = new Query.ComplexPredicate(Query.Condition.Or, sp1, sp2);
-``` 
+```
 
-Another option: 
+Another option:
 
 ```javascript
 let p1 = new Query.SimplePredicate('name', Query.FilterOperator.Eq, 'Vasya');
 let p2 = new Query.SimplePredicate('surname', Query.FilterOperator.Eq, 'Ivanov');
 let result = p1.or(p2);
-``` 
+```
 
-#### to derive properties of predicate 
+#### To derive properties of predicate
 
-Receiving a logical condition: 
+Receiving a logical condition:
 
 ```javascript
 complexPredicate.condition
-``` 
+```
 
-Get a list of predicates: 
+Get a list of predicates:
 
 ```javascript
 complexPredicate.predicates
-``` 
+```
 
-#### addition to the existing complex predicate a new one. 
+#### Adding to the existing complex predicate a new one.
 
-Take cp1 in the example for the constructor. 
-Adding and using: 
+Take cp1 in the example for the constructor.
+Adding and using:
 
 ```javascript
 let sp3 = new Query.SimplePredicate('nationality', Query.FilterOperator.Eq, 'Russian');
 let result = cp1.and(sp3);
-``` 
+```
 
-Add using or: 
+Add using or:
 
 ```javascript
 let sp3 = new Query.SimplePredicate('nationality', Query.FilterOperator.Eq, 'Russian');
 let result = cp1.or(sp3);
-``` 
+```
 
-### Query.StringPredicate 
+### Query.StringPredicate
 
-`Query.StringPredicate` class to build filters on string fields. 
+`Query.StringPredicate` class to build filters on string fields.
 
-#### Designer 
+#### Designer
 
-Designer `Query.StringPredicate` takes a single parameter: `attributePath` - path attribute of the predicate. 
+Designer `Query.StringPredicate` takes a single parameter: `attributePath` - path attribute of the predicate.
 
-#### Search by substring 
+#### Search by substring
 
-The addition of the value specified in the designer attribute must contain: 
+The addition of the value specified in the designer attribute must contain:
 
 ```javascript
 let sp1 = new Query.StringPredicate('country').contains('i');
-``` 
+```
 
-The addition of the value attribute of the master should contain: 
+The addition of the value attribute of the master should contain:
 
 ```javascript
 let sp1 = new Query.StringPredicate('country.name').contains('i');
-``` 
+```
 
-#### to derive properties of predicate 
+#### To derive properties of predicate
 
-Get the path attribute: 
+Get the path attribute:
 
 ```javascript
 predicate.attributePath
-``` 
+```
 
-Obtaining the value that should be contained in the attribute: 
+Obtaining the value that should be contained in the attribute:
 
 ```javascript
 predicate.containsValue
-``` 
+```
 
-### Query.DetailPredicate 
+### Query.DetailPredicate
 
-`Query.DetailPredicate` class to build filters detalam. 
+`Query.DetailPredicate` class to build filters detalam.
 
-#### Designer 
+#### Designer
 
-Designer `Query.DetailPredicate` takes a single parameter - the name of detail. 
+Designer `Query.DetailPredicate` takes a single parameter - the name of detail.
 
 ```javascript
 let dp = new Query.DetailPredicate('detailName')
-``` 
+```
 
-#### adding a simple predicate to all detailov 
+#### The addition of a simple predicate for all detailov
 
 ```javascript
 dp.all(new Query.SimplePredicate('name', Query.FilterOperator.Eq, 'Tag1'));
-``` 
+```
 
-or 
+or
 
 ```javascript
 let p = new Query.DetailPredicate('detailName').all('field', Query.FilterOperator.Eq, 'Value');
-``` 
+```
 
-Dla field master 
+Dla field master
 
 ```javascript
 dp.all(new Query.SimplePredicate('creator.name', Query.FilterOperator.Eq, 'X'));
-``` 
+```
 
-#### adding a simple predicate to any detail 
+#### Adding a simple predicate to any detail
 
 ```javascript
 dp.any(new Query.SimplePredicate('name', Query.FilterOperator.Eq, 'Tag1'));
-``` 
+```
 
-or 
+or
 
 ```javascript
 let p = new Query.DetailPredicate('detailName').any('field', Query.FilterOperator.Eq, 'Value');
-``` 
+```
 
-Dla field master 
+Dla field master
 
 ```javascript
 dp.any(new Query.SimplePredicate('creator.name', Query.FilterOperator.Eq, 'X'));
-``` 
+```
 
-#### Adding complex predicate for all detailov 
+#### Adding complex predicate for all detailov
 
 ```javascript
 let sp1 = new Query.SimplePredicate('name', Query.FilterOperator.Eq, 'Tag1');
 let sp2 = new Query.SimplePredicate('name', Query.FilterOperator.Eq, 'Tag3');
 let cp1 = new Query.ComplexPredicate(Query.Condition.Or, sp1, sp2);
 let dp = new Query.DetailPredicate('tags').all(cp1);
-``` 
+```
 
-Dla field master 
+Dla field master
 
 ```javascript
 let sp1 = new Query.SimplePredicate('creator.name', Query.FilterOperator.Eq, 'X');
 let sp2 = new Query.SimplePredicate('creator.name', Query.FilterOperator.Eq, 'Z');
 let cp1 = new Query.ComplexPredicate(Query.Condition.Or, sp1, sp2);
 let dp = new Query.DetailPredicate('tags').all(cp1);
-``` 
+```
 
-#### Adding complex predicate for any detail 
+#### Adding complex predicate for any detail
 
 ```javascript
 let sp1 = new Query.SimplePredicate('name', Query.FilterOperator.Eq, 'Tag1');
 let sp2 = new Query.SimplePredicate('name', Query.FilterOperator.Eq, 'Tag2');
 let cp1 = new Query.ComplexPredicate(Query.Condition.Or, sp1, sp2);
 let dp = new Query.DetailPredicate('tags').any(cp1);
-``` 
+```
 
-Dla field master 
+Dla field master
 
 ```javascript
 let sp1 = new Query.SimplePredicate('creator.name', Query.FilterOperator.Eq, 'X');
 let sp2 = new Query.SimplePredicate('creator.name', Query.FilterOperator.Eq, 'Y');
 let cp1 = new Query.ComplexPredicate(Query.Condition.Or, sp1, sp2);
 let dp = new Query.DetailPredicate('tags').any(cp1);
-``` 
+```
 
-### Query.DatePredicate 
+### Query.DatePredicate
 
-`Query.DatePredicate` class for predicates to filter fields of type date by value, and the specified operator. 
+`Query.DatePredicate` class for predicates to filter fields of type date by value, and the specified operator.
 
-#### Designer 
+#### Designer
 
-Designer `Query.DatePredicate` takes 4 parameters: `attributePath` - path attribute `operator` operator, `value` - value and `timeless` - flag indicating whether to consider time when comparing the dates (if true, then time does not count). 
+Designer `Query.DatePredicate` takes 4 parameters: `attributePath` - path attribute `operator` operator, `value` - value and `timeless` - flag indicating whether to consider time when comparing the dates (if true, then time does not count).
 
 ```javascript
 let predicate = new Query.DatePredicate('birthday', Query.FilterOperator.Eq, '2018-02-06T11:00:00.000Z');
 let predicate = new Query.DatePredicate('birthday', Query.FilterOperator.Eq, '2018-02-06', true);
-``` 
+```
 
-#### to derive properties of predicate 
+#### To derive properties of predicate
 
-Get the path attribute: 
+Get the path attribute:
 
 ```javascript
 predicate.attributePath
-``` 
+```
 
-Obtaining operator: 
+Obtaining operator:
 
 ```javascript
 predicate.operator
-``` 
+```
 
-Getting the value of filtering: 
+Getting the value of filtering:
 
 ```javascript
 predicate.value
-``` 
+```
 
-Getting a flag taking into account the time: 
+Getting a flag taking into account the time:
 
 ```javascript
 predicate.timeless
-``` 
+```
 
-### Query.NotPredicate 
+### Query.NotPredicate
 
-`Query.NotPredicate` class for the inversion of the nested predicate. 
+`Query.NotPredicate` class for the inversion of the nested predicate.
 
-#### Designer 
+#### Designer
 
-Designer `Query.NotPredicate` takes a single parameter – the other the predicate. 
+Designer `Query.NotPredicate` takes a single parameter – the other the predicate.
 
 ```javascript
 let np = new Query.NotPredicate(new Query.SimplePredicate('creator.name', Query.FilterOperator.Eq, 'X'));
-``` 
+```
 
-#### to derive properties of predicate 
+#### To derive properties of predicate
 
-Getting a nested predicate: 
+Getting a nested predicate:
 
 ```javascript
 let innerPredicate = np.predicate;
-``` 
-## Logical operators for complex predicates 
+```
+## Logical operators for complex predicates
 
-### Or 
+### Or
 
-`Query.Condition.Or` 
+`Query.Condition.Or`
 
 ```javascript
 let cp1 = new Query.ComplexPredicate(Query.Condition.Or, sp1, sp2);
-``` 
+```
 
-### And 
+### And
 
-`Query.Condition.And` 
+`Query.Condition.And`
 
 ```javascript
 let cp1 = new Query.ComplexPredicate(Query.Condition.And, sp1, sp2);
-``` 
+```
 
-## Operators to filter the data for simple predicates 
+## Operators to filter the data for simple predicates
 
-### Equality 
+### Equality
 
-`Query.FilterOperator.Eq` 
+`Query.FilterOperator.Eq`
 
 ```javascript
 let sp1 = new Query.SimplePredicate('name', Query.FilterOperator.Eq, 'Tag1');
-``` 
+```
 
-### Inequality 
+### Inequality
 
-`Query.FilterOperator.Neq` 
+`Query.FilterOperator.Neq`
 
 ```javascript
 let sp1 = new Query.SimplePredicate('name', Query.FilterOperator.Neq, 'Tag1');
-``` 
+```
 
-### More 
+### More
 
-`Query.FilterOperator.Ge` 
+`Query.FilterOperator.Ge`
 
 ```javascript
 let builder = new Query.QueryBuilder(store, modelName).where('age', Query.FilterOperator.Ge, 10);
-``` 
+```
 
-### Greater than or equal to 
+### Greater than or equal to
 
-`Query.FilterOperator.Geq` 
+`Query.FilterOperator.Geq`
 
 ```javascript
 let builder = new Query.QueryBuilder(store, modelName).where('age', Query.FilterOperator.Geq, 11);
-``` 
+```
 
-### Less 
+### Less
 
-`Query.FilterOperator.Le` 
+`Query.FilterOperator.Le`
 
 ```javascript
 let builder = new Query.QueryBuilder(store, modelName).where('age', Query.FilterOperator.Le, 12);
-``` 
+```
 
-### Less than or equal to 
+### Less than or equal to
 
-`Query.FilterOperator.Leq` 
+`Query.FilterOperator.Leq`
 
 ```javascript
 let builder = new Query.QueryBuilder(store, modelName).where('age', Query.FilterOperator.Leq, 11);
-``` 
+```
 
-### create a query to filter the listings 
+### Create a query to filter the listings
 
-The name and type of enumeration is taken `name` and written in a predicate: 
+The name and type of enumeration is taken `name` and written in a predicate:
 
 ```javascript
 let enumValues = Ember.getOwner(this).lookup('enum:' + filter.type);
@@ -537,9 +537,9 @@ switch (filter.condition) {
     default:
     return new SimplePredicate(filter.name, FilterOperator.Eq, pattern);
 }
-``` 
+```
 
-## Example of a complex query 
+## Example of a complex query
 
 ```javascript
 let builder = new Query.QueryBuilder(store)
@@ -549,7 +549,7 @@ let builder = new Query.QueryBuilder(store)
       .top(50)
       .skip(100)
       .count();
-``` 
+```
 
 
 

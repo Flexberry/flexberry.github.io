@@ -1,19 +1,19 @@
---- 
-title: advanced Example of working with views 
-sidebar: flexberry-orm_sidebar 
-keywords: Flexberry ORM, views 
-summary: Dynamic creation of views, predstavleniyami 
-toc: true 
-permalink: en/fo_advanced-working-with-views.html 
---- 
+---
+title: advanced Example of working with views
+sidebar: flexberry-orm_sidebar
+keywords: Flexberry ORM, views
+summary: Dynamic creation of views, predstavleniyami
+toc: true
+permalink: en/fo_advanced-working-with-views.html
+---
 
-## Dynamic creation of views 
+## Dynamic creation of views
 
-[View](fd_view-definition.html) can be created dynamically. 
+[View](fd_view-definition.html) can be created dynamically.
 
-If you want to create a view "in code", on the fly, then fit one of the following options: 
+If you want to create a view "in code", on the fly, then fit one of the following options:
 
-1. To create a view using the default constructor, then fill in the required properties 
+1. To create a view using the default constructor, then fill in the required properties
 
 ```csharp
 // Create an empty view. 
@@ -30,19 +30,19 @@ dynaview.AddProperties(new string[] { "Name", "TotalTracks", "Publisher.Name" })
 dynaview.AddMasterInView("Publisher"); 
 
 // You can also use the dynaview method.AddDetailInView to associate this view with metalowymi ideas. 
-``` 
+```
 
-2. To create a dynamic view using ViewAttribute 
+2. To create a dynamic view using ViewAttribute
 
 ```csharp
 ICSSoft.STORMNET.View dynaview1 = new ICSSoft.STORMNET.View(
     new ViewAttribute("DynaView", new string[] { "Name", "Publisher.Name" }), 
     typeof(CDDA));
-``` 
+```
 
-## Operations with representations 
+## Operations with representations
 
-Each view acts as a [set of properties](fo_view-operations.html). 
+Each view acts as a [set of properties](fo_view-operations.html).
 
 ```csharp
 ICSSoft.STORMNET.View view1 = new ICSSoft.STORMNET.View(
@@ -67,9 +67,9 @@ ICSSoft.STORMNET.View subtractsectresult = (view1 - view2);
 // d. Excluding the combined views 
 // General properties of representations will be discarded (output "Publisher.Name", "TotalTracks"); 
 ICSSoft.STORMNET.View xconcatresult = (view1 ^ view2); 
-``` 
+```
 
-Full list of code examples Flexberry ORM is in ["code Examples"](fo_code-samples.html). 
+Full list of code examples Flexberry ORM is in ["code Examples"](fo_code-samples.html).
 
 
 
