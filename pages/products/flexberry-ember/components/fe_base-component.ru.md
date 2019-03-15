@@ -8,8 +8,6 @@ lang: ru
 summary: Перечень компонентов, используемых в ember-flexberry
 ---
 
-## Общее описание
-
 Компоненты — это семейство API, предназначенных для описания новых элементов DOM, подходящих для повторного использования. [Модуль `ember-flexberry`](ef_landing_page.html) включает в себя большое количество разнообразных компонентов, под разные виды задач.
 
 ## Базовый компонент ember-flexberry
@@ -45,41 +43,41 @@ summary: Перечень компонентов, используемых в em
 
 * Компоненты для работы и отображения данных
     * Списка объектов:
-        * [flexberry-objectlistview]()
-        * [flexberry-simpleolv]()
-        * [flexberry-groupedit]()
+        * [flexberry-objectlistview](fe_object-list-view.html)
+        * flexberry-simpleolv
+        * [flexberry-groupedit](fe_groupedit.html)
     * Текстового поля:
-        * [flexberry-textarea]()
-        * [flexberry-textbox]()
-        * [flexberry-field]()
+        * [flexberry-textarea](fe_edit-form-components.html#flexberry-textarea)
+        * [flexberry-textbox](fe_edit-form-components.html#flexberry-textbox)
+        * [flexberry-field](fe_edit-form-components.html#flexberry-field)
     * Даты:
-        * [flexberry-datepicker]()
-        * [flexberry-simpledatetime]()
+        * [flexberry-datepicker](fe_edit-form-components.html#flexberry-datepicker)
+        * [flexberry-simpledatetime](fe_edit-form-components.html#flexberry-simpledatetime)
     * Мастерового поля:
-        * [flexberry-lookup]()
+        * [flexberry-lookup](fe_lookup-component.html)
     * Логичесого поля:
-        * [flexberry-checkbox]()
-        * [flexberry-ddau-checkbox]()
+        * [flexberry-checkbox](fe_edit-form-components.html#flexberry-checkbox)
+        * [flexberry-ddau-checkbox](fe_edit-form-components.html#flexberry-ddau-checkbox)
     * Файла:
-        * [flexberry-file]()
+        * [flexberry-file](ef_file.html)
     * Перечисления:
-        * [flexberry-dropdown]()
+        * [flexberry-dropdown](fe_edit-form-components.html#flexberry-dropdown)
     * JSON:
-        * [flexberry-jsonarea]()
-        * [flexberry-tree]()
+        * [flexberry-jsonarea](fe_edit-form-components.html#flexberry-jsonarea)
+        * flexberry-tree
 * Компоненты для визуализации информации:
-    * [flexberry-validationmessage]()
-    * [flexberry-validationsummary]()
-    * [ui-message]()
-    * [flexberry-icon]()
-    * [flexberry-error]()
-    * [flexberry-tab-bar]()
-    * [flexberry-menu]()
-    * [flexberry-toggler]()
-    * [flexberry-dialog]()
+    * flexberry-validationmessage
+    * flexberry-validationsummary
+    * [ui-message](ef_ui-message.html)
+    * flexberry-icon
+    * [flexberry-error](ef_error.html)
+    * flexberry-tab-bar
+    * flexberry-menu
+    * [flexberry-toggler](ef_flexberry-toggler.html)
+    * flexberry-dialog
 * Компоненты управления формами:
-    * [flexberry-button]()
-    * [flexberry-colorpicker]()
-    * [flexberry-ddau-slider]()
-    * [form-load-time-tracker]()
-    * [modal-dialog]()
+    * [flexberry-button](fe_edit-form-components.html#flexberry-button)
+    * [flexberry-colorpicker](fe_edit-form-components.html#flexberry-colorpicker)
+    * [flexberry-ddau-slider](fe_edit-form-components.html#flexberry-ddau-slider)
+    * form-load-time-tracker
+    * modal-dialog

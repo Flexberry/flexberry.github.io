@@ -116,7 +116,7 @@ entries:
       title_ru: Форма без доп. элементов
       url: /ef_show-ember-form-in-frame.html
       output: web, pdf
-    
+
     - title: Отображение ошибок на формах
       title_ru: Отображение ошибок на формах
       url: /ef_displaying-errors-on-forms.html
@@ -217,8 +217,8 @@ entries:
       url: /fe_groupedit.html
       output: web, pdf
 
-    - title: flexberry-lookup
-      title_ru: flexberry-lookup
+    - title: Flexberry LookUp
+      title_ru: Flexberry LookUp
       url: /fe_lookup-component.html
       output: web, pdf
 
