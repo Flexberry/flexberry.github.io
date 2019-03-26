@@ -18,7 +18,7 @@ summary: Курс по базовым технологиям, применяем
 Если Вам требуются получить начальные знания по веб-программированию, рекомендуем посмотреть обучающий модуль по теме "Введение в веб-разработку":
 
 <div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px">
-    <iframe width="854" height="480" src="https://www.youtube.com/embed/videoseries?list=PLlhqsC7hBaSdSon8kbOeYWkb_sTz14Hq0" frameborder="0" allow="autoplay; encrypted-media" hd="1" allowfullscreen></iframe>
+    <iframe width="854" height="480" src="https://www.youtube.com/embed/videoseries?list=PLlhqsC7hBaSdSon8kbOeYWkb_sTz14Hq0" frameborder="0" allow="autoplay; encrypted-media" hd="1" fmt="22" allowfullscreen></iframe>
 </div>
 
 ## Состав курса
