@@ -10,6 +10,7 @@ lang: ru
 ## Дополнительные материалы модуля
 
 * [Мини-курс "Основы функционирования компьютерных сетей"](https://www.youtube.com/playlist?list=PLlhqsC7hBaSetShkAWo3E5ROJnlpgnLUP)
+* [Тестирование API с использованием Postman](https://www.youtube.com/watch?v=XR0YXH0ue2I)
 
 ## Вы можете
 
