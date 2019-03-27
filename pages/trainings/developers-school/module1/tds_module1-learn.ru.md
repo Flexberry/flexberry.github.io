@@ -47,8 +47,10 @@ lang: ru
                             <p>В занятии рассматривается протокол передачи гипертекста, а также технология COMET и варианты ее реализации.</p>
                         </a>
                     </div>
+                </div>
+                <div class="row items">
                     <div class="col-sm-6 col-md-4 portfolio-item">
-                        <a href="{{ 'http://youtu.be/_xW7huwTVqU' | relative_url }}" class="portfolio-link">
+                        <a href="{{ 'http://youtu.be/vEwBAsqcVB4' | relative_url }}" class="portfolio-link">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/sessions.jpg" | relative_url}}" class="products-img">
                             </div>
@@ -57,7 +59,7 @@ lang: ru
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
-                        <a href="{{ 'http://youtu.be/_xW7huwTVqU' | relative_url }}" class="portfolio-link">
+                        <a href="{{ 'http://youtu.be/j0pFteIaxJc' | relative_url }}" class="portfolio-link">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/general-web.jpg" | relative_url}}" class="products-img">
                             </div>
@@ -66,7 +68,7 @@ lang: ru
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
-                        <a href="{{ 'http://youtu.be/_xW7huwTVqU' | relative_url }}" class="portfolio-link">
+                        <a href="{{ 'http://youtu.be/amRjuBjVt8I' | relative_url }}" class="portfolio-link">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/back-end.jpg" | relative_url}}" class="products-img">
                             </div>
@@ -74,8 +76,10 @@ lang: ru
                             <p>В занятии рассматриваются виды веб-серверов, а также принципы статической и динамической генерации веб-страниц.</p>
                         </a>
                     </div>
+                </div>
+                <div class="row items">
                     <div class="col-sm-6 col-md-4 portfolio-item">
-                        <a href="{{ 'http://youtu.be/_xW7huwTVqU' | relative_url }}" class="portfolio-link">
+                        <a href="{{ 'http://youtu.be/XBpWdjx3imU' | relative_url }}" class="portfolio-link">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/front-end.jpg" | relative_url}}" class="products-img">
                             </div>
@@ -84,7 +88,7 @@ lang: ru
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
-                        <a href="{{ 'http://youtu.be/_xW7huwTVqU' | relative_url }}" class="portfolio-link">
+                        <a href="{{ 'http://youtu.be/jjQfRzkSHaY' | relative_url }}" class="portfolio-link">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/modern-apps.jpg" | relative_url}}" class="products-img">
                             </div>
@@ -93,7 +97,7 @@ lang: ru
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
-                        <a href="{{ 'http://youtu.be/_xW7huwTVqU' | relative_url }}" class="portfolio-link">
+                        <a href="{{ 'http://youtu.be/l00DuqUsZZs' | relative_url }}" class="portfolio-link">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/mpa-spa.jpg" | relative_url}}" class="products-img">
                             </div>
@@ -101,8 +105,10 @@ lang: ru
                             <p>В занятии рассматривается разница архитектур многостраничных и одностраничных приложений.</p>
                         </a>
                     </div>
+                </div>
+                <div class="row items">
                     <div class="col-sm-6 col-md-4 portfolio-item">
-                        <a href="{{ 'http://youtu.be/_xW7huwTVqU' | relative_url }}" class="portfolio-link">
+                        <a href="{{ 'http://youtu.be/SknXUhnbMHE' | relative_url }}" class="portfolio-link">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/mpa.jpg" | relative_url}}" class="products-img">
                             </div>
@@ -111,7 +117,7 @@ lang: ru
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
-                        <a href="{{ 'http://youtu.be/_xW7huwTVqU' | relative_url }}" class="portfolio-link">
+                        <a href="{{ 'http://youtu.be/aWywuZbdvpU' | relative_url }}" class="portfolio-link">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/spa.jpg" | relative_url}}" class="products-img">
                             </div>
@@ -120,7 +126,7 @@ lang: ru
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
-                        <a href="{{ 'http://youtu.be/_xW7huwTVqU' | relative_url }}" class="portfolio-link">
+                        <a href="{{ 'http://youtu.be/42ZvopKusvM' | relative_url }}" class="portfolio-link">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/instruments-web.jpg" | relative_url}}" class="products-img">
                             </div>
