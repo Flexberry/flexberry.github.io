@@ -47,6 +47,87 @@ lang: ru
                             <p>В занятии рассматривается протокол передачи гипертекста, а также технология COMET и варианты ее реализации.</p>
                         </a>
                     </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'http://youtu.be/_xW7huwTVqU' | relative_url }}" class="portfolio-link">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/sessions.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">4. Механизм сессий</span></h4>
+                            <p>В занятии рассматривается варианты реализации сессий на основе cookies, параметров запроса и серверных сессий.</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'http://youtu.be/_xW7huwTVqU' | relative_url }}" class="portfolio-link">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/general-web.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">5. Общий принцип работы веб-приложений</span></h4>
+                            <p>В занятии рассматривается порядок взаимодействия клиента и сервера в контексте работы веб-приложений.</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'http://youtu.be/_xW7huwTVqU' | relative_url }}" class="portfolio-link">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/back-end.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">6. Back-end</span></h4>
+                            <p>В занятии рассматриваются виды веб-серверов, а также принципы статической и динамической генерации веб-страниц.</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'http://youtu.be/_xW7huwTVqU' | relative_url }}" class="portfolio-link">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/front-end.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">7. Front-end</span></h4>
+                            <p>В занятии кратко рассматриваются клиентские веб-технологии.</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'http://youtu.be/_xW7huwTVqU' | relative_url }}" class="portfolio-link">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/modern-apps.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">8. Современные веб-приложения</span></h4>
+                            <p>В занятии рассматриваются современные веб-приложения в конексте архитектур SOA, RIA, SPA, IoT.</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'http://youtu.be/_xW7huwTVqU' | relative_url }}" class="portfolio-link">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/mpa-spa.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">9. MPA и SPA</span></h4>
+                            <p>В занятии рассматривается разница архитектур многостраничных и одностраничных приложений.</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'http://youtu.be/_xW7huwTVqU' | relative_url }}" class="portfolio-link">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/mpa.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">10. Пример MPA-приложения</span></h4>
+                            <p>В занятии рассматривается пример реализации MPA-приложения на основе технологии ASP.NET.</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'http://youtu.be/_xW7huwTVqU' | relative_url }}" class="portfolio-link">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/spa.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">11. Пример SPA-приложения</span></h4>
+                            <p>В занятии рассматривается пример реализации SPA-приложения на основе фреймворка Ember.js.</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'http://youtu.be/_xW7huwTVqU' | relative_url }}" class="portfolio-link">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/instruments-web.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">12. Обзор инструментов для веб-разработки</span></h4>
+                            <p>В занятии кратко рассматривюется Chrome Developer Tools, Fiddler и Postman.</p>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
