@@ -1,5 +1,5 @@
 ---
-title: Знакомство со школой
+title: Школа разработчиков
 keywords: Programming, Training, Developers school
 sidebar: training-developers-school_sidebar
 toc: false
