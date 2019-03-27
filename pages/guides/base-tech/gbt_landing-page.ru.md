@@ -15,11 +15,8 @@ summary: Курс по базовым технологиям, применяем
 
 Если Вы являетесь начинающим разработчиком и Вам требуются фундаментальные знания в области программирования, рекомендуем посмотреть [гарвардский курс CS50](https://www.youtube.com/playlist?list=PLawfWYMUziZqyUL5QDLVbe3j5BKWj42E5) на русском языке.
 
-Если Вам требуются получить начальные знания по веб-программированию, рекомендуем посмотреть обучающий модуль по теме "Введение в веб-разработку":
+Если Вам требуются получить начальные знания по веб-программированию, рекомендуем посмотреть обучающий модуль ["Школы разработчиков"](/ru/tds_landing-page.html) по теме ["Введение в веб-разработку"](/ru/tds_module1-about.html).
 
-<div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px">
-    <iframe width="854" height="480" src="https://www.youtube.com/embed/videoseries?list=PLlhqsC7hBaSdSon8kbOeYWkb_sTz14Hq0&hd=1&fmt=22" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-</div>
 
 ## Состав курса
 
