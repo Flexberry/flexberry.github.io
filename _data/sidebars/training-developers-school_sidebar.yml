@@ -38,6 +38,6 @@ entries:
       url: /tds_module1-appendix.html
       output: web    
     - title: Tasks
-      title_ru: Задаиня
+      title_ru: Задания
       url: /tds_module1-tasks.html
       output: web    
