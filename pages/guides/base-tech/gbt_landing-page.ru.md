@@ -81,6 +81,7 @@ summary: Курс по базовым технологиям, применяем
 * [Stepik](https://stepik.org)
 * [Coursera](https://ru.coursera.org/)
 * [edX](https://www.edx.org/)
+* [Udemy](https://www.udemy.com/)
 * [Microsoft Virtual Academy](https://mva.microsoft.com)
 * [GeekBrains](https://geekbrains.ru/)
 * [Нетология](https://netology.ru/)
