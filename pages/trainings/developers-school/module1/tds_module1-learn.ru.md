@@ -21,7 +21,7 @@ lang: ru
             <div class="panel-body">
                 <div class="row items">
                     <div class="col-sm-6 col-md-4 portfolio-item">
-                        <a href="{{ 'http://youtu.be/gERnjWLUaK0' | relative_url }}" class="portfolio-link" target="_blank">
+                        <a href="{{ 'https://www.youtube.com/watch?v=gERnjWLUaK0&list=PLlhqsC7hBaSdSon8kbOeYWkb_sTz14Hq0' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module1/architecture.jpg" | relative_url}}" class="products-img">
                             </div>
@@ -30,7 +30,7 @@ lang: ru
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
-                        <a href="{{ 'http://youtu.be/R458L8K9aIU' | relative_url }}" class="portfolio-link" target="_blank">
+                        <a href="{{ 'https://www.youtube.com/watch?v=R458L8K9aIU&list=PLlhqsC7hBaSdSon8kbOeYWkb_sTz14Hq0' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module1/osi.jpg" | relative_url}}" class="products-img">
                             </div>
@@ -39,7 +39,7 @@ lang: ru
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
-                        <a href="{{ 'http://youtu.be/_xW7huwTVqU' | relative_url }}" class="portfolio-link" target="_blank">
+                        <a href="{{ 'https://www.youtube.com/watch?v=_xW7huwTVqU&list=PLlhqsC7hBaSdSon8kbOeYWkb_sTz14Hq0' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module1/http.jpg" | relative_url}}" class="products-img">
                             </div>
@@ -50,7 +50,7 @@ lang: ru
                 </div>
                 <div class="row items">
                     <div class="col-sm-6 col-md-4 portfolio-item">
-                        <a href="{{ 'http://youtu.be/vEwBAsqcVB4' | relative_url }}" class="portfolio-link" target="_blank">
+                        <a href="{{ 'https://www.youtube.com/watch?v=vEwBAsqcVB4&list=PLlhqsC7hBaSdSon8kbOeYWkb_sTz14Hq0' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module1/sessions.jpg" | relative_url}}" class="products-img">
                             </div>
@@ -59,7 +59,7 @@ lang: ru
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
-                        <a href="{{ 'http://youtu.be/j0pFteIaxJc' | relative_url }}" class="portfolio-link" target="_blank">
+                        <a href="{{ 'https://www.youtube.com/watch?v=j0pFteIaxJc&list=PLlhqsC7hBaSdSon8kbOeYWkb_sTz14Hq0' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module1/general-web.jpg" | relative_url}}" class="products-img">
                             </div>
@@ -68,7 +68,7 @@ lang: ru
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
-                        <a href="{{ 'http://youtu.be/amRjuBjVt8I' | relative_url }}" class="portfolio-link" target="_blank">
+                        <a href="{{ 'https://www.youtube.com/watch?v=amRjuBjVt8I&list=PLlhqsC7hBaSdSon8kbOeYWkb_sTz14Hq0' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module1/back-end.jpg" | relative_url}}" class="products-img">
                             </div>
@@ -79,7 +79,7 @@ lang: ru
                 </div>
                 <div class="row items">
                     <div class="col-sm-6 col-md-4 portfolio-item">
-                        <a href="{{ 'http://youtu.be/XBpWdjx3imU' | relative_url }}" class="portfolio-link" target="_blank">
+                        <a href="{{ 'https://www.youtube.com/watch?v=XBpWdjx3imU&list=PLlhqsC7hBaSdSon8kbOeYWkb_sTz14Hq0' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module1/front-end.jpg" | relative_url}}" class="products-img">
                             </div>
@@ -88,7 +88,7 @@ lang: ru
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
-                        <a href="{{ 'http://youtu.be/jjQfRzkSHaY' | relative_url }}" class="portfolio-link" target="_blank">
+                        <a href="{{ 'https://www.youtube.com/watch?v=jjQfRzkSHaY&list=PLlhqsC7hBaSdSon8kbOeYWkb_sTz14Hq0' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module1/modern-apps.jpg" | relative_url}}" class="products-img">
                             </div>
@@ -97,7 +97,7 @@ lang: ru
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
-                        <a href="{{ 'http://youtu.be/l00DuqUsZZs' | relative_url }}" class="portfolio-link" target="_blank">
+                        <a href="{{ 'https://www.youtube.com/watch?v=l00DuqUsZZs&list=PLlhqsC7hBaSdSon8kbOeYWkb_sTz14Hq0' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module1/mpa-spa.jpg" | relative_url}}" class="products-img">
                             </div>
@@ -108,7 +108,7 @@ lang: ru
                 </div>
                 <div class="row items">
                     <div class="col-sm-6 col-md-4 portfolio-item">
-                        <a href="{{ 'http://youtu.be/SknXUhnbMHE' | relative_url }}" class="portfolio-link" target="_blank">
+                        <a href="{{ 'https://www.youtube.com/watch?v=SknXUhnbMHE&list=PLlhqsC7hBaSdSon8kbOeYWkb_sTz14Hq0' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module1/mpa.jpg" | relative_url}}" class="products-img">
                             </div>
@@ -117,7 +117,7 @@ lang: ru
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
-                        <a href="{{ 'http://youtu.be/aWywuZbdvpU' | relative_url }}" class="portfolio-link" target="_blank">
+                        <a href="{{ 'https://www.youtube.com/watch?v=aWywuZbdvpU&list=PLlhqsC7hBaSdSon8kbOeYWkb_sTz14Hq0' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module1/spa.jpg" | relative_url}}" class="products-img">
                             </div>
@@ -126,7 +126,7 @@ lang: ru
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
-                        <a href="{{ 'http://youtu.be/42ZvopKusvM' | relative_url }}" class="portfolio-link" target="_blank">
+                        <a href="{{ 'https://www.youtube.com/watch?v=42ZvopKusvM&list=PLlhqsC7hBaSdSon8kbOeYWkb_sTz14Hq0' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module1/instruments-web.jpg" | relative_url}}" class="products-img">
                             </div>
