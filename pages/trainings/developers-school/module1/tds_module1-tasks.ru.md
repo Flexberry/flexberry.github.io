@@ -58,7 +58,7 @@ lang: ru
 
 **Вспомогательные ресурсы:**
 1. [Официальная документация JSON Server](https://github.com/typicode/json-server/blob/master/README.md).
-2. [Создание фейкового REST API с помощью JSON-сервера](https://code.tutsplus.com/ru/tutorials/fake-rest-api-up-and-running-using-json-server--cms-27871)
+2. [Создание фейкового REST API с помощью JSON Server](https://code.tutsplus.com/ru/tutorials/fake-rest-api-up-and-running-using-json-server--cms-27871)
 
 ## Вы можете
 
