@@ -68,13 +68,13 @@ lang: ru
 
     Оба запроса необходимо выполнить при помощи всех трех инструментов (Chrome+Chrome Developer Tools, Postman и Fiddler), сделать скриншоты полученных ответов и сохранить скриншоты в документе. Документ необходимо выложить на GitHub в репозиторий, который использовался для публикации результатов выполнения задания 1 (создать для документа отдельную папку). Можно использовать [Google Docs](https://www.google.ru/intl/ru/docs/about/) для публикации документов (в этом случае в репозитории необходимо создать .md-файл со ссылкой на документ в Google Docs).
 
-    **Пример скриншота HTTP-ответа в Chrome+Chrome Developer Tools:**
+    **Пример скриншота тела HTTP-ответа в Chrome+Chrome Developer Tools:**
     ![](/images/pages/trainings/developers-school/module1/dt-example.png)
 
-    **Пример скриншота HTTP-ответа из Postman:**
+    **Пример скриншота тела HTTP-ответа в Postman:**
     ![](/images/pages/trainings/developers-school/module1/postman-example.png)
 
-    **Пример скриншота HTTP-из Fiddler:**
+    **Пример скриншота тела HTTP-ответа в Fiddler:**
     ![](/images/pages/trainings/developers-school/module1/fiddler-example.png)
 
 2. С использованием Postman и Fiddler выполните следующие запросы:
