@@ -50,7 +50,7 @@ lang: ru
                 </div>
                 <div class="row items">
                     <div class="col-sm-6 col-md-4 portfolio-item">
-                        <a href="{{ 'https://www.youtube.com/playlist?list=PLlhqsC7hBaSetShkAWo3E5ROJnlpgnLUP' | relative_url }}" class="portfolio-link" target="_blank">
+                        <a href="{{ 'http://youtu.be/woB6yiX-Ll8' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module1/auto-postman.jpg" | relative_url}}" class="products-img">
                             </div>
