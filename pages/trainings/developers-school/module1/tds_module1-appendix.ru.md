@@ -54,7 +54,7 @@ lang: ru
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module1/auto-postman.jpg" | relative_url}}" class="products-img">
                             </div>
-                            <h4><span class="item-head">Автоматизированное тестирование API с помощью Postman</h4>
+                            <h4><span class="item-head">Автоматизированное тестирование API с помощью Postman</span></h4>
                             <p>Доклад с митапа, на котором рассматривается создание тестовых коллекций в Postman на практическом примере (Алексей Чумагин, Provectus).</p>
                         </a>
                     </div>
