@@ -80,6 +80,7 @@ summary: Курс по базовым технологиям, применяем
 * [edX](https://www.edx.org/)
 * [Udemy](https://www.udemy.com/)
 * [Microsoft Virtual Academy](https://mva.microsoft.com)
+* [Яндекс.Практикум](https://praktikum.yandex.ru/)
 * [GeekBrains](https://geekbrains.ru/)
 * [Нетология](https://netology.ru/)
 * [Codecademy](https://www.codecademy.com/)
