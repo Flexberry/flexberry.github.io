@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module1-tasks.html
 lang: en
 autotranslated: true
-hash: b84e193bc2e0db869ab55b27f9596780a21f6bf77d7598e0ea98fd894430f53e
+hash: 73a434ddddfb7daafde65593906a8161a265be99f1c3bf86e724b9c695fde2d1
 ---
 
 ## The expected results of tasks execution
@@ -61,6 +61,57 @@ According to the results of assignments the student must:
 **Support resources:**
 1. [Official documentation for the JSON Server](https://github.com/typicode/json-server/blob/master/README.md).
 2. [Create fake REST API using JSON Server](https://code.tutsplus.com/ru/tutorials/fake-rest-api-up-and-running-using-json-server--cms-27871)
+
+### Task 2. Testing networking and server-side API.
+
+1. Using Chrome Chrome Developer Tools [Postman](https://www.getpostman.com/downloads/) and [Fiddler](https://www.telerik.com/download/fiddler) run the following queries against a server that is deployed when performing the task 1:
+* Receive all invoices, any field containing the number "7"
+* Receive all invoices, the value of the field number less than "100000"
+
+Both queries should be done using all three tools (Chrome Chrome Developer Tools and Fiddler, Postman) to do screenshots of the responses received and keep the screenshots in the document. The document should be laid out on the GitHub repository for task 1 (create document separate folder). You can use [Google Docs](https://www.google.ru/intl/ru/docs/about/) to publish documents (in this case, the repository must be created .md file with a link to the document in Google Docs).
+
+**Sample screenshot of the body of the HTTP response in Chrome Chrome Developer Tools:**
+![](/images/pages/trainings/developers-school/module1/dt-example.png)
+
+**Sample screenshot of the body of the HTTP response in Postman:**
+![](/images/pages/trainings/developers-school/module1/postman-example.png)
+
+**Sample screenshot of the body of the HTTP response in Fiddler:**
+![](/images/pages/trainings/developers-school/module1/fiddler-example.png)
+
+2. Using Postman or Fiddler, run the following queries:
+* Create invoice
+* Change invoice
+* Delete nakladani
+
+By analogy with the assignment from the previous paragraph it is necessary to create a document with screenshots of the responses received from both instruments for each query. The document also needs to put on GitHub in a repository for task 1 in the same folder along with the previously created document.
+
+3. Using Postman to create two collections with automated tests for the API provided by the server that are deployed when performing the task 1.
+
+A minimal set of tests in the first collection:
+* Test for receipt of all invoices
+* Test adding overhead
+* Test for change of invoices
+* TST to delete invoices
+
+A minimum set of tests in the second collection:
+* Test for receipt of invoices filtered by the field value. The field name and its value should be set in the environment variables). For this test, prepare a file with a JSON array of values of the variables to each field in the invoice must correspond to a single array element (i.e., must be provisioned for the data filter on each field).
+
+The collection can be expanded by an additional set of tests for more test coverage at the discretion of the student.
+
+When you start a second collection in the Collection Runner, you need to specify a file with podgotovlennye data to run tests.
+
+Both the resulting collection to be exported are appropriate .json files exported collections to post on the GitHub repository for task 1.
+
+After you export your collections to start a prepared collection of tests on the local machine from the console using the [Newman](https://github.com/postmanlabs/newman). To take a screenshot of the terminal with the results of running, save it in a document similar to the tasks from the preceding paragraphs and to put the resulting document on GitHub in the repository for task 1 in the same directory along with previously created documents.
+
+**Support resources:**
+1. [Official documentation for the JSON Server](https://github.com/typicode/json-server/blob/master/README.md).
+2. [Introduction to Postman](https://habr.com/ru/company/kolesa/blog/351250/)
+3. [Test collection Postman Echo](https://docs.postman-echo.com/) - to add a test collection in Postman, click on "Run in Postman" in the upper right corner. In a test collection you can see examples of tests for various test cases.
+4. [How to test query by using Fiddler](https://help.mindbox.ru/операции-и-интеграция/операции/как-тестировать-запросы-с-помощью-fiddler)
+5. [Basics of how to use Fiddler](https://learn.javascript.ru/fiddler)
+6. [Instructions to install and run Fiddler on a Mac OS](https://blogs.msdn.microsoft.com/jpsanders/2018/02/08/usinginstalling-fiddler-on-mac-os/)
 
 ## You can
 

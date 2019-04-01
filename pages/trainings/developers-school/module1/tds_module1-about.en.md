@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module1-about.html
 lang: en
 autotranslated: true
-hash: 91f587c8cb909c3abf9a36fd9025c7805dd567c10de66e73a89c3a4c0aabebf6
+hash: dd548af1468ae9946d8f3f6161210a832f55b3f2c869f9efee5f9d0849618c89
 ---
 
 ## The contents of the module
@@ -29,7 +29,7 @@ The results of the study of module student must:
 5. Know the varieties of modern web apps
 6. To understand the differences between multipage and single-page web applications (SPA and MPA)
 7. To understand the principle of organizing a web application based on REST API
-8. To be able to use the basic tools of web development: Chrome Developer Tools, Postman, Fiddler
+8. To be able to use tools for testing and debugging communication between web client and web server: the Chrome Developer Tools, Postman, Fiddler
 
 ## You can
 
