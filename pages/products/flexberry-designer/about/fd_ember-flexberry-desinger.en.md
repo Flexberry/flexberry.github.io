@@ -12,7 +12,7 @@ hash: 554ceb6d50e017858c9db843e6f4fc0c4753f3d981fc3575cba0de4cbec3e343
 
 **Ember Flexberry Designer** - CASE-tool with a web interface [Flexberry Designer](fd_landing_page.html) is used for analysis and design of object-oriented systems, as well as generating prototypes of web applications based on the constructed models. Implemented using the framework [Ember.js](https://ru.wikipedia.org/wiki/Ember.js). 
 
-Ember Flexberry Designer is [product platform Flexberry](fp_platform-structure.html). 
+Ember Flexberry Designer is [product platform Flexberry](fp_landing_page.html). 
 
 `Ember Flexberry Desinger` can be used in two modes: 
 

@@ -9,7 +9,7 @@ autotranslated: true
 hash: 66c73e36088d2e4a15b6f19b931f5e97ff0bca414ba6381a0daaa4cb56b27ca4 
 --- 
 
-Flexberry ASP.NET is [product platform Flexberry](fp_platform-structure.html). The product website Flexberry ASP.NET: [flexberry.ru](http://flexberry.ru/Flexberry/ForDevelopers/FlexberryASPNet). 
+Flexberry ASP.NET is [product platform Flexberry](fp_landing_page.html). The product website Flexberry ASP.NET: [flexberry.ru](http://flexberry.ru/Flexberry/ForDevelopers/FlexberryASPNet). 
 
 ## product Description 
 

@@ -12,7 +12,7 @@ lang: ru
 
 **Flexberry Designer** - это [CASE-инструмент](https://ru.wikipedia.org/wiki/CASE), который может быть использован как для бизнес-моделирования (анализ бизнес-процессов, реинжиниринг бизнес-процессов), так и для объектно-ориентированного проектирования программного обеспечения и баз данных. В качестве нотации используется [UML](http://www.uml.org).
 
-Flexberry Designer является [продуктом платформы Flexberry](fp_platform-structure.html).
+Flexberry Designer является [продуктом платформы Flexberry](fp_landing_page.html).
 
 ## Состав
 

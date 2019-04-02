@@ -10,7 +10,7 @@ autotranslated: true
 hash: 3423af19486e726006f650a67bfedfdaff2313bdf388446496f0d26ebf667a5d 
 --- 
 
-`Flexberry UnityFactory` is [product platform Flexberry](fp_platform-structure.html) and allows a standard way to work with a resolution of containers [Unity Container](https://msdn.microsoft.com/en-us/library/ff647202.aspx). Use the version of [Unity 2.1](https://msdn.microsoft.com/en-us/library/hh237493.aspx). 
+`Flexberry UnityFactory` is [product platform Flexberry](fp_landing_page.html) and allows a standard way to work with a resolution of containers [Unity Container](https://msdn.microsoft.com/en-us/library/ff647202.aspx). Use the version of [Unity 2.1](https://msdn.microsoft.com/en-us/library/hh237493.aspx). 
 
 {% include note.html content="Flexberry UnityFactory is available for installation in the project via the NuGet package Flexberry ORM." %} 
 

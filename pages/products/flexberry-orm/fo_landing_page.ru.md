@@ -4,13 +4,12 @@ keywords: flexberry, designer, uml
 sidebar: flexberry-orm_sidebar
 toc: false
 permalink: ru/fo_landing_page.html
-folder: product1
 lang: ru
 ---
 
 ## Информация о продукте
 
-`Flexberry ORM` является [продуктом платформы Flexberry](fp_platform-structure.html). Сайт продукта `Flexberry ORM`: [http://flexberry.ru/FlexberryORM](http://flexberry.ru/FlexberryORM).
+`Flexberry ORM` является [продуктом платформы Flexberry](fp_landing_page.html). Сайт продукта `Flexberry ORM`: [http://flexberry.ru/FlexberryORM](http://flexberry.ru/FlexberryORM).
 
 "Flexberry ORM доступно для установки в проект через [NuGet package](https://www.nuget.org/packages/NewPlatform.Flexberry.ORM)."
 

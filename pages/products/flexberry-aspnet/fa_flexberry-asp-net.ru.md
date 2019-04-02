@@ -7,7 +7,7 @@ permalink: ru/fa_flexberry-asp-net.html
 lang: ru
 ---
 
-Flexberry ASP.NET является [продуктом платформы Flexberry](fp_platform-structure.html). Сайт продукта Flexberry ASP.NET: [flexberry.ru](http://flexberry.ru/Flexberry/ForDevelopers/FlexberryASPNet).
+Flexberry ASP.NET является [продуктом платформы Flexberry](fp_landing_page.html). Сайт продукта Flexberry ASP.NET: [flexberry.ru](http://flexberry.ru/Flexberry/ForDevelopers/FlexberryASPNet).
 
 ## Описание продукта
 

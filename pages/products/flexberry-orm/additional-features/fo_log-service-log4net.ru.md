@@ -8,7 +8,7 @@ permalink: ru/fo_log-service-log4net.html
 lang: ru
 ---
 
-`Flexberry LogService` является [продуктом платформы Flexberry](fp_platform-structure.html) и предназначен для осуществления записи событий работы программного продукта.
+`Flexberry LogService` является [продуктом платформы Flexberry](fp_landing_page.html) и предназначен для осуществления записи событий работы программного продукта.
 
 Flexberry LogService базируется на [log4net](http://logging.apache.org/log4net/).
 

@@ -10,7 +10,7 @@ autotranslated: true
 hash: c11ac5671b443259fe71782fe8c39e6b20877da46805c527269f6e32d9713046 
 --- 
 
-`Flexberry LogService` is [product platform Flexberry](fp_platform-structure.html) and is intended for implementation event records the software. 
+`Flexberry LogService` is [product platform Flexberry](fp_landing_page.html) and is intended for implementation event records the software. 
 
 Flexberry LogService is based on [log4net](http://logging.apache.org/log4net/). 
 

@@ -10,7 +10,7 @@ lang: ru
 
 **Ember Flexberry Designer** - CASE-инструмент с веб-интерфейсом [Flexberry Designer](fd_landing_page.html) предназначен для анализа и проектирования объектно-ориентированных систем, а также генерации прототипов веб-приложений на основе построенных моделей. Реализован с помощью фреймворка [Ember.js](https://ru.wikipedia.org/wiki/Ember.js).
 
-Ember Flexberry Designer является [продуктом платформы Flexberry](fp_platform-structure.html).
+Ember Flexberry Designer является [продуктом платформы Flexberry](fp_landing_page.html).
 
 `Ember Flexberry Desinger` может быть использован в двух режимах:
 

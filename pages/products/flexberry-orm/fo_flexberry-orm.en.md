@@ -7,7 +7,7 @@ permalink: en/fo_flexberry-orm.html
 ---
 ## Product information
 
-`Flexberry ORM` is [product platform Flexberry](fp_platform-structure.html). The product website `Flexberry ORM`: [http://flexberry.ru/FlexberryORM](http://flexberry.ru/FlexberryORM).
+`Flexberry ORM` is [product platform Flexberry](fp_landing_page.html). The product website `Flexberry ORM`: [http://flexberry.ru/FlexberryORM](http://flexberry.ru/FlexberryORM).
 
 {% include note.html content="Flexberry ORM is available for installation in the project via [NuGet package](https://www.nuget.org/packages/NewPlatform.Flexberry.ORM)." %}
 

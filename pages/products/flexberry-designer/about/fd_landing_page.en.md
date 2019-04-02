@@ -14,7 +14,7 @@ hash: a294a103e2f244fd2c3903a76ed2d2fe9f6409b7f2b86335970f19d12f8030f1
 
 **Flexberry Designer** is a [CASE tool](https://ru.wikipedia.org/wiki/CASE), which can be used for both business modeling (analysis of business-processes, reengineering of business processes) and object-oriented design of software and databases. As the notation used by [UML](http://www.uml.org). 
 
-Flexberry Designer is [product platform Flexberry](fp_platform-structure.html). 
+Flexberry Designer is [product platform Flexberry](fp_landing_page.html). 
 
 ## Composition 
 
