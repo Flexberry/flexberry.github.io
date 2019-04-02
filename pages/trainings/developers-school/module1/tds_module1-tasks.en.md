@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module1-tasks.html
 lang: en
 autotranslated: true
-hash: 73a434ddddfb7daafde65593906a8161a265be99f1c3bf86e724b9c695fde2d1
+hash: 70d532a3be29fc802f08b2c7d763d7b33845bc08082b828c524a2d7fa9df0729
 ---
 
 ## The expected results of tasks execution
@@ -95,7 +95,7 @@ A minimal set of tests in the first collection:
 * TST to delete invoices
 
 A minimum set of tests in the second collection:
-* Test for receipt of invoices filtered by the field value. The field name and its value should be set in the environment variables). For this test, prepare a file with a JSON array of values of the variables to each field in the invoice must correspond to a single array element (i.e., must be provisioned for the data filter on each field).
+* Test for receipt of invoices filtered by the field value. The field name and its value should be set in the environment variables. For this test, prepare a file with a JSON array of values of the variables to each field in the invoice must correspond to a single array element (i.e., must be provisioned for the data filter on each field).
 
 The collection can be expanded by an additional set of tests for more test coverage at the discretion of the student.
 
