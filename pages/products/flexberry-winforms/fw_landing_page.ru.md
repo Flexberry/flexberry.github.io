@@ -8,7 +8,7 @@ permalink: ru/fw_landing_page.html
 lang: ru
 ---
 
-`Flexberry Winforms` является [продуктом платформы Flexberry](fp_platform-structure.html).
+`Flexberry Winforms` является [продуктом платформы Flexberry](fp_landing_page.html).
 
 `Flexberry Winforms` предоставляет средства для разработки приложения, реализующего win-интерфейс ("настольное" приложение), а также содержит набор библиотек, требуемых для функционирования такого приложения.
 

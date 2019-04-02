@@ -10,7 +10,7 @@ autotranslated: true
 hash: 3c36c999c70d4fd52a30fee2835c4db07ba25807497b4f3c572ee2f0cca090e9 
 --- 
 
-`Flexberry Winforms` is [product platform Flexberry](fp_platform-structure.html). 
+`Flexberry Winforms` is [product platform Flexberry](fp_landing_page.html). 
 
 `Flexberry Winforms` provides tools for developing applications that implements the win-interface (the"desktop" application) and contains a set of libraries required for the functioning of such applications. 
 

@@ -1,45 +1,46 @@
---- 
-title: Rules for working with git 
-sidebar: flexberry-platform_sidebar 
-keywords: Code 
-toc: true 
-permalink: en/fp_git-rules.html 
-lang: en 
-autotranslated: true 
-hash: 7388d3e8ad2bd4dbc5d1502346e0d7144d3b912bc564bf4fa96ca74f33252ea8 
---- 
+---
+title: Rules for working with git
+sidebar: flexberry-platform_sidebar
+keywords: Code, Git, команды, утилита
+summary: Определения, базовые команды клонирования, создания новой ветви, внесения изменений, удаления репозитория
+toc: true
+permalink: en/fp_git-rules.html
+lang: en
+autotranslated: true
+---
 
-**Git** (not to be confused with github) is a set of console tools that track and record changes to files. With its help, you can revert to an older version of the project, to compare, to analyze, merge changes and much more. This process is called version control. 
+**Git** (не путать с github) - это набор консольных утилит, которые отслеживают и фиксируют изменения в файлах. С его помощью можно откатиться на более старую версию проекта, сравнивать, анализировать, сливать изменения и многое другое. Этот процесс называется контролем версий.
 
-Git is distributed, i.e. does not depend on one Central server that stores the files. Instead, it works completely locally, storing the data in the folders on the hard disk, called a repository. However, you can store a copy of the online repository, it is much easier working on one project for several people. 
+Git является распределенным, то есть не зависит от одного центрального сервера, на котором хранятся файлы. Вместо этого он работает полностью локально, сохраняя данные в папках на жестком диске, которые называются репозиторием. Тем не менее, можно хранить копию репозитория онлайн, это сильно облегчает работу над одним проектом для нескольких людей.
 
-[GitHub](https://github.com/) is one of the popular hosting git repositories. 
+[GitHub](https://github.com/) - это один из популярных хостингов git-репозиториев.
 
-## Basic commands to work with git 
+## Основные команды для работы с git
 
-For git you can use a GUI app (including the interfaces for working with git in Visual Studio and WebStorm), but in most cases with git and working from the console (terminal emulator). 
-We recommend that you initially used to working with git from the console. Moreover, graphical interfaces do not cover all the functionality of git, providing only the most commonly used features. 
+Для работы с git можно использовать GUI-приложения (в т.ч. интерфейсы для работы с git в Visual Studio и WebStorm), но в большинстве случаев, с git работают из консоли (эмулятор терминала).
 
-### cloning an existing repository 
+Рекомендуется изначально привыкать работать с git из консоли. Более того, графические интерфейсы не покрывают всю функциональность git, предоставляя только наиболее часто используемый функционал.
 
-To obtain a copy of an existing Git repository-for example, the project you need to make changes, you must use `git clone`. 
+### Клонирование существующего репозитория
 
-```
+Для получения копии существующего Git-репозитория, например, проекта, в который надо внести изменения, необходимо использовать команду `git clone`.
+
+```git
 # Клонирование репозитория осуществляется командой git clone [URL].
-git clone https://github.com/Flexberry/ember-flexberry.git 
-``` 
-
-### Branching 
-
-**Branch** is used for the simultaneous and independent development. The main branch is master or develop. Other branches are fixes and changes which are not yet added to the main branch. 
-
-To switch between branches, you must use `git checkout <branchname>`. 
-
-Make a new branch and switch to it at once, execute `git checkout-b <new branch>`. 
-
-{% include note.html content="When you create branches follow the rules of their naming. If the branch to dobavleny new functionality, its name should be: `feature-<number of tasks if there is a>-<task title>`. If a branch for patches, `fix-<number of tasks if there is a>-<task title>`." %} 
-
+git clone https://github.com/Flexberry/ember-flexberry.git
 ```
+
+### Ветвление
+
+**Ветвление** используется для одновременной и независимой разработки. Основной веткой является `master` или `develop`. Другие ветки — это исправления и изменения которые еще не добавлены в основную ветку.
+
+Для переключения между ветками, необходимо использовать команду `git checkout <имя ветки>`.
+
+Сделать новую ветку и переключится сразу на нее, можно выполнив команду `git checkout -b <имя новой ветки>`.
+
+{% include note.html content="При создании веток соблюдайте правила их именования. Если ветка для добававления новой функциональность, то ее название должно иметь вид: `feature-<номер задачи если есть>-<заголовок задачи>`. Если ветка для исправлений, то `fix-<номер задачи если есть>-<заголовок задачи>`." %}
+
+```git
 # Переключиться на ветку от которой надо наследоватся (обычно это основная ветка master или develop)
 git checkout develop
 
@@ -48,39 +49,35 @@ git pull
 
 # Создать новую ветку.
 git checkout -b <имя новой ветки>
-``` 
+```
 
-Merge branch into the current, with the command: `git merge <branch>`. 
+Слить ветку в текущую, можно командой: `git merge <ветка>`.
 
-### Record changes in repository 
+### Запись изменений в репозииторий
 
-**Staging area changes (staging area)** - the area where changes(files) to be included in the commit. 
+**Область подготовленных изменений (staging area)** - область куда попадают изменения(файлы), которые надо включить в коммит.
 
-Add changes to staging area - `git add <file name>` or `git add *` if it is necessary to include all changes. 
+Добавить изменения в staging area - `git add <имя файла>` или `git add *` если надо включить все изменения.
 
-Remove changes from staging area - `git checkout -- <file name>` or `git checkout -- *` if you need to remove all modifications.
+Удалить изменения из staging area - `git checkout -- <имя файла>` или `git checkout -- *` если надо удалить все изменения.
 
-To view the contents of the working directory and staging area - `git status` 
+Просмотреть содержимое рабочей директории и staging area - `git status`
 
-To fix(save) the prepared changes to the local repository - `git commit-m "your commit message"` 
+Зафиксировать(сохранить) подготовленные изменения в локальном репозитории - `git commit -m "Комментарий к коммиту"`
 
-{% include note.html content="Creating a commit is necessary to use a standard Conventional team Commits." %} 
+{% include note.html content="Создавая коммит надо использовать принятый в команде стандарт Conventional Commits." %}
 
-### Work with a remote repository 
+### Работа с удаленным репозиторием
 
-**Remote** repository which is considered to be General (located on github), receives commits from the local repository, what would other programmers can see them. Remote repositories can be multiple, but usually it is one. 
+**Удаленный репозиторий** – репозиторий который считается общим (расположен на github), в него передаются коммиты из локального репозитория, что бы остальные программисты могли их увидеть. Удаленных репозиториев может быть несколько, но обычно он бывает один.
 
-To latest changes made in the branch from the remote repository `git pull` 
+Получить последние изменения сделанные в ветке с удаленного репозитория - `git pull`
 
-Send zafiksirovany changes from your local repository to the remote - `git push origin <branch>` 
+Отправить зафексированные изменения из локального репозитория в удаленный - `git push origin <ветка>`
 
-## Useful links 
+## Полезные ссылки
 
-* [Simple cheat sheet for git](http://rogerdudler.github.io/git-guide/index.ru.html) 
-* [A very good tutorial (practice)](https://try.github.io) 
-* [How to work with git on a real project](http://habrahabr.ru/post/106912/) 
-* [Optional: the book ProGIT](https://git-scm.com/book/ru/v2) 
-
-
-
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}
+* [Простая шпаргалка по git](http://rogerdudler.github.io/git-guide/index.ru.html)
+* [Очень хороший туториал (практика)](https://try.github.io)
+* [Принципы работы с git на реальном проекте](http://habrahabr.ru/post/106912/)
+* [Дополнительный материал: книга ProGIT](https://git-scm.com/book/ru/v2)

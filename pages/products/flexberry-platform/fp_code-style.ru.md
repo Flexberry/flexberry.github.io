@@ -31,7 +31,7 @@ StyleCop — статический анализатор C# кода на пре
 1. Установить NuGet пакет [StyleCop.Analyzers](http://nuget.ics.perm.ru/packages/StyleCop.Analyzers/)
 2. В свойствах проекта, во вкладке `Code Analysis` выбрать правила в выпадающем списке `Run this rule set`.
 
-![](/images/pages/products/flexberry-platform/code-style1.png)
+![Стиль кода](/images/pages/products/flexberry-platform/code-style1.png)
 
 С [перечнем правил](https://github.com/Flexberry/NewPlatform.Flexberry.ORM/blob/develop/Flexberry.ruleset), которые используются в проектах платформы Flexberry можно ознакомится на GitHub-e.
 

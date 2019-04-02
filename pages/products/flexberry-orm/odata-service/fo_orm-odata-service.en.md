@@ -12,7 +12,7 @@ hash: ffad0f50d90c754d1802454d067e84dd159b42cfac69d4a1d9a53fbaee82ed70
 
 ## product Information 
 
-`Flexberry ORM ODataService` is [product platform Flexberry](fp_platform-structure.html). Product website: [http://flexberry.ru](http://flexberry.ru/FlexberryORM). 
+`Flexberry ORM ODataService` is [product platform Flexberry](fp_landing_page.html). Product website: [http://flexberry.ru](http://flexberry.ru/FlexberryORM). 
 
 `Flexberry ORM ODataService` allows you to easily create OData service. 
 
