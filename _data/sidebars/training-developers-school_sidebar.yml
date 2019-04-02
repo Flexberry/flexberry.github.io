@@ -1,0 +1,43 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: Sidebar
+  levels: one
+  folders:
+
+  - title: About school
+    title_ru: О школе
+    output: web
+    folderitems:
+    - title: Introduction
+      title_ru: Знакомство со школой
+      url: /tds_landing-page.html
+      output: web    
+    - title: Curriculum
+      title_ru: Программа школы
+      url: /tds_curriculum.html
+      output: web    
+    - title: Resources
+      title_ru: Ресурсы
+      url: /tds_resources.html
+      output: web    
+  - title: Module 1. Introduction to web development
+    title_ru: Модуль 1. Введение в веб-разработку
+    output: web
+    folderitems:
+    - title: About the module
+      title_ru: О модуле
+      url: /tds_module1-about.html
+      output: web    
+    - title: Learn
+      title_ru: Учебные материалы
+      url: /tds_module1-learn.html
+      output: web    
+    - title: Appendix
+      title_ru: Дополнительные материалы
+      url: /tds_module1-appendix.html
+      output: web    
+    - title: Tasks
+      title_ru: Задания
+      url: /tds_module1-tasks.html
+      output: web    

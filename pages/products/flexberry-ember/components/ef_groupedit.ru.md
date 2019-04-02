@@ -257,43 +257,45 @@ var Model = BaseModel.extend({
 
 ## Вычислимые свойства в getCellComponent
 
-Чтобы создать вычисляемое свойство нужно, в `controllers`, в `getCellComponent` добавить свойство `computedProperties: { thisController: this }`:
+Что бы иметь возможность, изменять свойства, встроенного в ячейку компонента, этот компонент должен использовать миксин [DynamicPropertiesMixin](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/DynamicPropertiesMixin.html).
+
+Свойства компонента, описанные объектом `componentProperties`, в хуке контроллера `getCellComponent`, будут переданны с использованием свойства [`dynamicProperties`](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/DynamicPropertiesMixin.html#property_dynamicProperties) из миксина.
+Поэтому, при изменении свойств объекта `componentProperties`, эти изменения будут выполнены для компонента.
+
+Пример с реализацией:
 
 ```javascript
-getCellComponent(attr, bindingPath, model) {
-   let cellComponent = this._super(...arguments);
-   if (attr.kind === 'belongsTo') {
-     cellComponent.componentProperties = {
-       choose: 'showLookupDialog',
-       remove: 'removeLookupValue',
-       displayAttributeName: 'name',
-       required: true,
-       relationName: 'author',
-       projection: 'ApplicationUserL',
-       autocomplete: true,
-       computedProperties: { thisController: this },
-       readonly: false,
-      };
-   }
+// app/controllers/my-controller.js
+import Controller from '@ember/controller';
+import { observer } from '@ember/object';
 
-   return cellComponent;
- },
-```
+export default Controller.extend({
+  checkboxValue: false,
 
-Таким образом в свойстве `computedProperties` у текущего controller-а будет `this` из [dynamic-properties](https://github.com/Flexberry/ember-flexberry/blob/develop/addon/mixins/dynamic-properties.js) со всеми своими observer-ами. Теперь чтобы поменять любое из свойств встраимого компонента достаточно изменить значение в `computedProperties`:
+  lookupReadonly: observer('checkboxValue', function() {
+    this.set('componentDynamicProperties.readonly', this.get('checkboxValue'));
+  }),
 
-```javascript
-checkboxValue: false,
+  getCellComponent(attr, bindingPath, model) {
+    let cellComponent = this._super(...arguments);
+    if (attr.kind === 'belongsTo') {
+      this.set('componentDynamicProperties', {
+        choose: 'showLookupDialog',
+        remove: 'removeLookupValue',
+        displayAttributeName: 'name',
+        required: true,
+        relationName: 'author',
+        projection: 'ApplicationUserL',
+        autocomplete: true,
+        readonly: false,
+      });
 
-lookupReadonly: Ember.observer('checkboxValue', function() {
-  if (!Ember.isNone(this.get('computedProperties.dynamicProperties.readonly'))) {
-    if (this.get('checkboxValue')) {
-      this.set('computedProperties.dynamicProperties.readonly', true);
-    } else {
-      this.set('computedProperties.dynamicProperties.readonly', false);
+      cellComponent.componentProperties = this.get('componentDynamicProperties');
     }
-  }
 
-  return this.get('checkboxValue');
-}),
+    return cellComponent;
+  },
+});
 ```
+
+Вы можете посмотреть [пример с реализацией](http://flexberry.github.io/ember-flexberry/dummy/develop/#/components-examples/flexberry-groupedit/ember-flexberry-dummy-suggestion-list-groupedit-with-lookup-with-computed-atribute) на тестовом стенде.

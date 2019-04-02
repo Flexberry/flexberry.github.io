@@ -143,6 +143,7 @@ sidebars:
 - guide-mobile-app_sidebar
 - guide-bpm-app_sidebar
 - ui-ux-guideline_sidebar
+- training-developers-school_sidebar
 
 gems:
   - jekyll-seo-tag

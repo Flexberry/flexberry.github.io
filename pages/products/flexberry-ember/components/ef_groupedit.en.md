@@ -40,11 +40,6 @@ summary: Properties, implementation details, ability to sort and embedding of ap
 `singleColumnHeaderTitle`| Заголовок для мобильного представления FGE, вместо названий колонок.
 
 Свойства, используемые для настройки редактирования в отдельном роуте:
-
-* `rowClickable`
-* `rowClick`
-* `editOnSeparateRoute`
-
 ## Особенности реализации
 
 * Flexberry Groupedit состоит из двух компонент: `GroupeditToolbar` и `ObjectListView`.

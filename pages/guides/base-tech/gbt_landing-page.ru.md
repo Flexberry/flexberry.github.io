@@ -15,11 +15,8 @@ summary: Курс по базовым технологиям, применяем
 
 Если Вы являетесь начинающим разработчиком и Вам требуются фундаментальные знания в области программирования, рекомендуем посмотреть [гарвардский курс CS50](https://www.youtube.com/playlist?list=PLawfWYMUziZqyUL5QDLVbe3j5BKWj42E5) на русском языке.
 
-Если Вам требуются получить начальные знания по веб-программированию, рекомендуем посмотреть данное видео:
+Если Вам требуются получить начальные знания по веб-программированию, рекомендуем посмотреть обучающий модуль ["Школы разработчиков"](/ru/tds_landing-page.html) по теме ["Введение в веб-разработку"](/ru/tds_module1-about.html).
 
-<div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px">
-    <iframe width="854" height="480" src="https://www.youtube.com/embed/FKmRoNDQsMw" frameborder="0" allowfullscreen></iframe>
-</div>
 
 ## Состав курса
 
@@ -76,13 +73,21 @@ summary: Курс по базовым технологиям, применяем
 
 ## Ресурсы с материалами, курсами, лекциями
 
-Ниже представлен перечень ресурсов, на которых вы можете найти курсы по различным направлениям. Некоторые ресурсы содержат курсы на русском языке, но большая часть - англоязычные. Также курсы могут быть как бесплатными, так и по подписке.
+Ниже представлен перечень ресурсов, на которых вы можете найти курсы по различным направлениям. Некоторые ресурсы содержат курсы на русском языке, но большая часть - англоязычные. Курсы на представленных ниже образовательных платформах могут быть как бесплатными, так и платными по подписке.
 
-* [Курсы ИНТУИТ](http://www.intuit.ru/studies/courses?page=1)
+* [Stepik](https://stepik.org)
+* [Coursera](https://ru.coursera.org/)
+* [edX](https://www.edx.org/)
+* [Udemy](https://www.udemy.com/)
 * [Microsoft Virtual Academy](https://mva.microsoft.com)
-* [SkillsWiki](http://skillswiki.net/)
+* [Яндекс.Практикум](https://praktikum.yandex.ru/)
 * [GeekBrains](https://geekbrains.ru/)
+* [Нетология](https://netology.ru/)
+* [Codecademy](https://www.codecademy.com/)
+* [HTML Academy](https://htmlacademy.ru/)
+* [Treehouse](https://teamtreehouse.com/)
 * [Библиотека программиста](https://vk.com/proglib)
+* [SkillsWiki](http://skillswiki.net/)
 * [Class Central](https://www.class-central.com/)
 * [Open Source Society University](https://github.com/open-source-society/computer-science)
 * [List of Computer Science courses with video lectures](https://github.com/Developer-Y/cs-video-courses)

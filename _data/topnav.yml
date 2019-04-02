@@ -66,6 +66,12 @@ topnav_dropdowns:
         - title: UI UX Guideline
           title_ru: Руководство по интерфейсам
           url: /uiuxg_landing-page.ru.html
+    - title: Training courses
+      title_ru: Учебные курсы
+      folderitems:
+        - title: Developers school
+          title_ru: Школа разработчиков
+          url: /tds_landing-page.html
     - title: GitHub Repos
       folderitems:
         - title: All repositories

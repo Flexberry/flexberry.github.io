@@ -96,4 +96,12 @@ entries:
       title_ru: Руководство по интерфейсам
       url: /uiuxg_landing-page.ru.html
       output: web
+  - title: Training courses
+    title_ru: Учебные курсы
+    output: web
+    folderitems:
+      - title: Developers school
+        title_ru: Школа разработчиков
+        url: /tds_landing-page.html
+        output: web
 

@@ -6,7 +6,7 @@ toc: true
 permalink: en/ef_flexberry-toggler.html
 lang: en
 autotranslated: true
-hash: 4203026d7a3ba8fa9a9fbe4a519cfa6fe210ca80fe85ffda0ead77b18e50da3e
+hash: 3a772a5875a19a30b13b0828634c8c278eefb5f02dc3cdd087a1f772f0f53856
 summary: Properties flexberry-toggler, setting flexberry-toggler
 ---
 
@@ -22,7 +22,8 @@ summary: Properties flexberry-toggler, setting flexberry-toggler
 | `collapsedCaption` | Header component for collapsed|
 | `currentCaption` | Current component header|
 | `iconClass` | new component|
-| `hasResizableOLV` | Flag indicates when toogler contains resizable OLV `duration` Duration in milliseconds for the opening animation. When you set `0` animations disabled. Vaino: used only during initial rendering|
+| `hasResizableOLV` | Flag indicates when toogler contains OLV with the ability to change rushmere columns|
+| `duration` | Duration in milliseconds for the opening animation. When you set `0` animations disabled. Vaino: used only during initial rendering|
 
 ### Example usage
 
