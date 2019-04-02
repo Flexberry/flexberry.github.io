@@ -174,7 +174,7 @@ entries:
 
     - title: Edit data objects on forms
       title_ru: Как редактировать объекты данных на формах, связывание полей ввода со свойствами объекта данных 
-      url: /fw_edit-data-objects-on-forms.html
+      url: /fw_edit-objects-on-forms.html
       output: web
 
     - title: Form position
@@ -187,19 +187,9 @@ entries:
       url: /fw_edit-form-validation.html
       output: web
 
-    - title: Check form data during edit
-      title_ru: Проверка данных на форме во время редактирования
-      url: /fw_check-form-field-during-edit.html
-      output: web    
-
     - title: Check form data during save
       title_ru: Проверка данных на форме во время сохранения
       url: /fw_check-form-field-during-save.html
-      output: web
-
-    - title: Check not null fields
-      title_ru: Проверка обязательных полей
-      url: /fw_check-not-null-fields.html
       output: web
 
     - title: Check data on save event example
@@ -215,11 +205,6 @@ entries:
     - title: Customizing the user interface
       title_ru: Настройка пользовательского интерфейса
       url: /fw_customizing-the-user-interface.html
-      output: web
-
-    - title: Data object error provider
-      title_ru: DataObjectErrorProvider
-      url: /fw_data-object-error-provider.html
       output: web
 
     - title: Detail as master

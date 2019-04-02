@@ -140,7 +140,7 @@ this.editManagerMain.Bindings = new Binds("C__Client", typeof(IIS.TryFilter.Кл
 
 # Useful links 
 
-* [How to edit data objects on forms and to associate the input fields with object properties data using `EditManager`](fw_edit-data-objects-on-forms.html). 
+* [How to edit data objects on forms and to associate the input fields with object properties data using `EditManager`](fw_edit-objects-on-forms.html). 
 * [LookUp](fw_lookup.html). 
 * Information about [`EditManager.ApplyDataFromControl`](fw_focus-and-ctrl-s.html). 
 

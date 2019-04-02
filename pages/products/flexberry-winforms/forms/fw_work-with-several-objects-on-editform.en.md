@@ -16,7 +16,7 @@ Sometimes faced with the task to organize the work with fields of objects of dif
 One of the variants of solving this task can be usage of several [EditManager](fw_editmanager.html). 
 
 ### Binding EditManager 
-The article [How to edit data objects on forms, associating input fields with object properties data](fw_edit-data-objects-on-forms.html) describes how to create and bind [EditManager](fw_editmanager.html)'s objects. 
+The article [How to edit data objects on forms, associating input fields with object properties data](fw_edit-objects-on-forms.html) describes how to create and bind [EditManager](fw_editmanager.html)'s objects. 
 
 ### Saving objects 
 The logic of preservation of objects from the "complex representation" depends on the specific task (e.g., what fields to determine that the same object is already in the database how to interpret the change of the stored object, etc.). 

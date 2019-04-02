@@ -1,14 +1,12 @@
---- 
-title: How to edit data objects on forms, associating input fields with the properties of data object 
-sidebar: flexberry-winforms_sidebar 
-keywords: Windows UI (Controls), the Windows UI (forms) 
-summary: step-by-Step instructions for "manual" creation of the edit form object and bind its controls to the properties of the data object 
+---
+title: How to edit data objects on forms, associating input fields with the properties of data object
+sidebar: flexberry-winforms_sidebar
+keywords: Windows UI (Controls), the Windows UI (forms)
+summary: step-by-Step instructions for "manual" creation of the edit form object and bind its controls to the properties of the data object
 toc: true 
-permalink: en/fw_edit-data-objects-on-forms.html 
-folder: products/flexberry-winforms/ 
+permalink: en/fw_edit-objects-on-forms.html
 lang: en 
 autotranslated: true 
-hash: 0ca603af6e8a1a40d07c2580eb4ac0597aee2c66db625ceb034be1cfc3006be6 
 --- 
 
 The article describes what needs to be done in order for» «manually create a form, where you are able to edit the data object. 

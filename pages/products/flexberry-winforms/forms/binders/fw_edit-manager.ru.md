@@ -138,6 +138,6 @@ this.editManagerMain.Bindings = new Binds("C__КлиентE", typeof(IIS.TryFilt
 
 # Полезные ссылки
 
-* [Как редактировать объекты данных на формах и связывать поля ввода со свойствами объекта данных с помощью `EditManager`](fw_edit-data-objects-on-forms.html).
+* [Как редактировать объекты данных на формах и связывать поля ввода со свойствами объекта данных с помощью `EditManager`](fw_edit-objects-on-forms.html).
 * [LookUp](fw_lookup.html).
 * Информация о [`EditManager.ApplyDataFromControl`](fw_focus-and-ctrl-s.html).

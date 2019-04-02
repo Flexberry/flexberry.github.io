@@ -5,7 +5,6 @@ keywords: Windows UI (формы)
 summary: Особенности использования свойств форм OutScreenControl и VisiblePercent, отвечающих за контроль выхода окна за пределы экрана
 toc: true
 permalink: ru/fw_base-win-position.html
-folder: products/flexberry-winforms/
 lang: ru
 ---
 
