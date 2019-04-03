@@ -68,11 +68,6 @@ entries:
       url: /fw_high-lighter.html
       output: web
 
-    - title: Focus and Ctrl-S
-      title_ru: Фокус ввода и «Ctrl+S»
-      url: /fw_focus-and-ctrl-s.html
-      output: web
-  
     - title: Predict input
       title_ru: Предиктивный ввод в Windows-приложениях
       url: /fw_predict-input.html
@@ -192,11 +187,6 @@ entries:
       url: /fw_check-form-field-during-save.html
       output: web
 
-    - title: Check data on save event example
-      title_ru: Пример проверки данных на форме через OnSave/OnSaveEvent
-      url: /fw_check-through-on-save-event-example.html
-      output: web
-
     - title: Custom form tuner
       title_ru: Переход по Enter на форме
       url: /fw_custom-form-tuner.html
@@ -210,11 +200,6 @@ entries:
     - title: Detail as master
       title_ru: Детейл в качестве мастера
       url: /fw_detail-as-master.html
-      output: web
-
-    - title: Empty enum value validation
-      title_ru: «Тараканы» и перечислимый тип
-      url: /fw_empty-enum-value-validation.html
       output: web
 
     - title: Error box
@@ -247,19 +232,9 @@ entries:
       url: /fw_implementation-interfaces-independent-and-dependent-forms-and-relationship-between-them.html
       output: web
 
-    - title: Interfaces editforms
-      title_ru: Интерфейсы форм редактирования
-      url: /fw_interfaces-editforms.html
-      output: web
-
     - title: Switch editing object
       title_ru: Переключение редактируемого объекта без закрытия формы редактирования
       url: /fw_switch-editing-object.html
-      output: web
-
-    - title: Uni win edit
-      title_ru: Универсальная форма редактирования 
-      url: /fw_uni-win-edit.html
       output: web
 
     - title: Parameters from cont runner to editform
@@ -290,11 +265,6 @@ entries:
     - title: Uniformly handle all application forms
       title_ru: Как единообразно обработать все формы приложения
       url: /fw_uniformly-handle-all-application-forms.html
-      output: web
-
-    - title: Change list name on lookup
-      title_ru: Изменение названия списка при лукапе
-      url: /fw_change-name-list-with-lookup.html
       output: web
 
   - title: Application

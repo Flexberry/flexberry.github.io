@@ -24,7 +24,6 @@ lang: ru
 ## Информация о контролах и компонентах
 
 * [Алиасы системных / пользовательских типов для параметров на форме ограничений](fw_aliases-system-and-user-types.html)
-* [Изменение названия списка при лукапе](fw_change-name-list-with-lookup.html)
 * [Положение формы на экране](fw_base-win-position.html)
 * [Закрытие всех открытых форм Flexberry](fw_close-all-opened-forms.html)
 * [Форма «Редактор ограничений» (WIN)](fw_winforms-limit-editor-form.html)
@@ -32,7 +31,6 @@ lang: ru
 * [Расширенный вид редактора ограничений](fw_limit-editor-advanced-view.html)
 * [Ограничение с параметрами (для пользователя) в Win](fw_limit-editor-params.html)
 * [Кнопка «Свернуть/развернуть папки» на рабочем столе](fw_desktop-operations.html)
-* [«Тараканы» и перечислимый тип](fw_empty-enum-value-validation.html)
 * [Свойство MaxLength элемента управления ExtLookUpTextControl](fw_extended-lookup.html)
 * [Как запретить закрытие фомы (только формы Flexberry Winforms)](fw_forbid-closing-form.html)
 * [Интерфейс ISpecialEmptyValue](fo_i-special-empty-value.html)
