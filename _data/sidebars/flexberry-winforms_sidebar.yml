@@ -167,9 +167,9 @@ entries:
       url: /fw_editform.html
       output: web
 
-    - title: Form position
-      title_ru: Положение формы на экране
-      url: /fw_base-win-position.html
+    - title: Features of forms in Windows applications
+      title_ru: Особенности форм в Windows-приложениях
+      url: /fw_form-features.html
       output: web
 
     - title: Check form data during save
@@ -192,19 +192,9 @@ entries:
       url: /fw_error-box.html
       output: web
 
-    - title: Forbid closing form
-      title_ru: Как запретить закрытие формы Flexberry Winforms
-      url: /fw_forbid-closing-form.html
-      output: web
-
     - title: Form interaction
       title_ru: Межформенное взаимодействие в Windows-приложениях
       url: /fw_form-interaction.html
-      output: web
-
-    - title: Implementation interfaces independent and dependent forms and relationship between them
-      title_ru: Реализация интерфейсов независимыми и зависимыми формами и отношения между ними
-      url: /fw_implementation-interfaces-independent-and-dependent-forms-and-relationship-between-them.html
       output: web
 
     - title: Processing date in control provider
@@ -215,11 +205,6 @@ entries:
     - title: List form caption
       title_ru: Установка заголовка списковой формы
       url: /fw_list-form-caption.html
-      output: web
-
-    - title: Uniformly handle all application forms
-      title_ru: Как единообразно обработать все формы приложения
-      url: /fw_uniformly-handle-all-application-forms.html
       output: web
 
   - title: Editform

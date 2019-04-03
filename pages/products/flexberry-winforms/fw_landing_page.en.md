@@ -27,7 +27,7 @@ The product website `Flexberry Winforms`: [flexberry.ru](http://flexberry.ru/Fle
 
 * [Aliases system / user-defined types for parameters in the form of limitations](fw_aliases-system-and-user-types.html)
 * [Change the title of the list when lukapa](fw_change-name-list-with-lookup.html)
-* [Status screen](fw_base-win-position.html)
+* [Status screen](fw_form-features.html)
 * [Close all open forms Flexberry](fw_close-all-opened-forms.html)
 * [Form «Editor of the limitations of» (WIN)](fw_winforms-limit-editor-form.html)
 * [Standard view of the editor limitations. Description of form](fw_description-form-limit-editor-in-standard-form.html)

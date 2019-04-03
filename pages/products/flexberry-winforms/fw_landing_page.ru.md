@@ -24,7 +24,7 @@ lang: ru
 ## Информация о контролах и компонентах
 
 * [Алиасы системных / пользовательских типов для параметров на форме ограничений](fw_aliases-system-and-user-types.html)
-* [Положение формы на экране](fw_base-win-position.html)
+* [Особенности форм в Windows-приложениях](fw_form-features.html)
 * [Закрытие всех открытых форм Flexberry](fw_close-all-opened-forms.html)
 * [Форма «Редактор ограничений» (WIN)](fw_winforms-limit-editor-form.html)
 * [Стандартный вид редактора ограничений. Описание формы](fw_description-form-limit-editor-in-standard-form.html)
@@ -32,7 +32,6 @@ lang: ru
 * [Ограничение с параметрами (для пользователя) в Win](fw_limit-editor-params.html)
 * [Кнопка «Свернуть/развернуть папки» на рабочем столе](fw_desktop-operations.html)
 * [Свойство MaxLength элемента управления ExtLookUpTextControl](fw_extended-lookup.html)
-* [Как запретить закрытие фомы (только формы Flexberry Winforms)](fw_forbid-closing-form.html)
 * [Интерфейс ISpecialEmptyValue](fo_i-special-empty-value.html)
 * [Установка заголовка списковой формы](fw_list-form-caption.html)
 * [Добавление на форму редактирования Lookup мастера, не относящегося к основному объекту](fw_lookup-another-object.html)
@@ -42,7 +41,6 @@ lang: ru
 * [LookUp](fw_lookup.html)
 * [Настройка прав доступа на публикацию ограничений](fw_setting-permissions-for-publication-restrictions.html)
 * [Запуск кода в основном потоке приложения из другого потока](fw_ui-synchronization-context.html)
-* [Как единообразно обработать все формы приложения](fw_uniformly-handle-all-application-forms.html)
 * [Работа с меню в главной форме приложения](fw_work-with-menu-in-main-form-app.html)
 * [И опять работа с меню](fw_working-with-menu.html)
 * [Отображение на интерфейсе формы мастеров и детейлов](fo_masters-details.html)
