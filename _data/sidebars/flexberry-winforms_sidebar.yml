@@ -187,11 +187,6 @@ entries:
       url: /fw_customizing-the-user-interface.html
       output: web
 
-    - title: Detail as master
-      title_ru: Детейл в качестве мастера
-      url: /fw_detail-as-master.html
-      output: web
-
     - title: Error box
       title_ru: ErrorBox
       url: /fw_error-box.html

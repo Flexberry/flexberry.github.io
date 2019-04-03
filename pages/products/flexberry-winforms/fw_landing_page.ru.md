@@ -45,6 +45,5 @@ lang: ru
 * [Как единообразно обработать все формы приложения](fw_uniformly-handle-all-application-forms.html)
 * [Работа с меню в главной форме приложения](fw_work-with-menu-in-main-form-app.html)
 * [И опять работа с меню](fw_working-with-menu.html)
-* [Детейл в качестве мастера](fw_detail-as-master.html)
 * [Отображение на интерфейсе формы мастеров и детейлов](fo_masters-details.html)
 * [Стандартный монитор задач WinformBusinessTaskMonitor](fw_winform-business-task-monitor.html)
