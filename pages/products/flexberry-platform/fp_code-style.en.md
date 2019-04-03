@@ -6,7 +6,7 @@ toc: true
 permalink: en/fp_code-style.html
 lang: en
 autotranslated: true
-hash: f1359abd856086d6ba83e508b45f005c599494a2e4bae8b74620d062453b6c65
+hash: c67ce17b70459765f46378384c42c1b68c7b8e43ac89fbab29fc86acf9e0c9b2
 summary: In the development of platform components Flexberry team must adhere to a single coding style.
 ---
 
@@ -33,7 +33,7 @@ StyleCop is a static analyzer C# code for compliance with the style.
 1. Install NuGet package [StyleCop.Analyzers](http://nuget.ics.perm.ru/packages/StyleCop.Analyzers/)
 2. In the project properties, in the tab `Code Analysis` to select rules in the drop-down list `Run this rule set`.
 
-![](/images/pages/products/flexberry-platform/code-style1.png)
+![Code style](/images/pages/products/flexberry-platform/code-style1.png)
 
 [List of rules](https://github.com/Flexberry/NewPlatform.Flexberry.ORM/blob/develop/Flexberry.ruleset), which are used in the projects of the platform Flexberry can be found on GitHub-e.
 

@@ -1,39 +1,39 @@
---- 
-title: Flexberry ORM ODataService 
-sidebar: flexberry-orm_sidebar 
-keywords: Flexberry ORM ODataService, OData 
-summary: Features, limitations, recommendations for use the ODataService 
-toc: true 
-permalink: en/fo_orm-odata-service.html 
-lang: en 
-autotranslated: true 
-hash: ffad0f50d90c754d1802454d067e84dd159b42cfac69d4a1d9a53fbaee82ed70 
---- 
+---
+title: Flexberry ORM ODataService
+sidebar: flexberry-orm_sidebar
+keywords: Flexberry ORM ODataService, OData
+summary: Features, limitations, recommendations for use the ODataService
+toc: true
+permalink: en/fo_orm-odata-service.html
+lang: en
+autotranslated: true
+hash: deb6dd6f7306f6c05d7f490de4e44ee948399624ed2957b08c33986c67419266
+---
 
-## product Information 
+## Product information
 
-`Flexberry ORM ODataService` is [product platform Flexberry](fp_landing_page.html). Product website: [http://flexberry.ru](http://flexberry.ru/FlexberryORM). 
+`Flexberry ORM ODataService` is [product platform Flexberry](fp_landing_page.html). Product website: [http://flexberry.ru](http://flexberry.ru/FlexberryORM).
 
-`Flexberry ORM ODataService` allows you to easily create OData service. 
+`Flexberry ORM ODataService` allows you to easily create OData service.
 
-{% include note.html content="`Flexberry ORM ODataService` is available for installation in the project via [NuGet package](https://www.nuget.org)." %} 
+{% include note.html content="`Flexberry ORM ODataService` is available for installation in the project via [NuGet package](https://www.nuget.org)." %}
 
-## No. the List of libraries `Flexberry ORM ODataService` 
+## n The list of libraries `Flexberry ORM ODataService`
 
-The composition NuGet package `Flexberry ORM ODataService` includes the following assemblies: 
+The composition NuGet package `Flexberry ORM ODataService` includes the following assemblies:
 
-* NewPlatform.Flexberry.ORM.ODataService.dll 
+* NewPlatform.Flexberry.ORM.ODataService.dll
 
-## Limitations, especially recommendations for the design 
+## Limitations, features, recommendations for the design
 
-There are a number of features in the design of objects that will be used through ORM `Flexberry ODataService`: 
+There are a number of features in the design of objects that will be used through ORM `Flexberry ODataService`:
 
-* E-view (a view that has the name "<Classname>E") of detail should be added a link to the aggregator. 
-* Connect `Flexberry ORM ODataService`. To connect in a web project (WebForms) to take advantage of the `Flexberry ORM ODataService`, you must do the following: 
+* E-view (a view that has the name "<Classname>E") of detail should be added a link to the aggregator.
+* Connect `Flexberry ORM ODataService`. To connect in a web project (WebForms) to take advantage of the `Flexberry ORM ODataService`, you must do the following:
 
-* Connect the NuGet package `Flexberry ORM ODataService`. 
-* In App_Start application to create a class "ODataConfig.cs." 
-* Replace the contents of the class about the following: 
+* Connect the NuGet package `Flexberry ORM ODataService`.
+* In App_Start application to create a class "ODataConfig.cs."
+* Replace the contents of the class about the following:
 
 ```csharp
 namespace ODataServiceTemplate
@@ -82,9 +82,9 @@ namespace ODataServiceTemplate
         }
     }
 }
-``` 
+```
 
-* In The Global.asax, add: 
+* In The Global.asax, add:
 
 ```csharp
 namespace ODataServiceTemplate
@@ -107,11 +107,11 @@ namespace ODataServiceTemplate
         }
     }
 }
-``` 
+```
 
-* In order for code to compile, you may need to install additional NuGet packages in the app: [Microsoft.AspNet.WebApi.Cors](https://www.nuget.org/packages/Microsoft.AspNet.WebApi.Cors) and [microsoft.aspnet.webapi.webhost](https://www.nuget.org/packages/microsoft.aspnet.webapi.webhost/). 
+* In order for code to compile, you may need to install additional NuGet packages in the app: [Microsoft.AspNet.WebApi.Cors](https://www.nuget.org/packages/Microsoft.AspNet.WebApi.Cors) and [microsoft.aspnet.webapi.webhost](https://www.nuget.org/packages/microsoft.aspnet.webapi.webhost/).
 
-* Add to web.config or to check the availability of the following records: 
+* Add to web.config or to check the availability of the following records:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -125,9 +125,9 @@ namespace ODataServiceTemplate
     </handlers> 
 </system.webServer>
 </configuration>
-``` 
+```
 
-## call Mechanism logic after saving object using the callback-functions 
+## A mechanism for invoking logic after saving object using the callback-functions
 
 ```csharp
 /// <summary> 
@@ -189,15 +189,15 @@ public static void AfterDelete(DataObject obj){
 
 }
 
-``` 
+```
 
-PstrfAfterCreate` method will be called after each POST request made by a client to create the entity. 
-PstrfAfterUpdate` method will be called after each PATCH request made by a client to update the entity. 
+PstrfAfterCreate` method will be called after each POST request made by a client to create the entity.
+PstrfAfterUpdate` method will be called after each PATCH request made by a client to update the entity.
 PstrfAfterDelete` method will be called after each DELETE request made by the client to remove the entity.
 
-## Custom OData function 
+## Custom OData function
 
-Example of registering a custom OData function 
+Example of registering a custom OData function
 
 ```csharp
 /// <summary> 
@@ -253,11 +253,11 @@ private static object GetLastRoundIdForTopic(ODataFunctions.QueryParameters quer
     ApplicationLogicBS bs = new ApplicationLogicBS { DataService = DataServiceProvider.DataService };
     return bs.GetLastRoundIdForTopic((string)parameters["topicId"]);
 }
-``` 
+```
 
-## Filtering properties for types when registering metadata in the ODataService 
+## Filtering of properties for the type when they register the metadata in the ODataService
 
-An example of filter properties for types 
+An example of filter properties for types
 
 ```csharp
 /// <summary> 
@@ -303,11 +303,11 @@ private static bool PropertyFilter(PropertyInfo propertyInfo)
 {
     return Information.ExtractPropertyInfo<Agent>(x => x.Pwd) != propertyInfo;
 }
-``` 
+```
 
-## Filtering of the result set in ODataService using callback functions 
+## Filtering of the result set in ODataService using callback functions
 
-An example of filtering of the result set 
+An example of filtering of the result set
 
 ```csharp
 /// <summary> 
@@ -363,11 +363,11 @@ public static bool BeforeGet(ref LoadingCustomizationStruct lcs)
 public static void AfterGet(ref DataObject[] objs)
 {
 }
-``` 
+```
 
-## exception Handling in ODataService using a callback function 
+## Exception handling in ODataService using a callback function
 
-An example of exception handling: 
+An example of exception handling:
 
 ```csharp
 /// <summary> 
@@ -414,11 +414,11 @@ public static Exception AfterInternalServerError(Exception e, ref HttpStatusCode
     code = HttpStatusCode.InternalServerError;
     return e;
 }
-``` 
+```
 
-## Filtering in a custom OData functions 
+## Filtering in custom OData functions
 
-Example usage in a custom OData functions, structure LCS, which is created from OData query string: 
+Example usage in a custom OData functions, structure LCS, which is created from OData query string:
 
 ```csharp
 /// <summary> 
@@ -483,11 +483,11 @@ private static int FunctionWithLcs2(QueryParameters queryParameters, string enti
     var dobjs = dataService.LoadObjects(lcs);
     return dobjs.Length;
 }
-``` 
+```
 
-## Use actions 
+## The use of actions
 
-Example of use in action structure LCS, which is created from OData query string. 
+Example of use in action structure LCS, which is created from OData query string.
 
 ```csharp
 /// <summary> 
@@ -537,14 +537,14 @@ private static IEnumerable<DataObject> ActionWithLcs(QueryParameters queryParame
     return dobjs.AsEnumerable();
     }
 }
-``` 
+```
 
-## Using custom functions for exporting to Excel 
+## Using custom functions for exporting to Excel
 
-Example of using custom functions for export to Excel. 
-Example query: 
-http://localhost/odata/FunctionExportExcel(entitySet='Strana')?exportExcel=true&colsOrder=Nazvanie/Название&detSeparateCols=false&detSeparateRows=false&$filter=contains(Nazvanie,'1') 
-. 
+Example of using custom functions for export to Excel.
+Example query:
+http://localhost/odata/FunctionExportExcel(entitySet='Strana')?exportExcel=true&colsOrder=Nazvanie/Название&detSeparateCols=false&detSeparateRows=false&$filter=contains(Nazvanie,'1')
+.
 
 ```csharp
 /// <summary> 
@@ -591,7 +591,7 @@ private static Страна[] FunctionExportExcel(QueryParameters queryParameter
     Страна[] dobjs = dataService.LoadObjects(lcs).Cast<Страна>().ToArray();
     return dobjs;
 }
-``` 
+```
 
 
 
