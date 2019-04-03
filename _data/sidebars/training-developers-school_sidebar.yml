@@ -17,6 +17,10 @@ entries:
       title_ru: Программа школы
       url: /tds_curriculum.html
       output: web    
+    - title: Rating system
+      title_ru: Рейтинговая система
+      url: /tds_rating.html
+      output: web    
     - title: Resources
       title_ru: Ресурсы
       url: /tds_resources.html
@@ -40,4 +44,8 @@ entries:
     - title: Tasks
       title_ru: Задания
       url: /tds_module1-tasks.html
+      output: web    
+    - title: Tasks check list
+      title_ru: Чек-лист проверки заданий
+      url: /tds_module1-check-list.html
       output: web    
