@@ -1,82 +1,86 @@
 ---
 title: Check-list for Code Review
 sidebar: flexberry-platform_sidebar
-keywords: Оформление кода, требования к выполнению задачи, хороший код, документация, тестирование
-summary: Список требований к выполнению задачи на исправление и доработку продуктов платформы Flexberry
+keywords: Design code, requirements for the execution of tasks, good code, documentation, testing
+summary: List of requirements for task execution for the correction and finishing products platform Flexberry
 toc: true
 permalink: en/fp_code-review-check-list.html
 lang: en
 autotranslated: true
-hash: 6908a41a09742558d14c0ff3da1f398bf1bc448dd989e1ae7979891f1b024017
+hash: 5f54a55da284fe972ff16bfb7ffbfdb647b291fbca137dec5b02830224cd0dd4
 ---
 
-Чек-лист для CodeReview - замечательное средство, позволяющее проверить, что ревьюер не забыл удостовериться в отсутствии всех потенциальных проблем с исследуемым кодом.
+Check-list for CodeReview - a wonderful tool, allowing to check that reviewer do not forget to verify the absence of any potential problems with the test code.
 
-## Аспекты которые надо проверить
+## Aspects which need to check
 
-### Код
+### Code
 
-* __Работоспособность кода.__
-  * Код работает и выполняет свои прямые обязанности, логика корректна, и т. д.
-  * У циклов есть установленная длина и корректные условия завершения.
-* __Понятность кода.__
-  * Код прост для понимания.
-  * Названия методов не слишком длинные.
-* __Соответствие кода принятому стилю оформления.__
-  * Правильно названы пространства имен / классы / методы / переменные.
-  * Соблюдены правила именования файлов в соответствии с классами.
-  * Соответствует пространство имен класса и физическое расположение файлов.
-  * В каждом файле, только один класс.
-* __Избыточность кода.__
-  * Отсутствуют повторяющиеся части которые можно вынесть в отдельную функцию.
-  * Отсутствуют методы которые можно в коде заменить на библиотечные функции.
-  * Отсутствует закомментированный код.
-  * Отсутствуют изменения части кода, предназначенные для отладки.
-  * Отсутствуют глобальные / статические переменные от которых можно избавиться или переместить их.
-* __Независимость кода.__
-  * Код является независимым, насколько это возможно.
-* __Обновление конфигурации.__
-  * При необходимости добавлены изменения в конфигурации.
-  * Есть описание изменений к релизу.
-  * Доработаны инструменты установки / развертывания (например, в NuGet-пакете).
-* __Корректная обработка исключений.__
-  * Исключения используются по предназначению.
-  * Сохраняется информация о произошедшей ошибке (например, в лог)
-    * Нет пустых блоков catch.
-  * Представлены внятные пояснения к произошедшей ошибке.
-    * Сообщения локализованы.
-* __Предусмотрена безопасность.__
-  * Все входные данные проверяются (на корректный тип, длину, формат, диапазон).
-    * Используются для проверки CodeContracts (.NET >= 4.0).
-  * Все выходные данные проверяются и при необходимости кодируются (например, от XSS).
+* __The efficiency of the code.__
+* Code works and performs its duties, the logic is correct, etc.
+* Cycles there is a set length and correct termination conditions.
+* __Code comprehension.__
+* Code simple to understand.
+* The method names are not too long.
+* __The code conforms to the accepted style.__
+* Properly named namespaces / classes / methods / variables.
+* Followed the rules of naming files according to classes.
+* Corresponds to the namespace of the class and the physical location of the files.
+* In each file, only one class.
+* __The redundancy of the code.__
+* There are no duplicate parts which can finest a separate function.
+* There are no methods which can be in the code to replace the library functions.
+* There is no commented out code.
+* There is no change of the code, intended for debugging.
+* No global / static variables from which you can delete or move them.
+* __Code independence.__
+* Code is as independent as possible.
+* __Upgrade configuration.__
+* If necessary, changes in the configuration.
+* There is a description of the changes to the release.
+* Modified installation tools / deployment (for example, in a NuGet package).
+* __Correct handling of exceptions.__
+* Exceptions are used as intended.
+* Stores information about the error (e.g., log)
+* There are no empty catch blocks.
+* Presents a clear explanation of what the error is.
+* Messages are localized.
+* __Provided security.__
+* All input data are checked (for correct type, length, format, range).
+* Used to check CodeContracts (.NET >= 4.0).
+* All output is checked and, if necessary, coded (e.g., XSS).
 
 ### Source Control
 
-* __Корректные комментарии к коммиту (чекину TFS).__
-  * Комментарий к коммиту (чекину TFS) отражает внесенные доработки.
-  * Система контроля версий используется по прямому назначению (например, не содержит напоминаний вида "не забыть обновить ...", "TODO")?
-* __Соответствие комментариев принятым требованиям оформления.__
-  * Комментарии соответствуют принятым требованиям к оформлению и правилам (русского) языка.
-* __Атомарность коммита.__
-  * NB: обычно коммит не атомарен если в его описании присутствует союз "и".
+* __The correct comments to the commit (check-in TFS).__
+* Comment on the commit (check-in TFS) reflects updated accordingly.
+* Version control system is used for its intended purpose (for example, does not have prompts of the form "not to forget to update ...", "TODO")?
+* __Relevant comments adopted by the requirements.__
+* Comments conform to requirements and rules (Russian) language.
+* __Atomic commit.__
+* NB: normally a commit is not atomic if in the description there is the word "and".
 
-### Документация
+### Documentation
 
-* __Есть комментарии в коде.__
-  * Комментарии раскрывают смысл кода.
-  * Все функции и их параметры прокомментированы.
-* __Соответствие комментариев принятым требованиям оформления.__
-  * Комментарии соответствуют принятым требованиям к оформлению и правилам (русского) языка.
-* __Сделаны соответствующие пометки в WIKI.__
-  * Какое-то необычное поведение или описание пограничных случаев задокументировано.
-  * Использование и функционирование сторонних библиотек документировано.
-  * Все структуры данных и единицы измерения описаны.
+* __There are comments in the code.__
+* Comments reflect the meaning of the code.
+* All functions and their parameters are commented out.
+* __Relevant comments adopted by the requirements.__
+* Comments conform to requirements and rules (Russian) language.
+* __Made appropriate notes in the WIKI.__
+* Some unusual behavior or description of the edge cases are documented.
+* The use and operation of third-party libraries is documented.
+* All data structures and units described.
 
-### Тестирование
+### Testing
 
-* __Есть тесты для кода.__
-  * Тесты есть и они достаточны.
-  * Юнит-тесты проверяют, что код предоставляет требуемую функциональность.
-  * Создан сценарий тестирования и специальная страница на соответствующем тестовом стенде.
-    * Сценарий тестирования добавлен в нужный план тестирования.
-    * Сценарий тестирования соответствует принятым требованиям.
+* __Have tests for the code.__
+* Tests have, and they are sufficient.
+* Unit tests check that the code provides the functionality you require.
+* Created test script and a special page on the corresponding test stand.
+* Test script attached to the desired test plan.
+* Test script complies with the requirements.
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -1,61 +1,67 @@
 ---
-title: Создание универсальных отчётов
+title: creating a generic report
 sidebar: flexberry-platform_sidebar
-keywords: 
+keywords:
 toc: true
-permalink: ru/fp_create-uni-report.html
-lang: ru
-summary: 
+permalink: en/fp_create-uni-report.html
+lang: en
+autotranslated: true
+hash: a917356d5f75bd55dd97a4ee5857f93effe68dbd197548c89b4a70b02a441b0a
+summary:
 ---
 
-Руководство пользователя по составлению отчётов находится по адресу \\storm\CASEBERRY Distr\CASEBERRY Subsystems\ReportsSystem (на настоящий момент оно неполное и несколько устарело).
-Для работы универсальных отчётов необходимо использовать DLL и шаблоны, находящиеся в папке \\storm\CASEBERRY Distr\CASEBERRY Subsystems\ReportsSystem\StableVersion.
+User guide for the drafting of the report is located at \\storm\CASEBERRY Distr\CASEBERRY Subsystems\ReportsSystem (currently it is incomplete and somewhat out of date).
+To work flexible reporting, you must use DLL and templates located in the \\storm\CASEBERRY Distr\CASEBERRY Subsystems\ReportsSystem\StableVersion.
 
-## Подготовка БД приложения
+## Preparation for the application database
 
-Для создания нужной структуры БД приложения необходимо:
+To create the desired database structure of the application should:
 
-1. Выполнить скрипт CreateTables.sql, который находится по адресу \\storm\CASEBERRY Distr\CASEBERRY Subsystems\ReportsSystem\
+1. To execute the script CreateTables.sql, which is located at \\storm\CASEBERRY Distr\CASEBERRY Subsystems\ReportsSystem\
 
-2. Выполнить команды обновления БД, указанные [StormReport_ParameterObjectTypeAndParameterObjectFormType|здесь).
+2. To execute the commands update the database specified [StormReport_ParameterObjectTypeAndparameterobjectformtype|here).
 
-3. [StatitorEnvironmentStart|Запустить среду Статитора через ярлыки на рабочем столе). Выполнить пункты 1,2 и 3 (в пункте 3 вместо StatitorReport необходимо добавить отчет UniReport из библиотеки ICSSoft.STORMNET.Reports.UniReports.dll).
+3. [StatitorEnvironmentStart|Start environment of Statitory through shortcuts on the desktop). To implement paragraphs 1, 2 and 3 (paragraph 3 is StatitorReport you want to add a report UniReport from the library ICSSoft.STORMNET.Reports.UniReports.dll).
 
-## Создание универсальных отчётов
+## Creating generic report
 
-Для создания универсальных отчётов необходимо:
+To create a generic report should:
 
-1. [FiltersandLimits|Проводим настройку фильтров) класса, для объектов которого будет составляться универсальный отчёт.
+1. [FiltersandLimits|Hold configure filters) - class for objects which will be drawn up the report.
 
-2. Из `ICSSoft.STORMNET.Reports.ListformIntegration.ToolbarMenu.dll` на форму добавляем компонент ListformReportsMenu, настраиваем его свойство `TargetObjectListView` (это [ObjectListView), в тулбаре которого появится ListformReportsMenu) и `FilterSettingName` (название настройки фильтра соответствующего класса).
+2. From `ICSSoft.STORMNET.Reports.ListformIntegration.ToolbarMenu.dll` in the form of added component ListformReportsMenu, custom property `TargetObjectListView` (this [ObjectListView) in the toolbar which will appear ListformReportsMenu) and `FilterSettingName` (the name of the filter settings of the corresponding class).
 
-3. Добавляем интересующие типы отчётов:
+3. Add interesting types of reports:
 
 ``` csharp
 public class WinformC__КлиентL : ICSSoft.STORMNET.UI.BaseWinListStandard, IIS.TryFilter.DPDIC__КлиентL
 {
-//...
+//... 
 public WinformC__КлиентL()
   {
-  //...
+  //... 
   #region Универсальные отчеты
-    var uniCombiner = new ICSSoft.STORMNET.Reports.ListformIntegration.UniReports.UniListReportCombiner { ReportsTitle = "Универсальные отчеты" };
-    var uniStatCombiner = new ICSSoft.STORMNET.Reports.ListformIntegration.UniReports.UniStatListReportCombiner { ReportsTitle = "Статистические отчеты" };
+    var uniCombiner = new ICSSoft.STORMNET.Reports.ListformIntegration.UniReports.UniListReportCombiner { ReportsTitle = A "universal records" };
+    var uniStatCombiner = new ICSSoft.STORMNET.Reports.ListformIntegration.UniReports.UniStatListReportCombiner { ReportsTitle = "Statistical reports" };
     reportsMenu.ReportCombiners = new ICSSoft.STORMNET.Reports.ListformIntegration.Base.IListReportCombiner[) { uniCombiner, uniStatCombiner };
   #endregion Универсальные отчеты
-  //...
+  //... 
   }
 }
 ```
 
-Подключаем необходимые dll:
+A required dll plug-in:
 
 * ICSSoft.STORMNET.Reports.ListformIntegration.Base.dll
 * ICSSoft.STORMNET.Reports.ListformIntegration.UniReports.dll
 
-В результате на соответствующей [Формы-списка-классы-со-стереотипом-listform|списковой форме)в тулбаре появится дополнительная кнопка:
+As a result, the corresponding [Form-classes-with-stereotype-listform|list form)will appear in the toolbar button:
 
-[image|Изображение|{UP(CreateUniReport)}UniReport.png)
+[image|Image|{UP(CreateUniReport)}UniReport.png)
 
-4.Для [Running-UniReports|запуска универсального отчёта) необходимо подключить dll:
-ICSSoft.STORMNET.Windows.Forms.AdditionalControls.dll (есть в стандартной поставке Caseberry).
+4.[Running-UniReports|start media report) it is necessary to connect dll:
+ICSSoft.STORMNET.Windows.Forms.AdditionalControls.dll (there is in the standard distribution of Caseberry).
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}
