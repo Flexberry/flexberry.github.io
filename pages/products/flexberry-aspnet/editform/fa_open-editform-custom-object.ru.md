@@ -52,4 +52,4 @@ function openUrlWithPost (url, params, target) {
 ```
 ## Для Win
 
-[Аналогичный функционал для Win-приложений](fw_force-call-editing-form.html)
+[Аналогичный функционал для Win-приложений](fw_editform.html)

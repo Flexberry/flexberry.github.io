@@ -162,24 +162,14 @@ entries:
 
     folderitems:
 
-    - title: Edit form
+    - title: Editform
       title_ru: Формы редактирования (классы со стереотипом editform)
       url: /fw_editform.html
-      output: web
-
-    - title: Edit data objects on forms
-      title_ru: Как редактировать объекты данных на формах, связывание полей ввода со свойствами объекта данных 
-      url: /fw_edit-objects-on-forms.html
       output: web
 
     - title: Form position
       title_ru: Положение формы на экране
       url: /fw_base-win-position.html
-      output: web
-
-    - title: edit form validation
-      title_ru: Валидация данных
-      url: /fw_edit-form-validation.html
       output: web
 
     - title: Check form data during save
@@ -212,19 +202,9 @@ entries:
       url: /fw_forbid-closing-form.html
       output: web
 
-    - title: Force call editing form
-      title_ru: Принудительный вызов формы редактирования
-      url: /fw_force-call-editing-form.html
-      output: web
-
     - title: Form interaction
       title_ru: Межформенное взаимодействие в Windows-приложениях
       url: /fw_form-interaction.html
-      output: web
-
-    - title: Interaction between forms when editing objects
-      title_ru: Межформенное взаимодействие при редактировании объектов
-      url: /fw_interaction-between-forms-when-editing-objects.html
       output: web
 
     - title: Implementation interfaces independent and dependent forms and relationship between them
@@ -232,29 +212,9 @@ entries:
       url: /fw_implementation-interfaces-independent-and-dependent-forms-and-relationship-between-them.html
       output: web
 
-    - title: Switch editing object
-      title_ru: Переключение редактируемого объекта без закрытия формы редактирования
-      url: /fw_switch-editing-object.html
-      output: web
-
-    - title: Parameters from cont runner to editform
-      title_ru: Передача параметров от ContRunner до формы редактирования
-      url: /fw_parameters-from-cont-runner-to-editform.html
-      output: web
-
     - title: Processing date in control provider
       title_ru: Обработка даты в ControlProvider
       url: /fw_processing-date-in-control-provider.html
-      output: web
-
-    - title: Update the local copy of the form object
-      title_ru: Обновление локальной копии объекта формы
-      url: /fw_update-the-local-copy-of-the-form-object.html
-      output: web
-
-    - title: Work with several objects on editform
-      title_ru: Работа на форме редактирования с полями нескольких объектов 
-      url: /fw_work-with-several-objects-on-editform.html
       output: web
 
     - title: List form caption
@@ -266,6 +226,23 @@ entries:
       title_ru: Как единообразно обработать все формы приложения
       url: /fw_uniformly-handle-all-application-forms.html
       output: web
+
+  - title: Editform
+    title_ru: Форма редактирования
+    output: web, pdf
+
+    folderitems:
+
+    - title: Edit data objects on forms
+      title_ru: Редактирование объектов данных на формах 
+      url: /fw_edit-objects-on-forms.html
+      output: web
+
+    - title: edit form validation
+      title_ru: Валидация данных
+      url: /fw_edit-form-validation.html
+      output: web
+
 
   - title: Application
     title_ru: Приложение

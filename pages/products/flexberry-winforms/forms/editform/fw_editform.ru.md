@@ -2,7 +2,7 @@
 title: Формы редактирования (классы со стереотипом editform) 
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Designer, Flexberry Winforms
-summary: Особенности генерации формы редактирования, свойства формы редактирования, атрибуты, методы, интерфейсы, универсальная форма редактирования, использование иерархического списка на форме редактирования
+summary: Особенности генерации, свойства, атрибуты, методы, интерфейсы формы редактирования, универсальная форма редактирования, использование иерархического списка на форме редактирования, рекомендации
 toc: true
 permalink: ru/fw_editform.html
 lang: ru
@@ -212,6 +212,117 @@ private void ContainerCloseHandler (object sender, StormNetUI.CloseEventArgs arg
   this.objectHierarchicalView1.UseLimitFunctionExtension = false;
   this.objectHierarchicalView1.UseToolBar = null;
   this.objectHierarchicalView1.ViewName = "ТерриторияL";//Имя представления, которое используется на иерархическом списке.
+```
+
+## Рекомендации по доработке форм редактирования
+
+Важно понимать, что форма служит не только для редактирования данных, но и для просмотра данных, а также для управления данными - запуск операции экспорта, печати, работы с данными аудита и прочее.
+
+Поэтому проработку внешнего вида лучше начинать с того, что следует определить какие задачи пользователи будут выполнять с помощью формы. Основные - уже перечислены, это: редактирование, просмотр, выполенение операций над объектом, редактируемым на форме (экспорт, печать и прочее).
+
+Для того чтобы сделать форму удобной для ввода, следует обратить внимание на следующие моменты:
+
+* порядок обхода (переход по Tab),
+* визуальное выделение фокуса - неопытные пользователи могут даже и не знать, что такое фокус ввода и что он отображется мигающей вертикальной чертой в поле ввода,
+* [предиктивный ввод](fw_predict-input.html),
+* отображение полей, обязательных для ввода. <br> Вариант реализации: через [DataObjectErrorProvider](fw_edit-form-validation.html). DataObjectErrorProvider позволит быстро и со вкусом прописать в коде перечень обязательных полей и пользователи приложения не смогут его менять.
+* значения по умолчанию,
+* автоматизация ввода пользовательских данных, например, ввод адреса или возможность ввести ключевые реквизиты другого объекта данных с возможностью автоматического поиска.
+
+Для облегчения просмотра и поиска глазами на форме нужных данных применяются следующие механизмы:
+
+* объединение элементов управления в логические группы (GroupBox) с указанием названия группы - общего признака всех атрибутов в этой группе,
+* расположение контролов по сетке в несколько столбцов и строк. ширина полей ввода в одном столбце должна быть одинаковой, заголовки полей в столбцах начинаются с одной позиции в строке,
+* увеличения шрифта. Бывают случаи, когда шрифт должен быть увеличен (например, когда большинство пользователей этой формы - пожилые люди с плохим зрением),
+* реализация работы формы редактирования в режиме "[Только на чтение](fw_editmanager.html)" . Здесь работа заключается в проверке, что ненужные функции заблокированы, а нужные работают корректно.
+
+Для выполнения операций над данными зачастую используется панель инструментов, на которой по умолчанию есть кнопки "Сохранить" и "Сохранить и закрыть". Для каждой операции лучше создавать отдельную кнопку на этой панели с чёткой иконкой, лаконичной надписью и понятной всплывающей подсказкой (tooltip). Между кнопками используйте вертикальный разделитель.
+
+Расположение контролов на форме и группировка их в группы - комплексная задача, которая должна решаться совместно с аналитиком.
+
+Также формы редактирования могут предоставлять следующие универсальные сервисы:
+
+* аудирование изменений данных и предоставление доступа к данным аудита,
+* проверка данных на соблюдение пользовательских условий,
+* разграничение доступа к данным с помощью системы полномочий,
+* хранение пользовательских настроек.
+
+## Принудительный вызов формы редактирования
+
+Вызов формы редактирования
+
+```csharp
+Объект oОбъект = new Объект();
+oОбъект.__PrimaryKey = 'чего-то там';
+ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(oОбъект);
+ICSSoft.STORMNET.UI.BaseIndpdEdit cont = (ICSSoft.STORMNET.UI.BaseIndpdEdit)Activator.CreateInstance(typeof(ОбъектE));
+ICSSoft.STORMNET.UI.ContRunner.RunEditForm(cont);
+cont.Edit(oОбъект, "", "");
+```
+
+Если требуется функциональность по сохранению объекта при нажатию на кнопку "Сохранить" или "Сохранить и закрыть" на зависимой форме, то код будет выглядеть таким образом:
+
+```csharp
+Объект oОбъект = new Объект();
+oОбъект.__PrimaryKey = 'чего-то там';
+ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(oОбъект);
+ICSSoft.STORMNET.UI.BaseIndpdEdit cont = (ICSSoft.STORMNET.UI.BaseIndpdEdit)Activator.CreateInstance(typeof(ОбъектE));
+ICSSoft.STORMNET.UI.ContRunner.RunEditForm(cont);
+cont.SaveEvent += (sr, ea) => { new BusinessService().UpdateObject(ea.dataobject); };
+cont.Edit(oОбъект, "", "");
+```
+
+## Передача параметров от ContRunner до формы редактирования
+
+### Передача параметров в DesktopCustomizer
+
+Для того чтобы передать параметр контейнеру запуска, необходимо использовать перегруженный метод создания `ContRunner`.
+
+```csharp
+arr.Add(new ICSSoft.STORMNET.UI.ContRunner(typeof(IIS.LimitsTesting_Blog.LTB_БлогL), "MyTag1FromContRunner", "LimitsTesting_Blog", "Блог", ""));
+```
+
+### Приём параметра в списковой форме и передача на форму редактирования
+
+Параметр в списковую форму попадает в метод `Activate(object tag)`. Следует обращать внимание на количество параметров в перегруженном методе `OnNewEvent()`. Перегрузить следует метод с двумя параметрами, а вызвать в нём метод с тремя. По-умолчанию создание объектов происходит без передачи тега.
+
+```csharp
+// *** Start programmer edit section *** (LTB_БлогL CustomMembers)
+private object _tagFromRunner;
+
+public override void Activate(object tag)
+{
+    _tagFromRunner = tag;
+    // MessageBox.Show("Activate " + (tag??"<пусто>"));
+    base.Activate(tag);
+}
+
+protected override void OnNewEvent(Type dataobjecttype, string contpath)
+{
+    // MessageBox.Show("OnNewEvent");
+    base.OnNewEvent(dataobjecttype, contpath, _tagFromRunner);
+}
+
+protected override void OnEditEvent(string propertyname, ICSSoft.STORMNET.DataObject dataobject, string contpath, object tag)
+{
+    // MessageBox.Show("OnEditEvent " + (tag ?? "<пусто>"));
+    base.OnEditEvent(propertyname, dataobject, contpath, _tagFromRunner);
+}
+// *** End programmer edit section *** (LTB_БлогL CustomMembers)
+```
+
+### Приём параметра на форме редактирования
+
+В метод `Edit` с самым большим числом параметров придёт тот самый тег.
+
+```csharp
+// *** Start programmer edit section *** (WinformLTB_БлогE CustomMembers)
+public override void Edit(ICSSoft.STORMNET.DataObject dataobject, string contpath, string propertyname, object tag)
+{
+    // MessageBox.Show("БлогE tag: " + (tag??"<пусто>"));
+    base.Edit(dataobject, contpath, propertyname, tag);
+}
+// *** End programmer edit section *** (WinformLTB_БлогE CustomMembers)
 ```
 
 ## Связанные статьи
