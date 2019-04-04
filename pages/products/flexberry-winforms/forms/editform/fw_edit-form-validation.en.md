@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_edit-form-validation.html
 lang: en
 autotranslated: true
-hash: 0b34756d289365c342823f639518574c6e16f6089acc004df675880012717c44
+hash: a1217ec11bacde6bd800b9f3d693e82da5b9b86b314313909a3c8dc3af14ad05
 ---
 
 Data validation occurs in several stages.
@@ -24,7 +24,9 @@ Data validation occurs in several stages.
 | During the | save Allows you to test complex relationships between fields of an object since the check happens at a time | Test begins only when you try to save the form
 | Business server | Allows to test complex relationships between fields of an object and relationships to other objects | Test only starts when you try to save the form
 
-General comments on the implementation of the on-screen edit forms can be found in the article [Recommendations for improvement edit forms](fw_forms-recommendations.html).
+General comments on the implementation of the on-screen edit forms can be found in the article [Recommendations for improvement edit forms](fw_editform.html).
+
+The preferred option is the implementation of checks __at all levels__.
 
 ## Check and highlighting of fields on the edit form
 
@@ -51,7 +53,7 @@ Data validation on the form during editing can be carried out by:
 
 ## Data validation on the form during the save
 
-Data validation on the form during the save is made [via the OnSave event/OnSaveEvent](fw_check-through-on-save-event-example.html) and may include the following elements:
+Data validation on the form during the save is done through the events `OnSave`/`OnSaveEvent` and may include the following elements:
 
 * Determination of the required fields on the class diagram using the attribute `NotNull`.
 * Check through `DataObjectErrorProvider`.
@@ -142,9 +144,68 @@ if (arl.Count > 0)
 }
 ```
 
-## Total
+## An example of data validation on the form using OnSave/OnSaveEvent
 
-The preferred option is the implementation of checks __at all levels__.
+The essence of the test is that the event [OnSave](fw_form-interaction.html)/[OnSaveEvent](fw_form-interaction.html) is overridden and if the data does not satisfy certain conditions, the base method does not get called.
+
+[OnSaveEvent](fw_form-interaction.html) dependent forms:
+
+```csharp
+protected override void OnSaveEvent()
+{
+  ОбъектыДанных.ЗаявНаВыплату vЗаяв = (ОбъектыДанных.ЗаявНаВыплату) EditManager.DataObject;bool bContinueSave = true;
+  if (vЗаяв.ДатаНачалаНачисл != null && vЗаяв.ЛгКатЛичн != null && vЗаяв.ЛгКатЛичн.ДатаНазначения != null && vЗаяв.ДатаНачалаНачисл.Value < vЗаяв.ЛгКатЛичн.ДатаНазначения.Value)
+  {
+    if (System.Windows.Forms.MessageBox.Show("The payment may be designated with a " + vЗаяв.ЛгКатЛичн.ДатаНазначения.Value.ToString("dd.MM.yyyy") + ". Save changes? ","Attention", System.Windows.Forms.MessageBoxButtons.YesNo, System.Windows.Forms.MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.No)
+      bContinueSave = false;
+  }
+  if (bContinueSave)
+    base.OnSaveEvent (); //call the base method 
+  if (!m_bFailedSave) //the value of the variable could change in the base method 
+  {
+    olПереплата.FillData();
+    olУдержания.FillData();
+  }
+}
+```
+
+[OnSave](fw_form-interaction.html) independent of the form:
+
+```csharp
+protected override void OnSave(ICSSoft.STORMNET.UI.SaveEventArgs e)
+{
+  BS.BFСправочникиBS BS = new ICSSoft.Соцзащита.BS.BFСправочникиBS();
+  ОбъектыДанных.Специалист vСпециалист;
+  vСпециалист = BS.ИдентифицироватьСпециалиста();
+  if (vСпециалист != null)
+  {
+    ОбъектыДанных.Личность vПолучатель = заявка.Получатель;
+    if (!vСпециалист.ПроверитьСпеца(vПолучатель))
+    {
+      FailedSave(new Exception ("Saving changes is not possible!")); //generate the exception that you cannot save 
+      return;
+    }
+  }
+  base.OnSave(e); //call the base method 
+}
+```
+
+{% include important.html content=" we Must distinguish between `OnSave()` and `OnSave(ICSSoft.STORMNET.UI.SaveEventArgs e)` independent. Speaking [simplified](fw_form-interaction.html), if the closing of the forms was carried out on the cross and the user has agreed to store the object that will be invoked `OnSave()`, then `OnSave(ICSSoft.STORMNET.UI.SaveEventArgs e)`, but if the shape was carried out through the toolbar, the first will be called `OnSaveEvent()` dependent form, and then `OnSave(ICSSoft.STORMNET.UI.SaveEventArgs e)` independent.
+"%}
+
+## Cockroaches «and» an enum type
+
+There are two ways to specify that one of the values of an enumerated type is a value corresponding» «empty, i.e. the value for which the cockroaches appear «and» a message saying I need to fill when you save the form.
+
+1. The value of an enumerated type is marked `Caption("")` with an empty string as a parameter. This functionality is standard for Flexberry. It should be recalled, to set `Caption` attribute with an empty value in the editor Flexberry you must use the symbol «~» (tilde).
+
+2. The value of an enumerated type is marked `EmptyEnumValue`.
+
+__Observations:__
+
+1. To display the cockroach and the control input value when saving a property of a class must be marked `NotNull()`.
+
+2.» «Cockroaches might not appear in `GroupEdit` that is associated with the mechanism of display of list of values (using a built-in opportunity `FlexGrid`), but the control when you save the form will be implemented. If the display is using the standard `ComboBox`, cockroaches» «will be displayed correctly.
 
 ## Scenario refinement
 

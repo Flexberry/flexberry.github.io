@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_landing-page.html
 lang: en
 autotranslated: true
-hash: c06b3aea8070d58be1bb3d85381a388ae8c09f744f6acfac9087970a84427410
+hash: a941fcba214b83af7d5572441700b661831b2f81a4b0742f3329c0ccd58bc778
 summary: School developers Flexberry.
 ---
 
@@ -51,6 +51,7 @@ The school consists of 10 educational modules, each of which are represented:
 * Basic training materials in most cases is a set of videos or sorinkatu for independent viewing
 * Additional training materials are links to resources that will help either a deeper understanding of the investigated topic, or to obtain basic knowledge on the subject, if the developer has no experience with the technology or language.
 * Tasks to perform
+* Check-list check for jobs
 
 ## The format of the school
 

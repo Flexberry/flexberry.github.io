@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_editmanager.html
 lang: en
 autotranslated: true
-hash: 8e6e55883d0d2a6e3359074ad38beb7e5befc7652158e6402e5651b50669a478
+hash: 4e38ea01894e5b41dba4669a50b793aa03856375a0922315feff9488a25bbca1
 ---
 
 `EditManager` (`ICSSoft.STORMNET.Windows.Forms.Binders.EditManager`, Manager edit) — the special class for continuous binding controls to properties of the data object.
@@ -142,7 +142,7 @@ this.editManagerMain.Bindings = new Binds("C__Client", typeof(IIS.TryFilter.Кл
 
 * [How to edit data objects on forms and to associate the input fields with object properties data using `EditManager`](fw_edit-objects-on-forms.html).
 * [LookUp](fw_lookup.html).
-* Information about [`EditManager.ApplyDataFromControl`](fw_focus-and-ctrl-s.html).
+* Information about [`EditManager.ApplyDataFromControl`](fw_editform.html).
 
 
 

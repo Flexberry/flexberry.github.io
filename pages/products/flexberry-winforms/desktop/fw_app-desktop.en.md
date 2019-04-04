@@ -1,86 +1,82 @@
---- 
-title: Application and desktop 
-sidebar: flexberry-winforms_sidebar 
-keywords: Windows UI (forms) 
-summary: a description of the desktop application, considering the application programmer to set one up, useful links 
-toc: true 
-permalink: en/fw_app-desktop.html 
-folder: products/flexberry-winforms/ 
-lang: en 
-autotranslated: true 
-hash: 699a551464e1cff30d6c416d096ea68a48c1b6719fb35f3dbd6a837b9dd03da2 
---- 
-## App 
-The application is designed to run a desktop system. The application contains form code desktop. Form desktop inherited from `ICSSoft.STORMNET.Windows.Forms.Desktop`. 
+---
+title: Application and desktop
+sidebar: flexberry-winforms_sidebar
+keywords: Windows UI (forms)
+summary: a description of the desktop application, considering the application programmer to set one up, useful links
+toc: true
+permalink: en/fw_app-desktop.html
+folder: products/flexberry-winforms/
+lang: en
+autotranslated: true
+hash: 440b6a00222e4be7b31f30419fdc73caa7fd2c357fb07b78bf338e80ab55c158
+---
+## App
+The application is designed to run a desktop system. The application contains form code desktop. Form desktop inherited from `ICSSoft.STORMNET.Windows.Forms.Desktop`.
 
 
-Form desktop is designed to Refine and zaprogramirovan an application developer in accordance with application requirements. 
+Form desktop is designed to Refine and zaprogramirovan an application developer in accordance with application requirements.
 
-## Windows application 
-### customize your desktop 
-Desk consists of the following (external view example): 
+## Windows application
+### Customize your desktop
+Desk consists of the following (external view example):
 
-![](/images/pages/products/flexberry-winforms/desktop/windesktop.png) 
+![](/images/pages/products/flexberry-winforms/desktop/windesktop.png)
 
-In the left part is a tree structure of menu items. 
+In the left part is a tree structure of menu items.
 
-In the right part — the list of so-called starters» «(Runner) for the menu item selected in the left part of the menu. 
+In the right part — the list of so-called starters» «(Runner) for the menu item selected in the left part of the menu.
 
-The programmer can modify the structure, layout and appearance of the menu items, the composition and appearance of the starters. 
+The programmer can modify the structure, layout and appearance of the menu items, the composition and appearance of the starters.
 
-Configuration is provided through a special class — Adjuster desktop, a descendant from ICSSoft.STORMNET.UI.DesktopCustomizer. The Adjuster desktop is installed in the property `DesktopCustomizer` form the desktop. 
+Configuration is provided through a special class — Adjuster desktop, a descendant from ICSSoft.STORMNET.UI.DesktopCustomizer. The Adjuster desktop is installed in the property `DesktopCustomizer` form the desktop.
 
-To indicate the composition of starters and placing the menu items, you should overload the Adjuster desktop method `GetRunners()` that returns a one-dimensional array of starters `ICSSoft.STORMNET.UI.Runner`. 
+To indicate the composition of starters and placing the menu items, you should overload the Adjuster desktop method `GetRunners()` that returns a one-dimensional array of starters `ICSSoft.STORMNET.UI.Runner`.
 
-#### Starters 
-Basic starter `ICSSoft.STORMNET.UI.Runner` has: 
-* The menu path, the levels are separated with a backslash «\»; 
-* Заголовок; 
-* A description of the. 
+#### Starters
+Basic starter `ICSSoft.STORMNET.UI.Runner` has:
+* The menu path, the levels are separated with a backslash «\»;
+* Заголовок;
+* A description of the.
 
-There are a few specialized starters: 
-* `ICSSoft.STORMNET.Windows.Forms.FormRunner` — starter form that is different from the standard that a property — the type of form that should open. Accordingly, the starter for opening forms. Method `Run()` overloaded so that designs in the form and calls the method `Show()`; 
-* `ICSSoft.STORMNET.UI.ContRunner` — starter independent list container, simultaneously launching in the container the script for execution. Has a property type of the container. Method `Run()` overloaded in such a way that builds a container, takes the script and runs it. 
+There are a few specialized starters:
+* `ICSSoft.STORMNET.Windows.Forms.FormRunner` — starter form that is different from the standard that a property — the type of form that should open. Accordingly, the starter for opening forms. Method `Run()` overloaded so that designs in the form and calls the method `Show()`;
+* `ICSSoft.STORMNET.UI.ContRunner` — starter independent list container, simultaneously launching in the container the script for execution. Has a property type of the container. Method `Run()` overloaded in such a way that builds a container, takes the script and runs it.
 * `ICSSoft.STORMNET.UI.ScriptRunner` — starter script, located in the specified type implementing the interface `Scriptizer.DataObjects.IScripted`. Method `Run()` overloaded in such a way that launches this script.
 
-Of course, a developer can implement their own starters to implement their functionality or changes to basic in particular, you can overload a number of methods: 
-* `GetBigImage(), GetImage()` to change the icons стартера; 
-* `Run()` to implement the steps that occur when you select from the desktop. 
+Of course, a developer can implement their own starters to implement their functionality or changes to basic in particular, you can overload a number of methods:
+* `GetBigImage(), GetImage()` to change the icons стартера;
+* `Run()` to implement the steps that occur when you select from the desktop.
 
-#### Form 
-In the form of desktop applications (<ApplicationName>Desktop.cs in the initial design) object of type desktopCtrl2 ICSSoft.STORMNET.Windows.Forms.DesktopCtrl has the following properties: 
-* __SortRunners__ is responsible for sorting of items in tree and list: 
-* _true_ - alphabetical order 
-* _false_ - without sorting, the order matches the order of the tasks in Flexberry 
-* __ViewMode__ is responsible for the type of display list elements (icons, list, table) 
-* __Font__ is responsible for the font of tree items in the list 
+#### Form
+In the form of desktop applications (<ApplicationName>Desktop.cs in the initial design) object of type desktopCtrl2 ICSSoft.STORMNET.Windows.Forms.DesktopCtrl has the following properties:
+* __SortRunners__ is responsible for sorting of items in tree and list:
+* _true_ - alphabetical order
+* _false_ - without sorting, the order matches the order of the tasks in Flexberry
+* __ViewMode__ is responsible for the type of display list elements (icons, list, table)
+* __Font__ is responsible for the font of tree items in the list
 
-{% include note.html content="learn More about control your desktop can be viewed [here](fw_objectlistview-in-desktop-ctrl.html)" %} 
+{% include note.html content="learn More about control your desktop can be viewed [here](fw_objectlistview-in-desktop-ctrl.html)" %}
 
-## Web application 
-In a Web application desktop will be transformed into a set of links in the menu SiteMaster'a. 
+## Web application
+In a Web application desktop will be transformed into a set of links in the menu SiteMaster'a.
 
-![](/images/pages/products/flexberry-winforms/desktop/webdesktop.png) 
+![](/images/pages/products/flexberry-winforms/desktop/webdesktop.png)
 
-The menu is configured using the [site Map ASP.NET](http://msdn.microsoft.com/ru-ru/library/yy2ykkab(v=vs.100).aspx), the default file `Web.sitemap` from the directory of the application (generated by the system Flexberry). To configure the site map the default `Web.config` in section `SiteMap`. 
+The menu is configured using the [site Map ASP.NET](http://msdn.microsoft.com/ru-ru/library/yy2ykkab(v=vs.100).aspx), the default file `Web.sitemap` from the directory of the application (generated by the system Flexberry). To configure the site map the default `Web.config` in section `SiteMap`.
 
-The site map is displayed with the help of technological control [IcsTreeView](fa_ics-treeview.html) (this control is [some useful display settings](fa_ics-treeview.html)). 
+The site map is displayed with the help of technological control [IcsTreeView](fa_ics-treeview.html) (this control is [some useful display settings](fa_ics-treeview.html)).
 
-__Note__: it is worth considering that when regeneration Flexberry ASP.NET through Flexberry made to the file `Web.sitemap` changes may be lost. 
+__Note__: it is worth considering that when regeneration Flexberry ASP.NET through Flexberry made to the file `Web.sitemap` changes may be lost.
 
-## Scenario refinement 
+## Scenario refinement
 
-* [Customize desktop Starter](fd_application.html) 
-* Add custom forms to your desktop ([Win](fw_add-form-to-win-desktop.html), [Web](fa_add-page-web-desktop.html)) 
+* [Customize desktop Starter](fd_application.html)
+* Add custom forms to your desktop ([Win](fw_add-form-to-win-desktop.html), [Web](fa_add-page-web-desktop.html))
 
-## Cm. also 
-[Passing parameters from ContRunner to edit form](fw_parameters-from-cont-runner-to-editform.html) 
+## Cm. also
 
-[Desktop shortcuts](fw_win-desktop-links.html) 
-
-
-
-
+* [Pass parameters from ContRunner to edit form](fw_editform.html)
+* [Desktop shortcuts](fw_win-desktop-links.html)
 
 
 

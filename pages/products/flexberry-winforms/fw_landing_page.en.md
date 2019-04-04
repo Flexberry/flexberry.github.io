@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_landing_page.html
 lang: en
 autotranslated: true
-hash: 6e2ae615cabc65051c4bd007e88d06e556283f3561b83259a4cd31601e6e9457
+hash: 89a890f5438f1f7f776b6999fb542f0a17b607c72c0a42908718396f5b3b471d
 ---
 
 `Flexberry Winforms` is [product platform Flexberry](fp_landing_page.html).
@@ -26,17 +26,14 @@ The product website `Flexberry Winforms`: [flexberry.ru](http://flexberry.ru/Fle
 ## Information controls and components
 
 * [Aliases system / user-defined types for parameters in the form of limitations](fw_aliases-system-and-user-types.html)
-* [Change the title of the list when lukapa](fw_change-name-list-with-lookup.html)
-* [Status screen](fw_form-features.html)
+* [Feature forms in Windows applications](fw_form-features.html)
 * [Close all open forms Flexberry](fw_close-all-opened-forms.html)
 * [Form «Editor of the limitations of» (WIN)](fw_winforms-limit-editor-form.html)
 * [Standard view of the editor limitations. Description of form](fw_description-form-limit-editor-in-standard-form.html)
 * [Advanced view editor limitations](fw_limit-editor-advanced-view.html)
 * [Restriction settings (for the user) Win](fw_limit-editor-params.html)
 * [Qmo button to expand/Collapse folders» on the desktop](fw_desktop-operations.html)
-* [«and» Cockroaches enumerated type](fw_empty-enum-value-validation.html)
 * [MaxLength property of the control ExtLookUpTextControl](fw_extended-lookup.html)
-* [As the closure of Thomas (the only form Flexberry Winforms)](fw_forbid-closing-form.html)
 * [Interface ISpecialEmptyValue](fo_i-special-empty-value.html)
 * [The title setting list form](fw_list-form-caption.html)
 * [Appendix to the form for editing the Lookup wizard not related to the main subject](fw_lookup-another-object.html)
@@ -46,10 +43,8 @@ The product website `Flexberry Winforms`: [flexberry.ru](http://flexberry.ru/Fle
 * [LookUp](fw_lookup.html)
 * [Set up access rights to the publication of limits](fw_setting-permissions-for-publication-restrictions.html)
 * [Run the code in the main application thread from another thread](fw_ui-synchronization-context.html)
-* [How to uniformly handle all forms of app](fw_uniformly-handle-all-application-forms.html)
 * [Working with menus in the main form of the application](fw_work-with-menu-in-main-form-app.html)
 * [And again work with menu](fw_working-with-menu.html)
-* [Detail as a master](fw_detail-as-master.html)
 * [Display on the interface shape and datalow](fo_masters-details.html)
 * [Standard monitor task WinformBusinessTaskMonitor](fw_winform-business-task-monitor.html)
 

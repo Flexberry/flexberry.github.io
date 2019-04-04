@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module1-tasks.html
 lang: en
 autotranslated: true
-hash: 70d532a3be29fc802f08b2c7d763d7b33845bc08082b828c524a2d7fa9df0729
+hash: 6be57aff1c1aad3ff280e9478afb8bd0479e3d89fe123fc2c1aecb62220b1f55
 ---
 
 ## The expected results of tasks execution
@@ -92,7 +92,7 @@ A minimal set of tests in the first collection:
 * Test for receipt of all invoices
 * Test adding overhead
 * Test for change of invoices
-* TST to delete invoices
+* Test for removing false
 
 A minimum set of tests in the second collection:
 * Test for receipt of invoices filtered by the field value. The field name and its value should be set in the environment variables. For this test, prepare a file with a JSON array of values of the variables to each field in the invoice must correspond to a single array element (i.e., must be provisioned for the data filter on each field).
@@ -101,7 +101,7 @@ The collection can be expanded by an additional set of tests for more test cover
 
 When you start a second collection in the Collection Runner, you need to specify a file with podgotovlennye data to run tests.
 
-Both the resulting collection to be exported are appropriate .json files exported collections to post on the GitHub repository for task 1.
+Both the resulting collection to be exported are appropriate .json files exported collections to post on the GitHub repository for task 1. For the second collection to the repository on GitHub, you also need to put the data files and environment variables for the test.
 
 After you export your collections to start a prepared collection of tests on the local machine from the console using the [Newman](https://github.com/postmanlabs/newman). To take a screenshot of the terminal with the results of running, save it in a document similar to the tasks from the preceding paragraphs and to put the resulting document on GitHub in the repository for task 1 in the same directory along with previously created documents.
 
@@ -115,7 +115,7 @@ After you export your collections to start a prepared collection of tests on the
 
 ## You can
 
-* [Go to next module](tds_module2-about.html)
+* [Go to checklist of verification tasks](tds_module1-check-list.html)
 * [Go to the page with additional content module](tds_module1-appendix.html)
 
 
