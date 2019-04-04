@@ -49,3 +49,15 @@ entries:
       title_ru: Чек-лист проверки заданий
       url: /tds_module1-check-list.html
       output: web    
+  - title: Module 2. Technologies for team development
+    title_ru: Модуль 2. Технологии командной разработки
+    output: web
+    folderitems:
+    - title: About the module
+      title_ru: О модуле
+      url: /tds_module2-about.html
+      output: web    
+    - title: Learn
+      title_ru: Учебные материалы
+      url: /tds_module2-learn.html
+      output: web    
