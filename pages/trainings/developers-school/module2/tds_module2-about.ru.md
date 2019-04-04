@@ -3,7 +3,7 @@ title: Модуль 2. Технологии командной разработ�
 keywords: Programming, Training, Developers school
 sidebar: training-developers-school_sidebar
 toc: false
-permalink: ru/tds_module1-about.html
+permalink: ru/tds_module2-about.html
 lang: ru
 ---
 
