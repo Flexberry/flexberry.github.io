@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_rating.html
 lang: en
 autotranslated: true
-hash: 5bc82220fe61545f4e74fe5edaa9dfb992817c42ef7d18ad2f7de76c84d60759
+hash: fef316da3c477e384dc6d9f4240e0a6ae63f86b190cc576dead1e45ba68b0a14
 ---
 
 ## About the rating system of the school
@@ -24,7 +24,7 @@ In term of actual performance of the job. For each day "prosrok" in the assignme
 
 Indicators of rating of students are the main, but not the ultimate factors, on the basis of which the decision on employment to the company. In addition to rating indicators when the device of applicant the company also takes into account the total activity in the training school, personal qualities, experience and other factors.
 
-References to ratings of students can be found in [resources for schools](tds_resources.html).
+Ratings of students are classified information, which is available only within a closed group of students.
 
 ## Check-lists check jobs
 

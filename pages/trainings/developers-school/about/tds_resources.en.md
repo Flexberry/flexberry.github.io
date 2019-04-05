@@ -6,12 +6,12 @@ toc: false
 permalink: en/tds_resources.html
 lang: en
 autotranslated: true
-hash: f96f9f57cf21e18ca2de3aafc79028e30beac810e506b13dc9b44cd522454163
+hash: 47caa221dd4e11e729d9264dad215db8d6b59969d7fc6618bb8c2457faa56108
 ---
 
 ## Learning resources
 
-* [School repository on GitHub](https://github.com/Flexberry/flexberry-developers-school). In this repository published source code examples for school, as well as ratings from students.
+* [School repository on GitHub](https://github.com/Flexberry/flexberry-developers-school). In this repository published source code examples for school, links to resources needed when performing tasks, and other ancillary information.
 * [Channel platform Flexberry on YouTube](https://www.youtube.com/user/FlexberryPLATFORM). On this channel you can find some training courses and other useful videos.
 
 ## You can

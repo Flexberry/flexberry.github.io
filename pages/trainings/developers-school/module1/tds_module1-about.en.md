@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module1-about.html
 lang: en
 autotranslated: true
-hash: dd548af1468ae9946d8f3f6161210a832f55b3f2c869f9efee5f9d0849618c89
+hash: 6adb20be8d6121b7dd9fc7408020bb5b7aa1faccdc3e9919f7715340548c5cd0
 ---
 
 ## The contents of the module
@@ -19,7 +19,7 @@ hash: dd548af1468ae9946d8f3f6161210a832f55b3f2c869f9efee5f9d0849618c89
 6. Web services, RESTful services
 7. Development tools and debugging
 
-## Acidaemia learning outcomes
+## Expected learning outcomes
 
 The results of the study of module student must:
 1. To understand architecture of web applications and how they work
