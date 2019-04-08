@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module2-learn.html
 lang: en
 autotranslated: true
-hash: b2bd794ff8f6d64b1ccd906a50ef1e2ee32e1982c310572fc13dab71b2b8bbbb
+hash: d6ca40680fd9e300df92058901ce994adefc88a6c579f693b459658695776ec4
 ---
 
 ## The module
@@ -61,21 +61,50 @@ The version control system Git and GitHub platform</a>
 </a>
 </div>
 <div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=9dkzbSnN2FQ' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module2/github-intro.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">5. Register on GitHub and create a repository</span></h4>
+<p>a Lesson on the basics of working with GitHub: sign up, create a repository connection the local and remote repository collaboration repository (ITDoctor).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=Pl0xwUicJDc' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module2/github-working.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">6. Cloning and the use of GitHub repository</span></h4>
+<p>the lesson covers the basic operations with GitHub repository: cloning, editing files in the remote repository (ITDoctor).</p>
+</a>
+</div>
+</div>
+<div class="row items">
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=YxATSZRx3ps' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module2/git-vs-code.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">7. Working with Git from Visual Studio Code</span></h4>
+<p>the lesson on the basic opportunities to work with Git from Visual Studio editor Code (ITDoctor).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=z5gOy8cBle0' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module2/source-control-vs-code.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">8. The "source control" in Visual Studio Code</span></h4>
+<p>a Lesson on Visual Studio Code for working with Git repositories and GitHub (ITDoctor).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
 <a href="{{ 'https://www.youtube.com/watch?v=hyUBMmL0WtA&start=348' | relative_url }}" class="portfolio-link" target="_blank">
 <div class="img-wrapper">
 <img src="{{ "/images/pages/trainings/developers-school/module2/github-desktop.jpg" | relative_url}}" class="products-img">
 </div>
-<h4><span class="item-head">5. Using the GitHub Desktop application</span></h4>
+<h4><span class="item-head">9. Using the GitHub Desktop application</span></h4>
 <p>a fragment of a lesson about working with Git and GitHub, dedicated to the GitHub Desktop app (Artem Islamov, Glo Academy).</p>
-</a>
-</div>
-<div class="col-sm-6 col-md-4 portfolio-item">
-<a href="{{ 'https://www.youtube.com/watch?v=YxATSZRx3ps&start=123' | relative_url }}" class="portfolio-link" target="_blank">
-<div class="img-wrapper">
-<img src="{{ "/images/pages/trainings/developers-school/module2/git-vs-code.jpg" | relative_url}}" class="products-img">
-</div>
-<h4><span class="item-head">6. Working with Git from Visual Studio Code</span></h4>
-<p>a fragment of a lesson about working with Git and GitHub on using Git from Visual Studio editor Code (ITDoctor).</p>
 </a>
 </div>
 </div>
