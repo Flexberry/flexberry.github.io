@@ -1,5 +1,5 @@
 ---
-title: Модуль2. Учебные материалы
+title: Модуль 2. Учебные материалы
 keywords: Programming, Training, Developers school
 sidebar: training-developers-school_sidebar
 toc: false

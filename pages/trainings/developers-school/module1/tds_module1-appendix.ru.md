@@ -1,5 +1,5 @@
 ---
-title: Модуль1. Дополнительные материалы
+title: Модуль 1. Дополнительные материалы
 keywords: Programming, Training, Developers school
 sidebar: training-developers-school_sidebar
 toc: false
