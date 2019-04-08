@@ -106,6 +106,17 @@ lang: ru
                         </a>
                     </div>
                 </div>
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=n4A5AyH2bJw' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module2/github-flow.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">10. GitHub Flow</span></h4>
+                            <p>В скринкасте рассматривается понятие GitHub Flow, его связь с Git Flow, а также делается обзор основных инструментов GitHub для командной работы (Евгений Хаберев, Flexberry PLATFORM).</p>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
