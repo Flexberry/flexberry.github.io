@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module2-learn.html
 lang: en
 autotranslated: true
-hash: d6ca40680fd9e300df92058901ce994adefc88a6c579f693b459658695776ec4
+hash: 9c6e35f8781579080a99a6324aa07db6d833dd009f23b69c7dfe5eefc48b3ecd
 ---
 
 ## The module
@@ -105,6 +105,17 @@ The version control system Git and GitHub platform</a>
 </div>
 <h4><span class="item-head">9. Using the GitHub Desktop application</span></h4>
 <p>a fragment of a lesson about working with Git and GitHub, dedicated to the GitHub Desktop app (Artem Islamov, Glo Academy).</p>
+</a>
+</div>
+</div>
+<div class="row items">
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=n4A5AyH2bJw' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module2/github-flow.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">10. GitHub Flow</span></h4>
+<p>In screencast discusses the concept of GitHub Flow, its relationship with Git Flow, as well as a review of the basic tools GitHub for teamwork (Eugene Haberi, Flexberry PLATFORM).</p>
 </a>
 </div>
 </div>

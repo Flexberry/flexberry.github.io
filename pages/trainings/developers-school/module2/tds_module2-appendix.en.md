@@ -1,12 +1,12 @@
 ---
-title: Module1. Additional materials
+title: Module 2. Additional materials
 keywords: Programming, Training, Developers school
 sidebar: training-developers-school_sidebar
 toc: false
 permalink: en/tds_module2-appendix.html
 lang: en
 autotranslated: true
-hash: eb0ba191d20cd8aae011a928e7c056625c92409c1bef6330aca083ebd4f463a7
+hash: 66efd153ef8053641a21624219e2fcfa725840a129c2e15547f57c6d6f662cbd
 ---
 
 ## Additional materials module

@@ -1,15 +1,15 @@
 ---
-title: Module1. Check-list check for jobs
+title: Module 1. Check-list check for jobs
 keywords: Programming, Training, Developers school
 sidebar: training-developers-school_sidebar
 toc: false
 permalink: en/tds_module1-check-list.html
 lang: en
 autotranslated: true
-hash: a47946046e17a2ce2c216d48903aea7398e5958a42254aca5cea0c8dd0615821
+hash: 4a60dcee6eac8b5a620849ebb9b82bf484984c45daa0aa5c73f8fc5af79c22ae
 ---
 
-### Task 1. Creating a web application based on REST API
+## Task 1. Creating a web application based on REST API
 
 The application must be implemented in a REST-based API using a JSON Server. Failure to comply with this requirement, the points for the assignment will not be counted!
 
@@ -26,7 +26,7 @@ The application must be implemented in a REST-based API using a JSON Server. Fai
 
 **Total job**: 12 points.
 
-### Task 2. Testing networking and server-side API
+## Task 2. Testing networking and server-side API
 
 1. There are screenshots of HTTP responses from Chrome Chrome Developer Tools, Fiddler and Postman for the following query: "retrieve all invoices that any field which contains the number “7”": **1 point**.
 2. There are screenshots of HTTP responses from Chrome Chrome Developer Tools, Fiddler and Postman for the following query: "retrieve all invoices that the value of the field number less than “100000”": **1 point**.
@@ -42,7 +42,7 @@ The application must be implemented in a REST-based API using a JSON Server. Fai
 ## You can
 
 * [Go to next module](tds_module2-about.html)
-* [Go to the page with the jobs plugin](tds_module1-appendix.html)
+* [Go to the page with the jobs plugin](tds_module1-tasks.html)
 
 
 

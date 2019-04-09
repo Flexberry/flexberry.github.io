@@ -1,12 +1,12 @@
 ---
-title: Module1. Training materials
+title: Module 1. Training materials
 keywords: Programming, Training, Developers school
 sidebar: training-developers-school_sidebar
 toc: false
 permalink: en/tds_module1-learn.html
 lang: en
 autotranslated: true
-hash: 6058ab9e20d889cb554429aea1d03b5c2667d2bfe63635f534e2cd09252c8a87
+hash: bb9d050aa05d0262687381e0ba05b9f23fade815e0b8c24e94d5fe90b9cd4333
 ---
 
 ## The module

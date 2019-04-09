@@ -1,12 +1,12 @@
 ---
-title: Module1. Job
+title: Module 1. Job
 keywords: Programming, Training, Developers school
 sidebar: training-developers-school_sidebar
 toc: false
 permalink: en/tds_module1-tasks.html
 lang: en
 autotranslated: true
-hash: 6be57aff1c1aad3ff280e9478afb8bd0479e3d89fe123fc2c1aecb62220b1f55
+hash: 939e156951efcf43ef0ed766ba87013e40bc240f07a4ee95a13aeb8de5cf1b7f
 ---
 
 ## The expected results of tasks execution
