@@ -6,7 +6,7 @@ toc: true
 permalink: en/fe_groupedit.html
 lang: en
 autotranslated: true
-hash: 27dc45ce87a9e0e72d1abd6030ff1651273145f35da9f8962bde2f45c72027ee
+hash: ea1bfc565b815b084c724c160de52865f9f881cb20fcc72422e90bf9a3df618f
 summary: Properties, implementation details, ability to sort and embedding of application components, the implementation in a separate roat
 ---
 
@@ -17,6 +17,7 @@ To add groupedit page, in the template you need to specify:
 ```hbs
 {% raw %}{{flexberry-groupedit
   componentName="ordersGroupEdit"
+  defaultSortingButton=true
   class="attached"
   modelProjection=modelProjection.attributes.orders
   content=model.orders
@@ -33,6 +34,7 @@ Properties `componentName` and `readonly`| Properties from the [basic control](e
 `modelProjection`| Defines the view to be displayed.
 `content`| Single records, an editable control.
 `cellComponent`| Method that determines how the control component is edited.
+`defaultSortingButton`| a Flag that determines whether to display button for setting the default sort. The default value is: true.
 `orderable`| a Flag that determines whether to sort by columns in the component (if the flag value is changed to `true` need additional configuration, see below).
 `showDeleteMenuItemInRow`| a Flag that determines whether to display the item in the context menu mobile template FGE, `Удалить запись`. The default value is false.
 `showEditMenuItemInRow`| a Flag that determines whether to display the item in the context menu mobile template FGE, `Редактировать запись`. The default value is false.
@@ -301,6 +303,15 @@ export default Controller.extend({
 ```
 
 You can look at [the example realizacja](http://flexberry.github.io/ember-flexberry/dummy/develop/#/components-examples/flexberry-groupedit/ember-flexberry-dummy-suggestion-list-groupedit-with-lookup-with-computed-atribute) on the test stand.
+
+## Ordered properties in groupedit
+
+When you add in the view, groupedit-ordered-properties there will be some features that you should consider:
+
+1. Sorting in the groupedit-e will be ordered to the property. The usual sort in the GE will be disabled and cannot be enabled.
+2. When inserting/deleting rows in groupedit automatically recalculated ordered attribute for all rows.
+3. In groupedit when the model has the ordered attribute, you can move rows up and down using the arrows. To automatically recalculate the values of the ordered attribute of those rows that have changed position.
+4. If ordered attribute appears in GE for the user, the corresponding value of this attribute will be readonly.
 
 
 
