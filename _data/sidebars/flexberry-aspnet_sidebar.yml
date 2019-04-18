@@ -1,7 +1,7 @@
 entries:
 - title: Sidebar
   product: Flexberry ASP.NET
-  version: 2.2.0
+  version: 3.0.0
   
   folders:
   - title: Сommon information about Flexberry ASP.NET
@@ -104,6 +104,11 @@ entries:
       url: /fa_response-filter-module.html
       output: web, pdf
 
+    - title: Constants
+      title_ru: Constants
+      url: /fa_constants.html
+      output: web, pdf
+
     - title: Browsers
       title_ru: Список поддерживаемых браузеров
       url: /fa_browsers.html
@@ -154,6 +159,11 @@ entries:
       url: /fa_developing-controls.html
       output: web, pdf
 
+    - title: BaseWebControl
+      title_ru: BaseWebControl
+      url: /fa_base-web-control.html
+      output: web, pdf
+
     - title: Advanced limit editor
       title_ru: Advanced limit editor
       url: /fa_advanced-limit-editor.html
@@ -174,19 +184,9 @@ entries:
       url: /fa_alpha-numeric-textbox.html
       output: web, pdf
 
-    - title: BaseWebControl
-      title_ru: BaseWebControl
-      url: /fa_base-web-control.html
-      output: web, pdf
-
     - title: ColorPicker
       title_ru: ColorPicker
       url: /fa_color-picker.html
-      output: web, pdf
-
-    - title: Constants
-      title_ru: Constants
-      url: /fa_constants.html
       output: web, pdf
 
     - title: Contact control
@@ -304,11 +304,6 @@ entries:
       url: /fa_exception-handling.html
       output: web, pdf
 
-    - title: WebObjectListView
-      title_ru: WebObjectListView
-      url: /fa_web-object-list-view.html
-      output: web, pdf
-
     - title: Init control settings delegate
       title_ru: Глобальная настройка веб-контролов
       url: /fa_init-control-settings-delegate.html
@@ -323,7 +318,21 @@ entries:
       title_ru: Универсальный пейджинговый контрол
       url: /fa_pager.html
       output: web, pdf
-   
+
+  - title: "Controls: WebObjectListView"
+    title_ru: "Контролы: WebObjectListView"
+    output: web, pdf
+
+    - title: WebObjectListView
+      title_ru: WebObjectListView
+      url: /fa_web-object-list-view.html
+      output: web, pdf
+
+    - title: WebObjectListView Operations
+      title_ru: Операции WebObjectListView
+      url: /fa_wolv-operations.html
+      output: web, pdf
+
   - title: Editform
     title_ru: Форма редактирования для Flexberry ASP.NET
     output: web, pdf
