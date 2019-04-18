@@ -319,9 +319,10 @@ entries:
       url: /fa_pager.html
       output: web, pdf
 
-  - title: "Controls: WebObjectListView"
-    title_ru: "Контролы: WebObjectListView"
+  - title: Control WebObjectListView
+    title_ru: Контрол WebObjectListView
     output: web, pdf
+    folderitems:
 
     - title: WebObjectListView
       title_ru: WebObjectListView
