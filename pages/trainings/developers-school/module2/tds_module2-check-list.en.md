@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module2-check-list.html
 lang: en
 autotranslated: true
-hash: a38177d20b2617f8230d2ff747e3559b619b315da19651d945924bec20858f59
+hash: dc5090257b4d85d464ebebff794d11e7721bced07a1048aa30574ebaffe4cba3
 ---
 
 ## Task 1. The use of a command-work of the GitHub platform
@@ -17,7 +17,7 @@ hash: a38177d20b2617f8230d2ff747e3559b619b315da19651d945924bec20858f59
 4. All Issues associated with a Milestone with a due date within two weeks from the moment of creation Issues: **1 point**.
 5. The repository created a Kanban Board where all the tasks can be in one of four States: "New", "Active", "In progress", "Completed": **1 point**.
 6. At the time of inspection of the task one task has status "New" (the one for which you have not created a pull request), and another problem and error is "Executed" on the Board: **1 point**.
-7. Created two pull requests is the pull request for the task is created from the branch inside repository, a pull request for the bug created from "fornataro" repository. Pull requests created under different user different from the user account to which you published the repository. Pull requst for the task is closed, the pull request is for error - open: **2 points**.
+7. Created two pull requests is the pull request for the task is created from the branch inside repository, a pull request for the bug created from "fornataro" repository. Pull requests created under different user different from the user account to which you published the repository. Pull request for the task is closed, the pull request is for error - open: **2 points**.
 8. The repository contains a develop branch. With this thread created branches for solving the problem and fix the error. The name of the branch to solve the problem has the prefix "feature -" the name of the branch is to correct errors - prefix "fix-": **1 point**.
 9. Pull requests refer to the relevant Issues. Closed Issue refers to the pull request or the commit that closed it: **1 point**.
 10. Repository configured server builds using Travis CI. In the server build runs tests for collections that are created when you run the task from the previous module, using the Newman: **3 points**.
