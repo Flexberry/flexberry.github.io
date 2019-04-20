@@ -108,12 +108,30 @@ lang: ru
                 </div>
                 <div class="row items">
                     <div class="col-sm-6 col-md-4 portfolio-item">
-                        <a href="{{ 'https://www.youtube.com/watch?v=n4A5AyH2bJw' | relative_url }}" class="portfolio-link" target="_blank">
+                        <a href="{{ 'https://www.youtube.com/playlist?list=PLlhqsC7hBaSewVS0F_V3obDVGF8Lo5eSb' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
-                                <img src="{{ "/images/pages/trainings/developers-school/module2/github-flow.jpg" | relative_url}}" class="products-img">
+                                <img src="{{ "/images/pages/trainings/developers-school/module2/github-course.jpg" | relative_url}}" class="products-img">
                             </div>
-                            <h4><span class="item-head">10. GitHub Flow</span></h4>
-                            <p>В скринкасте рассматривается понятие GitHub Flow, его связь с Git Flow, а также делается обзор основных инструментов GitHub для командной работы (Евгений Хаберев, Flexberry PLATFORM).</p>
+                            <h4><span class="item-head">10. Курс по командной работе на GitHub</span></h4>
+                            <p>Серия скринкастов, посвященная изучению процесса командной работы на GitHub, в том числе в OpenSource-проектах (Евгений Хаберев, Flexberry PLATFORM).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=K7m1q_-chqo' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module2/github-pages.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">11. GitHub Pages</span></h4>
+                            <p>В скринкасте рассматривается возможность публикации сайтов на GitHub Pages (ITDoctor).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=80_vjSgrudY' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module2/github-gist.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">12. GitHub Gist</span></h4>
+                            <p>В скринкасте рассматривается инструмент хранения и повторного использования кода - GitHub Gist (ITDoctor).</p>
                         </a>
                     </div>
                 </div>
