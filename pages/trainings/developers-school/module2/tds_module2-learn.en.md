@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module2-learn.html
 lang: en
 autotranslated: true
-hash: 9c6e35f8781579080a99a6324aa07db6d833dd009f23b69c7dfe5eefc48b3ecd
+hash: 12be8ea89fdd4ce735b12ace93235c715c1cc72627d135d733c4947c16ef0848
 ---
 
 ## The module
@@ -110,12 +110,30 @@ The version control system Git and GitHub platform</a>
 </div>
 <div class="row items">
 <div class="col-sm-6 col-md-4 portfolio-item">
-<a href="{{ 'https://www.youtube.com/watch?v=n4A5AyH2bJw' | relative_url }}" class="portfolio-link" target="_blank">
+<a href="{{ 'https://www.youtube.com/playlist?list=PLlhqsC7hBaSewVS0F_V3obDVGF8Lo5eSb' | relative_url }}" class="portfolio-link" target="_blank">
 <div class="img-wrapper">
-<img src="{{ "/images/pages/trainings/developers-school/module2/github-flow.jpg" | relative_url}}" class="products-img">
+<img src="{{ "/images/pages/trainings/developers-school/module2/github-course.jpg" | relative_url}}" class="products-img">
 </div>
-<h4><span class="item-head">10. GitHub Flow</span></h4>
-<p>In screencast discusses the concept of GitHub Flow, its relationship with Git Flow, as well as a review of the basic tools GitHub for teamwork (Eugene Haberi, Flexberry PLATFORM).</p>
+<h4><span class="item-head">10. Course on team work on GitHub</span></h4>
+<p>Series of screencasts devoted to the study of the process of team work on GitHub, including the open Source projects (Eugene Haberi, Flexberry PLATFORM).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=K7m1q_-chqo' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module2/github-pages.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">11. GitHub Pages</span></h4>
+<p>In screencast considering the possibility of publishing websites to GitHub Pages (ITDoctor).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=80_vjSgrudY' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module2/github-gist.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">12. GitHub Gist</span></h4>
+<p>In screencast is considered a tool storage and re-use of code - GitHub Gist (ITDoctor).</p>
 </a>
 </div>
 </div>
