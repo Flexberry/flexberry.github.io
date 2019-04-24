@@ -12,7 +12,7 @@ lang: ru
 <div class="panel-group">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse1">&#9660</a>
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse1">&#9660;</a>
             <h4 class="panel-title">
                 <a data-toggle="collapse" href="#collapse1">
                 Система контроля версий Git и платформа GitHub</a>
@@ -144,7 +144,7 @@ lang: ru
 <div class="panel-group">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse2">&#9660</a>
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse2">&#9660;</a>
             <h4 class="panel-title">
                 <a data-toggle="collapse" href="#collapse2">
                 Командная работа с использованием Azure DevOps</a>
