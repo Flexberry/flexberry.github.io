@@ -31,5 +31,5 @@ lang: ru
 
 ## Вы можете
 
-* [Перейти к учебным материалам модуля](tds_module1-learn.html)
-* [Перейти на страницу с ресурсами для школы](tds_resources.html)
+* [Перейти к учебным материалам модуля](tds_module1-learn.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+* [Перейти на страницу с ресурсами для школы](tds_resources.html) <i class="fa fa-arrow-up" aria-hidden="true"></i>

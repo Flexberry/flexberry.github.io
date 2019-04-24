@@ -12,12 +12,13 @@ lang: ru
 <div class="panel-group">
     <div class="panel panel-default">
         <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse1">&#9660</a>
             <h4 class="panel-title">
-                <a data-toggle="collapse" href="#collapse2">
+                <a data-toggle="collapse" href="#collapse1">
                 Система контроля версий Git и платформа GitHub</a>
             </h4>
         </div>
-        <div id="collapse2" class="panel-collapse collapse in">
+        <div id="collapse1" class="panel-collapse collapse in">
             <div class="panel-body">
                 <div class="row items">
                     <div class="col-sm-6 col-md-4 portfolio-item">
@@ -55,5 +56,5 @@ lang: ru
 
 ## Вы можете
 
-* [Перейти к заданиям по модулю](tds_module2-tasks.html)
-* [Перейти на страницу с учебными материалами модуля](tds_module2-learn.html)
+* [Перейти к заданиям по модулю](tds_module2-tasks.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Перейти на страницу с учебными материалами модуля](tds_module2-learn.html)

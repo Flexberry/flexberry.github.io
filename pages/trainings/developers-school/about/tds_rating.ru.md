@@ -42,5 +42,5 @@ lang: ru
 
 ## Вы можете
 
-* [Перейти к странице с ресурсами для школы](tds_resources.html)
-* [Перейти к программе школы](tds_curriculum.html)
+* [Перейти к странице с ресурсами для школы](tds_resources.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Перейти к программе школы](tds_curriculum.html)

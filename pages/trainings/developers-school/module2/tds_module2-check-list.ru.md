@@ -26,5 +26,5 @@ lang: ru
 
 ## Вы можете
 
-* [Перейти к следующему модулю](tds_module3-about.html)
-* [Перейти на страницу с заданиями по модулю](tds_module2-tasks.html)
+* [Перейти к следующему модулю](tds_module3-about.html) <i class="fa fa-arrow-down" aria-hidden="true"></i>
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Перейти на страницу с заданиями по модулю](tds_module2-tasks.html)

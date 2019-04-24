@@ -59,5 +59,5 @@ summary: Школа разработчиков на платформе Flexberry
 
 ## Вы можете
 
-* [Посмотреть программу школы](tds_curriculum.html)
-* [Перейти на страницу с описанием всех учебных курсов](/ru/)
+* [Посмотреть программу школы](tds_curriculum.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+* [Перейти на страницу с описанием всех учебных курсов](/ru/) <i class="fa fa-arrow-up" aria-hidden="true"></i>

@@ -113,5 +113,5 @@ lang: ru
 
 ## Вы можете
 
-* [Перейти к чек-листу проверки заданий](tds_module1-check-list.html)
-* [Перейти на страницу с дополнительными материалами модуля](tds_module1-appendix.html)
+* [Перейти к чек-листу проверки заданий](tds_module1-check-list.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Перейти на страницу с дополнительными материалами модуля](tds_module1-appendix.html)

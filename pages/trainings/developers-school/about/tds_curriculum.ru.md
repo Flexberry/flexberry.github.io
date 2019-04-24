@@ -22,5 +22,5 @@ lang: ru
 
 ## Вы можете
 
-* [Перейти к странице с описанием рейтинговой системы школы](tds_rating.html)
-* [Перейти на страницу знакомства со школой](tds_landing-page.html)
+* [Перейти к странице с описанием рейтинговой системы школы](tds_rating.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Перейти на страницу знакомства со школой](tds_landing-page.html)

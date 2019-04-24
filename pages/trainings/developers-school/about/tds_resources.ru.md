@@ -14,5 +14,5 @@ lang: ru
 
 ## Вы можете
 
-* [Перейти к первому учебному модулю](tds_module1-about.html)
-* [Перейти к странице с описанием рейтинговой системы школы](tds_rating.html)
+* [Перейти к первому учебному модулю](tds_module1-about.html) <i class="fa fa-arrow-down" aria-hidden="true"></i>
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Перейти к странице с описанием рейтинговой системы школы](tds_rating.html)
