@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_wolv-operations.html
 lang: en
 autotranslated: true
-hash: c48d852d8c5345bbfd875a364d37fdd8b17b69cc8002f60b4be93d441788afab
+hash: 7e264dc36a64f40d050c1ab6ece92addf405073f2d8c81765a8a2c239050dbea
 ---
 
 By using Operations, you can configure the behavior WebObjectListView.
@@ -59,6 +59,7 @@ Delete The "Delete" Button |
 | FixTableHeader | freeze table header. When you scroll the header will stay in place. |
 | FullViewSearch | Change from search to search all fields ([more](fa_wolv-search.html)). |
 | FullViewSearchSplitBySpace | When using the search all view properties to replace spaces with %. |
+| HierarchyDisableAutoSelectChildren | Disable automatic selection of child items when you click the parent in the presence of hierarchy in the list. |
 | HighlightObject | Backlight object pk which was specified in the URL ("PK" or WOLVSO) (default true). Highlighting is done by selecting the class for td |
 | LimitEdit | Advanced editor |
 | MultiSelect | Multiple selection |
