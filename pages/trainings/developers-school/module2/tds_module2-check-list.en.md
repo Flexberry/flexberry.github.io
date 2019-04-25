@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module2-check-list.html
 lang: en
 autotranslated: true
-hash: dc5090257b4d85d464ebebff794d11e7721bced07a1048aa30574ebaffe4cba3
+hash: 01aad765c869c43344faa085598f79a6712299c5c5de834344ca0ad47def6fc0
 ---
 
 ## Task 1. The use of a command-work of the GitHub platform
@@ -28,8 +28,8 @@ hash: dc5090257b4d85d464ebebff794d11e7721bced07a1048aa30574ebaffe4cba3
 
 ## You can
 
-* [Go to next module](tds_module3-about.html)
-* [Go to the page with the jobs plugin](tds_module2-tasks.html)
+* [Go to next module](tds_module3-about.html) <i class="fa fa-arrow-down" aria-hidden="true"></i>
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [go to the page with the jobs plugin](tds_module2-tasks.html)
 
 
 

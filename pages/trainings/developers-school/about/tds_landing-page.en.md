@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_landing-page.html
 lang: en
 autotranslated: true
-hash: a941fcba214b83af7d5572441700b661831b2f81a4b0742f3329c0ccd58bc778
+hash: 90dbb89e17febfcf9151bb04c19c7545ecc61d0d3e66e0261c4e88f805a6f3b3
 summary: School developers Flexberry.
 ---
 
@@ -61,8 +61,8 @@ However, periodically "kits to school" - when passing schools in this format, yo
 
 ## You can
 
-* [The program school](tds_curriculum.html)
-* [Go to the page with description of all courses](/EN/)
+* [The program school](tds_curriculum.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+* [Go to the page with description of all courses](/EN/) <i class="fa fa-arrow-up" aria-hidden="true"></i>
 
 
 

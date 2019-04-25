@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module2-about.html
 lang: en
 autotranslated: true
-hash: 6cd11d15f69617eb8bdf472ee68f2507b42d50eb9e86771bdb3cbf2b164c973e
+hash: 1d11fa0754a508bc84a20bcf316c6c53d75999a6943e041f9f7705c61ffe7f93
 ---
 
 ## The contents of the module
@@ -25,8 +25,8 @@ hash: 6cd11d15f69617eb8bdf472ee68f2507b42d50eb9e86771bdb3cbf2b164c973e
 * GitHub for planning and managing the development of
 * GitHub Pages
 * Tools for creating server builds and deployment of web applications
-2. Team work with Azure DevOps Server (Team Foundation Server)
-* Familiarity with ALM
+2. Team work with Azure DevOps (TFS/VSTS)
+* Familiarity with DevOps
 * Installation and configuration of software
 * Use Azure DevOps
 * Connect to server on Azure, DevOps
@@ -38,7 +38,7 @@ hash: 6cd11d15f69617eb8bdf472ee68f2507b42d50eb9e86771bdb3cbf2b164c973e
 * The adoption and roll back changes to TFVC
 * CodeReview
 * Set up the server builds and automatic deployment of web applications
-* Using Git in TFS
+* Using Git in Azure DevOps
 
 
 ## Acidaemia learning outcomes
@@ -55,8 +55,8 @@ The results of the study of module student must:
 
 ## You can
 
-* [To go to training module](tds_module2-learn.html)
-* [Go to checklist of verification tasks in the previous module](tds_module1-check-list.html)
+* [To go to training module](tds_module2-learn.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+* [Go to checklist of verification tasks in the previous module](tds_module1-check-list.html) <i class="fa fa-arrow-up" aria-hidden="true"></i>
 
 
 

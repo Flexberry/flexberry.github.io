@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module2-tasks.html
 lang: en
 autotranslated: true
-hash: c96061f2958e3581845718e3a8f3b30f408359acd45f36eb0a502b698b544dab
+hash: bc66e6ad12e5250b2ee547effbbf18963facc6d21728095e252f5ba0426608e5
 ---
 
 ## The expected results of tasks execution
@@ -52,8 +52,8 @@ According to the results of assignments the student must:
 
 ## You can
 
-* [Go to checklist of verification tasks](tds_module2-check-list.html)
-* [Go to the page with additional content module](tds_module2-appendix.html)
+* [Go to checklist of verification tasks](tds_module2-check-list.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [go to the page with additional content module](tds_module2-appendix.html)
 
 
 

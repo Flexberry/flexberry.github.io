@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_resources.html
 lang: en
 autotranslated: true
-hash: 47caa221dd4e11e729d9264dad215db8d6b59969d7fc6618bb8c2457faa56108
+hash: 41f1f5b3223f80c6345a97164d801667c1d055b1c359ad9845ac0be9435156e6
 ---
 
 ## Learning resources
@@ -16,8 +16,8 @@ hash: 47caa221dd4e11e729d9264dad215db8d6b59969d7fc6618bb8c2457faa56108
 
 ## You can
 
-* [Go to the first training module](tds_module1-about.html)
-* [Go to page with a description of the rating system of the school](tds_rating.html)
+* [Go to the first training module](tds_module1-about.html) <i class="fa fa-arrow-down" aria-hidden="true"></i>
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [go to the page describing the rating system of the school](tds_rating.html)
 
 
 

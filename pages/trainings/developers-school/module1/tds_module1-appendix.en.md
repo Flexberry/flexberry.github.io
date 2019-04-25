@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module1-appendix.html
 lang: en
 autotranslated: true
-hash: 8a61d549ffbea5314128a0c9731686f4cef3a0e4cec3d24e78661e4fa7c93948
+hash: 7eb250c9dd2ff9754d7799cfeca8e1bbbb3dd4d114c0c7148a1f6822a2486ca5
 ---
 
 ## Additional materials module
@@ -14,12 +14,13 @@ hash: 8a61d549ffbea5314128a0c9731686f4cef3a0e4cec3d24e78661e4fa7c93948
 <div class="panel-group">
 <div class="panel panel-default">
 <div class="panel-heading">
+<a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse1">&#9660;</a>
 <h4 class="panel-title">
-<a data-toggle="collapse" href="#collapse2">
+<a data-toggle="collapse" href="#collapse1">
 Introduction to web development</a>
 </h4>
 </div>
-<div id="collapse2" class="panel-collapse collapse in">
+<div id="collapse1" class="panel-collapse collapse in">
 <div class="panel-body">
 <div class="row items">
 <div class="col-sm-6 col-md-4 portfolio-item">
@@ -86,8 +87,8 @@ Introduction to web development</a>
 
 ## You can
 
-* [Go to jobs module](tds_module1-tasks.html)
-* [Go to the page with the training material module](tds_module1-learn.html)
+* [Go to jobs module](tds_module1-tasks.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [go to the page with the training material module](tds_module1-learn.html)
 
 
 

@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_rating.html
 lang: en
 autotranslated: true
-hash: fef316da3c477e384dc6d9f4240e0a6ae63f86b190cc576dead1e45ba68b0a14
+hash: eb0c243a1a7f237aa265ebf3627719c74e5cfb9e977118d8c96d788d196ef716
 ---
 
 ## About the rating system of the school
@@ -44,8 +44,8 @@ Thus, the student will get the maximum number of points for the job under the co
 
 ## You can
 
-* [Go to page with resources for schools](tds_resources.html)
-* [Go to school](tds_curriculum.html)
+* [Go to page with resources for schools](tds_resources.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [go to school](tds_curriculum.html)
 
 
 

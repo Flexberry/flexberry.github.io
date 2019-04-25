@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module1-check-list.html
 lang: en
 autotranslated: true
-hash: 4a60dcee6eac8b5a620849ebb9b82bf484984c45daa0aa5c73f8fc5af79c22ae
+hash: 0c1390a197f49ed88b28bb2342bcc8617fce9d0eca59c3f8976ccbdcee5503be
 ---
 
 ## Task 1. Creating a web application based on REST API
@@ -41,8 +41,8 @@ The application must be implemented in a REST-based API using a JSON Server. Fai
 
 ## You can
 
-* [Go to next module](tds_module2-about.html)
-* [Go to the page with the jobs plugin](tds_module1-tasks.html)
+* [Go to next module](tds_module2-about.html) <i class="fa fa-arrow-down" aria-hidden="true"></i>
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [go to the page with the jobs plugin](tds_module1-tasks.html)
 
 
 

@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module1-tasks.html
 lang: en
 autotranslated: true
-hash: 939e156951efcf43ef0ed766ba87013e40bc240f07a4ee95a13aeb8de5cf1b7f
+hash: a4d333569e7287a3a3dca1242a2e3fc65f8cdfd9915a056fc8251e03a8ea10a9
 ---
 
 ## The expected results of tasks execution
@@ -115,8 +115,8 @@ After you export your collections to start a prepared collection of tests on the
 
 ## You can
 
-* [Go to checklist of verification tasks](tds_module1-check-list.html)
-* [Go to the page with additional content module](tds_module1-appendix.html)
+* [Go to checklist of verification tasks](tds_module1-check-list.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [go to the page with additional content module](tds_module1-appendix.html)
 
 
 

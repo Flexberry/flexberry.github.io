@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module2-appendix.html
 lang: en
 autotranslated: true
-hash: 66efd153ef8053641a21624219e2fcfa725840a129c2e15547f57c6d6f662cbd
+hash: 07cfaa53531d8425da3abc61a72f16077671e37b925948a5bfe574db920ee8d4
 ---
 
 ## Additional materials module
@@ -14,12 +14,13 @@ hash: 66efd153ef8053641a21624219e2fcfa725840a129c2e15547f57c6d6f662cbd
 <div class="panel-group">
 <div class="panel panel-default">
 <div class="panel-heading">
+<a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse1">&#9660;</a>
 <h4 class="panel-title">
-<a data-toggle="collapse" href="#collapse2">
+<a data-toggle="collapse" href="#collapse1">
 The version control system Git and GitHub platform</a>
 </h4>
 </div>
-<div id="collapse2" class="panel-collapse collapse in">
+<div id="collapse1" class="panel-collapse collapse in">
 <div class="panel-body">
 <div class="row items">
 <div class="col-sm-6 col-md-4 portfolio-item">
@@ -57,8 +58,8 @@ The version control system Git and GitHub platform</a>
 
 ## You can
 
-* [Go to jobs module](tds_module2-tasks.html)
-* [Go to the page with the training material module](tds_module2-learn.html)
+* [Go to jobs module](tds_module2-tasks.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [go to the page with the training material module](tds_module2-learn.html)
 
 
 

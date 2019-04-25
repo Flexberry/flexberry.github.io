@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module1-about.html
 lang: en
 autotranslated: true
-hash: 6adb20be8d6121b7dd9fc7408020bb5b7aa1faccdc3e9919f7715340548c5cd0
+hash: 76e1cb3698ea133221782cfdcccb9e8d5e217d5827e8f3590b136e3422ab5c1e
 ---
 
 ## The contents of the module
@@ -33,8 +33,8 @@ The results of the study of module student must:
 
 ## You can
 
-* [To go to training module](tds_module1-learn.html)
-* [Go to the page with resources for schools](tds_resources.html)
+* [To go to training module](tds_module1-learn.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+* [Go to the page with resources for schools](tds_resources.html) <i class="fa fa-arrow-up" aria-hidden="true"></i>
 
 
 

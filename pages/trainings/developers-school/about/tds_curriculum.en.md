@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_curriculum.html
 lang: en
 autotranslated: true
-hash: 07273c20953d2fe71eae558ece44d0520849ac152fd1ce427a263487a8b69951
+hash: 150d9940df561ecf36a61dd1e002e61c669f900d44034d584f9b723fd3599c5e
 ---
 
 ## The training program
@@ -24,8 +24,8 @@ hash: 07273c20953d2fe71eae558ece44d0520849ac152fd1ce427a263487a8b69951
 
 ## You can
 
-* [Go to page with a description of the rating system of the school](tds_rating.html)
-* [Go to the page reviewing the school](tds_landing-page.html)
+* [Go to page with a description of the rating system of the school](tds_rating.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [go to the page reviewing the school](tds_landing-page.html)
 
 
 

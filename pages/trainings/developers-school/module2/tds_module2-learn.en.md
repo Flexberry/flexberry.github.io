@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module2-learn.html
 lang: en
 autotranslated: true
-hash: 12be8ea89fdd4ce735b12ace93235c715c1cc72627d135d733c4947c16ef0848
+hash: 592ac432f62f146d04d8457a37e3e76ecc969ea804c54f9e3db7129e953ebdb8
 ---
 
 ## The module
@@ -14,12 +14,13 @@ hash: 12be8ea89fdd4ce735b12ace93235c715c1cc72627d135d733c4947c16ef0848
 <div class="panel-group">
 <div class="panel panel-default">
 <div class="panel-heading">
+<a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse1">&#9660;</a>
 <h4 class="panel-title">
-<a data-toggle="collapse" href="#collapse2">
+<a data-toggle="collapse" href="#collapse1">
 The version control system Git and GitHub platform</a>
 </h4>
 </div>
-<div id="collapse2" class="panel-collapse collapse in">
+<div id="collapse1" class="panel-collapse collapse in">
 <div class="panel-body">
 <div class="row items">
 <div class="col-sm-6 col-md-4 portfolio-item">
@@ -142,10 +143,38 @@ The version control system Git and GitHub platform</a>
 </div>
 </div>
 
+<div class="panel-group">
+<div class="panel panel-default">
+<div class="panel-heading">
+<a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse2">&#9660;</a>
+<h4 class="panel-title">
+<a data-toggle="collapse" href="#collapse2">
+Team work with Azure DevOps</a>
+</h4>
+</div>
+<div id="collapse2" class="panel-collapse collapse in">
+<div class="panel-body">
+<div class="row items">
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=YxSYMRLmwDk' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module2/what-is-dev-ops.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">What is DevOps?</span></h4>
+<p>the Lesson is devoted to a review of practices and tools, DevOps (Anton Boyko, ITVDN).</p>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
 ## You can
 
-* [Go to optional training materials module](tds_module2-appendix.html)
-* [Go to the page with the description of the module](tds_module2-about.html)
+* [Go to optional training materials module](tds_module2-appendix.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [go to the page with the description of the module](tds_module2-about.html)
 
 
 
