@@ -54,6 +54,33 @@ lang: ru
     </div>
 </div>
 
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse2">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse2">
+                Командная работа с использованием Azure DevOps</a>
+            </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=FljfXrxgAmM' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module2/vs-2019-install.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">Установка Visual Studio 2019</span></h4>
+                            <p>Скринкаст, посвященный обзору возможностей и установке среды разработки Visual Studio 2019 Community на ОС Windows (Виталий Трунин, Info-Comp.ru).</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 ## Вы можете
 
 * [Перейти к заданиям по модулю](tds_module2-tasks.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
