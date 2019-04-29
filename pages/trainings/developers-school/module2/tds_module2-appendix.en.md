@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module2-appendix.html
 lang: en
 autotranslated: true
-hash: 07cfaa53531d8425da3abc61a72f16077671e37b925948a5bfe574db920ee8d4
+hash: 0f2d2e1544e4253b6594534b916815c921cecff5c374f3132543b1c356041151
 ---
 
 ## Additional materials module
@@ -48,6 +48,33 @@ The version control system Git and GitHub platform</a>
 </div>
 <h4><span class="item-head">Conventional Commits</span></h4>
 <p>a Report on best practices for the naming of commits and software tools to implement these practices (Eugene Haberi, Flexberry PLATFORM).</p>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="panel-group">
+<div class="panel panel-default">
+<div class="panel-heading">
+<a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse2">&#9660;</a>
+<h4 class="panel-title">
+<a data-toggle="collapse" href="#collapse2">
+Team work with Azure DevOps</a>
+</h4>
+</div>
+<div id="collapse2" class="panel-collapse collapse in">
+<div class="panel-body">
+<div class="row items">
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=FljfXrxgAmM' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module2/vs-2019-install.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">Installation of Visual Studio 2019</span></h4>
+<p>Screencast overview of the features and installation of the Visual Studio IDE 2019 Community on Windows (Vitaly Trunin, Info-Comp.ru).</p>
 </a>
 </div>
 </div>
