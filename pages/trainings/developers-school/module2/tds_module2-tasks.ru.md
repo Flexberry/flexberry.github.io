@@ -49,8 +49,8 @@ lang: ru
 4. [Официальные гайды GitHub](https://guides.github.com/)
 
 ### Задание 2. Использование Azure DevOps (TFS)
-1. Создать новую организацию в Azure DevOps Services
-2. В организации создать приватный проект. Для нового проекта:
+1. Создать новую организацию в [Azure DevOps Services](https://azure.microsoft.com/ru-ru/services/devops/).
+2. В организации Azure DevOps Services создать приватный проект. Для нового проекта:
     * В качестве системы управления версиями выбрать Git
     * В качестве процесса для рабочих элементов выбрать Agile
 3. В созданном проекте добавить TFVC-репозиторий в Azure Repos

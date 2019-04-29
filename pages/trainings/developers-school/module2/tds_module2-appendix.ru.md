@@ -75,6 +75,24 @@ lang: ru
                             <p>Скринкаст, посвященный обзору возможностей и установке среды разработки Visual Studio 2019 Community на ОС Windows (Виталий Трунин, Info-Comp.ru).</p>
                         </a>
                     </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=3p2XgNDrL6Y' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module2/tfs-builds-dot-net.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">Серверные билды TFS для .NET-проектов</span></h4>
+                            <p>Доклад, который раскрывает понятие, назначение серверных билдов, а также практические аспекты создания серверных билдов в TFS для .NET-проектов (Николай Смирнов, Flexberry PLATFORM).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=6Gpq3r9YZC8' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module2/tfs-builds-ember.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">Серверные билды TFS для Ember.js-приложений и документации</span></h4>
+                            <p>Доклад, посвященный практическим аспектам создания серверных билдов в TFS для Ember.js-приложений, документации по проекту, а также корпоративным особенностям при создании подобного рода билдов (Павел Радостев, Flexberry PLATFORM).</p>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
