@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module2-appendix.html
 lang: en
 autotranslated: true
-hash: 0f2d2e1544e4253b6594534b916815c921cecff5c374f3132543b1c356041151
+hash: e5ad3f43c150c67b4cd1c8701ed0f700c11a559c09c9a64ca714a3f33db49994
 ---
 
 ## Additional materials module
@@ -75,6 +75,24 @@ Team work with Azure DevOps</a>
 </div>
 <h4><span class="item-head">Installation of Visual Studio 2019</span></h4>
 <p>Screencast overview of the features and installation of the Visual Studio IDE 2019 Community on Windows (Vitaly Trunin, Info-Comp.ru).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=3p2XgNDrL6Y' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module2/tfs-builds-dot-net.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">Server for TFS builds .NET projects</span></h4>
+<p>the Report, which reveals the concept, the purpose of server builds, as well as practical aspects of creating server builds in TFS for .NET projects (Nikolay Smirnov, Flexberry PLATFORM).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=6Gpq3r9YZC8' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module2/tfs-builds-ember.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">TFS Server builds for Ember.js application and documentation</span></h4>
+<p>a Report on the practical aspects of creating server builds in TFS for Ember.js applications, documentation as well as corporate characteristics when you create this kind of builds (Paul Radostev, Flexberry PLATFORM).</p>
 </a>
 </div>
 </div>
