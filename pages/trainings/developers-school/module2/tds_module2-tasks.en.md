@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module2-tasks.html
 lang: en
 autotranslated: true
-hash: 2f66a24a556882eb5380e007b0f3dc9b4a25698da35e77ae9c90e9efdfdc682d
+hash: bfbceeff2169e0c31019a9f7087bae6834d6eae12e14d79d7db7899ef236c6cd
 ---
 
 ## The expected results of tasks execution
@@ -63,7 +63,7 @@ According to the results of assignments the student must:
 * The process for work items to choose Agile
 3. With the project created, add a TFVC repository to Azure Repos
 4. Create one additional account to Azure DevOps (for example, with temporary emails) - to work on behalf of another developer on Your problems. New user to add created organization with level `Basic`.
-5. The backlog project in Azure Boards to create the two requirements (User Story) with the following titles:
+5. The backlog project in Azure Boards to establish three requirements (User Story) with the following titles:
 * `Создание npm-package chance-js`
 * `Установка package chance-js in приложение`
 * `Настройка CI/CD for приложения`
@@ -76,39 +76,39 @@ According to the results of assignments the student must:
 * `Добавление build приложения`. For the tasks to add a description. Task assign to user "additional" account.
 * `Публикация app on GitHub Pages`. For the tasks to add a description. Task assign to user "main" (Your) account.
 9. To schedule the created tasks per iteration. Iteration should have two weeks from the date of commencement of this assignment. The name of the iteration can be arbitrary.
-10. In the TFVC repository of the project on Azure DevOps Services to add the files from the [GitHub repository of the library of Chance](https://github.com/chancejs/chancejs):
+10. In the TFVC repository project in Azure Repos to add files from the [GitHub repository of the library of Chance](https://github.com/chancejs/chancejs):
 * Clone the GitHub repository of the library `Сhance` on the local machine.
 * The file `package.json` to change the package name in `chance-js`
 * The file `gulpfile.js` using the library `gulp-uglify` replace [`gulp-butternut`](https://github.com/Zettersten/gulp-butternut) for problem `build`.
 * Check that the teams `gulp lint`, `gulp test` and `gulp build` run locally without errors.
 * To add files from a modified version of the library `Chance` from the local machine in the TFVC repository (using Visual Studio or through the web interface of Azure DevOps Services). Adding files to produce one or more check-ins. Every check must be associated with the task `Добавление source file репозиторий` requirements `Создание npm-package chance-js`. Comments to check-ins must have the following format: `<date>. <Task name>. <Review>.`
 * As you complete a task, its status should change on the Board. The check should be made by the user to whom task was assigned. Task after the work on it must be in the status `Resolved`.
-11. In the Git repository of the project on Azure DevOps Services to add the files from the GitHub repository [Issue Tracker Demo](https://github.com/ehaberev/issue-tracker-demo) (you can pre-clone the repository to your local machine).
-12. To create a "tape" Artifacts Azure project to the Azure DevOps Services:
+11. In the Git project repository in Azure Repos to add the files from the GitHub repository [Issue Tracker Demo](https://github.com/ehaberev/issue-tracker-demo) (you can pre-clone the repository to your local machine).
+12. To create a "ribbon" Azure Artifacts:
 * To work with the artifacts in the project Azure DevOps Services necessary for user "core" (Your) account in organization settings add the appropriate extension.
-* In the setting of "tape" must be set to the Upstream source to access npm packages repository https://registry.npmjs.org through this "tape" (in the app to be able to install not only the packages in the "ribbon", but also from the public repository npm packages).
-13. To create a build, which will publish npm package `chance-js` from TFVC repository of the project on Azure DevOps Services, "tape" Artifacts Azure project to the Azure DevOps Services:
+* In the setting of "tape" must be set to the Upstream source to access npm packages from the repository https://registry.npmjs.org through this "tape" (in the app to be able to install not only the packages in the "ribbon", but also from the public repository npm packages).
+13. To create a build, which will publish npm package `chance-js` from TFVC repository to Azure Repos, in "the tape" Azure Artifacts:
 * You can use any suitable pool of agents.
 * The build process of the application before you publish the npm package, you need to execute gulp tasks `lint`, `test` and `build`.
 * Continuous Integration for this build should not be included, that is, the build must be run manually.
 * As you create the build task status `Создание build to publish пакета` requirements `Создание npm-package chance-js` needs to change on the Board. Task after the work on it must be in the status `Resolved`.
-* Created by the build to publish the package `chance-js` in the "tape" Artifacts Azure project to the Azure DevOps Services.
-14. In the application from the Git repository of the project on Azure DevOps Services add a dependency on the npm package `chance-js` published in "tape" Artifacts Azure project to the Azure DevOps Services:
+* Created by the build to publish the package `chance-js` in a "band" Azure Artifacts of the project.
+14. In the application from the Git repository to Azure Repos add a dependency on the npm package `chance-js` published in "tape" Artifacts Azure project to the Azure DevOps Services:
 * Changes to make in a separate branch according to the git flow principles. Create Waki, all commits and pull request should be attached to the task `Добавление package depends on chance-js` requirements `Установка package chance-js in приложение`.
 * File `chance.js` folder `src` needs to be removed.
-* App must be installed `chance-js` of "tape" Artifacts Azure project to the Azure DevOps Services.
+* App must be installed `chance-js` from the "feeds" Azure Artifacts of the project.
 * When running locally the app Issues should not be created because the file `chance.js` will be missing (because we don't use "garbage" for the application file `chance.js` will be "placed" in running a server build).
 * As you complete a task, its status should change on the Board. Commits must be done by the user to whom task was assigned. Task after the work on it must be in the status `Resolved`.
 * Upon completion of the task should be created a pull request as "reviewer" this pull request should be assigned to the user "principal" (Your) account. This user must confirm task execution results execution "will codereview". After confirming the completion of a task "removeroom" pull request can be accepted.
-15. To create a build that will build the application from the Git repository of the project on Azure DevOps Services in the form suitable for publishing on GitHub Pages:
+15. To create a build that will build the application from the Git repository to Azure Repos in the form suitable for publishing on GitHub Pages:
 * You can use any suitable pool of agents.
 * In the process of implementation build the command should run `npm run lint` to run linting.
 * Build in "result" folder (drop folder) must be copied files `index.html` and `main.js` folder `src` and file `chance.min.js` folder `node_modules/chance-js/dist/`. The file `chance.min.js` needs to be renamed to `chance.js` in the copy process.
 * Continuous Integration for the build should be included.
 * As you create the build task status `Добавление build приложения` requirements `Настройка CI/CD for приложения` needs to change on the Board. Task after the work on it must be in the status `Resolved`.
-16. To create a release which will publish the artifacts ("results") build applications from the private Git repository at GitHub Pages:
-* To create an empty release in Piplines Azure project to the Azure DevOps Services.
-* As artifact to release to select build application from the Git repository of the project on Azure DevOps Services.
+16. To create a release to Azure Pipelines, which will publish the artifacts ("results") build applications from the private Git repository at GitHub Pages:
+* Create an empty Azure release in the Pipelines of the project.
+* As artifact to release to select build application from the Git repository of the project in the Azure Repos.
 * Create single step, which will be implemented by publication of artifacts ("results") build on GitHub Pages. Stage should start automatically. You must publish by using a bash-script, similar to that created by the execution of the Task 1 of this module. Publication should be carried out in any of Your personal repository on GitHub to a folder `azure` branches `gh-pages`.
 * As you create the release task status `Публикация app on GitHub Pages` requirements `Настройка CI/CD for приложения` needs to change on the Board. Task after the work on it must be in the status `Resolved`.
 * To check the efficiency of release, initiating execution of the build of the application.

@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module2-check-list.html
 lang: en
 autotranslated: true
-hash: 01aad765c869c43344faa085598f79a6712299c5c5de834344ca0ad47def6fc0
+hash: 552725373004b904a153f6a7f93b5f2f231222646e0d1824b7e74e2ca59d87e7
 ---
 
 ## Task 1. The use of a command-work of the GitHub platform
@@ -25,6 +25,23 @@ hash: 01aad765c869c43344faa085598f79a6712299c5c5de834344ca0ad47def6fc0
 12. The repository has a README file.md and CONTRIBUTING.md. In the README file.md there is a description of the client application, as well as links to the deployed version of the application from the master and develop branches on GitHub Pages. In the file CONTRIBUTING.md there is a description of how to add source code to the repository. The language of the content files can be both Russian and English: **2 points** (one point for presence of each file).
 
 **Total job**: 18 points.
+
+## Task 2. The use of Azure DevOps (TFS)
+1. Created new organization and project. In the project as a process for work items selected [Agile](https://docs.microsoft.com/ru-ru/azure/devops/boards/work-items/guidance/choose-process?view=azure-devops#main-distinctions-among-the-default-processes). Added private Git and TFVC repository to Azure Repos: **1 point**.
+2. The backlog Azure Boards established three requirements with names `Создание npm-package chance-js`, `Установка package chance-js in приложение` and `Настройка CI/CD for приложения`: **1 point**.
+3. For requirements `Создание npm-package chance-js` added tasks with the following titles: `Добавление source file репозиторий` and `Создание build to publish пакета`. Tasks added a description. Tasks assigned to the same user: **2 points** (one score per task).
+4. For requirements package `Установка chance-js in приложение` added challenge with the following title: `Добавление package depends on chance-js`. The task added a description. The task is assigned to a user other than the user to whom is assigned the task of requirements `Создание npm-package chance-js`: **1 point**.
+5. PstrfНастройка requirements for CI/CD for приложения` added tasks with the following titles: `Добавление build приложения` and `Публикация app on GitHub Pages`. Tasks added a description. Tasks assigned to different users: **2 points** (one score per task).
+6. All created tasks planned for the iteration. Iteration should have a two-week period. All the tasks at the time of delivery of the job must be able `Resolved` (provided that the job is done completely). If any part fails, the relevant tasks may have a status `New` or `Active`: **1 point**.
+7. In the TFVC repository project in Azure Repos added the files from the [GitHub repository of the library of Chance](https://github.com/chancejs/chancejs). Team `gulp lint`, `gulp test` and `gulp build` run without error on the local machine (if you perform the mapping in the repository to a local folder). Adding files produced one or more times. Each check is associated with a task `Добавление source file репозиторий` requirements `Создание npm-package chance-js`. Comments to check-ins have the following format: `<date>. <Task name>. <Review>.`. The ins made by the user to whom the task is assigned: **3 points**.
+8. In the Git project repository in Azure Repos added the files from the GitHub repository [Issue Tracker Demo](https://github.com/ehaberev/issue-tracker-demo): **1 point**.
+9. Created "ribbon" in Azure Artifacts. Team `npm install` installs in-app npm packages from the tape and from the public repository of npm packages (in the setting of "tape" is set to Upstream source to access npm packages from the repository https://registry.npmjs.org through this "tape"). In "tape" published by npm-package `chance-js`: **2 points**.
+10. Created by Bild, which is published npm package `chance-js` from TFVC repository to Azure Repos, in "the tape" Azure Artifacts. During execution of the build before you publish the npm package, run gulp tasks `lint`, `test` and `build`. Continuous Integration for the build off, that is, the build should not run every time without refreshing the repository. Bild is working - if you change the version of the npm package and run the build, the new version of npm package to be published in the "tape" Azure Artifacts: **3 points**.
+11. In the application from the Git repository to Azure Repos adds a dependency on the npm package `chance-js` published in "tape" Azure Artifacts of the project. All changes made in a separate branch and merged into the working branch using pull requests. Create Waki, all commits and pull request is tied to the task `Добавление package depends on chance-js` requirements `Установка package chance-js in приложение`. Pull request before making a confirmed reviewera, reviewera should be the user that is different from the performer of the task. File `chance.js` folder `src` removed. The app must be installed `chance-js` from the "feeds" Azure Artifacts of the project. When running locally the app Issues should not be created because the file `chance.js` will be missing (because we don't use "garbage" for the application): **3 points**.
+12. Created a build, which builds the application from the Git repository to Azure Repos. During execution of the build command is executed `npm run lint` to run linting. The build in "result" folder (drop folder), files are copied `index.html` and `main.js` folder `src` and file `chance.min.js` folder `node_modules/chance-js/dist/`. So the copied file `chance.min.js` in the process of the build renamed to `chance.js`. Continuous Integration for the build are included, i.e. build is triggered when any without refreshing in any branch of this repository: **3 points**.
+13. Created release Azure Pipelines, which publishes artifacts ("results") build applications from the private Git repository to Azure Repos on GitHub Pages. As the artifact to release the selected build of the application from the Git repository of the project in the Azure Repos. Created a stage where the publication artifacts ("results") build on GitHub Pages. The stage starts automatically. Publication is done using a bash-script, similar to that created by the execution of the Task 1 of this module. Publication takes place in any personal repository on GitHub to a folder `azure` branches `gh-pages`. A release is a release is started upon successful completion of the build of the application, and deploys the application with all the changes to GitHub Pages: **3 points**.
+
+**Total job**: 26 points.
 
 ## You can
 
