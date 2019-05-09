@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module2-check-list.html
 lang: en
 autotranslated: true
-hash: 552725373004b904a153f6a7f93b5f2f231222646e0d1824b7e74e2ca59d87e7
+hash: 90953cd2af3db0baf9f1c7168cd5f54403d70ae75a071c564725b52cdfa1026a
 ---
 
 ## Task 1. The use of a command-work of the GitHub platform
@@ -32,7 +32,7 @@ hash: 552725373004b904a153f6a7f93b5f2f231222646e0d1824b7e74e2ca59d87e7
 3. For requirements `Создание npm-package chance-js` added tasks with the following titles: `Добавление source file репозиторий` and `Создание build to publish пакета`. Tasks added a description. Tasks assigned to the same user: **2 points** (one score per task).
 4. For requirements package `Установка chance-js in приложение` added challenge with the following title: `Добавление package depends on chance-js`. The task added a description. The task is assigned to a user other than the user to whom is assigned the task of requirements `Создание npm-package chance-js`: **1 point**.
 5. PstrfНастройка requirements for CI/CD for приложения` added tasks with the following titles: `Добавление build приложения` and `Публикация app on GitHub Pages`. Tasks added a description. Tasks assigned to different users: **2 points** (one score per task).
-6. All created tasks planned for the iteration. Iteration should have a two-week period. All the tasks at the time of delivery of the job must be able `Resolved` (provided that the job is done completely). If any part fails, the relevant tasks may have a status `New` or `Active`: **1 point**.
+6. All created tasks planned for the iteration. Iteration should have a two-week period. All the tasks at the time of delivery of the job must be able `Resolved` (provided that the job is done completely). If some part of this task is not fulfilled, the respective tasks can have a status `New` or `Active`: **1 point**.
 7. In the TFVC repository project in Azure Repos added the files from the [GitHub repository of the library of Chance](https://github.com/chancejs/chancejs). Team `gulp lint`, `gulp test` and `gulp build` run without error on the local machine (if you perform the mapping in the repository to a local folder). Adding files produced one or more times. Each check is associated with a task `Добавление source file репозиторий` requirements `Создание npm-package chance-js`. Comments to check-ins have the following format: `<date>. <Task name>. <Review>.`. The ins made by the user to whom the task is assigned: **3 points**.
 8. In the Git project repository in Azure Repos added the files from the GitHub repository [Issue Tracker Demo](https://github.com/ehaberev/issue-tracker-demo): **1 point**.
 9. Created "ribbon" in Azure Artifacts. Team `npm install` installs in-app npm packages from the tape and from the public repository of npm packages (in the setting of "tape" is set to Upstream source to access npm packages from the repository https://registry.npmjs.org through this "tape"). In "tape" published by npm-package `chance-js`: **2 points**.
