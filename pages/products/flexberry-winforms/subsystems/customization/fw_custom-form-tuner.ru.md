@@ -5,7 +5,6 @@ keywords: Windows UI (формы)
 summary: Описана возможность реализации дополнительной логики на формах, например, обработки нажатия определенных клавиш, путём создания пользовательских FormTuner-ов  
 toc: true
 permalink: ru/fw_custom-form-tuner.html
-folder: products/flexberry-winforms/
 lang: ru
 ---
 

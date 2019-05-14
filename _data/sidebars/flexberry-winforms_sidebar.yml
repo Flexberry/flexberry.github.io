@@ -162,19 +162,29 @@ entries:
 
     folderitems:
 
-    - title: Editform
-      title_ru: Формы редактирования (классы со стереотипом editform)
-      url: /fw_editform.html
-      output: web
-
     - title: Features of forms in Windows applications
       title_ru: Особенности форм в Windows-приложениях
       url: /fw_form-features.html
       output: web
 
-    - title: Check form data during save
-      title_ru: Проверка данных на форме во время сохранения
-      url: /fw_check-form-field-during-save.html
+    - title: Form interaction
+      title_ru: Межформенное взаимодействие в Windows-приложениях
+      url: /fw_form-interaction.html
+      output: web
+
+    - title: Editform
+      title_ru: Формы редактирования (классы со стереотипом editform)
+      url: /fw_editform.html
+      output: web
+
+    - title: List form caption
+      title_ru: Установка заголовка списковой формы
+      url: /fw_list-form-caption.html
+      output: web
+
+    - title: Error box
+      title_ru: ErrorBox
+      url: /fw_error-box.html
       output: web
 
     - title: Custom form tuner
@@ -184,27 +194,12 @@ entries:
 
     - title: Customizing the user interface
       title_ru: Настройка пользовательского интерфейса
-      url: /fw_customizing-the-user-interface.html
-      output: web
-
-    - title: Error box
-      title_ru: ErrorBox
-      url: /fw_error-box.html
-      output: web
-
-    - title: Form interaction
-      title_ru: Межформенное взаимодействие в Windows-приложениях
-      url: /fw_form-interaction.html
+      url: /fw_customizing-user-interface.html
       output: web
 
     - title: Processing date in control provider
       title_ru: Обработка даты в ControlProvider
       url: /fw_processing-date-in-control-provider.html
-      output: web
-
-    - title: List form caption
-      title_ru: Установка заголовка списковой формы
-      url: /fw_list-form-caption.html
       output: web
 
   - title: Editform
@@ -253,11 +248,6 @@ entries:
     - title: Different applications and fields
       title_ru: Определение доступных для редактирования полей для одной формы, но разных приложений
       url: /fw_different-applications-and-fields.html
-      output: web
-
-    - title: Form tuner
-      title_ru: Настройка форм для приложения
-      url: /fw_form-tuner.html
       output: web
 
     - title: Objectlistview in desktop ctrl
