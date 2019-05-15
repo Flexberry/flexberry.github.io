@@ -2,7 +2,7 @@
 title: Провайдер контролов для Flexberry Winforms
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms, Controls, binders, ControlProvider
-summary: Понятие, виды, соответствие типа данных и контрола, создание провайдера контролов
+summary: Понятие, виды, соответствие типа данных и контрола, создание провайдера контролов, структура для обработки контролов различных типов данных
 toc: true
 permalink: ru/fw_control-provider-winforms.html
 lang: ru
@@ -34,6 +34,65 @@ lang: ru
 * Редактирование нестандартного типа стандартным контролом;
 * Редактирование нестандартного типа нестандартным контролом.
 
+## ControlForBindStruct
+
+`ICSSoft.STORMNET.Windows.Forms.Binders.ControlForBindStruct` - структура, определяющая контрол для редактирования некоторого свойства. Например, [Обработка даты в ControlProvider](fw_processing-date-in-control-provider.html)).
+
+Для данной структуры определены три конструктора:
+
+* `ControlForBindStruct(object control, string controlPropName)`  — экземпляр контрола, который будет редактировать значение;
+* `ControlForBindStruct(object control, string controlPropName, Type[] typeMapping)`  — имя значимого свойства контрола, т.е. то, в которое устанавливается и возвращается значение;
+* `ControlForBindStruct(object control, string controlPropName, Type[] typeMapping, IComponent[] additionalControls)`  — мапирование (цепочка явных, либо неявных преобразований) типов, используется в случае, когда значимое свойство не поддерживает напрямую нужный тип, но поддерживает другой, к которому нужный тип может преобразовываться. Если это мапирование указано, тогда при установке значения в свойство контрола преобразование происходит последовательно, по указанным типам, начиная с начала массива, а если обратно (при установке из свойства контрола в свойство объекта данных), то с конца массива.
+
+### Control
+
+`control` - экземпляр контрола, который будет редактировать значение.
+
+```csharp
+var txtbox = new System.Windows.Forms.TextBox();
+var dateTimePicker = new ICSSoft.STORMNET.Windows.Forms.DateTimePicker();
+```
+
+### ControlPropName
+
+`controlPropName` - имя значимого свойства контрола, т.е. то, в которое устанавливается и возвращается значение.
+
+_Например:_
+
+* для контрола типа `System.Windows.Forms.TextBox` : "Text".
+* для контрола типа `System.Windows.Forms.CheckBox` : "Checked".
+* для контрола типа `System.Windows.Forms.ComboBox` : "Text".
+* для контрола типа `ICSSoft.STORMNET.Windows.Forms.DateTimePicker` : "ObjectValue".
+* ...
+
+### TypeMapping
+
+`typeMapping` - это массив, используемый для маппирования типов значений, с которыми должен работать `control`.
+
+_Например:_
+
+1.Если значение типа `System.String` будет обрабатываться с помощью `System.Windows.Forms.TextBox`, то маппинг можно опустить:
+
+```csharp
+new ControlForBindStruct(new System.Windows.Forms.TextBox(), "Text")
+```
+
+2.Если значение типа `ICSSoft.STORMNET.UserDataTypes.NullableDateTime` будет обрабатываться с помощью `ICSSoft.STORMNET.Windows.Forms.DateTimePicker`, который работает с типом `System.DateTime`, то необходимо выполнить маппинг (полный пример  в статье [Обработка даты в ControlProvider](fw_processing-date-in-control-provider.html)):
+
+```csharp
+ControlForBindStruct(new ICSSoft.STORMNET.Windows.Forms.DateTimePicker(), "ObjectValue",
+                            new System.Type[] {typeof(ICSSoft.STORMNET.UserDataTypes.NullableDateTime),
+                                        typeof(System.DateTime)})
+```
+
+3.Если значение типа `ICSSoft.STORMNET.UserDataTypes.NullableDecimal` будет обрабатываться с помощью `System.Windows.Forms.TextBox`, который работает с типом `System.String`, то необходима цепочка маппинга, поскольку системе известно, как перевести `ICSSoft.STORMNET.UserDataTypes.NullableDecimal` в `System.Decimal`, а из `System.Decimal` уже в `System.String`.
+
+```csharp
+ControlForBindStruct(new System.Windows.Forms.TextBox(), "Text",
+                        new Type[] { typeof(ICSSoft.STORMNET.UserDataTypes.NullableDecimal),
+                                        typeof(Decimal), typeof(string) }
+```
+
 ## Описание собственного провайдера контролов
 
 На самом деле, во всех случаях, создание контрола происходит через стандартный провайдер контролов, однако предварительно стандартный провайдер проверяет ассоциированный с типом провайдер контрола. Стандартный провайдер возвращает предопределённые контролы только тогда, когда нет другого ассоциированного провайдера, или метод ассоциированного провайдера вернул `null` либо `ControlForBindStruct.Empty`.
@@ -51,9 +110,9 @@ lang: ru
 
 Метод возвращает структуру `ICSSoft.STORMNET.Windows.Forms.Binders.ControlForBindStruct` при конструировании которой указывают:
 
-* `System.Object control` — экземпляр контрола, который будет редактировать значение;
-* `System.String controlPropName` — имя значимого свойства контрола, т.е. то, в которое устанавливается и возвращается значение;
-* `System.Type[] typeMapping` — мапирование (цепочка явных, либо неявных преобразований) типов, используется в случае, когда значимое свойство не поддерживает напрямую нужный тип, но поддерживает другой, к которому нужный тип может преобразовываться. Если это мапирование указано, тогда при установке значения в свойство контрола преобразование происходит последовательно, по указанным типам, начиная с начала массива, а если обратно (при установке из свойства контрола в свойство объекта данных), то с конца массива.
+* `System.Object control`
+* `System.String controlPropName`
+* `System.Type[] typeMapping`
 
 __Примечание__: связывание контрола со значением происходит через стандартный `.Net`-биндинг. Т.е. связываемый контрол должен «понимать» тип значений.
 

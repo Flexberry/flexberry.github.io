@@ -463,12 +463,7 @@ entries:
       title_ru: EditManager
       url: /fw_editmanager.html
       output: web
-
-    - title: Control for bind struct
-      title_ru: ControlForBindStruct
-      url: /fw_control-for-bind-struct.html
-      output: web
-
+ 
   - title: Rights
     title_ru: Подсистема полномочий
     output: web, pdf
