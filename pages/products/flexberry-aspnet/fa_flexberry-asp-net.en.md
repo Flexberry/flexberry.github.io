@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_flexberry-asp-net.html
 lang: en
 autotranslated: true
-hash: 2b70e3832d2089944b23e45039d0021abb99c49dbfdd746021851ce06f74a27f
+hash: 9b200c18c95721f37c3a7745c18d73aa53359e58d8524e834de257af19ee9826
 ---
 
 Flexberry ASP.NET is [product platform Flexberry](fp_landing_page.html). The product website Flexberry ASP.NET: [flexberry.ru](http://flexberry.ru/Flexberry/ForDevelopers/FlexberryASPNet).
@@ -53,6 +53,17 @@ Flexberry ASP.NET consists of the following modules:
 ### Example of setting technological forms
 
 Examples of how technological forms presented in [article, Examples of how technological forms](fa_technological-forms-customization-example.html).
+
+## Refinement user interface
+
+The generated Web pages need improvement in the following points:
+
+* Page titles
+* Alignment of elements on the pages
+* The overall style, colors and fonts of page elements
+* Page zoom
+* Localization
+
 
 
 {% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

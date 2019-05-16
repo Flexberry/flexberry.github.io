@@ -1,13 +1,13 @@
 ---
-title: EditManager
+title: Manager edit
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms, Controls, binders, EditManager
-summary: Definition, methods, forms, examples
+summary: Definition, methods, ways of creating forms, examples
 toc: true
 permalink: en/fw_editmanager.html
 lang: en
 autotranslated: true
-hash: 4e38ea01894e5b41dba4669a50b793aa03856375a0922315feff9488a25bbca1
+hash: 878a7016d85581e76c55dd2e1ee6c4066eb1c87e08e0060b5471a4f8fa9b46df
 ---
 
 `EditManager` (`ICSSoft.STORMNET.Windows.Forms.Binders.EditManager`, Manager edit) — the special class for continuous binding controls to properties of the data object.
@@ -68,7 +68,9 @@ This method allows you to remove the controls added by the AddControlsToForcedRe
 public void RemoveControlsFromForcedReadOnlyList(List<Control> controlList, bool readOnlyFlag = false)
 ```
 
-## Create a form "manually"
+## Create edit form object
+
+There are several ways to "manually" create the edit form of the object with the ability to associate it with the properties of an existing data object.
 
 ### Linking via program code
 
@@ -78,15 +80,17 @@ public void RemoveControlsFromForcedReadOnlyList(List<Control> controlList, bool
 
 Designer required parameter is the data class that is configured in Manager edit.
 
-__Example:__
+Primer:_
 
 ```csharp
 em = new StormNetForms.Binders.EditManager(typeof(CDDD));
 ```
 
-3.To link controls to properties of the data object. It is necessary to cause `EditManager` method `AddControl`. The parameters passed to the structure `ICSSoft.STORMNET.Windows.Forms.Binders.ControlForBindStruct`.
+3.To link controls to properties of the data object.
 
-__Example:__
+It is necessary to cause [EditManager](fw_editmanager.html) method `AddControl`. The parameters are passed: the structure `ICSSoft.STORMNET.Windows.Forms.Binders.ControlForBindStruct`.
+
+Primary associate a control with a property of the data object:_
 
 ```csharp
 em.AddControl(new StormNetForms.Binders.ControlForBindStruct(txtName, "Text"), "Name");
@@ -99,18 +103,15 @@ After performing these steps, the controls will be connected to the properties o
 
 If the value of the data object is changed programmatically, to update values on the form need to perform `EditManager.Change`.
 
-`EditManager` has events that allow to determine the values of properties in the data object:
+`EditManager` has events that allow to determine the values of properties in the data object. This event `BeforeChangePropertyValue` triggered before setting the value and `AfterChangeProperty` triggered after setting the value.
 
-* `BeforeChangePropertyValue` triggered before setting the value,
-* `AfterChangeProperty` triggered after setting the value.
-
-You can also manually associate controls with other controls, providing your `EditManager`, such as `GroupEditBase`, then it is possible to provide the editing values of the data object in the list, via the external controls.
+Also, you can associate a manually smeared controls with other controls, providing your `EditManager`, such as `GroupEditBase`, then it is possible to provide the editing values of the data object in the list, via the external controls.
 
 ### Binding through the properties
 
-Instead of designing `EditManager` from the code, it is also possible to throw» «on the form as control and bind the controls with the properties using standard window editing properties in the Visual Studio environment.
+Instead of designing EditManager from the code, it is also possible to throw» «on the form as control and bind the controls with the properties using standard window editing properties in the Visual Studio environment.
 
-If the window edit properties `EditManager` in the field `Bindings.<select view>` for some reason you cannot select anything in your code dependent forms, you can correct the line:
+If the window edit properties of an EditManager field Bindings.<select view> for some reason, nothing to choose, then the code dependent forms, you can correct the line:
 
 ```csharp
 this.editManagerMain.Bindings = new ICSSoft.STORMNET.Windows.Forms.Design.Binds("", null, null);
@@ -122,9 +123,7 @@ in the following, where indicated, with what view works EditManager:
 this.editManagerMain.Bindings = new ICSSoft.STORMNET.Windows.Forms.Design.Binds("C__Client", typeof(IIS.TryFilter.Клиент), null);
 ```
 
-Further through the field `Bindings.<Add>` you need to add the necessary properties of the object, and then in which appears below lines to define their controls from the list.
-
-Through the field `Bindings.<Remove>` is possible to delete object properties of binding.
+Further through the field Bindings.<Add> you need to add the necessary properties of the object, and then in which appears below lines to define their controls from the list. Through the field `Bindings.<Remove>` is possible to delete object properties of binding.
 
 To associate input fields with object properties generated code similar to the following:
 
@@ -138,11 +137,11 @@ this.editManagerMain.Bindings = new Binds("C__Client", typeof(IIS.TryFilter.Кл
         });
 ```
 
-# Useful links
+## Useful links
 
-* [How to edit data objects on forms and to associate the input fields with object properties data using `EditManager`](fw_edit-objects-on-forms.html).
+* [How to edit data objects on forms and to associate the input fields with object properties data using EditManager](fw_edit-objects-on-forms.html).
 * [LookUp](fw_lookup.html).
-* Information about [`EditManager.ApplyDataFromControl`](fw_editform.html).
+* Information about [EditManager.ApplyDataFromControl](fw_editform.html).
 
 
 
