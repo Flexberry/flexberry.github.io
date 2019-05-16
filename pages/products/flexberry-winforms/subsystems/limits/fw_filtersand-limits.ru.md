@@ -21,12 +21,12 @@ __Фильтры__ - это инструмент наложения пользо
 Подробнее о редакторе можно посмотреть в [этой статье](fw_limit-editor-simple-view.html)
 
 ## Настройки фильтров (FilterSettings)
+
 Для задания [FilterSettings](fw_filter-settings.html) необходимо воспользоваться Flexberry Administrative Console (AdmConsole).
 
+Если используется генератор настроек фильтров, то необходимо обратить внимание на следующие моменты:
 
-Если используется генератор настроек фильтров, то необходимо обратить внимание на следующие моменты: 
-
-* Для работы его можно определить как [ярлык](fw_win-desktop-links.html) на [рабочий стол](fw_app-desktop.html):
+* Для работы его можно определить как [ярлык](ffw_desktop-operations.html) на [рабочий стол](fw_app-desktop.html):
 
 ```csharp
 arr.Add(new IIS.WinUI.Runners.EditFormRunner(typeof(IIS.Core.App_FilterSettingsGeneratorE), "Администрирование", "Генератор настроек фильтров", "", new IIS.Core.App_FilterSettingsGenerator(), typeof(IIS.Core.App_FilterSettingsGenerator), false));

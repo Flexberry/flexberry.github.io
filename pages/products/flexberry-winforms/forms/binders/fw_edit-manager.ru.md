@@ -28,7 +28,7 @@ void EditManager.SetReadonlyFlagProperties(bool readonlyflag, params string[] pr
 
 Параметр `readonlyflag` определяет значение, которое будет установлено свойству ReadOnly у контролов, редактирующих поля, указанные в `properties`.
 
-Пример использования данного метода представлен в статье [Определение доступных для редактирования полей для одной формы, но разных приложений](fw_different-applications-and-fields.html).
+Пример использования данного метода представлен в статье [Формы и классы на рабочем столе приложения](fw_readonly-win.html).
 
 ## Метод AddControlsToForcedReadOnlyList
 

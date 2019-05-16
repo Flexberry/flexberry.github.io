@@ -2,7 +2,7 @@
 title: Особенности форм в Windows-приложениях
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms, Формы
-summary: Единообразная обработка, контроль положения на экране, зависимые и независимые формы, запрет на закрытие формы
+summary: Единообразная обработка, контроль положения на экране, зависимые и независимые формы, запрет на закрытие формы, закрытие  всех форм
 toc: true
 permalink: ru/fw_form-features.html
 lang: ru
@@ -82,5 +82,24 @@ MessageBox.Show("Enter was pressed","Hello");
 public override bool Finalize()
 {
 return false;
+}
+```
+
+## Закрытие всех открытых форм
+
+Чтобы закрыть все открытые формы приложения, как происходит при закрытии главного окна приложения Flexberry, можно использовать следующий код.
+
+```csharp
+var coll = desktopCtrl2.PathRunners;
+
+foreach (ArrayList runList in coll.GetAllValues())
+{
+  foreach (Runner run in runList)
+  {
+    if (run.Alive)
+    {
+      run.Stop();
+    }
+  }
 }
 ```

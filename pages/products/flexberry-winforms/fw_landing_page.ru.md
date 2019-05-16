@@ -25,7 +25,6 @@ lang: ru
 
 * [Алиасы системных / пользовательских типов для параметров на форме ограничений](fw_aliases-system-and-user-types.html)
 * [Особенности форм в Windows-приложениях](fw_form-features.html)
-* [Закрытие всех открытых форм Flexberry](fw_close-all-opened-forms.html)
 * [Форма «Редактор ограничений» (WIN)](fw_winforms-limit-editor-form.html)
 * [Стандартный вид редактора ограничений. Описание формы](fw_description-form-limit-editor-in-standard-form.html)
 * [Расширенный вид редактора ограничений](fw_limit-editor-advanced-view.html)
@@ -41,7 +40,6 @@ lang: ru
 * [LookUp](fw_lookup.html)
 * [Настройка прав доступа на публикацию ограничений](fw_setting-permissions-for-publication-restrictions.html)
 * [Запуск кода в основном потоке приложения из другого потока](fw_ui-synchronization-context.html)
-* [Работа с меню в главной форме приложения](fw_work-with-menu-in-main-form-app.html)
-* [И опять работа с меню](fw_working-with-menu.html)
+* [Работа с меню в главной форме приложения](fw_working-with-menu.html)
 * [Отображение на интерфейсе формы мастеров и детейлов](fo_masters-details.html)
 * [Стандартный монитор задач WinformBusinessTaskMonitor](fo_business-task-monitor.html)

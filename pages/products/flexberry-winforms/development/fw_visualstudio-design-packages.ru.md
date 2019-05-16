@@ -1,7 +1,7 @@
 ---
 title: Настройка отладочных пакетов и выбор активного отладочного пакета
 sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (формы)
+keywords: Flexberry Winforms, исключения, Design-time
 summary: Задание отладочного пакета в режиме Design-time
 toc: true
 permalink: ru/fw_visualstudio-design-packages.html

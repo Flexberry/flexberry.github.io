@@ -1,7 +1,7 @@
 ---
 title: Обработка исключений в winforms-приложениях
 sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Winforms, формы, обработка ошибок
+keywords: Flexberry Winforms, обработка ошибок
 summary: Обработка исключений в приложении, способы сбра информации об исключениях, настройка провайдера для отчета об ошибках, обработка неотловленных исключений, настройка лога сообщений
 toc: true
 permalink: ru/fw_error-box.html

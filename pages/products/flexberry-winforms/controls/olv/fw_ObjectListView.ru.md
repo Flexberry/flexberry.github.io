@@ -91,11 +91,11 @@ __Для отображения на форме списка объектов__ 
 ## Полезные ссылки
 
 * Объекты в ObjectListView
-    * [Помещение списка объектов в ObjectListView](fw_put-list-objects.html)
-    * [События ОbjectListView](fw_olv-event.html)
+  * [Помещение списка объектов в ObjectListView](fw_put-list-objects.html)
+  * [События ОbjectListView](fw_olv-event.html)
 * Дизайн и функциональность
-    * [Задание отображения даты по умолчанию](fw_date-format.html)
+  * [Задание отображения даты по умолчанию](fw_date-format.html)
 * Разное
-    * [Присвоение LimitFunction для второго ObjectListView](fw_assigning-limit-function-second-objectlistview.html)
-    * [Доступность операций на ObjectListView в зависимости от прав пользователя](fw_objectlistview-rights.html)
-    * [Настройка и добавлении столбцов и записей в ObjectListView](fw_objectlistview-in-desktop-ctrl.html)
+  * [Присвоение LimitFunction для второго ObjectListView](fw_assigning-limit-function-second-objectlistview.html)
+  * [Доступность операций на ObjectListView в зависимости от прав пользователя](fw_objectlistview-rights.html)
+  * [Настройка и добавлении столбцов и записей в ObjectListView](fw_desktop-operations.html)

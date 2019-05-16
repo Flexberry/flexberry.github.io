@@ -27,6 +27,11 @@ entries:
       url: /fw_winforms-ui-faq.html
       output: web
 
+    - title: Ui synchronization context
+      title_ru: Запуск кода в основном потоке приложения из другого потока
+      url: /fw_ui-synchronization-context.html
+      output: web
+
   - title: Controls
     title_ru: Контролы
     output: web, pdf
@@ -225,64 +230,19 @@ entries:
       url: /fw_app-desktop.html
       output: web
 
-    - title: Add form to win desktop
-      title_ru: Добавить собственную форму на рабочий стол Windows-приложения
-      url: /fw_add-form-to-win-desktop.html
-      output: web
-
-    - title: Close all opened forms
-      title_ru: Закрытие всех открытых форм Flexberry
-      url: /fw_close-all-opened-forms.html
-      output: web
-
     - title: Desktop operations
-      title_ru: Кнопка «Свернуть/развернуть папки» на рабочем столе
+      title_ru: Операции рабочего стола
       url: /fw_desktop-operations.html
       output: web
 
-    - title: Different applications and fields
-      title_ru: Определение доступных для редактирования полей для одной формы, но разных приложений
-      url: /fw_different-applications-and-fields.html
-      output: web
-
-    - title: Objectlistview in desktop ctrl
-      title_ru: Контрол рабочего стола
-      url: /fw_objectlistview-in-desktop-ctrl.html
-      output: web
-
     - title: Readonly win
-      title_ru: Режим "Только чтение" в Windows-приложениях
+      title_ru: Блокировка изменений на формах
       url: /fw_readonly-win.html
       output: web
 
-    - title: Support schemes Windows XP
-      title_ru: Поддержка схем Windows XP
-      url: /fw_support-schemes-windows-x-p.html
-      output: web
-
-    - title: Ui synchronization context
-      title_ru: Запуск кода в основном потоке приложения из другого потока
-      url: /fw_ui-synchronization-context.html
-      output: web
-
-    - title: Win desktop links
-      title_ru: Ярлыки рабочего стола
-      url: /fw_win-desktop-links.html
-      output: web
-
-    - title: Work with menu in main form app
-      title_ru: Работа с меню в главной форме приложения
-      url: /fw_work-with-menu-in-main-form-app.html
-      output: web
-
     - title: Working with menu
-      title_ru: И опять работа с меню
+      title_ru: Организация меню winforms-приложений
       url: /fw_working-with-menu.html
-      output: web
-
-    - title: Several classes of applications in a single stage
-      title_ru: Несколько классов приложений в одной стадии
-      url: /fw_several-classes-single-stage.html
       output: web
 
   - title: Customization
