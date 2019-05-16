@@ -182,11 +182,6 @@ entries:
       url: /fw_list-form-caption.html
       output: web
 
-    - title: Error box
-      title_ru: ErrorBox
-      url: /fw_error-box.html
-      output: web
-
     - title: Custom form tuner
       title_ru: Переход по Enter на форме
       url: /fw_custom-form-tuner.html
@@ -283,6 +278,11 @@ entries:
     - title: Working with menu
       title_ru: И опять работа с меню
       url: /fw_working-with-menu.html
+      output: web
+
+    - title: Several classes of applications in a single stage
+      title_ru: Несколько классов приложений в одной стадии
+      url: /fw_several-classes-single-stage.html
       output: web
 
   - title: Customization
@@ -418,36 +418,16 @@ entries:
 
     folderitems:
 
-    - title: Design time errors
-      title_ru: Если что-либо «глючит» в Design-Time
-      url: /fw_design-time-errors.html
-      output: web
-
-    - title: Include error log
-      title_ru: Как включить лог ошибок
-      url: /fw_include-error-log.html
-      output: web
-
-    - title: Send to email bug report provider
-      title_ru: Отправка сообщения об ошибке по электронной почте
-      url: /fw_send-to-email-bug-report-provider.html
+    - title: Exception handling in winforms applications
+      title_ru: Обработка исключений в winforms-приложениях
+      url: /fw_error-box.html
       output: web
 
     - title: Visualstudio design packages
       title_ru: Настройка отладочных пакетов и выбор активного отладочного пакета
       url: /fw_visualstudio-design-packages.html
       output: web
-
-    - title: Winform business task monitor
-      title_ru: Стандартный монитор задач WinformBusinessTaskMonitor
-      url: /fw_winform-business-task-monitor.html
-      output: web
-
-    - title: Several classes of applications in a single stage
-      title_ru: Несколько классов приложений в одной стадии
-      url: /fw_several-classes-single-stage.html
-      output: web
-
+    
   - title: Bindings
     title_ru: Bindings
     output: web, pdf

@@ -1,7 +1,7 @@
 ---
 title: Провайдер контролов для Flexberry Winforms
 sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Winforms, Controls, binders, ControlProvider
+keywords: Flexberry Winforms, формы, контролы, биндинг, провайдер контролов
 summary: Понятие, виды, соответствие типа данных и контрола, создание провайдера контролов, структура для обработки контролов различных типов данных
 toc: true
 permalink: ru/fw_control-provider-winforms.html

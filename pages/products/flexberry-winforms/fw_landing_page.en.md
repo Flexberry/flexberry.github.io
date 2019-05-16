@@ -46,7 +46,7 @@ The product website `Flexberry Winforms`: [flexberry.ru](http://flexberry.ru/Fle
 * [Working with menus in the main form of the application](fw_work-with-menu-in-main-form-app.html)
 * [And again work with menu](fw_working-with-menu.html)
 * [Display on the interface shape and datalow](fo_masters-details.html)
-* [Standard monitor task WinformBusinessTaskMonitor](fw_winform-business-task-monitor.html)
+* [Standard monitor task WinformBusinessTaskMonitor](fo_business-task-monitor.html)
 
 
 

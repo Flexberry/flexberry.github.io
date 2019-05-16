@@ -1,7 +1,7 @@
 ---
 title: Формы редактирования (классы со стереотипом editform) 
 sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Designer, Flexberry Winforms
+keywords: Flexberry Winforms, формы, форма редактирования
 summary: Особенности генерации, свойства, атрибуты, методы, интерфейсы формы редактирования, универсальная форма редактирования, использование иерархического списка на форме редактирования, рекомендации
 toc: true
 permalink: ru/fw_editform.html

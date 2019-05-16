@@ -1,7 +1,7 @@
 ---
 title: Валидация данных
 sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Designer, Flexberry Winforms
+keywords: Flexberry Winforms, формы, валидация
 summary: Для windows-приложений перечислены уровни проверки данных (во время редактирования, при сохранении на форме, в бизнес-серверах), приведена их сравнительная характеристика
 toc: true
 permalink: ru/fw_edit-form-validation.html

@@ -1,8 +1,8 @@
 ---
 title: Менеджер редактирования
 sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Winforms, Controls, binders, EditManager
-summary: Определение, методы, способы создание форм, примеры
+keywords: Flexberry Winforms, формы, контролы, биндинг
+summary: Определение, методы, способы создание прикладных форм, примеры
 toc: true
 permalink: ru/fw_editmanager.html
 lang: ru

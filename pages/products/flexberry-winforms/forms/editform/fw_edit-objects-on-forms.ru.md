@@ -1,7 +1,7 @@
 ---
 title: Редактирование объектов данных на формах
 sidebar: flexberry-winforms_sidebar
-keywords: Контролы, Windows
+keywords: Flexberry Winforms, формы, контролы, объекты данных
 summary: Переключение редактируемых объектов, ручное создание формы редактирования, обновление и межформенное взаимодействие при редактировании объекта
 toc: true
 permalink: ru/fw_edit-objects-on-forms.html

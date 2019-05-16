@@ -47,3 +47,9 @@ lang: ru
 ## Создание собственного монитора задач
 
 Описано в статье [Создание и подключение пользовательского монитора задач](fo_creating-connection-bt-monitor.html)
+
+## Стандартный монитор задач WinformBusinessTaskMonitor
+
+Один из предоставляемых технологией Flexberry мониторов задач выглядит как окно `WinForms` со списком задач.
+
+Полное имя типа: `ICSSoft.STORMNET.BusinessTaskMonitor.WinformBusinessTaskMonitor`, находится в сборке `ICSSoft.STORMNET.BusinessTaskMonitor.dll`.

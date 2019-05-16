@@ -5,7 +5,6 @@ keywords: Windows UI (forms)
 summary: Discusses the ways of handling error situations in the application, shows you how to change the default behavior in the application code 
 toc: true 
 permalink: en/fw_error-box.html 
-folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
 hash: a6a50c9fc8c9860ddb647412758bcfd9cef5703c167132eafba751e3a15cb1e8 
