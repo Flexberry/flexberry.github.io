@@ -1,33 +1,32 @@
---- 
-title: Go to Enter on the form 
-sidebar: flexberry-winforms_sidebar 
-keywords: Windows UI (forms) 
-summary: Describes the possibility of implementing additional logic on forms, for example, the treatment of depression of certain keys by creating a custom FormTuner s 
-toc: true 
-permalink: en/fw_custom-form-tuner.html 
-folder: products/flexberry-winforms/ 
-lang: en 
-autotranslated: true 
-hash: 0285df7dd2d8b05ac746e5b8ed6b8c19222306d60c4f842011afb27d3120bb66 
---- 
+---
+title: Go to Enter on the form
+sidebar: flexberry-winforms_sidebar
+keywords: Windows UI (forms)
+summary: Describes the possibility of implementing additional logic on forms, for example, the treatment of depression of certain keys by creating a custom FormTuner s
+toc: true
+permalink: en/fw_custom-form-tuner.html
+lang: en
+autotranslated: true
+hash: a951efdc31e815adc201d74ec81b44f2c394899f0f0b90c8f699bf8b9be35558
+---
 
-<!-- This article is still being edited --> 
+<!-- This article is still being edited -->
 
-The transition on the Enter button, similar to the behavior of the Tab key, there are special controls. 
+The transition on the Enter button, similar to the behavior of the Tab key, there are special controls.
 
-## CustomFormTuner 
-`CustomFormTuner` is one of the responsible for the implementation of the transition button Enter. 
+## CustomFormTuner
+`CustomFormTuner` is one of the responsible for the implementation of the transition button Enter.
 
-{% include important.html content=" 
-`CustomFormTuner` not supplied as standard Flexberry." %} 
+{% include important.html content="
+`CustomFormTuner` not supplied as standard Flexberry." %}
 
 
-### Connection CustomFormTuner 
-To work `CustomFormTuner` need the following dll: 
-* IIS.AMS02.SpecificControls.dll 
-* ICSSoft.STORMNET.Windows.Forms.AdditionalControls.dll (supplied as standard Flexberry) 
+### Connection CustomFormTuner
+To work `CustomFormTuner` need the following dll:
+* IIS.AMS02.SpecificControls.dll
+* ICSSoft.STORMNET.Windows.Forms.AdditionalControls.dll (supplied as standard Flexberry)
 
-Later in the code the form designer, you must create and configure: 
+Later in the code the form designer, you must create and configure:
 
 ```csharp
 public class WinformC__СотрудникE : ICSSoft.STORMNET.UI.BaseWinEdit, IIS.TryDOEPOnEnter.DPDIC__СотрудникE
@@ -42,42 +41,42 @@ public class WinformC__СотрудникE : ICSSoft.STORMNET.UI.BaseWinEdit, II
 		//... 
 	}
 }
-``` 
+```
 
-## NextControlByEnterTuner 
-`NextControlByEnterTuner` - improved `CustomFormTuner`. 
+## NextControlByEnterTuner
+`NextControlByEnterTuner` - improved `CustomFormTuner`.
 
-### Connection NextControlByEnterTuner 
-To work `NextControlByEnterTuner` need the following dll: `ICSSoft.STORMNET.Windows.Forms.AdditionalControls.dll`. 
+### Connection NextControlByEnterTuner
+To work `NextControlByEnterTuner` need the following dll: `ICSSoft.STORMNET.Windows.Forms.AdditionalControls.dll`.
 
-To connect programmatically in the form constructor to perform the following steps: 
+To connect programmatically in the form constructor to perform the following steps:
 
-1) Create an object of the required type. 
+1) Create an object of the required type.
 
 ```csharp
 NextControlByEnterTuner Tuner = new NextControlByEnterTuner();
-``` 
+```
 
-2) Sign the appropriate form controls on the transition button Enter, this generates a list of signed controls, which can be obtained through the property `SubscribedOnEnterControls`. Currently, automatically subscribe the following types of controls (these controls should not be controls container): `System.Windows.Forms.TextBox` , `System.Windows.Forms.DateTimePicker` , `System.Windows.Forms.CheckBox` , `System.Windows.Forms.ComboBox` , `ICSSoft.STORMNET.Windows.Forms.DateTimePicker` , `ICSSoft.STORMNET.Windows.Forms.ExtendedComboBox` , `ICSSoft.STORMNET.Windows.Forms.ExtendedTextBox` , `ICSSoft.STORMNET.Windows.Forms.ExtTextControl`. 
+2) Sign the appropriate form controls on the transition button Enter, this generates a list of signed controls, which can be obtained through the property `SubscribedOnEnterControls`. Currently, automatically subscribe the following types of controls (these controls should not be controls container): `System.Windows.Forms.TextBox` , `System.Windows.Forms.DateTimePicker` , `System.Windows.Forms.CheckBox` , `System.Windows.Forms.ComboBox` , `ICSSoft.STORMNET.Windows.Forms.DateTimePicker` , `ICSSoft.STORMNET.Windows.Forms.ExtendedComboBox` , `ICSSoft.STORMNET.Windows.Forms.ExtendedTextBox` , `ICSSoft.STORMNET.Windows.Forms.ExtTextControl`.
 
 ```csharp
 Tuner.SubscribeDefaultSetOfControlsOnEnter(this);
-``` 
+```
 
-3) Also, if necessary, you can add controls that should be signed on the clicking the Enter button. 
+3) Also, if necessary, you can add controls that should be signed on the clicking the Enter button.
 
 ```csharp
 Tuner.AddToSubscribedOnEnterControls(new System.Windows.Forms.Control[] {lsvРезультат, btnНайти};
-``` 
+```
 
-{% include note.html content=" 
-Please note that when you add controls via the method AddToSubscribedOnEnterControls transmitted controls should not be a container for other controls. It is also worth noting that if passed the control, for example, class `System.Windows.Forms.Button`, then first execute the event, hung on click, after which it will be a transition on Enter (the transition is organized in the event `Control.KeyUp`)." %} 
+{% include note.html content="
+Please note that when you add controls via the method AddToSubscribedOnEnterControls transmitted controls should not be a container for other controls. It is also worth noting that if passed the control, for example, class `System.Windows.Forms.Button`, then first execute the event, hung on click, after which it will be a transition on Enter (the transition is organized in the event `Control.KeyUp`)." %}
 
 
-4) To achieve the desired result, you must also perform accurate configuration properties `TabIndex` and `TabStop` at the controls of the form. 
+4) To achieve the desired result, you must also perform accurate configuration properties `TabIndex` and `TabStop` at the controls of the form.
 
-## Interface ICanChangeByEnter 
-PstrfICanChangeByEnter` interface designed for interaction `NextControlByEnterTuner` with controls where pressing Enter hanged some logic. 
+## Interface ICanChangeByEnter
+PstrfICanChangeByEnter` interface designed for interaction `NextControlByEnterTuner` with controls where pressing Enter hanged some logic.
 
 ```csharp
 public interface ICanChangeByEnter
@@ -98,7 +97,7 @@ public interface ICanChangeByEnter
 	/// </summary> 
 	bool LetReleaseEnterNow { get; }
 }
-``` 
+```
 
 If `LetReleaseEnterNow == true`, the transition will Enter выполнен; otherwise not.
 
