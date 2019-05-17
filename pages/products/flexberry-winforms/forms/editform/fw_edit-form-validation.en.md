@@ -1,13 +1,13 @@
 ---
 title: data Validation
 sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Designer, Flexberry Winforms
+keywords: Flexberry Winforms, forms, validation
 summary: For windows-applications lists the level of data validation (while editing, when you save the form, the business servers), given their comparative characteristics
 toc: true
 permalink: en/fw_edit-form-validation.html
 lang: en
 autotranslated: true
-hash: a1217ec11bacde6bd800b9f3d693e82da5b9b86b314313909a3c8dc3af14ad05
+hash: a0ac2f5b47441f43880ec45fb1020dfc2b40df80ecd08b731ac2f4f624a11c27
 ---
 
 Data validation occurs in several stages.

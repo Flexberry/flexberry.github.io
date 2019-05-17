@@ -1,13 +1,13 @@
 ---
 title: Provider of controls for Winforms Flexberry
 sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Winforms, Controls, binders, ControlProvider
+keywords: Flexberry Winforms, forms, controls, binding, provider controls
 summary: Concept, types, according the type of data and control, creation of provider controls, the structure of the processing controls a variety of data types
 toc: true
 permalink: en/fw_control-provider-winforms.html
 lang: en
 autotranslated: true
-hash: f91881af180678aa6d8c0a8d0d4e9304a676ef7fab25cede6a67e895d503456e
+hash: b08273602796ae50ae34b8577d52f5d1d0165ea13f3035067b30073e87d4b8da
 ---
 
 Providers of the controls classes that are inherited from the abstract `ICSSoft.STORMNET.Windows.Forms.Binders.ControlProvider` designed to prevalene in compliance with the type of control and the type of the data object. For example, universal [edit](fw_editform.html).

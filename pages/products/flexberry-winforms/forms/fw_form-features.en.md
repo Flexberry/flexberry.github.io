@@ -2,12 +2,12 @@
 title: Characteristics of forms in Windows applications
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms, Forms
-summary: uniform treatment, control of the screen position dependent and independent forms, the ban on closing the form
+summary: uniform treatment, control of the screen position dependent and independent forms, the ban on closing the form, closing all forms
 toc: true
 permalink: en/fw_form-features.html
 lang: en
 autotranslated: true
-hash: 4046ab088c42297edf1a41561fabcbb5aca0e6de96ed186bc179fe14609678be
+hash: b855e56e97ec91c5e0a9b1e913f81cc30b6c59e0c1b1d1c030453e7c31702868
 ---
 
 There are a number of features that are characteristic for the edit forms and list forms Windows-based applications.
@@ -84,6 +84,25 @@ Example:
 public override bool Finalize()
 {
 return false;
+}
+```
+
+## Closing all open forms
+
+To close all open forms application, as happens when closing the main application window Flexberry, you can use the following code.
+
+```csharp
+var coll = desktopCtrl2.PathRunners;
+
+foreach (ArrayList runList in coll.GetAllValues())
+{
+  foreach (Runner run in runList)
+  {
+    if (run.Alive)
+    {
+      run.Stop();
+    }
+  }
 }
 ```
 

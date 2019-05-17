@@ -1,13 +1,13 @@
 ---
 title: Editing data objects on forms
 sidebar: flexberry-winforms_sidebar
-keywords: Controls, Windows
+keywords: Flexberry Winforms, forms, controls, data objects
 summary: Toggle editable objects, manually creating forms, editing, updating, and performance interaction while editing a feature
 toc: true
 permalink: en/fw_edit-objects-on-forms.html
 lang: en
 autotranslated: true
-hash: a2b00a838b57849826a3661f4dafb5e6e37192dfada633ddea7bffee8afbde5a
+hash: 8f2b02ef2b2741de9a94a1703f5d66e46309d8f648d2cc3d20467c62bffc4233
 ---
 
 Edit the data objects on the forms has a lot of nuances and possibilities. The most common outlined in this article.

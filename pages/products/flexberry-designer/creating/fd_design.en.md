@@ -1,125 +1,125 @@
---- 
-title: Design of information systems 
-sidebar: flexberry-designer_sidebar 
-keywords: Flexberry Designer, design, design tools, plug-ins, modeling, designing, generation, prototype applications, settings, scripts, modifications, UML, stages of application creation 
-summary: Description of information system design, algorithm prototyping, the generation of the prototype, application configuration, prototype machining is required 
-toc: true 
-permalink: en/fd_design.html 
-lang: en 
-autotranslated: true 
-hash: 5b30b6f27a320899f97f3f8d92eb4bd27c61d640d0bc0a99f49d2e36639021d6 
---- 
+---
+title: Design of information systems
+sidebar: flexberry-designer_sidebar
+keywords: Flexberry Designer, design, design tools, plug-ins, modeling, designing, generation, prototype applications, settings, scripts, modifications, UML, stages of application creation
+summary: Description of information system design, algorithm prototyping, the generation of the prototype, application configuration, prototype machining is required
+toc: true
+permalink: en/fd_design.html
+lang: en
+autotranslated: true
+hash: 6555007396c312b4fce7d07fb14b71c2e55a40ac26fec81ed1f3f027d2a84849
+---
 
-[`Проектирование`](fd_definition-design.html) (from the Latin `projectus`, which means "thrown forward") is the process of writing needed to create the prescribed conditions even `не существующего` object based on the primary description of this object by its detail, the additions, calculations and optimization. 
+[`Проектирование`](fd_definition-design.html) (from the Latin `projectus`, which means "thrown forward") is the process of writing needed to create the prescribed conditions even `не существующего` object based on the primary description of this object by its detail, the additions, calculations and optimization.
 
-Technology Flexberry Desinger is used to develop application driven modelling (eng. model-driven development). This means that the development and refinement of the application is to develop and Refine `модели приложения`. In our case, as the model application are [UML class diagram](fd_class-diagram.html) created using Flexberry Designer. 
+Technology Flexberry Desinger is used to develop application driven modelling (eng. model-driven development). This means that the development and refinement of the application is to develop and Refine `модели приложения`. In our case, as the model application are [UML class diagram](fd_class-diagram.html) created using Flexberry Designer.
 
-With Flexberry Desinger you can create working applications with design and `без` programming. You can create Windows application and Web application. 
+With Flexberry Desinger you can create working applications with design and `без` programming. You can create Windows application and Web application.
 
-## the minimum Necessary tools 
+## The minimum necessary tools
 
-For the design of the application using Flexberry Desinger should: 
+For the design of the application using Flexberry Desinger should:
 
-* Presence at the workplace is installed and licenzirovanie product [`Flexberry Designer`](http://flexberry.ru) 
-* `AspNetPlugin` - PlugIn for generating Web applications ([installation ASP.NET Generator](fa_asp-net-generator.html)). 
-* `MS Server` SQL - the database management system, which will store the data of the designed application. DBMS must be deployed in the workplace. 
+* Presence at the workplace is installed and licenzirovanie product [`Flexberry Designer`](http://flexberry.ru)
+* `AspNetPlugin` - PlugIn for generating Web applications ([installation ASP.NET Generator](fa_asp-net-generator.html)).
+* `MS Server` SQL - the database management system, which will store the data of the designed application. DBMS must be deployed in the workplace.
 
-{% include note.html content="In order to avoid many mistakes associated with access rights to the database, you should ensure that is available the ability to create and modify databases." %} 
+{% include note.html content="In order to avoid many mistakes associated with access rights to the database, you should ensure that is available the ability to create and modify databases." %}
 
-* [Deployment](gbt_deployment.html) Web-sites (if you are designing a Web application). 
+* [Deployment](gbt_deployment.html) Web-sites (if you are designing a Web application).
 
-## stages of the design using Designer Flexberry 
+## The stages of design using Flexberry Designer
 
-Application design can be divided into 4 blocks: 
-* `Моделирование приложения` - create [class diagram](fd_class-diagram.html) in UML notation using Flexberry Desinger, configuration a [view](fd_view-definition.html) objects, setting up application forms 
+Application design can be divided into 4 blocks:
+* `Моделирование приложения` - create [class diagram](fd_class-diagram.html) in UML notation using Flexberry Desinger, configuration a [view](fd_view-definition.html) objects, setting up application forms
 * `Настройка generation приложения` - linking the application with the database on which it will operate, and customize the code generation process.
-* `Генерация and deployment приложения` database creation and bringing it to the application model and generating the application. 
-* `Настройка of the prototype приложения` - configure custom restrictions 
+* `Генерация and deployment приложения` database creation and bringing it to the application model and generating the application.
+* `Настройка of the prototype приложения` - configure custom restrictions
 
-**The result** is the prototype of the application. 
+**The result** is the prototype of the application.
 
-### Modeling application 
+### Modeling the application
 
-The creation of a model application with Flexberry Desinger by describing [the class diagram](fd_class-diagram.html) in UML notation. On the basis of the [class diagram](fd_class-diagram.html) are subsequently generated by the application classes. Creating and customizing a [view](fd_view-definition.html). Configure application forms. 
+The creation of a model application with Flexberry Desinger by describing [the class diagram](fd_class-diagram.html) in UML notation. On the basis of the [class diagram](fd_class-diagram.html) are subsequently generated by the application classes. Creating and customizing a [view](fd_view-definition.html). Configure application forms.
 
-1.Check class diagrams. 
-* Check class relationships [guidelines for drawing class diagram](fo_masters-details.html) 
-* There must be relations of the type `Агрегация` (can only be `Ассоциация` and `Композиция`) 
-* Should not be relations with a multiplicity of "1 to 1" 
-* There must be links with the plurality "* to *" 
-* Check class names - class names `не должны` contain spaces 
-* Signing of relationships between classes 
-* All communications must be signed by the "1" 
-* Signatures should not contain spaces 
-* Checking the types of the class attributes (more about [map types](fd_types-map.html) and [class attributes](fo_attributes-class-data.html) 
-* Ensure that you use [Nullable counterparts](fd_nullable-types.html) of the appropriate type (DateTime, int, bool, decimal...) 
-* Filling in default values (for details about [default values](fo_features-dafault-value.html). 
+1.Check class diagrams.
+* Check class relationships [guidelines for drawing class diagram](fo_masters-details.html)
+* There must be relations of the type `Агрегация` (can only be `Ассоциация` and `Композиция`)
+* Should not be relations with a multiplicity of "1 to 1"
+* There must be links with the plurality "* to *"
+* Check class names - class names `не должны` contain spaces
+* Signing of relationships between classes
+* All communications must be signed by the "1"
+* Signatures should not contain spaces
+* Checking the types of the class attributes (more about [map types](fd_types-map.html) and [class attributes](fo_attributes-class-data.html)
+* Ensure that you use [Nullable counterparts](fd_nullable-types.html) of the appropriate type (DateTime, int, bool, decimal...)
+* Filling in default values (for details about [default values](fo_features-dafault-value.html).
 
-**Note**: failure to comply With the aforesaid requirements, the possible errors in the generation of a prototype. Before continuing, ensure that the requirements are met. 
+**Note**: failure to comply With the aforesaid requirements, the possible errors in the generation of a prototype. Before continuing, ensure that the requirements are met.
 
-2.Create a chart with shapes and using [quick prototypization](fd_using-quick-prototyping.html) 
-3.[Setup audit](fo_audit-setup.html) 
-* Enable or disable auditing 
-* Configuration data storage audit 
-* Configuring auditing for a class, his own fields, and datalow 
-4.Customizing views 
-* Create all types of views (read more about the [type of submission](fd_view-types.html)) 
-* Customization of the names of the fields 
-* Customize visible fields, hidden fields ([more](fd_hidden-properties-view.html)) 
-5.Customize application 
-* Class setup «[Application](fd_application.html)» 
-* Setting [forms list](fd_listform.html) 
-* Configure [edit forms](fd_editform.html) 
+2.Create a chart with shapes and using [quick prototypization](fd_using-quick-prototyping.html)
+3.[Setup audit](fo_audit-setup.html)
+* Enable or disable auditing
+* Configuration data storage audit
+* Configuring auditing for a class, his own fields, and datalow
+4.Customizing views
+* Create all types of views (read more about the [type of submission](fd_view-types.html))
+* Customization of the names of the fields
+* Customize visible fields, hidden fields ([more](fd_hidden-properties-view.html))
+5.Customize application
+* Class setup «[Application](fd_application.html)»
+* Setting [forms list](fd_listform.html)
+* Configure [edit forms](fd_editform.html)
 
-### configuring generating applications 
+### Configuring generating applications
 
-Linking applications with the database MS SQL Server and also configure the names of the created prototype and the path to the directory in which the generated application. After finishing the settings you can go directly to generating the application. 
+Linking applications with the database MS SQL Server and also configure the names of the created prototype and the path to the directory in which the generated application. After finishing the settings you can go directly to generating the application.
 
-* The path to the database ([configure MS SQL Direct Generator](fd_configure-ms-sql-generator.html)) 
-* The product name and directory path of the generation project ([settings code generator](fd_project-customization.html)) 
+* The path to the database ([configure MS SQL Direct Generator](fd_configure-ms-sql-generator.html))
+* The product name and directory path of the generation project ([settings code generator](fd_project-customization.html))
 
-### Generation and application deployment 
+### Generation and application deployment
 
-Create a database of, reference to which was made in the previous step, and bringing it into line with the model of the designed application. Build the application and create a Visual Studio project. Deployment of the application. 
+Create a database of, reference to which was made in the previous step, and bringing it into line with the model of the designed application. Build the application and create a Visual Studio project. Deployment of the application.
 
-* Creating a database (read more about create a database](fd_matching-db.html) and for [Web](fa_asp-net-generator.html)) 
-* Build the application ([Win](fw_flexberry-winforms-case-plugin.html), [Web](fa_asp-net-generator.html)). 
-* Deploying the application 
+* Creating a database (read more about create a database](fd_matching-db.html) and for [Web](fa_asp-net-generator.html))
+* Build the application ([Win](fw_flexberry-winforms-case-plugin.html), [Web](fa_asp-net-generator.html)).
+* Deploying the application
 
-### setup of the prototype application 
+### Setup of the prototype application
 
-After you create the application you need to configure it. The first step in customizing the Windows created prototype is to configure filters (read more about the [filters](fw_filtersand-limits.html) and [configuration](fw_filter-example.html)). 
+After you create the application you need to configure it. The first step in customizing the Windows created prototype is to configure filters (read more about the [filters](fw_filtersand-limits.html) and [configuration](fw_filter-example.html)).
 
-To further customize the application by completion of the project in Visual Studio, ie, with the use of programming. This will be discussed in another article. 
+To further customize the application by completion of the project in Visual Studio, ie, with the use of programming. This will be discussed in another article.
 
-## a Typical scenario, refinement of the application model 
+## A typical scenario refinement application model
 
-After the prototype application was created from scratch, it begins the main work by bringing it to the desired state. In the process of revision it is often necessary to Refine the model (for example, to add a new entity to store any additional data). Technology Flexberry allows to Refine the model of the prototype without losing already made to it at the stage of programming changes. 
+After the prototype application was created from scratch, it begins the main work by bringing it to the desired state. In the process of revision it is often necessary to Refine the model (for example, to add a new entity to store any additional data). Technology Flexberry allows to Refine the model of the prototype without losing already made to it at the stage of programming changes.
 
-1. [Desktop customization](fw_app-desktop.html) 
-2. [Add new classes to the model](fd_change-model.html) 
-* Add new classes to the diagram 
-* Re-generate the objects 
-* Re-generate forms 
-3. [Changes to existing classes](fd_change-model.html): add fields to existing classes, renaming classes, adding new relationships 
-* To make changes to the class diagram ([features of the editor class diagram](fd_class-diagram-editor-features-work.html)) 
-* Re-generate the objects 
-* Re-generate forms 
-4. Change the view of list form 
-* To make changes to the [L-view](fd_l-view.html) 
-* Re-generate the objects 
-* Re-generate forms 
-5. Change the view edit form 
-* To make changes to [E-view](fd_e-view.html) 
-* Re-generate the objects 
-* Re-generate forms 
-6. Changes in the powers of ([read more about engine powers](efs_right-manager-module.html)), 
-7. Changes to filters 
-* To make changes to [T view](fd_t-view.html) 
-* Re-generate the objects 
-8. To add a new application 
-* To add new classes of» «Application ([more](fw_several-classes-single-stage.html)) 
-* Customize your desktop 
+1. [Desktop customization](fw_app-desktop.html)
+2. [Add new classes to the model](fd_change-model.html)
+* Add new classes to the diagram
+* Re-generate the objects
+* Re-generate forms
+3. [Changes to existing classes](fd_change-model.html): add fields to existing classes, renaming classes, adding new relationships
+* To make changes to the class diagram ([features of the editor class diagram](fd_class-diagram-editor-features-work.html))
+* Re-generate the objects
+* Re-generate forms
+4. Change the view of list form
+* To make changes to the [L-view](fd_l-view.html)
+* Re-generate the objects
+* Re-generate forms
+5. Change the view edit form
+* To make changes to [E-view](fd_e-view.html)
+* Re-generate the objects
+* Re-generate forms
+6. Changes in the powers of ([read more about engine powers](efs_right-manager-module.html)),
+7. Changes to filters
+* To make changes to [T view](fd_t-view.html)
+* Re-generate the objects
+8. To add a new application
+* To add new classes of» «Application ([more](fw_desktop-operations.html))
+* Customize your desktop
 
 
 

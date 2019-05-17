@@ -1,13 +1,13 @@
 ---
 title: the edit Form (classes with the stereotype editform)
 sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Designer, Flexberry Winforms
+keywords: Flexberry Winforms, forms, form editing
 summary: peculiarities of generation, properties, attributes, methods, interfaces, forms, edit, uniform edit, the use of the hierarchical list on the edit form, recommendations
 toc: true
 permalink: en/fw_editform.html
 lang: en
 autotranslated: true
-hash: 30c0016609c10ae661ef1818286a54a2511c0087173616b1c97a024bf286def9
+hash: a4572b612457a6363bfb8a46e1ee75a19f80e4013c2022204094e16c7ff67254
 ---
 
 Description of the environment `Flexberry` regarding the user interface described in [Tutorial programmer Flexberry Platform](gbt_flexberry-platform-guide.html) the "User interface "(paragraph 45-65).

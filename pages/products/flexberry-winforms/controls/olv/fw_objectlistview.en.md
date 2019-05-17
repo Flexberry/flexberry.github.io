@@ -1,106 +1,106 @@
---- 
-title: ObjectListView 
-sidebar: flexberry-winforms_sidebar 
-keywords: Flexberry Winforms, controls, list 
-summary: the Description, the main functionality, updating lists, processing and load optimization list 
-toc: true 
-permalink: en/fw_objectlistview.html 
-lang: en 
-autotranslated: true 
-hash: 2ae9bd553034d120f106c7acaca542f52827a29ec8ab353654cb31e9582a44de 
---- 
+---
+title: ObjectListView
+sidebar: flexberry-winforms_sidebar
+keywords: Flexberry Winforms, controls, list
+summary: the Description, the main functionality, updating lists, processing and load optimization list
+toc: true
+permalink: en/fw_objectlistview.html
+lang: en
+autotranslated: true
+hash: a14f23e9cd2324b8da737aeb191cffdff1da6d07c05af7ae071c411febc9a93f
+---
 
-__To display in the form of a list of objects__ there is a specialized control that `ObjectListView`. 
+__To display in the form of a list of objects__ there is a specialized control that `ObjectListView`.
 
-The object list can be generated based on the model [Flexberry Desinger](fd_landing_page.html) or created manually. 
+The object list can be generated based on the model [Flexberry Desinger](fd_landing_page.html) or created manually.
 
-To display a list of objects without generating you must: 
+To display a list of objects without generating you must:
 
-* Place `ObjectListView` on the form. 
-* Join `ObjectListView` [service data](fo_data-service.html). For this you have to initialize `ObjectListView` property `DataService`. If the form has already implemented the data services, then you can specify in the editing window properties, where there is this drop-down list. 
-* Set up the debug package (if necessary). 
-* Choose one or several classes to display. For this you have to initialize `ObjectListView` property `DataObjectTypes`. This can also be done with a special designer, accessible from the edit window properties. 
-* Choose compatible with all classes of performance. It is necessary to initialize at `ObjectListView` property `ViewName`. This can also be done from the edit window properties. Attention! In the drop-down list are only compatible with all the types listed in `DataObjectTypes`, views. 
-* Install, if necessary, limitation. For this to initialize a property `LimitFunction`. If you do in the environment VS window edit properties, then a property `Limit`. 
-* To configure, if necessary, the visibility of and width of columns. To configure `ObjectListView` property `Columns` through the properties. 
+* Place `ObjectListView` on the form.
+* Join `ObjectListView` [service data](fo_data-service.html). For this you have to initialize `ObjectListView` property `DataService`. If the form has already implemented the data services, then you can specify in the editing window properties, where there is this drop-down list.
+* Set up the debug package (if necessary).
+* Choose one or several classes to display. For this you have to initialize `ObjectListView` property `DataObjectTypes`. This can also be done with a special designer, accessible from the edit window properties.
+* Choose compatible with all classes of performance. It is necessary to initialize at `ObjectListView` property `ViewName`. This can also be done from the edit window properties. Attention! In the drop-down list are only compatible with all the types listed in `DataObjectTypes`, views.
+* Install, if necessary, limitation. For this to initialize a property `LimitFunction`. If you do in the environment VS window edit properties, then a property `Limit`.
+* To configure, if necessary, the visibility of and width of columns. To configure `ObjectListView` property `Columns` through the properties.
 
-## Main functionality of ObjectListView for the user 
+## The main functionality of ObjectListView for the user
 
-`ObjectListView` displays different types of objects in one list in accordance with compatible performance. In addition to the attribute of the composition, according to the submission, `ObjectListView` can display pictures (`Image`) assigned to the data classes. 
+`ObjectListView` displays different types of objects in one list in accordance with compatible performance. In addition to the attribute of the composition, according to the submission, `ObjectListView` can display pictures (`Image`) assigned to the data classes.
 
-The main functionality `ObjectListView` for the user: 
+The main functionality `ObjectListView` for the user:
 
-![](/images/pages/products/flexberry-winforms/controls/olv/primer15.jpg) 
+![](/images/pages/products/flexberry-winforms/controls/olv/primer15.jpg)
 
-The user can: 
+The user can:
 
-* To view a list of objects (including different types) 
-* Refresh the list of objects ![](/images/pages/products/flexberry-winforms/controls/olv/primer16.jpg) 
+* To view a list of objects (including different types)
+* Refresh the list of objects ![](/images/pages/products/flexberry-winforms/controls/olv/primer16.jpg)
 
-* Return the selected objects (LookUp) ![](/images/pages/products/flexberry-winforms/controls/olv/primer17.jpg) 
+* Return the selected objects (LookUp) ![](/images/pages/products/flexberry-winforms/controls/olv/primer17.jpg)
 
-* To sort objects, which is necessary to poke the mouse in the column heading 
-* Create the object (if DataObjectTypes contains several types, you can choose from the drop down list to choose which type you want to create the object) ![](/images/pages/products/flexberry-winforms/controls/olv/primer18.jpg) 
+* To sort objects, which is necessary to poke the mouse in the column heading
+* Create the object (if DataObjectTypes contains several types, you can choose from the drop down list to choose which type you want to create the object) ![](/images/pages/products/flexberry-winforms/controls/olv/primer18.jpg)
 
-* To create an object based on the selected ![](/images/pages/products/flexberry-winforms/controls/olv/primer19.jpg) 
+* To create an object based on the selected ![](/images/pages/products/flexberry-winforms/controls/olv/primer19.jpg)
 
-* To edit one or more selected objects ![](/images/pages/products/flexberry-winforms/controls/olv/primer20.jpg) 
+* To edit one or more selected objects ![](/images/pages/products/flexberry-winforms/controls/olv/primer20.jpg)
 
-* Remove one or more selected objects ![](/images/pages/products/flexberry-winforms/controls/olv/primer21.jpg) 
+* Remove one or more selected objects ![](/images/pages/products/flexberry-winforms/controls/olv/primer21.jpg)
 
-* Customize the visibility of columns (the user can hide some columns for convenience) ![](/images/pages/products/flexberry-winforms/controls/olv/primer22.jpg) 
+* Customize the visibility of columns (the user can hide some columns for convenience) ![](/images/pages/products/flexberry-winforms/controls/olv/primer22.jpg)
 
-* To restrict the list of displayed objects ![](/images/pages/products/flexberry-winforms/controls/olv/primer23.jpg) 
+* To restrict the list of displayed objects ![](/images/pages/products/flexberry-winforms/controls/olv/primer23.jpg)
 
-* To search the list ![](/images/pages/products/flexberry-winforms/controls/olv/primer24.jpg) 
+* To search the list ![](/images/pages/products/flexberry-winforms/controls/olv/primer24.jpg)
 
-Also available to the user: 
+Also available to the user:
 
-* The print preview of the list ![](/images/pages/products/flexberry-winforms/controls/olv/primer25.jpg) 
+* The print preview of the list ![](/images/pages/products/flexberry-winforms/controls/olv/primer25.jpg)
 
-* Print list ![](/images/pages/products/flexberry-winforms/controls/olv/primer26.jpg) 
+* Print list ![](/images/pages/products/flexberry-winforms/controls/olv/primer26.jpg)
 
-* Print settings ![](/images/pages/products/flexberry-winforms/controls/olv/primer27.jpg) 
+* Print settings ![](/images/pages/products/flexberry-winforms/controls/olv/primer27.jpg)
 
-* Copy the selection to the clipboard ![](/images/pages/products/flexberry-winforms/controls/olv/primer28.jpg) 
+* Copy the selection to the clipboard ![](/images/pages/products/flexberry-winforms/controls/olv/primer28.jpg)
 
-* Operations with notes and highlighting ![](/images/pages/products/flexberry-winforms/controls/olv/primer29.jpg) 
+* Operations with notes and highlighting ![](/images/pages/products/flexberry-winforms/controls/olv/primer29.jpg)
 
-## desktop Update 
+## Desktop update
 
-To force a refresh of the folder tree and list the desktop you want to call a method `DesktopCtrl.ReloadDesktopcustomizer()`. 
+To force a refresh of the folder tree and list the desktop you want to call a method `DesktopCtrl.ReloadDesktopcustomizer()`.
 
-## Message about the continuation of the boot at the lack of resources 
+## The message about the continuation of the boot at the lack of resources
 
-The message continued loading occurs when the exhaustion of physical memory allocated to the application, because the allocation of memory in the swap file takes time. 
+The message continued loading occurs when the exhaustion of physical memory allocated to the application, because the allocation of memory in the swap file takes time.
 
-![](/images/pages/products/flexberry-winforms/controls/olv/load-question.jpg) 
+![](/images/pages/products/flexberry-winforms/controls/olv/load-question.jpg)
 
-To enable this feature, you must set the property "MemoryTimeLoadLimit" any positive value. 
+To enable this feature, you must set the property "MemoryTimeLoadLimit" any positive value.
 
-## Optimization data read 
+## Optimization data read
 
-In normal mode `ObjectListView` reads all the fields in the view, even if some columns are hidden. SQL Server when the query is guided by the fields included in the top query (when investing) and restriction. If the field wizard is not used in the list displayed, or in the limit, the SQL Server does not join, thus speeding up the query limit. 
+In normal mode `ObjectListView` reads all the fields in the view, even if some columns are hidden. SQL Server when the query is guided by the fields included in the top query (when investing) and restriction. If the field wizard is not used in the list displayed, or in the limit, the SQL Server does not join, thus speeding up the query limit.
 
-Setting properties `ObjectListView.UseColumnOptimization=true` allows to include hidden fields. 
+Setting properties `ObjectListView.UseColumnOptimization=true` allows to include hidden fields.
 
-To set the optimization mode for all lists of the application allows the method `Tuner.Customize` in which to set the property `UseColumnOptimization` for `ObjectListView` passed as a parameter. 
+To set the optimization mode for all lists of the application allows the method `Tuner.Customize` in which to set the property `UseColumnOptimization` for `ObjectListView` passed as a parameter.
 
-## Disable the hotkey F2 to edit objects 
+## Disable the F2 hotkey for edit objects
 
-You need to specify `ObjectListView` `UseHotkeyForEdit = false;`. This will affect the tooltip that appears over the edit button. 
+You need to specify `ObjectListView` `UseHotkeyForEdit = false;`. This will affect the tooltip that appears over the edit button.
 
-## Useful links 
+## Useful links
 
-* Objects in ObjectListView 
-* [Entire list of objects in ObjectListView](fw_put-list-objects.html) 
-* [Events ОbjectListView](fw_olv-event.html) 
-* Design and functionality 
-* [Set date display default](fw_date-format.html) 
-* Different 
-* [Assignment LimitFunction for the second ObjectListView](fw_assigning-limit-function-second-objectlistview.html) 
-* [Availability of the operations on the ObjectListView depending on user rights](fw_objectlistview-rights.html) 
-* [Customize and add columns and records in ObjectListView](fw_objectlistview-in-desktop-ctrl.html) 
+* Objects in ObjectListView
+* [Entire list of objects in ObjectListView](fw_put-list-objects.html)
+* [Events ОbjectListView](fw_olv-event.html)
+* Design and functionality
+* [Set date display default](fw_date-format.html)
+* Different
+* [Assignment LimitFunction for the second ObjectListView](fw_assigning-limit-function-second-objectlistview.html)
+* [Availability of the operations on the ObjectListView depending on user rights](fw_objectlistview-rights.html)
+* [Customize and add columns and records in ObjectListView](fw_desktop-operations.html)
 
 
 

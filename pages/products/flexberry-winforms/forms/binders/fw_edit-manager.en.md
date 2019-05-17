@@ -1,13 +1,13 @@
 ---
 title: Manager edit
 sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Winforms, Controls, binders, EditManager
-summary: Definition, methods, ways of creating forms, examples
+keywords: Flexberry Winforms, forms, controls, binding
+summary: Definition, methods, techniques, creating application forms, examples
 toc: true
 permalink: en/fw_editmanager.html
 lang: en
 autotranslated: true
-hash: 878a7016d85581e76c55dd2e1ee6c4066eb1c87e08e0060b5471a4f8fa9b46df
+hash: b4bd77e6998a2862d4a96f6de9aa7223a4243bbd166385993436d171efbd302c
 ---
 
 `EditManager` (`ICSSoft.STORMNET.Windows.Forms.Binders.EditManager`, Manager edit) — the special class for continuous binding controls to properties of the data object.
@@ -30,7 +30,7 @@ void EditManager.SetReadonlyFlagProperties(bool readonlyflag, params string[] pr
 
 Pstrfreadonlyflag` parameter defines the value that will be set the ReadOnly property of the controls, edit fields specified in `properties`.
 
-An example of using this method is presented in the article [Definition available to edit the fields for one form, but different apps](fw_different-applications-and-fields.html).
+An example of using this method is presented in [Forms and classes on the desktop app](fw_readonly-win.html).
 
 ## Method AddControlsToForcedReadOnlyList
 
