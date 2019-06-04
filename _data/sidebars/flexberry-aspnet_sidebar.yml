@@ -304,6 +304,11 @@ entries:
       url: /fa_exception-handling.html
       output: web, pdf
 
+    - title: WebObjectListView
+      title_ru: WebObjectListView
+      url: /fa_web-object-list-view.html
+      output: web, pdf
+
     - title: Init control settings delegate
       title_ru: Глобальная настройка веб-контролов
       url: /fa_init-control-settings-delegate.html
@@ -324,14 +329,129 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: WebObjectListView
-      title_ru: WebObjectListView
-      url: /fa_web-object-list-view.html
-      output: web, pdf
-
     - title: WebObjectListView Operations
       title_ru: Операции WebObjectListView
       url: /fa_wolv-operations.html
+      output: web, pdf
+
+    - title: Displaying on one page of a list form and edit form
+      title_ru: Отображение на одной странице списковой формы и формы редактирования
+      url: /fa_editor-in-frame.html 
+      output: web, pdf
+
+    - title: Export to Excel and XML
+      title_ru: Экспорт в Excel и XML
+      url: /fa_export-excel-xml.html 
+      output: web, pdf
+
+    - title: JavaScript jQuery API for WebObjectListView
+      title_ru: JavaScript jQuery API для WebObjectListView
+      url: /fa_js-api-wolv.html 
+      output: web, pdf
+
+    - title: Sorting for WebObjectListView
+      title_ru: Сортировка для WebObjectListView
+      url: /fa_list-sort.html
+      output: web, pdf
+
+    - title: Print list
+      title_ru: Печать списка
+      url: /fa_print-wolv.html 
+      output: web, pdf
+
+    - title: Configuring a control filter in WebObjectListView
+      title_ru: Настройка контрола фильтрации в WebObjectListView
+      url: /fa_tune-control-delegate-method.html 
+      output: web, pdf
+
+    - title: Prototypical for Flexberry ASP.NET
+      title_ru: Прототипизация для Flexberry ASP.NET
+      url: /fa_web-data-object-prototyping.html
+      output: web, pdf
+
+    - title: Adding a button in the toolbar or in line WebObjectListView
+      title_ru: Добавление кнопки в тулбар или в строки WebObjectListView
+      url: /fa_wolv-add-button.html 
+      output: web, pdf
+
+    - title: Caching of extended restrictions in WebObjectListView
+      title_ru: Кэширование расширенных ограничений в WebObjectListView
+      url: /fa_wolv-adv-limit-caching.html
+      output: web, pdf
+
+    - title: The Behavior of the check boxes to select items WebObjectListView
+      title_ru: Поведение флажков выбора элементов WebObjectListView
+      url: /fa_wolv-check-boxes.html
+      output: web, pdf
+
+    - title: Customizing the display columns WebObjectListView
+      title_ru: Настройка отображения столбцов WebObjectListView
+      url: /fa_wolv-columns.html 
+      output: web, pdf
+
+    - title: CSS classes WebObjectListView
+      title_ru: CSS-классы WebObjectListView
+      url: /fa_wolv-css.html 
+      output: web, pdf
+
+    - title: Service data WebObjectListView
+      title_ru: Сервис данных WebObjectListView
+      url: /fa_wolv-data-service.html
+      output: web, pdf
+
+    - title: Options open edit form when creating or editing a feature in WebObjectListView
+      title_ru: Варианты открытия формы редактирования при создании или редактировании объекта в WebObjectListView
+      url: /fa_wolv-edit-form.html
+      output: web, pdf
+
+    - title: Load data and EmptyControl in WebObjectListView
+      title_ru: Загрузка данных и EmptyControl в WebObjectListView
+      url: /fa_wolv-empty-control.html 
+      output: web, pdf
+
+    - title: Events WebObjectListView
+      title_ru: События WebObjectListView
+      url: /fa_wolv-events.html 
+      output: web, pdf
+
+    - title: Export data to Excel from WebObjectListView
+      title_ru: Экспорт данных из WebObjectListView в Excel
+      url: /fa_wolv-export-excel.html 
+      output: web, pdf
+
+    - title: Filters WebObjectListView
+      title_ru: Фильтры WebObjectListView
+      url: /fa_wolv-filters.html  
+      output: web, pdf
+
+    - title: Mode of grouping data by the specified field
+      title_ru: Режим группировки данных по заданному полю
+      url: /fa_wolv-group-mode.html
+      output: web, pdf
+
+    - title: Hierarchical WebObjectListView
+      title_ru: Иерархический WebObjectListView
+      url: /fa_wolv-hierarhy.html
+      output: web, pdf
+
+    - title: Pagers WebObjectListView 
+      title_ru: Пейджеры WebObjectListView
+      url: /fa_wolv-paging.html 
+      output: web, pdf
+
+    - title: Search WebObjectListView
+      title_ru: Поиск в WebObjectListView
+      url: /fa_wolv-search.html 
+      output: web, pdf
+
+    - title: WolvSettApplyer
+      title_ru: WolvSettApplyer
+      url: /fa_wolv-sett-applyer.html
+      output: web, pdf
+
+    - title: Styling WebObjectListView
+      title_ru: Стилизация WebObjectListView
+      url: /fa_wolv-stylization.html
       output: web, pdf
 
   - title: Editform

@@ -1,5 +1,5 @@
 --- 
-title: adding a button in the toolbar or in line WebObjectListView 
+title: Adding a button in the toolbar or in line WebObjectListView 
 sidebar: flexberry-aspnet_sidebar 
 keywords: Flexberry ASP-NET 
 toc: true 

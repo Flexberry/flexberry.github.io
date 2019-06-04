@@ -1,5 +1,5 @@
 --- 
-title: configuring a control filter in WebObjectListView 
+title: Configuring a control filter in WebObjectListView 
 sidebar: flexberry-aspnet_sidebar 
 keywords: 
 toc: true 

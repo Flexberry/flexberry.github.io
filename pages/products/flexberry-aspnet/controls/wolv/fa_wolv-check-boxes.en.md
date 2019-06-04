@@ -1,5 +1,5 @@
 --- 
-title: the Behavior of the check boxes to select items WebObjectListView 
+title: The Behavior of the check boxes to select items WebObjectListView 
 sidebar: flexberry-aspnet_sidebar 
 keywords: Flexberry ASP-NET 
 toc: true 

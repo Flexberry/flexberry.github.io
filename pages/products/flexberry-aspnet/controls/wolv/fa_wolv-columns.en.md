@@ -1,5 +1,5 @@
 --- 
-title: customizing the display columns WebObjectListView 
+title: Customizing the display columns WebObjectListView 
 sidebar: flexberry-aspnet_sidebar 
 keywords: Flexberry ASP-NET 
 toc: true 
