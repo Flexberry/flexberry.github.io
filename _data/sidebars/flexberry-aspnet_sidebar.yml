@@ -500,9 +500,9 @@ entries:
       output: web, pdf
 
   - title: Control AjaxGroupEdit
-      title_ru: Контрол AjaxGroupEdit
-      output: web, pdf
-      folderitems:
+    title_ru: Контрол AjaxGroupEdit
+    output: web, pdf
+    folderitems:
 
     - title: Adding objects in AjaxGroupEdit at form initialization (new object)
       title_ru: Добавление объектов в AjaxGroupEdit при инициализации формы (новый объект)
@@ -575,9 +575,9 @@ entries:
       output: web, pdf
 
   - title: Advanced limit editor
-      title_ru: Редактор ограничений
-      output: web, pdf
-      folderitems:
+    title_ru: Редактор ограничений
+    output: web, pdf
+    folderitems:
 
     - title: Options in the advanced editor limitations
       title_ru: Параметры в расширенном редакторе ограничений
