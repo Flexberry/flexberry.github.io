@@ -1,5 +1,5 @@
 --- 
-title: creating a LookUp page in your Web application 
+title: Creating a LookUp page in your Web application 
 sidebar: flexberry-aspnet_sidebar 
 keywords: Flexberry ASP-NET 
 toc: true 

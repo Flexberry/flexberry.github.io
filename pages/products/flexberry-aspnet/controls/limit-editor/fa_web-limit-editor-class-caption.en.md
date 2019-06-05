@@ -1,5 +1,5 @@
 --- 
-title: specifies the title of the class in the advanced editor limitations 
+title: Specifies the title of the class in the advanced editor limitations 
 sidebar: flexberry-aspnet_sidebar 
 keywords: Flexberry ASP-NET 
 toc: true 

@@ -1,5 +1,5 @@
 --- 
-title: pseudocatalase in the advanced editor limitations 
+title: Pseudocatalase in the advanced editor limitations 
 sidebar: flexberry-aspnet_sidebar 
 keywords: Constraints 
 toc: true 

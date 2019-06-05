@@ -1,5 +1,5 @@
 --- 
-title: passing parameters into a LookUp form in a Web application 
+title: Passing parameters into a LookUp form in a Web application 
 sidebar: flexberry-aspnet_sidebar 
 keywords: Flexberry ASP NET, JavaScript API 
 toc: true 

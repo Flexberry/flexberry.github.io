@@ -82,11 +82,3 @@ $(document).ready(function () {
 
 });
 ```
-
-## FormattedDateTimeControl
-
-Подробнее о `FormattedDateTimeControl` в соответствующей [статье](fa_formatted-datetime-control.html).
-
-## NullableDatePicker
-
-Подробнее о `NullableDatePicker` в соответствующей [статье](fa_nullable-date-picker.html).

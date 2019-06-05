@@ -1,5 +1,5 @@
 --- 
-title: Sorting in list form, raised on lucapa 
+title: Sorting on listform raised by lookup 
 sidebar: flexberry-aspnet_sidebar 
 keywords: Web UI (Controls) 
 toc: true 
@@ -9,7 +9,7 @@ autotranslated: true
 hash: a223dd46455c8526884741583ad80e2265a738ffe5652b3abbf42f83f29ad0bf 
 --- 
 
-In order to be able to sort in list form, [raised lucapa web](fa_lookup-overview.html), you must do the following: 
+In order to be able to sort in list form, [raised lookup web](fa_lookup-overview.html), you must do the following: 
 
 1.You need to make sure that the LookUp form is correct. For example, to use the standard user form located on the test stand, then the settings in `web.config` shall be as follows: 
 
@@ -41,7 +41,7 @@ namespace ICSSoft.STORMNET.Web.Controls
     public class LookUpForm : AjaxControls.Forms.LookUpForm
     {
         /// <summary> 
-        /// Apply the settings to wolv lying on the form lucapa. 
+        /// Apply the settings to wolv lying on the form lookup. 
         /// Overridden method implements the application logic of the adjustments WOLV on the form. 
         /// </summary> 
         protected override void ApplyWolvSettings()
@@ -63,7 +63,7 @@ namespace ICSSoft.STORMNET.Web
     public class WOLVSettApplyer : AjaxControls.WolvSettApplyer
     {
         /// <summary> 
-        /// Apply settings for WOLV in the form of lucapa. Called if the HTTP request 
+        /// Apply settings for WOLV in the form of lookup. Called if the HTTP request 
         /// there is a parameter <see cref="P:ICSSoft.STORMNET.Web.Tools.WebParamController.OpenedFromLookupParamName"/>. 
         /// </summary> 
         /// <param name="wolv">WOLV to which you want the settings to apply.</param> 

@@ -1,5 +1,5 @@
 --- 
-title: is Empty/is non-empty in the advanced editor, limitations in the WEB 
+title: Is Empty/is non-empty in the advanced editor, limitations in the WEB 
 sidebar: flexberry-aspnet_sidebar 
 keywords: Flexberry ASP-NET 
 toc: true 

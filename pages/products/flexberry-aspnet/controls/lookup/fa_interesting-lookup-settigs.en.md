@@ -1,5 +1,5 @@
 --- 
-title: the Most interesting properties LookUp's for Flexberry ASP.NET 
+title: The Most interesting properties LookUp's for Flexberry ASP.NET 
 sidebar: flexberry-aspnet_sidebar 
 keywords: JavaScript, Windows UI (Controls) 
 toc: true 

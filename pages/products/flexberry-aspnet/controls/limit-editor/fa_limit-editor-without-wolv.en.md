@@ -1,5 +1,5 @@
 --- 
-title: run the editor without restrictions WOLV 
+title: Run the editor without restrictions WOLV 
 sidebar: flexberry-aspnet_sidebar 
 keywords: Flexberry ASP-NET, Web UI (Controls) 
 toc: true 
