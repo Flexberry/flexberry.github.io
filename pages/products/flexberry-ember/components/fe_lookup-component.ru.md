@@ -109,6 +109,7 @@ export default ApplicationSerializer.extend({
 `sizeClass` | Определяет css-class размера окна, возможные варианты: small, large, fullscreen | small
 `title` | Заголовок модального окна |
 `lookupLimitPredicate` | Определяет функцию ограничения |
+`lookupAdditionalLimitFunction` | Дополнительная функция ограниченяи для использования в GroupEdit относительно полей строки |
 `autocomplete` | Режим автокомплита, в режиме "Только для чтения" не работает | false
 `dropdown` | Режим выпадающего списка, в режиме "Только для чтения" не работает | false
 `dropdownIsSearch` | Режим поиска (автокомплита) для LookUp-а в режиме выпадающего списка | false
@@ -285,6 +286,41 @@ lookupSettings: {
     modalWindowHeight:600
 },
 ```
+
+#### Пример задания ограничений в строке GE относительно элементов строки
+Если возникает необходимость ограничить лукап по значению в элемента в GroupEdit в той же строке, то это можно сделать с помощью lookupAdditionalLimitFunction.
+
+```js
+  getCellComponent(attr, bindingPath, model) {
+    let cellComponent = this._super(...arguments);
+    if (attr.kind === 'belongsTo') {
+      switch (`${model.modelName}+${bindingPath}`) {
+        case 'ember-flexberry-dummy-vote+author':
+          cellComponent.componentProperties = this.get('lookupDynamicProperties');
+          break;      }
+    }
+    return cellComponent;
+  }
+});
+```
+
+```js
+  lookupDynamicProperties: Ember.computed(function() {
+    ...
+    lookupAdditionalLimitFunction = function (reletionModel) {
+      return new StringPredicate('eMail').contains(reletionModel.get('voteType'));
+    };
+
+    return {
+      ...
+      lookupAdditionalLimitFunction
+      ...
+    };
+  })
+```
+
+В данном примере отображаемые объекты лукапа ограничены полем GroupEdit 'voteType' по значению объекта лукапа 'eMail'.
+
 
 #### Установка заголовка и размера окна, открываемого по LookUp-у
 
