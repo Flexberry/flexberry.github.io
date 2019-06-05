@@ -1,5 +1,5 @@
 --- 
-title: locking in web systems 
+title: Locking in web systems 
 sidebar: flexberry-aspnet_sidebar 
 keywords: Flexberry ASP-NET 
 toc: true 

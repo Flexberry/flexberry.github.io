@@ -138,6 +138,81 @@ entries:
       title_ru:  Подсистема полномочий для Flexberry ASP.NET
       url: /fa_right-manager.html
       output: web, pdf
+
+  - title: Audit
+    title_ru: Подсистема полномочий для Flexberry ASP.NET
+    output: web, pdf
+    
+    folderitems:
+    - title: Connection Example of an audit to an existing Web application without using regeneration project
+      title_ru: Пример подключения аудита к существующему Web-приложению без использования перегенерации проекта
+      url: /fa_audit-web-example-manual.html
+      output: web, pdf
+
+    - title: Connection Example of an audit to an existing Web application using regeneration project
+      title_ru: Пример подключения аудита к существующему Web-приложению с использованием перегенерации проекта
+      url: /fa_audit-web-example.html
+      output: web, pdf
+
+    - title: Web form auditing
+      title_ru: Web-формы аудита
+      url: /fa_audit-web-forms.html
+      output: web, pdf
+
+    - title: Auditing for Web applications
+      title_ru: Аудит для Web-приложений
+      url: /fa_audit-web.html
+      output: web, pdf
+
+  - title: Locks
+    title_ru: Подсистема блокировок для Flexberry ASP.NET
+    output: web, pdf
+    
+    folderitems:
+    - title: WebLockHelper
+      title_ru: WebLockHelper
+      url: /fa_web-lock-helper.html
+      output: web, pdf
+
+    - title: Locking in web systems
+      title_ru: Работа с блокировками в web-системах
+      url: /fa_working-locks-web.html
+      output: web, pdf
+
+  - title: Security
+    title_ru: Подсистема полномочий для Flexberry ASP.NET
+    output: web, pdf
+    
+    folderitems:
+    - title: Add users to the database system of authority in windows authentication
+      title_ru: Добавление пользователей в БД системы полномочий при windows-аутентификации
+      url: /fa_authentication-adapter.html
+      output: web, pdf
+
+    - title: Creation of powers for classes
+      title_ru: Создание полномочий на классы
+      url: /fa_authority-classes.html
+      output: web, pdf
+
+    - title: CaseberryDomainRoleProvider
+      title_ru: CaseberryDomainRoleProvider
+      url: /fa_domain-role-provider.html
+      output: web, pdf
+
+    - title: CaseberryMembershipProvider
+      title_ru: CaseberryMembershipProvider
+      url: /fa_membership-provider.html
+      output: web, pdf
+
+    - title: Web forms subsystem powers
+      title_ru: Web-формы подсистемы полномочий
+      url: /fa_security-forms.html
+      output: web, pdf
+
+    - title: UserSettingsService
+      title_ru: UserSettingsService
+      url: /fa_user-settings-service.html
+      output: web, pdf
     
   - title: Controls
     title_ru: Контролы
@@ -676,7 +751,7 @@ entries:
 
     - title: Open editform for custom object
       title_ru: Открытие формы редактирования с передачей объекта с частично заполненными полями
-      url: /fa_open-edit-form-custom-object.html
+      url: /fa_open-editform-custom-object.html
       output: web, pdf
 
   - title: JavaScript API

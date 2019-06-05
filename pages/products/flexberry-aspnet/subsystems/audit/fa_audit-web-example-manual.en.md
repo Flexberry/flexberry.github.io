@@ -1,5 +1,5 @@
 --- 
-title: connection Example of an audit to an existing Web application without using regeneration project 
+title: Connection Example of an audit to an existing Web application without using regeneration project 
 sidebar: flexberry-aspnet_sidebar 
 keywords: Flexberry Audit 
 toc: true 
