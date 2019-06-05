@@ -1,5 +1,5 @@
 --- 
-title: the Limit for LookUp in AjaxGroupEdit 
+title: The Limit for LookUp in AjaxGroupEdit 
 sidebar: flexberry-aspnet_sidebar 
 keywords: Flexberry ASP-NET 
 toc: true 

@@ -15,10 +15,6 @@ hash: a12c58fd785777a0ef075c4d3e713e988fc5de195ea46c82d947f5223842f91c
 
 ## Use 
 
-### BaseListWebControl 
-
-BaseListWebControl described in the corresponding [article](fa_base-list-web-control.html). 
-
 ### BaseEditForm 
 
 BaseEditForm described in the corresponding [article](fa_base-edit-form.html). 

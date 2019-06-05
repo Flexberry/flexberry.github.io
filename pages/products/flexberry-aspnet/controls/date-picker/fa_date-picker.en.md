@@ -85,14 +85,4 @@ $(document).ready(function () {
 });
 ``` 
 
-## FormattedDateTimeControl 
-
-Read more about `FormattedDateTimeControl` in the appropriate [article](fa_formatted-datetime-control.html). 
-
-## NullableDatePicker 
-
-Read more about `NullableDatePicker` in the appropriate [article](fa_nullable-date-picker.html). 
-
-
-
 {% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

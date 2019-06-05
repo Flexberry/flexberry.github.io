@@ -1,5 +1,5 @@
 --- 
-title: configuring controls inside AjaxGroupEdit 
+title: Configuring controls inside AjaxGroupEdit 
 sidebar: flexberry-aspnet_sidebar 
 keywords: Flexberry ASP-NET, Web UI (Controls) 
 toc: true 

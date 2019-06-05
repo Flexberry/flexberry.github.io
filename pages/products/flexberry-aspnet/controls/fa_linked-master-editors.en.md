@@ -1,5 +1,5 @@
 --- 
-title: link controls editing masters 
+title: Link controls editing masters 
 sidebar: flexberry-aspnet_sidebar 
 keywords: Flexberry ASP-NET 
 toc: true 

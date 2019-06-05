@@ -17,7 +17,6 @@ hash: 133838d1f48ebceb34014ed7e7bc392f8f888e7835e93395eaa350bba6661c20
 
 ### Hints to the data fields 
 
-Use the tips to the data fields described in the corresponding [article](fa_hints-attributes.html). 
 
 ### Sample code 
 
