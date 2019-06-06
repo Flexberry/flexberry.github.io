@@ -140,7 +140,7 @@ entries:
       output: web, pdf
 
   - title: Audit
-    title_ru: Подсистема полномочий для Flexberry ASP.NET
+    title_ru: Подсистема аудита для Flexberry ASP.NET
     output: web, pdf
     
     folderitems:
