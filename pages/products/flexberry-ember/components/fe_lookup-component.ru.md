@@ -307,8 +307,8 @@ lookupSettings: {
 ```js
   lookupDynamicProperties: Ember.computed(function() {
     ...
-    lookupAdditionalLimitFunction = function (reletionModel) {
-      return new StringPredicate('eMail').contains(reletionModel.get('voteType'));
+    lookupAdditionalLimitFunction = function (relationModel) {
+      return new StringPredicate('eMail').contains(relationModel.get('voteType'));
     };
 
     return {
@@ -319,7 +319,8 @@ lookupSettings: {
   })
 ```
 
-В данном примере отображаемые объекты лукапа ограничены полем GroupEdit 'voteType' по значению объекта лукапа 'eMail'.
+В данном примере отображаемые объекты лукапа ограничены полем GroupEdit 'voteType' по значению мастера 'eMail'.
+relationModel.get('...') - модель, для которой лукапом редактируется мастер.
 
 
 #### Установка заголовка и размера окна, открываемого по LookUp-у
