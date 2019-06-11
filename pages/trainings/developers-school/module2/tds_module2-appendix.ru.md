@@ -107,7 +107,7 @@ lang: ru
                     <div class="col-sm-6 col-md-4 portfolio-item">
                         <a href="{{ 'https://www.youtube.com/watch?v=Pzu93rnaGrA' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
-                                <img src="{{ "/images/pages/trainings/developers-school/module2/git-from-vs.jpg" | relative_url}}" class="products-img">
+                                <img src="{{ "/images/pages/trainings/developers-school/module2/tfvc-from-vs.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">Работа с TFVC-репозиториями из Visual Studio</span></h4>
                             <p>Скринкаст, в котором рассматриваются средства среды разработки Visual Studio 2015 для работы с TFVC-репозиториями (Евгений Хаберев, Flexberry PLATFORM).</p>
