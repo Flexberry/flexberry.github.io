@@ -60,7 +60,7 @@ lang: ru
             <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse2">&#9660;</a>
             <h4 class="panel-title">
                 <a data-toggle="collapse" href="#collapse2">
-                Командная работа с использованием Azure DevOps</a>
+                Командная работа с использованием Azure DevOps&sol;TFS</a>
             </h4>
         </div>
         <div id="collapse2" class="panel-collapse collapse in">
@@ -75,6 +75,26 @@ lang: ru
                             <p>Скринкаст, посвященный обзору возможностей и установке среды разработки Visual Studio 2019 Community на ОС Windows (Виталий Трунин, Info-Comp.ru).</p>
                         </a>
                     </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=rS8B8T3Crz8' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module2/git-from-vs.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">Работа с Git-репозиториями из Visual Studio</span></h4>
+                            <p>Урок, в котором рассматриваются средства среды разработки Visual Studio 2015 для работы с Git-репозиториями (Евгений Хаберев, Flexberry PLATFORM).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=Pzu93rnaGrA' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module2/tfvc-from-vs.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">Работа с TFVC-репозиториями из Visual Studio</span></h4>
+                            <p>Скринкаст, в котором рассматриваются средства среды разработки Visual Studio 2015 для работы с TFVC-репозиториями, рабочими элементами TFS, а также процесс выполнения Code Review (Евгений Хаберев, Flexberry PLATFORM).</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="row items">
                     <div class="col-sm-6 col-md-4 portfolio-item">
                         <a href="{{ 'https://www.youtube.com/watch?v=3p2XgNDrL6Y' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
@@ -93,24 +113,13 @@ lang: ru
                             <p>Доклад, посвященный практическим аспектам создания серверных билдов в TFS для Ember.js-приложений, документации по проекту, а также корпоративным особенностям при создании подобного рода билдов (Павел Радостев, Flexberry PLATFORM).</p>
                         </a>
                     </div>
-                </div>
-                <div class="row items">
                     <div class="col-sm-6 col-md-4 portfolio-item">
-                        <a href="{{ 'https://www.youtube.com/watch?v=rS8B8T3Crz8' | relative_url }}" class="portfolio-link" target="_blank">
+                        <a href="{{ 'https://www.youtube.com/watch?v=AtJT9mI_fKk' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
-                                <img src="{{ "/images/pages/trainings/developers-school/module2/git-from-vs.jpg" | relative_url}}" class="products-img">
+                                <img src="{{ "/images/pages/trainings/developers-school/module2/manual-testing-tfs.jpg" | relative_url}}" class="products-img">
                             </div>
-                            <h4><span class="item-head">Работа с Git-репозиториями из Visual Studio</span></h4>
-                            <p>Урок, в котором рассматриваются средства среды разработки Visual Studio 2015 для работы с Git-репозиториями (Евгений Хаберев, Flexberry PLATFORM).</p>
-                        </a>
-                    </div>
-                    <div class="col-sm-6 col-md-4 portfolio-item">
-                        <a href="{{ 'https://www.youtube.com/watch?v=Pzu93rnaGrA' | relative_url }}" class="portfolio-link" target="_blank">
-                            <div class="img-wrapper">
-                                <img src="{{ "/images/pages/trainings/developers-school/module2/tfvc-from-vs.jpg" | relative_url}}" class="products-img">
-                            </div>
-                            <h4><span class="item-head">Работа с TFVC-репозиториями из Visual Studio</span></h4>
-                            <p>Скринкаст, в котором рассматриваются средства среды разработки Visual Studio 2015 для работы с TFVC-репозиториями, рабочими элементами TFS, а также процесс выполнения Code Review (Евгений Хаберев, Flexberry PLATFORM).</p>
+                            <h4><span class="item-head">Ручное тестирование приложений с использованием TFS</span></h4>
+                            <p>Скринкаст, демонстрирующий процесс выполнения ручного тестирования с использованием центра тестирования TFS (Евгений Хаберев, Flexberry PLATFORM).</p>
                         </a>
                     </div>
                 </div>
