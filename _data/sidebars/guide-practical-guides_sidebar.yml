@@ -59,7 +59,7 @@ entries:
       output: web  
 
   - title: Practical guide by Flexberry ASP.NET
-    title_ru: Практическое руководство по веб-разработке
+    title_ru: Практическое руководство по веб-разработке на Flexberry ASP.NET
     output: web
     
     folderitems:
