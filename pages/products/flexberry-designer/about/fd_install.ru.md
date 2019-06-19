@@ -8,10 +8,7 @@ permalink: ru/fd_install.html
 lang: ru
 ---
 
-Для того чтобы установить [Flexberry Designer](fd_landing_page.html) нужно скачать файл установки с сайта [Flexberry.net](https://designer.flexberry.net/#/fd-try).  
-При этом требуется регистрация на сайте.
-
-Также получить файл установки можно в разделе [Лицензии](https://designer.flexberry.net/#/download-win-app) по кнопке `Установить`.
+Для того чтобы установить [Flexberry Designer](fd_landing_page.html) необходимо выполнить [регистрацию](https://designer.flexberry.net/#/login-or-register) на сайте [Flexberry.net](https://flexberry.net).  
 
 Для работы приложения на компьютере должно быть установлено следующее ПО (перед установкой это будет проверено и, если чего-то будет не хватать, установлено):
 
@@ -26,7 +23,7 @@ lang: ru
 
 1.Зарегистрироваться на сайте [Flexberry.ru](https://flexberry.net), если это не было сделано ранее.
 
-2.Нажать на кнопку `Попробовать` в разделе `Разработчикам` или `Установить` в разделе [Лицензии](https://designer.flexberry.net/#/download-win-app).
+2.Нажать на кнопку [Попробовать](https://designer.flexberry.net/#/fd-try) в разделе `Разработчикам`, далее перейти по ссылке `Скачать Flexberry Designer`, после чего нажать на кнопку `Установить` в открывшемся разделе [Лицензии](https://designer.flexberry.net/#/download-win-app).
 
 3.При скачивании приложения в `Google Chrome` браузер может заблокировать загрузку. Требуется дополнительно разрешить данную загрузку.
 
