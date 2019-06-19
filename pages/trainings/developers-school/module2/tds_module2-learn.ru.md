@@ -27,7 +27,7 @@ lang: ru
                                 <img src="{{ "/images/pages/trainings/developers-school/module2/git-introduction.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">1. Введение в Git и Git Flow</span></h4>
-                            <p>В скринкасте рассматриваются основные принципы функционирования системы контроля версий Git и понятие Git Flow.</p>
+                            <p>В скринкасте рассматриваются основные принципы функционирования системы контроля версий Git и понятие Git Flow (Евгений Хаберев, Flexberry PLATFORM).</p>
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
