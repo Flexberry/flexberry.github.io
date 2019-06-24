@@ -42,7 +42,7 @@ summary: Предназначение, структура, функции и о�
 | Обычная форма | Детейловая форма без сохранения | Детейловая форма c сохранением |
 | (edit-form) |(detail-edit-form) | (detail-edit-form)
 :------------| :---------------| :-------------------| :-----------------
-`ReadOnly IsNew `| Только закрытие. Модель не меняется. | Только закрытие. При этом состояние недоступно. | Только закрытие. При этом состояние недоступно.
+`ReadOnly IsNew`| Только закрытие. Модель не меняется. | Только закрытие. При этом состояние недоступно. | Только закрытие. При этом состояние недоступно.
 `ReadOnly Saved` |Только закрытие. Модель не меняется.|Только закрытие. Модель не меняется.|Только закрытие. Модель не меняется.
 `Not ReadOnly IsNew` | Сохранение, сохранение и закрытие, закрытие (откат модели).| Удаление (полное) и закрытие (без отката модели).| Сохранение, сохранение и закрытие, закрытие (откат модели).
 `Not ReadOnly Saved` |Сохранение, сохранение и закрытие, удаление (полное), закрытие (откат модели).|Удаление (пометка об удалении) и закрытие (без отката модели).| Сохранение, сохранение и закрытие, удаление (полное), закрытие (откат модели).
@@ -53,11 +53,11 @@ summary: Предназначение, структура, функции и о�
 
 ```hbs
 `#unless readonly`
-	<button type="submit" class="ui primary button" `action 'save'`>Save</button>
-	<button type="submit" class="ui primary button" `action 'saveAndClose'`>Save and close</button>
-	`#unless model.isNew`
-		<button type="submit" class="ui primary button" `action 'delete'`>Delete</button>
-	`/unless`
+  <button type="submit" class="ui primary button" `action 'save'`>Save</button>
+  <button type="submit" class="ui primary button" `action 'saveAndClose'`>Save and close</button>
+  `#unless model.isNew`
+  <button type="submit" class="ui primary button" `action 'delete'`>Delete</button>
+  `/unless`
 `/unless`
 <button type="submit" class="ui primary button" `action 'close'`>Close</button>
 ```
@@ -74,15 +74,15 @@ summary: Предназначение, структура, функции и о�
 
 ```hbs
 `#unless readonly`
-	`#unless (and hasParentRoute (not saveBeforeRouteLeave))`
-		<button type="submit" class="ui positive button" `action 'save'`>Save</button>
-	`/unless`
-	`#unless (and hasParentRoute (not saveBeforeRouteLeave))`
-		<button type="submit" class="ui positive button" `action 'saveAndClose'`>Save and close</button>
-	`/unless`
-	`#unless (and model.isNew (and (not hasParentRoute) (not saveBeforeRouteLeave)))`
-		<button type="submit" class="ui negative button" `action 'delete'`>Delete</button>
-	`/unless`
+  `#unless (and hasParentRoute (not saveBeforeRouteLeave))`
+  <button type="submit" class="ui positive button" `action 'save'`>Save</button>
+  `/unless`
+    `#unless (and hasParentRoute (not saveBeforeRouteLeave))`
+    <button type="submit" class="ui positive button" `action 'saveAndClose'`>Save and close</button>
+  `/unless`
+  `#unless (and model.isNew (and (not hasParentRoute) (not saveBeforeRouteLeave)))`
+  <button type="submit" class="ui negative button" `action 'delete'`>Delete</button>
+  `/unless`
 `/unless`
 <button type="submit" class="ui button" `action 'close'`>Close</button>
 ```
@@ -90,3 +90,7 @@ summary: Предназначение, структура, функции и о�
 ### Отображение ошибок на форме редактирования
 
 Если ошибка появилась при загрузке объекта до открытия формы редактирования - будет отображен шаблон `error.hbs`. Для изменения этого поведения можно использовать стандартное поведение ember'а.
+
+### QueryParams для формы редактирования
+
+В контроллере edit-form есть [queryParams](https://github.com/Flexberry/ember-flexberry/blob/adb541c44d902152d8c43ff588aa55d376a98ec8/addon/controllers/edit-form.js#L171). Установка этого поля осуществляется по умолчанию. Сервис блокировок осуществляет `transition` на роут с `readonly`, если видит, что объект заблокирован. Данный алгоритм позволяет реализовать свою логику открытия формы редактирования в режиме для чтения.
