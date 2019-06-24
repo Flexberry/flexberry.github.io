@@ -27,7 +27,7 @@ lang: ru
                                 <img src="{{ "/images/pages/trainings/developers-school/module2/git-introduction.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">1. Введение в Git и Git Flow</span></h4>
-                            <p>В скринкасте рассматриваются основные принципы функционирования системы контроля версий Git и понятие Git Flow.</p>
+                            <p>В скринкасте рассматриваются основные принципы функционирования системы контроля версий Git и понятие Git Flow (Евгений Хаберев, Flexberry PLATFORM).</p>
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
@@ -158,8 +158,17 @@ lang: ru
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module2/what-is-dev-ops.jpg" | relative_url}}" class="products-img">
                             </div>
-                            <h4><span class="item-head">Что такое DevOps?</span></h4>
+                            <h4><span class="item-head">1. Что такое DevOps?</span></h4>
                             <p>Урок, посвященный обзору практик и инструментов DevOps (Антон Бойко, ITVDN).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/playlist?list=PLlhqsC7hBaSf5JUzoSVqNoc1w4Dgy_Enr' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module2/azure-dev-ops-course.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">2. Курс по командной работе в Azure DevOps</span></h4>
+                            <p>Серия скринкастов, посвященная изучению процесса командной работы в Azure DevOps (Евгений Хаберев, Flexberry PLATFORM).</p>
                         </a>
                     </div>
                 </div>

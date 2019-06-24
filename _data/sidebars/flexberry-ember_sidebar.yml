@@ -211,6 +211,11 @@ entries:
       title_ru: Настройка списков
       url: /fe_setting-lists.html
       output: web, pdf
+      
+    - title: Multi list settings
+      title_ru: Несколько списков на форме
+      url: /fe_multi-list-form.html
+      output: web, pdf
 
     - title: Flexberry Groupedit
       title_ru: Flexberry Groupedit

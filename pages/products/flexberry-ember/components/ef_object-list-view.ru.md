@@ -50,7 +50,7 @@ summary: Используемые компоненты и настройки с�
 ```hbs
 {% raw %}{{flexberry-objectlistview
 ...
-componentName="castomActionName"
+action="customActionName"
 }}{% endraw %}
 ```
 
@@ -59,7 +59,7 @@ componentName="castomActionName"
 ```hbs
 {% raw %}{{flexberry-objectlistview
 ...
-componentName=castomActionName
+action=customActionName
 }}{% endraw %}
 ```
 
