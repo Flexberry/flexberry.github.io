@@ -69,7 +69,7 @@ import ListParameters from 'ember-flexberry/objects/list-parameters';
 4.В шаблоне списка добавить списки:
 ```hbs
 <div class="row">
-{{#with multiListSettings.ИмяКомпонентаСписка as |settings|}}
+{% raw %}{{#with multiListSettings.ИмяКомпонентаСписка as |settings|}}
   {{flexberry-objectlistview
     modelName=settings.modelName
     modelProjection=settings.modelProjection
@@ -93,7 +93,7 @@ import ListParameters from 'ember-flexberry/objects/list-parameters';
     nextPage=(action "nextPage")
     componentName=settings.componentName
   }}
-{{/with}}
+{{/with}}{% endraw %}
 </div>
 
 <!-- Шаблоны для остальных списков по примеру первого -->
@@ -158,7 +158,7 @@ import ListParameters from 'ember-flexberry/objects/list-parameters';
 4.В шаблоне списка добавить списки:
 ```hbs
 <div class="row">
-{{#with multiListSettings.ИмяКомпонентаСписка as |settings|}}
+{% raw %}{{#with multiListSettings.ИмяКомпонентаСписка as |settings|}}
   {{flexberry-objectlistview
     modelName=settings.modelName
     modelProjection=settings.modelProjection
@@ -182,7 +182,7 @@ import ListParameters from 'ember-flexberry/objects/list-parameters';
     nextPage=(action "nextPage")
     componentName=settings.componentName
   }}
-{{/with}}
+{{/with}}{% endraw %}
 </div>
 
 <!-- Шаблоны для остальных списков по примеру первого -->
