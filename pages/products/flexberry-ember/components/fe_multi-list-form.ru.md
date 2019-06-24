@@ -12,7 +12,7 @@ summary: Работа с несколькими списками на форме
 
 ## Настройка списковой формы для работы с несколькими списками
 
-1. Необходимо в роут формы добавить миксины `multi-list-route` и `multi-list-model`:
+1.Необходимо в роут формы добавить миксины `multi-list-route` и `multi-list-model`:
 
 ```javascript
 import ListFormRoute from 'ember-flexberry/routes/list-form';
@@ -24,7 +24,7 @@ export default ListFormRoute.extend(MultiListRoute, MultiListModel, {
 });
 ```
 
-2. В контроллер формы добавить миксин `multi-list-controller`:
+2.В контроллер формы добавить миксин `multi-list-controller`:
 
 ```javascript
 import ListFormController from 'ember-flexberry/controllers/list-form';
@@ -35,7 +35,7 @@ export default ListFormController.extend(MultiListController, {
 });
 ```
 
-3. В роуте формы в init добавить настройки для списков:
+3.В роуте формы в init добавить настройки для списков:
 
 ```javascript
 import ListParameters from 'ember-flexberry/objects/list-parameters';
@@ -66,7 +66,7 @@ import ListParameters from 'ember-flexberry/objects/list-parameters';
   developerUserSettings: { ИмяКомпонентаСписка1: {}, ИмяКомпонентаСписка2: {}, ИмяКомпонентаСписка3: {}, ... },
 ```
 
-4. В шаблоне списка добавить списки:
+4.В шаблоне списка добавить списки:
 ```hbs
 <div class="row">
 {% raw %}{{#with multiListSettings.ИмяКомпонентаСписка as |settings|}}
@@ -101,7 +101,7 @@ import ListParameters from 'ember-flexberry/objects/list-parameters';
 ```
 ## Настройка формы редактирования для работы с несколькими списками
 
-1. Необходимо в роут формы добавить миксины `multi-list-route` и `multi-list-model-edit`:
+1.Необходимо в роут формы добавить миксины `multi-list-route` и `multi-list-model-edit`:
 
 ```javascript
 import EditFormRoute from 'ember-flexberry/routes/edit-form';
@@ -113,7 +113,7 @@ export default EditFormRoute.extend(MultiListRoute, MultiListModelEdit, {
 });
 ```
 
-2. В контроллер формы добавить миксин `multi-list-controller`:
+2.В контроллер формы добавить миксин `multi-list-controller`:
 
 ```javascript
 import EditFormController from 'ember-flexberry/controllers/edit-form';
@@ -124,7 +124,7 @@ export default EditFormController.extend(MultiListController, {
 });
 ```
 
-3. В роуте формы в init добавить настройки для списков:
+3.В роуте формы в init добавить настройки для списков:
 
 ```javascript
 import ListParameters from 'ember-flexberry/objects/list-parameters';
@@ -155,7 +155,7 @@ import ListParameters from 'ember-flexberry/objects/list-parameters';
   developerUserSettings: { ИмяКомпонентаСписка1: {}, ИмяКомпонентаСписка2: {}, ИмяКомпонентаСписка3: {}, ... },
 ```
 
-4. В шаблоне списка добавить списки:
+4.В шаблоне списка добавить списки:
 ```hbs
 <div class="row">
 {% raw %}{{#with multiListSettings.ИмяКомпонентаСписка as |settings|}}
