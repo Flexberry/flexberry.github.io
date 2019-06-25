@@ -20,3 +20,6 @@ summary: Краткое описание что тут такое написан
 <div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px">
     <iframe width="854" height="480" src="https://www.youtube.com/embed/FKmRoNDQsMw" frameborder="0" allowfullscreen></iframe>
 </div>
+
+[Эвристики Якоба Нильсена](1.1_heuristics.md)
+[Информация по иконкам и шрифтам.](1.3_icons_fonts.md)
