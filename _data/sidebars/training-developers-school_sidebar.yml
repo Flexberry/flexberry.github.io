@@ -74,3 +74,11 @@ entries:
       title_ru: Чек-лист проверки заданий
       url: /tds_module2-check-list.html
       output: web    
+  - title: Module 3. Diving into JavaScript development
+    title_ru: Модуль 3. Погружение в JavaScript-разработку
+    output: web
+    folderitems:
+    - title: About the module
+      title_ru: О модуле
+      url: /tds_module3-about.html
+      output: web    
