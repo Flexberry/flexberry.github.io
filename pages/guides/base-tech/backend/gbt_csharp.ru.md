@@ -13,7 +13,32 @@ lang: ru
 
 **Visual C#** — это реализация языка C# корпорацией Майкрософт. Поддержка Visual C# в Visual Studio обеспечивается с помощью полнофункционального редактора кода, компилятора, шаблонов проектов, конструкторов, мастеров кода, мощного и удобного отладчика и многих других средств. Библиотека классов .NET Framework предоставляет доступ ко многим службам операционной системы и другим полезным, правильным классам, что существенно ускоряет цикл разработки.
 
-##  Ссылки на материалы для изучения
+## Пример использования
+    // A Hello World! program in C#.
+    using System;
+    namespace HelloWorld
+    {
+        class Hello 
+        {
+            static void Main() 
+            {
+                Console.WriteLine("Hello World!");
+    
+                // Keep the console window open in debug mode.
+                Console.WriteLine("Press any key to exit.");
+                Console.ReadKey();
+            }
+        }
+    }
+
+## Программное обеспечение
+
+* [Microsoft Visual Studio](https://www.visualstudio.com/)
+* [MonoDevelop (Cross platform IDE for C#, F# and more)](http://www.monodevelop.com/)
+* [LINQPad (The .NET Programmer’s Playground)](https://www.linqpad.net/)
+* [dotPeek (Free .NET Decompiler and Assembly Browser)](https://www.jetbrains.com/decompiler/)
+
+##  Ресурсы
 
 ### Базовый курс
 
@@ -44,13 +69,6 @@ lang: ru
 * [C# 6.0. Справочник. Полное описание языка](http://www.ozon.ru/context/detail/id/135794222/)
 * [C# 6.0. Карманный справочник](http://www.ozon.ru/context/detail/id/34820810/)
 * [CLR via C#. Программирование на платформе Microsoft.NET Framework 4.5 на языке C#](http://www.ozon.ru/context/detail/id/21236101/)
-
-## Программное обеспечение
-
-* [Microsoft Visual Studio](https://www.visualstudio.com/)
-* [MonoDevelop (Cross platform IDE for C#, F# and more)](http://www.monodevelop.com/)
-* [LINQPad (The .NET Programmer’s Playground)](https://www.linqpad.net/)
-* [dotPeek (Free .NET Decompiler and Assembly Browser)](https://www.jetbrains.com/decompiler/)
 
 ## Примеры
 
