@@ -86,3 +86,7 @@ entries:
       title_ru: Учебные материалы
       url: /tds_module3-learn.html
       output: web    
+    - title: Appendix
+      title_ru: Дополнительные материалы
+      url: /tds_module3-appendix.html
+      output: web    
