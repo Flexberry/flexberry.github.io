@@ -14,6 +14,25 @@ ember-flexberry-data поддерживает протокол OData v4.
 
 * OData adapter
 
+## Поддержка транзакционных изменений данных
+
+С версии `ember-flexberry-data@2.2.0-beta.0` появилась поддержка отправки нескольких объектов модели для сохранения изменений в одной транзакции.
+
+Пример использования:
+
+```javascript
+const store = this.get('store');
+const models = [
+  store.createRecord('user', { name: 'Nif' }),
+  store.createRecord('user', { name: 'Naf' }),
+  store.createRecord('user', { name: 'Nuf' }),
+];
+
+store.batchUpdate(models).then((models) => {
+  const [nif, naf, nuf] = models;
+});
+```
+
 ## Вызов функций и экшенов через Ajax
 
 Для облегчения обращений к функциям и экшенам бэкенда через ajax в OData-адаптере предусмотрены два схожих метода: `callFunction` и `callAction`.
