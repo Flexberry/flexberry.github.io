@@ -5,10 +5,11 @@ sidebar: ui-ux-guideline_sidebar
 toc: false
 permalink: ru/uiuxg_landing-page.ru.html
 lang: ru
-summary: Краткое описание что тут такое написано.
+summary: Это страница гайдлайнов Flexberry. Здесь вы можете найти всю теоретическую и практическую информацию, которая поможет вам понять дизайн-систему нашей платформы.
 ---
 
 ## Описание
+
 Данный курс состоит из качественной подборки материалов по базовым технологиям, которые используюся в платформе Flexberry. Для успешного изучения платформы Flexberry предварительно рекомендуется ознакомится с данным курсом.
 
 ## Для начинающих разработчиков
@@ -21,5 +22,14 @@ summary: Краткое описание что тут такое написан
     <iframe width="854" height="480" src="https://www.youtube.com/embed/FKmRoNDQsMw" frameborder="0" allowfullscreen></iframe>
 </div>
 
-[Эвристики Якоба Нильсена](1.1_heuristics.md)
-[Информация по иконкам и шрифтам.](1.3_icons_fonts.md)
+## 1. Теоретическая часть
+
+[Понятие эвристики](uiuxg_heuristics.ru.md)
+
+[Иконки и шрифты](uiuxg_icons_fonts.ru.md)
+
+[Расположение основных элементов](uiuxg_elements_location.ru.md)
+
+[Диалоги с пользователем](uiuxg_dialog_with_a_system.ru.md)
+
+[Расположение информации на странице](uiuxg_information_composition.ru.md)
