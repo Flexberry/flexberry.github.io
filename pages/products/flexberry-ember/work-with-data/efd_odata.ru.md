@@ -5,7 +5,7 @@ keywords: function, action, callAction, callEmberOdataAction, callFunction, call
 toc: true
 permalink: ru/efd_odata.html
 lang: ru
-summary: Компоненты для взаимодействия с backend по протоколу OData.
+summary: Компоненты для взаимодействия с backend по протоколу OData, поддержка транзакционных изменений данных, вызов функций и экшенов через Ajax, примеры использования
 ---
 
 ## OData
@@ -52,12 +52,14 @@ store.batchUpdate(models).then((models) => {
 #### Примеры использования callFunction
 
 * Без callback-функций, URL бэкенда берем из `environment.js`:
-```
+
+```javascript
 adapter.callFunction('test', { someParams: 'someParams' })
 ```
+
 * С callback-функциями:
 
-```
+```javascript
 adapter.callFunction(
   'test',
   { someParams: 'someParams' },
@@ -97,12 +99,14 @@ adapter.callFunction(
 #### Примеры использования callAction
 
 * Без callback-функций, URL бэкенда берем из `environment.js`:
-```
+
+```javascript
 adapter.callAction('test', { someParams: 'someParams' })
 ```
+
 * С callback-функциями:
 
-```
+```javascript
 adapter.callAction(
   'test',
   { someParams: 'someParams' },

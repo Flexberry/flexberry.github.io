@@ -116,7 +116,7 @@ Model.reopenClass({
 });
 
 export default Model;
-``` 
+```
 
 Устанавливается свойство `idType` при помощи статической функции `defineIdType` в базовой технологической модели:
 
@@ -129,6 +129,7 @@ defineIdType: function (newIdType) {
 ```
 
 Вызвать этот метод можно следующим образом:
+
 ```javascript
 Model.defineIdType('string');
 ```
