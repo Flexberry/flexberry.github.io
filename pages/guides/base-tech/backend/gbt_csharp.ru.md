@@ -57,11 +57,11 @@ lang: ru
         <div id="collapse1" class="panel-collapse collapse">
             <div class="panel-body">
                 <div>
-                    <p><a href="https://msdn.microsoft.com/ru-ru/library/kx37x362.aspx"> Целевая страница технической документации по C#</a></p>
-                    <p><a href="https://msdn.microsoft.com/en-us/library/aa288436(v=vs.71).aspx"> C# Tutorials</a></p>
-                    <p><a href="https://msdn.microsoft.com/ru-ru/library/67ef8sbd.aspx"> Руководство по программированию на C#</a></p> 
-                    <p><a href="https://msdn.microsoft.com/ru-ru/library/bb383962(v=vs.90).aspx"> Интерактивный учебник по Visual C#</a></p>
-                    <p><a href="http://www.ecma-international.org/publications/standards/Ecma-334.htm"> Standard ECMA-334. C# Language Specification</a></p>
+                    <li><a href="https://msdn.microsoft.com/ru-ru/library/kx37x362.aspx"> Целевая страница технической документации по C#</a></li>
+                    <li><a href="https://msdn.microsoft.com/en-us/library/aa288436(v=vs.71).aspx"> C# Tutorials</a></li>
+                    <li><a href="https://msdn.microsoft.com/ru-ru/library/67ef8sbd.aspx"> Руководство по программированию на C#</a></li> 
+                    <li><a href="https://msdn.microsoft.com/ru-ru/library/bb383962(v=vs.90).aspx"> Интерактивный учебник по Visual C#</a></li>
+                    <li><a href="http://www.ecma-international.org/publications/standards/Ecma-334.htm"> Standard ECMA-334. C# Language Specification</a></li>
                 </div>   
             </div>
         </div>
@@ -80,10 +80,10 @@ lang: ru
         <div id="collapse2" class="panel-collapse collapse">
             <div class="panel-body">                
                 <div>
-                    <p><a href="https://professorweb.ru/my/csharp/charp_theory/level1/index.php"> Руководство по языку программирования С# 5.0 часть 1</a></p>
-                    <p><a href="https://professorweb.ru/my/csharp/charp_theory/level1/index1.php"> Руководство по языку программирования С# 5.0 часть 2</a></p>
-                    <p><a href="https://msdn.microsoft.com/ru-ru/magazine/dn802602.aspx"> Новый и более совершенный C# 6.0</a></p> 
-                    <p><a href="http://metanit.com/sharp/tutorial/"> Руководство по языку программирования С# 6.0</a></p>
+                    <li><a href="https://professorweb.ru/my/csharp/charp_theory/level1/index.php"> Руководство по языку программирования С# 5.0 часть 1</a></li>
+                    <li><a href="https://professorweb.ru/my/csharp/charp_theory/level1/index1.php"> Руководство по языку программирования С# 5.0 часть 2</a></li>
+                    <li><a href="https://msdn.microsoft.com/ru-ru/magazine/dn802602.aspx"> Новый и более совершенный C# 6.0</a></li> 
+                    <li><a href="http://metanit.com/sharp/tutorial/"> Руководство по языку программирования С# 6.0</a></li>
                 </div>
             </div>
         </div>
@@ -102,13 +102,13 @@ lang: ru
         <div id="collapse3" class="panel-collapse collapse">
             <div class="panel-body">                
                 <div>
-                    <p><a href="https://mva.microsoft.com/ru/training-courses/--8590?l=lSmM2020_304984382"> Основы программирования на языке С#</a></p>
-                    <p><a href="https://www.youtube.com/watch?v=zCg1PnBoTJo&list=PLtjuvkyFrt5WjvySK8HinYjyTObam4ROY"> Базовый курс C#</a></p>
-                    <p><a href="https://mva.microsoft.com/ru/training-courses/-c-1-8669?l=MAuqZiG1_4404984382"> Язык программирования C# (часть 1)</a></p> 
-                    <p><a href="https://mva.microsoft.com/ru/training-courses/-c-2-8877?l=ATbUZg02_6104984382"> Язык программирования C# (часть 2)</a></p>
-                    <p><a href="https://mva.microsoft.com/en-US/training-courses/programming-in-c-jump-start-14254?l=MqbQvzSfB_1500115888"> Programming in C# Jump Start</a></p>
-                    <p><a href="https://www.youtube.com/playlist?list=PLWCoo5SF-qAMDIAqikhB2hvIytrMiR5TC"> Видеоуроки по языку программирования C#</a></p>
-                    <p><a href="https://www.youtube.com/playlist?list=PLWCoo5SF-qAN-mySVH6p7X0YPvMr8U1OU"> Видеокурс примеров C#</a></p>                    
+                    <li><a href="https://mva.microsoft.com/ru/training-courses/--8590?l=lSmM2020_304984382"> Основы программирования на языке С#</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=zCg1PnBoTJo&list=PLtjuvkyFrt5WjvySK8HinYjyTObam4ROY"> Базовый курс C#</a></li>
+                    <li><a href="https://mva.microsoft.com/ru/training-courses/-c-1-8669?l=MAuqZiG1_4404984382"> Язык программирования C# (часть 1)</a></li> 
+                    <li><a href="https://mva.microsoft.com/ru/training-courses/-c-2-8877?l=ATbUZg02_6104984382"> Язык программирования C# (часть 2)</a></li>
+                    <li><a href="https://mva.microsoft.com/en-US/training-courses/programming-in-c-jump-start-14254?l=MqbQvzSfB_1500115888"> Programming in C# Jump Start</a></li>
+                    <li><a href="https://www.youtube.com/playlist?list=PLWCoo5SF-qAMDIAqikhB2hvIytrMiR5TC"> Видеоуроки по языку программирования C#</a></li>
+                    <li><a href="https://www.youtube.com/playlist?list=PLWCoo5SF-qAN-mySVH6p7X0YPvMr8U1OU"> Видеокурс примеров C#</a></li>                    
                 </div>
             </div>
         </div>
@@ -127,9 +127,9 @@ lang: ru
         <div id="collapse4" class="panel-collapse collapse">
             <div class="panel-body">                
                 <div>
-                    <p><a href="http://www.ozon.ru/context/detail/id/135794222/"> C# 6.0. Справочник. Полное описание языка</a></p>
-                    <p><a href="http://www.ozon.ru/context/detail/id/34820810/"> C# 6.0. Карманный справочник</a></p>
-                    <p><a href="http://www.ozon.ru/context/detail/id/21236101/"> CLR via C#. Программирование на платформе Microsoft.NET Framework 4.5 на языке C#</a></p>            
+                    <li><a href="http://www.ozon.ru/context/detail/id/135794222/"> C# 6.0. Справочник. Полное описание языка</a></li>
+                    <li><a href="http://www.ozon.ru/context/detail/id/34820810/"> C# 6.0. Карманный справочник</a></li>
+                    <li><a href="http://www.ozon.ru/context/detail/id/21236101/"> CLR via C#. Программирование на платформе Microsoft.NET Framework 4.5 на языке C#</a></li>            
                 </div>
             </div>
         </div>
@@ -148,9 +148,9 @@ lang: ru
         <div id="collapse5" class="panel-collapse collapse" aria-expanded="false">
             <div class="panel-body">                
                 <div>
-                    <p><a href="https://www.microsoft.com/ru-ru/learning/exam-70-483.aspx"> Экзамен 70-483 (Programming in C#)</a></p>
-                    <p><a href="https://geekbrains.ru/professions/microsoft_developer"> Разработчик C#</a></p>
-                    <p><a href="https://www.microsoft.com/en-us/learning/visual-studio-certification.aspx"> Microsoft Visual Studio certifications</a></p>       
+                    <li><a href="https://www.microsoft.com/ru-ru/learning/exam-70-483.aspx"> Экзамен 70-483 (Programming in C#)</a></li>
+                    <li><a href="https://geekbrains.ru/professions/microsoft_developer"> Разработчик C#</a></li>
+                    <li><a href="https://www.microsoft.com/en-us/learning/visual-studio-certification.aspx"> Microsoft Visual Studio certifications</a></li>       
                 </div>
             </div>
         </div>
