@@ -1,5 +1,5 @@
 ---
-title: Формы
+title: Формы обратной связи
 keywords: UI, UX
 sidebar: ui-ux-guideline_sidebar
 toc: false

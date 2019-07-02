@@ -1,5 +1,5 @@
 ---
-title: Расположение основных элементов
+title: Расположение стандартных блоков
 keywords: UI, UX
 sidebar: ui-ux-guideline_sidebar
 toc: false

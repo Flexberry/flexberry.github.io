@@ -1,11 +1,11 @@
 ---
-title: Правила заполнения полей и правила расположения полей.
+title: Расположение и заполнение полей
 keywords: UI, UX
 sidebar: ui-ux-guideline_sidebar
 toc: false
 permalink: ru/uiuxg_fields_location_and_fill.html
 lang: ru
-summary: Основные правила для полей.
+summary: Основные gравила заполнения и расположения полей.
 ---
 
 ## Компоненты форм ввода данных
