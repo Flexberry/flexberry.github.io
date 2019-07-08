@@ -1,11 +1,11 @@
 ---
-title: Расположение основных элементов
+title: Диалоги с системой
 keywords: UI, UX
 sidebar: ui-ux-guideline_sidebar
 toc: false
 permalink: ru/uiuxg_elements_location.html
 lang: ru
-summary: Расположение основных элементов.
+summary: Различные диалоговые окна и их описание.
 ---
 
 ## Диалоги с пользователем
