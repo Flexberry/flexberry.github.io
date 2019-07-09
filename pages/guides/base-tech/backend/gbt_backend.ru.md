@@ -22,18 +22,12 @@ lang: ru
 * [**Mono**](gbt_mono.html) — проект по созданию полноценного воплощения системы .NET Framework на базе свободного программного обеспечения. Основной разработчик проекта Mono — корпорация Xamarin, ранее Novell.
 * [**ORM (англ. Object-Relational Mapping, рус. объектно-реляционное отображение)**](gbt_orm.html) — технология программирования, которая связывает базы данных с концепциями объектно-ориентированных языков программирования, создавая «виртуальную объектную базу данных». Существуют как проприетарные, так и свободные реализации этой технологии.
 
-## Презентация
+## «Для тех, кто предпочитает один раз увидеть»
 
 ### Основы баз данных
 
 <div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px">
     <iframe width="854" height="480" src="https://www.youtube.com/embed/pIyxM-LVRig?list=PLlhqsC7hBaSezv_J4znt-NbFq4MCzcYzk" frameborder="0" allowfullscreen></iframe>
-</div>
-
-### Основы .Net Framework
-
-<div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px">
-    <iframe width="854" height="480" src="https://www.youtube.com/embed/sLTmuzBbBj8?list=PLlhqsC7hBaSezv_J4znt-NbFq4MCzcYzk" frameborder="0" allowfullscreen></iframe>
 </div>
 
 ## Перейти
