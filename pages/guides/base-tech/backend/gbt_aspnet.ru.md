@@ -23,66 +23,40 @@ lang: ru
 - **Представление (view)** - это собственно визуальная часть или пользовательский интерфейс приложения. Как правило, html-страница, которую пользователь видит, зайдя на сайт.
 - **Модель (model)** представляет класс, описывающий логику используемых данных.
 
-**Платформа Web API** представляет иной способ построения приложения ASP.NET несколько отличный от ASP.NET MVC. Web API представляет собой веб-службу, которая может взаимодействовать с различными приложениями. При этом приложение может быть веб-приложением ASP.NET, либо может быть мобильным или обычным десктопным приложением.
-
-**Платформа Web API** не является частью фреймворка ASP.NET MVC и может быть задействована как в связке с MVC, так и в соединении с Web Forms. Поэтому в Web API имеется своя система версий. Так, первая версия появилась с .net 4.5. А вместе с .NET 4.5.1 и MVC 5 вышла Web API 2.0.
-
 **Платформа ASP.NET Core** представляет технологию от компании Microsoft, предназначенную для создания различного рода веб-приложений: от небольших веб-сайтов до крупных веб-порталов и веб-сервисов.
 
 **Платформа ASP.NET Core** построен на основе кросс-платформенной среды .NET Core, которая может быть развернута на основных популярных операционных системах: Windows, Mac OS X, Linux. И хотя Windows в качестве среды для разработки и развертывания приложения до сих пор превалирует, но теперь уже мы не ограничены только этой операционной системой. То есть мы можем запускать веб-приложения не только на ОС Windows, но и на Linux и Mac OS. А для развертывания веб-приложения можно использовать традиционный IIS, либо кросс-платформенный веб-сервер Kestrel.
 
-##  Ссылки на материалы для изучения
+##  Пример использования
 
-### Базовый курс
+### Принцип работы шаблона MVC
+![Принцип работы шаблона MVC](/images/pages/guides/base-technologies/backend/mvc.png)
 
-* [The ASP.NET Site](https://www.asp.net/)
-* [ASP.NET и Visual Studio для веб-разработки](https://msdn.microsoft.com/ru-ru/library/dd566231.aspx)
-* [Пошаговые руководства по приложению Web Forms](https://msdn.microsoft.com/ru-ru/library/c67263se(v=vs.90).aspx)
-* [Learn ASP.NET](https://www.asp.net/learn)
-* [Getting Started with ASP.NET 4.5 Web Forms and Visual Studio 2013](https://code.msdn.microsoft.com/Getting-Started-with-221c01f5/view/SourceCode#)
-* [Практическое руководство. Создание приложения ASP.NET Web Forms](https://msdn.microsoft.com/ru-ru/library/hh987037(v=vs.110).aspx)
-* [Общие сведения о синтаксисе веб-страниц ASP.NET](https://msdn.microsoft.com/ru-ru/library/k33801s3(v=vs.100).aspx)
-* [Веб-платформы ASP.NET для Visual Studio 2013](https://msdn.microsoft.com/ru-ru/library/dn467680(v=vs.108).aspx)
-* [Документация по веб-API ASP.NET](https://msdn.microsoft.com/ru-ru/library/dn448365(v=vs.118).aspx)
-* [Справочник по ASP.NET MVC 4](https://msdn.microsoft.com/ru-ru/library/gg416515(v=vs.108).aspx)
-    
-### Самоучители
-
-* [Основы ASP.NET](https://professorweb.ru/my/ASP_NET/base/level1/base_aspnet_index.php)
-* [Веб-сайты ASP.NET](https://professorweb.ru/my/ASP_NET/sites/level1/)
-* [Безопасность в ASP.NET](https://professorweb.ru/my/ASP_NET/security/level1/)
-* [ASP.NET Web Forms 4.5](https://professorweb.ru/my/ASP_NET/webforms_4_5/level1/)
-
-* ASP.NET MVC
-    * [Руководство по ASP.NET MVC 5](http://metanit.com/sharp/mvc5/)
-    * [Изучаем ASP.NET MVC 5](https://professorweb.ru/my/ASP_NET/mvc/level1/)
-    * [Руководство по ASP.NET Core](http://metanit.com/sharp/aspnet5/)
-    * [Руководство по ASP.NET Web API 2](http://metanit.com/sharp/aspnet_webapi/)
-
-### Видеокурсы
-
-* [Видео курс ASP.NET Базовый курс](https://www.youtube.com/watch?v=VU-NObnc2jA&list=PLvItDmb0sZw8qA87QMQbx5RpPO_dfCGOy)
-* [ASP.NET Advanced](https://www.youtube.com/watch?v=qiujcPFFinA&list=PLvItDmb0sZw_TRwlGr0BVFtS-sP3YaDMU)
-* [Разработка приложений на основе ASP Net Web Forms](https://www.youtube.com/watch?v=VSsXD1JVRYQ&index=20&list=PLMv23B5LnJ9NJ_s4iuIaNen-DbvdR1dMq)
-* [Создание простой страницы Asp.Net WebForms](https://www.youtube.com/watch?v=Ww6CVU4oS3k&index=1&list=PLIZicc8_ARKsGxB446wkS6vC-4OynaYIy)
-* [ASP.NET Web Forms](https://channel9.msdn.com/Events/dotnetConf/2014/Web-Forms)
-* [Введение в ASP.NET MVC](https://mva.microsoft.com/ru/training-courses/-aspnet-mvc-8322?l=eTXjmit7_304984382)
-
-### Презентация
+##  «Для тех, кто предпочитает один раз увидеть»
 
 <div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px">
     <iframe width="854" height="480" src="https://www.youtube.com/embed/-XzDcHh5Y5s?list=PLlhqsC7hBaSezv_J4znt-NbFq4MCzcYzk" frameborder="0" allowfullscreen></iframe>
 </div>
 
-### Рекомендованные книги
-
-* [Программирование с использованием Microsoft ASP.NET 3.5](http://www.ozon.ru/context/detail/id/4148051/)
-* [ASP.NET. Сборник рецептов](http://www.ozon.ru/context/detail/id/28277279/)
-* [Microsoft ASP .NET. Обеспечение безопасности](http://www.ozon.ru/context/detail/id/136359541/)
-* [ASP.NET 4.5 с примерами на C# 5.0 для профессионалов](http://www.ozon.ru/context/detail/id/26199321/)
-* [Самоучитель ASP.NET](http://www.ozon.ru/context/detail/id/28266738/)
-* [ASP.NET MVC 4. Разработка реальных веб-приложений с помощью ASP.NET MVC](http://www.ozon.ru/context/detail/id/20343905/)
-* [ASP.NET MVC 5 с примерами на C# 5.0 для профессионалов](http://www.ozon.ru/context/detail/id/29482313/)
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse1">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse1">
+                Больше информации по теме</a>
+            </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><b>Платформа Web API</b> представляет иной способ построения приложения ASP.NET несколько отличный от ASP.NET MVC. Web API представляет собой веб-службу, которая может взаимодействовать с различными приложениями. При этом приложение может быть веб-приложением ASP.NET, либо может быть мобильным или обычным десктопным приложением.</li>
+                    <li><b>Платформа Web API</b> не является частью фреймворка ASP.NET MVC и может быть задействована как в связке с MVC, так и в соединении с Web Forms. Поэтому в Web API имеется своя система версий. Так, первая версия появилась с .net 4.5. А вместе с .NET 4.5.1 и MVC 5 вышла Web API 2.0.</li> 
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
 
 ## Программное обеспечение
 
@@ -90,17 +64,133 @@ lang: ru
 * [Visual Studio Code](https://code.visualstudio.com/download)
 * [MonoDevelop (Cross platform IDE for C#, F# and more)](http://www.monodevelop.com/)
 
-## Примеры
+##  Ресурсы
 
-* [Интернет магазин на ASP.NET Web Forms 4.5](https://professorweb.ru/my/ASP_NET/gamestore/level1/1_1.php)
-* [Практическое руководство по ASP.NET MVC 4](http://metanit.com/sharp/helpdeskmvc/)
-* [Интернет магазин на ASP.NET MVC 5](https://professorweb.ru/my/ASP_NET/gamestore/level2/2_1.php)
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse2">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse2">
+                Базовый курс</a>
+            </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="https://msdn.microsoft.com/ru-ru/library/dd566231.aspx"> ASP.NET и Visual Studio для веб-разработки</a><i> - Microsoft Docs</i></li>
+                    <li><a href="https://msdn.microsoft.com/ru-ru/library/c67263se(v=vs.90).aspx"> Пошаговые руководства по приложению Web Forms</a><i> - Microsoft Docs</i></li>
+                    <li><a href="https://www.asp.net/learn"> Learn ASP.NET</a><i> - Microsoft .NET</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
 
-## Возможности по сертификации
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse3">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse3">
+                Самоучители</a>
+            </h4>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="https://professorweb.ru/my/ASP_NET/sites/level1/"> Веб-сайты ASP.NET</a><i> - professorweb.ru</i></li>
+                    <li><a href="https://professorweb.ru/my/ASP_NET/security/level1/"> Безопасность в ASP.NET</a><i> - professorweb.ru</i></li>
+                    <li><a href="http://metanit.com/sharp/mvc5/">Руководство по ASP.NET MVC 5</a><i> - metanit.сom</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
+    
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse4">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse4">
+                Видеокурсы</a>
+            </h4>
+        </div>
+        <div id="collapse4" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="https://www.youtube.com/playlist?list=PLvItDmb0sZw8qA87QMQbx5RpPO_dfCGOy"> Видеокурс ASP.NET Базовый курс</a><i> - youtube-аккаунт «ITVDN»</i></li>
+                    <li><a href="https://www.youtube.com/playlist?list=PLvItDmb0sZw_TRwlGr0BVFtS-sP3YaDMU">Видеокурс по ASP.NET Advanced</a><i> - youtube-аккаунт «ITVDN»</i></li>
+                    <li><a href="https://channel9.msdn.com/Events/dotnetConf/2014/Web-Forms">ASP.NET What's New in Web Forms</a><i> - msdn Channel 9</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
+    
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse5">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse5">
+                Рекомендованные книги</a>
+            </h4>
+        </div>
+        <div id="collapse5" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="http://www.ozon.ru/context/detail/id/136359541/"> Microsoft ASP .NET. Обеспечение безопасности</a><i> - ozon.ru</i></li>
+                    <li><a href="http://www.ozon.ru/context/detail/id/28266738/">Самоучитель ASP.NET</a><i> - ozon.ru</i></li>
+                    <li><a href="http://www.ozon.ru/context/detail/id/29482313/">ASP.NET MVC 5 с примерами на C# 5.0 для профессионалов</a><i> - ozon.ru</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
 
-* [Экзамен 70-486. Developing ASP.NET MVC Web Applications](https://www.microsoft.com/ru-ru/learning/exam-70-486.aspx)
-* [Разработчик C#](https://geekbrains.ru/professions/microsoft_developer)
-* [MCSD: Web Applications](https://www.microsoft.com/ru-ru/learning/mcsd-web-apps-certification.aspx)
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse6">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse6">
+                Примеры</a>
+            </h4>
+        </div>
+        <div id="collapse6" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="https://professorweb.ru/my/ASP_NET/gamestore/level1/1_1.php"> Интернет-магазин на ASP.NET Web Forms 4.5</a><i> - professorweb.ru</i></li>
+                    <li><a href="https://professorweb.ru/my/ASP_NET/gamestore/level2/2_1.php">Интернет-магазин на ASP.NET MVC 5</a><i> - professorweb.ru</i></li>
+                    <li><a href="http://metanit.com/sharp/helpdeskmvc/">Практическое руководство по ASP.NET MVC 4</a><i> - metanit.сom</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse7">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse7">
+                Возможности по сертификации</a>
+            </h4>
+        </div>
+        <div id="collapse7" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="https://www.microsoft.com/ru-ru/learning/exam-70-486.aspx"> Экзамен 70-486. Developing ASP.NET MVC Web Applications</a><i> - Microsoft</i></li>
+                    <li><a href="https://geekbrains.ru/professions/microsoft_developer">Разработчик C#</a><i> - GeekBrains</i></li>
+                    <li><a href="https://www.microsoft.com/ru-ru/learning/mcsd-web-apps-certification.aspx">MCSD: Web Applications</a><i> - Microsoft</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
 
 ## Перейти
 
