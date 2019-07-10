@@ -17,8 +17,8 @@ lang: ru
 .NET является патентованной технологией корпорации Microsoft и официально рассчитана на работу под операционными системами семейства Microsoft Windows, существуют независимые проекты (прежде всего это Mono и Portable.NET), позволяющие запускать программы .NET на некоторых других операционных системах. В настоящее время .NET Framework получает развитие в виде .NET Core, изначально предполагающей кросплатформенную разработку и эксплуатацию.
 
 ##  Примеры использования
-Компоненты .NET Framework до версии 4.5 включительно:
-![Компоненты .NET Framework до версии 4.5 включительно:](/images/pages/guides/base-technologies/backend/DotNet.png)
+### Компоненты .NET Framework до версии 4.5 включительно:
+![Компоненты .NET Framework до версии 4.5 включительно](/images/pages/guides/base-technologies/backend/DotNet.png)
 
 ## «Для тех, кто предпочитает один раз увидеть»
 
@@ -48,12 +48,10 @@ lang: ru
         </div>
         <div id="collapse1" class="panel-collapse collapse">
             <div class="panel-body">
-                <div>
-                    <li><a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_.NET-%D1%8F%D0%B7%D1%8B%D0%BA%D0%BE%D0%B2"> Список .NET-языков</a></li> 
-                    <li><a href="https://msdn.microsoft.com/ru-ru/library/zw4w595w.aspx?f=255&MSPPError=-2147217396"> Общие сведения о платформе .NET Framework</a></li>
-                    <li><a href="https://msdn.microsoft.com/ru-ru/library/bb399567(v=vs.110).aspx"> Общие сведения о платформе Entity Framework</a></li>
-                    <li><a href="https://msdn.microsoft.com/ru-ru/library/ff361664.aspx">.NET Framework Development</a></li>
-                    <li><a href="https://msdn.microsoft.com/ru-ru/library/aa139615.aspx">Разработка на .NET</a></li>
+                <div>                    
+                    <li><a href="https://msdn.microsoft.com/ru-ru/library/zw4w595w.aspx?f=255&MSPPError=-2147217396"> Общие сведения о платформе .NET Framework</a><i> - Microsoft Docs</i></li>
+                    <li><a href="https://msdn.microsoft.com/ru-ru/library/bb399567(v=vs.110).aspx"> Общие сведения о платформе Entity Framework</a><i> - Microsoft Docs</i></li>
+                    <li><a href="https://msdn.microsoft.com/ru-ru/library/aa139615.aspx">Разработка на .NET</a><i> - Microsoft Developer Network</i></li>
                 </div>   
             </div>
         </div>
@@ -72,9 +70,9 @@ lang: ru
         <div id="collapse2" class="panel-collapse collapse">
             <div class="panel-body">
                 <div>
-                    <li><a href="https://professorweb.ru/my/csharp/base_net/level1/net_index.php"> Основы .NET Framework</a></li>
-                    <li><a href="https://professorweb.ru/my/csharp/assembly/level1/assembly_index.php"> Сборки .NET Framework</a></li>
-                    <li><a href="https://professorweb.ru/my/csharp/optimization/level1/"> Оптимизация приложений на .NET Framework</a></li>
+                    <li><a href="https://professorweb.ru/my/csharp/base_net/level1/net_index.php"> Основы .NET Framework</a><i> - professorweb.ru</i></li>
+                    <li><a href="https://professorweb.ru/my/csharp/assembly/level1/assembly_index.php"> Сборки .NET Framework</a><i> - professorweb.ru</i></li>
+                    <li><a href="https://professorweb.ru/my/csharp/optimization/level1/"> Оптимизация приложений на .NET Framework</a><i> - professorweb.ru</i></li>
                 </div>   
             </div>
         </div>
@@ -93,11 +91,9 @@ lang: ru
         <div id="collapse3" class="panel-collapse collapse">
             <div class="panel-body">
                 <div>
-                    <li><a href="https://www.youtube.com/playlist?list=PLvItDmb0sZw86Ph0CL6H2BfgXu47-rOvk"> Видеокурс WCF Essential</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=29sxHG3nFx8"> Сборка мусора в .NET</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=fqYaXrwEkl4"> Практические приёмы оптимизации .NET-приложений</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=PDGKOqyfaTg"> Сложности тестирования производительности .NET приложений</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=0h3kfHDfkk4&t=4s"> Низкоуровневые оптимизации в .NET</a></li>
+                    <li><a href="https://www.youtube.com/playlist?list=PLvItDmb0sZw86Ph0CL6H2BfgXu47-rOvk"> Видеокурс WCF Essential</a><i> - youtube-аккаунт «ITVDN»</i></li>
+                    <li><a href="https://www.youtube.com/watch?v=29sxHG3nFx8"> Сборка мусора в .NET</a><i> - youtube-аккаунт «Enterra Holdings Inc»</i></li>
+                    <li><a href="https://www.youtube.com/watch?v=fqYaXrwEkl4"> Практические приёмы оптимизации .NET-приложений</a><i> - youtube-аккаунт «Alexander Byndyu»</i></li>
                 </div>   
             </div>
         </div>
@@ -116,7 +112,7 @@ lang: ru
         <div id="collapse4" class="panel-collapse collapse">
             <div class="panel-body">
                 <div>
-                    <li><a href="http://www.ozon.ru/context/detail/id/21236101/"> CLR via C#. Программирование на платформе Microsoft.NET Framework 4.5 на языке C#</a></li>
+                    <li><a href="http://www.ozon.ru/context/detail/id/21236101/"> CLR via C#. Программирование на платформе Microsoft.NET Framework 4.5 на языке C#</a><i> - ozon.ru</i></li>
                 </div>   
             </div>
         </div>
@@ -126,17 +122,17 @@ lang: ru
 <div class="panel-group">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse4">&#9660;</a>
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse5">&#9660;</a>
             <h4 class="panel-title">
-                <a data-toggle="collapse" href="#collapse4">
+                <a data-toggle="collapse" href="#collapse5">
                 Возможности по сертификации</a>
             </h4>
         </div>
-        <div id="collapse4" class="panel-collapse collapse">
+        <div id="collapse5" class="panel-collapse collapse">
             <div class="panel-body">
                 <div>
-                    <li><a href="http://www.specialist.ru/vendor/microsoft"> Курсы и сертификации Microsoft</a></li>
-                    <li><a href="https://habrahabr.ru/post/249331/"> Сертификация Microsoft</a></li>
+                    <li><a href="http://www.specialist.ru/vendor/microsoft"> Курсы и сертификации Microsoft</a><i> - Специалист.ру</i></li>
+                    <li><a href="https://habrahabr.ru/post/249331/"> Сертификация Microsoft</a><i> - habr.сom</i></li>
                 </div>   
             </div>
         </div>
