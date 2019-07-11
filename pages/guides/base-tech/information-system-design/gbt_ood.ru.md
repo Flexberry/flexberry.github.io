@@ -20,39 +20,101 @@ lang: ru
 * **Класс** - универсальный, комплексный тип данных, состоящий из тематически единого набора «полей» (переменных более элементарных типов) и «методов» (функций для работы с этими полями), то есть он является моделью информационной сущности с внутренним и внешним интерфейсами для оперирования своим содержимым (значениями полей). В частности, в классах широко используются специальные блоки из одного или чаще двух спаренных методов, отвечающих за элементарные операции с определенным полем (интерфейс присваивания и считывания значения), которые имитируют непосредственный доступ к полю. 
 * **Объект** - сущность в адресном пространстве вычислительной системы, появляющаяся при создании экземпляра класса (например, после запуска результатов компиляции и связывания исходного кода на выполнение).
 
-##  Ссылки на материалы для изучения
-### Базовый курс
+##  Пример использования
 
-* [Объектно-ориентированное программирование - Википедия](https://ru.wikipedia.org/wiki/%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BD%D0%BE-%D0%BE%D1%80%D0%B8%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)
-* [Объектно-ориентированное программирование - Викиучебник](https://ru.wikibooks.org/wiki/%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BD%D0%BE-%D0%BE%D1%80%D0%B8%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)
+### Схема принципов ООП
+![Схема принципов ООП](/images/pages/guides/base-technologies/information-system-design/ood.png)
 
-### Самоучители
-
-* [Основы объектно-ориентированного программирования](https://professorweb.ru/my/csharp/charp_theory/level3/3_1.php)
-* [Объектно-ориентированное программирование](https://metanit.com/sharp/tutorial/3.1.php)
-
-### Видеокурсы
-
-* [Курс "Объектно-ориентированное программирование"](https://www.youtube.com/playlist?list=PLmRNNqEA7JoPhVQCUisflWWhjdoKucDuf)
-* [Запись семинара на тему "Что такое ООП и с чем его едят?"](https://www.youtube.com/watch?v=ydPHlM43kKM)
-* [Основы объектно-ориентированного програмирования](https://www.youtube.com/watch?v=QZTn7LQk1eg&list=PL6LDsbZOeyrx462VmH18qS0a9Dw9LwpSu)
-* [Практическое применение ООП](https://www.youtube.com/watch?v=BmJH3I3McOs)
-* [Вебинар на тему "ООП. Простыми словами о сложных вещах"](https://www.youtube.com/watch?v=atjD9GQcFhs)
-* [Видео курс C# Базовый. Урок 1. Введение в ООП. Классы и объекты](https://www.youtube.com/watch?v=x0udrpe_gZE)
-* [Объектно-Ориентированное Программирование](https://www.youtube.com/playlist?list=PLY7PmJJFH5nRcWGKbgl9N7txM5YLtela6)
-
-### Презентация
+## «Для тех, кто предпочитает один раз увидеть»
 
 <div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px">
   <iframe width="854" height="480" id="iframe_container" src="https://prezi.com/embed/q2b_ru9d1clq/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;landing_data=bHVZZmNaNDBIWnNjdEVENDRhZDFNZGNIUE1UM0xkVmhmSVd4VW5RZEFTOFFyVWYvNmQzYjhTU1A1NjNYZFZOS2UwMD0&amp;landing_sign=X2R8nh1mXAaWDkz5gqp5YDsBlP7G-l4PwabqXSQU8sg" frameborder="0" allowfullscreen="" webkitAllowFullScreen="" mozAllowFullscreen=""></iframe>
 </div>
 
-### Рекомендованные книги
 
-* [Объектно-ориентированное конструирование программных систем](http://www.ozon.ru/context/detail/id/2336754/)
-* [Объектно-ориентированное мышление](https://www.ozon.ru/context/detail/id/26036833/)
-* [Объектно-ориентированный анализ и проектирование с примерами приложений](http://www.ozon.ru/context/detail/id/3905587/)
-* [Почувствуй класс. Учимся программировать хорошо с объектами и контрактами](https://www.ozon.ru/context/detail/id/6304950/)
+##  Ресурсы
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse1">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse1">
+                Базовый курс</a>
+            </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="https://ru.wikipedia.org/wiki/%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BD%D0%BE-%D0%BE%D1%80%D0%B8%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5"> Объектно-ориентированное программирование</a><i> - Википедия</i></li>
+                    <li><a href="https://ru.wikibooks.org/wiki/%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BD%D0%BE-%D0%BE%D1%80%D0%B8%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5"> Объектно-ориентированное программирование</a><i> - Викиучебник</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse2">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse2">
+                Самоучители</a>
+            </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="https://professorweb.ru/my/csharp/charp_theory/level3/3_1.php"> Основы объектно-ориентированного программирования</a><i> - professorweb.ru</i></li>
+                    <li><a href="https://metanit.com/sharp/tutorial/3.1.php"> Объектно-ориентированное программирование</a><i> - metanit.сom</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse3">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse3">
+                Видеокурсы</a>
+            </h4>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="https://www.youtube.com/playlist?list=PLmRNNqEA7JoPhVQCUisflWWhjdoKucDuf"> Курс «Объектно-ориентированное программирование»</a><i> - youtube-аккаунт «Образовательный портал GeekBrains»</i></li>
+                    <li><a href="https://www.youtube.com/playlist?list=PL6LDsbZOeyrx462VmH18qS0a9Dw9LwpSu"> Основы объектно-ориентированного програмирования</a><i> - youtube-аккаунт «Yellow-Duck.net»</i></li>
+                    <li><a href="https://www.youtube.com/playlist?list=PLY7PmJJFH5nRcWGKbgl9N7txM5YLtela6"> Объектно-Ориентированное Программирование</a><i> - youtube-аккаунт «Volodya Mozhenkov»</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse4">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse4">
+                Рекомендованные книги</a>
+            </h4>
+        </div>
+        <div id="collapse4" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="http://www.ozon.ru/context/detail/id/2336754/"> Объектно-ориентированное конструирование программных систем</a><i> - ozon.ru</i></li>
+                    <li><a href="https://www.ozon.ru/context/detail/id/26036833/"> Объектно-ориентированное мышление</a><i> - ozon.ru</i></li>
+                    <li><a href="http://www.ozon.ru/context/detail/id/3905587/"> Объектно-ориентированный анализ и проектирование с примерами приложений</a><i> - ozon.ru</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
 
 ## Перейти
 
