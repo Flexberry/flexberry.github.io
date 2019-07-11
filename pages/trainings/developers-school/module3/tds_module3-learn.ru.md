@@ -166,6 +166,52 @@ lang: ru
     </div>
 </div>
 
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse4">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse4">
+                Взаимодействие с сервером</a>
+            </h4>
+        </div>
+        <div id="collapse4" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://monsterlessons.com/project/lessons/poluchaem-dannye-v-javascript-s-pomoshyu-xmlhttprequest' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/xml-http-request.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">1. Получение данных от сервера с использованием XMLHttpRequest</span></h4>
+                            <p>Урок, в котором рассматриваются базовые возможности объекта XMLHttpRequest для организации взаимодействия с сервером (Monster Lessons).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://monsterlessons.com/project/lessons/poluchenie-dannyh-ot-servera-v-jquery' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/jquery-ajax.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">2. Получение данных от сервера с использованием jQuery</span></h4>
+                            <p>Урок, в котором рассматриваются основные возможности библиотеки jQuery для организации взаимодействия с сервером (Monster Lessons).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://monsterlessons.com/project/lessons/poluchenie-dannyh-ot-servera-s-pomoshyu-fetch' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/fetch.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">3. Получение данных от сервера с использованием метода fetch</span></h4>
+                            <p>Урок, в котором более подробно рассматриваются "XMLHttpRequest нового поколения" - метод fetch (Monster Lessons).</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 ## Вы можете
 
 * [Перейти к дополнительным учебным материалам модуля](tds_module3-appendix.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
