@@ -12,13 +12,13 @@ lang: ru
 <div class="panel-group">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse2">&#9660;</a>
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse1">&#9660;</a>
             <h4 class="panel-title">
-                <a data-toggle="collapse" href="#collapse2">
+                <a data-toggle="collapse" href="#collapse1">
                 Одностраничные приложения (SPA) и архитектурный паттерн MVC</a>
             </h4>
         </div>
-        <div id="collapse2" class="panel-collapse collapse in">
+        <div id="collapse1" class="panel-collapse collapse in">
             <div class="panel-body">
                 <div class="row items">
                     <div class="col-sm-6 col-md-4 portfolio-item">
@@ -58,11 +58,20 @@ lang: ru
             <div class="panel-body">
                 <div class="row items">
                     <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=J1aIrZFnGig' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/objects-in-javascript.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">1. Объекты в JavaScript</span></h4>
+                            <p>Скринкаст, в котором рассматриваются способы определения объектов и основные операции, которые применяются к свойствам объектов (Sorax).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
                         <a href="{{ 'https://monsterlessons.com/project/lessons/prototipnoie-nasliedovaniie-v-javascript' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/prototype-inheritance.jpg" | relative_url}}" class="products-img">
                             </div>
-                            <h4><span class="item-head">1. Прототипное наследование</span></h4>
+                            <h4><span class="item-head">2. Прототипное наследование</span></h4>
                             <p>Урок, в котором рассматривается реализация классов и наследования в JavaScript, а также концепция прототипов (Monster Lessons).</p>
                         </a>
                     </div>
@@ -71,17 +80,28 @@ lang: ru
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/mixins.jpg" | relative_url}}" class="products-img">
                             </div>
-                            <h4><span class="item-head">2. Миксины</span></h4>
+                            <h4><span class="item-head">3. Миксины</span></h4>
                             <p>Урок, в котором рассматривается понятие и реализация миксинов (примесей) в JavaScript (Monster Lessons).</p>
                         </a>
                     </div>
+                </div>
+                <div class="row items">
                     <div class="col-sm-6 col-md-4 portfolio-item">
                         <a href="{{ 'https://monsterlessons.com/project/lessons/module-pattiern-v-javascript' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/private-members.jpg" | relative_url}}" class="products-img">
                             </div>
-                            <h4><span class="item-head">3. Реализация приватных свойств и методов</span></h4>
+                            <h4><span class="item-head">4. Реализация приватных свойств и методов</span></h4>
                             <p>Урок, в котором рассматривается реализация приватных свойств и методов в JavaScript с использованием паттерна проектирования "Модуль" (Monster Lessons).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=cS6nTVNzOPw' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/descriptors-getters-setters.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">5. Дескрипторы, геттеры и сеттеры свойств</span></h4>
+                            <p>Урок, в котором рассматриваются возможности языка JavaScript, которые позволяют выполнять "тонкую" настройку поведения свойств: возможность изменять, удалять, управлять видимостью в цикле, а также привязывать к свойству функции для получения и установки значний (Владилен Минин, JavaScript by Vladilen).</p>
                         </a>
                     </div>
                 </div>
@@ -89,6 +109,108 @@ lang: ru
         </div>
     </div>
 </div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse3">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse3">
+                Контекст вызова, области видимости, замыкания</a>
+            </h4>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=GkmoRy0Kv14' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/lexical-environment.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">1. Лексическое окружение</span></h4>
+                            <p>Урок, в котором рассматривается понятие и принцип работы лексического окружения в JavaScript (GoIT).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://monsterlessons.com/project/lessons/this-v-javascript' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/this-context.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">2. Контекст вызова</span></h4>
+                            <p>Урок, в котором рассматриваются базовые седения о контексте и об особенностях его использования в функциях, прототипах и объектах (Monster Lessons).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=UGapN-hrekw' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/changing-context.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">3. Смена контекста вызова</span></h4>
+                            <p>Урок, в котором более подробно рассматриваются функции языка JavaScript, которые позволяют изменять контекст вызова (Владилен Минин, JavaScript by Vladilen).</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://monsterlessons.com/project/lessons/zamykaniya-v-javascript' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/closures.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">4. Замыкания</span></h4>
+                            <p>Урок, в котором рассматривается понятие и механизм работы замыканий в JavaScript (Monster Lessons).</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse4">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse4">
+                Взаимодействие с сервером</a>
+            </h4>
+        </div>
+        <div id="collapse4" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://monsterlessons.com/project/lessons/poluchaem-dannye-v-javascript-s-pomoshyu-xmlhttprequest' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/xml-http-request.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">1. Получение данных от сервера с использованием XMLHttpRequest</span></h4>
+                            <p>Урок, в котором рассматриваются базовые возможности объекта XMLHttpRequest для организации взаимодействия с сервером (Monster Lessons).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://monsterlessons.com/project/lessons/poluchenie-dannyh-ot-servera-v-jquery' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/jquery-ajax.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">2. Получение данных от сервера с использованием jQuery</span></h4>
+                            <p>Урок, в котором рассматриваются основные возможности библиотеки jQuery для организации взаимодействия с сервером (Monster Lessons).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://monsterlessons.com/project/lessons/poluchenie-dannyh-ot-servera-s-pomoshyu-fetch' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/fetch.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">3. Получение данных от сервера с использованием метода fetch</span></h4>
+                            <p>Урок, в котором более подробно рассматриваются "XMLHttpRequest нового поколения" - метод fetch (Monster Lessons).</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 ## Вы можете
 
