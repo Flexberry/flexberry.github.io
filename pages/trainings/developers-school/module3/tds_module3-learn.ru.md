@@ -48,13 +48,13 @@ lang: ru
 <div class="panel-group">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse2">&#9660;</a>
+            <a class="pull-right spoiler-push collapsed" data-toggle="collapse" href="#collapse2" aria-expanded="false">&#9660;</a>
             <h4 class="panel-title">
                 <a data-toggle="collapse" href="#collapse2">
                 Объектно-ориентированное программирование в JavaScript</a>
             </h4>
         </div>
-        <div id="collapse2" class="panel-collapse collapse in">
+        <div id="collapse2" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
             <div class="panel-body">
                 <div class="row items">
                     <div class="col-sm-6 col-md-4 portfolio-item">
@@ -113,13 +113,13 @@ lang: ru
 <div class="panel-group">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse3">&#9660;</a>
+            <a class="pull-right spoiler-push collapsed" data-toggle="collapse" href="#collapse3" aria-expanded="false">&#9660;</a>
             <h4 class="panel-title">
                 <a data-toggle="collapse" href="#collapse3">
                 Контекст вызова, области видимости, замыкания</a>
             </h4>
         </div>
-        <div id="collapse3" class="panel-collapse collapse in">
+        <div id="collapse3" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
             <div class="panel-body">
                 <div class="row items">
                     <div class="col-sm-6 col-md-4 portfolio-item">
@@ -169,13 +169,13 @@ lang: ru
 <div class="panel-group">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse4">&#9660;</a>
+            <a class="pull-right spoiler-push collapsed" data-toggle="collapse" href="#collapse4" aria-expanded="false">&#9660;</a>
             <h4 class="panel-title">
                 <a data-toggle="collapse" href="#collapse4">
                 Взаимодействие с сервером</a>
             </h4>
         </div>
-        <div id="collapse4" class="panel-collapse collapse in">
+        <div id="collapse4" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
             <div class="panel-body">
                 <div class="row items">
                     <div class="col-sm-6 col-md-4 portfolio-item">
@@ -203,6 +203,51 @@ lang: ru
                             </div>
                             <h4><span class="item-head">3. Получение данных от сервера с использованием метода fetch</span></h4>
                             <p>Урок, в котором более подробно рассматриваются "XMLHttpRequest нового поколения" - метод fetch (Monster Lessons).</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push collapsed" data-toggle="collapse" href="#collapse5" aria-expanded="false">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse5">
+                Модули и инфраструктура проектов, пакетные менеджеры</a>
+            </h4>
+        </div>
+        <div id="collapse5" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+            <div class="panel-body">
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=fhwtUW9dXrA' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/xml-http-request.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">1. Введение в NPM</span></h4>
+                            <p>Скринкаст, в котором рассматриваются назначение менеджера пакетов NPM, принципы его работы, а также основные команды, которые можно использовать при работе с данным пакетным менеджером (Илья Кантор, JavaScript.ru).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://monsterlessons.com/project/lessons/yarn-paketnyj-menedzher-ot-facebook' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/jquery-ajax.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">2. Введение в Yarn</span></h4>
+                            <p>Урок, в котором рассматриваются основные возможности пакетного менеджера Yarn и его отличия от менеджра пакетов NPM (Monster Lessons).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://monsterlessons.com/project/lessons/zachem-nuzhen-packagejson' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/fetch.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">3. Управление зависимостями в JavaScript-приложениях</span></h4>
+                            <p>Урок, в котором более еще раз рассматривается принцип управления зависимостями в JavaScript-приложениях при использовании пакетных менеджеров NPM или Yarn (Monster Lessons).</p>
                         </a>
                     </div>
                 </div>
