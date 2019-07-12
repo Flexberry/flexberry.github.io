@@ -17,112 +17,238 @@ lang: ru
 
 **SASS** (от англ. Syntactically Awesome Stylesheets — «синтаксически великолепные таблицы стилей») - еще один популярный препроцессор языка CSS.
 
-##  Ссылки на материалы для изучения
+##  Пример использования
 
-### Базовые ресурсы
+```css
+body {
+  font-family: Arial, Verdana,  sans-serif; /* Семейство шрифтов */
+  font-size: 11pt; /* Размер основного шрифта в пунктах  */
+  background-color: #f0f0f0; /* Цвет фона веб-страницы */
+  color: #333; /* Цвет основного текста */ 
+}
+h1 {
+  color: #a52a2a; /* Цвет заголовка */
+  font-size: 24pt; /* Размер шрифта в пунктах */
+  font-family: Georgia, Times, serif; /* Семейство шрифтов */
+  font-weight: normal; /* Нормальное начертание текста  */
+}
+p {
+  text-align: justify; /* Выравнивание по ширине */
+  margin-left: 60px; /* Отступ слева в пикселах */
+  margin-right: 10px; /* Отступ справа в пикселах */
+  border-left: 1px solid #999; /* Параметры линии слева */
+  border-bottom: 1px solid #999; /* Параметры линии снизу */
+  padding-left: 10px; /* Отступ от линии слева до текста  */
+  padding-bottom: 10px; /* Отступ от линии снизу до текста  */
+}
+```
 
-* [CSS — Википедия](https://ru.wikipedia.org/wiki/CSS)
-* [Стандарт CSS 2.1 - w3.org](https://www.w3.org/TR/CSS2/)
-* [Текущая работа CSS (спецификации) - w3.org](https://www.w3.org/Style/CSS/current-work)
-* [CSS3 - Mozilla Developer Network](https://developer.mozilla.org/ru/docs/Web/CSS/CSS3)
-* [LESS - Официальный сайт](http://lesscss.org/)
-* [LESS - Документация на русском языке](http://less-lang.info/)
-* [SASS - Официальный сайт](http://sass-lang.com/)
-* [SASS - Документация на русском языке](http://sass-scss.ru/)
-
-### Самоучители
-* [Самоучитель CSS - htmlbook.ru](http://htmlbook.ru/samcss)
-* [Рецепты CSS - htmlbook.ru](http://htmlbook.ru/faq)
-* [CSS3 - htmlbook.ru](http://htmlbook.ru/css3)
-* [CSS3 на примерах - htmlbook.ru](http://htmlbook.ru/css3-na-primerakh)
-* [CSS и CSS3 - HTML5BOOK.ru](https://html5book.ru/css-css3/)
-* [CSS для начинающих - Mozilla Developer Network](https://developer.mozilla.org/ru/docs/Web/Guide/CSS/Getting_started)
-* [Less - WebReference.ru](https://webref.ru/layout/less)
-
-### Интерактивные курсы
-
-Представленные ниже интерактивные курсы включают в себя задания для проверки полученных знаний и навыков.
-
-* [Основы CSS - WebReference.ru](https://webref.ru/course/css-basics)
-* [Текст в CSS - WebReference.ru](https://webref.ru/course/css-text)
-* [Блочная модель в CSS - WebReference.ru](https://webref.ru/course/box-model)
-* [Позиционирование в CSS - WebReference.ru](https://webref.ru/course/positioning)
-* [Продвинутый CSS - WebReference.ru](https://webref.ru/course/css-advanced)
-* [Основы SASS - WebReference.ru](https://webref.ru/course/sass)
-* [CSS Tutorial - W3Schools](http://www.w3schools.com/css/)
-* [Интерактивные онлайн-курсы по фронтенду - HTML Academy](https://htmlacademy.ru/)
-
-### Справочники
-* [Справичник CSS - WebReference.ru](https://webref.ru/css)
-* [Справочник CSS - htmlbook.ru](http://htmlbook.ru/css)
-* [CSS Reference - W3Schools](http://www.w3schools.com/cssref/)
-* [Справочник CSS - Mozilla Developer Network](https://developer.mozilla.org/ru/docs/Web/CSS/Reference)
-
-### Видеокурсы
-* [Основы разработки сайтов и веб-приложений - Microsoft Virtual Academy](https://mva.microsoft.com/ru/training-courses/--8723?l=zZGYOLS1_1904984382)
-* [HTML5 и CSS3 - webtheory](https://www.youtube.com/playlist?list=PLwSSV-_L9szsyAwvl4Q-oTM1HdNBZFSF-)
-* [HTML5 & CSS3 Fundamentals - Microsoft Virtual Academy](https://mva.microsoft.com/en-US/training-courses/html5-css3-fundamentals-development-for-absolute-beginners-14207?l=Y4COscFfB_7500115888)
-* [Видеокурс по HTML&CSS - ITVDN](https://www.youtube.com/playlist?list=PLvItDmb0sZw-v7y3fP50Ao8AIlg00fSGQ)
-* [Видеокурс по HTML5 и CSS3 - ITVDN](https://www.youtube.com/playlist?list=PLvItDmb0sZw9cJossgyJepu6N9hybEjKU)
-* [LESS - уроки и примеры. Все о CSS препроцессоре LESS - Best Lessons](https://www.youtube.com/playlist?list=PLX2yKxdx7ck-Ex9XFu8Zz0m1JJyZF9OtE)
-* [Все про Sass и Compass - uWebDesign](https://www.youtube.com/playlist?list=PLZfRjCZl2NuQr8v2_DV8ZX6a03gntn7yU)
-
-### Дополнительно
-* [Школа разработки интерфейсов. Москва - Академия Яндекса](https://academy.yandex.ru/events/frontend/shri_msk-2013/)
-* [Школа разработки интерфейсов. Екатеринбург - Академия Яндекса](https://academy.yandex.ru/events/frontend/shri_ekb-2013/)
-* [Школа разработки интерфейсов. Симферополь - Академия Яндекса](https://academy.yandex.ru/events/frontend/shri_simf-2013/)
-
-### Вместо презентации
-
+##  «Для тех, кто предпочитает один раз увидеть»
 
 <div class="thumb-wrap">
     <iframe width="854" height="480" src="https://www.youtube.com/embed/iPV5GKeHyV4" frameborder="0" allowfullscreen></iframe>
 </div>
 
-
-### Рекомендованные книги
-
-* [Уроки по HTML и CSS - Шэй Хоу](https://webref.ru/layout/diveintohtml5)
-* [Продвинутые уроки по HTML и CSS - Шэй Хоу](https://webref.ru/layout/advanced-html-css)
-* [Магия CSS - Адам Шварц](https://webref.ru/layout/magic-of-css)
-* [CSS. Каскадные таблицы стилей. Подробное руководство - Эрик А. Мейер](http://www.ozon.ru/context/detail/id/3881079/)
-* [CSS. Рецепты программирования - Кристофер Шмитт](http://www.ozon.ru/context/detail/id/5538886/)
-* [HTML и CSS. Путь к совершенству - Бен Хеник](http://www.ozon.ru/context/detail/id/5648483/)
-
 ## Программное обеспечение
 
-* [Базовое программное обеспечение - Mozilla Developer Network](https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0_%D0%B1%D0%B0%D0%B7%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BE%D0%B1%D0%B5%D1%81%D0%BF%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D1%8F)
-* [Visual Studio Code](https://code.visualstudio.com/)
-* [Google Chrome DevTools - Mozilla Developer Network](https://developer.chrome.com/devtools)
-* [Инструменты разработчика Firefox - Mozilla Developer Network](https://developer.mozilla.org/ru/docs/Tools)
-* [Расширение Firebug для Firefox - Mozilla Developer Network](https://addons.mozilla.org/ru/firefox/addon/firebug/)
-* [Расширение Web Developer для Firefox - Mozilla Developer Network](https://addons.mozilla.org/ru/firefox/addon/web-developer/)
-* [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
-* [Получить информацию об устройстве графического вывода - mydevice.io](http://mydevice.io/)
-* [SimpLESS - Компилятор LESS](https://wearekiss.com/simpless/)
-* [Koala - Компилятор LESS, SASS, Compass и CoffeScript](http://koala-app.com/)
-* [Less.js - Компилятор LESS на Node.js](https://github.com/less/less.js)
+* [Базовое программное обеспечение](https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0_%D0%B1%D0%B0%D0%B7%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BE%D0%B1%D0%B5%D1%81%D0%BF%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D1%8F) *- Mozilla Developer Network*
+* [Visual Studio Code](https://code.visualstudio.com/) *- code.visualstudio.сom*
+* [Google Chrome DevTools](https://developer.chrome.com/devtools) *- Mozilla Developer Network*
+* [Инструменты разработчика Firefox](https://developer.mozilla.org/ru/docs/Tools) *- Mozilla Developer Network*
+* [Расширение Firebug для Firefox](https://addons.mozilla.org/ru/firefox/addon/firebug/) *- Mozilla Developer Network*
+* [Расширение Web Developer для Firefox](https://addons.mozilla.org/ru/firefox/addon/web-developer/) *- Mozilla Developer Network*
+* [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) *- jigsaw.w3.org*
+* [Получить информацию об устройстве графического вывода](http://mydevice.io/) *- mydevice.io*
+* [SimpLESS - Компилятор LESS](https://wearekiss.com/simpless/) *- wearekiss.сom*
+* [Koala - Компилятор LESS, SASS, Compass и CoffeScript](http://koala-app.com/) *- koala-app.сom*
+* [Less.js - Компилятор LESS на Node.js](https://github.com/less/less.js) *- github.сom*
 
-## Тесты, лабораторные работы и практические задания
+##  Ресурсы
 
-### Тесты
-* [Основы CSS 2.1 - htmlbook.ru](http://htmlbook.ru/test/css)
-* [Селекторы CSS 2.1 - htmlbook.ru](http://htmlbook.ru/test/selector)
-* [CSS 2 на практике - htmlbook.ru](http://htmlbook.ru/test/cssp)
-* [CSS Quiz - W3Schools](http://www.w3schools.com/css/css_quiz.asp)
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse1">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse1">
+                Базовые ресурсы</a>
+            </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS3">Статья по CSS3</a><i> — Mozilla Developer Network</i></li>
+                    <li><a href="http://sass-scss.ru/">SASS - Документация на русском языке</a><i> — sass-scss.ru</i></li>
+                    <li><a href="http://lesscss.org/">LESS - Official Site</a><i> — lesscss.org</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
 
-### Практические задания
-* [Практикум по HTML и CSS - htmlbook.ru](http://htmlbook.ru/practical)
-* [CSS Exercises - W3Schools](http://www.w3schools.com/css/exercise.asp)
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse2">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse2">
+                Самоучители</a>
+            </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="https://html5book.ru/css-css3/">Самоучитель CSS и CSS3</a><i> — HTML5BOOK.ru</i></li>
+                    <li><a href="http://htmlbook.ru/faq">Рецепты CSS</a><i> — htmlbook.ru</i></li>
+                    <li><a href="https://webref.ru/layout/less">Самоучитель Less</a><i> — WebReference.ru</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
 
-## Примеры
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse3">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse3">
+                Интерактивные курсы</a>
+            </h4>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="https://webref.ru/course/css-basics">Основы CSS</a><i> — WebReference.ru</i></li>
+                    <li><a href="https://webref.ru/course/sass">Основы SASS</a><i> — WebReference.ru</i></li>
+                    <li><a href="http://www.w3schools.com/css/">CSS Tutorial</a><i> — W3Schools</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
 
-* [CSS Examples - W3Schools](http://www.w3schools.com/css/css_examples.asp)
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse4">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse4">
+                Справочники</a>
+            </h4>
+        </div>
+        <div id="collapse4" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="http://htmlbook.ru/css">Справочник CSS</a><i> — htmlbook.ru</i></li>
+                    <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS/Reference">Справочник CSS</a><i> — Mozilla Developer Network</i></li>
+                    <li><a href="http://www.w3schools.com/cssref/">CSS Reference</a><i> — W3Schools</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
 
-## Возможности по сертификации
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse5">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse5">
+                Видеокурсы</a>
+            </h4>
+        </div>
+        <div id="collapse5" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="https://channel9.msdn.com/Series/HTML5-and-CSS3-Fundamentals-Development-for-Absolute-Beginners?l=Y4COscFfB_7500115888">HTML5 & CSS3 Fundamentals: Development for Absolute Beginners</a><i> — msdn Channel 9</i></li>
+                    <li><a href="https://www.youtube.com/playlist?list=PLX2yKxdx7ck-Ex9XFu8Zz0m1JJyZF9OtE">LESS - уроки и примеры. Все о CSS препроцессоре LESS</a><i> — youtube-аккаунт «Best Lessons»</i></li>
+                    <li><a href="https://www.youtube.com/playlist?list=PLZfRjCZl2NuQr8v2_DV8ZX6a03gntn7yU">Все про Sass и Compass</a><i> — youtube-аккаунт «uWebDesign»</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
 
-* [W3Schools CSS Certificate](http://www.w3schools.com/cert/cert_css.asp)
-* [MTA 98-375 HTML5 Application Development Fundamentals](https://www.microsoft.com/ru-ru/learning/exam-98-375.aspx)
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse6">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse6">
+                Рекомендованные книги</a>
+            </h4>
+        </div>
+        <div id="collapse6" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="http://www.ozon.ru/context/detail/id/3881079/">CSS. Каскадные таблицы стилей. Подробное руководство</a><i> — ozon.ru</i></li>
+                    <li><a href="http://www.ozon.ru/context/detail/id/5538886/">CSS. Рецепты программирования</a><i> — ozon.ru</i></li>
+                    <li><a href="https://webref.ru/layout/magic-of-css">Магия CSS</a><i> — WebReference.ru</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse7">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse7">
+                Тесты, лабораторные работы и практические задания</a>
+            </h4>
+        </div>
+        <div id="collapse7" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="http://www.w3schools.com/css/css_quiz.asp">CSS Quiz</a><i> — W3Schools</i></li>
+                    <li><a href="http://www.w3schools.com/css/exercise.asp">CSS Exercises</a><i> — W3Schools</i></li>
+                    <li><a href="http://htmlbook.ru/practical">Практикум по HTML и CSS</a><i> — htmlbook.ru</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse8">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse8">
+                Примеры</a>
+            </h4>
+        </div>
+        <div id="collapse8" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="http://www.w3schools.com/css/css_examples.asp">CSS Examples</a><i> — W3Schools</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse9">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse9">
+                Возможности по сертификации</a>
+            </h4>
+        </div>
+        <div id="collapse9" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="http://www.w3schools.com/cert/cert_css.asp">CSS Certification</a><i> — W3Schools</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
 
 ## Перейти
 
