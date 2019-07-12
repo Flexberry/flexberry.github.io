@@ -19,36 +19,103 @@ lang: ru
 На наивысшем уровне существуют **архитектурные шаблоны**, они охватывают собой архитектуру всей программной системы.
 
 Алгоритмы по своей сути также являются шаблонами, но не проектирования, а вычисления, так как решают вычислительные задачи.
-##  Ссылки на материалы для изучения
 
-### Базовый курс
+## Примеры использования
 
-* [Шаблон проектирования - Википедия](https://ru.wikipedia.org/wiki/%D0%A8%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F)
-* [Паттерны проектирования](https://refactoring.guru/ru/design-patterns)
-* [Обзор паттернов проектирования](http://citforum.ru/SE/project/pattern/index.shtml)
-* [Справочник «Паттерны проектирования»](http://design-pattern.ru/)
+### Классификация паттернов:
+![Patterns classification](/images/pages/guides/base-technologies/information-system-design/patterns.png)
 
-### Самоучители
+### Схема паттерна Строитель:
+![Builder Pattern](/images/pages/guides/base-technologies/information-system-design/builder.png)
 
-* [Паттерны проектирования в C# и .NET](https://metanit.com/sharp/patterns/)
-* [Шпаргалка по шаблонам проектирования](https://habrahabr.ru/post/210288/)
+### Схема паттерна Итератор:
+![Iterator Pattern](/images/pages/guides/base-technologies/information-system-design/iterator.jpg)
 
-### Видеокурсы
+## «Для тех, кто предпочитает один раз увидеть»
+<iframe src="https://ppt-online.org/embed/34856" width="683" height="562" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="https://ppt-online.org/34856" target="_blank"></a> </strong></div>
 
-* [Видеокурс по шаблонам (паттернам) проектирования с использованием языка C#](https://www.youtube.com/playlist?list=PLtjuvkyFrt5Wjd-973N117XS7xuuoD6XM)
-* [Семинара на тему "Шаблоны проектирования"](https://www.youtube.com/watch?v=ikD9OBQtpAk)
-* [Понятие паттерна проектирования. Курс "Шаблоны проектирования"](https://www.youtube.com/watch?v=gBRk8v4FJqY)
-* [Шаблоны проектирования. AbstractFactory(Абстрактная фабрика)](https://www.youtube.com/watch?v=l9cfSg6gVe8&t=12s)
+##  Ресурсы
 
-### Презентация
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse1">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse1">
+                Базовый курс</a>
+            </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="https://refactoring.guru/ru/design-patterns"> Паттерны проектирования</a><i> - REFACTORING GURU</i></li>
+                    <li><a href="http://citforum.ru/SE/project/pattern/index.shtml"> Обзор паттернов проектирования</a><i> - CIT Forum</i></li>
+                    <li><a href="http://design-pattern.ru/"> Справочник «Паттерны проектирования»</a><i> - design-pattern.ru</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
 
-* [Введение в паттерны проектирования.](http://ppt-online.org/34856)
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse2">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse2">
+                Самоучители</a>
+            </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="https://metanit.com/sharp/patterns/"> Паттерны проектирования в C# и .NET</a><i> - metanit.сom</i></li>
+                    <li><a href="https://habrahabr.ru/post/210288/"> Шпаргалка по шаблонам проектирования</a><i> - Хабр</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
 
-### Рекомендованные книги
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse3">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse3">
+                Видеокурсы</a>
+            </h4>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="https://www.youtube.com/playlist?list=PLtjuvkyFrt5Wjd-973N117XS7xuuoD6XM"> Видеокурс по шаблонам (паттернам) проектирования с использованием языка C#</a><i> - youtube-аккаунт «Georgiy Mogelashvili»</i></li>
+                    <li><a href="https://www.youtube.com/watch?v=gBRk8v4FJqY"> Понятие паттерна проектирования. Курс «Шаблоны проектирования»</a><i> - youtube-аккаунт «ITVDN»</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
 
-* [Приемы объектно-ориентированного проектирования. Паттерны проектирования](http://www.ozon.ru/context/detail/id/2457392/)
-* [Паттерны проектирования](http://www.ozon.ru/context/detail/id/31079082/)
-* [Паттерны проектирования на платформе .NET](http://www.ozon.ru/context/detail/id/33497715/)
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse4">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse4">
+                Рекомендованные книги</a>
+            </h4>
+        </div>
+        <div id="collapse4" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="http://www.ozon.ru/context/detail/id/2457392/"> Приемы объектно-ориентированного проектирования. Паттерны проектирования</a><i> - ozon.ru</i></li>
+                    <li><a href="http://www.ozon.ru/context/detail/id/33497715/"> Паттерны проектирования на платформе .NET</a><i> - ozon.ru</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
 
 ## Перейти
 
