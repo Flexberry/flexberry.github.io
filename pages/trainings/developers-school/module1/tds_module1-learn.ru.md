@@ -27,7 +27,7 @@ lang: ru
                                 <img src="{{ "/images/pages/trainings/developers-school/module1/architecture.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">1. Архитектура веб-приложений</span></h4>
-                            <p>В занятии рассматривается архитектура клиент-сервер и ее разновидности.</p>
+                            <p>В занятии рассматривается архитектура клиент-сервер и ее разновидности (Евгений Хаберев, Fleberry PLATFORM).</p>
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
@@ -36,7 +36,7 @@ lang: ru
                                 <img src="{{ "/images/pages/trainings/developers-school/module1/osi.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">2. Сетевая модель OSI</span></h4>
-                            <p>В занятии кратко рассматривается многоуровневая модель сетевого взаимодейтсвия устройств.</p>
+                            <p>В занятии кратко рассматривается многоуровневая модель сетевого взаимодейтсвия устройств (Александр Елисеев, Fleberry PLATFORM).</p>
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
@@ -45,7 +45,7 @@ lang: ru
                                 <img src="{{ "/images/pages/trainings/developers-school/module1/http.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">3. Протокол HTTP</span></h4>
-                            <p>В занятии рассматривается протокол передачи гипертекста, а также технология COMET и варианты ее реализации.</p>
+                            <p>В занятии рассматривается протокол передачи гипертекста, а также технология COMET и варианты ее реализации (Александр Елисеев, Fleberry PLATFORM).</p>
                         </a>
                     </div>
                 </div>
@@ -56,7 +56,7 @@ lang: ru
                                 <img src="{{ "/images/pages/trainings/developers-school/module1/sessions.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">4. Механизм сессий</span></h4>
-                            <p>В занятии рассматривается варианты реализации сессий на основе cookies, параметров запроса и серверных сессий.</p>
+                            <p>В занятии рассматривается варианты реализации сессий на основе cookies, параметров запроса и серверных сессий (Александр Елисеев, Fleberry PLATFORM).</p>
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
@@ -65,7 +65,7 @@ lang: ru
                                 <img src="{{ "/images/pages/trainings/developers-school/module1/general-web.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">5. Общий принцип работы веб-приложений</span></h4>
-                            <p>В занятии рассматривается порядок взаимодействия клиента и сервера в контексте работы веб-приложений.</p>
+                            <p>В занятии рассматривается порядок взаимодействия клиента и сервера в контексте работы веб-приложений (Александр Елисеев, Fleberry PLATFORM).</p>
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
@@ -74,7 +74,7 @@ lang: ru
                                 <img src="{{ "/images/pages/trainings/developers-school/module1/back-end.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">6. Back-end</span></h4>
-                            <p>В занятии рассматриваются виды веб-серверов, а также принципы статической и динамической генерации веб-страниц.</p>
+                            <p>В занятии рассматриваются виды веб-серверов, а также принципы статической и динамической генерации веб-страниц (Александр Елисеев, Fleberry PLATFORM).</p>
                         </a>
                     </div>
                 </div>
@@ -85,7 +85,7 @@ lang: ru
                                 <img src="{{ "/images/pages/trainings/developers-school/module1/front-end.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">7. Front-end</span></h4>
-                            <p>В занятии кратко рассматриваются клиентские веб-технологии.</p>
+                            <p>В занятии кратко рассматриваются клиентские веб-технологии (Александр Елисеев, Fleberry PLATFORM).</p>
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
@@ -94,7 +94,7 @@ lang: ru
                                 <img src="{{ "/images/pages/trainings/developers-school/module1/modern-apps.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">8. Современные веб-приложения</span></h4>
-                            <p>В занятии рассматриваются современные веб-приложения в конексте архитектур SOA, RIA, SPA, IoT.</p>
+                            <p>В занятии рассматриваются современные веб-приложения в конексте архитектур SOA, RIA, SPA, IoT (Александр Елисеев, Fleberry PLATFORM).</p>
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
@@ -103,7 +103,7 @@ lang: ru
                                 <img src="{{ "/images/pages/trainings/developers-school/module1/mpa-spa.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">9. MPA и SPA</span></h4>
-                            <p>В занятии рассматривается разница архитектур многостраничных и одностраничных приложений.</p>
+                            <p>В занятии рассматривается разница архитектур многостраничных и одностраничных приложений (Евгений Хаберев, Fleberry PLATFORM).</p>
                         </a>
                     </div>
                 </div>
@@ -114,7 +114,7 @@ lang: ru
                                 <img src="{{ "/images/pages/trainings/developers-school/module1/mpa.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">10. Пример MPA-приложения</span></h4>
-                            <p>В занятии рассматривается пример реализации MPA-приложения на основе технологии ASP.NET.</p>
+                            <p>В занятии рассматривается пример реализации MPA-приложения на основе технологии ASP.NET (Евгений Хаберев, Fleberry PLATFORM).</p>
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
@@ -123,7 +123,7 @@ lang: ru
                                 <img src="{{ "/images/pages/trainings/developers-school/module1/spa.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">11. Пример SPA-приложения</span></h4>
-                            <p>В занятии рассматривается пример реализации SPA-приложения на основе фреймворка Ember.js.</p>
+                            <p>В занятии рассматривается пример реализации SPA-приложения на основе фреймворка Ember.js (Евгений Хаберев, Fleberry PLATFORM).</p>
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
@@ -132,7 +132,7 @@ lang: ru
                                 <img src="{{ "/images/pages/trainings/developers-school/module1/instruments-web.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">12. Обзор инструментов для веб-разработки</span></h4>
-                            <p>В занятии кратко рассматривюется Chrome Developer Tools, Fiddler и Postman.</p>
+                            <p>В занятии кратко рассматривюется Chrome Developer Tools, Fiddler и Postman (Александр Елисеев, Fleberry PLATFORM).</p>
                         </a>
                     </div>
                 </div>
