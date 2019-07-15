@@ -251,6 +251,35 @@ lang: ru
                         </a>
                     </div>
                 </div>
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://monsterlessons.com/project/lessons/razbiraemsya-s-versiyami-paketov-v-node' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/semver.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">4. Семантическое версионирование</span></h4>
+                            <p>Урок, в котором рассматриваются принципы семантического версионирования при работе с версиями библиотек и программ в контексте npm-пакетов (Monster Lessons).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://monsterlessons.com/project/lessons/razbiraemsya-s-lock-fajlami-v-npm' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/lock-files.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">5. Lock-файлы для NPM и Yarn</span></h4>
+                            <p>Урок, в котором рассматривается назначение и принцип использования Lock-файлов пакетными менеджерами NPM и Yarn (Monster Lessons).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=FdrA7DP5Ojs' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/javascript-modules.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">6. Модули в JavaScript</span></h4>
+                            <p>Видео, в котором рассказывается о развитии модульности в JavaScript: шаблон Модуль, а также форматы AMD, CommonJS, UMD, ES-модули (Екатерина Назарова, .getInstance).</p>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
