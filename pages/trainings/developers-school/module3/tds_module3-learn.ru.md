@@ -63,7 +63,7 @@ lang: ru
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/objects-in-javascript.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">1. Объекты в JavaScript</span></h4>
-                            <p>Скринкаст, в котором рассматриваются способы определения объектов и основные операции, которые применяются к свойствам объектов (Sorax).</p>
+                            <p>Скринкаст, в котором рассматриваются способы определения объектов и основные операции, которые применяются к свойствам объектов (Артем Гринберг, Sorax).</p>
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
