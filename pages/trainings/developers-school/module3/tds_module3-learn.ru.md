@@ -280,6 +280,26 @@ lang: ru
                         </a>
                     </div>
                 </div>
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://monsterlessons.com/project/lessons/es6-moduli' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/es6-modules.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">7. ES6-модули</span></h4>
+                            <p>Урок, в котором более подробно рассматривается синтаксис объявления и использования ES6-модулей (Monster Lessons).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=Sp8V-5k2ZaM' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/javascript-projects-structure.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">8. Структура файлов в JavaScript-проекте</span></h4>
+                            <p>Урок, в котором рассматривается два основных подхода к организации файлов в JavaScript-проектах: по "категориям файлов" и "фрактальный" (Илья Климов, JavaScript.Ninja/WookieeLabs).</p>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
