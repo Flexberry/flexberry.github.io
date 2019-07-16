@@ -217,7 +217,7 @@ lang: ru
             <a class="pull-right spoiler-push collapsed" data-toggle="collapse" href="#collapse5" aria-expanded="false">&#9660;</a>
             <h4 class="panel-title">
                 <a data-toggle="collapse" href="#collapse5">
-                Модули и инфраструктура проектов, пакетные менеджеры</a>
+                Модули и структура проектов, пакетные менеджеры</a>
             </h4>
         </div>
         <div id="collapse5" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
