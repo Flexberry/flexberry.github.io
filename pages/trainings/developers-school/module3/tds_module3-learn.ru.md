@@ -226,7 +226,7 @@ lang: ru
                     <div class="col-sm-6 col-md-4 portfolio-item">
                         <a href="{{ 'https://www.youtube.com/watch?v=fhwtUW9dXrA' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
-                                <img src="{{ "/images/pages/trainings/developers-school/module3/xml-http-request.jpg" | relative_url}}" class="products-img">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/npm.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">1. Введение в NPM</span></h4>
                             <p>Скринкаст, в котором рассматриваются назначение менеджера пакетов NPM, принципы его работы, а также основные команды, которые можно использовать при работе с данным пакетным менеджером (Илья Кантор, JavaScript.ru).</p>
@@ -235,7 +235,7 @@ lang: ru
                     <div class="col-sm-6 col-md-4 portfolio-item">
                         <a href="{{ 'https://monsterlessons.com/project/lessons/yarn-paketnyj-menedzher-ot-facebook' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
-                                <img src="{{ "/images/pages/trainings/developers-school/module3/jquery-ajax.jpg" | relative_url}}" class="products-img">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/yarn.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">2. Введение в Yarn</span></h4>
                             <p>Урок, в котором рассматриваются основные возможности пакетного менеджера Yarn и его отличия от менеджра пакетов NPM (Monster Lessons).</p>
@@ -244,7 +244,7 @@ lang: ru
                     <div class="col-sm-6 col-md-4 portfolio-item">
                         <a href="{{ 'https://monsterlessons.com/project/lessons/zachem-nuzhen-packagejson' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
-                                <img src="{{ "/images/pages/trainings/developers-school/module3/fetch.jpg" | relative_url}}" class="products-img">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/npm-dependencies.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">3. Управление зависимостями в JavaScript-приложениях</span></h4>
                             <p>Урок, в котором более еще раз рассматривается принцип управления зависимостями в JavaScript-приложениях при использовании пакетных менеджеров NPM или Yarn (Monster Lessons).</p>
@@ -276,7 +276,7 @@ lang: ru
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/javascript-modules.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">6. Модули в JavaScript</span></h4>
-                            <p>Видео, в котором рассказывается о развитии модульности в JavaScript: шаблон Модуль, а также форматы AMD, CommonJS, UMD, ES-модули (Екатерина Назарова, .getInstance).</p>
+                            <p>Видео, в котором рассказывается о развитии модульности в JavaScript: шаблон Модуль, а также форматы AMD, CommonJS, UMD, ES6-модули (Екатерина Назарова, .getInstance).</p>
                         </a>
                     </div>
                 </div>
