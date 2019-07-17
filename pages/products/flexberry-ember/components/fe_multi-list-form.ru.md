@@ -113,13 +113,28 @@ export default EditFormRoute.extend(MultiListRoute, MultiListModelEdit, {
 });
 ```
 
-2.В контроллер формы добавить миксин `multi-list-controller`:
+2.В контроллер формы добавить миксин `multi-list-controller` и доработать `getCellComponent`:
 
 ```javascript
 import EditFormController from 'ember-flexberry/controllers/edit-form';
 import MultiListController from 'ember-flexberry/mixins/multi-list-controller';
 
 export default EditFormController.extend(MultiListController, {
+  ...
+  getCellComponent(attr, bindingPath, model) {
+    let cellComponent = this._super(...arguments);
+    if (model !== null) {
+      ...
+      if (model.modelName === 'ТипСписка1'
+        || model.modelName === 'ТипСписка2'
+        || model.modelName === 'ТипСписка3') {
+          cellComponent.componentName = undefined;
+      }
+    }
+
+    return cellComponent;
+  }
+});
   ...
 });
 ```

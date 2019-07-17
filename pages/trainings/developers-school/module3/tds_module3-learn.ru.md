@@ -63,7 +63,7 @@ lang: ru
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/objects-in-javascript.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">1. Объекты в JavaScript</span></h4>
-                            <p>Скринкаст, в котором рассматриваются способы определения объектов и основные операции, которые применяются к свойствам объектов (Sorax).</p>
+                            <p>Скринкаст, в котором рассматриваются способы определения объектов и основные операции, которые применяются к свойствам объектов (Артем Гринберг, Sorax).</p>
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
@@ -217,7 +217,7 @@ lang: ru
             <a class="pull-right spoiler-push collapsed" data-toggle="collapse" href="#collapse5" aria-expanded="false">&#9660;</a>
             <h4 class="panel-title">
                 <a data-toggle="collapse" href="#collapse5">
-                Модули и инфраструктура проектов, пакетные менеджеры</a>
+                Модули и структура проектов, пакетные менеджеры</a>
             </h4>
         </div>
         <div id="collapse5" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
@@ -226,7 +226,7 @@ lang: ru
                     <div class="col-sm-6 col-md-4 portfolio-item">
                         <a href="{{ 'https://www.youtube.com/watch?v=fhwtUW9dXrA' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
-                                <img src="{{ "/images/pages/trainings/developers-school/module3/xml-http-request.jpg" | relative_url}}" class="products-img">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/npm.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">1. Введение в NPM</span></h4>
                             <p>Скринкаст, в котором рассматриваются назначение менеджера пакетов NPM, принципы его работы, а также основные команды, которые можно использовать при работе с данным пакетным менеджером (Илья Кантор, JavaScript.ru).</p>
@@ -235,7 +235,7 @@ lang: ru
                     <div class="col-sm-6 col-md-4 portfolio-item">
                         <a href="{{ 'https://monsterlessons.com/project/lessons/yarn-paketnyj-menedzher-ot-facebook' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
-                                <img src="{{ "/images/pages/trainings/developers-school/module3/jquery-ajax.jpg" | relative_url}}" class="products-img">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/yarn.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">2. Введение в Yarn</span></h4>
                             <p>Урок, в котором рассматриваются основные возможности пакетного менеджера Yarn и его отличия от менеджра пакетов NPM (Monster Lessons).</p>
@@ -244,7 +244,7 @@ lang: ru
                     <div class="col-sm-6 col-md-4 portfolio-item">
                         <a href="{{ 'https://monsterlessons.com/project/lessons/zachem-nuzhen-packagejson' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
-                                <img src="{{ "/images/pages/trainings/developers-school/module3/fetch.jpg" | relative_url}}" class="products-img">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/npm-dependencies.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">3. Управление зависимостями в JavaScript-приложениях</span></h4>
                             <p>Урок, в котором более еще раз рассматривается принцип управления зависимостями в JavaScript-приложениях при использовании пакетных менеджеров NPM или Yarn (Monster Lessons).</p>
@@ -276,7 +276,27 @@ lang: ru
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/javascript-modules.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">6. Модули в JavaScript</span></h4>
-                            <p>Видео, в котором рассказывается о развитии модульности в JavaScript: шаблон Модуль, а также форматы AMD, CommonJS, UMD, ES-модули (Екатерина Назарова, .getInstance).</p>
+                            <p>Видео, в котором рассказывается о развитии модульности в JavaScript: шаблон Модуль, а также форматы AMD, CommonJS, UMD, ES6-модули (Екатерина Назарова, .getInstance).</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://monsterlessons.com/project/lessons/es6-moduli' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/es6-modules.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">7. ES6-модули</span></h4>
+                            <p>Урок, в котором более подробно рассматривается синтаксис объявления и использования ES6-модулей (Monster Lessons).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=Sp8V-5k2ZaM' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/javascript-projects-structure.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">8. Структура файлов в JavaScript-проекте</span></h4>
+                            <p>Урок, в котором рассматривается два основных подхода к организации файлов в JavaScript-проектах: по "категориям файлов" и "фрактальный" (Илья Климов, JavaScript.Ninja/WookieeLabs).</p>
                         </a>
                     </div>
                 </div>
