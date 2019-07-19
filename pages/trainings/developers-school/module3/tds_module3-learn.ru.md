@@ -305,6 +305,100 @@ lang: ru
     </div>
 </div>
 
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push collapsed" data-toggle="collapse" href="#collapse6" aria-expanded="false">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse6">
+                Возможности ECMAScript 2015 (ES6)</a>
+            </h4>
+        </div>
+        <div id="collapse6" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+            <div class="panel-body">
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=SIYuqToiMLY' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/babel-io.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">1. Настройка транспиляции JavaScript-кода с использованием Babel.io</span></h4>
+                            <p>Скринкаст, в котором рассматриваются понятие и назначение транспиляции JavaScript-кода, а также установка и настройка библиотеки Babel.io для работы в проекте. Кроме этого еще раз рассматриваются принципы работы пакетнго менеджера NPM (Александр Лущенко, WebDev с нуля).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://monsterlessons.com/project/lessons/es6-strelochnye-funkcii' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/arrow-functions.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">2. Стрелочные функции</span></h4>
+                            <p>Урок, в котором рассматривается синтаксис стрелочных функций ES6, а также их отличия от "привычных" функций JavaScript (Monster Lessons).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://monsterlessons.com/project/lessons/es6-let' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/let.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">3. Ключевое слово let</span></h4>
+                            <p>Урок, в котором рассматривается синтаксис использования ключевого слова let и его отличия от аналогичного ключевого слова var (Monster Lessons).</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://monsterlessons.com/project/lessons/es6-const' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/const.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">4. Ключевое слово const</span></h4>
+                            <p>Урок, в котором рассматривается синтаксис использования ключевого слова const и его отличия от аналогичного ключевого слова var (Monster Lessons).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://monsterlessons.com/project/lessons/es6-destrukturizaciya' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/destructuring.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">5. Деструктуризация</span></h4>
+                            <p>Урок, в котором рассматривается понятие и синтаксис деструктуризации в ES6 и ее применение для создания более лаконичного кода (Monster Lessons).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://monsterlessons.com/project/lessons/es6-spread' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/spread-operator.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">6. Оператор spread</span></h4>
+                            <p>Урок, в котором рассматривается синтаксис и варианты использования оператора spread в ES6 (Monster Lessons).</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://monsterlessons.com/project/lessons/es6-stroki' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/string-tempates.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">7. Шаблонные строки</span></h4>
+                            <p>Урок, в котором рассматривается синтаксис и преимущества использования шаблонных строк ES6 (Monster Lessons).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://monsterlessons.com/project/lessons/javascript-klassy' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/es6-classes.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">8. Классы в ES6</span></h4>
+                            <p>Урок, в котором рассматривается синтаксис описания классов в ES6, а также их отличия от прототипов JavaScript (Monster Lessons).</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 ## Вы можете
 
