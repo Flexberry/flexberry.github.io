@@ -385,12 +385,21 @@ lang: ru
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
-                        <a href="{{ 'https://monsterlessons.com/project/lessons/javascript-klassy' | relative_url }}" class="portfolio-link" target="_blank">
+                        <a href="{{ 'https://www.youtube.com/watch?v=cS6nTVNzOPw' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/es6-classes.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">8. Классы в ES6</span></h4>
-                            <p>Урок, в котором рассматривается синтаксис описания классов в ES6, а также их отличия от прототипов JavaScript (Monster Lessons).</p>
+                            <p>Скринкаст, в котором рассматривается синтаксис описания классов в ES6 и их возможности (Владилен Минин, JavaScript by Vladilen).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=np08WdS9OXg' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/es6-classes.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">9. Proxy</span></h4>
+                            <p>Скринкаст, в котором рассматривается Proxy - специальный объект в ES6, который позвозяет перехватывать обращения к другому объекту и, при необходимости, модифицировать их (Владилен Минин, JavaScript by Vladilen).</p>
                         </a>
                     </div>
                 </div>
