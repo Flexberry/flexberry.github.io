@@ -126,4 +126,4 @@ summary: Рекомендации по созданию служебных ра�
 
 ![Назначение ролей](../../../images/pages/guides/ui-ux-guideline/uiuxg_admin_sections/12.png)
 
-![Назначение ролей](../../../images/pages/guides/ui-ux-guideline/uiuxg_admin_sections/13.png)\
+![Назначение ролей](../../../images/pages/guides/ui-ux-guideline/uiuxg_admin_sections/13.png)

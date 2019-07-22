@@ -29,7 +29,7 @@ summary: Пример создания высоконагруженных фор
 
 ### Реализация мастера для существующей формы
 
-[Прототип в Figma](https://www.figma.com/file/DJ6lDHNM1BM4mNxJn1jPkC/%D0%94%D0%A1-2-%D1%8D%D1%82%D0%B0%D0%BF-%D0%BD%D0%B0%D0%B3%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F-%D1%84%D0%BE%D1%80%D0%BC%D0%B0?node-id=260%3A39631)
+[Прототип в Figma -404-](404.md)
 
 Переработана форма [ИСОГД - Разрешение на строительство](http://isogd:2205/forms/Zdanie/ZdanieWebE.aspx?PK=%7Bb5cdd5e8-1173-4208-aa39-ceed4313ee5d%7D):
 
