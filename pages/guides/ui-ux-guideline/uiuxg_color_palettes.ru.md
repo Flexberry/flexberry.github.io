@@ -1,5 +1,5 @@
 ---
-title: Цветовые палитры
+title: Наборы цветов
 keywords: UI, UX
 sidebar: ui-ux-guideline_sidebar
 toc: false
