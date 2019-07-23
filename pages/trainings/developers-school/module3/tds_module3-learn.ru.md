@@ -473,6 +473,51 @@ lang: ru
     </div>
 </div>
 
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push collapsed" data-toggle="collapse" href="#collapse8" aria-expanded="false">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse8">
+                Архитектурные паттерны (паттерны проектирования)</a>
+            </h4>
+        </div>
+        <div id="collapse8" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+            <div class="panel-body">
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://monsterlessons.com/project/lessons/singleton-pattiern-v-javascript' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/singleton-patternjpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">1. Паттерн Singleton</span></h4>
+                            <p>Урок, в котором рассматривается паттерн Singleton и его реализация на JavaScript (Monster Lessons).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://monsterlessons.com/project/lessons/module-pattiern-v-javascript' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/module-pattern.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">2. Паттерн Module</span></h4>
+                            <p>Урок, в котором рассматривается паттерн Module и его использование для организации модульной структуры JavaScript-приложений (Monster Lessons).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://monsterlessons.com/project/lessons/publishsubscribe-v-javascript' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/publish-subscribe-pattern.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">3. Паттерн Publish/Subscribe</span></h4>
+                            <p>Урок, в котором рассматривается паттерн Publish/Subscribe и его использование для организации слабой связности компонентов JavaScript-приложения (Monster Lessons).</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 ## Вы можете
 
 * [Перейти к дополнительным учебным материалам модуля](tds_module3-appendix.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
