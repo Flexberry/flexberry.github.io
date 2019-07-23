@@ -1,5 +1,5 @@
 ---
-title: Информаеры
+title: Информеры
 keywords: UI, UX
 sidebar: ui-ux-guideline_sidebar
 toc: false
