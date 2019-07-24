@@ -54,7 +54,7 @@ summary: Это страница гайдлайнов Flexberry. Здесь вы
 
 1.5 [Служебные разделы](uiuxg_admin_sections.ru.md)
 
-1.6 [Инструменты проектирования](uiux_prototyping_tools.ru.md)
+1.6 [Инструменты проектирования](uiuxg_prototyping_tools.ru.md)
 
 1.7 [Полезные ссылки](uiuxg_useful_links.ru.md)
 
