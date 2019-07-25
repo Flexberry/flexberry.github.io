@@ -46,7 +46,7 @@ summary: Установленные шрифтовые комбинации и �
 
 ## Контраст с фоном
 
-Доступность цветовых сочетаний можно проверить при помози [WAVE Evaluation Tool](https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh)
+Доступность цветовых сочетаний можно проверить при помощи [WAVE Evaluation Tool](https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh)
 
 Фон: `#FFFFFF`
 Цвет шрифта: `#3B4256`

@@ -1,5 +1,5 @@
 ---
-title: Расположнеие элементов на десктопе
+title: Расположение элементов на десктопе
 keywords: UI, UX
 sidebar: ui-ux-guideline_sidebar
 toc: false
@@ -14,9 +14,9 @@ summary: Правила верстки базовых элементов на д
 
 ## Бокове меню
 
-### Развернутое боково меню
+### Развернутое боковое меню
 
-![Равезрнутое бокове меню](../../../images/pages/guides/ui-ux-guideline/uiuxg_desktop_layout/2.png)
+![Развернутое бокове меню](../../../images/pages/guides/ui-ux-guideline/uiuxg_desktop_layout/2.png)
 
 ### Свернутое боковое меню
 

@@ -1,5 +1,5 @@
 ---
-title: Расположнеие элементов на мобильных устройствах
+title: Расположение элементов на мобильных устройствах
 keywords: UI, UX
 sidebar: ui-ux-guideline_sidebar
 toc: false

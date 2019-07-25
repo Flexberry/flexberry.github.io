@@ -26,9 +26,9 @@ summary: Главное меню и его компоненты
 
 ![Композиция](../../../images/pages/guides/ui-ux-guideline/uiuxg_main_menu/3.png)
 
-### Сворчивание
+### Сворачивание
 
-![Сворчивание](../../../images/pages/guides/ui-ux-guideline/uiuxg_main_menu/4.png)
+![Сворачивание](../../../images/pages/guides/ui-ux-guideline/uiuxg_main_menu/4.png)
 
 ### Вложенные пункты
 
@@ -40,10 +40,10 @@ summary: Главное меню и его компоненты
 
 ### Сворачивание
 
-![Сворчивание](../../../images/pages/guides/ui-ux-guideline/uiuxg_main_menu/6.png)
+![Сворачивание](../../../images/pages/guides/ui-ux-guideline/uiuxg_main_menu/6.png)
 
 > Клик по лупе открывает результаты справа от колонки.
 
-![Сворчивание](../../../images/pages/guides/ui-ux-guideline/uiuxg_main_menu/7.png)
+![Сворачивание](../../../images/pages/guides/ui-ux-guideline/uiuxg_main_menu/7.png)
 
 ![Поисковый ввод](../../../images/pages/guides/ui-ux-guideline/uiuxg_main_menu/8.png)
