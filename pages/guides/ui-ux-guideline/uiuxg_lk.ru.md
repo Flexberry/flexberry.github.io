@@ -14,17 +14,17 @@ summary: Правила создания личного кабинета.
 
 ![Аватар - ЛК](../../../images/pages/guides/ui-ux-guideline/uiuxg_lk/1.png)
 
-Когда пользователь еще не авторизовался, хедер выглядит следующим образом:
+Когда пользователь еще не авторизовался:
 
 ![Аватар - Войти](../../../images/pages/guides/ui-ux-guideline/uiuxg_lk/2.png)
 
 ![Войти в ЛК](../../../images/pages/guides/ui-ux-guideline/uiuxg_lk/3.png)
 
-Адаптивная версия доступа в ЛК выглядит следующим образом:
+Адаптивная версия доступа в ЛК:
 
 ![Адаптивная версия](../../../images/pages/guides/ui-ux-guideline/uiuxg_lk/4.png)
 
-Доступ из сайтмапа выглядит следующим образом:
+Доступ из сайтмапа:
 
 ![Доступ из сайтмапа](../../../images/pages/guides/ui-ux-guideline/uiuxg_lk/5.png)
 
