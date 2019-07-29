@@ -38,13 +38,13 @@ summary: Это главная страница гайдлайнов Flexberry. 
 
 1.1 [Эвристики](uiuxg_heuristics.ru.md)
 
-1.2 [Цвет-404-](../../../404.md)
+1.2 [Выбор цветовой схемы](uiuxg_color_selection.ru.md)
 
-1.3 [Иконки -404-](../../../404.md)
+1.3 [Правила иконографии -404-](../../../404.md)
 
-1.3.1 [Шрифты -404?нет в плане!-](../../../404.md)
+1.3.1 [Правила подбора шрифтов -404-](../../../404.md)
 
-1.4 [Расположение информации на странице](uiuxg_information_composition.ru.md)
+1.4 [Расположение информации на странице **-FIX ME-**](uiuxg_information_composition.ru.md)
 
 1.4.1 [Расположение стандартных блоков](uiuxg_elements_location.ru.md)
 
@@ -108,7 +108,17 @@ summary: Это главная страница гайдлайнов Flexberry. 
 
 3.11 [Наборы иконок -404-](../../../404.md)
 
-3.12 [Списковая форма](uiuxg_list_form.ru.md)
+3.12 [Главная страница](uiuxg_main_page.ru.md)
+
+3.13 [Списковая форма](uiuxg_list_form.ru.md)
+
+3.14 [Кнопки](uiuxg_buttons.ru.md)
+
+3.15 [Flexberry menu](uiuxg_flexberry_menu.ru.md)
+
+3.16 [Групповое редактирование](uiuxg_group_edit.ru.md)
+
+3.17 [Переключатели](uiuxg_switcher.ru.md)
 
 ## Предложения
 
