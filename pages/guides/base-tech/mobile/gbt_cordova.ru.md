@@ -18,35 +18,90 @@ Apache Cordova позволяет создавать приложения для
 
 Программное обеспечение ранее называлось просто «PhoneGap», а затем «Apache Cordova». Как ПО с открытым исходным кодом, Apache Cordova используется в других программах, таких как Appery.io или Intel XDK.
 
-##  Ссылки на материалы для изучения
+## Примеры использования
+### Установка модуля `cordova`, создание приложения и добавление платформы `android`
+```
+npm install -g cordova
+```
+```
+cd MyApp
+```
+```
+cordova platform add android
+```
 
-### Базовый курс
-
-* [Официальная документация Apache Cordova](https://cordova.apache.org/docs/en/latest/)
-
-### Видеокурсы
-
-* [Getting Started with Apache Cordova Mobile App Development](https://www.youtube.com/playlist?list=PLReL099Y5nRd9BNsMZwXvTDeqnfRMiGJy)
-* [Getting Started with Cross-Platform Mobile Development with Apache Cordova](https://www.youtube.com/watch?v=3wMzrBgQqDM)
-* [Top videos for 'apache cordova'](https://www.youtube.com/watch?v=3wMzrBgQqDM&list=PLFqy-mg1Mw0-QlKsuglFYowV5A0x9lNu0)
-
-### Презентация
+### «Для тех, кто предпочитает один раз увидеть»
 
 <div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px">
     <iframe src="https://www.youtube.com/embed/FiItIyVniJo?ecver=2" width="854" height="480" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen>
     </iframe>
 </div>
 
-### Рекомендованные книги
-
-* [Apache Cordova API Cookbook (Mobile Programming)](https://www.amazon.com/Apache-Cordova-Cookbook-Mobile-Programming/dp/0321994809)
-* [Apache Cordova 4 Programming (Mobile Programming)](https://www.amazon.com/Apache-Cordova-Programming-Mobile/dp/0134048199/ref=pd_lpo_sbs_14_t_1/142-6513688-8635118?_encoding=UTF8&psc=1&refRID=YE8HJYP4YAHXNVY8ZYJA)
-* [Apache Cordova in Action](https://www.amazon.com/Apache-Cordova-Action-Raymond-Camden/dp/1633430065/ref=pd_lpo_sbs_14_t_0/142-6513688-8635118?_encoding=UTF8&psc=1&refRID=YE8HJYP4YAHXNVY8ZYJA)
-
 ## Программное обеспечение
 
 * [Apache Cordova](https://cordova.apache.org/#getstarted)
 * [Microsoft Visual Studio](https://www.visualstudio.com/ru/)
+
+##  Ресурсы
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse1">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse1">
+                Базовые ресурсы</a>
+            </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>                    
+                    <li><a href="https://cordova.apache.org/docs/en/latest/">Apache Cordova Documentation</a><i> — cordova.apache.org</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse2">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse2">
+                Видеокурсы</a>
+            </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>                    
+                    <li><a href="https://www.youtube.com/playlist?list=PLReL099Y5nRd9BNsMZwXvTDeqnfRMiGJy">Getting Started with Apache Cordova Mobile App Development</a><i> — youtube-аккаунт «Microsoft Visual Studio»</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse3">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse3">
+                Рекомендованные книги</a>
+            </h4>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>                    
+                    <li><a href="https://www.amazon.com/Apache-Cordova-Cookbook-Mobile-Programming/dp/0321994809">Apache Cordova API Cookbook (Mobile Programming)</a><i> — amazon.сom</i></li>
+                    <li><a href="https://www.amazon.com/Apache-Cordova-Programming-Mobile/dp/0134048199/ref=pd_lpo_sbs_14_t_1/142-6513688-8635118?_encoding=UTF8&psc=1&refRID=YE8HJYP4YAHXNVY8ZYJA">Apache Cordova 4 Programming (Mobile Programming)</a><i> — amazon.сom</i></li>
+                    <li><a href="https://www.amazon.com/Apache-Cordova-Action-Raymond-Camden/dp/1633430065/ref=pd_lpo_sbs_14_t_0/142-6513688-8635118?_encoding=UTF8&psc=1&refRID=YE8HJYP4YAHXNVY8ZYJA">Apache Cordova in Action</a><i> — amazon.сom</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
 
 ## Перейти
 
