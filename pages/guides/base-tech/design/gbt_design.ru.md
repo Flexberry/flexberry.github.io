@@ -8,6 +8,48 @@ folder: guides/base-tech/design/
 lang: ru
 ---
 
+## Краткое описание
+
+## Пример использования
+
+### Пример разметки страницы
+
+![layout](/images/pages/guides/base-technologies/design/layout.jpg)
+
+## «Для тех, кто предпочитает один раз увидеть»
+
+## Больше информации по теме
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse1">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse1">
+                Книги по дизайну</a>
+            </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li>Vignelli M. The Vignelli Canon. Design. 2009 Jan 1:4<a href="https://www.lars-mueller-publishers.com/vignelli-canon"><i> — lars-mueller-publishers.сom;</i></a><a href="https://www.amazon.com/Vignelli-Canon-Massimo/dp/3037782250"><i> — amazon.сom;</i></a><a href="https://s3-us-west-2.amazonaws.com/rationale-design.com/resources/vignelli-canon/Vignelli+-+Canon.pdf"><i> — pdf вариант;</i></a></li>                    
+                    <li>Bringhurst, Robert. <a href="https://www.amazon.com/dp/0881791326">The elements of typographic style</a>. Point Roberts, WA: Hartley & Marks, 2004.<i> — amazon.сom</i></li>
+                    <li>Tufte ER, Robins D. <a href="https://www.amazon.com/dp/1930824157">. Cheshire, CT: Graphics; 1997 Jan.</a><i> — amazon.сom</i></li>
+                    <li>Müller-Brockmann, J., 1996. <a href="https://www.amazon.com/dp/3721201450">Grid systems in graphic design</a>. Alemanha, Editora Braun<i> — amazon.сom</i></li>
+                    <li>Йозеф Мюллер-Брокманн. <a href="https://www.artlebedev.ru/izdal/modulnye-sistemy/">Модульные системы в графическом дизайне</a><i> — Студия Артемия Лебедева</i></li>
+                    <li>Чихольд Я. <a href="https://www.artlebedev.ru/izdal/novaya-tipografika-2018/">Новая типографика</a><i> — Студия Артемия Лебедева</i></li>                    
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
+
+## Программное обеспечение
+
+## Ресурсы
+
+
+
 ## Дизайн
 
 ### Книги
