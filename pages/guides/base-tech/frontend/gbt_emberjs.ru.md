@@ -20,7 +20,9 @@ lang: ru
 * **Шаблоны** написаны на языке HTMLBars (HTML + [handlebars](http://handlebarsjs.com/) = HTMLbars) и описывают пользовательский интерфейс. Шаблоны используются для построения HTML кода приложения и позволяют встраивать в него динамически обновляемые выражения.
 
 ##  Пример использования
+
 ### Пример запуска Ember-приложения «dice-roller» с использованием `ember-cli`:
+
 ```javascript
 $ cd dice-roller
 $ ember serve
@@ -41,11 +43,13 @@ Rollup (1)                                    | 445ms
 ```
 
 ## «Для тех, кто предпочитает один раз увидеть»
+
 <div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px">
     <iframe style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; z-index: 2;" src="https://onedrive.live.com/embed?cid=2FB293CA43965F14&resid=2FB293CA43965F14%21117&authkey=ANqVyK0lG7YX6t0&em=2" frameborder="0" scrolling="no"></iframe>
 </div>
 
 ## Больше информации по теме 
+
 <div class="panel-group">
     <div class="panel panel-default">
         <div class="panel-heading">
