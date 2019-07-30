@@ -29,7 +29,9 @@ MongoDB имеет следующие уровни представления д
 - Поддержка операций MapReduce для массовой параллельной обработки данных.
 
 ## Пример использования
+
 ### Работа с MongoDB через СУБД Navicat
+
 ![MongoDB](/images/pages/guides/base-technologies/storage/MongoDB.png)
 
 ## «Для тех, кто предпочитает один раз увидеть»
