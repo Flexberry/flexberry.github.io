@@ -23,15 +23,19 @@ lang: ru
 ## Примеры использования
 
 ### Классификация паттернов:
+
 ![Patterns classification](/images/pages/guides/base-technologies/information-system-design/patterns.png)
 
 ### Схема паттерна Строитель:
+
 ![Builder Pattern](/images/pages/guides/base-technologies/information-system-design/builder.png)
 
 ### Схема паттерна Итератор:
+
 ![Iterator Pattern](/images/pages/guides/base-technologies/information-system-design/iterator.jpg)
 
 ## «Для тех, кто предпочитает один раз увидеть»
+
 <iframe src="https://ppt-online.org/embed/34856" width="683" height="562" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="https://ppt-online.org/34856" target="_blank"></a> </strong></div>
 
 ##  Ресурсы
