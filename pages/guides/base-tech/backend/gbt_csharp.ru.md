@@ -35,6 +35,7 @@ namespace HelloWorld
 ```
 
 ## «Для тех, кто предпочитает один раз увидеть»
+
 <div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px">
 <iframe style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; z-index: 2;" src="https://onedrive.live.com/embed?cid=2FB293CA43965F14&resid=2FB293CA43965F14%21112&authkey=ALgReuLtSJ-zwVM&em=2" frameborder="0" scrolling="no"></iframe>
 </div>
