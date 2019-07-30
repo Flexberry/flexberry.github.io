@@ -9,15 +9,18 @@ lang: ru
 ---
 
 ## Краткое описание
+
 * Стандарты OGC
 * Leaflet
 * GeoServer
 * Яндекс.Карты, Google maps, 2GIS, OSM
 
 ##  Примеры использования
+
 -- 
 
 ## «Для тех, кто предпочитает один раз увидеть»
+
 <div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px">
     <iframe src="" width="402" height="327" frameborder="0" scrolling="no"></iframe>
 </div>
