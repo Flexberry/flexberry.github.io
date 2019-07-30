@@ -18,10 +18,13 @@ lang: ru
 **ADO.NET** — это набор классов, предоставляющих службы доступа к данным программистам, которые используют платформу .NET Framework. ADO.NET имеет богатый набор компонентов для создания распределенных приложений, совместно использующих данные. Это неотъемлемая часть платформы .NET Framework, которая предоставляет доступ к реляционным данным, XML-данным и данным приложений. ADO.NET удовлетворяет различные потребности разработчиков, включая создание клиентских приложений баз данных, а также бизнес-объектов среднего уровня, используемых приложениями, средствами, языками и браузерам.
 
 ## Пример использования
+
 ### Схема использования ORM
+
 ![Схема использования ORM](/images/pages/guides/base-technologies/backend/ORM-System.png)
 
 ## «Для тех, кто предпочитает один раз увидеть»
+
 <div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px">
 <iframe style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; z-index: 2;" src="https://onedrive.live.com/embed?cid=2FB293CA43965F14&resid=2FB293CA43965F14%21116&authkey=AEyXkF-LOfH9yQw&em=2" frameborder="0" scrolling="no"></iframe>
 </div>
