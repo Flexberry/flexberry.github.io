@@ -26,15 +26,15 @@ lang: ru
 * Платформы для автоматизированного тестирования: [Sauce Labs](https://saucelabs.com/), [Ubertesters](https://ubertesters.com/) и другие.
 
 ##  Пример использования
+
 ### Вставка javascript кода в html:
+
 ```html
 <html>
     <body>
-
         <script type="text/javascript">
             var d = new Date();
             var time = d.getHours();
-
             if (time < 10) 
             {
             document.write("<b>Доброе утро</b>");
@@ -44,23 +44,20 @@ lang: ru
             document.write("<b>Добрый день</b>");
             }
         </script>
-
         <p>
             Этот пример демонстрирует конструкцию If...Else.
         </p>
-
         <p>
             Если время в вашем браузере меньше чем 10 часов,
             вы получите приветствие "Доброе утро".
             В противном случае вы увидите приветствие "Добрый день".
         </p>
-
     </body>
 </html>
-
 ```
 
 ## «Для тех, кто предпочитает один раз увидеть»
+
 <div class="thumb-wrap">
     <iframe width="854" height="480" src="https://www.youtube.com/embed/KmTK8kub_gw" frameborder="0" allowfullscreen></iframe>
 </div>
