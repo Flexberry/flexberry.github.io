@@ -5,7 +5,7 @@ sidebar: ui-ux-guideline_sidebar
 toc: false
 permalink: ru/uiuxg_main_menu.html
 lang: ru
-summary: Главное меню и его компоненты
+summary: Главное меню и его компоненты.
 ---
 
 ## Без поиска

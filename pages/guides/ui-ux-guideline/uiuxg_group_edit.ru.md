@@ -5,7 +5,7 @@ sidebar: ui-ux-guideline_sidebar
 toc: false
 permalink: ru/uiuxg_group_edit.html
 lang: ru
-summary: Редактирование группы элементов в списке
+summary: Редактирование группы элементов в списке.
 ---
 
 ## Кнопки группового действия

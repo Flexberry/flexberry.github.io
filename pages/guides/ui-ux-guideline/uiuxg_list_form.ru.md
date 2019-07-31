@@ -5,7 +5,7 @@ sidebar: ui-ux-guideline_sidebar
 toc: false
 permalink: ru/uiuxg_list_form.html
 lang: ru
-summary: Описание списковой формы и расположение основных элементов на ней
+summary: Описание списковой формы и расположение основных элементов на ней.
 ---
 
 ## Общее расположение элементов

@@ -5,7 +5,7 @@ sidebar: ui-ux-guideline_sidebar
 toc: false
 permalink: ru/uiuxg_main_page_manual.html
 lang: ru
-summary: Правила создания м наполнения главной страницы
+summary: Правила создания м наполнения главной страницы.
 ---
 
 ## Основные особенности

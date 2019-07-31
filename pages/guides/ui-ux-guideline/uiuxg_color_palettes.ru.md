@@ -5,7 +5,7 @@ sidebar: ui-ux-guideline_sidebar
 toc: false
 permalink: ru/uiuxg_color_palettes.html
 lang: ru
-summary: Существующие цветовые комбинации
+summary: Существующие цветовые комбинации.
 ---
 
 > Если нужно создать новую цветовую палитру: [Выбор цветовой схемы](uiuxg_color_selection.ru.md)

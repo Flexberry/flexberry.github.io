@@ -5,7 +5,7 @@ sidebar: ui-ux-guideline_sidebar
 toc: false
 permalink: ru/uiuxg_switcher.html
 lang: ru
-summary: Различные переключатели и их использование
+summary: Различные переключатели и их использование.
 ---
 
 ## Базовый

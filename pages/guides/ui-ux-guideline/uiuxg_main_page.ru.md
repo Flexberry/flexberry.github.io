@@ -5,7 +5,7 @@ sidebar: ui-ux-guideline_sidebar
 toc: false
 permalink: ru/uiuxg_main_page.html
 lang: ru
-summary: Правила верстки и примеры расположения блоков на главной странице
+summary: Правила верстки и примеры расположения блоков на главной странице.
 ---
 
 ## Расположение карточек по сетке
