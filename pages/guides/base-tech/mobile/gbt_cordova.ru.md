@@ -107,5 +107,5 @@ cordova platform add android
 
 ## Перейти
 
-* [ГИС](gbt_gis.html)
+* [Основы UI](http://localhost:4000/ru/gbt_design.ru.html)
 * [Главная страница курса](gbt_landing-page.html)
