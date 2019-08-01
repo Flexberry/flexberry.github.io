@@ -33,11 +33,30 @@ lang: ru
             <div class="panel-body">
                 <div>
                     <li>Vignelli M. The Vignelli Canon. Design. 2009 Jan 1:4<a href="https://www.lars-mueller-publishers.com/vignelli-canon"><i> — lars-mueller-publishers.сom;</i></a><a href="https://www.amazon.com/Vignelli-Canon-Massimo/dp/3037782250"><i> — amazon.сom;</i></a><a href="https://s3-us-west-2.amazonaws.com/rationale-design.com/resources/vignelli-canon/Vignelli+-+Canon.pdf"><i> — pdf вариант;</i></a></li>                    
-                    <li>Bringhurst, Robert. <a href="https://www.amazon.com/dp/0881791326">The elements of typographic style</a>. Point Roberts, WA: Hartley & Marks, 2004.<i> — amazon.сom</i></li>
-                    <li>Tufte ER, Robins D. <a href="https://www.amazon.com/dp/1930824157">. Cheshire, CT: Graphics; 1997 Jan.</a><i> — amazon.сom</i></li>
-                    <li>Müller-Brockmann, J., 1996. <a href="https://www.amazon.com/dp/3721201450">Grid systems in graphic design</a>. Alemanha, Editora Braun<i> — amazon.сom</i></li>
-                    <li>Йозеф Мюллер-Брокманн. <a href="https://www.artlebedev.ru/izdal/modulnye-sistemy/">Модульные системы в графическом дизайне</a><i> — Студия Артемия Лебедева</i></li>
-                    <li>Чихольд Я. <a href="https://www.artlebedev.ru/izdal/novaya-tipografika-2018/">Новая типографика</a><i> — Студия Артемия Лебедева</i></li>                    
+                    <li><a href="https://www.amazon.com/dp/0881791326">Bringhurst, Robert. The elements of typographic style. Point Roberts, WA: Hartley & Marks, 2004.</a><i> — amazon.сom</i></li>
+                    <li><a href="https://www.amazon.com/dp/1930824157">Tufte ER, Robins D. Cheshire, CT: Graphics; 1997 Jan.</a><i> — amazon.сom</i></li>
+                    <li><a href="https://www.amazon.com/dp/3721201450">Müller-Brockmann, J., 1996. Grid systems in graphic design. Alemanha, Editora Braun</a><i> — amazon.сom</i></li>
+                    <li><a href="https://www.artlebedev.ru/izdal/modulnye-sistemy/">Йозеф Мюллер-Брокманн. Модульные системы в графическом дизайне</a><i> — Студия Артемия Лебедева</i></li>
+                    <li><a href="https://www.artlebedev.ru/izdal/novaya-tipografika-2018/">Чихольд Я. Новая типографика</a><i> — Студия Артемия Лебедева</i></li>          
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse2">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse2">
+                Видео</a>
+            </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>                    
+                    <li><a href="https://www.youtube.com/watch?v=5RyU50qbvzQ">Ivan Sutherland's Sketchpad</a><i> — youtube-аккаунт «Animation History»</i></li>          
                 </div>   
             </div>
         </div>
@@ -48,45 +67,75 @@ lang: ru
 
 ## Ресурсы
 
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse3">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse3">
+                Дизайн-системы</a>
+            </h4>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>                                      
+                    <li><a href="https://developer.apple.com/design/human-interface-guidelines/">Apple Human Interface Guidelines</a></li>
+                    <li><a href="https://material.io/design/">Google Material Design</a></li>
+                    <li><a href="https://atlassian.design/">Atlassian Design</a></li>
+                    <li><a href="https://www.ibm.com/design/language/">IBM Design</a></li>         
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse4">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse4">
+                Статьи по дизайну интерфейса</a>
+            </h4>
+        </div>
+        <div id="collapse4" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>                                      
+                    <li><a href="https://www.nngroup.com/">Nielsen Norman Group</a>, например<a href="https://www.nngroup.com/articles/form-design-placeholders/"> Placeholders in Form Fields Are Harmful</a></li>
+                    <li><a href="https://uxdesign.cc/design-better-forms-96fadca0f49c">Design Better Forms</a></li>
+                    <li><a href="https://ia.net/topics/multichannel-text-processing">Multichannel Text Processing</a></li>      
+                    <li><a href="https://medium.muz.li/">Muzli Design Inspiration</a></li>       
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse5">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse5">
+                Медиа-ресурсы</a>
+            </h4>
+        </div>
+        <div id="collapse5" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>                                      
+                    <li><a href="https://fonts.google.com/">Google Fonts</a></li>
+                    <li><a href="https://iconmonstr.com/">iconmonstr</a></li>
+                    <li><a href="https://thenounproject.com/">Noun Project</a></li>      
+                    <li><a href="https://dribbble.com/">Dribbble</a></li>       
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
+
+## Перейти
+
+* [ГИС](gbt_gis.html)
+* [Главная страница курса](gbt_landing-page.html)
 
 
-## Дизайн
-
-### Книги
-
-* Vignelli M. [The Vignelli Canon](https://www.lars-mueller-publishers.com/vignelli-canon). Design. 2009 Jan 1:4.
-* Müller-Brockmann, J., 1996. [Grid systems](https://www.amazon.com/dp/3721201450). Alemanha, Editora Braun.
-* Bringhurst, Robert. [The elements of typographic style](https://www.amazon.com/dp/0881791326). Point Roberts, WA: Hartley & Marks, 2004.
-* Чихольд Я. [Новая типографика](https://www.artlebedev.ru/izdal/novaya-tipografika-2018/). Студия Артемия Лебедева; 2011 Mar 1.
-* Tufte ER, Robins D. [Visual explanations](https://www.amazon.com/dp/1930824157). Cheshire, CT: Graphics; 1997 Jan.
-
-## Дизайн интерфейса
-
-### Дизайн-системы
-
-* [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/)
-* [Google Material Design](https://material.io/design/)
-* [Atlassian Design](https://atlassian.design/)
-* [IBM Design](https://www.ibm.com/design/language/)
-
-### Статьи
-
-* [A List Apart](https://alistapart.com)
-* [24Ways](https://24ways.org/)
-* [Nielsen Norman Group](https://www.nngroup.com/), например, [Placeholders in Form Fields Are Harmful](https://www.nngroup.com/articles/form-design-placeholders/)
-* [User Interface Design For Programmers](https://www.joelonsoftware.com/2001/10/24/user-interface-design-for-programmers/)
-* [Magic Ink by Bret Victor](http://worrydream.com/MagicInk/)
-* [Design Better Forms](https://uxdesign.cc/design-better-forms-96fadca0f49c)
-* [Multichannel Text Processing](https://ia.net/topics/multichannel-text-processing)
-
-### Ресурсы
-
-* [Google Fonts](https://fonts.google.com/)
-* [iconmonstr](https://iconmonstr.com/)
-* [Noun Project](https://thenounproject.com/)
-* [Dribbble](https://dribbble.com/)
-* [Muzli Design Inspiration](https://medium.muz.li/)
-
-### Видео
-
-* [Ivan Sutherland's Sketchpad](https://www.youtube.com/watch?v=5RyU50qbvzQ)
