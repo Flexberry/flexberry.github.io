@@ -1,11 +1,11 @@
 ---
-title: Использование шрифтов
+title: Правила использования шрифта Gost UI
 keywords: UI, UX
 sidebar: ui-ux-guideline_sidebar
 toc: false
 permalink: ru/uiuxg_fonts_usage.html
 lang: ru
-summary: Шрифты используемые на проектах и размеры шрифтов в конкретных местах.
+summary: Правила использования шрифта Gost UI на проектах, размеры, применение в конкретных местах.
 ---
 
 > Компонент: [шрифты](uiuxg_fonts.ru.md). Конвертер шрифтов: [Online Font Converter](https://onlinefontconverter.com/ "Ссылка на внешний ресурс")
