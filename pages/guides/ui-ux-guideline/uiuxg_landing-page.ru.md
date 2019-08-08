@@ -56,8 +56,6 @@ summary: Это главная страница гайдлайнов Flexberry. 
 
 1.6 [Инструменты проектирования](uiuxg_prototyping_tools.ru.md)
 
-1.7 [Полезные ссылки](uiuxg_useful_links.ru.md)
-
 ## Лучшие примеры с рекомендациями
 
 2.1 [Конструирование главной страницы](uiuxg_main_page_manual.ru.md)
@@ -83,6 +81,8 @@ summary: Это главная страница гайдлайнов Flexberry. 
 2.9 [Формы обратной связи](uiuxg_feedback_form.ru.md)
 
 2.10 [Высоконагруженные формы](uiuxg_complex_forms.ru.md)
+
+2.15 [Полезные ссылки](uiuxg_useful_links.ru.md)
 
 ## Компоненты
 
