@@ -85,6 +85,7 @@ summary: Курс по базовым технологиям, применяем
 * [Нетология](https://netology.ru/)
 * [Codecademy](https://www.codecademy.com/)
 * [HTML Academy](https://htmlacademy.ru/)
+* [Brainoteka](https://brainoteka.com/)
 * [Treehouse](https://teamtreehouse.com/)
 * [Библиотека программиста](https://vk.com/proglib)
 * [Class Central](https://www.class-central.com/)
