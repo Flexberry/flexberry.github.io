@@ -1,5 +1,5 @@
 ---
-title: Конструирование главной страницы
+title: Рабочий стол
 keywords: UI, UX
 sidebar: ui-ux-guideline_sidebar
 toc: false
