@@ -576,6 +576,51 @@ lang: ru
     </div>
 </div>
 
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push collapsed" data-toggle="collapse" href="#collapse9" aria-expanded="false">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse9">
+                Автоматизация сборки приложений</a>
+            </h4>
+        </div>
+        <div id="collapse9" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+            <div class="panel-body">
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=L8huwAwXTlM' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/frontend-build.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">1. Сборка фронтенда</span></h4>
+                            <p>Урок школы разработчиков hh.ru, посвященный вопросам организации сборки фронтенда и соответствующим классам инструментов. Разбирается практический пример сборки JavaScript-приложения с использованием библиотеки Webpack (Лев Екасов, hh.ru).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=t7yYD3qVchw' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/taskrunner-bundler-gulp.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">2. Понятия Taskrunner и Bundler. Введение в Gulp</span></h4>
+                            <p>Видео, посвященное обзору понятий Taskrunner и Bundler, а также практическое введение в сборку JavaScript-приложений с использованием библиотеки Gulp. (Виталий Киренков, Просто: разработка).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/playlist?list=PLlhqsC7hBaSfryTd4ahmL7aG0sJRtco6h' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/broccoli-js.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">3. Сборка JavaScript-приложений с использованием Broccoli.js</span></h4>
+                            <p>Серия скринкастов, посвященных сборке JavaScript-приложений с помощью системы сборки Broccoli.js - библиотеки, которая используется для сборки приложений в инструментах командной строки фреймворка Ember.js (Евгений Хаберев, Flexberry PLATFORM).</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 ## Вы можете
 
 * [Перейти к дополнительным учебным материалам модуля](tds_module3-appendix.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
