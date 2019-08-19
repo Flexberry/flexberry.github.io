@@ -603,7 +603,7 @@ lang: ru
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/taskrunner-bundler-gulp.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">2. Понятия Taskrunner и Bundler. Введение в Gulp</span></h4>
-                            <p>Видео, посвященное обзору понятий Taskrunner и Bundler, а также практическое введение в сборку JavaScript-приложений с использованием библиотеки Gulp. (Виталий Киренков, Просто: разработка).</p>
+                            <p>Видео, посвященное обзору понятий Taskrunner и Bundler, а также практическое введение в сборку JavaScript-приложений с использованием библиотеки gulp.js. (Виталий Киренков, Просто: разработка).</p>
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
@@ -613,6 +613,71 @@ lang: ru
                             </div>
                             <h4><span class="item-head">3. Сборка JavaScript-приложений с использованием Broccoli.js</span></h4>
                             <p>Серия скринкастов, посвященных сборке JavaScript-приложений с помощью системы сборки Broccoli.js - библиотеки, которая используется для сборки приложений в инструментах командной строки фреймворка Ember.js (Евгений Хаберев, Flexberry PLATFORM).</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push collapsed" data-toggle="collapse" href="#collapse10" aria-expanded="false">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse10">
+                Автоматическая проверка стиля кода</a>
+            </h4>
+        </div>
+        <div id="collapse10" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+            <div class="panel-body">
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://monsterlessons.com/project/lessons/eslint' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/eslint.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">1. Линтинг JavaScript-кода с использованием ESLint</span></h4>
+                            <p>Урок, в котором рассматривается понятие линтинга кода, а также настройка библиотеки ESLint для обнаружения и предотвращения ошибок (Monster Lessons).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=rDM9HRZwAZk' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/gulp-webpack-linting.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">2. Настройка линтинга JavaScript- и CSS-кода в Gulp и Webpack</span></h4>
+                            <p>Видео, посвященное обзору линтеров для JavaScript и CSS, а также настройке соответствующих линтеров при сборке проекта с помощью библиотек gulp.js и Webpack (Дарья Пушкарская, WebHero School).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=LoUh0kpZ5_w' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/sass-linting.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">3. Линтинг SASS-кода</span></h4>
+                            <p>Видео, в котором рассматривается линтер SASS-кода, настройка линтинга SASS-кода в gulp.js, а также пример проверки кода сайта на ошибки. (Виталий Киренков, Просто: разработка).</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=IpmiFPoDYVY' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/vscode-linting.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">4. Настройка ESLint, Prettier и pre-commit hook в Visual Studio Code</span></h4>
+                            <p>Вебинар, в котором рассматривается настройка библиотек для линтинга JavaScript-кода при работе в Visual Studio Code (Максим Пацианский, maxpfrontend).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=IpmiFPoDYVY' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/bad-code-projects-linting.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">5. Линтинг на проектах с "плохим" кодом</span></h4>
+                            <p> Видео, в котором даются практические рекомендации по внедрению ESLint и Prettier на проектах с унаследованнм "плохим" кодом (код, который не тестируется, не проверяется инструментами и т.д.) (Илья Климов, JavaScript.Ninja/WookieeLabs).</p>
                         </a>
                     </div>
                 </div>
