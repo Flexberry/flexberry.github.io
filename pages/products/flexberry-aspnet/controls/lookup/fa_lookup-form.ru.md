@@ -85,10 +85,9 @@ if (!string.IsNullOrEmpty(Request["csdName"]))
 ```csharp
 string lfName = HttpContext.Current.Request["LFName"];
 if (!string.IsNullOrEmpty(lfName))
-SQLWhereLanguageDef lng = SQLWhereLanguageDef.LanguageDef;
 Function lf1 = LimitFunctionsHolder.LoadLimitFunction(lfName);
 LookUpFormWOLV.LimitFunction = LookUpFormWOLV.LimitFunction != null
-              ? lng.GetFunction(lng.funcAND, LookUpFormWOLV.LimitFunction, lf1)
+              ? FunctionBuilder.BuildAnd(LookUpFormWOLV.LimitFunction, lf1)
               : lf1;
 ```
 
@@ -137,10 +136,9 @@ protected override void OnLoad(EventArgs e)
             {
                 try
                 {
-                    SQLWhereLanguageDef lng = SQLWhereLanguageDef.LanguageDef;
                     Function lf1 = LimitFunctionsHolder.LoadLimitFunction(lfName);
                     LookUpFormWOLV.LimitFunction = LookUpFormWOLV.LimitFunction != null
-                                                       ? lng.GetFunction(lng.funcAND, LookUpFormWOLV.LimitFunction, lf1)
+                                                       ? FunctionBuilder.BuildAnd(LookUpFormWOLV.LimitFunction, lf1)
                                                        : lf1;
                 }
                 catch (LimitFunctionNotFoundException)

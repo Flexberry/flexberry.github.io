@@ -20,12 +20,11 @@ var guid = Guid.NewGuid().ToString();
 В `Page_Load` создать Limit Function:
 
 ```csharp
-var ld = ExternalLangDef.LanguageDef;
-Function f = ld.GetFunction(ld.funcEQ,new VariableDef(ld.StringType, "Name"),"Имя");
+Function f = FunctionBuilder.BuildEquals("Name", "Имя");
 ```
 ### Передача объекта
 
-Описывать класс, отметить его как `Serialisable`, создать экземпляр класса:
+Описывать класс, отметить его как `Serializable`, создать экземпляр класса:
 
 ```csharp
 [Serializable]

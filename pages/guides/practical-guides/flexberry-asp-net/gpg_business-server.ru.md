@@ -54,8 +54,7 @@ public virtual ICSSoft.STORMNET.DataObject[] OnUpdateЗаказ(АСУ_Скла�
 	if ((UpdatedObject.GetStatus() == ICSSoft.STORMNET.ObjectStatus.Created || UpdatedObject.GetStatus() == ICSSoft.STORMNET.ObjectStatus.Altered) && Array.IndexOf(UpdatedObject.GetAlteredPropertyNames(), "Статус") >= 0 && UpdatedObject.Статус == СостояниеЗаказа.Оплаченный)			
 	{   
 		// Построим ограничение и вычитаем все объекты ТоварНаСкладе, которые нам подходят.
-		Заказ заказ = UpdatedObject;
-		SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
+		Заказ заказ = UpdatedObject;		
 		ICSSoft.STORMNET.FunctionalLanguage.Function lf = null; 
 
 		for (int i = 0; i < заказ.СтрокаЗаказа.Count; i++)
@@ -63,17 +62,15 @@ public virtual ICSSoft.STORMNET.DataObject[] OnUpdateЗаказ(АСУ_Скла�
 			if (lf != null)
 			{
 				if (заказ.СтрокаЗаказа[i].Товар != null)
-					lf = langdef.GetFunction(langdef.funcOR, lf, langdef.GetFunction(langdef.funcEQ, 
-								new VariableDef(langdef.GuidType, "Товар"),
-								заказ.СтрокаЗаказа[i].Товар.__PrimaryKey));
+					lf = FunctionBuilder.BuildOr(
+							lf,
+							FunctionBuilder.BuildEquals<ТоварНаСкладе>(x => x.Goods, заказ.СтрокаЗаказа[i].Товар));
 			}
 
 			else
 			{
 				if (заказ.СтрокаЗаказа[i].Товар != null)
-					lf = langdef.GetFunction(langdef.funcEQ,
-								new VariableDef(langdef.GuidType, "Товар"),
-								заказ.СтрокаЗаказа[i].Товар.__PrimaryKey);
+					lf = FunctionBuilder.BuildEquals<ТоварНаСкладе>(x => x.Goods, заказ.СтрокаЗаказа[i].Товар);
 			}
 		}
 

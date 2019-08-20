@@ -24,9 +24,7 @@ comboLookup1.ComboPropertyName = "Название";
 comboLookup1.DataObjectType = typeof(IIS.КошкиСЛапами.Кошка);
 comboLookup1.MasterPropertyName = "Порода";
 
-SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;  
-Function lf = langdef.GetFunction(langdef.funcLike,
-new VariableDef(langdef.StringType, "Название"), "Перс%");
+Function lf = FunctionBuilder.BuildLike<Порода>(x => x.Название, "Перс%");
 comboLookup1.Limit = new FunctionForControls("ПородаL", lf);
 ```
 
