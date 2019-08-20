@@ -1,20 +1,20 @@
---- 
-title: Imposing restrictions on the LookUp in the AGE, associate lyapov. 
-sidebar: guide-practical-guides_sidebar 
-keywords: guide 
-toc: true 
-permalink: en/gpg_limit-function-for-lookup-in-age.html 
-lang: en 
-autotranslated: true 
-hash: a6fcea20149d0903d210ac1e7ea75441e2c3a11147551f2bda0cfcf4286b41c2 
---- 
+---
+title: Imposing restrictions on the LookUp in the AGE, associate lyapov.
+sidebar: guide-practical-guides_sidebar
+keywords: guide
+toc: true
+permalink: en/gpg_limit-function-for-lookup-in-age.html
+lang: en
+autotranslated: true
+hash: cb2c9124c04ed39c2ab07c966d73b1c39c060dfd9e34948c8f5a02d196cdf0cd
+---
 
-The imposition of restrictions on a list of selectable items in the order. 
+The imposition of restrictions on a list of selectable items in the order.
 
-Objective: in the order it was impossible to specify multiple single product, it is necessary to impose restrictions so that the already selected items in the list for a new selection no longer appeared. 
-You have to add the constraint for commodities, which will vary depending on the state of the list of items on the page. 
+Objective: in the order it was impossible to specify multiple single product, it is necessary to impose restrictions so that the already selected items in the list for a new selection no longer appeared.
+You have to add the constraint for commodities, which will vary depending on the state of the list of items on the page.
 
-1.In block pluggable namespaces, add the following lines: 
+1.In block pluggable namespaces, add the following lines:
 
 ```
 using System;
@@ -22,9 +22,9 @@ using System.Collections.Generic;
 using System.Web.Services;
 
 using ICSSoft.STORMNET.Web.Tools;
-``` 
+```
 
-2.In `ZakazE.aspx.cs` add the following method: 
+2.In `ZakazE.aspx.cs` add the following method:
 
 ```csharp
 /// <summary> 
@@ -40,26 +40,17 @@ public static string CreateLf(string[] ordKeys, string lfKey)
 	{
 		lfKey = Guid.NewGuid().ToString("B");
 	}
-
-	SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
-	var clientKeys = new List<object>
-															{
-																	new VariableDef(
-																			langdef.GuidType,
-																			SQLWhereLanguageDef.StormMainObjectKey)
-															};
-
-	clientKeys.AddRange(ordKeys);
-	Function lf = langdef.GetFunction(langdef.funcNOT, langdef.GetFunction(langdef.funcIN, clientKeys.ToArray()));
+	
+	Function lf = FunctionBuilder.BuildNotIn(ordKeys);
 	LimitFunctionsHolder.PersistLimitFunction(lfKey, lf);
 
 	return lfKey;
 }
-``` 
+```
 
-Attaching the attribute to a method `WebMethod` `Public` means that this method should be published as part of the web service `XML`. The properties of this attribute can also be used to fine-tune the behavior of the method, the web service `XML`. 
+Attaching the attribute to a method `WebMethod` `Public` means that this method should be published as part of the web service `XML`. The properties of this attribute can also be used to fine-tune the behavior of the method, the web service `XML`.
 
-3.In `ZakazE.aspx` to fix the script: 
+3.In `ZakazE.aspx` to fix the script:
 
 ```js
 <asp:Content ContentPlaceHolderID="ContentPlaceHolder0"  runat="server" >
@@ -158,12 +149,12 @@ Attaching the attribute to a method `WebMethod` `Public` means that this method 
 
 	</script>
 </asp:Content>
-``` 
+```
 
-## Go 
+## Go
 
-* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Automatic calculation](gpg_auto-calculation.html) 
-* [Exception handling](gpg_set-exception.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> 
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Automatic calculation](gpg_auto-calculation.html)
+* [Exception handling](gpg_set-exception.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
 
 
 

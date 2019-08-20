@@ -13,7 +13,7 @@ For example, you have the following situation:
 
 Class a is detaily D associated aggregation of DA. For A specified [view](fd_view-definition.html), which is connected with the idea of detail D.
 
-For example, you are reading a data object of type A on presentation `AView`. Accordingly, as objects of classes D1, D2 [legacy](fd_inheritance.html) from the D, they will also be read by performance `DView` (inherited view). However, what to do if they have a better attribute composition, which obyazatelno needs pracitce?
+For example, you are reading a data object of type A on presentation `AView`. Accordingly, as objects of classes D1, D2 [legacy](fd_inheritance.html) from the D, they will also be read by performance `DView` (views are inherited). However, what to do if they have a better attribute composition, which obyazatelno needs pracitce?
 
 In order to solve the problem, there are **adaptive** performance. If you declare the view `DView` adaptive and datalow D1 and D2 to announce the submission of the same names (`DView`), but with its own attribute structure, then the [service data](fo_data-service.html) will read detaily D1 and D2 in accordance with it.
 

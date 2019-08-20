@@ -1,47 +1,47 @@
---- 
-title: Call to independent artists 
-sidebar: flexberry-winforms_sidebar 
-keywords: Flexberry Winforms, Controls, LookUp, master 
-summary: Algorithm add links to independent artists for the main form editing and detailov, usage examples 
-toc: true 
-permalink: en/fw_lookup-another-object.html 
-lang: en 
-autotranslated: true 
-hash: 13424042cb17b9d0b6edbee0c669ffa4a8cb5974ea6c4de91930996d161895bf 
---- 
+---
+title: Call to independent artists
+sidebar: flexberry-winforms_sidebar
+keywords: Flexberry Winforms, Controls, LookUp, master
+summary: Algorithm add links to independent artists for the main form editing and detailov, usage examples
+toc: true
+permalink: en/fw_lookup-another-object.html
+lang: en
+autotranslated: true
+hash: 80da89a3d4abf68f7c088c42124665c78ffd5d4be1280c7efd958e0c4a42c022
+---
 
-There are two ways to add to the edit form [Lookup](fw_lookup.html) to select an object unrelated to the editable on the current form: 
+There are two ways to add to the edit form [Lookup](fw_lookup.html) to select an object unrelated to the editable on the current form:
 
-1. Add a calculated field in the main object and re-generate the form using [Flexberry Desinger](fd_landing_page.html). 
-2. In your application code to add a Lookup to the form. 
+1. Add a calculated field in the main object and re-generate the form using [Flexberry Desinger](fd_landing_page.html).
+2. In your application code to add a Lookup to the form.
 
-### Algorithm add LookUp in the application code 
+### The algorithm add a LookUp in the application code
 
-* Add to the form [LookUp-control](fw_lookup.html). 
-* Create another [EditManager](fw_editmanager.html). 
-* To attribute to the created `LookUp` `EditManager` in the method `TuneLookupInformation`, and add the appropriate entry to the method `GetRunners()`. 
-* Add to the end of the line of control "(GroupEditBase)". 
+* Add to the form [LookUp-control](fw_lookup.html).
+* Create another [EditManager](fw_editmanager.html).
+* To attribute to the created `LookUp` `EditManager` in the method `TuneLookupInformation`, and add the appropriate entry to the method `GetRunners()`.
+* Add to the end of the line of control "(GroupEditBase)".
 
-{% include important.html content="the Last item needed in order for the system to not consider this lookup and the object that it is selected, the editable object. Without specifying this path, the system will save the object to database immediately after the object's selection." %} 
+{% include important.html content="the Last item needed in order for the system to not consider this lookup and the object that it is selectable, editable object. Without specifying this path, the system will save the object to database immediately after the object's selection." %}
 
-## Example call independent artisans list of objects 
+## An example of a call independent artisans list of objects
 
-For example, you can call on lookup the list of objects that have no relationship with c object-initiated and is not a master for any other object in the domain model: 
+For example, you can call on lookup the list of objects that have no relationship with c object-initiated and is not a master for any other object in the domain model:
 
-* invoked form the list of objects for selection, 
-* the call procedure this is the class and name property of this class, whose value is the class object that you select on the form. 
+* is called list form objects for selection,
+* the call procedure this is the class and name property of this class, whose value is the class object that you select on the form.
 
-If such class does not exist, it should sozdati. 
+If such class does not exist, it should sozdati.
 
-### Example 
+### Example
 
-There is a class `Реагирование` and is not connected with him (a relationship of Association or composition) class `ДежурнаяГруппа`. 
+There is a class `Реагирование` and is not connected with him (relationship, Association or composition) class `ДежурнаяГруппа`.
 
-With the edit form `Реагирования` you want to call up a list of rescue groups for smearing the properties of a particular selected duty band on properties `Реагирования` (or rather, add the appropriate datalow). 
+With the edit form `Реагирования` you want to call up a list of rescue groups for smearing the properties of a particular selected duty band on properties `Реагирования` (or rather, add the appropriate datalow).
 
-There is no class that would contain a link to a call center group, respectively, it must dalavich: 
+There is no class that would contain a link to a call center group, respectively, it must dalavich:
 
-1.To create class inside the shape of the Response (where a call is made the list). The object must be nagraniem. Thus trebuetsja to change the model in the chart as a class neobhodim only for LookUp. 
+1.To create class inside the shape of the Response (where a call is made the list). The object must be nagraniem. Thus trebuetsja to change the model in the chart as a class neobhodim only for LookUp.
 
 ```csharp
 public class WinformРеагированиеE : ICSSoft.STORMNET.UI.BaseWinEdit, ICSSoft.AMS02.Происшествия.DPDIРеагированиеE
@@ -68,23 +68,23 @@ public class WinformРеагированиеE : ICSSoft.STORMNET.UI.BaseWinEdit,
 
     //..... 
 }
-``` 
+```
 
-{% include important.html content="J must be a property (not a public field), because the method is called __SetPropByName__ that only works with __properties__. Failure to comply with the error about the impossibility to make changes to the property." %} 
+{% include important.html content="J must be a property (not a public field), because the method is called __SetPropByName__ that only works with __properties__. Failure to comply with the error about the impossibility to make changes to the property." %}
 
-2.Button to open list is added the following: 
+2.Button to open list is added the following:
 
 ```csharp
   string propertyName = "J";
   string contPath = "";
   base.OnEdit(propertyName, new Временный_ДежурнаяГруппа(), contPath, null);
-``` 
+```
 
-__propertyName__ is the property name of the class that is passed as a second parameter (in this case Vremenima), which will return the selected item. 
+__propertyName__ is the property name of the class that is passed as a second parameter (in this case Vremenima), which will return the selected item.
 
-Applicable if the class hranimyj, because the reset occurs through `SaveEvent`. 
+Applicable if the class hranimyj, because the reset occurs through `SaveEvent`.
 
-To avoid this you should: 
+To avoid this you should:
 
 ```csharp
   {
@@ -113,17 +113,17 @@ To avoid this you should:
   {
     this.ДежурГр = ((Временный_ДежурнаяГруппа)e.dataobject).ДЖ;
   }
-``` 
+```
 
-3.Subscribe to the created handler for the save and finish all necessary operations. If FL.J. to assign a specific value, the list will be highlighted (selected) in this element. 
+3.Subscribe to the created handler for the save and finish all necessary operations. If FL.J. to assign a specific value, the list will be highlighted (selected) in this element.
 
-## Use in GroupEdit 
+## Use in GroupEdit
 
-For example, there is a class __Diamaguene__ and is not connected with him (relationship, Association or composition) class __Dezhurnaya__. For lucapa group numbers need to display a list of Degennaro fields Giornalismo of the properties of the selected Diurnally. 
+For example, there is a class __Diamaguene__ and is not connected with him (relationship, Association or composition) class __Dezhurnaya__. For lucapa group numbers need to display a list of Degennaro fields Giornalismo of the properties of the selected Diurnally.
 
-To do this: 
+To do this:
 
-* The __GetControl__ class CustomControlProvide to install the control for the field of Nomography: 
+* The __GetControl__ class CustomControlProvide to install the control for the field of Nomography:
 
 ```csharp
             if (view.Name #  "Diamaguene" && propertyName  "Emergroup")
@@ -132,9 +132,9 @@ To do this:
 
                 ctrl = new ICSSoft.STORMNET.Windows.Forms.Binders.ControlForBindStruct(lookUp, "Value");
             }
-``` 
+```
 
-* Override method `OnEdit` in winformДежурнаяСменаE. Since the class Diamagnetism has no reference to Diourou, then choose any other class that has such a link, for example, Slanderously. 
+* Override method `OnEdit` in winformДежурнаяСменаE. Since the class Diamagnetism has no reference to Diourou, then choose any other class that has such a link, for example, Slanderously.
 
 ```csharp
 dataobject = new ЧленДежурнойГруппы(); //class that has a reference to the strike team 
@@ -145,10 +145,8 @@ public override void OnEdit(string propertyname, ICSSoft.STORMNET.DataObject dat
             if (dataobject is ДежурнаяГруппаСмены && propertyname == "Diomyopathy.Emergroup")
             {
                 if (((ДежурнаяГруппаСмены)dataobject).ТипДежурнойГруппы != null)
-                {
-                    SQLWhereLanguageDef langdef = new SQLWhereLanguageDef();
-                    tag = langdef.GetFunction(langdef.funcEQ,
-                            new VariableDef(langdef.GuidType, "Tiptionary"), ((ДежурнаяГруппаСмены)dataobject).ТипДежурнойГруппы.__PrimaryKey);
+                {                    
+                    tag = FunctionBuilder.BuildEquals("Tiptionary", ((ДежурнаяГруппаСмены)dataobject).ТипДежурнойГруппы);
                 }
                 dataobject = new ЧленДежурнойГруппы();
                 propertyname = "Daguragu";
@@ -156,9 +154,9 @@ public override void OnEdit(string propertyname, ICSSoft.STORMNET.DataObject dat
 
             base.OnEdit(propertyname, dataobject, contpath, tag);
         }
-``` 
+```
 
-* Override method __Edited__ winformДежурнаяСменаE. Write down all the required properties in Diourouzon selected Diurnally: 
+* Override method __Edited__ in winformДежурнаяСменаE. Write down all the required properties in Diourouzon selected Diurnally:
 
 ```csharp
 public override void Edited(ICSSoft.STORMNET.DataObject dataobject, string contpath, string propertyname)
@@ -190,7 +188,7 @@ public override void Edited(ICSSoft.STORMNET.DataObject dataobject, string contp
                 ДежурныеГруппыСмены.EditManager.Change();
             }
         }
-``` 
+```
 
 
 

@@ -1,48 +1,48 @@
---- 
-title: Creating a LookUp page in your Web application 
-sidebar: flexberry-aspnet_sidebar 
-keywords: Flexberry ASP-NET 
-toc: true 
-permalink: en/fa_lookup-form.html 
-lang: en 
-autotranslated: true 
-hash: 24118522130f00436b59900c23b3848c2d6510c2ec2c8ed3bddc7d83399fe708 
---- 
+---
+title: creating a LookUp page in your Web application
+sidebar: flexberry-aspnet_sidebar
+keywords: Flexberry ASP-NET
+toc: true
+permalink: en/fa_lookup-form.html
+lang: en
+autotranslated: true
+hash: e7518742168f54d7c71f19599621e09a830b12b4d81367b74f269450f7ad5075
+---
 
-## interaction Mechanism 
+## The mechanism of interaction
 
-You can see the article [Performanoe interaction in Web-applications](fa_form-interaction.html). 
+You can see the article [Performanoe interaction in Web-applications](fa_form-interaction.html).
 
-## page Creation 
+## Create page
 
-To create a LookUp page should: 
+To create a LookUp page should:
 
-1. Create a new web page. 
-2. Adding [WebObjectListView](fa_web-object-list-view.html) `ID = "LookUpFormWOLV"`. 
-3. When the form is loaded 
-* To accept passed parameters. 
-* Set up [WOLV](fa_web-object-list-view.html) 
-* Connect scripts 
-4. Configure the property `LookUpFormURL` [LookUp'a](fa_lookup-overview.html). 
+1. Create a new web page.
+2. Adding [WebObjectListView](fa_web-object-list-view.html) with `ID = "LookUpFormWOLV"`.
+3. When the form is loaded
+* To accept passed parameters.
+* Set up [WOLV](fa_web-object-list-view.html)
+* Connect scripts
+4. Configure the property `LookUpFormURL` from [LookUp'a](fa_lookup-overview.html).
 
-### Passed parameters 
+### Passed parameters
 
-On the LookUp page is transmitted a number of options for configuring WOLV'a and pages: 
+On the LookUp page is transmitted a number of options for configuring WOLV'a and pages:
 
-* `ViewName` - the name of the view to [WOLV](fa_web-object-list-view.html) 
-* `typeName` - the name of the data type displayed in [WOLV](fa_web-object-list-view.html) 
-* `connStrName` - the connection string to the database (optional) 
-* `nameValueControl` - parameters lucapa 
-* `PK` - the PrimaryKey of the selected master (if any) 
-* `FormCaption` - title (optional) 
-* `csdName` - name Column-Definition Sort - definition sort [WOLV](fa_web-object-list-view.html), which is stored in the session 
-* `editPage` - address edit page objects [WOLV](fa_web-object-list-view.html) 
-* `countOnPage` - number of objects on one page [WOLV](fa_web-object-list-view.html) 
-* `LFName` - name Limit Function to limit the discharge data [WOLV](fa_web-object-list-view.html). Limit Functon is stored in the session. 
+* `ViewName` - the name of the view to [WOLV](fa_web-object-list-view.html)
+* `typeName` - the name of the data type displayed in [WOLV](fa_web-object-list-view.html)
+* `connStrName` - the connection string to the database (optional)
+* `nameValueControl` - parameters lucapa
+* `PK` - the PrimaryKey of the selected master (if any)
+* `FormCaption` - title (optional)
+* `csdName` - name Column-Definition Sort - definition sort [WOLV](fa_web-object-list-view.html), which is stored in the session
+* `editPage` - address edit page objects [WOLV](fa_web-object-list-view.html)
+* `countOnPage` - number of objects on one page [WOLV](fa_web-object-list-view.html)
+* `LFName` - name Limit Function to limit the discharge data [WOLV](fa_web-object-list-view.html). Limit Functon is stored in the session.
 
-### setting WOLV 
+### Setting WOLV
 
-You need to throw the values passed in as parameters, and to make some additional configuration: 
+You need to throw the values passed in as parameters, and to make some additional configuration:
 
 ```csharp
 LookUpFormWOLV.View = Information.GetView(Request["viewName"], Type.GetType(Request["typeName"]));
@@ -57,20 +57,20 @@ LookUpFormWOLV.Operations.ShowMarks = false;
 
 var applyer = new WolvSettApplyer();
 applyer.SettingsApply(LookUpFormWOLV);
-``` 
+```
 
-You also need to check for optional parameters and apply them: 
+You also need to check for optional parameters and apply them:
 
-`PrimaryKey`: 
+`PrimaryKey`:
 
 ```csharp
 if (!string.IsNullOrEmpty(Request["PK"]))
             {
                 LookUpFormWOLV.SetInitialSearch("__PrimaryKey", Request["PK"]);
             }
-``` 
+```
 
-`ColumnSortDef`: 
+`ColumnSortDef`:
 
 ```csharp
 if (!string.IsNullOrEmpty(Request["csdName"]))
@@ -78,27 +78,26 @@ if (!string.IsNullOrEmpty(Request["csdName"]))
                 var columnSortDef = (ColumnsSortDef[])HttpContext.Current.Session[Request["csdName"]];
                 LookUpFormWOLV.InitialColumnsSort = columnSortDef;
             }
-``` 
+```
 
-{% include note.html content="Before the call to [LookUp](fa_lookup-overview.html) ColumnSortDefinition placed into the session under the key passed as parameter, and gets out session for this key." %} 
+{% include note.html content="Before the call to [LookUp](fa_lookup-overview.html) ColumnSortDefinition placed into the session under the key passed as parameter, and gets out session for this key." %}
 
-And of course `LimitFunction`: 
+And of course `LimitFunction`:
 
 ```csharp
 string lfName = HttpContext.Current.Request["LFName"];
 if (!string.IsNullOrEmpty(lfName))
-SQLWhereLanguageDef lng = SQLWhereLanguageDef.LanguageDef;
 Function lf1 = LimitFunctionsHolder.LoadLimitFunction(lfName);
 LookUpFormWOLV.LimitFunction = LookUpFormWOLV.LimitFunction != null
-              ? lng.GetFunction(lng.funcAND, LookUpFormWOLV.LimitFunction, lf1)
+              ? FunctionBuilder.BuildAnd(LookUpFormWOLV.LimitFunction, lf1)
               : lf1;
-``` 
+```
 
-{% include note.html content="it is Advisable to wrap the method call in the block `LoadLimitFunction` `try-catch`." %} 
+{% include note.html content="it is Advisable to wrap the method call in the block `LoadLimitFunction` `try-catch`." %}
 
-### Connection scripts 
+### Connection scripts
 
-For the functioning of the WOLV, you need to connect the following scripts: 
+For the functioning of the WOLV, you need to connect the following scripts:
 
 ```csharp
 ResourcesPaths.Add("Scripts.ListView.js");
@@ -106,9 +105,9 @@ ContextHelper.ПодключитьВнешнийФайл("/shared/script/jquery-
 ContextHelper.ПодключитьВнешнийФайл("/shared/script/jquery-ui-1.8.17.min.js");
 ContextHelper.ПодключитьВнешнийФайл("/shared/script/jquery.color.js");
 ContextHelper.ПодключитьВнешнийФайл("/shared/script/jquery.tooltip.js");
-``` 
+```
 
-## the Complete code for the OnLoad method 
+## The complete code for the OnLoad method
 
 ```csharp
 protected override void OnLoad(EventArgs e)
@@ -139,10 +138,9 @@ protected override void OnLoad(EventArgs e)
             {
                 try
                 {
-                    SQLWhereLanguageDef lng = SQLWhereLanguageDef.LanguageDef;
                     Function lf1 = LimitFunctionsHolder.LoadLimitFunction(lfName);
                     LookUpFormWOLV.LimitFunction = LookUpFormWOLV.LimitFunction != null
-                                                       ? lng.GetFunction(lng.funcAND, LookUpFormWOLV.LimitFunction, lf1)
+                                                       ? FunctionBuilder.BuildAnd(LookUpFormWOLV.LimitFunction, lf1)
                                                        : lf1;
                 }
                 catch (LimitFunctionNotFoundException)
@@ -195,11 +193,11 @@ protected override void OnLoad(EventArgs e)
 
             base.OnLoad(e);
         }
-``` 
+```
 
-## passing parameters on the LookUp form 
+## Passing parameters on the LookUp form
 
-Passing parameters on the LookUp form described in [article](fa_lookup-form-send-params.html). 
+Passing parameters on the LookUp form described in [article](fa_lookup-form-send-params.html).
 
 
 

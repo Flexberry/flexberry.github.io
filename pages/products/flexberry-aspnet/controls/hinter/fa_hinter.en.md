@@ -1,34 +1,17 @@
---- 
-title: Hinter 
-sidebar: flexberry-aspnet_sidebar 
-keywords: Flexberry ASP-NET, Web UI (Controls) 
-toc: true 
-permalink: en/fa_hinter.html 
-lang: en 
-autotranslated: true 
-hash: 133838d1f48ebceb34014ed7e7bc392f8f888e7835e93395eaa350bba6661c20 
---- 
+---
+title: Hinter
+sidebar: flexberry-aspnet_sidebar
+keywords: Flexberry ASP-NET Flexberry Designer
+toc: true
+permalink: en/fa_hinter.html
+lang: en
+autotranslated: true
+hash: a30419f4be0e5d148a634433025a06a542a908f4979c0f92d39ae01a83b333eb
+---
 
-## Description 
+Technology Flexberry have [attribute](fo_attributes-class-data.html) added `Hint` property containing the tooltip for the field.
 
-## Connection 
-
-## Use 
-
-### Hints to the data fields 
-
-
-### Sample code 
-
-### Settings control 
-
-### formatting Settings 
-
-### ...useful ways to use... 
-
-## JS API 
-
-## Possible errors 
+This field is used to generate web application: after the control, if its corresponding attribute property `Hint` is not empty, generate an additional control, when you hover on which arises a tooltip with the text specified in `Hint`.
 
 
 

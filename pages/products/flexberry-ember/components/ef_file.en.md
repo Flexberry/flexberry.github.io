@@ -6,7 +6,7 @@ toc: true
 permalink: en/ef_file.html
 lang: en
 autotranslated: true
-hash: 82ea4963737666c0d183fc8e8fecf8774b4fc7b3079e03c396bcf33bffc695d8
+hash: 8a3af871065b6582b649e6767e6eefc6a88ca32334ddb10155917342db788fc9
 summary: the Description, setting the load address and appearance, binding components
 ---
 
@@ -14,7 +14,7 @@ summary: the Description, setting the load address and appearance, binding compo
 
 Component `flexberry-file` provides several features:
 
-* Option for user to any file on the client устройстве;
+* The option for user to any file on the client устройстве;
 * Ability to upload that file on сервер;
 * The ability to download previously uploaded file from the server with a subsequent saving on the client устройстве;
 * Image files are also available предпросмотра;
@@ -38,6 +38,7 @@ Further, we assume that the means of working with files in the OData service is 
 | `showModalDialogOnUploadError` | a Flag that indicates whether to show modelini dialog on error: file|
 | `showModalDialogOnDownloadError` | a Flag that indicates whether to show modelini dialogue when there is an error loading file|
 | `openFileInNewWindowInsteadOfloading` | Flag indicating whether to attivati file in a new browser tab, after downloading|
+| `previewSettings` | Settings display a modal window preview images|
 
 ## Address setup to upload files to the server
 
@@ -109,7 +110,7 @@ Property `relatedModel` it is also necessary to specify it must refer to a model
 ## Appearance settings
 
 Component flexberry-file contains several settings allow you to customize its appearance:
-* `showUploadButton` - flag indicating whether to display a separate button to load the file to the server or not (defaults to the value `false` because the file download occurs when you save a model from properties `relatedModel` and the need for a separate button).
+* `showUploadButton` - flag indicating whether to display a separate button to load the file to the server or not (defaults to the value `false` because the file download occurs when you save a model from properties `relatedModel` and the need for a separate button - no).
 
 Appearance included with the download button:
 
@@ -146,6 +147,32 @@ For the opening of the dialogue corresponds `action` `flexberryFileViewImageActi
      viewImageAction="flexberryFileViewImageAction"
    }}{% endraw %}
    ```
+
+* `previewSettings` - display a modal window preview image (default {}, customizes the display of a modal window predprosmotr downloaded files).
+
+```js
+  /** 
+Settings for preview modal dialog. 
+
+@property previewSettings 
+@type Object 
+*/
+  previewSettings: {
+    detachable: true,
+    context: 'body',
+  },
+  ```
+
+```hbs
+  {% raw %}{{flexberry-file
+    ...
+    showPreview=true
+    viewImageAction="flexberryFileViewImageAction"
+    previewSettings=previewSettings
+  }}{% endraw %}
+  ```
+
+If you press the block predprostora opens a modal dialog, which is tied to the body.
 
 ## Appearance settings in the mobile view
 

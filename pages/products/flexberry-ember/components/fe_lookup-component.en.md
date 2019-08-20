@@ -6,7 +6,7 @@ toc: false
 permalink: en/fe_lookup-component.html
 lang: en
 autotranslated: true
-hash: c7a8d8349a51b79e5bf587ac12a9e2a89e0ed8268d31e3d6d8f81bdaa7b0f2ac
+hash: b60948c602a457ab471dd713acbce11a132f3c95ddda477f1bcaf62b21c16a34
 summary: the basic features of LookUp-s
 ---
 
@@ -37,7 +37,7 @@ Model.defineProjection('ПодготовкаE', 'подготовка', {
 });
 ```
 
-[Models](efd_model.html) corresponding to the master type `Пользователь`, you must specify a [view](efd_model-projection.html) under which you will be displaying.
+In the [models](efd_model.html) corresponding to the master type `Пользователь`, you must specify a [view](efd_model-projection.html) under which you will be displaying.
 
 ```javascript
 var Model = BaseModel.extend({
@@ -51,7 +51,7 @@ Model.defineProjection('ПользовательE', 'пользователь', 
 
 ### Configure serializers
 
-[Serializer](efd_serializer.html) `Подготовка` to describe the link to the wizard:
+In [serializer](efd_serializer.html) `Подготовка` to describe the link to the wizard:
 
 ```javascript
 export default ApplicationSerializer.extend({
@@ -104,19 +104,20 @@ Property | Description | Default value
 `chooseButtonClass` | Defines css class for button 'choose'.|
 `removeButtonClass` | Defines css class for button 'remove'.|
 `placeholder` | Defines placeholder | t('flexberry-lookup.placeholder')
-`value` | Determines the selected model instance (the master object) |
+`value` | Determines the selected model instance (master object) |
 `relatedModel` | Specifies the model for which will be edited the reference to a master object) |
-`relationName` | Specifies the name |
+`relationName` | Specifies the name of the relationship |
 `projection` | Determines which view will be displayed in the wizard list |
 `sizeClass` | Defines css class of the window size options are: small, large, fullscreen | small
 `title` | Header modal window |
 `lookupLimitPredicate` | Defines function restriction |
-`autocomplete` | autocomplete Mode, in the mode of "read-Only" doesn't work | false
+`lookupAdditionalLimitFunction` | Additional function ogranicenje for use in GroupEdit relative to the margin line |
+`autocomplete` | Mode autocomplete, in the "read-Only" doesn't work | false
 `dropdown` | Mode drop-down list in the "read-Only" doesn't work | false
 `dropdownIsSearch` | search Mode (autocomplete) for a LookUp-and in the mode drop-down list | false
 `displayAttributeName` | the name of the model attribute (properties master), which is displayed to the user |
-`sorting` | Direction to sort by the field 'displayAttributeName', autocomplete mode and in the mode drop-down list | 'asc'
-`minCharacters` | Minimum number of characters to autocomplete, autocomplete mode and in the mode drop-down list | 1
+`sorting` | Direction to sort by the field 'displayAttributeName' mode autocomplete and in the mode drop-down list | 'asc'
+`minCharacters` | Minimum number of characters to autocomplete mode autocomplete and in the mode drop-down list | 1
 `maxResults` | Maximum number of records displayed in autocomplete mode and in the mode in the mode drop-down list, not required property | 10
 
 ## Built-in additional lookup capabilities
@@ -148,7 +149,7 @@ Property | Description | Default value
 
 ### LookUp-mode auto-completion (autocomplete)
 
-Autocompletion.-e allows keyboard entry of the value and subsequent selection of the proposed options.
+Autocomplete in LookUp-e allows keyboard entry of the value and subsequent selection of the proposed options.
 
 To translate the LookUp mode to completion, you need to add a property `autocomplete`:
 
@@ -164,11 +165,11 @@ Below are attached to LookUp properties for work completion.
 
 Property | Description | Default value
 :--------------|:-----------------------------------------------------------|:-------------
-`autocomplete` | autocomplete Mode, in the mode of "read-Only" doesn't work | false
-`minCharacters` | Minimum number of characters to autocomplete, autocomplete mode and in the mode drop-down list | 1
+`autocomplete` | Mode autocomplete, in the "read-Only" doesn't work | false
+`minCharacters` | Minimum number of characters to autocomplete mode autocomplete and in the mode drop-down list | 1
 `maxResults` | Maximum number of records displayed in autocomplete mode and in the mode in the mode drop-down list, not required property | 10
 `autocompleteProjection` | Name of the projection which reads the fields in the query to display the records, not a mandatory property is used for calculated fields | undefined
-`autocompletePersistValue` | Flag to control whether or not to leave the entered value when focus is lost, if the results autocomplete was not selected no value | false
+`autocompletePersistValue` | a Flag to control whether to leave or not the entered value when focus is lost, if the results autocomplete was not selected no value | false
 
 #### The imposition of the sort the hidden fields of the wizard
 
@@ -260,7 +261,7 @@ Next, the appropriate property must be specified in the form template:
 }}{% endraw %}
 ```
 
-### Setting the modal window LookUp-
+### Setting the modal window LookUp-and
 
 Setting the modal window LookUp-as defined in `components/lookup-field/lookup-field-mixin.js`.
 
@@ -288,14 +289,50 @@ lookupSettings: {
 },
 ```
 
-#### Setting the title and size of Windows that are opened on LookUp-
+#### Example set of constraints in the row GE on the elements of the row
+If there is a need to limit lookup the value of the element in GroupEdit in the same line, this can be done using lookupAdditionalLimitFunction.
+
+```js
+  getCellComponent(attr, bindingPath, model) {
+    let cellComponent = this._super(...arguments);
+    if (attr.kind === 'belongsTo') {
+      switch (`${model.modelName}+${bindingPath}`) {
+        case 'ember-flexberry-dummy-vote+author':
+          cellComponent.componentProperties = this.get('lookupDynamicProperties');
+          break;      }
+    }
+    return cellComponent;
+  }
+});
+```
+
+```js
+  lookupDynamicProperties: Ember.computed(function() {
+    ...
+    lookupAdditionalLimitFunction = function (relationModel) {
+      return new StringPredicate('eMail').contains(relationModel.get('voteType'));
+    };
+
+    return {
+      ...
+      lookupAdditionalLimitFunction
+      ...
+    };
+  })
+```
+
+In this example, the objects displayed are limited to lucapa field GroupEdit 'voteType' value master 'eMail'.
+relationModel.get('...') - model, for which lucapa edited master.
+
+
+#### Setting the title and size of Windows that are opened from a LookUp-from
 
 If you want to change the size of an opened via LookUp from a modal window, you can override the default values.
 
 * `modalWindowWidth` is the width is opened by a LookUp from a modal window.
-* `modalWindowHeight` is the height of the open LookUp-modal window.
+* `modalWindowHeight` is the height of is opened by a LookUp from a modal window.
 
-The title of the Windows that are opened on LookUp, is installed in the property `title` component `lookup-field` in the template corresponding edit form. For example, the template edit form `employee.hbs` embedding a LookUp-and can look like the following:
+The title of the Windows that are opened from a LookUp-have installed in the property `title` component `lookup-field` in the template corresponding edit form. For example, the template edit form `employee.hbs` embedding a LookUp-and can look like the following:
 
 ```hbs
 {% raw %}{{lookup-field/lookup-field
@@ -355,7 +392,7 @@ In the controller editor to specify:
 export default EditFormController.extend({
     // ... 
     getLookupFolvProperties: function(options) {
-      if (options.relationName === 'type') { // Property LookUp. 
+      if (options.relationName === 'type') { // Property LookUp-and. 
         return {
             // Whether to show the toggle button in the hierarchy, if the hierarchy for a list of available 
             // (if false, the button is displayed) 
@@ -363,7 +400,7 @@ export default EditFormController.extend({
 
             // Activate the hierarchy when you load a lookup-form. 
             inHierarchicalMode: true,
-            hierarchicalAttribute: 'Name' // Property on which to build the hierarchy. 
+            hierarchicalAttribute: 'Name' // A property on which to build the hierarchy. 
         };
       }
     }
@@ -384,11 +421,11 @@ It is possible to use a component in block form:
 ```
 in this case, the application programmer can override how it will look in the display wizard on the form
 
-### AutoFill values in the LookUp.
+### AutoFill values in a LookUp-E.
 
 Autocompletion allows you to substitute a suitable condition value.
 
-To SkyCity autocompletion.-e, it is required to add the property `autofillByLimit` and specify the limit function in `lookupLimitPredicate`:
+To SkyCity autocompletion in the LookUp-e, you want to add a property `autofillByLimit` and specify the limit function in `lookupLimitPredicate`:
 
 ```hbs
 {% raw %}
@@ -400,7 +437,7 @@ To SkyCity autocompletion.-e, it is required to add the property `autofillByLimi
 ```
 In this case, if the specified restriction corresponds to only one object, then it will be immediately installed. If you previously selected a different value, autocomplete will replace it, but only if the limitation corresponds to a single object.
 
-### Custom settings for the list in LookUp (componentName)
+### Custom settings for the list in a LookUp-e (componentName)
 
 For the list in a LookUp-e you can use the user settings from the [service user settings](ef_model-user-settings-service.html).
 They are specified in the property `componentName` when specifying the template.

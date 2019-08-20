@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module2-tasks.html
 lang: en
 autotranslated: true
-hash: bfbceeff2169e0c31019a9f7087bae6834d6eae12e14d79d7db7899ef236c6cd
+hash: 165260fcc045fabf98ba38b7ff555e0061f0310e145eb99757ec5d4d83e48dd6
 ---
 
 ## The expected results of tasks execution
@@ -15,7 +15,7 @@ According to the results of assignments the student must:
 1. To be able to use the tools of team work on the platform GitHub:
 * Create Issues, to customize the list of templates and their creation and use labels for Issues
 * To create and use Kanban Board to add Issues on the Kanban Board
-* Pomilovat group Issues in iteration use Milestones
+* To pomilovat group Issues in iteration use Milestones
 * Create Pull Requests and link them with Issues
 * Configure server builds, Continuous Integration and automatic deployment of applications using Travis CI
 2. To be able to use tools of teamwork Azure DevOps (TFS):
@@ -23,8 +23,8 @@ According to the results of assignments the student must:
 * Working with Kanban boards, and plan the iteration
 * To work with Git and TFVC repository, to tie code changes to tasks
 * Create server builds
-* Automatisierte releases of the application on the basis of performance of the server builds
-* Use "closed" package repository on the Azure-based Artifacts
+* To automatisierte releases of the application on the basis of performance of the server builds
+* Use gallery-based packet Azure Artifacts
 
 ## Assignments for module
 
@@ -85,7 +85,6 @@ According to the results of assignments the student must:
 * As you complete a task, its status should change on the Board. The check should be made by the user to whom task was assigned. Task after the work on it must be in the status `Resolved`.
 11. In the Git project repository in Azure Repos to add the files from the GitHub repository [Issue Tracker Demo](https://github.com/ehaberev/issue-tracker-demo) (you can pre-clone the repository to your local machine).
 12. To create a "ribbon" Azure Artifacts:
-* To work with the artifacts in the project Azure DevOps Services necessary for user "core" (Your) account in organization settings add the appropriate extension.
 * In the setting of "tape" must be set to the Upstream source to access npm packages from the repository https://registry.npmjs.org through this "tape" (in the app to be able to install not only the packages in the "ribbon", but also from the public repository npm packages).
 13. To create a build, which will publish npm package `chance-js` from TFVC repository to Azure Repos, in "the tape" Azure Artifacts:
 * You can use any suitable pool of agents.
@@ -96,26 +95,26 @@ According to the results of assignments the student must:
 14. In the application from the Git repository to Azure Repos add a dependency on the npm package `chance-js` published in "tape" Artifacts Azure project to the Azure DevOps Services:
 * Changes to make in a separate branch according to the git flow principles. Create Waki, all commits and pull request should be attached to the task `Добавление package depends on chance-js` requirements `Установка package chance-js in приложение`.
 * File `chance.js` folder `src` needs to be removed.
-* App must be installed `chance-js` from the "feeds" Azure Artifacts of the project.
+* The app must be installed `chance-js` from the "feeds" Azure Artifacts of the project.
 * When running locally the app Issues should not be created because the file `chance.js` will be missing (because we don't use "garbage" for the application file `chance.js` will be "placed" in running a server build).
 * As you complete a task, its status should change on the Board. Commits must be done by the user to whom task was assigned. Task after the work on it must be in the status `Resolved`.
 * Upon completion of the task should be created a pull request as "reviewer" this pull request should be assigned to the user "principal" (Your) account. This user must confirm task execution results execution "will codereview". After confirming the completion of a task "removeroom" pull request can be accepted.
 15. To create a build that will build the application from the Git repository to Azure Repos in the form suitable for publishing on GitHub Pages:
 * You can use any suitable pool of agents.
 * In the process of implementation build the command should run `npm run lint` to run linting.
-* Build in "result" folder (drop folder) must be copied files `index.html` and `main.js` folder `src` and file `chance.min.js` folder `node_modules/chance-js/dist/`. The file `chance.min.js` needs to be renamed to `chance.js` in the copy process.
+* The build in "result" folder (drop folder) must be copied files `index.html` and `main.js` folder `src` and file `chance.min.js` folder `node_modules/chance-js/dist/`. The file `chance.min.js` needs to be renamed to `chance.js` in the copy process.
 * Continuous Integration for the build should be included.
 * As you create the build task status `Добавление build приложения` requirements `Настройка CI/CD for приложения` needs to change on the Board. Task after the work on it must be in the status `Resolved`.
 16. To create a release to Azure Pipelines, which will publish the artifacts ("results") build applications from the private Git repository at GitHub Pages:
 * Create an empty Azure release in the Pipelines of the project.
-* As artifact to release to select build application from the Git repository of the project in the Azure Repos.
+* As a artifact to release to select build application from the Git repository of the project in the Azure Repos.
 * Create single step, which will be implemented by publication of artifacts ("results") build on GitHub Pages. Stage should start automatically. You must publish by using a bash-script, similar to that created by the execution of the Task 1 of this module. Publication should be carried out in any of Your personal repository on GitHub to a folder `azure` branches `gh-pages`.
 * As you create the release task status `Публикация app on GitHub Pages` requirements `Настройка CI/CD for приложения` needs to change on the Board. Task after the work on it must be in the status `Resolved`.
 * To check the efficiency of release, initiating execution of the build of the application.
 
 **Support resources:**
 1. [Official documentation for the Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/?view=azure-devops).
-2. [Review of the app the Issue Tracker Demo](https://www.youtube.com/watch?v=JT_vDwlQRHs)
+2. [A review of the app the Issue Tracker Demo](https://www.youtube.com/watch?v=JT_vDwlQRHs)
 
 ## You can
 

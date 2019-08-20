@@ -2,7 +2,7 @@
 title: advanced Example of working with views
 sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, views
-summary: Dynamic creation of views, predstavleniyami
+summary: Dynamic creation of views, operations predstavleniyami
 toc: true
 permalink: en/fo_advanced-working-with-views.html
 ---

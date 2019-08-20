@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module1-learn.html
 lang: en
 autotranslated: true
-hash: d1fc55c6e2cc06eb294cb9ce69990b0e255d55ff6f2c8002513177ea011cba80
+hash: a1eb7b480e3a17b0858a88f5eea14703ea272274ac358f9cbfc6ca52b638fe50
 ---
 
 ## The module
@@ -29,7 +29,7 @@ Introduction to web development</a>
 <img src="{{ "/images/pages/trainings/developers-school/module1/architecture.jpg" | relative_url}}" class="products-img">
 </div>
 <h4><span class="item-head">1. Architecture of web applications</span></h4>
-<p>In lesson architecture client-server and its variants.</p>
+<p>In lesson architecture client-server and its variants (Eugene Haberi, Fleberry PLATFORM).</p>
 </a>
 </div>
 <div class="col-sm-6 col-md-4 portfolio-item">
@@ -38,7 +38,7 @@ Introduction to web development</a>
 <img src="{{ "/images/pages/trainings/developers-school/module1/osi.jpg" | relative_url}}" class="products-img">
 </div>
 <h4><span class="item-head">2. The OSI model</span></h4>
-<p>In lesson briefly describes the layered model of network vzaimodeystviya devices.</p>
+<p>In lesson briefly describes the layered model of network vzaimodeystviya devices (Alexander Eliseev, Fleberry PLATFORM).</p>
 </a>
 </div>
 <div class="col-sm-6 col-md-4 portfolio-item">
@@ -47,7 +47,7 @@ Introduction to web development</a>
 <img src="{{ "/images/pages/trainings/developers-school/module1/http.jpg" | relative_url}}" class="products-img">
 </div>
 <h4><span class="item-head">3. HTTP</span></h4>
-<p>In the lesson, hypertext transfer Protocol, and COMET and options for its implementation.</p>
+<p>In the lesson, hypertext transfer Protocol, and COMET and variants of its implementation (Alexander Eliseev, Fleberry PLATFORM).</p>
 </a>
 </div>
 </div>
@@ -58,7 +58,7 @@ Introduction to web development</a>
 <img src="{{ "/images/pages/trainings/developers-school/module1/sessions.jpg" | relative_url}}" class="products-img">
 </div>
 <h4><span class="item-head">4. Sessions</span></h4>
-<p>In lesson embodiments of sessions based on cookies, query parameters and server sessions.</p>
+<p>In lesson embodiments of sessions based on cookies, query parameters and server sessions (Alexander Eliseev, Fleberry PLATFORM).</p>
 </a>
 </div>
 <div class="col-sm-6 col-md-4 portfolio-item">
@@ -67,7 +67,7 @@ Introduction to web development</a>
 <img src="{{ "/images/pages/trainings/developers-school/module1/general-web.jpg" | relative_url}}" class="products-img">
 </div>
 <h4><span class="item-head">5. The General principle of operation of web applications</span></h4>
-<p>In the lesson, interaction between client and server in the context of the web application.</p>
+<p>In the lesson, interaction between client and server in the context of web applications (Alexander Eliseev, Fleberry PLATFORM).</p>
 </a>
 </div>
 <div class="col-sm-6 col-md-4 portfolio-item">
@@ -76,7 +76,7 @@ Introduction to web development</a>
 <img src="{{ "/images/pages/trainings/developers-school/module1/back-end.jpg" | relative_url}}" class="products-img">
 </div>
 <h4><span class="item-head">6. Back-end</span></h4>
-<p>the lesson discusses the types of web servers, as well as the principles of static and dynamic generation of web pages.</p>
+<p>the lesson discusses the types of web servers, as well as the principles of static and dynamic generation of web pages (Alexander Eliseev, Fleberry PLATFORM).</p>
 </a>
 </div>
 </div>
@@ -87,7 +87,7 @@ Introduction to web development</a>
 <img src="{{ "/images/pages/trainings/developers-school/module1/front-end.jpg" | relative_url}}" class="products-img">
 </div>
 <h4><span class="item-head">7. Front-end</span></h4>
-<p>the lesson briefly discusses client-side web technologies.</p>
+<p>the lesson briefly discusses client-side web technologies (Alexander Eliseev, Fleberry PLATFORM).</p>
 </a>
 </div>
 <div class="col-sm-6 col-md-4 portfolio-item">
@@ -96,7 +96,7 @@ Introduction to web development</a>
 <img src="{{ "/images/pages/trainings/developers-school/module1/modern-apps.jpg" | relative_url}}" class="products-img">
 </div>
 <h4><span class="item-head">8. Modern web applications</span></h4>
-<p>In lesson modern web application in conext architectures SOA, RIA, SPA, IoT.</p>
+<p>In lesson modern web application in conext architectures SOA, RIA, SPA, IoT (Alexander Eliseev, Fleberry PLATFORM).</p>
 </a>
 </div>
 <div class="col-sm-6 col-md-4 portfolio-item">
@@ -105,7 +105,7 @@ Introduction to web development</a>
 <img src="{{ "/images/pages/trainings/developers-school/module1/mpa-spa.jpg" | relative_url}}" class="products-img">
 </div>
 <h4><span class="item-head">9. MPA and SPA</span></h4>
-<p>lesson the difference of the architectures of multi-page and single-page applications.</p>
+<p>lesson the difference of the architectures of multi-page and single page applications (Eugene Haberi, Fleberry PLATFORM).</p>
 </a>
 </div>
 </div>
@@ -116,7 +116,7 @@ Introduction to web development</a>
 <img src="{{ "/images/pages/trainings/developers-school/module1/mpa.jpg" | relative_url}}" class="products-img">
 </div>
 <h4><span class="item-head">10. Example MPA application</span></h4>
-<p>In the lesson, an example implementation of the MPA-based application technologies ASP.NET.</p>
+<p>In the lesson, an example implementation of the MPA-based application technologies ASP.NET (Eugene Haberi, Fleberry PLATFORM).</p>
 </a>
 </div>
 <div class="col-sm-6 col-md-4 portfolio-item">
@@ -125,7 +125,7 @@ Introduction to web development</a>
 <img src="{{ "/images/pages/trainings/developers-school/module1/spa.jpg" | relative_url}}" class="products-img">
 </div>
 <h4><span class="item-head">11. Example SPA application</span></h4>
-<p>In the lesson, an example implementation of the SPA-based application framework Ember.js.</p>
+<p>In the lesson, an example implementation of the SPA-based application framework Ember.js (Eugene Haberi, Fleberry PLATFORM).</p>
 </a>
 </div>
 <div class="col-sm-6 col-md-4 portfolio-item">
@@ -134,7 +134,7 @@ Introduction to web development</a>
 <img src="{{ "/images/pages/trainings/developers-school/module1/instruments-web.jpg" | relative_url}}" class="products-img">
 </div>
 <h4><span class="item-head">12. Overview of tools for web development</span></h4>
-<p>In lesson, briefly rassmatrivaetsya Chrome Developer Tools, Fiddler and Postman.</p>
+<p>In lesson, briefly rassmatrivaetsya Chrome Developer Tools, Fiddler and Postman (Alexander Eliseev, Fleberry PLATFORM).</p>
 </a>
 </div>
 </div>

@@ -6,13 +6,13 @@ toc: true
 permalink: en/fe_object-list-view.html
 lang: en
 autotranslated: true
-hash: 6aa1b40c57ac45775c3789a75853e2e338ee305c214f654bac600002043dd698
+hash: 226da474808101446463d818559b29a526f60baa358c8d44e2db2b1bde4dbe71
 summary: Used components and configuration lists in applications using the technology Flexberry Ember, export, delete items
 ---
 
 The main purpose of __flexberry-ojectlistview__ - view the list of available objects with the possibility of subsequent open and edit (in the built-paging control that allows you to view the data portion).
 
-To add a control to the page, you can use the [template](ef_template.html) (this is a template to add a [list form](ef_forms.html)):
+To add a control to the page, you can use the [template](ef_template.html) (see below for a template to add to [list form](ef_forms.html)):
 
 ```hbs
 {% raw %}{{flexberry-objectlistview
@@ -52,7 +52,7 @@ If the form is used for more events in the template can be passed as the event n
 ```hbs
 {% raw %}{{flexberry-objectlistview
 ...
-componentName="castomActionName"
+action="customActionName"
 }}{% endraw %}
 ```
 
@@ -61,7 +61,7 @@ and in fact the event itself:
 ```hbs
 {% raw %}{{flexberry-objectlistview
 ...
-componentName=castomActionName
+action=customActionName
 }}{% endraw %}
 ```
 
@@ -189,7 +189,7 @@ Features to configure the limits on the lists described in the article [Tools li
 
 ## Change the width of columns
 
-Change the width of columns for the list and [datalow](fe_groupedit.html) on the edit form is implemented according to General principles.
+Change column widths for list and [datalow](fe_groupedit.html) on the edit form is implemented according to General principles.
 
 To enable/disable changing of width HN of the columns, you must specify the control in the template property `allowColumnResize` (for normal applications this property has a default value `true` for mobile - `false`.
 

@@ -6,7 +6,7 @@ toc: false
 permalink: en/gbt_landing-page.html
 lang: en
 autotranslated: true
-hash: 33bdaeb0954910ae77087df2c2f8f552de09a016ea074ff4dd39856a1895c072
+hash: b16b024b5e0a24564a92e70efcd423dfaf92b9e638a040c13b3084d72692f4a7
 summary: course on the basic technologies used in the platform Flexberry.
 ---
 
@@ -20,7 +20,7 @@ If You are a novice developer and You need a fundamental knowledge of programmin
 If You need to obtain basic knowledge of web programming, we recommend you watch the instructional module ["School of developers"](/ru/tds_landing-page.html) on the subject ["Introduction to web development"](/ru/tds_module1-about.html).
 
 
-## Part of the course
+## The course program
 
 * [IC design](gbt_information-system-design.html)
 * [Object oriented programming](gbt_ood.html)
@@ -34,7 +34,7 @@ If You need to obtain basic knowledge of web programming, we recommend you watch
 * [Layout](gbt_layout.html)
 * [Ember.js](gbt_emberjs.html)
 * [Server development](gbt_backend.html)
-* [Database management system](gbt_dbms.html)
+* The [database management system](gbt_dbms.html)
 * [SQL](gbt_sql.html)
 * [Microsoft SQL Server](gbt_mssql.html)
 * [PostgreSQL](gbt_postgresql.html)
@@ -52,8 +52,8 @@ If You need to obtain basic knowledge of web programming, we recommend you watch
 * [jBPM](gbt_jbpm.html)
 * [Testing, debugging, performance applications](gbt_testing.html)
 * [Development team](gbt_team-management.html)
-* [Installation and deployment solutions](gbt_deployment.html)
-* [Deploying your solutions in Windows](gbt_deployment_windows.html)
+* [Deploy and install solutions](gbt_deployment.html)
+* [Deploy solutions on Windows](gbt_deployment_windows.html)
 * [Deploy solutions on Linux](gbt_deployment_linux.html)
 * [Solution deployment in the Docker container](gbt_deployment_docker.html)
 * [Systems integration](gbt_integration.html)
@@ -81,15 +81,15 @@ Below are a list of resources where you can find courses in various fields. Some
 * [Coursera](https://ru.coursera.org/)
 * [edX](https://www.edx.org/)
 * [Udemy](https://www.udemy.com/)
-* [Microsoft Virtual Academy](https://mva.microsoft.com)
+* [Microsoft Learn](https://docs.microsoft.com/ru-ru/learn/)
 * [Yandex.Workshop](https://praktikum.yandex.ru/)
 * [GeekBrains](https://geekbrains.ru/)
 * [Netology](https://netology.ru/)
 * [Codecademy](https://www.codecademy.com/)
 * [HTML Academy](https://htmlacademy.ru/)
+* [Brainoteka](https://brainoteka.com/)
 * [Treehouse](https://teamtreehouse.com/)
 * [Library programmer](https://vk.com/proglib)
-* [SkillsWiki](http://skillswiki.net/)
 * [Class Central](https://www.class-central.com/)
 * [Open Source Society of the University](https://github.com/open-source-society/computer-science)
 * [List of Computer Science courses with video lectures](https://github.com/Developer-Y/cs-video-courses)
@@ -102,7 +102,7 @@ Below are a list of resources where you can find courses in various fields. Some
 
 ## You can
 
-* [Begin](gbt_information-system-design.html)
+* [To begin](gbt_information-system-design.html)
 * [Go to the page with description of all courses](/EN/)
 
 

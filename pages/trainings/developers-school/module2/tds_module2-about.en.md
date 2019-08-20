@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module2-about.html
 lang: en
 autotranslated: true
-hash: 1d11fa0754a508bc84a20bcf316c6c53d75999a6943e041f9f7705c61ffe7f93
+hash: 6b6fcf1bdb5623a73f4b79a4fc71341ba3a501c538d2ccfbea3e00c865c180a0
 ---
 
 ## The contents of the module
@@ -22,29 +22,27 @@ hash: 1d11fa0754a508bc84a20bcf316c6c53d75999a6943e041f9f7705c61ffe7f93
 * Keeping team projects on GitHub
 * CodeReview
 * Creating and making pull-requests
-* GitHub for planning and managing the development of
+* Means GitHub for planning and managing the development of
 * GitHub Pages
 * Tools for creating server builds and deployment of web applications
-2. Team work with Azure DevOps (TFS/VSTS)
+2. Teamwork in the Azure DevOps (TFS/VSTS)
 * Familiarity with DevOps
 * Installation and configuration of software
-* Use Azure DevOps
+* Azure DevOps Services DevOps and Azure Server
 * Connect to server on Azure, DevOps
-* Team building, setting permissions and security
+* Creation of the organization, setting permissions and security
 * Creation of project, connection to the project
-* Iteration in the Azure DevOps
-* Work with work items Azure DevOps
-* Mapping parts of the code in TFVC
-* The adoption and roll back changes to TFVC
-* CodeReview
+* Work with work items
+* Planning iterations
+* Work with Git and TFVC repository
+* Work with DevOps Azure from Visual Studio and Visual Studio Code
 * Set up the server builds and automatic deployment of web applications
-* Using Git in Azure DevOps
 
 
-## Acidaemia learning outcomes
+## Expected learning outcomes
 
 The results of the study of module student must:
-1. To understand the principles of operation of the control system of versions of Git and TFVC
+1. To understand the principles of version control systems Git and TFVC
 2. To be able to make and undo changes in Git and TFVC in compliance with the rules of registration changes
 3. To be able to work with branches in Git and TFVC
 4. To be able to work in team projects on GitHub and Azure DevOps
