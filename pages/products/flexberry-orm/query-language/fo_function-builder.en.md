@@ -18,14 +18,16 @@ autotranslated: false
 `FunctionBuilder` doesn't support all functions available in `GetFunction`, but necessary majority of it which allows developer to use FunctionBuilder most times. In case of lack of some method you may implement it same way with already existing methods.
 
 ## Example
+Imagine domain model with Document entity and DocumentLink entity, which has two associations with Document, named Document and LinkDocument, and association with DocumentLinkType entity.
 
-### SQL
+In case we need to load from database all DocumentLinks with specified link type name, which links two document and we shouldn't take in account the order of links. So we should get limit function similar to sql query:
+
 ``` sql
-select * 
-from DocumentLink 
-join DocumentLinkType on DocumentLinkType.PrimaryKey=DocumentLink.DocumentLinkType
-where DocumentLinkType.Name = @typeName
-AND ((Document = @document AND LinkedDocument = @linked) OR (Document = @linked AND LinkedDocument = @document))
+SELECT * 
+FROM DocumentLink 
+JOIN DocumentLinkType ON DocumentLinkType.PrimaryKey = DocumentLink.DocumentLinkType
+WHERE DocumentLinkType.Name = @typeName
+AND ((Document = @document1 AND LinkedDocument = @document2) OR (Document = @document2 AND LinkedDocument = @document1))
 ```
 
 ### Limit function using langdef
@@ -35,26 +37,26 @@ lcs.LimitFunction = langdef.GetFunction(langdef.funcAND,
 	langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.StringType, "DocumentLinkType.Name"), typeName),
 	langdef.GetFunction(langdef.funcOR,
 		langdef.GetFunction(langdef.funcAND, 
-			langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.GuidType, "Document"), document.__PrimaryKey),
-			langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.GuidType, "LinkedDocument"), linkedDocument.__PrimaryKey)),
+			langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.GuidType, "Document"), document1.__PrimaryKey),
+			langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.GuidType, "LinkedDocument"), document2.__PrimaryKey)),
 		langdef.GetFunction(langdef.funcAND, 
-			langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.GuidType, "Document"), linkedDocument.__PrimaryKey),
-			langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.GuidType, "LinkedDocument"), document.__PrimaryKey))));
+			langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.GuidType, "Document"), document2.__PrimaryKey),
+			langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.GuidType, "LinkedDocument"), document1.__PrimaryKey))));
 ```
 
-### Limit function using FunctionBuilder
+### Функция ограничения с использованием FunctionBuilder
 ``` csharp
 var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(DocumentLink), DocumentLink.Views.DocumentLinkE);
 lcs.LimitFunction = FunctionBuilder.BuildAnd(
 	FunctionBuilder.BuildEquals<DocumentLink>(x => x.DocumentLinkType.Name, typeName),
 	FunctionBuilder.BuildOr(
 		FunctionBuilder.BuildAnd(
-			FunctionBuilder.BuildEquals<DocumentLink>(x => x.Document, document),
-			FunctionBuilder.BuildEquals<DocumentLink>(x => x.LinkedDocument, linkedDocument)
+			FunctionBuilder.BuildEquals<DocumentLink>(x => x.Document, document1),
+			FunctionBuilder.BuildEquals<DocumentLink>(x => x.LinkedDocument, document2)
 			),
 		FunctionBuilder.BuildAnd(
-			FunctionBuilder.BuildEquals<DocumentLink>(x => x.Document, linkedDocument),
-			FunctionBuilder.BuildEquals<DocumentLink>(x => x.LinkedDocument, document)
+			FunctionBuilder.BuildEquals<DocumentLink>(x => x.Document, document2),
+			FunctionBuilder.BuildEquals<DocumentLink>(x => x.LinkedDocument, document1)
 			)
 		)
 	);
