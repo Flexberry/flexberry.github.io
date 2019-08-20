@@ -22,6 +22,8 @@ There is [the ability to serialize function limitations](fo_limit-function-seria
 
 [ExternalLangDef](fo_external-lang-def.html) - language extension restrictions to set restrictions on dependent objects (detali). 
 
+[FunctionBuilder](fo_function-builder.html) - wrapper for ExternalLangDef with shorter syntax for limiting funcion building.
+
 There is an opportunity to expand the implemented languages of limitations](fo_using-languagedef.html). 
 
 ## Application functions limit 
