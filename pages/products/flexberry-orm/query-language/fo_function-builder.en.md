@@ -6,6 +6,7 @@ summary: Building functions with FunctionBuilder
 toc: true 
 permalink: en/fo_function-builder.html 
 lang: en 
+autotranslated: false
 --- 
 
 [Limit functions](fo_limit-function.html) may be built using [SQLWhereLanguageDef](fo_function-list.html) or [ExternalLangDef](fo_external-lang-def.html), but they has rather bulky syntax.
