@@ -65,5 +65,5 @@ lcs.LimitFunction = FunctionBuilder.BuildAnd(
 
 ## Методы, доступные в FunctionBuilder
 
-Список методов, перечисленных здесь, может со временем измениться, поэтому за полным списком возможностей рекомендуется обратиться к [исходному коду класса](https://github.com/Flexberry/NewPlatform.Flexberry.ORM/tree/develop/ExternalLangDef/FunctionBuilder).
+Список методов, перечисленных здесь, может со временем измениться, поэтому за полным списком возможностей рекомендуется обратиться к [автодокументации](https://flexberry.github.io/NewPlatform.Flexberry.ORM/autodoc/develop/class_i_c_s_soft_1_1_s_t_o_r_m_n_e_t_1_1_functional_language_1_1_function_builder.html).
 

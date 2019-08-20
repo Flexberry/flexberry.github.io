@@ -68,5 +68,5 @@ As you can see code with FunctionBuilder looks similar but is more readable beca
  
 ## FunctionBuilder methods
 
-List of methods may change during time, so you may find full list of available methods in [source code](https://github.com/Flexberry/NewPlatform.Flexberry.ORM/tree/develop/ExternalLangDef/FunctionBuilder).
+List of methods may change during time, so you may find full list of available methods in [autodocumentation](https://flexberry.github.io/NewPlatform.Flexberry.ORM/autodoc/develop/class_i_c_s_soft_1_1_s_t_o_r_m_n_e_t_1_1_functional_language_1_1_function_builder.html).
 
