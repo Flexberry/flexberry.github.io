@@ -35,12 +35,12 @@ var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(DocumentLink), Docum
 lcs.LimitFunction = langdef.GetFunction(langdef.funcAND,
 	langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.StringType, "DocumentLinkType.Name"), typeName),
 	langdef.GetFunction(langdef.funcOR,
-                langdef.GetFunction(langdef.funcAND, 
-                    langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.GuidType, "Document"), document.__PrimaryKey),
-					langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.GuidType, "LinkedDocument"), linkedDocument.__PrimaryKey)),
-                langdef.GetFunction(langdef.funcAND, 
-                    langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.GuidType, "Document"), linkedDocument.__PrimaryKey),
-					langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.GuidType, "LinkedDocument"), document.__PrimaryKey))));
+		langdef.GetFunction(langdef.funcAND, 
+			langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.GuidType, "Document"), document.__PrimaryKey),
+			langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.GuidType, "LinkedDocument"), linkedDocument.__PrimaryKey)),
+		langdef.GetFunction(langdef.funcAND, 
+			langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.GuidType, "Document"), linkedDocument.__PrimaryKey),
+			langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.GuidType, "LinkedDocument"), document.__PrimaryKey))));
 ```
 
 ``` csharp

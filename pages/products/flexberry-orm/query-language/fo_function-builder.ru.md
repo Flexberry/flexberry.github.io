@@ -14,7 +14,7 @@ lang: ru
 
 `FunctionBuilder` поддерживает также наложение ограничений на детейлы с использованием функции [Exist](fo_exist-details.html).
 
-`FunctionBuilder` поддерживает не все множество функций, доступных для использования в `GetFunction`, однако большую его часть, что позволяет прикладному разработчику использовать его для построения функций ограничения в большинстве ситуаций, тем самым уменьшая громоздскость кода. При необходимости можно реализовать дополнительный методы FunctionBuilder по аналогии с уже реализованными.
+`FunctionBuilder` поддерживает не все множество функций, доступных для использования в `GetFunction`, однако большую его часть, что позволяет прикладному разработчику использовать его для построения функций ограничения в большинстве ситуаций, тем самым уменьшая громоздскость кода. При необходимости можно реализовать дополнительные методы FunctionBuilder по аналогии с уже реализованными.
 
 С исходным кодом `FunctionBuilder-а` и вспомогательных классов можно ознакомиться в [репозитории ORM](https://github.com/Flexberry/NewPlatform.Flexberry.ORM/tree/develop/ExternalLangDef/FunctionBuilder).
 
@@ -35,12 +35,12 @@ var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(DocumentLink), Docum
 lcs.LimitFunction = langdef.GetFunction(langdef.funcAND,
 	langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.StringType, "DocumentLinkType.Name"), typeName),
 	langdef.GetFunction(langdef.funcOR,
-                langdef.GetFunction(langdef.funcAND, 
-                    langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.GuidType, "Document"), document.__PrimaryKey),
-					langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.GuidType, "LinkedDocument"), linkedDocument.__PrimaryKey)),
-                langdef.GetFunction(langdef.funcAND, 
-                    langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.GuidType, "Document"), linkedDocument.__PrimaryKey),
-					langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.GuidType, "LinkedDocument"), document.__PrimaryKey))));
+		langdef.GetFunction(langdef.funcAND, 
+			langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.GuidType, "Document"), document.__PrimaryKey),
+			langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.GuidType, "LinkedDocument"), linkedDocument.__PrimaryKey)),
+		langdef.GetFunction(langdef.funcAND, 
+			langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.GuidType, "Document"), linkedDocument.__PrimaryKey),
+			langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.GuidType, "LinkedDocument"), document.__PrimaryKey))));
 ```
 
 ``` csharp
