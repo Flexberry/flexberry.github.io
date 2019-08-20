@@ -121,9 +121,8 @@ private void GetNextOrPrevObj(bool next)
 
     LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Планета), "ПланетаE");
     lcs.ColumnsSort = new[] { new ColumnsSortDef("primaryKey", SortOrder.Asc) };
-    lcs.ReturnTop = 1;
-    SQLWhereLanguageDef lDef = SQLWhereLanguageDef.LanguageDef;
-    Function f = lDef.GetFunction(next ? lDef.funcG : lDef.funcL, new VariableDef(lDef.GuidType, "StormMainObjectKey"), pk);
+    lcs.ReturnTop = 1;    
+    Function f = next ? FunctionBuilder.BuildGreater(pk) : FunctionBuilder.BuildLess(pk);     
     lcs.LimitFunction = f;
     DataObject[] dataObjects = ds.LoadObjects(lcs);
     if (dataObjects.Length > 0)

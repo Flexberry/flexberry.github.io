@@ -44,8 +44,7 @@ if (UpdatedObject.GetStatus() == ObjectStatus.Altered)
 
 ```csharp
 LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Кредит), Кредит.Views.КредитE);
-var ld = SQLWhereLanguageDef.LanguageDef;
-lcs.LimitFunction = ld.GetFunction(ld.funcEQ, new VariableDef(ld.GuidType, "Клиент"), UpdatedObject.Клиент.__PrimaryKey);
+lcs.LimitFunction = FunctionBuilder.BuildEquals<Кредит>(x => x.Клиент, UpdatedObject.Клиент);
 var oldValue = DataService.LoadObjects(lcs)[0) as Кредит;
 ```
 

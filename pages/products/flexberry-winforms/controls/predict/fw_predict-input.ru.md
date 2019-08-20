@@ -109,10 +109,8 @@ public DataObject GetCurrentDataObject(bool reloadItems)
 Чтобы наложить дополнительную фильтрацию на выводимые предиктивным вводом подсказки, необходимо указать контролу [LimitFunction](fo_function-list.html), накладывающий ограничение.
 
 ```csharp
-Фильтрация записей для предиктивного ввода по логину
-			SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
-			extTextControl1.LimitFunction = langdef.GetFunction(langdef.funcEQ, 
-				new VariableDef(langdef.StringType, "Логин"), username);
+Фильтрация записей для предиктивного ввода по логину			
+			extTextControl1.LimitFunction = FunctionBuilder.BuildEquals("Логин", username);
 ```
 
 ## Предиктивный ввод в Web-приложениях

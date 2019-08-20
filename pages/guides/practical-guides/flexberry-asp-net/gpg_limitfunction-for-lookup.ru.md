@@ -50,10 +50,7 @@ using ICSSoft.STORMNET.FunctionalLanguage.SQLWhere;
 ```csharp
 protected override void PreApplyToControls()
 {
-	SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
-
-	Function lf = langdef.GetFunction(langdef.funcEQ,
-		new VariableDef(langdef.StringType, Information.ExtractPropertyName<Сотрудник>(x => x.Должность)), EnumCaption.GetCaptionFor(Должность.Менеджер));
+	Function lf = FunctionBuilder.BuildEquals<Сотрудник>(x => x.Должность), Должность.Менеджер);	
 
 	ctrlМенеджер.LimitFunction = lf;
 }
