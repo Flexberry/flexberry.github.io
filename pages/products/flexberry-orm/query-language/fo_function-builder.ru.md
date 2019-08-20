@@ -1,5 +1,5 @@
 ---
-title: FunctionBUilder
+title: FunctionBuilder
 sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, ограничения
 summary: Использование FunctionBuilder для построения функций ограничения
