@@ -20,6 +20,8 @@ autotranslated: false
 ## Example
 Imagine domain model with Document entity and DocumentLink entity, which has two associations with Document, named Document and LinkDocument, and association with DocumentLinkType entity.
 
+![](/images/pages/products/flexberry-orm/query-language/function-builder-example-model.png)
+
 In case we need to load from database all DocumentLinks with specified link type name, which links two document and we shouldn't take in account the order of links. So we should get limit function similar to sql query:
 
 ``` sql
