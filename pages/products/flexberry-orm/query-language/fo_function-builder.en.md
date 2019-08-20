@@ -16,12 +16,9 @@ lang: en
 
 `FunctionBuilder` doesn't support all functions available in `GetFunction`, but necessary majority of it which allows developer to use FunctionBuilder most times. In case of lack of some method you may implement it same way with already existing methods.
 
-`FunctionBuilder` and supporting classes source code is available on [ORM repository](https://github.com/Flexberry/NewPlatform.Flexberry.ORM/tree/develop/ExternalLangDef/FunctionBuilder).
-
-All methods are covered with unit tests, source code available in [ORM repository](https://github.com/Flexberry/NewPlatform.Flexberry.ORM/tree/develop/NewPlatform.Flexberry.ORM.Tests/ICSSoft.STORMNET.FunctionalLanguage).
-
 ## Example
 
+### SQL
 ``` sql
 select * 
 from DocumentLink 
@@ -30,6 +27,7 @@ where DocumentLinkType.Name = @typeName
 AND ((Document = @document AND LinkedDocument = @linked) OR (Document = @linked AND LinkedDocument = @document))
 ```
 
+### Limit function using langdef
 ```csharp
 var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(DocumentLink), DocumentLink.Views.DocumentLinkE);
 lcs.LimitFunction = langdef.GetFunction(langdef.funcAND,
@@ -43,6 +41,7 @@ lcs.LimitFunction = langdef.GetFunction(langdef.funcAND,
 			langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.GuidType, "LinkedDocument"), document.__PrimaryKey))));
 ```
 
+### Limit function using FunctionBuilder
 ``` csharp
 var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(DocumentLink), DocumentLink.Views.DocumentLinkE);
 lcs.LimitFunction = FunctionBuilder.BuildAnd(
@@ -62,6 +61,10 @@ lcs.LimitFunction = FunctionBuilder.BuildAnd(
 
 As you can see code with FunctionBuilder looks similar but is more readable because of less number of arguments and no need to create VariableDef manually in most cases. Moreover FunctionBuilder protects from making mistake in property path because of generic method using, which controls avaliable properties in object. Similar code may be implemented for `GetFunction` using `Information.ExtractPropertyPath<T>()` method, but it will be even more bulky.
 
+## Source code
+`FunctionBuilder` and supporting classes source code is available on [ORM repository](https://github.com/Flexberry/NewPlatform.Flexberry.ORM/tree/develop/ExternalLangDef/FunctionBuilder). All methods are covered with unit tests, source code available in [ORM repository](https://github.com/Flexberry/NewPlatform.Flexberry.ORM/tree/develop/NewPlatform.Flexberry.ORM.Tests/ICSSoft.STORMNET.FunctionalLanguage).
+
+ 
 ## FunctionBuilder methods
 
 List of methods may change during time, so you may find full list of available methods in [source code](https://github.com/Flexberry/NewPlatform.Flexberry.ORM/tree/develop/ExternalLangDef/FunctionBuilder).

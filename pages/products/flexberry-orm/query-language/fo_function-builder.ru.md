@@ -16,12 +16,8 @@ lang: ru
 
 `FunctionBuilder` поддерживает не все множество функций, доступных для использования в `GetFunction`, однако большую его часть, что позволяет прикладному разработчику использовать его для построения функций ограничения в большинстве ситуаций, тем самым уменьшая громоздскость кода. При необходимости можно реализовать дополнительные методы FunctionBuilder по аналогии с уже реализованными.
 
-С исходным кодом `FunctionBuilder-а` и вспомогательных классов можно ознакомиться в [репозитории ORM](https://github.com/Flexberry/NewPlatform.Flexberry.ORM/tree/develop/ExternalLangDef/FunctionBuilder).
-
-Все методы покрыты тестовыми сценариями, с кодом которых также можно ознакомиться в [репозитории ORM](https://github.com/Flexberry/NewPlatform.Flexberry.ORM/tree/develop/NewPlatform.Flexberry.ORM.Tests/ICSSoft.STORMNET.FunctionalLanguage).
-
 ## Пример
-
+### SQL
 ``` sql
 select * 
 from DocumentLink 
@@ -30,6 +26,7 @@ where DocumentLinkType.Name = @typeName
 AND ((Document = @document AND LinkedDocument = @linked) OR (Document = @linked AND LinkedDocument = @document))
 ```
 
+### Функция ограничения с использованием langdef
 ```csharp
 var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(DocumentLink), DocumentLink.Views.DocumentLinkE);
 lcs.LimitFunction = langdef.GetFunction(langdef.funcAND,
@@ -43,6 +40,7 @@ lcs.LimitFunction = langdef.GetFunction(langdef.funcAND,
 			langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.GuidType, "LinkedDocument"), document.__PrimaryKey))));
 ```
 
+### Функция ограничения с использованием FunctionBuilder
 ``` csharp
 var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(DocumentLink), DocumentLink.Views.DocumentLinkE);
 lcs.LimitFunction = FunctionBuilder.BuildAnd(
@@ -61,6 +59,9 @@ lcs.LimitFunction = FunctionBuilder.BuildAnd(
 ```
 
 Как можно видеть из примера, код построения функции с использованием FunctionBuilder очень похож, но становится читаемее за счет меньшего количества аргументов у методов, а также отсутствия необходимости создавать VariableDef вручную в большинстве случаев. Кроме того, в примере с `FunctionBuilder-ом` нельзя допустить ошибку в пути свойства, поскольку используется generic-метод, контролирующий имеющиеся в объекте свойства. Аналогичный по возможностям код можно реализовать и в случае использования `GetFunction` с использованием метода `Information.ExtractPropertyPath<T>()`, однако это сделает код еще многословнее.
+
+## Исходный код
+С исходным кодом `FunctionBuilder-а` и вспомогательных классов можно ознакомиться в [репозитории ORM](https://github.com/Flexberry/NewPlatform.Flexberry.ORM/tree/develop/ExternalLangDef/FunctionBuilder). Все методы покрыты тестовыми сценариями, с кодом которых также можно ознакомиться в [репозитории ORM](https://github.com/Flexberry/NewPlatform.Flexberry.ORM/tree/develop/NewPlatform.Flexberry.ORM.Tests/ICSSoft.STORMNET.FunctionalLanguage).
 
 ## Методы, доступные в FunctionBuilder
 
