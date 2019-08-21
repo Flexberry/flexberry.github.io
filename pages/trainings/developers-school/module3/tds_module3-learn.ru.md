@@ -686,6 +686,109 @@ lang: ru
     </div>
 </div>
 
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push collapsed" data-toggle="collapse" href="#collapse11" aria-expanded="false">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse11">
+                Тестирование и отладка приложений</a>
+            </h4>
+        </div>
+        <div id="collapse11" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+            <div class="panel-body">
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=QipEfVXIVWQ' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/testing-basics.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">1. Основы тестирования веб-приложений</span></h4>
+                            <p>Лекционная часть занятия, которое проводилось в рамках курса "Разработка Enterprise-приложений" в 2015 г., в которой рассматриваются понятие тестирования, классификация тестов, характеристики различных видов тестов, применение тестов в процессе выполнения задач итерации (Евгений Хаберев, Flexberry PLATFORM).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=JGu9v1riBu8' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/testing-principles.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">2. Принципы автоматизированного тестирования веб-приложений</span></h4>
+                            <p>Видео, в котором рассматриваются такие вопросы как цикл Test Driven Design (TDD) и пирамида обеспечения качества приложений (Илья Климов, JavaScript.Ninja/WookieeLabs).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=qKw43dnaR7w' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/unit-testing-basics.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">3. Основы модульного тестирования веб-приложений</span></h4>
+                            <p>Фрагмент занятия, которое проводилось в рамках курса "Разработка Enterprise-приложений" в 2015 г., в котором рассматриваются основные принципы модульного тестирования, шаблон Arrange-Act-Assert (AAA) для написания тестов, понятие тестируемости модуля, а также понятие и принципы использования Stub- и Mock-объектов для изоляции модуля (Евгений Хаберев, Flexberry PLATFORM).</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=sI5RlzJ4Q7s' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/di-ioc.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">4. Внедрение зависимостей и инверсия управления</span></h4>
+                            <p>Серия скринкастов, посвященная изучению понятия и реализации принципов DI & IoC в JavaScript-приложениях (Илья Климов, JavaScript.Ninja/WookieeLabs).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=sI5RlzJ4Q7s' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/unit-testing-js.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">5. Модульное тестирование JavaScript-приложений</span></h4>
+                            <p>Фрагмент занятия, которое проводилось в рамках курса "Разработка Enterprise-приложений" в 2015 г., в котором рассматриваются инструменты тестирования JavaScript-приложений, а также на практическом примере рассматривается пример создания модульных тестов с использованием тестового фреймворка QUnit и Mock-библиотеки Sinon.js (Евгений Хаберев, Flexberry PLATFORM).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=C_FYssT_aKg' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/end-to-end-testing.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">6. Основы End-to-End тестирования</span></h4>
+                            <p>Видео, в котором рассматриваются преимущества использования End-to-End тестирования с точки зрения бизнеса, а также основные архитектурные принципы End-to-End тестирования (Илья Климов, JavaScript.Ninja/WookieeLabs).</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=gDu0_ehSVAw' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/end-to-end-appreaches.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">7. Подходы к автоматизации End-to-End тестов</span></h4>
+                            <p>Видео, в котором рассматриваются две существующие парадигмы для автоматизации End-to-End тестов: инъекция JavaScript на страницу и применение отдельного командного сервера. Рассматриваются также примеры инструментов, реализующие эти подходы: Selenium, Cypress, TestCafe (Илья Климов, JavaScript.Ninja/WookieeLabs).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=sI5RlzJ4Q7s' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/end-to-end-mechanisms.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">8. Инфраструктура и механизмы для организации End-to-End тестирования</span></h4>
+                            <p>Видео, в котором рассматриваются необходимые организационные шаги для создания End-to-End тестов: создание фикстур, реализация механизма загрузки фикстур на сервер, сборка проекта под соответствующее тестовое окружение (Илья Климов, JavaScript.Ninja/WookieeLabs).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=6IVNc-rUctc' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/testing-selenium.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">9. Тестирование веб-приложений с использованием Selenium</span></h4>
+                            <p>Фрагмент занятия, которое проводилось в рамках курса "Разработка Enterprise-приложений" в 2015 г., в котором на практическом примере рассматривается использование Selenium Driver для организации End-to-End тестов. Пример реализован на языке C#, однако аналогично API Selenium можно использовать на различных языках программирования, в том числе на JavaScript (Евгений Хаберев, Flexberry PLATFORM).</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 ## Вы можете
 
 * [Перейти к дополнительным учебным материалам модуля](tds_module3-appendix.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
