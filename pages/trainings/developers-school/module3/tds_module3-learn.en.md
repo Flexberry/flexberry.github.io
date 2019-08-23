@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module3-learn.html
 lang: en
 autotranslated: true
-hash: e2bea68573bedc5dfbe9f91c22512ced619f829e6a3375e2d2f4b69fbd331d6b
+hash: 07554b68c0e16e3c0166123b726db8b26ae20a2c7755f7aac8ab3f761c8c5b90
 ---
 
 ## The module
@@ -680,6 +680,109 @@ Automatic checking of coding style</a>
 </div>
 <h4><span class="item-head">5. Linting on projects with "bad" code</span></h4>
 <p> Video, which provides practical recommendations for the implementation of ESLint and Prettier on projects with unasledovannye "bad" code (code that is not tested, not verified by tools, etc) (Ilya Klimov, JavaScript.Ninja/WookieeLabs).</p>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="panel-group">
+<div class="panel panel-default">
+<div class="panel-heading">
+<a class="pull-right spoiler-push-collapsed" data-toggle="collapse" href="#collapse11" aria-expanded="false">&#9660;</a>
+<h4 class="panel-title">
+<a data-toggle="collapse" href="#collapse11">
+Testing and debugging apps</a>
+</h4>
+</div>
+<div id="collapse11" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+<div class="panel-body">
+<div class="row items">
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=QipEfVXIVWQ' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/testing-basics.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">1. The basics of testing web applications</span></h4>
+<p>the Lecture part of the course, which was conducted in the framework of the course "Developing Enterprise applications" in 2015, which addresses the concept of testing, classification of tests, the characteristics of the different types of tests, use of tests in the process of iteration tasks (Eugene Haberi, Flexberry PLATFORM).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=JGu9v1riBu8' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/testing-principles.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">2. Principles of automated testing web applications</span></h4>
+<p>the Video, which addresses issues such as cycle, Test Driven Design (TDD) and the pyramid of quality assurance applications (Ilya Klimov, JavaScript.Ninja/WookieeLabs).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=qKw43dnaR7w' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/unit-testing-basics.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">3. The basics of unit testing web applications</span></h4>
+<p>the Fragment class, which was conducted in the framework of the course "Developing Enterprise applications" in 2015, which deals with basic principles of unit testing, the pattern is the Arrange-Act-Assert (AAA) for writing tests, the notion of the testability of the module, as well as the concept and principles of using Stub and Mock objects to isolate the module (Eugene Haberi, Flexberry PLATFORM).</p>
+</a>
+</div>
+</div>
+<div class="row items">
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=sI5RlzJ4Q7s' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/di-ioc.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">4. Dependency injection and inversion of control</span></h4>
+<p>Series of screencasts devoted to the study of the concepts and the principles of DI & IoC in JavaScript applications (Ilya Klimov, JavaScript.Ninja/WookieeLabs).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=sI5RlzJ4Q7s' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/unit-testing-js.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">5. Unit testing JavaScript applications</span></h4>
+<p>the Fragment class, which was conducted in the framework of the course "Developing Enterprise applications" in 2015, which examines tools for testing JavaScript applications, as well as practical example we consider an example of creating unit tests using QUnit test framework and Mock libraries Sinon.js (Eugene Haberi, Flexberry PLATFORM).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=C_FYssT_aKg' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/end-to-end testing.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">6. Basics End-to-End testing</span></h4>
+<p>the Video, which discusses the advantages of using End-to-End testing from the business point of view, as well as the main architectural principles End-to-End testing (Ilya Klimov, JavaScript.Ninja/WookieeLabs).</p>
+</a>
+</div>
+</div>
+<div class="row items">
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=gDu0_ehSVAw' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/end-to-end-appreaches.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">7. Approaches to automate End-to-End tests</span></h4>
+<p>the Video, which discusses two paradigms for the automation of End-to-End tests: injection of JavaScript to the page and use a separate command to the server. The article also discusses examples of tools that implement these approaches: Selenium, Cypress, TestCafe (Ilya Klimov, JavaScript.Ninja/WookieeLabs).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=sI5RlzJ4Q7s' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/end-to-end-mechanisms.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">8. Infrastructure and mechanisms for the organization of End-to-End testing</span></h4>
+<p>the Video, which addresses the necessary organizational steps to create End-to-End tests: creating fixtures, implementation of a mechanism for loading fixtures to the server, build the project under the appropriate test environment (Ilya Klimov, JavaScript.Ninja/WookieeLabs).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=6IVNc-rUctc' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/testing-selenium.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">9. Testing web applications using Selenium</span></h4>
+<p>the Fragment class, which was conducted in the framework of the course "Developing Enterprise applications" in 2015, in which a practical example is examined using the Selenium Driver for the organization End-to-End tests. Example is implemented in the language C#, however, similarly to the Selenium API can be used in various programming languages, including JavaScript (Eugene Haberi, Flexberry PLATFORM).</p>
 </a>
 </div>
 </div>
