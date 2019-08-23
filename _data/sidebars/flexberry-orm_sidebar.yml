@@ -419,6 +419,10 @@ entries:
       title_ru: FunctionBuilder
       url: /fo_function-builder.html
       output: web
+    - title: FunctionBuilder examples
+      title_ru: FunctionBuilder примеры
+      url: /fo_function-builder-examples.html
+      output: web
     - title: Function of implication
       title_ru: Функция импликации
       url: /fo_function-implication.html
