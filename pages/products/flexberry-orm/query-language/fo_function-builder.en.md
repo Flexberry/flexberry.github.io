@@ -46,7 +46,7 @@ lcs.LimitFunction = langdef.GetFunction(langdef.funcAND,
 			langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.GuidType, "LinkedDocument"), document1.__PrimaryKey))));
 ```
 
-### Функция ограничения с использованием FunctionBuilder
+### Limit function using FunctionBuilder
 ``` csharp
 var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(DocumentLink), DocumentLink.Views.DocumentLinkE);
 lcs.LimitFunction = FunctionBuilder.BuildAnd(

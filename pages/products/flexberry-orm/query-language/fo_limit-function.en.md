@@ -24,7 +24,9 @@ There is [the ability to serialize function limitations](fo_limit-function-seria
 
 [FunctionBuilder](fo_function-builder.html) is a wrapper class over ExternalLangDef with a less verbose syntax for building functions restrictions objects deducted.
 
-There is an opportunity to expand the implemented languages of limitations](fo_using-languagedef.html).
+[FunctionBuilder examples](fo_function-builder-examples.html) - more detailed examples on the refactor `LangDef.GetFunction`.
+
+There is [an opportunity to expand the implemented languages of limitations](fo_using-languagedef.html).
 
 ## Application functions limit
 
