@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_limit-function.html
 lang: en
 autotranslated: true
-hash: d2a88d56af1f6c73ffdd6d81ce4e494e72b30037d03c563346beedd883896889
+hash: 635984df750e9e6f0562c998fd426af05a75303caa93e74bac0427fe5852d2bb
 ---
 
 The restriction feature allows to filter and limit the data selection and represent a special extensible language constraints developed for [Flexberry ORM](fo_flexberry-orm.html).
@@ -24,9 +24,9 @@ There is [the ability to serialize function limitations](fo_limit-function-seria
 
 [FunctionBuilder](fo_function-builder.html) is a wrapper class over ExternalLangDef with a less verbose syntax for building functions restrictions objects deducted.
 
-[FunctionBuilder examples](fo_function-builder-examples.html) - more detailed examples on the refactor `LangDef.GetFunction`.
+[FunctionBuilder examples](fo_function-builder-examples.html) - more detailed examples for the refaktor `LangDef.GetFunction`.
 
-There is [an opportunity to expand the implemented languages of limitations](fo_using-languagedef.html).
+There is an opportunity to expand the implemented languages of limitations](fo_using-languagedef.html).
 
 ## Application functions limit
 
