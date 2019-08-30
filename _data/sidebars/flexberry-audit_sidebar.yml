@@ -1,0 +1,24 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+
+entries:
+- title: Sidebar
+  product: Flexberry Audit
+  version:
+  folders:
+
+  - title: О Flexberry Audit
+    output: web, pdf
+    folderitems:
+    - title: About
+      title_ru: О модуле
+      url: /fo_landing_page.html
+      output: web
+    - title: Flexberry Security Update
+      title_ru: Обновление Security
+      url: /fs_flexberry_security_update.html
+      output: web
+    - title: Flexberry Legacy Security install
+      title_ru: Установка LegacySecurity
+      url: /fs_legacy-security-install.html
+      output: web
