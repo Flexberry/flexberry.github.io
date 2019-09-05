@@ -486,11 +486,40 @@ lang: ru
             <div class="panel-body">
                 <div class="row items">
                     <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=A__0VgwlBR0' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/effective-code-principles.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">1. Принципы и приёмы написания эффективного кода</span></h4>
+                            <p>Доклад в рамках Курсов по разработке интерфейсов Яндекс 2016 г., в котором рассматриваюстя принципы SOLID и некоторые паттерны проектирования на примере добавления функциональности в существующий сервис (Александр Завьялов, Яндекс).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=wi3wPzReKZQ' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/solid-principles-in-javascript.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">2. Принципы SOLID в JavaScript-приложениях</span></h4>
+                            <p>Доклад с митапа MoscowJS 2016 г., посвященный использованию принципов SOLID при проектировании и реализации JavaScript-приложений (Алексей Охрименко, IPONWEB).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=GjtfXIaQq7g' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/javascript-patterns.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">3. JavaScript-паттерны</span></h4>
+                            <p>Доклад с конференции NDC London 2017, в котором рассказывается про организацию кода с помощью модулей, про плюсы и минусы новых конструкций языка JavaScript, а также про актуальные инструменты сборки и паттерны, связанные с ними. (Скотт Аллен, Microsoft/Medisolv).</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
                         <a href="{{ 'https://monsterlessons.com/project/lessons/singleton-pattiern-v-javascript' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/singleton-pattern.jpg" | relative_url}}" class="products-img">
                             </div>
-                            <h4><span class="item-head">1. Паттерн Singleton</span></h4>
+                            <h4><span class="item-head">4. Паттерн Singleton</span></h4>
                             <p>Урок, в котором рассматривается паттерн Singleton, обеспечивающий единственный экземпляр объекта и предоставляющий к нему глобальную точку доступа, а также его реализация на JavaScript (Monster Lessons).</p>
                         </a>
                     </div>
@@ -499,7 +528,7 @@ lang: ru
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/module-pattern.jpg" | relative_url}}" class="products-img">
                             </div>
-                            <h4><span class="item-head">2. Паттерн Module</span></h4>
+                            <h4><span class="item-head">5. Паттерн Module</span></h4>
                             <p>Урок, в котором рассматривается паттерн Module и его использование для организации модульной структуры JavaScript-приложений (Monster Lessons).</p>
                         </a>
                     </div>
@@ -508,7 +537,7 @@ lang: ru
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/publish-subscribe-pattern.jpg" | relative_url}}" class="products-img">
                             </div>
-                            <h4><span class="item-head">3. Паттерн Publish/Subscribe</span></h4>
+                            <h4><span class="item-head">6. Паттерн Publish/Subscribe</span></h4>
                             <p>Урок, в котором рассматривается паттерн Publish/Subscribe и его использование для организации слабой связности объектов JavaScript-приложения (Monster Lessons).</p>
                         </a>
                     </div>
@@ -519,7 +548,7 @@ lang: ru
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/observer-pattern.jpg" | relative_url}}" class="products-img">
                             </div>
-                            <h4><span class="item-head">4. Паттерн Observer</span></h4>
+                            <h4><span class="item-head">7. Паттерн Observer</span></h4>
                             <p>Урок, в котором рассматривается паттерн Observer и его использование для организации механизма подписки, позволяющего одним объектам следить и реагировать на события, происходящие в других объектах JavaScript-приложения (Monster Lessons).</p>
                         </a>
                     </div>
@@ -528,7 +557,7 @@ lang: ru
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/constructor-pattern.jpg" | relative_url}}" class="products-img">
                             </div>
-                            <h4><span class="item-head">5. Паттерн Constructor</span></h4>
+                            <h4><span class="item-head">8. Паттерн Constructor</span></h4>
                             <p>Урок, в котором рассматривается паттерн Constructor и его использование для создания новых объектов в JavaScript-приложениях (Monster Lessons).</p>
                         </a>
                     </div>
@@ -537,7 +566,7 @@ lang: ru
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/decorator-pattern.jpg" | relative_url}}" class="products-img">
                             </div>
-                            <h4><span class="item-head">6. Паттерн Decorator</span></h4>
+                            <h4><span class="item-head">9. Паттерн Decorator</span></h4>
                             <p>Урок, в котором рассматривается паттерн Decorator и его использование для динамического подключения дополнительной функциональности к объектам JavaScript-приложения (Monster Lessons).</p>
                         </a>
                     </div>
@@ -548,7 +577,7 @@ lang: ru
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/facade-pattern.jpg" | relative_url}}" class="products-img">
                             </div>
-                            <h4><span class="item-head">7. Паттерн Facade</span></h4>
+                            <h4><span class="item-head">10. Паттерн Facade</span></h4>
                             <p>Урок, в котором рассматривается паттерн Facade и его использование для организации простого интерфейса к сложной системе объектов в JavaScript-приложении (Monster Lessons).</p>
                         </a>
                     </div>
@@ -557,7 +586,7 @@ lang: ru
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/factory-pattern.jpg" | relative_url}}" class="products-img">
                             </div>
-                            <h4><span class="item-head">8. Паттерн Factory</span></h4>
+                            <h4><span class="item-head">11. Паттерн Factory</span></h4>
                             <p>Урок, в котором рассматривается паттерн Factory, позволяющий использовать один класс для создания объектов различного типа, и его реализация в JavaScript-приложениях (Monster Lessons).</p>
                         </a>
                     </div>
@@ -566,7 +595,7 @@ lang: ru
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/strategy-pattern.jpg" | relative_url}}" class="products-img">
                             </div>
-                            <h4><span class="item-head">9. Паттерн Strategy </span></h4>
+                            <h4><span class="item-head">12. Паттерн Strategy </span></h4>
                             <p>Урок, в котором рассматривается паттерн Strategy  и его использование для определения семейства схожих алгоритмов, которые можно взаимозаменять прямо во время исполнения программы, и его реализация в JavaScript-приложении (Monster Lessons).</p>
                         </a>
                     </div>
