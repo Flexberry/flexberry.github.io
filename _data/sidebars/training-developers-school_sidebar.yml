@@ -89,4 +89,36 @@ entries:
     - title: Appendix
       title_ru: Дополнительные материалы
       url: /tds_module3-appendix.html
+      output: web 
+  - title: Module 4. 
+    title_ru: Модуль 4. 
+    output: web
+    folderitems:
+    - title: Module 5. 
+    title_ru: Модуль 5.
+    output: web
+    folderitems:
+    - title: Module 6. Working with ORM
+    title_ru: Модуль 6. Работа с ORM
+    output: web
+    folderitems:
+    - title: About the module
+      title_ru: О модуле
+      url: /tds_module6-about.html
       output: web    
+    - title: Learn
+      title_ru: Учебные материалы
+      url: /tds_module6-learn.html
+      output: web    
+    - title: Appendix
+      title_ru: Дополнительные материалы
+      url: /tds_module6-appendix.html
+      output: web    
+    - title: Tasks
+      title_ru: Задания
+      url: /tds_module6-tasks.html
+      output: web    
+    - title: Tasks check list
+      title_ru: Чек-лист проверки заданий
+      url: /tds_module6-check-list.html
+      output: web   
