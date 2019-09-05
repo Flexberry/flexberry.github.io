@@ -789,6 +789,72 @@ lang: ru
     </div>
 </div>
 
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push collapsed" data-toggle="collapse" href="#collapse12" aria-expanded="false">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse12">
+               Cоздание автодокументации</a>
+            </h4>
+        </div>
+        <div id="collapse12" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+            <div class="panel-body">
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=fDhpBp1DZbE' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/js-doc-basics.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">1. Основы JSDoc</span></h4>
+                            <p>Скринкаст, в котором рассматриваются вопросы установки JSDoc, документирования свойств, методов и пространств имен, а также генерация документации на основе комментариев JSDoc (Владислав Ковеченков).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=i_K3rLL75Sk' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/js-doc-arrays.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">2. Описание массивов в JSDoc</span></h4>
+                            <p>Скринкаст, посвященный документированию массивов в JSDoc, а также демонстрации возможностей автокомплита в результате выполненных описаний. (Юрий Катков, WikiVote).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=KD64ivKAKlM' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/js-doc-objects.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">3. Описание объектов в JSDoc</span></h4>
+                            <p>Скринкаст, посвященный документированию объектов в JSDoc, а также демонстрации возможностей автокомплита в результате выполненных описаний. (Юрий Катков, WikiVote).</p>
+                        </a>
+                    </div>
+                </div>
+            <div class="panel-body">
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=TlG_90HrHDU' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/js-doc-html-elements.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">4. Описание HTML-элементов в JSDoc</span></h4>
+                            <p>Скринкаст, посвященный документированию HTML-элементов в JSDoc, а также демонстрации возможностей автокомплита в результате выполненных описаний. (Юрий Катков, WikiVote).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=IKlJmsdVVss' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/js-doc-custom-types.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">5. Описание произвольных типов в JSDoc</span></h4>
+                            <p>Скринкаст, посвященный документированию произвольных типов с использованием тега @typedef в JSDoc, а также демонстрации возможностей автокомплита в результате выполненных описаний. (Юрий Катков, WikiVote).</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 ## Вы можете
 
 * [Перейти к дополнительным учебным материалам модуля](tds_module3-appendix.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
