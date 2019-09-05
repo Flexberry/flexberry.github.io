@@ -692,7 +692,7 @@ lang: ru
             <a class="pull-right spoiler-push collapsed" data-toggle="collapse" href="#collapse11" aria-expanded="false">&#9660;</a>
             <h4 class="panel-title">
                 <a data-toggle="collapse" href="#collapse11">
-                Тестирование и отладка приложений</a>
+                Тестирование приложений</a>
             </h4>
         </div>
         <div id="collapse11" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
@@ -795,10 +795,55 @@ lang: ru
             <a class="pull-right spoiler-push collapsed" data-toggle="collapse" href="#collapse12" aria-expanded="false">&#9660;</a>
             <h4 class="panel-title">
                 <a data-toggle="collapse" href="#collapse12">
-               Cоздание автодокументации</a>
+                Отладка и профилирование приложений</a>
             </h4>
         </div>
         <div id="collapse12" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+            <div class="panel-body">
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=hNIvcEcj-XA' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/debugging-in-browser.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">1. Отладка кода в браузере</span></h4>
+                            <p>Доклад с конференции FrontTalks (DUMP) 2016, посвященный использованию объекта Console и инструментов разработчика в браузерах для отладки исходного кода (Антон Шувалов, Rambler&Co).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://medium.com/devschacht/%D0%BE%D1%82%D0%BB%D0%B0%D0%B4%D0%BA%D0%B0-javascript-%D0%B2-google-chrome-%D0%B8-visual-studio-code-c2f07603a5b8#db15' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/debugging-in-vs-code.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">2. Отладка в Google Chrome из Visual Studio Code</span></h4>
+                            <p>Статья с инструкциями по настроке расширения Debugger for Chrome для Visual Studio Code, которое позволяет отлаживать исходный код с использованием протокола Chrome Debugger (Джеймс Квик, Learn.Build.Teach).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=rKtWxCYBFP4' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/profiling-js-code.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">3. Профилирование JavaScript-кода</span></h4>
+                            <p>Доклад с MinskJS Meetup, в котором рассказываеся об инструментах для облегчения задачи профилирования JavaScript-кода и визуализации его результатов. (Виктор Хомяков, Яндекс).</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push collapsed" data-toggle="collapse" href="#collapse13" aria-expanded="false">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse13">
+               Cоздание автодокументации</a>
+            </h4>
+        </div>
+        <div id="collapse13" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
             <div class="panel-body">
                 <div class="row items">
                     <div class="col-sm-6 col-md-4 portfolio-item">
