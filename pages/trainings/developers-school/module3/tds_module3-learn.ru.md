@@ -829,6 +829,7 @@ lang: ru
                         </a>
                     </div>
                 </div>
+            </div>
             <div class="panel-body">
                 <div class="row items">
                     <div class="col-sm-6 col-md-4 portfolio-item">
