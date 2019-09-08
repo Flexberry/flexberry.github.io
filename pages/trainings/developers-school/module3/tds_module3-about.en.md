@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module3-about.html
 lang: en
 autotranslated: true
-hash: 9665b38092a437916748475cc7cb93de0d046272615a0882799688190d3f194c
+hash: 6089d1411dc4cb4934b7789f222bb9b3f1933c88423406db9003e0a45b11c0a2
 ---
 
 ## The contents of the module
@@ -20,9 +20,10 @@ hash: 9665b38092a437916748475cc7cb93de0d046272615a0882799688190d3f194c
 7. Asynchronous programming
 8. Architectural patterns
 9. Build automation applications
-10. Automatic checking of coding style
-11. Testing and debugging applications
-12. The creation of autodocumentary
+10. Checking code style and automation
+11. Application testing
+12. Debugging and profiling applications
+13. The creation of autodocumentary
 
 ## Expected learning outcomes
 
@@ -41,7 +42,7 @@ The results of the study of module student must:
 12. To be able to configure linting JavaSciript code using ESLint
 13. To be able to use tools to debug JavaScript applications
 14. To be able to write unit tests using QUnit test framework
-15. To be able to generate autodocumentation using YUIDoc
+15. To be able to generate autodocumentation using JSDoc
 
 ## You can
 

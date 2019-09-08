@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module3-learn.html
 lang: en
 autotranslated: true
-hash: 07554b68c0e16e3c0166123b726db8b26ae20a2c7755f7aac8ab3f761c8c5b90
+hash: 16d002e706ddaf2ba95f446c01e7f98690875702362023111e5a61bc56e49437
 ---
 
 ## The module
@@ -488,11 +488,40 @@ Architectural patterns (design patterns)</a>
 <div class="panel-body">
 <div class="row items">
 <div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=A__0VgwlBR0' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/effective-code-principles.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">1. Principles and techniques of writing efficient code</span></h4>
+<p>a Report in Courses on the development of interfaces of Yandex 2016, which rassmatrivajut SOLID principles and some design patterns for example, add functionality to an existing service (Alexander Zavyalov, Yandex).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=wi3wPzReKZQ' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/solid-principles-in-javascript.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">2. The SOLID principles to JavaScript applications</span></h4>
+<p>the Report from the meet up MoscowJS 2016 dedicated to the use of SOLID principles in the design and implementation of JavaScript applications (Alexey Okhrimenko, IPONWEB).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=GjtfXIaQq7g' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/javascript-patterns.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">3. JavaScript-patterns</span></h4>
+<p>a Report from the conference NDC London 2017, which tells about the organization of code using modules, about the pros and cons of new language constructs in JavaScript, and also about the current build tools and patterns associated with them. (Scott Allen, Microsoft/Medisolv).</p>
+</a>
+</div>
+</div>
+<div class="row items">
+<div class="col-sm-6 col-md-4 portfolio-item">
 <a href="{{ 'https://monsterlessons.com/project/lessons/singleton-pattiern-v-javascript' | relative_url }}" class="portfolio-link" target="_blank">
 <div class="img-wrapper">
 <img src="{{ "/images/pages/trainings/developers-school/module3/singleton-pattern.jpg" | relative_url}}" class="products-img">
 </div>
-<h4><span class="item-head">1. Singleton pattern</span></h4>
+<h4><span class="item-head">4. Singleton pattern</span></h4>
 <p>a Lesson in which is seen a Singleton pattern that ensures a single instance of the object and makes it a global hotspot, as well as its implementation in JavaScript (Monster Lessons).</p>
 </a>
 </div>
@@ -501,7 +530,7 @@ Architectural patterns (design patterns)</a>
 <div class="img-wrapper">
 <img src="{{ "/images/pages/trainings/developers-school/module3/module-pattern.jpg" | relative_url}}" class="products-img">
 </div>
-<h4><span class="item-head">2. Pattern Module</span></h4>
+<h4><span class="item-head">5. Pattern Module</span></h4>
 <p>Lesson, which deals with the Module pattern and its use for the organization of the modular structure of JavaScript applications (Monster Lessons).</p>
 </a>
 </div>
@@ -510,7 +539,7 @@ Architectural patterns (design patterns)</a>
 <div class="img-wrapper">
 <img src="{{ "/images/pages/trainings/developers-school/module3/publish-subscribe-pattern.jpg" | relative_url}}" class="products-img">
 </div>
-<h4><span class="item-head">3. The pattern "Publish/Subscribe" </span></h4>
+<h4><span class="item-head">6. The pattern "Publish/Subscribe" </span></h4>
 <p>Lesson, which deals with pattern "Publish/Subscribe" and use it for organization weak connectivity JavaScript object-the application (Monster Lessons).</p>
 </a>
 </div>
@@ -521,7 +550,7 @@ Architectural patterns (design patterns)</a>
 <div class="img-wrapper">
 <img src="{{ "/images/pages/trainings/developers-school/module3/observer-pattern.jpg" | relative_url}}" class="products-img">
 </div>
-<h4><span class="item-head">4. Pattern Observer</span></h4>
+<h4><span class="item-head">7. Pattern Observer</span></h4>
 <p>Lesson, which deals with the Observer pattern and use it for organizing subscription mechanism that allows one object to monitor and respond to events occurring in other objects a JavaScript application (Monster Lessons).</p>
 </a>
 </div>
@@ -530,7 +559,7 @@ Architectural patterns (design patterns)</a>
 <div class="img-wrapper">
 <img src="{{ "/images/pages/trainings/developers-school/module3/constructor-pattern.jpg" | relative_url}}" class="products-img">
 </div>
-<h4><span class="item-head">5. Pattern Constructor</span></h4>
+<h4><span class="item-head">8. Pattern Constructor</span></h4>
 <p>Lesson, which deals with the pattern Constructor and use it to create new objects in JavaScript apps (Monster Lessons).</p>
 </a>
 </div>
@@ -539,7 +568,7 @@ Architectural patterns (design patterns)</a>
 <div class="img-wrapper">
 <img src="{{ "/images/pages/trainings/developers-school/module3/decorator-pattern.jpg" | relative_url}}" class="products-img">
 </div>
-<h4><span class="item-head">6. Decorator pattern</span></h4>
+<h4><span class="item-head">9. Decorator pattern</span></h4>
 <p>Lesson, which deals with the Decorator pattern and its usage for dynamic connection functionality to objects in a JavaScript application (Monster Lessons).</p>
 </a>
 </div>
@@ -550,7 +579,7 @@ Architectural patterns (design patterns)</a>
 <div class="img-wrapper">
 <img src="{{ "/images/pages/trainings/developers-school/module3/facade-pattern.jpg" | relative_url}}" class="products-img">
 </div>
-<h4><span class="item-head">7. Pattern Facade</span></h4>
+<h4><span class="item-head">10. Pattern Facade</span></h4>
 <p>the Lesson, which examines the pattern of Facade and its use for the organization of a simple interface to a complex system of objects in a JavaScript application (Monster Lessons).</p>
 </a>
 </div>
@@ -559,7 +588,7 @@ Architectural patterns (design patterns)</a>
 <div class="img-wrapper">
 <img src="{{ "/images/pages/trainings/developers-school/module3/factory-pattern.jpg" | relative_url}}" class="products-img">
 </div>
-<h4><span class="item-head">8. Pattern Factory</span></h4>
+<h4><span class="item-head">11. Pattern Factory</span></h4>
 <p>Lesson, which deals with the Factory pattern, which allows to use one class to create objects of different types, and its implementation in JavaScript applications (Monster Lessons).</p>
 </a>
 </div>
@@ -568,7 +597,7 @@ Architectural patterns (design patterns)</a>
 <div class="img-wrapper">
 <img src="{{ "/images/pages/trainings/developers-school/module3/strategy-pattern.jpg" | relative_url}}" class="products-img">
 </div>
-<h4><span class="item-head">9. Pattern Strategy </span></h4>
+<h4><span class="item-head">12. Pattern Strategy </span></h4>
 <p>a Lesson in which is seen a pattern Strategy and use it to define a family of similar algorithms that can be interchanged directly during program execution, and its implementation in a JavaScript application (Monster Lessons).</p>
 </a>
 </div>
@@ -629,18 +658,27 @@ Build automation application</a>
 <a class="pull-right spoiler-push-collapsed" data-toggle="collapse" href="#collapse10" aria-expanded="false">&#9660;</a>
 <h4 class="panel-title">
 <a data-toggle="collapse" href="#collapse10">
-Automatic checking of coding style</a>
+Checking code style and automation</a>
 </h4>
 </div>
 <div id="collapse10" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
 <div class="panel-body">
 <div class="row items">
 <div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=rU0Jnhd-rHY' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/style-guide.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">1. The rules of code formatting</span></h4>
+<p>Video on recommended basic rules of formatting JavaScript code (JS-Lynda.com).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
 <a href="{{ 'https://monsterlessons.com/project/lessons/eslint' | relative_url }}" class="portfolio-link" target="_blank">
 <div class="img-wrapper">
 <img src="{{ "/images/pages/trainings/developers-school/module3/eslint.jpg" | relative_url}}" class="products-img">
 </div>
-<h4><span class="item-head">1. Linting JavaScript code with ESLint</span></h4>
+<h4><span class="item-head">2. Linting JavaScript code with ESLint</span></h4>
 <p>the Lesson, which discusses the concept of linting code, and configuring ESLint library to detect and prevent errors (Monster Lessons).</p>
 </a>
 </div>
@@ -649,27 +687,27 @@ Automatic checking of coding style</a>
 <div class="img-wrapper">
 <img src="{{ "/images/pages/trainings/developers-school/module3/gulp-webpack-linting.jpg" | relative_url}}" class="products-img">
 </div>
-<h4><span class="item-head">2. Setting linting JavaScript and CSS files in Gulp and Webpack</span></h4>
+<h4><span class="item-head">3. Setting linting JavaScript and CSS files in Gulp and Webpack</span></h4>
 <p>Video overview of the linters for JavaScript and CSS, as well as setting appropriate linters when you build the project using the library gulp.js and Webpack (Daria Pushkarskaya, WebHero School).</p>
-</a>
-</div>
-<div class="col-sm-6 col-md-4 portfolio-item">
-<a href="{{ 'https://www.youtube.com/watch?v=LoUh0kpZ5_w' | relative_url }}" class="portfolio-link" target="_blank">
-<div class="img-wrapper">
-<img src="{{ "/images/pages/trainings/developers-school/module3/sass-linting.jpg" | relative_url}}" class="products-img">
-</div>
-<h4><span class="item-head">3. Linting SASS code</span></h4>
-<p>the Video, which deals with a Linter for SASS code, setting lantinga SASS code gulp.js and example of checking the site code for errors. (Vitaly Cherenkov, Just development).</p>
 </a>
 </div>
 </div>
 <div class="row items">
 <div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=LoUh0kpZ5_w' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/sass-linting.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">4. Linting SASS code</span></h4>
+<p>the Video, which deals with a Linter for SASS code, setting lantinga SASS code gulp.js and example of checking the site code for errors. (Vitaly Cherenkov, Just development).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
 <a href="{{ 'https://www.youtube.com/watch?v=IpmiFPoDYVY' | relative_url }}" class="portfolio-link" target="_blank">
 <div class="img-wrapper">
 <img src="{{ "/images/pages/trainings/developers-school/module3/vscode-linting.jpg" | relative_url}}" class="products-img">
 </div>
-<h4><span class="item-head">4. Configuring ESLint, Prettier and pre-commit hook in Visual Studio Code</span></h4>
+<h4><span class="item-head">5. Configuring ESLint, Prettier and pre-commit hook in Visual Studio Code</span></h4>
 <p>the Webinar, which describes how to configure libraries for linting JavaScript code to work in Visual Studio Code (Maxim Palansky, maxpfrontend).</p>
 </a>
 </div>
@@ -678,7 +716,7 @@ Automatic checking of coding style</a>
 <div class="img-wrapper">
 <img src="{{ "/images/pages/trainings/developers-school/module3/bad-code-projects-linting.jpg" | relative_url}}" class="products-img">
 </div>
-<h4><span class="item-head">5. Linting on projects with "bad" code</span></h4>
+<h4><span class="item-head">6. Linting on projects with "bad" code</span></h4>
 <p> Video, which provides practical recommendations for the implementation of ESLint and Prettier on projects with unasledovannye "bad" code (code that is not tested, not verified by tools, etc) (Ilya Klimov, JavaScript.Ninja/WookieeLabs).</p>
 </a>
 </div>
@@ -694,7 +732,7 @@ Automatic checking of coding style</a>
 <a class="pull-right spoiler-push-collapsed" data-toggle="collapse" href="#collapse11" aria-expanded="false">&#9660;</a>
 <h4 class="panel-title">
 <a data-toggle="collapse" href="#collapse11">
-Testing and debugging apps</a>
+Application testing</a>
 </h4>
 </div>
 <div id="collapse11" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
@@ -750,7 +788,7 @@ Testing and debugging apps</a>
 <div class="col-sm-6 col-md-4 portfolio-item">
 <a href="{{ 'https://www.youtube.com/watch?v=C_FYssT_aKg' | relative_url }}" class="portfolio-link" target="_blank">
 <div class="img-wrapper">
-<img src="{{ "/images/pages/trainings/developers-school/module3/end-to-end testing.jpg" | relative_url}}" class="products-img">
+<img src="{{ "/images/pages/trainings/developers-school/module3/end-to-end-testing.jpg" | relative_url}}" class="products-img">
 </div>
 <h4><span class="item-head">6. Basics End-to-End testing</span></h4>
 <p>the Video, which discusses the advantages of using End-to-End testing from the business point of view, as well as the main architectural principles End-to-End testing (Ilya Klimov, JavaScript.Ninja/WookieeLabs).</p>
@@ -783,6 +821,118 @@ Testing and debugging apps</a>
 </div>
 <h4><span class="item-head">9. Testing web applications using Selenium</span></h4>
 <p>the Fragment class, which was conducted in the framework of the course "Developing Enterprise applications" in 2015, in which a practical example is examined using the Selenium Driver for the organization End-to-End tests. Example is implemented in the language C#, however, similarly to the Selenium API can be used in various programming languages, including JavaScript (Eugene Haberi, Flexberry PLATFORM).</p>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="panel-group">
+<div class="panel panel-default">
+<div class="panel-heading">
+<a class="pull-right spoiler-push-collapsed" data-toggle="collapse" href="#collapse12" aria-expanded="false">&#9660;</a>
+<h4 class="panel-title">
+<a data-toggle="collapse" href="#collapse12">
+Debugging and profiling applications</a>
+</h4>
+</div>
+<div id="collapse12" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+<div class="panel-body">
+<div class="row items">
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=hNIvcEcj-XA' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/debugging-in-browser.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">1. Debugging code in the browser</span></h4>
+<p>a Report from the conference FrontTalks (DUMP) 2016 is dedicated to the use of the facility Console and developer tools in browser to debug the code (Anton Shuvalov, Rambler&Co).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href=" {{ 'https://medium.com/devschacht/отладка-javascript-в-google-chrome-и-visual-studio-code-c2f07603a5b8#db15' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/debugging-in-vs-code.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">2. Debugging in Google Chrome from Visual Studio Code</span></h4>
+<p>Article with instructions on how to configure the Debugger for Chrome extension for Visual Studio Code, which allows you to debug the source code using the Chrome Debugger Protocol (James quick, Learn.Build.Teach).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=rKtWxCYBFP4' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/profiling-js-code.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">3. Profiling JavaScript</span></h4>
+<p>the Report MinskJS Meetup, which rasskazyvaetsya about tools to facilitate the profiling of JavaScript and visualization of its results. (Victor Khomyakov, Yandex).</p>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="panel-group">
+<div class="panel panel-default">
+<div class="panel-heading">
+<a class="pull-right spoiler-push-collapsed" data-toggle="collapse" href="#collapse13" aria-expanded="false">&#9660;</a>
+<h4 class="panel-title">
+<a data-toggle="collapse" href="#collapse13">
+The creation of autodocumentary</a>
+</h4>
+</div>
+<div id="collapse13" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+<div class="panel-body">
+<div class="row items">
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=fDhpBp1DZbE' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/js-doc-basics.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">1. The basics of JSDoc</span></h4>
+<p>the Screencast that addresses the installation issues JSDoc, documentation of properties, methods and namespaces, and generating documentation based on comments JSDoc (Vladislav Konechenkov).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=i_K3rLL75Sk' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/js-doc-arrays.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">2. Description of arrays in JSDoc</span></h4>
+<p>Screencast on documenting arrays in JSDoc, as well as demonstrate the capabilities of autocomplete as a result of the descriptions. (Yury Katkov, WikiVote).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=KD64ivKAKlM' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/js-doc-objects.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">3. Description of the object in the JSDoc</span></h4>
+<p>the Screencast is dedicated to documenting the objects in the JSDoc, as well as demonstrate the capabilities of autocomplete as a result of the descriptions. (Yury Katkov, WikiVote).</p>
+</a>
+</div>
+</div>
+</div>
+<div class="panel-body">
+<div class="row items">
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=TlG_90HrHDU' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/js-doc-html-elements.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">4. Description of HTML elements in JSDoc</span></h4>
+<p>the Screencast is dedicated to documenting the HTML elements in the JSDoc, as well as demonstrate the capabilities of autocomplete as a result of the descriptions. (Yury Katkov, WikiVote).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=IKlJmsdVVss' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/js-doc-custom-types.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">5. Description of arbitrary types in JSDoc</span></h4>
+<p>the Screencast is dedicated to documenting arbitrary types, using the tag @typedef JSDoc, as well as demonstrate the capabilities of autocomplete as a result of the descriptions. (Yury Katkov, WikiVote).</p>
 </a>
 </div>
 </div>

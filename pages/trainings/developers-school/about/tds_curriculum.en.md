@@ -6,14 +6,14 @@ toc: false
 permalink: en/tds_curriculum.html
 lang: en
 autotranslated: true
-hash: d0a3952aab7e1a8f6605f9069e1d12b8108892e311bc8fa6c43c749b7fadac5d
+hash: 96de867b923835a80d09911cfbd99b74a8504b36aa1fe0efe5eb4365d72f38ed
 ---
 
 ## The training program
 
 1. [Introduction to web development](tds_module1-about.html)
 2. [Technology team](tds_module2-about.html)
-3. Dive into JavaScript development
+3. [Dive into JavaScript development](tds_module3-about.html)
 4. Application development on Ember.js
 5. RESTful services and OData Protocol
 6. Flexberry Designer

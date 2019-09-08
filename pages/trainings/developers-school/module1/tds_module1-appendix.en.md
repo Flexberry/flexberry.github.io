@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module1-appendix.html
 lang: en
 autotranslated: true
-hash: c461460cd871832e986b9a6d1161e4a2042ae5c9feb687d1ac3b0408d8d38a93
+hash: b1e57e667909f070148719b9362e0cd23c7ba2f3bcc9b5fc2f7003b701f78939
 ---
 
 ## Additional materials module
@@ -77,6 +77,17 @@ Introduction to web development</a>
 </div>
 <h4><span class="item-head">Testirovanie web services using SoapUI</span></h4>
 <p>the Webinar, which discussed the basics of SoapUI on a practical example (ed Izotov, Computer school Hillel).</p>
+</a>
+</div>
+</div>
+<div class="row items">
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/playlist?list=PLvWwA9iDlhHA4kzfpRbu2cH-Z2ss6tB99' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module1/chrome-dev-tools.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">developer Tools Google Chrome</span></h4>
+<p>Series of screencasts on using developer tools in Google Chrome (Nikita kraśnik, MakeWeb.me).</p>
 </a>
 </div>
 </div>
