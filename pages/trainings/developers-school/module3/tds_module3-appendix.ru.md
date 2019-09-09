@@ -54,6 +54,51 @@ lang: ru
     </div>
 </div>
 
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse1">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse1">
+                Дополнительные материалы</a>
+            </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'http://learn.javascript.ru/screencast/nodejs' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/nodejs-course.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">Курс по Node.js</span></h4>
+                            <p>Серия скринкастов о разработке приложений в Node.js (Илья Кантор, JavaScript.ru).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'http://learn.javascript.ru/screencast/webpack' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/dom-javascript.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">Курс по Webpack</span></h4>
+                            <p>Серия скринкастов о сборке JavaScript-приложений с помощью библиотеки Webpack (Илья Кантор, JavaScript.ru).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'http://learn.javascript.ru/screencast/gulp' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/gulp-course.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">Курс по Gulp</span></h4>
+                            <p>Серия скринкастов о сборке JavaScript-приложений с помощью библиотеки Gulp 4 (Илья Кантор, JavaScript.ru).</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 ## Вы можете
 
 * [Перейти к заданиям по модулю](tds_module3-tasks.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
