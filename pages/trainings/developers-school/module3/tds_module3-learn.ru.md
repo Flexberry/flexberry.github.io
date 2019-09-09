@@ -600,6 +600,17 @@ lang: ru
                         </a>
                     </div>
                 </div>
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://refactoring.guru/ru' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/refactoring-and-design-patterns.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">13. Рефакторинг и архитектурные паттерны</span></h4>
+                            <p>Ресурс, посвященный темам рефакторинга, паттернам проектирования, принципам SOLID и взаимосвязям между ними (Александр Швец, Refactoring.Guru).</p>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
