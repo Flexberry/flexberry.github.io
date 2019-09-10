@@ -12,13 +12,49 @@ lang: ru
 <div class="panel-group">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse1">&#9660;</a>
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse0">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse0">
+                Ключевые концепции JavaScript и настройка окружения</a>
+            </h4>
+        </div>
+        <div id="collapse0" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=IJQVLg4heLA' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/javascript-key-concepts.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">1. Ключевые концепции языка JavaScript</span></h4>
+                            <p>Урок, в котором разбираются три ключевые концепции языка JavaScript: асинхронность, событийная модель, однопоточность (Илья Климов, JavaScript.Ninja/GitLab).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=RW5JjiFg2uw' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/development-environment-setup.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">2. Настройка окружения для нового проекта на JavaScript</span></h4>
+                            <p>Видео, в котором рассматривается настройка окружения для реальных проектов на языке JavaScript (Node.js). В качестве среды разработки для рассмотренных настроек окружения используется Visual Studio Code. Рассмотренные настройки являются актуальными для проектов различных типов на языке JavaScript (Илья Климов, JavaScript.Ninja/GitLab).</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push collapsed" data-toggle="collapse" href="#collapse1" aria-expanded="false">&#9660;</a>
             <h4 class="panel-title">
                 <a data-toggle="collapse" href="#collapse1">
                 Одностраничные приложения (SPA) и архитектурный паттерн MVC</a>
             </h4>
         </div>
-        <div id="collapse1" class="panel-collapse collapse in">
+        <div id="collapse1" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
             <div class="panel-body">
                 <div class="row items">
                     <div class="col-sm-6 col-md-4 portfolio-item">
@@ -160,6 +196,15 @@ lang: ru
                             <p>Урок, в котором рассматривается понятие и механизм работы замыканий в JavaScript (Monster Lessons).</p>
                         </a>
                     </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=QsWnRj_EXMg' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/closures-and-scopes.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">5. Замыкания и области видимости</span></h4>
+                            <p>Видео, в котором рассматривается взаимосвязь замыканий, областей видимости, а также передачи данных по значению и по ссылке в JavaScript (Илья Климов, JavaScript.Ninja/GitLab).</p>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -296,7 +341,7 @@ lang: ru
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/javascript-projects-structure.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">8. Структура файлов в JavaScript-проекте</span></h4>
-                            <p>Урок, в котором рассматривается два основных подхода к организации файлов в JavaScript-проектах: по "категориям файлов" и "фрактальный" (Илья Климов, JavaScript.Ninja/WookieeLabs).</p>
+                            <p>Урок, в котором рассматривается два основных подхода к организации файлов в JavaScript-проектах: по "категориям файлов" и "фрактальный" (Илья Климов, JavaScript.Ninja/GitLab).</p>
                         </a>
                     </div>
                 </div>
@@ -465,6 +510,15 @@ lang: ru
                             </div>
                             <h4><span class="item-head">5. Конструкция async/await</span></h4>
                             <p>Скринкаст, в котором рассматривается конструкция async/await, появившаяся в ES7 для упрощения работы с JavaScript Promises (Владилен Минин, JavaScript by Vladilen).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=7wtbNNiOh30' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/generators-and-iterators.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">6. Генераторы и итераторы</span></h4>
+                            <p>Занятие, посвященное изучению механизмов работы генераторов и итераторов (Владилен Минин, JavaScript by Vladilen).</p>
                         </a>
                     </div>
                 </div>
@@ -712,12 +766,12 @@ lang: ru
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
-                        <a href="{{ 'https://www.youtube.com/watch?v=IpmiFPoDYVY' | relative_url }}" class="portfolio-link" target="_blank">
+                        <a href="{{ 'https://www.youtube.com/watch?v=3c1ZkiafbzY' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/vscode-linting.jpg" | relative_url}}" class="products-img">
                             </div>
-                            <h4><span class="item-head">5. Настройка ESLint, Prettier и pre-commit hook в Visual Studio Code</span></h4>
-                            <p>Вебинар, в котором рассматривается настройка библиотек для линтинга JavaScript-кода при работе в Visual Studio Code (Максим Пацианский, maxpfrontend).</p>
+                            <h4><span class="item-head">5. Настройка ESLint и Prettier в Visual Studio Code</span></h4>
+                            <p>Видео, в котором рассматривается настройка окружения для JavaScript-разработки, а также библиотек для линтинга JavaScript-кода при работе в Visual Studio Code (Илья Климов, JavaScript.Ninja/GitLab).</p>
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
@@ -726,7 +780,7 @@ lang: ru
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/bad-code-projects-linting.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">6. Линтинг на проектах с "плохим" кодом</span></h4>
-                            <p> Видео, в котором даются практические рекомендации по внедрению ESLint и Prettier на проектах с унаследованнм "плохим" кодом (код, который не тестируется, не проверяется инструментами и т.д.) (Илья Климов, JavaScript.Ninja/WookieeLabs).</p>
+                            <p> Видео, в котором даются практические рекомендации по внедрению ESLint и Prettier на проектах с унаследованнм "плохим" кодом (код, который не тестируется, не проверяется инструментами и т.д.) (Илья Климов, JavaScript.Ninja/GitLab).</p>
                         </a>
                     </div>
                 </div>
@@ -762,7 +816,7 @@ lang: ru
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/testing-principles.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">2. Принципы автоматизированного тестирования веб-приложений</span></h4>
-                            <p>Видео, в котором рассматриваются такие вопросы как цикл Test Driven Design (TDD) и пирамида обеспечения качества приложений (Илья Климов, JavaScript.Ninja/WookieeLabs).</p>
+                            <p>Видео, в котором рассматриваются такие вопросы как цикл Test Driven Design (TDD) и пирамида обеспечения качества приложений (Илья Климов, JavaScript.Ninja/GitLab).</p>
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
@@ -782,7 +836,7 @@ lang: ru
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/di-ioc.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">4. Внедрение зависимостей и инверсия управления</span></h4>
-                            <p>Серия скринкастов, посвященная изучению понятия и реализации принципов DI & IoC в JavaScript-приложениях (Илья Климов, JavaScript.Ninja/WookieeLabs).</p>
+                            <p>Серия скринкастов, посвященная изучению понятия и реализации принципов DI & IoC в JavaScript-приложениях (Илья Климов, JavaScript.Ninja/GitLab).</p>
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
@@ -800,7 +854,7 @@ lang: ru
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/end-to-end-testing.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">6. Основы End-to-End тестирования</span></h4>
-                            <p>Видео, в котором рассматриваются преимущества использования End-to-End тестирования с точки зрения бизнеса, а также основные архитектурные принципы End-to-End тестирования (Илья Климов, JavaScript.Ninja/WookieeLabs).</p>
+                            <p>Видео, в котором рассматриваются преимущества использования End-to-End тестирования с точки зрения бизнеса, а также основные архитектурные принципы End-to-End тестирования (Илья Климов, JavaScript.Ninja/GitLab).</p>
                         </a>
                     </div>
                 </div>
@@ -811,7 +865,7 @@ lang: ru
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/end-to-end-appreaches.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">7. Подходы к автоматизации End-to-End тестов</span></h4>
-                            <p>Видео, в котором рассматриваются две существующие парадигмы для автоматизации End-to-End тестов: инъекция JavaScript на страницу и применение отдельного командного сервера. Рассматриваются также примеры инструментов, реализующие эти подходы: Selenium, Cypress, TestCafe (Илья Климов, JavaScript.Ninja/WookieeLabs).</p>
+                            <p>Видео, в котором рассматриваются две существующие парадигмы для автоматизации End-to-End тестов: инъекция JavaScript на страницу и применение отдельного командного сервера. Рассматриваются также примеры инструментов, реализующие эти подходы: Selenium, Cypress, TestCafe (Илья Климов, JavaScript.Ninja/GitLab).</p>
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
@@ -820,7 +874,7 @@ lang: ru
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/end-to-end-mechanisms.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">8. Инфраструктура и механизмы для организации End-to-End тестирования</span></h4>
-                            <p>Видео, в котором рассматриваются необходимые организационные шаги для создания End-to-End тестов: создание фикстур, реализация механизма загрузки фикстур на сервер, сборка проекта под соответствующее тестовое окружение (Илья Климов, JavaScript.Ninja/WookieeLabs).</p>
+                            <p>Видео, в котором рассматриваются необходимые организационные шаги для создания End-to-End тестов: создание фикстур, реализация механизма загрузки фикстур на сервер, сборка проекта под соответствующее тестовое окружение (Илья Климов, JavaScript.Ninja/GitLab).</p>
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
