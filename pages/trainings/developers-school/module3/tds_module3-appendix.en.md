@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module3-appendix.html
 lang: en
 autotranslated: true
-hash: 358ca8260b8e9f2025af0ec8e52a3f42f663c49671ef7d7f72faa9082cba4004
+hash: 5b887221ea13c30b6d0958f81537da3e4987c1e228decf2ef500c8a94ee3107d
 ---
 
 ## Additional materials module
@@ -48,6 +48,51 @@ The basics of the JavaScript language</a>
 </div>
 <h4><span class="item-head">jQuery</span></h4>
 <p>Series of screencasts on the basics of using the jQuery library (School web development WebCademy).</p>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="panel-group">
+<div class="panel panel-default">
+<div class="panel-heading">
+<a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse1">&#9660;</a>
+<h4 class="panel-title">
+<a data-toggle="collapse" href="#collapse1">
+Additional materials</a>
+</h4>
+</div>
+<div id="collapse1" class="panel-collapse collapse in">
+<div class="panel-body">
+<div class="row items">
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'http://learn.javascript.ru/screencast/nodejs' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/nodejs-course.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">Course Node.js</span></h4>
+<p>Series of screencasts on developing applications in Node.js (Ilia Kantor, JavaScript.ru).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'http://learn.javascript.ru/screencast/webpack' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/dom-javascript.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">Course for Webpack</span></h4>
+<p>Series of screencasts about building JavaScript applications with Webpack (Ilya Kantor JavaScript.ru).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'http://learn.javascript.ru/screencast/gulp' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/gulp-course.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">Course for Gulp</span></h4>
+<p>Series of screencasts about building JavaScript applications with Gulp 4 (Ilya Kantor JavaScript.ru).</p>
 </a>
 </div>
 </div>

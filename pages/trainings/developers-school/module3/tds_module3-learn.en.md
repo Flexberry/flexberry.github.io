@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module3-learn.html
 lang: en
 autotranslated: true
-hash: 16d002e706ddaf2ba95f446c01e7f98690875702362023111e5a61bc56e49437
+hash: 1190c2ff53387c47911700e47ba0080fefeb0d0bdd77259ed88beccec530daf0
 ---
 
 ## The module
@@ -599,6 +599,17 @@ Architectural patterns (design patterns)</a>
 </div>
 <h4><span class="item-head">12. Pattern Strategy </span></h4>
 <p>a Lesson in which is seen a pattern Strategy and use it to define a family of similar algorithms that can be interchanged directly during program execution, and its implementation in a JavaScript application (Monster Lessons).</p>
+</a>
+</div>
+</div>
+<div class="row items">
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://refactoring.guru/ru' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/refactoring-and-design-patterns.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">13. Refactoring and architectural patterns</span></h4>
+<p>Resource devoted to the topics of refactoring, design patterns, SOLID principles and the relationships between them (Alexander Shvets, Refactoring.Guru).</p>
 </a>
 </div>
 </div>
