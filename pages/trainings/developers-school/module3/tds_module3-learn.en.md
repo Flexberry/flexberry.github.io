@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module3-learn.html
 lang: en
 autotranslated: true
-hash: 1190c2ff53387c47911700e47ba0080fefeb0d0bdd77259ed88beccec530daf0
+hash: f7d70339cf83e3edcbb9a2b56b2f2321e18b0f89a8fbeff7f78fe2d052eab7b9
 ---
 
 ## The module
@@ -14,13 +14,49 @@ hash: 1190c2ff53387c47911700e47ba0080fefeb0d0bdd77259ed88beccec530daf0
 <div class="panel-group">
 <div class="panel panel-default">
 <div class="panel-heading">
-<a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse1">&#9660;</a>
+<a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse0">&#9660;</a>
+<h4 class="panel-title">
+<a data-toggle="collapse" href="#collapse0">
+Key concepts of JavaScript and setting up the environment</a>
+</h4>
+</div>
+<div id="collapse0" class="panel-collapse collapse in">
+<div class="panel-body">
+<div class="row items">
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=IJQVLg4heLA' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/javascript-key-concepts.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">1. Key concepts of the JavaScript language</span></h4>
+<p>a Lesson in which understand three key concepts of the JavaScript language: the asynchronous, event-driven model, odnopotochnitsa (Ilya Klimov, JavaScript.Ninja Networks).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=RW5JjiFg2uw' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/development-environment-setup.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">2. Setting up the environment for a new project on JavaScript</span></h4>
+<p>the Video, which describes how to configure the environment for real projects in JavaScript (Node.js). As a development environment for the considered environment settings using Visual Studio Code. Reviewed settings are relevant for different types of projects in JavaScript (Ilya Klimov, JavaScript.Ninja Networks).</p>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="panel-group">
+<div class="panel panel-default">
+<div class="panel-heading">
+<a class="pull-right spoiler-push-collapsed" data-toggle="collapse" href="#collapse1" aria-expanded="false">&#9660;</a>
 <h4 class="panel-title">
 <a data-toggle="collapse" href="#collapse1">
 Single page application (SPA) architectural pattern MVC</a>
 </h4>
 </div>
-<div id="collapse1" class="panel-collapse collapse in">
+<div id="collapse1" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
 <div class="panel-body">
 <div class="row items">
 <div class="col-sm-6 col-md-4 portfolio-item">
@@ -162,6 +198,15 @@ The call context, scope, closures</a>
 <p>the Lesson, which discusses the concept and the mechanism of closures in JavaScript (Monster Lessons).</p>
 </a>
 </div>
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=QsWnRj_EXMg' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/closures-and-scopes.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">5. Circuit and scope</span></h4>
+<p>the Video, which discusses the relationship between closures, scopes, and data transmission by value and by reference in JavaScript (Ilya Klimov, JavaScript.Ninja Networks).</p>
+</a>
+</div>
 </div>
 </div>
 </div>
@@ -298,7 +343,7 @@ Modules and project structure, package managers</a>
 <img src="{{ "/images/pages/trainings/developers-school/module3/javascript-projects-structure.jpg" | relative_url}}" class="products-img">
 </div>
 <h4><span class="item-head">8. The file structure in a JavaScript project</span></h4>
-<p>this Lesson, which addresses two basic approaches to the organization of files in a JavaScript project: on the "file categories" and "fractal" (Ilya Klimov, JavaScript.Ninja/WookieeLabs).</p>
+<p>this Lesson, which addresses two basic approaches to the organization of files in a JavaScript project: on the "file categories" and "fractal" (Ilya Klimov, JavaScript.Ninja Networks).</p>
 </a>
 </div>
 </div>
@@ -467,6 +512,15 @@ Asynchronous programming</a>
 </div>
 <h4><span class="item-head">5. The design of the async/await</span></h4>
 <p>the Screencast, which considers the design of async/await in ES7 introduced to simplify working with JavaScript Promises (Vladilen Minin, Vladilen by JavaScript).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=7wtbNNiOh30' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/generators-and-iterators.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">6. Generators and iterators</span></h4>
+<p>the class devoted to the study of the mechanisms of operation of generators and iterators (Vladilen Minin, Vladilen by JavaScript).</p>
 </a>
 </div>
 </div>
@@ -714,12 +768,12 @@ Checking code style and automation</a>
 </a>
 </div>
 <div class="col-sm-6 col-md-4 portfolio-item">
-<a href="{{ 'https://www.youtube.com/watch?v=IpmiFPoDYVY' | relative_url }}" class="portfolio-link" target="_blank">
+<a href="{{ 'https://www.youtube.com/watch?v=3c1ZkiafbzY' | relative_url }}" class="portfolio-link" target="_blank">
 <div class="img-wrapper">
 <img src="{{ "/images/pages/trainings/developers-school/module3/vscode-linting.jpg" | relative_url}}" class="products-img">
 </div>
-<h4><span class="item-head">5. Configuring ESLint, Prettier and pre-commit hook in Visual Studio Code</span></h4>
-<p>the Webinar, which describes how to configure libraries for linting JavaScript code to work in Visual Studio Code (Maxim Palansky, maxpfrontend).</p>
+<h4><span class="item-head">5. Configuring ESLint and Prettier in Visual Studio Code</span></h4>
+<p>the Video, which describes how to set up the environment for JavaScript development and libraries for linting JavaScript code to work in Visual Studio Code (Ilya Klimov, JavaScript.Ninja Networks).</p>
 </a>
 </div>
 <div class="col-sm-6 col-md-4 portfolio-item">
@@ -728,7 +782,7 @@ Checking code style and automation</a>
 <img src="{{ "/images/pages/trainings/developers-school/module3/bad-code-projects-linting.jpg" | relative_url}}" class="products-img">
 </div>
 <h4><span class="item-head">6. Linting on projects with "bad" code</span></h4>
-<p> Video, which provides practical recommendations for the implementation of ESLint and Prettier on projects with unasledovannye "bad" code (code that is not tested, not verified by tools, etc) (Ilya Klimov, JavaScript.Ninja/WookieeLabs).</p>
+<p> Video, which provides practical recommendations for the implementation of ESLint and Prettier on projects with unasledovannye "bad" code (code that is not tested, not verified by tools, etc) (Ilya Klimov, JavaScript.Ninja Networks).</p>
 </a>
 </div>
 </div>
@@ -764,7 +818,7 @@ Application testing</a>
 <img src="{{ "/images/pages/trainings/developers-school/module3/testing-principles.jpg" | relative_url}}" class="products-img">
 </div>
 <h4><span class="item-head">2. Principles of automated testing web applications</span></h4>
-<p>the Video, which addresses issues such as cycle, Test Driven Design (TDD) and the pyramid of quality assurance applications (Ilya Klimov, JavaScript.Ninja/WookieeLabs).</p>
+<p>the Video, which addresses issues such as cycle, Test Driven Design (TDD) and the pyramid of quality assurance applications (Ilya Klimov, JavaScript.Ninja Networks).</p>
 </a>
 </div>
 <div class="col-sm-6 col-md-4 portfolio-item">
@@ -784,7 +838,7 @@ Application testing</a>
 <img src="{{ "/images/pages/trainings/developers-school/module3/di-ioc.jpg" | relative_url}}" class="products-img">
 </div>
 <h4><span class="item-head">4. Dependency injection and inversion of control</span></h4>
-<p>Series of screencasts devoted to the study of the concepts and the principles of DI & IoC in JavaScript applications (Ilya Klimov, JavaScript.Ninja/WookieeLabs).</p>
+<p>Series of screencasts devoted to the study of the concepts and the principles of DI & IoC in JavaScript applications (Ilya Klimov, JavaScript.Ninja Networks).</p>
 </a>
 </div>
 <div class="col-sm-6 col-md-4 portfolio-item">
@@ -802,7 +856,7 @@ Application testing</a>
 <img src="{{ "/images/pages/trainings/developers-school/module3/end-to-end-testing.jpg" | relative_url}}" class="products-img">
 </div>
 <h4><span class="item-head">6. Basics End-to-End testing</span></h4>
-<p>the Video, which discusses the advantages of using End-to-End testing from the business point of view, as well as the main architectural principles End-to-End testing (Ilya Klimov, JavaScript.Ninja/WookieeLabs).</p>
+<p>the Video, which discusses the advantages of using End-to-End testing from the business point of view, as well as the main architectural principles End-to-End testing (Ilya Klimov, JavaScript.Ninja Networks).</p>
 </a>
 </div>
 </div>
@@ -813,7 +867,7 @@ Application testing</a>
 <img src="{{ "/images/pages/trainings/developers-school/module3/end-to-end-appreaches.jpg" | relative_url}}" class="products-img">
 </div>
 <h4><span class="item-head">7. Approaches to automate End-to-End tests</span></h4>
-<p>the Video, which discusses two paradigms for the automation of End-to-End tests: injection of JavaScript to the page and use a separate command to the server. The article also discusses examples of tools that implement these approaches: Selenium, Cypress, TestCafe (Ilya Klimov, JavaScript.Ninja/WookieeLabs).</p>
+<p>the Video, which discusses two paradigms for the automation of End-to-End tests: injection of JavaScript to the page and use a separate command to the server. The article also discusses examples of tools that implement these approaches: Selenium, Cypress, TestCafe (Ilya Klimov, JavaScript.Ninja Networks).</p>
 </a>
 </div>
 <div class="col-sm-6 col-md-4 portfolio-item">
@@ -822,7 +876,7 @@ Application testing</a>
 <img src="{{ "/images/pages/trainings/developers-school/module3/end-to-end-mechanisms.jpg" | relative_url}}" class="products-img">
 </div>
 <h4><span class="item-head">8. Infrastructure and mechanisms for the organization of End-to-End testing</span></h4>
-<p>the Video, which addresses the necessary organizational steps to create End-to-End tests: creating fixtures, implementation of a mechanism for loading fixtures to the server, build the project under the appropriate test environment (Ilya Klimov, JavaScript.Ninja/WookieeLabs).</p>
+<p>the Video, which addresses the necessary organizational steps to create End-to-End tests: creating fixtures, implementation of a mechanism for loading fixtures to the server, build the project under the appropriate test environment (Ilya Klimov, JavaScript.Ninja Networks).</p>
 </a>
 </div>
 <div class="col-sm-6 col-md-4 portfolio-item">
