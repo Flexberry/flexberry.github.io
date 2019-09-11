@@ -129,3 +129,32 @@ lang: ru
    }
 ```
 Здесь есть возможность настройки операции и представления, по которым будет производиться аудит (По умолчанию аудит операции изменения объекта выключен).
+
+4. В приложении или бэкенде (для проекта на Ember) должны присутствовать пакеты Audit и Security.
+
+5. В конфиге приложения настройки и дата сервис для аудита. 
+
+```config
+<appSettings>
+   <add key="AuditEnabled" value="True" />
+   <add key="AppNameForAudit" value="То самое приложение" />
+   <add key="AuditConnectionStringName" value="AuditConnString_56254" />
+   <add key="WriteSessions" value="False" />
+   <add key="AuditWinServiceUrl" value="" />
+   <add key="DefaultDSType" value="ICSSoft.STORMNET.Business.MSSQLDataService, ICSSoft.STORMNET.Business.MSSQLDataService" />
+   <add key="DefaultWriteMode" value="Synchronous" />
+   <add key="IsAuditDatabaseLocal" value="True" />
+</appSettings>
+<unity xmlns="http://schemas.microsoft.com/practices/2010/unity">
+   <container>
+      <register name="dataServiceForAuditAgentManagerAdapter" type="ICSSoft.STORMNET.Business.IDataService, ICSSoft.STORMNET.Business" mapTo="ICSSoft.STORMNET.Business.MSSQLDataService, ICSSoft.STORMNET.Business.MSSQLDataService">
+        <constructor>
+          <param name="securityManager" type="ICSSoft.STORMNET.Security.ISecurityManager, ICSSoft.STORMNET.DataObject">
+            <dependency name="securityManagerWithoutRightsCheck" />
+          </param>
+        </constructor>
+        <property name="CustomizationStringName" dependencyType="System.String" value="DefConnStr" />
+      </register>
+   </container>
+</unity>
+```
