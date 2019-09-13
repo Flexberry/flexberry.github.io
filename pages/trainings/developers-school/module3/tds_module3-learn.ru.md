@@ -535,7 +535,7 @@ lang: ru
                 </div>
                 <div class="row items">
                     <div class="col-sm-6 col-md-4 portfolio-item">
-                        <a href="{{ 'https://www.youtube.com/watch?v=SI-pcE-6f3M' | relative_url }}" class="portfolio-link" target="_blank">
+                        <a href="{{ 'https://www.youtube.com/watch?v=Wgzq6use59A' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/javascript-promises-example.jpg" | relative_url}}" class="products-img">
                             </div>
