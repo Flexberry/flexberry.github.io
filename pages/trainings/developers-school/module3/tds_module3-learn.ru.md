@@ -466,12 +466,21 @@ lang: ru
             <div class="panel-body">
                 <div class="row items">
                     <div class="col-sm-6 col-md-4 portfolio-item">
-                        <a href="{{ 'https://www.youtube.com/watch?v=vIZs5tH-HGQ' | relative_url }}" class="portfolio-link" target="_blank">
+                        <a href="{{ 'https://www.youtube.com/watch?v=8cV4ZvHXQL4' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
-                                <img src="{{ "/images/pages/trainings/developers-school/module3/event-loop.jpg" | relative_url}}" class="products-img">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/event-loop-model.jpg" | relative_url}}" class="products-img">
                             </div>
-                            <h4><span class="item-head">1. Event Loop</span></h4>
-                            <p>Скринкаст, в котором рассматривается модель событийного цикла: затрагиваются такие понятия, как стек вызовов, очередь и цикл событий, а также рассматривается, как в камках событийного цикла работают функция setTimeout и браузерные события (Владилен Минин, JavaScript by Vladilen).</p>
+                            <h4><span class="item-head">1. Модель Event Loop</span></h4>
+                            <p>Доклад конференции JSConf EU 2014, в котором рассматривается модель событийного цикла: затрагиваются такие понятия, как стек вызовов, очередь и цикл событий, а также рассматривается, как в камках событийного цикла работают функция setTimeout и браузерные события (Филипп Робертс, &yet).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=j4_9BZezSUA' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/diving-into-event-loop.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">2. Погружение в Event Loop</span></h4>
+                            <p>Доклад конференции JSConf.Asia 2018, в котором ракрывается внутреннее устройство событийного цикла: очереди задач, цикл рендеринга (Request Animation Frame, Style Calculation, Layout, Paint), микротаски (Джейк Арчибальд, Google).</p>
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
@@ -479,27 +488,27 @@ lang: ru
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/web-workers.jpg" | relative_url}}" class="products-img">
                             </div>
-                            <h4><span class="item-head">2. Web Workers</span></h4>
+                            <h4><span class="item-head">3. Web Workers</span></h4>
                             <p>Доклад конференции JavaScript fwdays'18, посвященный Web Workers - специальный API HTML5, позволяющий создавать многопоточные приложения на JavaScript (Сергей Мелашич, Agilie).</p>
-                        </a>
-                    </div>
-                    <div class="col-sm-6 col-md-4 portfolio-item">
-                        <a href="{{ 'https://www.youtube.com/watch?v=Rs-yvEKIRiQ' | relative_url }}" class="portfolio-link" target="_blank">
-                            <div class="img-wrapper">
-                                <img src="{{ "/images/pages/trainings/developers-school/module3/callbacks.jpg" | relative_url}}" class="products-img">
-                            </div>
-                            <h4><span class="item-head">3. Callback-функции</span></h4>
-                            <p>Скринкаст, в котором рассматривается назначение и способ использования callback-функций в JavaScript, а также понятие Callback Hell и способы решения этой проблемы (Евгений Калюжный, JSExpert).</p>
                         </a>
                     </div>
                 </div>
                 <div class="row items">
                     <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=Rs-yvEKIRiQ' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/callbacks.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">4. Callback-функции</span></h4>
+                            <p>Скринкаст, в котором рассматривается назначение и способ использования callback-функций в JavaScript, а также понятие Callback Hell и способы решения этой проблемы (Евгений Калюжный, JSExpert).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
                         <a href="{{ 'https://www.youtube.com/watch?v=1idOY3C1gYU' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/javascript-promises.jpg" | relative_url}}" class="products-img">
                             </div>
-                            <h4><span class="item-head">4. JavaScript Promises</span></h4>
+                            <h4><span class="item-head">5. JavaScript Promises</span></h4>
                             <p>Скринкаст, в котором рассматривается назначение и способ использования объекта объекта Promise, который появился в спецификации ES6 (Владилен Минин, JavaScript by Vladilen).</p>
                         </a>
                     </div>
@@ -508,16 +517,18 @@ lang: ru
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/async-await.jpg" | relative_url}}" class="products-img">
                             </div>
-                            <h4><span class="item-head">5. Конструкция async/await</span></h4>
+                            <h4><span class="item-head">6. Конструкция async/await</span></h4>
                             <p>Скринкаст, в котором рассматривается конструкция async/await, появившаяся в ES7 для упрощения работы с JavaScript Promises (Владилен Минин, JavaScript by Vladilen).</p>
                         </a>
                     </div>
+                </div>
+                <div class="row items">
                     <div class="col-sm-6 col-md-4 portfolio-item">
                         <a href="{{ 'https://www.youtube.com/watch?v=7wtbNNiOh30' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/generators-and-iterators.jpg" | relative_url}}" class="products-img">
                             </div>
-                            <h4><span class="item-head">6. Генераторы и итераторы</span></h4>
+                            <h4><span class="item-head">7. Генераторы и итераторы</span></h4>
                             <p>Занятие, посвященное изучению механизмов работы генераторов и итераторов (Владилен Минин, JavaScript by Vladilen).</p>
                         </a>
                     </div>
