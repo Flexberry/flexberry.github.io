@@ -251,6 +251,17 @@ lang: ru
                         </a>
                     </div>
                 </div>
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=QBv4EbpA1LA' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/crossdomain-requests.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">4. Кроссдоменные запросы</span></h4>
+                            <p>Урок, в котором рассматриваются принципы создания и выполнения кроссдоменных запросов, а также такие механизмы как CORS, SDOP и другие (Илья Климов, JavaScript.Ninja/GitLab).</p>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -504,12 +515,32 @@ lang: ru
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=SI-pcE-6f3M' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/callback-examples.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">5. Callback-функции на практическом примере</span></h4>
+                            <p>Скринкаст, в котором рассматривается практический пример использования Callback-функций (Илья Климов, JavaScript.Ninja/GitLab).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
                         <a href="{{ 'https://www.youtube.com/watch?v=1idOY3C1gYU' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/javascript-promises.jpg" | relative_url}}" class="products-img">
                             </div>
-                            <h4><span class="item-head">5. JavaScript Promises</span></h4>
+                            <h4><span class="item-head">6. JavaScript Promises</span></h4>
                             <p>Скринкаст, в котором рассматривается назначение и способ использования объекта объекта Promise, который появился в спецификации ES6 (Владилен Минин, JavaScript by Vladilen).</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=SI-pcE-6f3M' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/javascript-promises-example.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">7. JavaScript Promises на практическом примере</span></h4>
+                            <p>Скринкаст, в котором рассматривается практический пример использования JavaScript Promises (Илья Климов, JavaScript.Ninja/GitLab).</p>
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
@@ -517,18 +548,16 @@ lang: ru
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/async-await.jpg" | relative_url}}" class="products-img">
                             </div>
-                            <h4><span class="item-head">6. Конструкция async/await</span></h4>
+                            <h4><span class="item-head">8. Конструкция async/await</span></h4>
                             <p>Скринкаст, в котором рассматривается конструкция async/await, появившаяся в ES7 для упрощения работы с JavaScript Promises (Владилен Минин, JavaScript by Vladilen).</p>
                         </a>
                     </div>
-                </div>
-                <div class="row items">
                     <div class="col-sm-6 col-md-4 portfolio-item">
                         <a href="{{ 'https://www.youtube.com/watch?v=7wtbNNiOh30' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/generators-and-iterators.jpg" | relative_url}}" class="products-img">
                             </div>
-                            <h4><span class="item-head">7. Генераторы и итераторы</span></h4>
+                            <h4><span class="item-head">9. Генераторы и итераторы</span></h4>
                             <p>Занятие, посвященное изучению механизмов работы генераторов и итераторов (Владилен Минин, JavaScript by Vladilen).</p>
                         </a>
                     </div>
