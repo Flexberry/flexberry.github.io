@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module3-learn.html
 lang: en
 autotranslated: true
-hash: f7d70339cf83e3edcbb9a2b56b2f2321e18b0f89a8fbeff7f78fe2d052eab7b9
+hash: 0f805d22e88f1ca6c4d5d3d74298b3e5168038a461bd490f3b9f3fb0633af3cd
 ---
 
 ## The module
@@ -253,6 +253,17 @@ Interaction with the server</a>
 </a>
 </div>
 </div>
+<div class="row items">
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=QBv4EbpA1LA' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/crossdomain-requests.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">4. Crossdomain requests</span></h4>
+<p>a Lesson in which the principles of creating and executing crossdomain queries, as well as mechanisms such as CORS, SDOP and others (Ilya Klimov, JavaScript.Ninja Networks).</p>
+</a>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -468,12 +479,21 @@ Asynchronous programming</a>
 <div class="panel-body">
 <div class="row items">
 <div class="col-sm-6 col-md-4 portfolio-item">
-<a href="{{ 'https://www.youtube.com/watch?v=vIZs5tH-HGQ' | relative_url }}" class="portfolio-link" target="_blank">
+<a href="{{ 'https://www.youtube.com/watch?v=8cV4ZvHXQL4' | relative_url }}" class="portfolio-link" target="_blank">
 <div class="img-wrapper">
-<img src="{{ "/images/pages/trainings/developers-school/module3/event-loop.jpg" | relative_url}}" class="products-img">
+<img src="{{ "/images/pages/trainings/developers-school/module3/event-loop-model.jpg" | relative_url}}" class="products-img">
 </div>
-<h4><span class="item-head">1. Event Loop</span></h4>
-<p>the Screencast that covers how to model event cycle: addresses concepts such as the call stack, the queue and the event loop and explains how to use Camco event cycle work the setTimeout function and browser events (Vladilen Minin, Vladilen by JavaScript).</p>
+<h4><span class="item-head">1. Model Event Loop</span></h4>
+<p>the report of the conference JSConf EU 2014, which is considered the model of an event cycle: addresses concepts such as the call stack, the queue and the event loop and explains how to use Camco event cycle work the setTimeout function and browser events (Philip Roberts, &yet).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=j4_9BZezSUA' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/diving-into-event-loop.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">2. Dive into Event Loop</span></h4>
+<p>the report of the conference JSConf.Asia 2018, which rakryvaetsya the internal structure of event loop: queue the render loop (Request Animation Frame, Style Calculation, Layout, Paint), microtask (Jake Archibald, Google).</p>
 </a>
 </div>
 <div class="col-sm-6 col-md-4 portfolio-item">
@@ -481,28 +501,48 @@ Asynchronous programming</a>
 <div class="img-wrapper">
 <img src="{{ "/images/pages/trainings/developers-school/module3/web-workers.jpg" | relative_url}}" class="products-img">
 </div>
-<h4><span class="item-head">2. Web Workers</span></h4>
+<h4><span class="item-head">3. Web Workers</span></h4>
 <p>the report of the conference fwdays JavaScript'18 dedicated Web Workers - HTML5 special API that allows you to create multithreaded applications with JavaScript (Sergey Melashich, Agilie).</p>
-</a>
-</div>
-<div class="col-sm-6 col-md-4 portfolio-item">
-<a href="{{ 'https://www.youtube.com/watch?v=Rs-yvEKIRiQ' | relative_url }}" class="portfolio-link" target="_blank">
-<div class="img-wrapper">
-<img src="{{ "/images/pages/trainings/developers-school/module3/callbacks.jpg" | relative_url}}" class="products-img">
-</div>
-<h4><span class="item-head">3. The Callback function</span></h4>
-<p>the Screencast, which addresses the purpose and method of using callback functions in JavaScript, and the concept of Callback Hell and ways to solve this problem (Eugene Kalyuzhny, JSExpert).</p>
 </a>
 </div>
 </div>
 <div class="row items">
 <div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=Rs-yvEKIRiQ' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/callbacks.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">4. The Callback function</span></h4>
+<p>the Screencast, which addresses the purpose and method of using callback functions in JavaScript, and the concept of Callback Hell and ways to solve this problem (Eugene Kalyuzhny, JSExpert).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=SI-pcE-6f3M' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/callback-examples.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">5. Callback function on a practical example</span></h4>
+<p>Screencast which describes a practical example of using Callback functions (Ilya Klimov, JavaScript.Ninja Networks).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
 <a href="{{ 'https://www.youtube.com/watch?v=1idOY3C1gYU' | relative_url }}" class="portfolio-link" target="_blank">
 <div class="img-wrapper">
 <img src="{{ "/images/pages/trainings/developers-school/module3/javascript-promises.jpg" | relative_url}}" class="products-img">
 </div>
-<h4><span class="item-head">4. JavaScript Promises</span></h4>
+<h4><span class="item-head">6. JavaScript Promises</span></h4>
 <p>the Screencast, which addresses the purpose and method of use of the Promise object, which appeared in the specification, ES6 (Vladilen Minin, Vladilen by JavaScript).</p>
+</a>
+</div>
+</div>
+<div class="row items">
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=Wgzq6use59A' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/javascript-promises-example.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">7. JavaScript Promises in a practical example</span></h4>
+<p>Screencast which describes a practical example of using JavaScript Promises (Ilya Klimov, JavaScript.Ninja Networks).</p>
 </a>
 </div>
 <div class="col-sm-6 col-md-4 portfolio-item">
@@ -510,7 +550,7 @@ Asynchronous programming</a>
 <div class="img-wrapper">
 <img src="{{ "/images/pages/trainings/developers-school/module3/async-await.jpg" | relative_url}}" class="products-img">
 </div>
-<h4><span class="item-head">5. The design of the async/await</span></h4>
+<h4><span class="item-head">8. The design of the async/await</span></h4>
 <p>the Screencast, which considers the design of async/await in ES7 introduced to simplify working with JavaScript Promises (Vladilen Minin, Vladilen by JavaScript).</p>
 </a>
 </div>
@@ -519,7 +559,7 @@ Asynchronous programming</a>
 <div class="img-wrapper">
 <img src="{{ "/images/pages/trainings/developers-school/module3/generators-and-iterators.jpg" | relative_url}}" class="products-img">
 </div>
-<h4><span class="item-head">6. Generators and iterators</span></h4>
+<h4><span class="item-head">9. Generators and iterators</span></h4>
 <p>the class devoted to the study of the mechanisms of operation of generators and iterators (Vladilen Minin, Vladilen by JavaScript).</p>
 </a>
 </div>
