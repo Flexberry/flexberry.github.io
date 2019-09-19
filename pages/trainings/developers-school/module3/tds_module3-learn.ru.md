@@ -459,6 +459,17 @@ lang: ru
                         </a>
                     </div>
                 </div>
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=nEabP9CYCAQ' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/arrays-es6.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">10. Работа с массивами</span></h4>
+                            <p>Скринкаст, в котором рассматриваются возможности ES6 для работы с массивами (Владилен Минин, JavaScript by Vladilen).</p>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -1046,5 +1057,5 @@ lang: ru
 
 ## Вы можете
 
-* [Перейти к дополнительным учебным материалам модуля](tds_module3-appendix.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
-* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Перейти на страницу с описанием модуля](tds_module3-about.html)
+- [Перейти к дополнительным учебным материалам модуля](tds_module3-appendix.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+- <i class="fa fa-arrow-left" aria-hidden="true"></i> [Перейти на страницу с описанием модуля](tds_module3-about.html)
