@@ -32,108 +32,100 @@ summary: Это главная страница гайдлайнов Flexberry. 
 
 Все стандартные компоненты элементы системы должны быть описаны: теоретическое описание, практические применение и лучшие примеры реализации.
 
-> **[FIX BEFORE RELEASE]** Порядок в таблице совсем запутался и нужно его поправить
-
-*В данный момент содержание повторяет структуру таблицы в Google Docs.*
-
 ## Основы
 
-1.1 [Эвристики](uiuxg_heuristics.ru.md)
+[Эвристики](uiuxg_heuristics.ru.md)
 
-1.2 [Выбор цветовой схемы](uiuxg_color_selection.ru.md)
+[Выбор цветовой схемы](uiuxg_color_selection.ru.md)
 
-1.3 [Правила иконографии -404-](../../../404.md)
+[Правила иконографии](../../../404.md) (в разработке)
 
-1.3.1 [Правила использования шрифта Gost UI](uiuxg_fonts_usage.ru.md)
+[Правила использования шрифта Gost UI](uiuxg_fonts_usage.ru.md)
 
-1.4 [Расположение информации на странице **-FIX ME-**](uiuxg_information_composition.ru.md)
+[Расположение информации на странице](uiuxg_information_composition.ru.md) (в разработке)
 
-1.4.1 [Расположение стандартных блоков](uiuxg_elements_location.ru.md)
+[Расположение стандартных блоков](uiuxg_elements_location.ru.md)
 
-1.4.2 [Расположение и заполнение полей](uiuxg_fields_location_and_fill.ru.md)
+[Расположение и заполнение полей](uiuxg_fields_location_and_fill.ru.md)
 
-1.4.3 [Диалоги с системой](uiuxg_dialog_with_a_system.ru.md)
+[Диалоги с системой](uiuxg_dialog_with_a_system.ru.md)
 
-1.5 [Служебные разделы -Архивная статья-](uiuxg_admin_sections.ru.md)
-
-1.6 [Инструменты проектирования](uiuxg_prototyping_tools.ru.md)
+[Инструменты проектирования](uiuxg_prototyping_tools.ru.md)
 
 ## Лучшие примеры с рекомендациями
 
-2.1 [Рабочий стол](uiuxg_main_page_manual.ru.md)
+[Рабочий стол](uiuxg_main_page_manual.ru.md)
 
-2.2 [Меню навигации](uiuxg_sitemap.ru.md)
+[Меню навигации](uiuxg_sitemap.ru.md)
 
-2.3 [Личный кабинет](uiuxg_lk.ru.md)
+[Личный кабинет](uiuxg_lk.ru.md)
 
-2.4 [Поисковые панели](uiuxg_search.ru.md)
+[Поисковые панели](uiuxg_search.ru.md)
 
-2.5 [Списковые формы -404-](../../../404.md)
+[Списковые формы](../../../404.md) (в разработке)
 
-2.5.1 [Операции на списках (не технологические) -404-](../../../404.md)
+[Не технологические операции на списках](../../../404.md) (в разработке)
 
-2.5.2 [Выборка -404-](../../../404.md)
+[Выборка](../../../404.md) (в разработке)
 
-2.6 [Формы редактирования -404-](../../../404.md)
+[Формы редактирования](../../../404.md) (в разработке)
 
-2.7 [Формы отчетности -404-](../../../404.md)
+[Формы отчетности](../../../404.md) (в разработке)
 
-2.8 [Формы со справочными материалами](uiuxg_help_forms.ru.md)
+[Формы со справочными материалами](uiuxg_help_forms.ru.md)
 
-2.9 [Формы обратной связи](uiuxg_feedback_form.ru.md)
+[Формы обратной связи](uiuxg_feedback_form.ru.md)
 
-2.10 [Высоконагруженные формы](uiuxg_complex_forms.ru.md)
+[Высоконагруженные формы](uiuxg_complex_forms.ru.md)
 
-2.11 [Формы ошибок](uiuxg_error_forms.ru.md)
+[Формы ошибок](uiuxg_error_forms.ru.md)
 
-2.12 [Тема для слабовидящих -404-](../../../404.md)
+[Тема для слабовидящих](../../../404.md) (в разработке)
 
-2.13 [Главная страница (рекурсия)](uiuxg_main_page_manual.ru.md)
+[Формы справочников](../../../404.md) (в разработке)
 
-2.12 [Формы справочников -404-](../../../404.md)
-
-2.15 [Полезные ссылки](uiuxg_useful_links.ru.md)
+[Полезные ссылки](uiuxg_useful_links.ru.md)
 
 ## Компоненты
 
-3.1 [Поля ввода данных](uiuxg_input_fields.ru.md)
+[Поля ввода данных](uiuxg_input_fields.ru.md)
 
-3.2 [Расположение элементов на десктопе](uiuxg_desktop_layout.ru.md)
+[Расположение элементов на десктопе](uiuxg_desktop_layout.ru.md)
 
-3.3 [Расположение элементов на мобильных устройствах](uiuxg_mobile_layout.ru.md)
+[Расположение элементов на мобильных устройствах](uiuxg_mobile_layout.ru.md)
 
-3.4 [Лайтбокс](uiuxg_lightbox.ru.md)
+[Лайтбокс](uiuxg_lightbox.ru.md)
 
-3.5 [Сайдпейдж](uiuxg_sidepage.ru.md)
+[Сайдпейдж](uiuxg_sidepage.ru.md)
 
-3.6 [Шапка](uiuxg_header.ru.md)
+[Шапка](uiuxg_header.ru.md)
 
-3.7 [Главное меню](uiuxg_main_menu.ru.md)
+[Главное меню](uiuxg_main_menu.ru.md)
 
-3.8 [Информеры](uiuxg_informers.ru.md)
+[Информеры](uiuxg_informers.ru.md)
 
-3.9 [Наборы цветов](uiuxg_color_palettes.ru.md)
+[Наборы цветов](uiuxg_color_palettes.ru.md)
 
-3.10 [Шрифты](uiuxg_fonts.ru.md)
+[Шрифты](uiuxg_fonts.ru.md)
 
-3.11 [Наборы иконок -404-](../../../404.md)
+[Наборы иконок](../../../404.md) (в разработке)
 
-3.12 [Главная страница](uiuxg_main_page.ru.md)
+[Главная страница](uiuxg_main_page.ru.md)
 
-3.13 [Списковая форма](uiuxg_list_form.ru.md)
+[Списковая форма](uiuxg_list_form.ru.md)
 
-3.14 [Кнопки](uiuxg_buttons.ru.md)
+[Кнопки](uiuxg_buttons.ru.md)
 
-3.15 [Flexberry menu](uiuxg_flexberry_menu.ru.md)
+[Flexberry menu](uiuxg_flexberry_menu.ru.md)
 
-3.16 [Групповое редактирование](uiuxg_group_edit.ru.md)
+[Групповое редактирование](uiuxg_group_edit.ru.md)
 
-3.17 [Переключатели](uiuxg_switcher.ru.md)
+[Переключатели](uiuxg_switcher.ru.md)
 
 ## Ресурсы
 
-[Файлы](uiuxg_files.ru.md)
+[Файлы](uiuxg_files.ru.md) (в разработке)
 
-[Прототипы в Figma -404-](../../../404.md)
+[Прототипы в Figma -404-](../../../404.md) (в разработке)
 
-[Полезные ссылки -404-](../../../404.md)
+[Полезные ссылки -404-](../../../404.md) (в разработке)

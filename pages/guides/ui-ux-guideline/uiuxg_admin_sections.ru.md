@@ -1,5 +1,5 @@
 ---
-title: Служебные разделы
+title: [Архив] Служебные разделы
 keywords: UI, UX
 sidebar: ui-ux-guideline_sidebar
 toc: false
