@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module3-learn.html
 lang: en
 autotranslated: true
-hash: 0f805d22e88f1ca6c4d5d3d74298b3e5168038a461bd490f3b9f3fb0633af3cd
+hash: c76f3c6a617883a62ca7b820f8876648363f83e394f0bf7c6afb6df73ff1e431
 ---
 
 ## The module
@@ -461,6 +461,17 @@ Opportunities ECMAScript 2015 (ES6)</a>
 </a>
 </div>
 </div>
+<div class="row items">
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=nEabP9CYCAQ' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/arrays-es6.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">10. Working with arrays</span></h4>
+<p>the Screencast that addresses opportunities ES6 to work with arrays (Vladilen Minin, Vladilen by JavaScript).</p>
+</a>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -557,7 +568,7 @@ Asynchronous programming</a>
 <div class="col-sm-6 col-md-4 portfolio-item">
 <a href="{{ 'https://www.youtube.com/watch?v=7wtbNNiOh30' | relative_url }}" class="portfolio-link" target="_blank">
 <div class="img-wrapper">
-<img src="{{ "/images/pages/trainings/developers-school/module3/generators-and-iterators.jpg" | relative_url}}" class="products-img">
+<img src="{{ "/images/pages/trainings/developers-school/module3/generators and iterators.jpg" | relative_url}}" class="products-img">
 </div>
 <h4><span class="item-head">9. Generators and iterators</span></h4>
 <p>the class devoted to the study of the mechanisms of operation of generators and iterators (Vladilen Minin, Vladilen by JavaScript).</p>
@@ -1048,8 +1059,8 @@ The creation of autodocumentary</a>
 
 ## You can
 
-* [Go to optional training materials module](tds_module3-appendix.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
-* <i class="fa fa-arrow-left" aria-hidden="true"></i> [go to the page with the description of the module](tds_module3-about.html)
+- [Go to optional training materials module](tds_module3-appendix.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+- <i class="fa fa-arrow-left" aria-hidden="true"></i> [go to the page with the description of the module](tds_module3-about.html)
 
 
 
