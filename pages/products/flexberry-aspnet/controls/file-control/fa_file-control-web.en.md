@@ -1,60 +1,60 @@
---- 
-title: FileControl for Flexberry ASP.NET 
-sidebar: flexberry-aspnet_sidebar 
-keywords: Flexberry ASP NET, JavaScript API, Web UI (Controls) 
-toc: true 
-permalink: en/fa_file-control-web.html 
-lang: en 
-autotranslated: true 
-hash: 1f1901fd2cee393e31ff4e9b3061bdf35204fac560005dde48296a03126a80e0 
---- 
+---
+title: FileControl for Flexberry ASP.NET
+sidebar: flexberry-aspnet_sidebar
+keywords: Flexberry ASP NET, JavaScript API, Web UI (Controls)
+toc: true
+permalink: en/fa_file-control-web.html
+lang: en
+autotranslated: true
+hash: 5461f27526a37e451066fc7d3eb696978dee715f345dbbb888f8d3880f77593f
+---
 
-This control for working with data type `ICSSoft.STORMNET.FileType.File` in the web application. Files are saved in the database as the serialized 
-line, so this control is designed to work with small files. 
+This control for working with data type `ICSSoft.STORMNET.FileType.File` in the web application. Files are saved in the database as the serialized
+line, so this control is designed to work with small files.
 
-In the browser the user is able to select a file from your file system and save it in the database in the corresponding field of the data object to which the set binding. 
+In the browser the user is able to select a file from your file system and save it in the database in the corresponding field of the data object to which the set binding.
 
-The control looks as follows: 
-![](/images/pages/products/flexberry-aspnet/aspnet/file-control.png) 
+The control looks as follows:
+![](/images/pages/products/flexberry-aspnet/aspnet/file-control.png)
 
-First, you specify the name of the current saved or selected file.Next come the buttons: 
+First, you specify the name of the current saved or selected file.Next come the buttons:
 
-* Choose file - open dialog for file selection 
-* Download file - download the current saved file from database 
-* Reset file to reset saved or just the selected file. 
+* Choose file - open dialog for file selection
+* Download file - download the current saved file from database
+* Reset file to reset saved or just the selected file.
 
-PstrfСкачать файл` button is dimmed if the file is missing from the database (i.e. the corresponding field of the data object is null). 
+PstrfСкачать файл` button is dimmed if the file is missing from the database (i.e. the corresponding field of the data object is null).
 
-{% include important.html content="When you select new file or click on `Сбросить файл` button `Скачать файл` to download the old file (from DB) until then, until you save the object data (the edit form)." %} 
+{% include important.html content="When you select new file or click on `Сбросить файл` button `Скачать файл` to download the old file (from DB) until then, until you save the object data (the edit form)." %}
 
-{% include note.html content="click on any of the three buttons does not produce any changes in the database, the changes will happen only when you save the editing form." %} 
+{% include note.html content="click on any of the three buttons does not produce any changes in the database, the changes will happen only when you save the editing form." %}
 
-Button `Сбросить файл` resets the current selection, then the component will display "(no file)". When you save the form edit the old file in the database will be deleted, and in its place is written the value `null`. 
+Button `Сбросить файл` resets the current selection, then the component will display "(no file)". When you save the form edit the old file in the database will be deleted, and in its place is written the value `null`.
 
-The component is supported in [AjaxGroupEdit](fa_ajax-group-edit.html). 
+The component is supported in [AjaxGroupEdit](fa_ajax-group-edit.html).
 
-## a Limit on file upload size 
+## The limit on file upload size
 
-The default limit is taken from [maxRequestLength](https://msdn.microsoft.com/en-us/library/e1f13641(v=vs.100).aspx) in the application configuration file (web.config). The value of this attribute `по default - 4 МБ` if it is not present in the configuration file. 
-This limitation can be overridden in the property `FileControl.MaxValueSize`. The new value cannot be less than 1 and more `maxRequestLength`, otherwise an exception will occur. 
+The default limit is taken from options [maxRequestLength](https://msdn.microsoft.com/en-us/library/e1f13641(v=vs.100).aspx) in the application configuration file (web.config). The value of this attribute `по default - 4 МБ` if it is not present in the configuration file.
+This limitation can be overridden in the property `FileControl.MaxValueSize`. The new value cannot be less than 1 and more `maxRequestLength`, otherwise an exception will occur.
 
-If the user selects a file that exceeds the specified limit, he will receive a message about exceeding the allowable file size, then the selected file will be reset: 
+If the user selects a file that exceeds the specified limit, he will receive a message about exceeding the allowable file size, then the selected file will be reset:
 
-![](/images/pages/products/flexberry-aspnet/aspnet/file-control-max-file-size.png). 
+![](/images/pages/products/flexberry-aspnet/aspnet/file-control-max-file-size.png).
 
-{% include note.html content="a limit on the request size can be set by the IIS features, which may differ from the attribute `maxRequestLength`. This situation is not controlled component `FileControl`." %} 
+{% include note.html content="a limit on the request size can be set by the IIS features, which may differ from the attribute `maxRequestLength`. This situation is not controlled component `FileControl`." %}
 
-## Connection FileControl (Web) app 
+## Connection FileControl (Web) to the application
 
-In order to `FileControl` appeared on the edit form, need to add it to `aspx-разметку`. 
+In order to `FileControl` appeared on the edit form, need to add it to `aspx-разметку`.
 
 ```html
 <ac:FileControl ID="ctrlFile" runat="server"/>
-``` 
+```
 
-Control is in the Assembly `ICSSoft.STORMNET.Web.AjaxControls.dll`. 
+Control is in the Assembly `ICSSoft.STORMNET.Web.AjaxControls.dll`.
 
-To add to the controls that are generated dynamically (e.g., [AjaxGroupEdit](fa_ajax-group-edit.html)) you need to register in [WebControlProvider](fa_web-control-provider.html) the following lines: 
+To add to the controls that are generated dynamically (e.g., [AjaxGroupEdit](fa_ajax-group-edit.html)) you need to register in [WebControlProvider](fa_web-control-provider.html) the following lines:
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -66,9 +66,9 @@ To add to the controls that are generated dynamically (e.g., [AjaxGroupEdit](fa_
   </propertytype>
 <!-- ... -->
 </root>
-``` 
+```
 
-You also need to `web.config` to add the following lines: 
+You also need to `web.config` to add the following lines:
 
 ```xml
 <configuration>
@@ -92,23 +92,23 @@ You also need to `web.config` to add the following lines:
     <!-- ... -->
   </system.webServer>
 </configuration>
-``` 
+```
 
-For the generated "clean" projects these settings are created automatically. 
+For the generated "clean" projects these settings are created automatically.
 
-## FileControl in WOLV 
+## FileControl in WOLV
 
-The control can be placed in the column cells WOLV in ReadOnly mode (only download file). 
+The control can be placed in the column cells WOLV in ReadOnly mode (only download file).
 
-You need to specify what to display the type of File you need to use FileControl: 
+You need to specify what to display the type of File you need to use FileControl:
 
 ```xml
 <customproperty class="BugReport" property="Attachment">
     <control typename="ICSSoft.STORMNET.Web.AjaxControls.FileControl, ICSSoft.STORMNET.Web.AjaxControls" property="Value" codefile=""/>
   </customproperty>
-``` 
+```
 
-In `WOLVSettApplyer.cs` you must subscribe to the event `WebControlProvider.TuneControlDelegateMethod` to configure the property `FileControl.ReadOnly = true` for all controls FileControl, located in WOLV: 
+In `WOLVSettApplyer.cs` you must subscribe to the event `WebControlProvider.TuneControlDelegateMethod` to configure the property `FileControl.ReadOnly = true` for all controls FileControl, located in WOLV:
 
 ```csharp
 wolv.WebControlProvider.TuneControlDelegateMethod += TuneControlDelegateMethod;
@@ -128,11 +128,11 @@ private void TuneControlDelegateMethod(Control control, CreatedControlData creat
         fileControl.EmptyFileNameText = string.Empty;
     }
 }
-``` 
+```
 
-## Using FileControl on the edit forms 
+## Using FileControl on the edit forms
 
-Using FileControl on the edit forms described in the corresponding [article](fa_file-control-description.html). 
+Using FileControl on the edit forms described in the corresponding [article](fa_file-control-description.html).
 
 
 

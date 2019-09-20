@@ -38,6 +38,5 @@ IQueryable<Кредит> limit = ds.Query<Кредит>(Кредит.Views.C__К
 а при переводе в lcs:
 
 ``` csharp
-Function lf = ldef.GetFunction(
-                ldef.funcIsNull, new VariableDef(ldef.StringType, "СуммаКредита"));
+Function lf = FunctionBuilder.BuildIsNull<Кредит>(x => x.СуммаКредита);
 ```

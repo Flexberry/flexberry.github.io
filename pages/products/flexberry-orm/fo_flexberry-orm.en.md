@@ -21,8 +21,8 @@ permalink: en/fo_flexberry-orm.html
 * [Components for filtering the received data (constraints).](fo_limitation.html)
 * [Pessimistic locking components, providing the ability to lock the data objects during the execution of operations over them.](fo_lock-service.html)
 * [Business server](fo_business-logic.html).
-* [Task monitor](fo_business-task-monitor.html)
-* [Expander Flexberry Designer to generate code for uml models.](fo_orm-case-plugin.html)
+* The [task monitor](fo_business-task-monitor.html)
+* [Expansion module Flexberry Designer to generate code for uml models.](fo_orm-case-plugin.html)
 * [Auxiliary tools ICSSoft.STORMNET.Tools.](fo_ics-soft-stormnet-tools.html)
 
 ## Description of product

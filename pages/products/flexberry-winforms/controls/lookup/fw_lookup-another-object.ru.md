@@ -143,10 +143,8 @@ public override void OnEdit(string propertyname, ICSSoft.STORMNET.DataObject dat
             if (dataobject is ДежурнаяГруппаСмены && propertyname == "ДежурныеГруппыСмены.НомерГруппы")
             {
                 if (((ДежурнаяГруппаСмены)dataobject).ТипДежурнойГруппы != null)
-                {
-                    SQLWhereLanguageDef langdef = new SQLWhereLanguageDef();
-                    tag = langdef.GetFunction(langdef.funcEQ,
-                            new VariableDef(langdef.GuidType, "ТипДежурнойГруппы"), ((ДежурнаяГруппаСмены)dataobject).ТипДежурнойГруппы.__PrimaryKey);
+                {                    
+                    tag = FunctionBuilder.BuildEquals("ТипДежурнойГруппы", ((ДежурнаяГруппаСмены)dataobject).ТипДежурнойГруппы);
                 }
                 dataobject = new ЧленДежурнойГруппы();
                 propertyname = "ДежураяГруппа";

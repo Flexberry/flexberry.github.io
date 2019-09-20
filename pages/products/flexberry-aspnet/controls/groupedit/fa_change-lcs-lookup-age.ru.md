@@ -31,11 +31,7 @@ public static string CreateLf(string territoryKey, string lfKey)
         lfKey = Guid.NewGuid().ToString("B");
     }
 
-    var langdef = ExternalLangDef.LanguageDef;
-
-    var lf = langdef.GetFunction(langdef.funcEQ,
-        new VariableDef(langdef.GuidType, Information.ExtractPropertyName<Company>(x => x.Territory)),
-        territoryKey);
+    var lf = FunctionBuilder.BuildEquals<Company>(x => x.Territory, territoryKey);
 
     LimitFunctionsHolder.PersistLimitFunction(lfKey, lf);
 

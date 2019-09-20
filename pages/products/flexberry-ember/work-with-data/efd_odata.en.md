@@ -6,8 +6,8 @@ toc: true
 permalink: en/efd_odata.html
 lang: en
 autotranslated: true
-hash: 00f4328aef6fe412a54d691f9496efa03b3ecc7e1b831234bc3ddef6f94f7390
-summary: the Components for communicating with the backend via OData.
+hash: 651488974df47742eec4f7254c60485a4578f5f5188245a797222302b9d71049
+summary: the Components for communicating with the backend via OData support transactional changes to data, call functions and actions via Ajax, examples of usage
 ---
 
 ## OData
@@ -15,6 +15,25 @@ summary: the Components for communicating with the backend via OData.
 ember-flexberry-data supports the OData Protocol v4.
 
 * OData adapter
+
+## Support transactional data changes
+
+Version `ember-flexberry-data@2.2.0-beta.0` added support for sending multiple model objects to save the changes in a single transaction.
+
+Example usage:
+
+```javascript
+const store = this.get('store');
+const models = [
+  store.createRecord('user', { name: 'Nif' }),
+  store.createRecord('user', { name: 'Naf' }),
+  store.createRecord('user', { name: 'Nuf' }),
+];
+
+store.batchUpdate(models).then((models) => {
+  const [nif, naf, nuf] = models;
+});
+```
 
 ## Call functions and actions via Ajax
 
@@ -35,12 +54,14 @@ This method is intended to call functions on the backend. callFunction(functionN
 #### Examples of how to use callFunction
 
 * Without the callback functions, URL of the backend are taken from `environment.js`:
-```
+
+```javascript
 adapter.callFunction('test', { someParams: 'someParams' })
 ```
-* Callback functions:
 
-```
+* To the callback functions:
+
+```javascript
 adapter.callFunction(
   'test',
   { someParams: 'someParams' },
@@ -80,12 +101,14 @@ This method is to call a backend action. callAction(actionName, data, url, field
 #### Examples of usage callAction
 
 * Without the callback functions, URL of the backend are taken from `environment.js`:
-```
+
+```javascript
 adapter.callAction('test', { someParams: 'someParams' })
 ```
-* Callback functions:
 
-```
+* To the callback functions:
+
+```javascript
 adapter.callAction(
   'test',
   { someParams: 'someParams' },

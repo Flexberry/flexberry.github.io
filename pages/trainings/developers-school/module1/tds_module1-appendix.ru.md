@@ -78,6 +78,17 @@ lang: ru
                         </a>
                     </div>
                 </div>
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/playlist?list=PLvWwA9iDlhHA4kzfpRbu2cH-Z2ss6tB99' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module1/chrome-dev-tools.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">Инструменты разработчика Google Chrome</span></h4>
+                            <p>Серия скринкастов, посвященная использованию инструментов разработчика Google Chrome (Никита Красник, MakeWeb.me).</p>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

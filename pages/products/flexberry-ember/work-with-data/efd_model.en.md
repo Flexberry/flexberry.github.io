@@ -6,7 +6,7 @@ toc: true
 permalink: en/efd_model.html
 lang: en
 autotranslated: true
-hash: d77f6ea1c323775862366d04ba8135ab3e23a887f84b9b48abe4ae0abb052028
+hash: c1de3afeac3229e4578b8e3a8e19f41489bc8b19a27be7b0e4b273d7cbb99faf
 summary: Presents a detailed description of how the model looks in the app.
 ---
 
@@ -14,7 +14,7 @@ summary: Presents a detailed description of how the model looks in the app.
 
 Models in ember-application class inherit from Ember Data [DS.Model](http://emberjs.com/api/data/classes/DS.Model.html).
 
-{% include note.html content="the Models are created in the folder `models` and are named as follows: if the corresponding C#-the class is called `NewPlatform.Someproject.Somemodel`, the file with the model should be called `new-platform-someproject-somemodel`. If OData-bakenda the attribute [`PublishName` to simplify the naming of models](https://flexberry.github.io/ru/fo_metadata-for-client.html), then the name of the namespace in this case, the client model may be missing (the name of the client model will accordingly be formed from the name in the entity data model to OData-bekende)" %}
+{% include note.html content="the Models are created in the folder `models` and are named as follows: if the corresponding C#-the class is called `NewPlatform.Someproject.Somemodel`, the file with the model should be called `new-platform-someproject-somemodel`. If OData-bakenda the attribute [`PublishName` to simplify the naming of models](https://flexberry.github.io/ru/fo_metadata-for-client.html), then the name of the namespace in this case, the client model may be missing (the name of the client model will accordingly be formed from the name in the entity data model to OData bekende)" %}
 
 Models often have the following structure:
 
@@ -36,7 +36,7 @@ var Model = Projection.Model.extend({
   }
 });
 
-// Model definition-ancestor (if any). 
+// Define model-ancestor (if any). 
 Model.reopenClass({
   _parentModelName: '...' // Specifies the name of the model, which is inherited by this model, such as the 'new-platform-someproject-parent'. 
 });
@@ -66,7 +66,7 @@ There are also different approaches to [specify default values](ef_default-value
 
 ## The definition of a model
 
-The models are defined ["standard" Ember way](https://guides.emberjs.com/v2.4.0/models/defining-models/).
+The models are defined ["standard" method for Ember](https://guides.emberjs.com/v2.4.0/models/defining-models/).
 
 Additionally, the models inherited from the base technological models are used [validation model](efd_model-validation.html).
 
@@ -103,7 +103,7 @@ How is the corresponding property on the server that is defined in the [serializ
 
 ### The primary key type
 
-__The primary keys of the models__ `Ember` applications are always strings, but on the server [this behavior can be changed](fo_primary-keys-objects.html).
+__The primary keys of the models__ in `Ember` applications are always strings, but on the server [this behavior can be changed](fo_primary-keys-objects.html).
 If you change the primary key on the server, you must override a static property `idType` in the model class:
 
 ```javascript
@@ -131,6 +131,7 @@ defineIdType: function (newIdType) {
 ```
 
 To call this method as follows:
+
 ```javascript
 Model.defineIdType('string');
 ```
@@ -139,7 +140,7 @@ __Primary key__ is the metadata model, so the property `idType` defined precisel
 
 To the key type through the [`getMeta` utilities `information`](https://github.com/Flexberry/ember-flexberry-data/blob/develop/addon/utils/information.js#L137) from the addon `ember-flexberry-data`.
 
-The query language is the key type is taken into account automatically, and when building requests to the OData-bakenda key values in the URL query "arabicised" only if the key type `string`.
+The query language is the key type is taken into account automatically, and when building requests to the OData backendu the key values in the URL query "arabicised" only if the key type `string`.
 Currently, 3 types of keys on the client: `string`, `guid` and `number`. In other cases, when building requests to the OData-bakenda will throw an exception.
 
 {% include note.html content="By default, the client model type as the primary key is used `guid`." %}

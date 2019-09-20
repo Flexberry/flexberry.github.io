@@ -14,18 +14,12 @@ lang: ru
 Код, используемый для построения ограничения: 
 
 ```csharp
-var ldef = SQLWhereLanguageDef.LanguageDef;
-lcs.LimitFunction = ldef.GetFunction(
-    ldef.funcAND,
-    ldef.GetFunction(
-    ldef.funcEQ, vdModule, prv_GenModuleName(ObjectListView)
-    ),
-    ldef.GetFunction(
-    ldef.funcOR,
-    ldef.GetFunction(ldef.funcEQ, vdUser, Settings.SettingManager.GetUserName()),
-    ldef.GetFunction(ldef.funcIsNull, vdUser)
-    )
-    );
+lcs.LimitFunction = FunctionBuilder.BuildAnd(
+    FunctionBuilder.BuildEqials(vdModule, prv_GenModuleName(ObjectListView)),
+    FunctionBuilder.BuildOr(
+        FunctionBuilder.BuildEqials(vdUser, Settings.SettingManager.GetUserName()),
+        FunctionBuilde.BuildIsNull(vdUser)
+    ));
 ```
 
 То есть, юзер берется из Settings.SettingManager.GetUserName(). А там, в свою очередь, либо из установленного значения, либо из AD, либо из Environment: 

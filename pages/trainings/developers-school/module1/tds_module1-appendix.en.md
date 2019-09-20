@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module1-appendix.html
 lang: en
 autotranslated: true
-hash: 7eb250c9dd2ff9754d7799cfeca8e1bbbb3dd4d114c0c7148a1f6822a2486ca5
+hash: b1e57e667909f070148719b9362e0cd23c7ba2f3bcc9b5fc2f7003b701f78939
 ---
 
 ## Additional materials module
@@ -77,6 +77,62 @@ Introduction to web development</a>
 </div>
 <h4><span class="item-head">Testirovanie web services using SoapUI</span></h4>
 <p>the Webinar, which discussed the basics of SoapUI on a practical example (ed Izotov, Computer school Hillel).</p>
+</a>
+</div>
+</div>
+<div class="row items">
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/playlist?list=PLvWwA9iDlhHA4kzfpRbu2cH-Z2ss6tB99' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module1/chrome-dev-tools.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">developer Tools Google Chrome</span></h4>
+<p>Series of screencasts on using developer tools in Google Chrome (Nikita kraśnik, MakeWeb.me).</p>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="panel-group">
+<div class="panel panel-default">
+<div class="panel-heading">
+<a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse2">&#9660;</a>
+<h4 class="panel-title">
+<a data-toggle="collapse" href="#collapse2">
+Infrastructure and architecture of web applications</a>
+</h4>
+</div>
+<div id="collapse2" class="panel-collapse collapse in">
+<div class="panel-body">
+<div class="row items">
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=o0rudc7YTv0' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module1/web-projects-infrastructure.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">Infrastructure web projects</span></h4>
+<p>a Lesson that explores what is the infrastructure web project and why you need additional funds, does not solve the business problem directly: by what means to surround the project that the development was easy and quick, and the solution was stable (Andrew prokopuk, Academy of Yandex).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=mWeq5Kh6tlM' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module1/software-architecture.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">software Architecture</span></h4>
+<p>a Lesson in which we consider the architecture as part of software development: what it is, what functions it performs and what problems it solves. Also discusses the most popular for front-end architectural approaches: Model-View-Controller and Flux (Anna Karpelevich, Academy of Yandex).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=FF-GZ7iipwc' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module1/micro-service-architecture.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">Microsurvey application architecture</span></h4>
+<p>the Report of the conference HighLoad Siberia 2019, which addresses the pros and cons of microservices achitecture applications, the reasons for its popularity and also design example microservice architecture and related technologies (Cyril Vetchinkin, TYME).</p>
 </a>
 </div>
 </div>

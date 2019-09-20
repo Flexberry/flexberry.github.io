@@ -139,9 +139,8 @@ LookUp.UserImageList.Images.Add("Edit", Properties.Resources.EditImage);
 private void look_LookUpEvent1(object sender, System.EventArgs e)
 {
     Посетитель oПосетитель = (Посетитель)this.EditManager.DataObject;
-
-    SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
-    Function lf = langdef.GetFunction(langdef.funcSQL,"1=1");
+    
+    Function lf = FunctionBuilder.BuildTrue();
 
     //создадим контейнер-раннер
     ICSSoft.АдресноеБюро.ЛичностьL FormЛичностьL = (ICSSoft.АдресноеБюро.ЛичностьL)      ICSSoft.STORMNET.UI.ContRunner.RunForm(typeof(ICSSoft.АдресноеБюро.ЛичностьL));

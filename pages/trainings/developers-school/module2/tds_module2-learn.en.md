@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module2-learn.html
 lang: en
 autotranslated: true
-hash: 592ac432f62f146d04d8457a37e3e76ecc969ea804c54f9e3db7129e953ebdb8
+hash: 7f42ca89dd7334a057821df8cb684f57fcf52a854cb5efc2cba3f94dac3e68cf
 ---
 
 ## The module
@@ -29,7 +29,7 @@ The version control system Git and GitHub platform</a>
 <img src="{{ "/images/pages/trainings/developers-school/module2/git-introduction.jpg" | relative_url}}" class="products-img">
 </div>
 <h4><span class="item-head">1. Introduction to Git and Git Flow</span></h4>
-<p>In screencast examines the basic principles of functioning of the monitoring system of versions of Git and Git Flow concept.</p>
+<p>In screencast examines the basic principles of functioning of the monitoring system of versions of Git and Git Flow concept (Eugene Haberi, Flexberry PLATFORM).</p>
 </a>
 </div>
 <div class="col-sm-6 col-md-4 portfolio-item">
@@ -160,8 +160,17 @@ Team work with Azure DevOps</a>
 <div class="img-wrapper">
 <img src="{{ "/images/pages/trainings/developers-school/module2/what-is-dev-ops.jpg" | relative_url}}" class="products-img">
 </div>
-<h4><span class="item-head">What is DevOps?</span></h4>
+<h4><span class="item-head">1. What is DevOps?</span></h4>
 <p>the Lesson is devoted to a review of practices and tools, DevOps (Anton Boyko, ITVDN).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/playlist?list=PLlhqsC7hBaSf5JUzoSVqNoc1w4Dgy_Enr' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module2/azure-dev-ops-course.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">2. Course on teamwork in the Azure DevOps</span></h4>
+<p>Series of screencasts devoted to the study of the process of teamwork in the Azure DevOps (Eugene Haberi, Flexberry PLATFORM).</p>
 </a>
 </div>
 </div>
