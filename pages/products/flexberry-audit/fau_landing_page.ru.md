@@ -26,9 +26,9 @@ lang: ru
 * БД с данными аудита (может быть в основной БД приложения или отдельно, в т.ч. на другой СУБД)
 * Серверная часть - NuGet-пакет с объектной моделью и API: [NewPlatform.Flexberry.Audit](https://www.nuget.org/packages/NewPlatform.Flexberry.Audit)
 * Интерфейс просмотра данных аудита
-  * [Реализация](https://github.com/flexberry/ember-flexberry-security) для [Flexberry Ember](developers-flexberry-ember.html)
-  * Реализация для Flexberry ASP.NET
-  * Реализация для Flexberry Winforms
+  * [Реализация](https://github.com/flexberry/ember-flexberry-security) для [Flexberry Ember](fe_landing_page.html)
+  * Реализация для [Flexberry ASP.NET](fa_landing_page.html)
+  * Реализация для [Flexberry Winforms](fw_landing_page.html)
 * Настройка фиксируемых операций по объектам данных выполняется в интерфейсе Flexberry Designer.
 
 ## Как воспользоваться
