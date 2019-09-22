@@ -14,7 +14,7 @@ lang: ru
 1. Настройка БД в дизайнере
 В настройках генерации базы данных (стадия/SQL/<Выбранная бд>/Настройка БД) требуется установить "БД аудита в БД приложения" и "БД полномочий в БД приложения"
 
-![](/images/pages/products/flexberry-audit/designer-storege-audit.png)
+![](/images/pages/products/flexberry-audit/designer-storage-audit.png)
 
 так же присутствует возможность развернуть отдельные бд для аудита.
 
