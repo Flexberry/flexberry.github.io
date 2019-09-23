@@ -18,15 +18,15 @@ summary: Правила создания м наполнения главной 
 
 [УИС МВ](http://dis-riep:2405/ "Внутренняя ссылка"):
 
-![Главная страница УИС МВ](../../../images/pages/guides/ui-ux-guideline/uiuxg_main_page_manual/1.png)
+![Главная страница УИС МВ](/images/pages/guides/ui-ux-guideline/uiuxg_main_page_manual/1.png)
 
 [Highway SB](http://dis-int:8080/ "Внутренняя ссылка"):
 
-![Главная страница УИС МВ](../../../images/pages/guides/ui-ux-guideline/uiuxg_main_page_manual/2.png)
+![Главная страница УИС МВ](/images/pages/guides/ui-ux-guideline/uiuxg_main_page_manual/2.png)
 
 Прототип АИСОГД:
 
-![Главная страница в прототипе](../../../images/pages/guides/ui-ux-guideline/uiuxg_main_page_manual/3.png)
+![Главная страница в прототипе](/images/pages/guides/ui-ux-guideline/uiuxg_main_page_manual/3.png)
 
 При разработке главной страницы нужно проработать следующие этапы:
 
@@ -39,7 +39,7 @@ summary: Правила создания м наполнения главной 
 
 В качестве примера разобьем на несколько групп элементы прототипа:
 
-![Группировка на прототипе](../../../images/pages/guides/ui-ux-guideline/uiuxg_main_page_manual/4.png)
+![Группировка на прототипе](/images/pages/guides/ui-ux-guideline/uiuxg_main_page_manual/4.png)
 
 ### 1. Поле ввода
 

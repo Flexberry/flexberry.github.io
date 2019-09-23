@@ -10,7 +10,7 @@ summary: Кнопки, состояния, чекбоксы, радио-кноп
 
 ## Основные кнопки
 
-![Основные кнопки](../../../images/pages/guides/ui-ux-guideline/uiuxg_buttons/1.png)
+![Основные кнопки](/images/pages/guides/ui-ux-guideline/uiuxg_buttons/1.png)
 
 ## Состояния кнопок
 
@@ -18,28 +18,28 @@ summary: Кнопки, состояния, чекбоксы, радио-кноп
 
 > Синий меняется на цвет основной темы.
 
-![Основной цвет](../../../images/pages/guides/ui-ux-guideline/uiuxg_buttons/2.png)
+![Основной цвет](/images/pages/guides/ui-ux-guideline/uiuxg_buttons/2.png)
 
 ### Акцент
 
 > Цвет обводки элементов Hover и Active - акцентный, focus всегда - `#62B0FF`.
 
-![Основной цвет](../../../images/pages/guides/ui-ux-guideline/uiuxg_buttons/3.png)
+![Основной цвет](/images/pages/guides/ui-ux-guideline/uiuxg_buttons/3.png)
 
 ### С обводкой
 
 > Используются стандартные цвета: Hover, Active - `#0962AF`, focus всегда - `#62B0FF`.
 
-![Обводка](../../../images/pages/guides/ui-ux-guideline/uiuxg_buttons/4.png)
+![Обводка](/images/pages/guides/ui-ux-guideline/uiuxg_buttons/4.png)
 
 ## Переключатели
 
 ### Базовые элементы
 
-![Базовые элементы](../../../images/pages/guides/ui-ux-guideline/uiuxg_buttons/5.png)
+![Базовые элементы](/images/pages/guides/ui-ux-guideline/uiuxg_buttons/5.png)
 
 ### Состояния
 
 > Синий меняется на основной цвет темы.
 
-![Состояния](../../../images/pages/guides/ui-ux-guideline/uiuxg_buttons/6.png)
+![Состояния](/images/pages/guides/ui-ux-guideline/uiuxg_buttons/6.png)

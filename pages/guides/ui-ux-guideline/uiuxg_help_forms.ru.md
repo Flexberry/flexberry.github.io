@@ -32,7 +32,7 @@ summary: Описание основных функций форм и стран
 
 При нажатию на кнопку **Справка** открывается сайдпейдж, который содержит детальную информацию о данной функции.
 
-![Прототип справки в сайдпейдже](../../../images/pages/guides/ui-ux-guideline/uiuxg_help_forms/5.png)
+![Прототип справки в сайдпейдже](/images/pages/guides/ui-ux-guideline/uiuxg_help_forms/5.png)
 
 ### Отдельный документ
 
@@ -42,7 +42,7 @@ summary: Описание основных функций форм и стран
 
 Пример АИСОГД:
 
-![Пример - АИСОГД](../../../images/pages/guides/ui-ux-guideline/uiuxg_help_forms/1.png)
+![Пример - АИСОГД](/images/pages/guides/ui-ux-guideline/uiuxg_help_forms/1.png)
 
 ### Кнопка перехода
 
@@ -50,9 +50,9 @@ summary: Описание основных функций форм и стран
 
 Примеры:
 
-![Пример - УИС МВ](../../../images/pages/guides/ui-ux-guideline/uiuxg_help_forms/2.png)
+![Пример - УИС МВ](/images/pages/guides/ui-ux-guideline/uiuxg_help_forms/2.png)
 
-![Пример - Новый дизайн](../../../images/pages/guides/ui-ux-guideline/uiuxg_help_forms/6.png)
+![Пример - Новый дизайн](/images/pages/guides/ui-ux-guideline/uiuxg_help_forms/6.png)
 
 ### Справка по кнопке в отдельных полях
 
@@ -60,9 +60,9 @@ summary: Описание основных функций форм и стран
 
 Для сложных полей с кодом или специальным синтаксисом нужны отдельные справочные страницы.
 
-![УИС МВ - шаблон поля информации](../../../images/pages/guides/ui-ux-guideline/uiuxg_help_forms/3.png)
+![УИС МВ - шаблон поля информации](/images/pages/guides/ui-ux-guideline/uiuxg_help_forms/3.png)
 
-При нажатии на кнопку ![Пример УИС МВ](../../../images/pages/guides/ui-ux-guideline/uiuxg_help_forms/4.png) открывается отдельная страница, которая содержит справку со следующими элементами:
+При нажатии на кнопку ![Пример УИС МВ](/images/pages/guides/ui-ux-guideline/uiuxg_help_forms/4.png) открывается отдельная страница, которая содержит справку со следующими элементами:
 
 * Синтаксис;
 * Вспомогательные функции;
@@ -73,6 +73,6 @@ summary: Описание основных функций форм и стран
 
 При наведении курсора на неподписанный элемент или иконку нужно показывать тултип.
 
-![УИС МВ - шаблон поля информации](../../../images/pages/guides/ui-ux-guideline/uiuxg_help_forms/7.png)
+![УИС МВ - шаблон поля информации](/images/pages/guides/ui-ux-guideline/uiuxg_help_forms/7.png)
 
-![УИС МВ - шаблон поля информации](../../../images/pages/guides/ui-ux-guideline/uiuxg_help_forms/8.png)
+![УИС МВ - шаблон поля информации](/images/pages/guides/ui-ux-guideline/uiuxg_help_forms/8.png)

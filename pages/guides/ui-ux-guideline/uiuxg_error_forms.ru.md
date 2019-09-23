@@ -16,7 +16,7 @@ summary: Базовые страницы ошибок и правила созд
 
 Страница ошибки для десктопной версии выглядит следующим образом (пример для ЭИОС ПГМУ, форма - страница не найдена):
 
-![Страница ошибки ПГМУ](../../../images/pages/guides/ui-ux-guideline/uiuxg_error_forms/1.png)
+![Страница ошибки ПГМУ](/images/pages/guides/ui-ux-guideline/uiuxg_error_forms/1.png)
 
 Сама форма ошибки должна располагаться в лайтбоксе (см. элемент Лайтбокс) и отличаться от обычных форм сервиса, быть краткой и информативной — так пользователь быстрее поймет, что пошло не так. Она должна содержать следующие элементы:
 
@@ -29,15 +29,15 @@ summary: Базовые страницы ошибок и правила созд
 
 ### Макет универсальной формы для десктопа
 
-![Форма для десктопа](../../../images/pages/guides/ui-ux-guideline/uiuxg_error_forms/2.png)
+![Форма для десктопа](/images/pages/guides/ui-ux-guideline/uiuxg_error_forms/2.png)
 
 ### Макеты форм ошибок для различных ситуаций
 
-![404, страница не найдена](../../../images/pages/guides/ui-ux-guideline/uiuxg_error_forms/3.png)
-![Ошибка на странице](../../../images/pages/guides/ui-ux-guideline/uiuxg_error_forms/4.png)
-![Сервис недоступен](../../../images/pages/guides/ui-ux-guideline/uiuxg_error_forms/5.png)
-![Доступ запрещен](../../../images/pages/guides/ui-ux-guideline/uiuxg_error_forms/6.png)
+![404, страница не найдена](/images/pages/guides/ui-ux-guideline/uiuxg_error_forms/3.png)
+![Ошибка на странице](/images/pages/guides/ui-ux-guideline/uiuxg_error_forms/4.png)
+![Сервис недоступен](/images/pages/guides/ui-ux-guideline/uiuxg_error_forms/5.png)
+![Доступ запрещен](/images/pages/guides/ui-ux-guideline/uiuxg_error_forms/6.png)
 
 Примеры макетов страниц ошибок для адаптивной и мобильной версий (ЭИОС ПГМУ):
 
-![Адаптивная и мобильная версия](../../../images/pages/guides/ui-ux-guideline/uiuxg_error_forms/7.png)
+![Адаптивная и мобильная версия](/images/pages/guides/ui-ux-guideline/uiuxg_error_forms/7.png)

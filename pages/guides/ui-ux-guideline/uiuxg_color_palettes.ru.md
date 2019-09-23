@@ -20,7 +20,7 @@ summary: Существующие цветовые комбинации.
 * Серебряный: `#DDE1E6`
 * Платина: `#C7CCD1`
 
-![Цвета элементов](../../../images/pages/guides/ui-ux-guideline/uiuxg_color_palettes/1.png)
+![Цвета элементов](/images/pages/guides/ui-ux-guideline/uiuxg_color_palettes/1.png)
 
 ## Цвета состояний элементов
 
@@ -30,16 +30,16 @@ summary: Существующие цветовые комбинации.
 * Сейчас активно: `#62B0FF`
 * Подтверждение: `#71BC90`
 
-![Цвета состояний элементов](../../../images/pages/guides/ui-ux-guideline/uiuxg_color_palettes/2.png)
+![Цвета состояний элементов](/images/pages/guides/ui-ux-guideline/uiuxg_color_palettes/2.png)
 
 ## Рамки
 
-![Рамки](../../../images/pages/guides/ui-ux-guideline/uiuxg_color_palettes/3.png)
+![Рамки](/images/pages/guides/ui-ux-guideline/uiuxg_color_palettes/3.png)
 
 ## Интерактивные
 
-![Интерактивные](../../../images/pages/guides/ui-ux-guideline/uiuxg_color_palettes/4.png)
+![Интерактивные](/images/pages/guides/ui-ux-guideline/uiuxg_color_palettes/4.png)
 
 ## Прозрачные
 
-![Интерактивные](../../../images/pages/guides/ui-ux-guideline/uiuxg_color_palettes/5.png)
+![Интерактивные](/images/pages/guides/ui-ux-guideline/uiuxg_color_palettes/5.png)

@@ -12,19 +12,19 @@ summary: Основные эелементы Sitemap'a.
 
 Всего доступно два состояния меню - развернуто (стандартно для десктопа) и свернуто (стандартно для адаптивной версии). В свернутой версии используем иконки, четко характеризующие каждый раздел ИС (см. раздел [Иконки-404-](404.md)):
 
-![Меню навигации](../../../images/pages/guides/ui-ux-guideline/uiuxg_sitemap/1.png)
+![Меню навигации](/images/pages/guides/ui-ux-guideline/uiuxg_sitemap/1.png)
 
 Ссылки на страницы должны быть расположены в логичном порядке и в соответствии с иерархией страниц, то есть: от разделов к категориям, от категорий к подкатегориям.
 
-![Категории и подкатегории](../../../images/pages/guides/ui-ux-guideline/uiuxg_sitemap/2.png)
+![Категории и подкатегории](/images/pages/guides/ui-ux-guideline/uiuxg_sitemap/2.png)
 
 В любой ИС необходимо ограничить количество пунктов главного меню и разбить список пунктов на группы.
 
-![Разбиение на группы](../../../images/pages/guides/ui-ux-guideline/uiuxg_sitemap/3.png)
+![Разбиение на группы](/images/pages/guides/ui-ux-guideline/uiuxg_sitemap/3.png)
 
 Адаптивная версия с поиском по разделам:
 
-![Адаптивная версия с поиском](../../../images/pages/guides/ui-ux-guideline/uiuxg_sitemap/4.png)
+![Адаптивная версия с поиском](/images/pages/guides/ui-ux-guideline/uiuxg_sitemap/4.png)
 
 Критерии качественной навигации в сайтмапе:
 

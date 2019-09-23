@@ -16,7 +16,7 @@ summary: Выбор цветовой палитры для продукта пр
 
 > Пример основного цвета: `#E14059`
 
-![Основной цвет](../../../images/pages/guides/ui-ux-guideline/uiuxg_color_selection/1.png)
+![Основной цвет](/images/pages/guides/ui-ux-guideline/uiuxg_color_selection/1.png)
 
 ## Выбор акцентного цвета
 
@@ -24,7 +24,7 @@ summary: Выбор цветовой палитры для продукта пр
 
 > Основой: `#E14059` Акцентный: `#2E79BD`
 
-![Выбор акцента](../../../images/pages/guides/ui-ux-guideline/uiuxg_color_selection/2.png)
+![Выбор акцента](/images/pages/guides/ui-ux-guideline/uiuxg_color_selection/2.png)
 
 При построении макетов новой ИС необходимо использовать следующие ресурсы для определения основного, вторичного и акцентного цветов и их сочетаемости:
 
@@ -51,27 +51,27 @@ summary: Выбор цветовой палитры для продукта пр
 
 Большинство цветовых схем и правил комбинирования цветов опираются на цветовой круг, который разработан в теории цвета. Для того, чтобы освоить более сложные правила комбинирования цветов, нужна практика, но есть и простые правила. Если в ИС гармонично сочетаются цвета, человек, работающий в ней, лучше распознает и понимает содержащуюся  информацию. Теория цвета — это не ядерная физика и не высшая математика, но это не умаляет ее роли в повышении эффективности работы с интерфейсом. Ниже представлены базовые инструменты для создания правильных цветовых схем:
 
-![Color Wheel](../../../images/pages/guides/ui-ux-guideline/uiuxg_color_selection/10.jpg)
+![Color Wheel](/images/pages/guides/ui-ux-guideline/uiuxg_color_selection/10.jpg)
 
 ### Комплементарные цвета
 
 Данная схема позволяет определять противоположные цвета. Схема комплементарных цветов по принципу «противоположности притягиваются».
 
-![Комплементарные цвета](../../../images/pages/guides/ui-ux-guideline/uiuxg_color_selection/11.jpg)
+![Комплементарные цвета](/images/pages/guides/ui-ux-guideline/uiuxg_color_selection/11.jpg)
 
 ### Аналоговые цвета
 
 Аналоговая цветовая формула, которую используют многие компании, предполагает сочетание в палитре трех цветов, близких на цветовом круге. Например, если основным цветом является зеленый, гармонично будет смотреться его сочетание с цветами, которые находятся по обе стороны от него на цветовом круге. Расширения палитры можно достичь за счет тех цветов спектра, которые на круге находятся между тремя первоначальными цветами.
 
-![Аналоговые цвета #1](../../../images/pages/guides/ui-ux-guideline/uiuxg_color_selection/12.jpg)
+![Аналоговые цвета #1](/images/pages/guides/ui-ux-guideline/uiuxg_color_selection/12.jpg)
 
-![Аналоговые цвета #2](../../../images/pages/guides/ui-ux-guideline/uiuxg_color_selection/13.jpg)
+![Аналоговые цвета #2](/images/pages/guides/ui-ux-guideline/uiuxg_color_selection/13.jpg)
 
 ### Триадные цвета
 
 Это наиболее сложная из всех простых цветовых формул. Для начала выберите первый цвет, затем два других, так, чтобы воображаемые соединительные линии между ними ними на цветовом круге образовали равносторонний треугольник. Триадная схема хорошо сбалансирована и гармонична.
 
-![Триадные цвета](../../../images/pages/guides/ui-ux-guideline/uiuxg_color_selection/14.jpg)
+![Триадные цвета](/images/pages/guides/ui-ux-guideline/uiuxg_color_selection/14.jpg)
 
 ## Пример адаптации цветов для ЭИОС ПГМУ
 
@@ -81,32 +81,32 @@ Main: `#E14059`
 Second: `#7699B3`
 Accent: `#2E79BD`
 
-![Цвета ПГМУ](../../../images/pages/guides/ui-ux-guideline/uiuxg_color_selection/3.png)
+![Цвета ПГМУ](/images/pages/guides/ui-ux-guideline/uiuxg_color_selection/3.png)
 
 ### Кнопки
 
 > Меняются темы Primary и Empty. Все контролы, содержащие кнопки с этими темами автоматически брендируются.
 
-![Цвета ПГМУ](../../../images/pages/guides/ui-ux-guideline/uiuxg_color_selection/4.png)
+![Цвета ПГМУ](/images/pages/guides/ui-ux-guideline/uiuxg_color_selection/4.png)
 
 ### Составные контролы
 
 #### Переключатель
 
-![Переключатель](../../../images/pages/guides/ui-ux-guideline/uiuxg_color_selection/5.png)
+![Переключатель](/images/pages/guides/ui-ux-guideline/uiuxg_color_selection/5.png)
 
 #### Пагинация
 
-![Пагинация](../../../images/pages/guides/ui-ux-guideline/uiuxg_color_selection/6.png)
+![Пагинация](/images/pages/guides/ui-ux-guideline/uiuxg_color_selection/6.png)
 
 #### Тогглер
 
-![Тогглер](../../../images/pages/guides/ui-ux-guideline/uiuxg_color_selection/7.png)
+![Тогглер](/images/pages/guides/ui-ux-guideline/uiuxg_color_selection/7.png)
 
 #### Flexberry Menu
 
-![Flexberry Menu](../../../images/pages/guides/ui-ux-guideline/uiuxg_color_selection/8.png)
+![Flexberry Menu](/images/pages/guides/ui-ux-guideline/uiuxg_color_selection/8.png)
 
 ### Чекбоксы, радиокнопки, тумблеры
 
-![Чекбоксы, радиокнопки, тумблеры](../../../images/pages/guides/ui-ux-guideline/uiuxg_color_selection/9.png)
+![Чекбоксы, радиокнопки, тумблеры](/images/pages/guides/ui-ux-guideline/uiuxg_color_selection/9.png)

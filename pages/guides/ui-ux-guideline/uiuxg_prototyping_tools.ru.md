@@ -18,7 +18,7 @@ summary: Набор инструментов проектирования UX к�
 
 [Приложения для Windows и macOS](https://www.figma.com/downloads/)
 
-![Интерфейс Figma](../../../images/pages/guides/ui-ux-guideline/uiuxg_prototyping_tools/1.png)
+![Интерфейс Figma](/images/pages/guides/ui-ux-guideline/uiuxg_prototyping_tools/1.png)
 
 Это программа для разработки прототипов графических интерфейсов, веб-сайтов и мобильных приложений. Figma является облачным веб-сервисом, предоставляющим нативные программы для установки на Mac и Windows. Если кратко, то Figma это как Sketch, только без плагинов и с немного другой системой реализации Символов и некоторых других функций.
 
@@ -39,7 +39,7 @@ summary: Набор инструментов проектирования UX к�
 
 ### [Justinmind](https://www.justinmind.com/)
 
-![Интерфейс Justinmind](../../../images/pages/guides/ui-ux-guideline/uiuxg_prototyping_tools/2.png)
+![Интерфейс Justinmind](/images/pages/guides/ui-ux-guideline/uiuxg_prototyping_tools/2.png)
 
 Плюсы:
 
@@ -60,7 +60,7 @@ summary: Набор инструментов проектирования UX к�
 
 ### [Marvel](https://marvelapp.com/)
 
-![Интерфейс Marvel](../../../images/pages/guides/ui-ux-guideline/uiuxg_prototyping_tools/3.png)
+![Интерфейс Marvel](/images/pages/guides/ui-ux-guideline/uiuxg_prototyping_tools/3.png)
 
 Плюсы:
 
@@ -78,7 +78,7 @@ summary: Набор инструментов проектирования UX к�
 
 ### [Invision](https://www.invisionapp.com/)
 
-![Интерфейс Invision](../../../images/pages/guides/ui-ux-guideline/uiuxg_prototyping_tools/4.jpg)
+![Интерфейс Invision](/images/pages/guides/ui-ux-guideline/uiuxg_prototyping_tools/4.jpg)
 
 Плюсы:
 
@@ -94,7 +94,7 @@ summary: Набор инструментов проектирования UX к�
 
 ### [Mockup](https://app.moqups.com/)
 
-![Интерфейс Mockup](../../../images/pages/guides/ui-ux-guideline/uiuxg_prototyping_tools/5.png)
+![Интерфейс Mockup](/images/pages/guides/ui-ux-guideline/uiuxg_prototyping_tools/5.png)
 
 Плюсы:
 
@@ -129,7 +129,7 @@ summary: Набор инструментов проектирования UX к�
 
 ### [Axure](https://www.axure.com/)
 
-![Интерфейс Axure](../../../images/pages/guides/ui-ux-guideline/uiuxg_prototyping_tools/6.png)
+![Интерфейс Axure](/images/pages/guides/ui-ux-guideline/uiuxg_prototyping_tools/6.png)
 
 Плюсы:
 
@@ -151,8 +151,8 @@ summary: Набор инструментов проектирования UX к�
 
 ### [Proto.io](https://proto.io/)
 
-![Выбор типа интерфейса в Proto.io](../../../images/pages/guides/ui-ux-guideline/uiuxg_prototyping_tools/7.png)
-![Интерфейс Proto.io](../../../images/pages/guides/ui-ux-guideline/uiuxg_prototyping_tools/8.png)
+![Выбор типа интерфейса в Proto.io](/images/pages/guides/ui-ux-guideline/uiuxg_prototyping_tools/7.png)
+![Интерфейс Proto.io](/images/pages/guides/ui-ux-guideline/uiuxg_prototyping_tools/8.png)
 
 Плюсы:
 

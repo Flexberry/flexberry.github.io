@@ -16,28 +16,28 @@ summary: Правила конструирования всплывающих м
 
 ### Десктоп
 
-![Лайтбокс - Десктоп](../../../images/pages/guides/ui-ux-guideline/uiuxg_lightbox/1.png)
+![Лайтбокс - Десктоп](/images/pages/guides/ui-ux-guideline/uiuxg_lightbox/1.png)
 
 ### Планшет
 
-![Лайтбокс - Планшет](../../../images/pages/guides/ui-ux-guideline/uiuxg_lightbox/2.png)
+![Лайтбокс - Планшет](/images/pages/guides/ui-ux-guideline/uiuxg_lightbox/2.png)
 
 ### Смартфон
 
-![Лайтбокс - Смартфон](../../../images/pages/guides/ui-ux-guideline/uiuxg_lightbox/3.png)
+![Лайтбокс - Смартфон](/images/pages/guides/ui-ux-guideline/uiuxg_lightbox/3.png)
 
 ## Прокрутка в лайтбоксе
 
 >Если лайтбокс не входит на экран, то прокрутка не должна появляться внутри формы. Вся область оверлея должна прокручиваться, а прокрутка основной страницы блокироваться.
 
-![Прокрутка в лайтбоксе](../../../images/pages/guides/ui-ux-guideline/uiuxg_lightbox/4.png)
+![Прокрутка в лайтбоксе](/images/pages/guides/ui-ux-guideline/uiuxg_lightbox/4.png)
 
 ## Комбинации лайтбоксов
 
 >Лайтбоксы **не вкладываются друг в друга**. Если избежать появления нескольких лайтбоксов нельзя, то они должны накладываться друг на друга вместе с оверлеем. При этом прокрутка (если она есть) работает только у самого верхнего лайтбокса, у остальных она заблокирована.
 
-![Комбинации лайтбоксов](../../../images/pages/guides/ui-ux-guideline/uiuxg_lightbox/5.png)
+![Комбинации лайтбоксов](/images/pages/guides/ui-ux-guideline/uiuxg_lightbox/5.png)
 
 ## Комбинации с сайдпейджем
 
-![Лайтбоксы и сайдпейджи](../../../images/pages/guides/ui-ux-guideline/uiuxg_lightbox/6.png)
+![Лайтбоксы и сайдпейджи](/images/pages/guides/ui-ux-guideline/uiuxg_lightbox/6.png)

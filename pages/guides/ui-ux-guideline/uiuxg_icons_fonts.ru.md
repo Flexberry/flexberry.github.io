@@ -33,7 +33,7 @@ summary: Базовая теоретическая информация по и�
 
 ## Шрифты
 
-![Шрифиы](../../../images/pages/guides/ui-ux-guideline/uiuxg_icons_fonts/1.png)
+![Шрифиы](/images/pages/guides/ui-ux-guideline/uiuxg_icons_fonts/1.png)
 
 Будучи частью фирменного стиля, шрифт ассоциируется с продукцией бренда и является одним из важнейших средств коммуникации компании с потребителями.
 Одно и то же слово, набранное разными шрифтами, будет совершенно по-разному восприниматься.
@@ -58,7 +58,7 @@ summary: Базовая теоретическая информация по и�
 
 Основной текст: **21 пиксель**
 
-![Совесть - landing](../../../images/pages/guides/ui-ux-guideline/uiuxg_icons_fonts/2.png)
+![Совесть - landing](/images/pages/guides/ui-ux-guideline/uiuxg_icons_fonts/2.png)
 
 ### Geekbrains
 
@@ -68,7 +68,7 @@ summary: Базовая теоретическая информация по и�
 
 Основной текст: **15 пикселей**
 
-![Geekbrains -landing](../../../images/pages/guides/ui-ux-guideline/uiuxg_icons_fonts/3.png)
+![Geekbrains -landing](/images/pages/guides/ui-ux-guideline/uiuxg_icons_fonts/3.png)
 
 ### Evernote
 
@@ -78,7 +78,7 @@ summary: Базовая теоретическая информация по и�
 
 Основной текст: **18 пикселей**
 
-![Evernore - landing](../../../images/pages/guides/ui-ux-guideline/uiuxg_icons_fonts/4.png)
+![Evernore - landing](/images/pages/guides/ui-ux-guideline/uiuxg_icons_fonts/4.png)
 
 ## Длина строки
 

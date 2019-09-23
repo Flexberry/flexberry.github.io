@@ -12,16 +12,16 @@ summary: Тултипы и сообщения об ошибках.
 
 ### Светлая тема
 
-![Tooltip - Светлая тема](../../../images/pages/guides/ui-ux-guideline/uiuxg_informers/1.png)
+![Tooltip - Светлая тема](/images/pages/guides/ui-ux-guideline/uiuxg_informers/1.png)
 
 ### Темная тема
 
-![Tooltip - Темная тема](../../../images/pages/guides/ui-ux-guideline/uiuxg_informers/2.png)
+![Tooltip - Темная тема](/images/pages/guides/ui-ux-guideline/uiuxg_informers/2.png)
 
 ### Пример
 
-![Tooltip - Пример](../../../images/pages/guides/ui-ux-guideline/uiuxg_informers/3.png)
+![Tooltip - Пример](/images/pages/guides/ui-ux-guideline/uiuxg_informers/3.png)
 
 ## Сообщение об ошибке
 
-![Сообщение об ошибке](../../../images/pages/guides/ui-ux-guideline/uiuxg_informers/4.png)
+![Сообщение об ошибке](/images/pages/guides/ui-ux-guideline/uiuxg_informers/4.png)

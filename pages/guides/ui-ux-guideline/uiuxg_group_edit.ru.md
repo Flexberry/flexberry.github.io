@@ -12,22 +12,22 @@ summary: Редактирование группы элементов в спи�
 
 > Кнопка добавления может быть акцентной или обычной.
 
-![Кнопка добавить](../../../images/pages/guides/ui-ux-guideline/uiuxg_group_edit/1.png)
+![Кнопка добавить](/images/pages/guides/ui-ux-guideline/uiuxg_group_edit/1.png)
 
 > Групповые действия лучше акцентировать разделителем.
 
-![Разделители](../../../images/pages/guides/ui-ux-guideline/uiuxg_group_edit/2.png)
+![Разделители](/images/pages/guides/ui-ux-guideline/uiuxg_group_edit/2.png)
 
 ## Пример в списке
 
 ### Десктоп
 
-![Список - Десктоп](../../../images/pages/guides/ui-ux-guideline/uiuxg_group_edit/3.png)
+![Список - Десктоп](/images/pages/guides/ui-ux-guideline/uiuxg_group_edit/3.png)
 
 ### Планшет
 
-![Список - Планшет](../../../images/pages/guides/ui-ux-guideline/uiuxg_group_edit/4.png)
+![Список - Планшет](/images/pages/guides/ui-ux-guideline/uiuxg_group_edit/4.png)
 
 ### Мобильный
 
-![Список - Мобильный](../../../images/pages/guides/ui-ux-guideline/uiuxg_group_edit/5.png)
+![Список - Мобильный](/images/pages/guides/ui-ux-guideline/uiuxg_group_edit/5.png)

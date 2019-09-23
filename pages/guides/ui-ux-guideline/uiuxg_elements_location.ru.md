@@ -18,11 +18,11 @@ summary: Расположение основных элементов.
 
 Структура шапки представлена на следующем рисунке:
 
-![Структура шапки](../../../images/pages/guides/ui-ux-guideline/uiuxg_elements_location/header_scheme.png)
+![Структура шапки](/images/pages/guides/ui-ux-guideline/uiuxg_elements_location/header_scheme.png)
 
 Реализация шапки с открытым списком настроек пользователя:
 
-![Пример реализации шапки](../../../images/pages/guides/ui-ux-guideline/uiuxg_elements_location/header_example.png)
+![Пример реализации шапки](/images/pages/guides/ui-ux-guideline/uiuxg_elements_location/header_example.png)
 
 ## Подвал
 
@@ -35,8 +35,8 @@ summary: Расположение основных элементов.
 Расположение футера фиксировано и находится внизу панели навигации в раскрытом состоянии
 На картинке представлена панель навигации вместе с подвалом:
 
-![Подвал](../../../images/pages/guides/ui-ux-guideline/uiuxg_elements_location/footer_in_sidebar.png)
+![Подвал](/images/pages/guides/ui-ux-guideline/uiuxg_elements_location/footer_in_sidebar.png)
 
 Подвал отдельно:
 
-![Подвал](../../../images/pages/guides/ui-ux-guideline/uiuxg_elements_location/footer.png)
+![Подвал](/images/pages/guides/ui-ux-guideline/uiuxg_elements_location/footer.png)

@@ -12,7 +12,7 @@ summary: Пример создания высоконагруженных фор
 
 Мастер настройки помогает избавиться от загруженных форм и последовательно складывать все компоненты в иерархию бокового меню.
 
-![Мастер настройки](../../../images/pages/guides/ui-ux-guideline/uiuxg_complex_forms/1.png)
+![Мастер настройки](/images/pages/guides/ui-ux-guideline/uiuxg_complex_forms/1.png)
 
 Для эффективной работы данной модели необходимо грамотно планировать все поля и разделы. Чтобы такая модель работала качественно необходимы следующие условия:
 
@@ -21,7 +21,7 @@ summary: Пример создания высоконагруженных фор
 
 > Не стоит злоупотреблять вкладками. Они нужны для того, чтобы спрятать самые редко используемые поля, которые нельзя просто так удалить из формы.
 
-![Вкладки](../../../images/pages/guides/ui-ux-guideline/uiuxg_complex_forms/2.png)
+![Вкладки](/images/pages/guides/ui-ux-guideline/uiuxg_complex_forms/2.png)
 
 * Последовательно структурировать все разделы;
 * Давать возможность сохранять незаконченные формы;
@@ -35,19 +35,19 @@ summary: Пример создания высоконагруженных фор
 
 Переработана форма [ИСОГД - Разрешение на строительство](http://isogd:2205/forms/Zdanie/ZdanieWebE.aspx?PK=%7Bb5cdd5e8-1173-4208-aa39-ceed4313ee5d%7D):
 
-![Старая версия формы](../../../images/pages/guides/ui-ux-guideline/uiuxg_complex_forms/3.png)
+![Старая версия формы](/images/pages/guides/ui-ux-guideline/uiuxg_complex_forms/3.png)
 
 Теперь эта форма выглядит так:
 
-![Новая версия формы](../../../images/pages/guides/ui-ux-guideline/uiuxg_complex_forms/3,1.png)
+![Новая версия формы](/images/pages/guides/ui-ux-guideline/uiuxg_complex_forms/3,1.png)
 
 При использования нового метода все вкладки превратятся в пункты мастера по созданию данной записи. Выбранные подсвечиваются зеленым. Красным цветом подсвечиваются неправильно заполненные и конфликтующие пункты. При желании можно развернуть все формы. Это действие будет эквивалентно развороту всех вкладок вручную на старой форме.
 
-![Сайдбар с пунктами](../../../images/pages/guides/ui-ux-guideline/uiuxg_complex_forms/4.png)
+![Сайдбар с пунктами](/images/pages/guides/ui-ux-guideline/uiuxg_complex_forms/4.png)
 
 По клику на пункт откроется форма для заполнения:
 
-![Старая версия формы](../../../images/pages/guides/ui-ux-guideline/uiuxg_complex_forms/5.png)
+![Старая версия формы](/images/pages/guides/ui-ux-guideline/uiuxg_complex_forms/5.png)
 
 После заполнения пункта можно перейти к следующему нажав на кнопку **Следующий пункт**. Рядом находится кнопка, которая переводит на предыдущий пункт.
 
@@ -55,16 +55,16 @@ summary: Пример создания высоконагруженных фор
 
 Также эту форму можно просматривать на мобильных устройствах:
 
-![Версия для планшета](../../../images/pages/guides/ui-ux-guideline/uiuxg_complex_forms/6.png)
+![Версия для планшета](/images/pages/guides/ui-ux-guideline/uiuxg_complex_forms/6.png)
 
 В режиме планшета иерархия отображается как разворачиваемое меню, которое можно вызвать по тапу или клику:
 
-![Версия для планшета - Меню](../../../images/pages/guides/ui-ux-guideline/uiuxg_complex_forms/7.png)
+![Версия для планшета - Меню](/images/pages/guides/ui-ux-guideline/uiuxg_complex_forms/7.png)
 
 Версия для смартфонов:
 
-![Версия для смартфона](../../../images/pages/guides/ui-ux-guideline/uiuxg_complex_forms/8.png)
+![Версия для смартфона](/images/pages/guides/ui-ux-guideline/uiuxg_complex_forms/8.png)
 
 В иерархии отображается только последний выбранный пункт:
 
-![Версия для смартфона - Меню](../../../images/pages/guides/ui-ux-guideline/uiuxg_complex_forms/9.png)
+![Версия для смартфона - Меню](/images/pages/guides/ui-ux-guideline/uiuxg_complex_forms/9.png)

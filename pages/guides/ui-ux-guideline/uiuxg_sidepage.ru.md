@@ -14,22 +14,22 @@ summary: Правила конструирования боковых выезж
 
 ### Десктоп
 
-![Сайдпейдж - Десктоп](../../../images/pages/guides/ui-ux-guideline/uiuxg_sidepage/1.png)
+![Сайдпейдж - Десктоп](/images/pages/guides/ui-ux-guideline/uiuxg_sidepage/1.png)
 
 ### Десктоп + скорлл
 
-![Сайдпейдж - Десктоп - Скролл](../../../images/pages/guides/ui-ux-guideline/uiuxg_sidepage/4.png)
+![Сайдпейдж - Десктоп - Скролл](/images/pages/guides/ui-ux-guideline/uiuxg_sidepage/4.png)
 
 ### Планшет
 
-![Сайдпейдж - Планшет](../../../images/pages/guides/ui-ux-guideline/uiuxg_sidepage/2.png)
+![Сайдпейдж - Планшет](/images/pages/guides/ui-ux-guideline/uiuxg_sidepage/2.png)
 
 ### Сматрфон
 
-![Сайдпейдж - Сматрфон](../../../images/pages/guides/ui-ux-guideline/uiuxg_sidepage/3.png)
+![Сайдпейдж - Сматрфон](/images/pages/guides/ui-ux-guideline/uiuxg_sidepage/3.png)
 
 ## Комбинации сайдпейджней
 
 > Сайдпейджи **не вкладываются друг в друга**. Если избежать появления нескольких сайдпейджей нельзя, то пусть они лучше накладываются друг на друга (вместе с оверлеем). При этом прокрутка (если она есть) работает только у самого верхнего сайдпейджа, у остальных она заблокирована.
 
-![Комбинации сайдпейджей](../../../images/pages/guides/ui-ux-guideline/uiuxg_sidepage/5.png)
+![Комбинации сайдпейджей](/images/pages/guides/ui-ux-guideline/uiuxg_sidepage/5.png)
