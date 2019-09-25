@@ -15,9 +15,9 @@ lang: ru
 4. Разработка приложений на Ember.js
 5. RESTful-сервисы и протокол OData
 6. Flexberry Designer
-7. Flexberry Ember (frontend)
-8. Flexberry ORM
-9. Flexberry Ember (backend)
+7. Flexberry ORM
+8. Flexberry Ember (frontend)
+9. Flexberry ODataService (backend)
 10. Вспомогательные подсистемы Flexberry
 
 ## Вы можете
