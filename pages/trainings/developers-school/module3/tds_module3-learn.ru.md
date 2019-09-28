@@ -75,6 +75,15 @@ lang: ru
                             <p>Мастер-класс, на котором рассматривается практическая реализация архитектуры одностраничного приложения на языке JavaScript (Сергей Мелюков, Авито).</p>
                         </a>
                     </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/playlist?list=PLvTBThJr861wYlwBaaMy3tZUWpUvtJ9xE' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/state-in-javascript-applications.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">3. Управление состоянием в JavaScript-приложениях</span></h4>
+                            <p>Серия видео, в которых рассматриваются различные вопросы управления состоянием в современных JavaScript-приложениях: проблемы управления состоянием, Flux-архитектура, правильное использование глобального состояния приложения, конкретные инструменты для управления состоянием и пр. (Илья Климов, JavaScript.Ninja/GitLab).</p>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

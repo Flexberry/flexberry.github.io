@@ -43,6 +43,19 @@ conditionsByType=(action "conditionsByType")
 }}{% endraw %}
 ```
 
+### Настройка контроллера формы
+
+Можно переопределить компоненты, используемые в фильтрах для выбора значений:
+
+```javascript
+componentForFilter(type, relation) {
+  switch (type) {
+    case 'decimal': return { name: 'flexberry-textbox', properties: { class: 'compact fluid' } };
+    default: return {};
+  }
+},
+```
+
 ### Настройка роута формы
 
 Переопределить, как будет строится предикат, можно следующим образом:

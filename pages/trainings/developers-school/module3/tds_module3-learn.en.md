@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module3-learn.html
 lang: en
 autotranslated: true
-hash: c76f3c6a617883a62ca7b820f8876648363f83e394f0bf7c6afb6df73ff1e431
+hash: 1f4436d953dc465171e13d34913b83b406ef501fe04d93dec92b1d49bae2a1be
 ---
 
 ## The module
@@ -75,6 +75,15 @@ Single page application (SPA) architectural pattern MVC</a>
 </div>
 <h4><span class="item-head">2. Single Page Application using pure JavaScript</span></h4>
 <p>the Master class, which deals with the practical implementation of the architecture of single page application in JavaScript (Sergey Malukov, Avito).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/playlist?list=PLvTBThJr861wYlwBaaMy3tZUWpUvtJ9xE' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/state-in-javascript-applications.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">3. State management in JavaScript applications</span></h4>
+<p>a Series of videos that discuss various aspects of state management in modern JavaScript applications: problems of state management, Flux architecture, the correct use of the application's global state, specific tools for state management and so forth (Ilya Klimov, JavaScript.Ninja Networks).</p>
 </a>
 </div>
 </div>
@@ -568,7 +577,7 @@ Asynchronous programming</a>
 <div class="col-sm-6 col-md-4 portfolio-item">
 <a href="{{ 'https://www.youtube.com/watch?v=7wtbNNiOh30' | relative_url }}" class="portfolio-link" target="_blank">
 <div class="img-wrapper">
-<img src="{{ "/images/pages/trainings/developers-school/module3/generators and iterators.jpg" | relative_url}}" class="products-img">
+<img src="{{ "/images/pages/trainings/developers-school/module3/generators-and-iterators.jpg" | relative_url}}" class="products-img">
 </div>
 <h4><span class="item-head">9. Generators and iterators</span></h4>
 <p>the class devoted to the study of the mechanisms of operation of generators and iterators (Vladilen Minin, Vladilen by JavaScript).</p>
@@ -741,7 +750,7 @@ Build automation application</a>
 <img src="{{ "/images/pages/trainings/developers-school/module3/frontend-build.jpg" | relative_url}}" class="products-img">
 </div>
 <h4><span class="item-head">1. Assembly of front end</span></h4>
-<p>Lesson school developers hh.ru on issues of organization of the Assembly front end and to the respective classes of instruments. Understands practical example build a JavaScript application using the library Webpack (Lev Achasov, hh.ru).</p>
+<p>Lesson school developers hh.ru, dedicated to the organization of the Assembly of the frontend and the corresponding classes of instruments. Understands practical example build a JavaScript application using the library Webpack (Lev Achasov, hh.ru).</p>
 </a>
 </div>
 <div class="col-sm-6 col-md-4 portfolio-item">

@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_landing-page.html
 lang: en
 autotranslated: true
-hash: 90dbb89e17febfcf9151bb04c19c7545ecc61d0d3e66e0261c4e88f805a6f3b3
+hash: 1565311f57b35421f3d164516b0400773347e404cb8d455904cb71c6226c7b65
 summary: School developers Flexberry.
 ---
 
@@ -33,8 +33,8 @@ The basic knowledge, experience with:
 1. Markup languages: HTML, XML
 2. Style sheets: CSS
 3. Preprocessors stylesheets: LESS
-4. JavaScript, jQuery, DOM, JSON
-5. DBMS (preferably MS SQL Server, Postgres), SQL language
+4. JavaScript library jQuery, DOM, JSON
+5. DBMS (preferably MS SQL Server, Postgres), SQL
 
 
 ### Desirable requirements for students
@@ -52,6 +52,8 @@ The school consists of 10 educational modules, each of which are represented:
 * Additional training materials are links to resources that will help either a deeper understanding of the investigated topic, or to obtain basic knowledge on the subject, if the developer has no experience with the technology or language.
 * Tasks to perform
 * Check-list check for jobs
+
+As the main and additional educational materials schools used as its own work team platform Flexberry and materials of other companies and authors that are available in the public domain - reports from conferences, educational screencasts, lessons, recording lectures, etc.
 
 ## The format of the school
 
