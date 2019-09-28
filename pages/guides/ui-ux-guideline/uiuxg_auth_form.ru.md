@@ -1,8 +1,8 @@
 ---
 title: Форма авторизации и регистрации
-keywords: UI, UX
+keywords: форма, авторизация, ретисрация
 sidebar: ui-ux-guideline_sidebar
-toc: false
+toc: true
 permalink: ru/uiuxg_auth_form.html
 lang: ru
 summary: Форма для авторизации и регистрации нового пользователя.

@@ -1,8 +1,8 @@
 ---
 title: Расположение элементов на десктопе
-keywords: UI, UX
+keywords: расположение элементов
 sidebar: ui-ux-guideline_sidebar
-toc: false
+toc: true
 permalink: ru/desktop_layout.html
 lang: ru
 summary: Правила верстки базовых элементов на десктопе. Боковые меню и общая модульная сетка.

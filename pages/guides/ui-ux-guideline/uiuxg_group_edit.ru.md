@@ -1,8 +1,8 @@
 ---
 title: Редактирование группы
-keywords: UI, UX
+keywords: группы, редактирование элементов
 sidebar: ui-ux-guideline_sidebar
-toc: false
+toc: true
 permalink: ru/uiuxg_group_edit.html
 lang: ru
 summary: Редактирование группы элементов в списке.

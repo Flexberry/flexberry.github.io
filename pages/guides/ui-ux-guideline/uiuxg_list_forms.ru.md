@@ -1,8 +1,8 @@
 ---
 title: Списковые формы
-keywords: UI, UX
+keywords: список, списковая форма, лист, расположение элементов
 sidebar: ui-ux-guideline_sidebar
-toc: false
+toc: true
 permalink: ru/uiuxg_list_forms.html
 lang: ru
 summary: Описание списковых форм с рекомендациями по использованию.

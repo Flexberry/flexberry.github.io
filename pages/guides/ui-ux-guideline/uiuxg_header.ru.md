@@ -1,8 +1,8 @@
 ---
 title: Шапка
-keywords: UI, UX
+keywords: шапка, хедер
 sidebar: ui-ux-guideline_sidebar
-toc: false
+toc: true
 permalink: ru/uiuxg_header.html
 lang: ru
 summary: Правила создания шапки.

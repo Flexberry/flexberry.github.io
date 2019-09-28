@@ -1,8 +1,8 @@
 ---
 title: Расположение элементов на мобильных устройствах
-keywords: UI, UX
+keywords: верстка, мобильная верстка
 sidebar: ui-ux-guideline_sidebar
-toc: false
+toc: true
 permalink: ru/mobile_layout.html
 lang: ru
 summary: Правила верстки базовых элементов на мобильных устройствах. Расположение меню и контента на планшетах и смартфонах.

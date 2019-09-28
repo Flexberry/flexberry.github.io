@@ -1,8 +1,8 @@
 ---
 title: Главная страница
-keywords: UI, UX
+keywords: главная страница, домашняя страница
 sidebar: ui-ux-guideline_sidebar
-toc: false
+toc: true
 permalink: ru/uiuxg_main_page.html
 lang: ru
 summary: Правила верстки и примеры расположения блоков на главной странице.

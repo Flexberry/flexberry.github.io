@@ -1,8 +1,8 @@
 ---
 title: Информеры
-keywords: UI, UX
+keywords: информеры, уведомления
 sidebar: ui-ux-guideline_sidebar
-toc: false
+toc: true
 permalink: ru/uiuxg_informers.html
 lang: ru
 summary: Тултипы и сообщения об ошибках.

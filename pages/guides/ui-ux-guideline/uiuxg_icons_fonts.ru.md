@@ -1,14 +1,12 @@
 ---
 title: Иконки и шрифты
-keywords: UI, UX
+keywords: иконки, шрифты, иконография
 sidebar: ui-ux-guideline_sidebar
-toc: false
+toc: true
 permalink: ru/uiuxg_icons_fonts.html
 lang: ru
 summary: Базовая теоретическая информация по иконкам и шрифтам.
 ---
-
->**[FIX ME]** Не понятно что делать с этой статьей.
 
 ## Иконки
 

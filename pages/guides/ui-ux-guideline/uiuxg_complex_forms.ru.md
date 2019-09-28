@@ -1,8 +1,8 @@
 ---
 title: Высоконагруженные формы
-keywords: UI, UX
+keywords: формы, нагруженные формы
 sidebar: ui-ux-guideline_sidebar
-toc: false
+toc: true
 permalink: ru/uiuxg_complex_forms.html
 lang: ru
 summary: Пример создания высоконагруженных форм.
@@ -31,9 +31,7 @@ summary: Пример создания высоконагруженных фор
 
 ### Реализация мастера для существующей формы
 
-[Прототип в Figma -404-](404.md)
-
-Переработана форма [ИСОГД - Разрешение на строительство](http://isogd:2205/forms/Zdanie/ZdanieWebE.aspx?PK=%7Bb5cdd5e8-1173-4208-aa39-ceed4313ee5d%7D):
+Старая версия формы:
 
 ![Старая версия формы](/images/pages/guides/ui-ux-guideline/uiuxg_complex_forms/3.png)
 

@@ -1,8 +1,8 @@
 ---
 title: Понятие эвристики
-keywords: UI, UX
+keywords: эвристики, Якоб Нильсен, интерфейсы
 sidebar: ui-ux-guideline_sidebar
-toc: false
+toc: true
 permalink: ru/uiuxg_heuristics.html
 lang: ru
 summary: Эвристики Якоба Нильсена.

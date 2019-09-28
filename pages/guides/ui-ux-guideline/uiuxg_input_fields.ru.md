@@ -2,7 +2,7 @@
 title: Поля ввода данных
 keywords: UI, UX
 sidebar: ui-ux-guideline_sidebar
-toc: false
+toc: true
 permalink: ru/uiuxg_input_fields.html
 lang: ru
 summary: Здесь описаны все виды полей для ввода данных.

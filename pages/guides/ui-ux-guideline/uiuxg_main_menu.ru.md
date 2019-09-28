@@ -1,8 +1,8 @@
 ---
 title: Главное меню
-keywords: UI, UX
+keywords: меню, главное меню
 sidebar: ui-ux-guideline_sidebar
-toc: false
+toc: true
 permalink: ru/uiuxg_main_menu.html
 lang: ru
 summary: Главное меню и его компоненты.

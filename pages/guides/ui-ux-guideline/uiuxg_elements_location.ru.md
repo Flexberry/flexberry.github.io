@@ -1,8 +1,8 @@
 ---
 title: Расположение стандартных блоков
-keywords: UI, UX
+keywords: расположение элементов, расстановка компонентов
 sidebar: ui-ux-guideline_sidebar
-toc: false
+toc: true
 permalink: ru/uiuxg_elements_location.html
 lang: ru
 summary: Расположение основных элементов.

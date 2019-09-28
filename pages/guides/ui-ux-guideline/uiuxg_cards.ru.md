@@ -1,8 +1,8 @@
 ---
 title: Карточки
-keywords: UI, UX
+keywords: карточки
 sidebar: ui-ux-guideline_sidebar
-toc: false
+toc: true
 permalink: ru/uiuxg_cards.html
 lang: ru
 summary: Все виды карточек.

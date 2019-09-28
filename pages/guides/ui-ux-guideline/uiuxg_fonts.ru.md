@@ -1,8 +1,8 @@
 ---
 title: Шрифты
-keywords: UI, UX
+keywords: шрифты, шрифт, использование шрифтов
 sidebar: ui-ux-guideline_sidebar
-toc: false
+toc: true
 permalink: ru/uiuxg_fonts.html
 lang: ru
 summary: Установленные шрифтовые комбинации и размеры шрифтов для использования на проектах.

@@ -1,8 +1,8 @@
 ---
 title: Лайтбокс
-keywords: UI, UX
+keywords: лайтбокс, окно, уведомление
 sidebar: ui-ux-guideline_sidebar
-toc: false
+toc: true
 permalink: ru/uiuxg_lightbox.html
 lang: ru
 summary: Правила конструирования всплывающих модальных окон. Их комбинации и порядок появления.

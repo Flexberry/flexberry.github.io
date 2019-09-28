@@ -1,8 +1,8 @@
 ---
-title: Сайдпейдж
-keywords: UI, UX
+title: Боковая страница
+keywords: навигация, настрйоки, боковое меню, сайдпейдж, боковая страница
 sidebar: ui-ux-guideline_sidebar
-toc: false
+toc: true
 permalink: ru/uiuxg_sidepage.html
 lang: ru
 summary: Правила конструирования боковых выезжающих окон. Их комбинации и порядок появления.

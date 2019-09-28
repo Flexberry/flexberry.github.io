@@ -1,8 +1,8 @@
 ---
 title: Формы обратной связи
-keywords: UI, UX
+keywords: обратная связь, написать в техподдержку
 sidebar: ui-ux-guideline_sidebar
-toc: false
+toc: true
 permalink: ru/uiuxg_feedback_form.html
 lang: ru
 summary: Базовые элементы форм обратной связи.

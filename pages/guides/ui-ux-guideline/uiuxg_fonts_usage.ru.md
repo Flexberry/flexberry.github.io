@@ -1,8 +1,8 @@
 ---
 title: Правила использования шрифта Gost UI
-keywords: UI, UX
+keywords: шрифты, шрифт, использование шрифтов, gost ui
 sidebar: ui-ux-guideline_sidebar
-toc: false
+toc: true
 permalink: ru/uiuxg_fonts_usage.html
 lang: ru
 summary: Правила использования шрифта Gost UI на проектах, размеры, применение в конкретных местах.

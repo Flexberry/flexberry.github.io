@@ -1,9 +1,9 @@
 ---
 title: Формы со справочными материалами
-keywords: UI, UX
+keywords: справка, помощь, взаимодействие с пользователем
 sidebar: ui-ux-guideline_sidebar
-toc: false
-permalink: ru/.html
+toc: true
+permalink: ru/uiuxg_help_forms.html
 lang: ru
 summary: Описание основных функций форм и страниц со справочными материалами.
 ---
@@ -42,7 +42,7 @@ summary: Описание основных функций форм и стран
 
 Пример АИСОГД:
 
-![Пример - АИСОГД](/images/pages/guides/ui-ux-guideline/uiuxg_help_forms/1.png)
+![Пример](/images/pages/guides/ui-ux-guideline/uiuxg_help_forms/1.png)
 
 ### Кнопка перехода
 
@@ -50,7 +50,7 @@ summary: Описание основных функций форм и стран
 
 Примеры:
 
-![Пример - УИС МВ](/images/pages/guides/ui-ux-guideline/uiuxg_help_forms/2.png)
+![Пример](/images/pages/guides/ui-ux-guideline/uiuxg_help_forms/2.png)
 
 ![Пример - Новый дизайн](/images/pages/guides/ui-ux-guideline/uiuxg_help_forms/6.png)
 
@@ -60,9 +60,9 @@ summary: Описание основных функций форм и стран
 
 Для сложных полей с кодом или специальным синтаксисом нужны отдельные справочные страницы.
 
-![УИС МВ - шаблон поля информации](/images/pages/guides/ui-ux-guideline/uiuxg_help_forms/3.png)
+![Шаблон поля информации](/images/pages/guides/ui-ux-guideline/uiuxg_help_forms/3.png)
 
-При нажатии на кнопку ![Пример УИС МВ](/images/pages/guides/ui-ux-guideline/uiuxg_help_forms/4.png) открывается отдельная страница, которая содержит справку со следующими элементами:
+При нажатии на кнопку ![Пример](/images/pages/guides/ui-ux-guideline/uiuxg_help_forms/4.png) открывается отдельная страница, которая содержит справку со следующими элементами:
 
 * Синтаксис;
 * Вспомогательные функции;
@@ -73,6 +73,6 @@ summary: Описание основных функций форм и стран
 
 При наведении курсора на неподписанный элемент или иконку нужно показывать тултип.
 
-![УИС МВ - шаблон поля информации](/images/pages/guides/ui-ux-guideline/uiuxg_help_forms/7.png)
+![Шаблон поля информации](/images/pages/guides/ui-ux-guideline/uiuxg_help_forms/7.png)
 
-![УИС МВ - шаблон поля информации](/images/pages/guides/ui-ux-guideline/uiuxg_help_forms/8.png)
+![Шаблон поля информации](/images/pages/guides/ui-ux-guideline/uiuxg_help_forms/8.png)

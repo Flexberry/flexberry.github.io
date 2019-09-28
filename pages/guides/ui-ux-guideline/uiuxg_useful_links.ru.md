@@ -1,8 +1,8 @@
 ---
 title: Полезные ссылки
-keywords: UI, UX
+keywords: помощь, руководство, полезные ссылки, ссылки
 sidebar: ui-ux-guideline_sidebar
-toc: false
+toc: true
 permalink: ru/uiuxg_useful_links.html
 lang: ru
 summary: Набор полезных ссылок.

@@ -1,8 +1,8 @@
 ---
 title: Выбор цветовой схемы
-keywords: UI, UX
+keywords: подбор цвета, выбор цвета
 sidebar: ui-ux-guideline_sidebar
-toc: false
+toc: true
 permalink: ru/uiuxg_color_selection.html
 lang: ru
 summary: Выбор цветовой палитры для продукта при его отсутствии.
@@ -73,7 +73,7 @@ summary: Выбор цветовой палитры для продукта пр
 
 ![Триадные цвета](/images/pages/guides/ui-ux-guideline/uiuxg_color_selection/14.jpg)
 
-## Пример адаптации цветов для ЭИОС ПГМУ
+## Пример адаптации цветов
 
 ### Цвета
 

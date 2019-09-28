@@ -1,8 +1,8 @@
 ---
 title: Кнопки
-keywords: UI, UX
+keywords: кнопки, контролы
 sidebar: ui-ux-guideline_sidebar
-toc: false
+toc: true
 permalink: ru/uiuxg_buttons.html
 lang: ru
 summary: Кнопки, состояния, чекбоксы, радио-кнопки и тумблеры.

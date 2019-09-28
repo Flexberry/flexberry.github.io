@@ -1,8 +1,8 @@
 ---
 title: Flexberry Menu
-keywords: UI, UX
+keywords: меню, технологическое меню
 sidebar: ui-ux-guideline_sidebar
-toc: false
+toc: true
 permalink: ru/uiuxg_flexberry_menu.html
 lang: ru
 summary: Набор меню, тогглеров, комбобоксов и деревьев.

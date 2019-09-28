@@ -1,8 +1,8 @@
 ---
 title: Поисковые панели
-keywords: UI, UX
+keywords: поиск, панели, поля ввода
 sidebar: ui-ux-guideline_sidebar
-toc: false
+toc: true
 permalink: ru/uiuxg_search.html
 lang: ru
 summary: Правила создания поисковых форм и организации выдачи результатов поиска.

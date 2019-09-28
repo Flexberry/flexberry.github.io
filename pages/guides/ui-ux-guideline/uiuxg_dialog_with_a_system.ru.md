@@ -1,8 +1,8 @@
 ---
 title: Диалоги с системой
-keywords: UI, UX
+keywords: взаимодействие
 sidebar: ui-ux-guideline_sidebar
-toc: false
+toc: true
 permalink: ru/uiuxg_elements_location.html
 lang: ru
 summary: Различные диалоговые окна и их описание.

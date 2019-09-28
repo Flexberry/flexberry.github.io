@@ -1,8 +1,8 @@
 ---
 title: Личный кабинет
-keywords: UI, UX
+keywords: ЛК, личный кабинет, кабинет, пользовательские настройки
 sidebar: ui-ux-guideline_sidebar
-toc: false
+toc: true
 permalink: ru/uiuxg_lk.html
 lang: ru
 summary: Правила создания личного кабинета.
@@ -32,14 +32,14 @@ summary: Правила создания личного кабинета.
 
 ![Карточки - ЛК](/images/pages/guides/ui-ux-guideline/uiuxg_lk/6.png)
 
-Возможно также классическое представление ЛК (пример ПГМУ ЭИОС):
+Возможно также классическое представление ЛК:
 
-![Классический ЛК - ПГМУ ЭИОС](/images/pages/guides/ui-ux-guideline/uiuxg_lk/7.png)
+![Классический ЛК](/images/pages/guides/ui-ux-guideline/uiuxg_lk/7.png)
 
 ![Данные ЛК](/images/pages/guides/ui-ux-guideline/uiuxg_lk/8.png)
 
 Данные студента представляют собой набор полей ввода информации.
 
-Адаптивная и мобильная версии ЛК (пример ПГМУ ЭИОС):
+Адаптивная и мобильная версии ЛК:
 
 ![Адаптивная и мобильная версия](/images/pages/guides/ui-ux-guideline/uiuxg_lk/9.png)

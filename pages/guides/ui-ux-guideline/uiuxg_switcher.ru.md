@@ -1,8 +1,8 @@
 ---
 title: Переключатели
-keywords: UI, UX
+keywords: переключатели, тогглеры, элементы
 sidebar: ui-ux-guideline_sidebar
-toc: false
+toc: true
 permalink: ru/uiuxg_switcher.html
 lang: ru
 summary: Различные переключатели и их использование.

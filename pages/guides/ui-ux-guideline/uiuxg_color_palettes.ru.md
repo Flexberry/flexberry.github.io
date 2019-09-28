@@ -1,8 +1,8 @@
 ---
 title: Наборы цветов
-keywords: UI, UX
+keywords: палитра, цвета, цвет
 sidebar: ui-ux-guideline_sidebar
-toc: false
+toc: true
 permalink: ru/uiuxg_color_palettes.html
 lang: ru
 summary: Существующие цветовые комбинации.
