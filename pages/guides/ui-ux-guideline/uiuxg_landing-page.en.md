@@ -1,30 +1,107 @@
 ---
 title: Flexberry Guideline
-keywords: UI, UX
+keywords: guideline, guide, manual, table of contents, contents
 sidebar: ui-ux-guideline_sidebar
-toc: false
+toc: true
 permalink: en/uiuxg_landing-page.ru.html
 lang: en
 autotranslated: true
-hash: f7a391b129abe87d0418c5c9f391a6f2881d30496fec67e9a372f2d4990f8c99
-summary: a Brief description of what is written.
+hash: 3d136e89eee1217e3c2381dd8e96fbd476ac01027e1301eaa0be966dde07c418
+summary: This is the main page for guidelines Flexberry. Here you can find all the theoretical and practical information that will help you understand the design system of our platform.
 ---
 
-## Description
-This course consists of high-quality collections on the underlying technologies that are used in the platform Flexberry. For a successful learning platform Flexberry are recommended to get acquainted with this course.
+Platform Flexberry use a variety of clients, ranging from private business to government agencies. These instructions are written to ensure that all our projects meet the highest quality standards.
 
-## For novice developers
+Concepts described here apply to all projects created on the platform Flexberry. These rules need to be used in the design and development of new systems.
 
-If You are a novice developer and You need a fundamental knowledge of programming, take a look at [Harvard course CS50](https://www.youtube.com/playlist?list=PLawfWYMUziZqyUL5QDLVbe3j5BKWj42E5) in Russian.
+## Goal
 
-If You need to obtain basic knowledge of web programming, we recommend you to watch this video:
+We want to develop a universal design system that will be used on all projects and to disseminate these guidelines for use in all aspects of the brand.
 
-<div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px">
-<iframe width="854" height="480" src="https://www.youtube.com/embed/FKmRoNDQsMw" frameborder="0" allowfullscreen></iframe>
-</div>
+## Principles
 
-[Heuristics Jakob Nielsen](1.1_heuristics.md)
-[Information, icons, and fonts.](1.3_icons_fonts.md)
+### 1. Prototype ≠ ready system
+
+The prototype shows the logic of the visual behavior of the new element, and gives recommendations for its implementation. It is impossible to consider every nuance of the system, but you can get prototypicality difficult part. Cheaper and easier 3 times to redo a prototype than lots of times to change the finished system.
+
+### 2. Strict style
+
+When creating products for business emotional function is not as important as meaning. First and foremost, the system must be understandable and accessible. The main objective of the style is the encoding function of the elements, the construction of visual hierarchies.
+
+### 3. A set of components for all possible applications
+
+All the standard components the system components must be described: theoretical description, practical application and best practices implementation.
+
+## The basics
+
+[Heuristics](uiuxg_heuristics.EN.md)
+
+[The color scheme](uiuxg_color_selection.EN.md)
+
+[Rules of font use Gost UI](uiuxg_fonts_usage.EN.md)
+
+[The location of the standard blocks](uiuxg_elements_location.EN.md)
+
+[Location and filling out the fields](uiuxg_fields_location_and_fill.EN.md)
+
+[The dialogue system](uiuxg_dialog_with_a_system.EN.md)
+
+[Design tools](uiuxg_prototyping_tools.EN.md)
+
+## The best examples with recommendations
+
+[Desk](uiuxg_main_page_manual.EN.md)
+
+[Navigation menu](uiuxg_sitemap.EN.md)
+
+[Personal account](uiuxg_lk.EN.md)
+
+[Search panel](uiuxg_search.EN.md)
+
+[Forms reference materials](uiuxg_help_forms.EN.md)
+
+[Feedback form](uiuxg_feedback_form.EN.md)
+
+[High-loaded form](uiuxg_complex_forms.EN.md)
+
+[Forms error](uiuxg_error_forms.EN.md)
+
+[Useful links](uiuxg_useful_links.EN.md)
+
+## Components
+
+[Field data entry](uiuxg_input_fields.EN.md)
+
+[The location of elements on the desktop](uiuxg_desktop_layout.ru.md)
+
+[The location of elements on mobile devices](uiuxg_mobile_layout.EN.md)
+
+[Lightbox](uiuxg_lightbox.EN.md)
+
+[Page side](uiuxg_sidepage.EN.md)
+
+[Cap](uiuxg_header.EN.md)
+
+[Main menu](uiuxg_main_menu.EN.md)
+
+[Widgets](uiuxg_informers.EN.md)
+
+[The color](uiuxg_color_palettes.EN.md)
+
+[Fonts](uiuxg_fonts.EN.md)
+
+[Home page](uiuxg_main_page.EN.md)
+
+[List form](uiuxg_list_form.EN.md)
+
+[Buttons](uiuxg_buttons.EN.md)
+
+[Flexberry menu](uiuxg_flexberry_menu.EN.md)
+
+[Batch edit](uiuxg_group_edit.EN.md)
+
+[Switches](uiuxg_switcher.EN.md)
+
 
 
 {% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}
