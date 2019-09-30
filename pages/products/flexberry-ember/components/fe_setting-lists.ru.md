@@ -362,6 +362,31 @@ actions: {
 
 Подробнее в коде приложения [dummy](https://github.com/Flexberry/ember-flexberry/blob/develop/tests/dummy/app/routes/components-examples/flexberry-objectlistview/downloading-files-from-olv-list.js#L45).
 
+## Обрезание текста в ячейках по длине
+
+Есть возможность обрезать текст в ячейках по заданной длине. При наведении на такую ячейку во всплывающей подсказке указано полное значение текста ячейки. Это делается через настройку стандартного компонента ячейки в `getCellComponent`:
+
+```javascript
+  getCellComponent: function(attr, bindingPath, model) {
+    let cellComponent = {
+      componentName: 'object-list-view-cell',
+      componentProperties: {
+        maxTextLength: 10,
+        cutBySpaces: false,
+        displayMemberPath: Ember.get(attr, 'options.displayMemberPath')
+      }
+    };
+
+    return cellComponent;
+  }
+```
+
+Свойство | Описание
+:---------------------|:------------------------------------------------------------
+`maxTextLength` | Определяет максимальное количество символов в ячейке.
+`cutBySpaces` | Определяет способ обрезания текста (false - ровно по заданной длине, true - по последнему пробелу).
+`displayMemberPath` | Необходимо, если значением ячейки является объект. Задает путь до отображаемого в ячейке свойства.
+
 ## Вычислимые свойства в getCellComponent
 
 Чтобы создать вычисляемое свойство нужно, в `controllers`, в `getCellComponent` добавить свойство `computedProperties: { thisController: this }`:
