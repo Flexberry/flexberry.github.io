@@ -16,11 +16,11 @@ summary: Правила создания м наполнения главной 
 
 > Основные компоненты главной страницы: [Главная страница](uiuxg_main_page.ru)
 
-[УИС МВ](http://dis-riep:2405/ "Внутренняя ссылка"):
+УИС МВ:
 
 ![Главная страница УИС МВ](/images/pages/guides/ui-ux-guideline/uiuxg_main_page_manual/1.png)
 
-[Highway SB](http://dis-int:8080/ "Внутренняя ссылка"):
+Highway SB:
 
 ![Главная страница УИС МВ](/images/pages/guides/ui-ux-guideline/uiuxg_main_page_manual/2.png)
 
