@@ -88,6 +88,15 @@ lang: ru
                             <p>Серия скринкастов, посвященная использованию инструментов разработчика Google Chrome (Никита Красник, MakeWeb.me).</p>
                         </a>
                     </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=WNVcwW7mC34' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module1/chrome-dev-tools.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">Протокол HTTPS</span></h4>
+                            <p>Доклад, посвященный протоколам HTTP, HTTPS. (Вячеслав Бирюков, Яндекс).</p>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -141,5 +150,5 @@ lang: ru
 
 ## Вы можете
 
-* [Перейти к заданиям по модулю](tds_module1-tasks.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
-* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Перейти на страницу с учебными материалами модуля](tds_module1-learn.html)
+- [Перейти к заданиям по модулю](tds_module1-tasks.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+- <i class="fa fa-arrow-left" aria-hidden="true"></i> [Перейти на страницу с учебными материалами модуля](tds_module1-learn.html)
