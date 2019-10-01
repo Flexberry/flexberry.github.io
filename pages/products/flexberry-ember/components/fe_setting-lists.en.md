@@ -6,7 +6,7 @@ toc: true
 permalink: en/fe_setting-lists.html
 lang: en
 autotranslated: true
-hash: 99753d8c508e209d35fe692a11255f1fe3907ed517432f57e4f29a06d89c51b6
+hash: 2abf5b75f31b402edd743d4d96d2b7ffc1f8771ef3048c406f6b0b6ec6139963
 summary: setting up the control panel, custom buttons, tools, work with objects on the list, lock individual cells, hierarchical list of computable properties, the establishment by
 ---
 
@@ -363,6 +363,31 @@ actions: {
 ```
 
 Read more in the application code [dummy](https://github.com/Flexberry/ember-flexberry/blob/develop/tests/dummy/app/routes/components-examples/flexberry-objectlistview/downloading-files-from-olv-list.js#L45).
+
+## Circumcision text in the cells along the length of the
+
+Ability to crop the text in the cells for a given length. When you hover over a cell a tooltip shows the total value of the cell text. This is done through setting a standard component of the cells in `getCellComponent`:
+
+```javascript
+  getCellComponent: function(attr, bindingPath, model) {
+    let cellComponent = {
+      componentName: 'object-list-view-cell',
+      componentProperties: {
+        maxTextLength: 10,
+        cutBySpaces: false,
+        displayMemberPath: Ember.get(attr, 'options.displayMemberPath')
+      }
+    };
+
+    return cellComponent;
+  }
+```
+
+Property | Description
+:---------------------|:------------------------------------------------------------
+`maxTextLength` | Specifies the maximum number of characters in a cell.
+`cutBySpaces` | Determines how the circumcision of the text (false - exactly-to-length, true - according to the last space).
+`displayMemberPath` | Necessary if the cell value is the object. Specifies the path to display in the cell properties.
 
 ## Computable properties in getCellComponent
 

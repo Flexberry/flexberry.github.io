@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module1-appendix.html
 lang: en
 autotranslated: true
-hash: b1e57e667909f070148719b9362e0cd23c7ba2f3bcc9b5fc2f7003b701f78939
+hash: fc64da8cfad582707dd6738ae5f54396989c577c42a86401e05c03bcf9f3991d
 ---
 
 ## Additional materials module
@@ -90,6 +90,15 @@ Introduction to web development</a>
 <p>Series of screencasts on using developer tools in Google Chrome (Nikita kraśnik, MakeWeb.me).</p>
 </a>
 </div>
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=WNVcwW7mC34' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module1/chrome-dev-tools.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">HTTPS</span></h4>
+<p>Report on HTTP / HTTPS. (Vyacheslav Biryukov, Yandex).</p>
+</a>
+</div>
 </div>
 </div>
 </div>
@@ -143,8 +152,8 @@ Infrastructure and architecture of web applications</a>
 
 ## You can
 
-* [Go to jobs module](tds_module1-tasks.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
-* <i class="fa fa-arrow-left" aria-hidden="true"></i> [go to the page with the training material module](tds_module1-learn.html)
+- [Go to jobs module](tds_module1-tasks.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+- <i class="fa fa-arrow-left" aria-hidden="true"></i> [go to the page with the training material module](tds_module1-learn.html)
 
 
 

@@ -6,7 +6,7 @@ toc: true
 permalink: en/uiuxg_main_page_manual.html
 lang: en
 autotranslated: true
-hash: 9a7e2bc7a19b98575f5d515386464f0cf47039b05752ea2d5b93f65ed09a86e4
+hash: 82e3c5d0b5f473e73bf15e0b5e1735007e7e819da2ef0115c6c25f5de08a4fda
 summary: Rules for creating m filling the main page.
 ---
 
@@ -18,11 +18,11 @@ Basically a typical home page contains a set of [card](uiuxg_cards.EN.md), icons
 
 > Main components main page: [Home page](uiuxg_main_page.ru)
 
-[UIS MV](http://dis-riep:2405/ "Internal link"):
+UIS MV:
 
 ![Main page of UIS MV](/images/pages/guides/ui-ux-guideline/uiuxg_main_page_manual/1.png)
 
-[Highway SB](http://dis-int:8080/ "Internal link"):
+Highway SB:
 
 ![Main page of UIS MV](/images/pages/guides/ui-ux-guideline/uiuxg_main_page_manual/2.png)
 
