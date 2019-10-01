@@ -91,10 +91,19 @@ lang: ru
                     <div class="col-sm-6 col-md-4 portfolio-item">
                         <a href="{{ 'https://www.youtube.com/watch?v=WNVcwW7mC34' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
-                                <img src="{{ "/images/pages/trainings/developers-school/module1/chrome-dev-tools.jpg" | relative_url}}" class="products-img">
+                                <img src="{{ "/images/pages/trainings/developers-school/module1/https.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">Протокол HTTPS</span></h4>
-                            <p>Доклад, посвященный протоколам HTTP, HTTPS. (Вячеслав Бирюков, Яндекс).</p>
+                            <p>Доклад, посвященный деталям работы и настройки протоколов HTTP и HTTPS (Вячеслав Бирюков, Яндекс).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=bTLJRhxXv58' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module1/lets-encrypt-service.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">Сервис Let’s Encrypt</span></h4>
+                            <p>Доклад, посвященный сервису Let’s Encrypt, который позволяет получить бесплатные SSL-сертификаты (Олег Матвиенко, Fleberry PLATFORM).</p>
                         </a>
                     </div>
                 </div>
