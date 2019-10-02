@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module1-appendix.html
 lang: en
 autotranslated: true
-hash: fc64da8cfad582707dd6738ae5f54396989c577c42a86401e05c03bcf9f3991d
+hash: 4420ab5c364f4ba94938df53506fa8885ca70a7c50286d8920897d7cc85e330d
 ---
 
 ## Additional materials module
@@ -93,10 +93,19 @@ Introduction to web development</a>
 <div class="col-sm-6 col-md-4 portfolio-item">
 <a href="{{ 'https://www.youtube.com/watch?v=WNVcwW7mC34' | relative_url }}" class="portfolio-link" target="_blank">
 <div class="img-wrapper">
-<img src="{{ "/images/pages/trainings/developers-school/module1/chrome-dev-tools.jpg" | relative_url}}" class="products-img">
+<img src="{{ "/images/pages/trainings/developers-school/module1/https.jpg" | relative_url}}" class="products-img">
 </div>
 <h4><span class="item-head">HTTPS</span></h4>
-<p>Report on HTTP / HTTPS. (Vyacheslav Biryukov, Yandex).</p>
+<p>a report on the details of the operation and configuration of HTTP and HTTPS protocols (Vyacheslav Biryukov, Yandex).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=bTLJRhxXv58' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module1/lets-encrypt-service.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">Tools for Let's Encrypt</span></h4>
+<p>a report on the service of Let's Encrypt, which lets you get free SSL certificates (Oleg Matvienko, Fleberry PLATFORM).</p>
 </a>
 </div>
 </div>
