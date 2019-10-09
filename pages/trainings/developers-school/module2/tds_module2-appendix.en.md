@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module2-appendix.html
 lang: en
 autotranslated: true
-hash: dbbedbedaf387bde133c4181d8be50ff257836ca4d2e0200d2e20088ab06ef79
+hash: 4e8e00906f3f1e00c4e648aff826906e77d9dddc0b02c6d7670b47d306ad4d12
 ---
 
 ## Additional materials module
@@ -130,10 +130,55 @@ Team work with Azure DevOps&sol;TFS</a>
 </div>
 </div>
 
+<div class="panel-group">
+<div class="panel panel-default">
+<div class="panel-heading">
+<a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse3">&#9660;</a>
+<h4 class="panel-title">
+<a data-toggle="collapse" href="#collapse3">
+Additionally</a>
+</h4>
+</div>
+<div id="collapse3" class="panel-collapse collapse in">
+<div class="panel-body">
+<div class="row items">
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/watch?v=gclusz3HtDA' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module2/codereview-rules.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">Rules of good CodeReview</span></h4>
+<p>Video, which provides General guidance on how to do code review, what to look for in the first place, and what to automate once and for all. (Dmitry Rozhkov, Mesosphere).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://flexberry.github.io/ru/fp_code-review-check-list.html' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module2/codereview-check-list.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">a Check-list for CodeReview</span></h4>
+<p>Article with instructions for performing the verification of someone else's code (Flexberry PLATFORM).</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://www.youtube.com/playlist?list=PLvTBThJr861wi883RKRkoPSQe9J3yf4de' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module2/processes-in-company.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">Processes</span></h4>
+<p>a Series of videos with tips on improving and optimizing processes of software development in the company (Ilya Klimov, JavaScript.Ninja Networks).</p>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 ## You can
 
-* [Go to jobs module](tds_module2-tasks.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
-* <i class="fa fa-arrow-left" aria-hidden="true"></i> [go to the page with the training material module](tds_module2-learn.html)
+- [Go to jobs module](tds_module2-tasks.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+- <i class="fa fa-arrow-left" aria-hidden="true"></i> [go to the page with the training material module](tds_module2-learn.html)
 
 
 
