@@ -147,7 +147,7 @@ To start their own virtual site (for example demo) You must:
 * Place the tree of the website in a separate directory (e.g. /var/www/vhosts/demo/) HOST system. 
 Let this be a simple test page /var/www/vhosts/demo/index.html: 
 
-```
+```html
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
   <head>
@@ -162,7 +162,7 @@ Let this be a simple test page /var/www/vhosts/demo/index.html:
 
 * Describe the configuration of that virtual host in the configuration file vhosts.conf a separate directory. For example, /etc/docker/apache2/conf/vhosts.conf: 
 
-```
+```text
 NameVirtualHost *:80
 <VirtualHost *:80>
         DocumentRoot "/var/www/vhosts/demo/"
@@ -264,7 +264,7 @@ Start your own virtual Mono/.NET site is equivalent to running [virtual site Apa
 
 * Add the configuration of Your virtual host in the copied configuration file: /etc/docker/apache2/conf/vhosts.conf using the template: 
 
-```
+```text
 Listen 881
 NameVirtualHost *:881
 
