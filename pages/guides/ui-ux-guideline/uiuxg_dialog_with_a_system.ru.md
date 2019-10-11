@@ -3,7 +3,7 @@ title: Диалоги с системой
 keywords: взаимодействие
 sidebar: ui-ux-guideline_sidebar
 toc: true
-permalink: ru/uiuxg_elements_location.html
+permalink: ru/uiuxg_dialog_with_a_system.html
 lang: ru
 summary: Различные диалоговые окна и их описание.
 ---
@@ -22,7 +22,7 @@ summary: Различные диалоговые окна и их описани
 
 Модальное окно должно иметь определенную структуру, примерно, как на картинке ниже:
 
-![Структура модального окна](/images/pages/guides/ui-ux-guideline/uiuxg_dialog_with_a_user/1.png)
+![Структура модального окна](/images/pages/guides/ui-ux-guideline/uiuxg_dialog_with_a_system/1.png)
 
 У него может быть несколько выходов (минимум 2):
 
@@ -48,10 +48,10 @@ summary: Различные диалоговые окна и их описани
 
 Как это происходит сейчас:
 
-![Диалог - удаление](/images/pages/guides/ui-ux-guideline/uiuxg_dialog_with_a_user/5.png)
+![Диалог - удаление](/images/pages/guides/ui-ux-guideline/uiuxg_dialog_with_a_system/5.png)
 
 Явный недочет в том, что пользователь не знает точно, что удаляет, поэтому и подтвердить это действие ему проще. Необходимо уведомить пользователя о том, какой объект удаляется и какие последствия это вызовет (в данном примере: невозможность восстановить удаляемый объект)
-![Диалог - удаление - как должно быть](/images/pages/guides/ui-ux-guideline/uiuxg_dialog_with_a_user/delete.png)
+![Диалог - удаление - как должно быть](/images/pages/guides/ui-ux-guideline/uiuxg_dialog_with_a_system/delete.png)
 
 На этом диалоговом окне присутствует информация об удаляемом объекте, предупреждение об отсутствии обратной силы у данного действия, фокус на кнопке **Нет**, а также **крестик**, который позволит безболезненно выйти из "неприятного состояния" в случае необходимости.
 
@@ -61,7 +61,7 @@ summary: Различные диалоговые окна и их описани
 
 Структура всплывающего уведомления
 
-![Расположение уведомлений на экране](/images/pages/guides/ui-ux-guideline/uiuxg_dialog_with_a_user/notification.png)
+![Расположение уведомлений на экране](/images/pages/guides/ui-ux-guideline/uiuxg_dialog_with_a_system/notification.png)
 
 Также основным свойством всплывающего окна является возможность не закрывать его, так как по истечении определенного времени они исчезают самостоятельно. Несмотря на это свойство, всплывающее окно возможно закрыть крестиком в правом верхнем углу.
 
@@ -71,11 +71,11 @@ summary: Различные диалоговые окна и их описани
 
 Как есть (модальное окно):
 
-![Существующее модальное окно УИС МВ](/images/pages/guides/ui-ux-guideline/uiuxg_dialog_with_a_user/2.png)
+![Существующее модальное окно УИС МВ](/images/pages/guides/ui-ux-guideline/uiuxg_dialog_with_a_system/2.png)
 
 Как должно быть (всплывающее уведомление):
 
-![Планируется - всплывающее уведомление](/images/pages/guides/ui-ux-guideline/uiuxg_dialog_with_a_user/nt.png)
+![Планируется - всплывающее уведомление](/images/pages/guides/ui-ux-guideline/uiuxg_dialog_with_a_system/nt.png)
 
 Чтобы пользователь мог продолжать непрерывную работу, достаточно просто показать во всплывающем окошке нужную информацию. Оно остается на экране пользователя либо до момента «смахивания», либо пока не исчезнет самостоятельно.
 
@@ -87,14 +87,14 @@ summary: Различные диалоговые окна и их описани
 
 Структура всплывающей подсказки:
 
-![Подсказка при регистрации](/images/pages/guides/ui-ux-guideline/uiuxg_dialog_with_a_user/hiint.png)
+![Подсказка при регистрации](/images/pages/guides/ui-ux-guideline/uiuxg_dialog_with_a_system/hiint.png)
 
 ## Применение всплывающей подсказки
 
-При регистрации поле для ввода пароля имеет набор ограничений, чтобы пользователю не пришлось заполнять форму несколько раз, необходимо вывести всплывающую подсказку при наведении:
+При регистрации поле для ввода пароля имеет набор ограничений. Чтобы пользователю не пришлось заполнять форму несколько раз, необходимо вывести всплывающую подсказку при наведении:
 
-![Подсказка при регистрации](/images/pages/guides/ui-ux-guideline/uiuxg_dialog_with_a_user/registration.png)
+![Подсказка при регистрации](/images/pages/guides/ui-ux-guideline/uiuxg_dialog_with_a_system/registration.png)
 
 Другой пример – когда кнопка выполняет неочевидное действие, о котором нужно предупредить пользователя:
 
-![Подсказка](/images/pages/guides/ui-ux-guideline/uiuxg_dialog_with_a_user/hint.png)
+![Подсказка](/images/pages/guides/ui-ux-guideline/uiuxg_dialog_with_a_system/hint.png)
