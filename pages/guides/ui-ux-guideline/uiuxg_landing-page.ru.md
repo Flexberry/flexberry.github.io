@@ -60,9 +60,13 @@ summary: Это главная страница гайдлайнов Flexberry. 
 
 [Формы обратной связи](uiuxg_feedback_form.ru.md)
 
+[Формы отчетности](uiuxg_report.ru.md)
+
 [Высоконагруженные формы](uiuxg_complex_forms.ru.md)
 
 [Формы ошибок](uiuxg_error_forms.ru.md)
+
+[Формы справочников](uiuxg_directory.ru.md)
 
 [Полезные ссылки](uiuxg_useful_links.ru.md)
 
