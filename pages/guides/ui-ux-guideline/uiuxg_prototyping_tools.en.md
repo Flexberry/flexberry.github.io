@@ -6,7 +6,7 @@ toc: true
 permalink: en/uiuxg_prototyping_tools.html
 lang: en
 autotranslated: true
-hash: 96f1da77d1fa0f4848510191da212fbfe12792cbc1cb29ba9de159dd68e69501
+hash: 5951b0d0dd314e772175ccbaf04fa645539d28f5d00f6da5c95d2461bbd26f94
 summary: a Set of design tools UX.
 ---
 
@@ -14,7 +14,7 @@ You may encounter many problems when working on a new project. To create a quali
 
 ## Recommended tools
 
-This section contains the main tools that are used daily to work on projects for the company.
+This section contains the main tools that are used every day to work on projects for the company.
 
 ### [Figma](https://www.figma.com/)
 

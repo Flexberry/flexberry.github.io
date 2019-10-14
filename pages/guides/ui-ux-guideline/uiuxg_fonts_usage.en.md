@@ -6,7 +6,7 @@ toc: true
 permalink: en/uiuxg_fonts_usage.html
 lang: en
 autotranslated: true
-hash: 39f33966d4182068b9252c918ae11b59cde3847e90148a4ea0f0149d98ac8cd9
+hash: 62e7ce2621dfeca06c54a47be797c090e5ba4779ba05feaa44c7cd6327cf025d
 summary: the Rules of font use Gost UI designs, sizes, application in specific areas.
 ---
 
@@ -96,7 +96,7 @@ This allows you to set common rules for adaptation and the same text on the mobi
 
 ### The length of the string
 
-For the reader's eye, long or short strings tedious. Long to ruin the rhythm because the reader is difficult to find the next line of text. The only situation in which the acceptable short line – a small amount of text. For better readability the length of the string must be between `40` and `80` characters, including spaces.
+For the reader's eye long or short strings tedious. Long to ruin the rhythm because the reader is difficult to find the next line of text. The only situation in which the acceptable short line – a small amount of text. For better readability the length of the string must be between `40` and `80` characters, including spaces.
 
 ![String length](/images/pages/guides/ui-ux-guideline/uiuxg_fonts/6.png)
 

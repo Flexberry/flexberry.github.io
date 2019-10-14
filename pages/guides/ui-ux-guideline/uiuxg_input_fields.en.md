@@ -6,7 +6,7 @@ toc: true
 permalink: en/uiuxg_input_fields.html
 lang: en
 autotranslated: true
-hash: 04212c0341bbf37c6032c5b69e5d808bc4de5369fae15baf998b23d23948cb62
+hash: 88666774135523d6b70f19f95fc2210ded15b02b9ebef0425484f9f06c08cf06
 summary: Here are all the types of fields for data entry.
 ---
 
@@ -30,7 +30,7 @@ Basically, the input forms are divided into several types.
 
 ## Field condition
 
-All fields have their fortunes, which change depending on the status of the field guidance of cursor, activity, etc.
+All fields have their fortunes, which change depending on the status of the field, hover, active, etc.
 
 ### General condition
 
@@ -74,14 +74,14 @@ In the select file field supported drag&drop. When you click on a field or input
 
 There are two ways of interaction:
 
-1. After selecting the file, you receive another selection box. Fields can appear one after another, until the end of the limit for adding файлов;
+1. After selecting the file, you receive another selection box. Fields can appear one after another, until the end of the limit for adding files.
 2. When you select files, if the user selects several new fields for all selected files are automatically created. Clicking on the x field disappears.
 
 ![Multiple files](/images/pages/guides/ui-ux-guideline/uiuxg_input_fields/11.png)
 
 ## Lookup
 
-Full list this item opens the [SIGPIPE](uiuxg_sidepage.EN.md).
+Full list this item opens the [idpage](uiuxg_sidepage.EN.md).
 
 ![Lookup](/images/pages/guides/ui-ux-guideline/uiuxg_input_fields/12.png)
 

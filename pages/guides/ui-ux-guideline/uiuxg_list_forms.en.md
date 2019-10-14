@@ -6,13 +6,13 @@ toc: true
 permalink: en/uiuxg_list_forms.html
 lang: en
 autotranslated: true
-hash: 00f8c3c8cd7398a4beabda64479e4b50fe7f351536f4df48bc866dfabf86de00
+hash: ef17c719e117fdd72d67f6c73fbb984fd62b5966394a667989a802e07f86c065
 summary: Description the list of forms with recommendations for use.
 ---
 
 ## Description of list form
 
-The list form is the key in all of our information system, so during the development, it is very important to adhere to certain standards and paradigms.
+The list form is the key in all of our information systems, so during the development, it is very important to adhere to certain standards and paradigms.
 
 ## The structure of list form
 
