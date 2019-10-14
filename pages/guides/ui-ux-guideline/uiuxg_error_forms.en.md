@@ -6,7 +6,7 @@ toc: true
 permalink: en/uiuxg_error_forms.html
 lang: en
 autotranslated: true
-hash: 91787d2eff6f259c7d8da4eee7b1bfee6ad227671133df3ada50351a9c713bd5
+hash: 4cd92da2585a90f71f4a1ea874a8a2d64ff78db87822ad05f5b46551e7a05e29
 summary: Basic error pages and the rules for creating such forms.
 ---
 
@@ -20,7 +20,7 @@ The error page for the desktop version as follows:
 
 ![An error page PGMU](/images/pages/guides/ui-ux-guideline/uiuxg_error_forms/1.png)
 
-The very form of the error must be in the lightbox (see Lightbox element) and differ from conventional forms of service, to be brief and informative — so the user will understand what went wrong. It should contain the following elements:
+The very form of the error must be in the lightbox (see item [Lightbox](uiuxg_lightbox.EN.md)) and differ from conventional forms of service, to be brief and informative — so the user will understand what went wrong. It should contain the following elements:
 
 * Заголовок;
 * Text of the error. Need to show short cause of the error, and not technical сведения;

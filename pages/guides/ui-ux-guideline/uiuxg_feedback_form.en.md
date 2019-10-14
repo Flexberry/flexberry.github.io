@@ -6,7 +6,7 @@ toc: true
 permalink: en/uiuxg_feedback_form.html
 lang: en
 autotranslated: true
-hash: 54f87396d52a993991a247a1ccfa04d0d3ed20c89b19c93668df66284904a2c5
+hash: 10b08dd91590b04da63424998ced5ccf460fb7d4cf50b33d3d7a8ef074eefb1a
 summary: the Basic elements of the feedback forms.
 ---
 
@@ -20,7 +20,7 @@ In the adaptive version, the link support is available at the bottom of authoris
 
 ![Login adaptive version](/images/pages/guides/ui-ux-guideline/uiuxg_feedback_form/5.png)
 
-Form looks as follows (the [Lightbox](uiuxg_lightbox.ru)):
+Form as follows (see item [Lightbox](uiuxg_lightbox.EN.md)):
 
 ![Write to tech support](/images/pages/guides/ui-ux-guideline/uiuxg_feedback_form/3.png)
 

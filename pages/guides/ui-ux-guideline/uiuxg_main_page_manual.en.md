@@ -6,8 +6,8 @@ toc: true
 permalink: en/uiuxg_main_page_manual.html
 lang: en
 autotranslated: true
-hash: 82e3c5d0b5f473e73bf15e0b5e1735007e7e819da2ef0115c6c25f5de08a4fda
-summary: Rules for creating m filling the main page.
+hash: b3f40ef6c16ae774f2db6e7b9dab947488a7b9ae80853cc445ae31654829cbd2
+summary: Rules for creating and filling the main page.
 ---
 
 ## Main features
