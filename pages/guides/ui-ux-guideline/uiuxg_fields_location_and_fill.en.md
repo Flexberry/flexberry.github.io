@@ -6,7 +6,7 @@ toc: true
 permalink: en/uiuxg_fields_location_and_fill.html
 lang: en
 autotranslated: true
-hash: 47c96f522cf92ccc14ee87a455dae6859c558c87a557867d0899ec5973d74d0f
+hash: 1839d0f6605a6c7c26747de0f79e2adc3e50abc7d2045e6f4544128a876e5035
 summary: the Basic rules of adding and arranging fields.
 ---
 
@@ -65,8 +65,6 @@ Try to avoid optional fields in forms. If you do use them, then at least clearly
 
 ![Mandatory](/images/pages/guides/ui-ux-guideline/uiuxg_fields_location_and_fill/4.png)
 
-![Optional](/images/pages/guides/ui-ux-guideline/uiuxg_fields_location_and_fill/5.png)
-
 ### Input mask information
 
 The mask information input is visual improvement that helps to format the entered information automatically. They appear when the user focuses on a specific input field, and this formatting helps the user focus on relevant information and easier to notice possible errors. In the example below, parentheses, spaces and dashes are automatically applied when entering telephone credit card numbers and other data with numbers. This method saves time and helps avoid mistakes when entering numeric values.
@@ -75,7 +73,7 @@ The mask information input is visual improvement that helps to format the entere
 
 ### Desktop-Only: friends the form with the keyboard
 
-Users should be able to focus on form and to edit each box using only the keyboard. Experienced users who heavily use the keyboard, should be able to easily move between fields and edit them without lifting your fingers from the keyboard. You can find detailed requirements for interacting with the keyboard in [W3C recommendation](https://www.w3.org/TR/WCAG20-TECHS/G202.html).
+Users should be able to focus on form and edit each box using only the keyboard. Experienced users who heavily use the keyboard, should be able to easily move between fields and edit them without lifting your fingers from the keyboard. You can find detailed requirements for interacting with the keyboard in [W3C recommendation](https://www.w3.org/TR/WCAG20-TECHS/G202.html).
 
 ![Keyboard](/images/pages/guides/ui-ux-guideline/uiuxg_fields_location_and_fill/7.png)
 
@@ -154,7 +152,7 @@ The lack of visual distinction between primary and secondary actions can easily 
 
 ### The location of the button
 
-Complex forms, usually have a button» «Ago. If this button is located directly above the input field (as in the first screenshot below), the user may accidentally click on it. The thing is that the button» «Ago — this is a secondary action that should be less accessible (the second screenshot shows the correct location of the secondary buttons).
+Complex forms, usually have a button» «Ago. If this button is located directly below the input field (as in the first screenshot below), the user may accidentally click on it. The thing is that the button» «Ago — this is a secondary action that should be less accessible (the second screenshot shows the correct location of the secondary buttons).
 
 ![Button layout](/images/pages/guides/ui-ux-guideline/uiuxg_fields_location_and_fill/19.png)
 
@@ -172,7 +170,7 @@ Avoid buttons with multiple actions, as they may distract users from completing 
 
 Make sure buttons look like buttons: make the display press if you can.
 
-![Buttons](/images/pages/guides/ui-ux-guideline/uiuxg_fields_location_and_fill/21.gif)
+![Button](/images/pages/guides/ui-ux-guideline/uiuxg_fields_location_and_fill/21.gif)
 
 (Image: Material Design Guidelines)
 The shadow under the button indicates that it can be pressed.

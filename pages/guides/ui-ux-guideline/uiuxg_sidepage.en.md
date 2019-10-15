@@ -1,12 +1,12 @@
 ---
 title: Sidebar page
-keywords: navigation, kastrioti, side menu, sigpac, side page
+keywords: navigation, settings, sidebar, sigpac, side page
 sidebar: ui-ux-guideline_sidebar
 toc: true
 permalink: en/uiuxg_sidepage.html
 lang: en
 autotranslated: true
-hash: 72132764c951f24ca9e66cbceae0bd95f918bbdb4db3a8d8921b5821bc51b6a2
+hash: d9c29c147ad8e00c79cea3b5d4fb49ef7e23041a7f38969f644d6d010124e3fe
 summary: the design Rules of leaving the side Windows. Their combination and order of appearance.
 ---
 
@@ -18,7 +18,7 @@ For silpada better to use a fixed width. For example, sigpac size **S** can be w
 
 ![Sidpec - Desktop](/images/pages/guides/ui-ux-guideline/uiuxg_sidepage/1.png)
 
-### Desktop score
+### Desktop scrolling
 
 ![Sidpec - Desktop - Scrolling](/images/pages/guides/ui-ux-guideline/uiuxg_sidepage/4.png)
 
@@ -30,7 +30,7 @@ For silpada better to use a fixed width. For example, sigpac size **S** can be w
 
 ![Sidpec - Smartphone](/images/pages/guides/ui-ux-guideline/uiuxg_sidepage/3.png)
 
-## Combination idpagina
+## The combination of sidpara
 
 > Sidepage **are not nested in one another**. If you avoid a few of sidpara impossible, they rather overlap each other (with an overlay). The scroll (if any) works only at the top of silpada, the rest it is locked.
 

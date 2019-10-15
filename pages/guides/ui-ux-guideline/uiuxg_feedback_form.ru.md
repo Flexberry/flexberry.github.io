@@ -18,7 +18,7 @@ summary: Базовые элементы форм обратной связи.
 
 ![Логин адаптивной версии](/images/pages/guides/ui-ux-guideline/uiuxg_feedback_form/5.png)
 
-Форма выглядит следующим образом (элемент [Лайтбокс](uiuxg_lightbox.ru)):
+Форма выглядит следующим образом (см. элемент [Лайтбокс](uiuxg_lightbox.ru.md)):
 
 ![Написать в техподдержку](/images/pages/guides/ui-ux-guideline/uiuxg_feedback_form/3.png)
 

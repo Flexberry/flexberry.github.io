@@ -6,14 +6,14 @@ toc: true
 permalink: en/uiuxg_icons_fonts.html
 lang: en
 autotranslated: true
-hash: a3f1a7f0505caf69d3d293cc21ab42a5166547a44c07fdd578110c0b2100907f
+hash: ca25707c6fd9dd8223813ba32dc0e6ade7d5252fb37f9c68f8882cf18dca854c
 summary: the basic theoretical information on the icons and fonts.
 ---
 
 ## Icons
 
 Icons should be standardized and uniform.
-If developed by the designer or the analyst can choose the operation appropriate icon from the set available - need to consult with the developer's design environment is about creating new icons.
+If developed by the designer or the analyst can choose the operation appropriate icon from the set available, you need to consult with the developer's design environment is about creating new icons.
 
 Icon should be simple and concise. The number of objects in one icon to a minimum.
 
@@ -114,7 +114,7 @@ String length must not exceed **600 px**. Is the optimal size for comfortable ey
 
 The distance between the lines almost always must be greater than font size. Except for the headers. To achieve a balance between the text and the» «air, make the line spacing about one and a half times the height of the lowercase letters. Or set the line spacing to 150% of the font size.
 
-For example the text size to 14 px, then interlinear — 21 px. 14/2 = 7 14 = 21
+For example the text size to 14 px, then the line spacing of 21 px. 14/2 = 7 14 = 21
 
 ## The numbers in the font
 

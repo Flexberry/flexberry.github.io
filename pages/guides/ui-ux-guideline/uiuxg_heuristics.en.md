@@ -6,7 +6,7 @@ toc: true
 permalink: en/uiuxg_heuristics.html
 lang: en
 autotranslated: true
-hash: 539d8a2a8ca9eb6d5b4eaa8dcb1e70f015b12bb3edd4680cef48b5d6de404de8
+hash: 8263a796eabe9e767b133fc02ec2db9f87285a1a57a899355807740bfa537a5b
 summary: Heuristics of Jakob Nielsen.
 ---
 
@@ -38,19 +38,19 @@ As example, the ability to delete your page or entry in a well-known social netw
 
 ### 4. Uniformity and standards
 
-A user of one day being able to understand the logic of the system needs to be sure that it works everywhere. It is necessary to keep to the uniformity and follow standards.
+The user, once being able to understand the logic of the system needs to be sure that it works everywhere. It is necessary to keep to the uniformity and follow standards.
 
-For example, if the user realizes that he has a set of functions for working with a single list form, the same set must be present on all list forms. Or, if the search string is located in the upper right corner, it should be present everywhere at the same place, so without looking you can have it “poke”.
+For example, if the user realizes that he has a set of functions to work with just one list form, the same set must be present on all list forms. Or, if the search string is located in the upper right corner, it should be present everywhere at the same place, so without looking you can have it “poke”.
 
 ### 5. Prevention of errors
 
-Main rule this clause is error need not to tell, and to try to prevent them. For this you need to consider even the most ridiculous situation in which the user can potentially make a mistake. For example, when filling in any form you can arrange a clue where to specify the format of the input data. And required fields should be marked, especially if a lot of fields is optional.
+Main rule this clause is error need not to tell, and to try to prevent them. For this you need to consider even the most ridiculous situation in which the user can potentially make a mistake. For example, when filling out any form can be placed clues that indicate the format of the input data. And required fields should be marked, especially if a lot of fields is optional.
 
 ![Tooltip format](/images/pages/guides/ui-ux-guideline/uiuxg_heuristics/3.png)
 
 ### 6. Recognition beyond memories
 
-This point echoes the previous one, as in the example about the uniform position of the seek bar on any page. The user does not have to remember where that is, everything must be either in sight, or intuitive, although, as we know, intuition all developed differently.
+This point echoes the previous one, as in the example about the uniform position of the seek bar on any page. The user does not have to remember where everything is. Everything must be either in sight, or intuitive, although, as we know, intuition all developed differently.
 
 ### 7. Flexibility and efficiency of use
 
@@ -71,7 +71,7 @@ Of course, every designer and the user understand the minimalism and perceive th
 
 ### 9. Aid users in the recognition and correction of errors
 
-Nothing in the world perfect doesn't exist, so any system errors can occur. It is important not only to be able to handle them, but also the right to notify us If the error still persists, the user should not see a blank page or God forbid code caused the exception.
+Nothing in the world perfect doesn't exist, so any system errors can occur. It is important not only to be able to handle them, but also to correctly notify the user. Us if the error still persists, the user should not see a blank page or a code exception.
 
 For example, when a failure or incorrect search, the user must understand that did something wrong. And also get recommendations to remedy the situation.
 
@@ -87,7 +87,7 @@ It is also great to have a separate section on the website with common questions
 
 ## A small epilogue
 
-Of course, these heuristics can not be the solution to all problems when creating the user interface, however, they are generally accepted. Therefore, when designing your design, you should at least make sure that none of the items has not been grossly violated and then the next system is much more likely to be well accepted and understood by the end user.
+Of course, these heuristics can not be the solution to all problems when creating the user interface, however, they are generally accepted. Therefore, when designing your design, you should at least make sure that none of the items were not grossly violated, then the future of the system is much more likely to be well accepted and understood by the end user.
 
 
 
