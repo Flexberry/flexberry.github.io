@@ -6,7 +6,7 @@ toc: true
 permalink: en/uiuxg_landing-page.ru.html
 lang: en
 autotranslated: true
-hash: 3d136e89eee1217e3c2381dd8e96fbd476ac01027e1301eaa0be966dde07c418
+hash: bc6839ea302e06e3e951e7f7270e001e9c7ac34a41890a4db79b9dd09f97e11e
 summary: This is the main page for guidelines Flexberry. Here you can find all the theoretical and practical information that will help you understand the design system of our platform.
 ---
 
@@ -62,17 +62,21 @@ All the standard components the system components must be described: theoretical
 
 [Feedback form](uiuxg_feedback_form.EN.md)
 
+[Reporting form](uiuxg_report.EN.md)
+
 [High-loaded form](uiuxg_complex_forms.EN.md)
 
 [Forms error](uiuxg_error_forms.EN.md)
+
+[Forms reference books](uiuxg_directory.EN.md)
 
 [Useful links](uiuxg_useful_links.EN.md)
 
 ## Components
 
-[Field data entry](uiuxg_input_fields.EN.md)
+[Field data entry](uiuxg_input_fields.ru.md)
 
-[The location of elements on the desktop](uiuxg_desktop_layout.ru.md)
+[The location of elements on the desktop](uiuxg_desktop_layout.EN.md)
 
 [The location of elements on mobile devices](uiuxg_mobile_layout.EN.md)
 
