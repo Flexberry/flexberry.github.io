@@ -91,7 +91,7 @@ entries:
       output: web
     - title: Useful links
       title_ru: Полезные ссылки
-      url: /uiuxg_landing-page.ru.html
+      url: /uiuxg_useful_links.html
       output: web
   - title: Components
     title_ru: Компоненты
