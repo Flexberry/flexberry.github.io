@@ -844,6 +844,17 @@ lang: ru
                         </a>
                     </div>
                 </div>
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://habr.com/ru/post/424051/' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module3/clean-code.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">7. Рекомендации по написанию "чистого кода"</span></h4>
+                            <p>Конспект книги "Чистый код" Роберта Мартина, посвященная рекомендациям о том, как писать хорошо поддерживаемый и понятный исходный код. (Марат Танчуев, QIWI Blockchain Technologies).</p>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
