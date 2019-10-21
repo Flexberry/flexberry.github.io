@@ -380,10 +380,6 @@ footer .footer-above ul {
   background: #6d7fcc;
 }
 
-#sidebar ul li a {
-  display: block;
-}
-
 #sidebarCollapse {
   position: absolute;
   left: 10px;
