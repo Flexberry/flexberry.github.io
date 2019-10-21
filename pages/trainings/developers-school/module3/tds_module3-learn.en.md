@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module3-learn.html
 lang: en
 autotranslated: true
-hash: 1f4436d953dc465171e13d34913b83b406ef501fe04d93dec92b1d49bae2a1be
+hash: 9718e9c75b18a0973c069a8de0994b57b8a08f7cf6356999b8f5923564f353ab
 ---
 
 ## The module
@@ -846,6 +846,17 @@ Checking code style and automation</a>
 </a>
 </div>
 </div>
+<div class="row items">
+<div class="col-sm-6 col-md-4 portfolio-item">
+<a href="{{ 'https://habr.com/ru/post/424051/' | relative_url }}" class="portfolio-link" target="_blank">
+<div class="img-wrapper">
+<img src="{{ "/images/pages/trainings/developers-school/module3/clean-code.jpg" | relative_url}}" class="products-img">
+</div>
+<h4><span class="item-head">7. Guidelines for writing "clean code"</span></h4>
+<p>summary of the book "Clean code" by Robert Martin is dedicated to recommendations about how to write well-supported and understandable source code. (Marat Tanchev, QIWI Blockchain Technologies).</p>
+</a>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -913,7 +924,7 @@ Application testing</a>
 <div class="col-sm-6 col-md-4 portfolio-item">
 <a href="{{ 'https://www.youtube.com/watch?v=C_FYssT_aKg' | relative_url }}" class="portfolio-link" target="_blank">
 <div class="img-wrapper">
-<img src="{{ "/images/pages/trainings/developers-school/module3/end-to-end-testing.jpg" | relative_url}}" class="products-img">
+<img src="{{ "/images/pages/trainings/developers-school/module3/end-to-end testing.jpg" | relative_url}}" class="products-img">
 </div>
 <h4><span class="item-head">6. Basics End-to-End testing</span></h4>
 <p>the Video, which discusses the advantages of using End-to-End testing from the business point of view, as well as the main architectural principles End-to-End testing (Ilya Klimov, JavaScript.Ninja Networks).</p>
