@@ -79,6 +79,7 @@ summary: Курс по базовым технологиям, применяем
 * [Coursera](https://ru.coursera.org/)
 * [edX](https://www.edx.org/)
 * [Udemy](https://www.udemy.com/)
+* [egghead.io](https://egghead.io/)
 * [Microsoft Learn](https://docs.microsoft.com/ru-ru/learn/)
 * [Яндекс.Практикум](https://praktikum.yandex.ru/)
 * [GeekBrains](https://geekbrains.ru/)
