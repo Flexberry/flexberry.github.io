@@ -1,5 +1,5 @@
 ---
-title: Модуль 6. Работа с ORM
+title: Модуль 6. Flexberry ORM
 keywords: Programming, Training, Developers school
 sidebar: training-developers-school_sidebar
 toc: false

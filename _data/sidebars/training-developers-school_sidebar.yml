@@ -98,8 +98,8 @@ entries:
     title_ru: Модуль 5.
     output: web
     folderitems:
-    - title: Module 6. Working with ORM
-    title_ru: Модуль 6. Работа с ORM
+    - title: Module 6. Flexberry ORM
+    title_ru: Модуль 6. Flexberry ORM
     output: web
     folderitems:
     - title: About the module

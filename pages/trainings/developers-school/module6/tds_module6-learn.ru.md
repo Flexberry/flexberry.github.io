@@ -15,7 +15,7 @@ lang: ru
             <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse1">&#9660;</a>
             <h4 class="panel-title">
                 <a data-toggle="collapse" href="#collapse1">
-                Работа с ORM</a>
+                Flexberry ORM</a>
             </h4>
         </div>
         <div id="collapse1" class="panel-collapse collapse in">
@@ -183,5 +183,5 @@ lang: ru
 
 ## Вы можете
 
-* [Перейти к дополнительным учебным материалам модуля](tds_module6-appendix.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
-* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Перейти на страницу с описанием модуля](tds_module6-about.html)
+- [Перейти к дополнительным учебным материалам модуля](tds_module6-appendix.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+- <i class="fa fa-arrow-left" aria-hidden="true"></i> [Перейти на страницу с описанием модуля](tds_module6-about.html)
