@@ -24,10 +24,28 @@ lang: ru
                     <div class="col-sm-6 col-md-4 portfolio-item">
                         <a href="{{ 'https://www.youtube.com/watch?v=SywkY3TmBEQ' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
-                                <img src="{{ "/images/pages/trainings/developers-school/module6/how-i-came-to-hate-orm.jpg" | relative_url}}" class="products-img">
+                                <img src="{{ "/images/pages/trainings/developers-school/module6/using-orm-on-real-project.jpg" | relative_url}}" class="products-img">
                             </div>
                             <h4><span class="item-head">Использование ORM на реальном проекте</span></h4>
                             <p>Доклад с конференции Mobius 2017 Moscow, в котором рассказывается история проекта на Android для компании Тинькофф - какие проблемы принесла ORM и как они решались (Сергей Боиштян, Тинькофф).</p>
+                        </a>
+                    </div>                    
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/playlist?list=PLrCZzMib1e9oOFQbuOgjKYbRUoA8zGKnj' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module6/database-course.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">Курс по базам данных</span></h4>
+                            <p>Видеокурс по базам данных на канале Технострим Mail.Ru Group (Артем Навроцкий, Mail.Ru Group).</p>
+                        </a>
+                    </div>                    
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://postgrespro.ru/education/courses/DEV1' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module6/postgresql-course.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">Курс по PostgreSQL</span></h4>
+                            <p>Базовый курс по разработке серверной части приложений на PostgreSQL 9.6 (Павел Лузанов и Егор Рогов, Postgres Professional).</p>
                         </a>
                     </div>                    
                 </div>
