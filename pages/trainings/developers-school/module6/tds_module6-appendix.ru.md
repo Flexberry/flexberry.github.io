@@ -15,7 +15,7 @@ lang: ru
             <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse1">&#9660;</a>
             <h4 class="panel-title">
                 <a data-toggle="collapse" href="#collapse1">
-                Лекции и доклады по теме ORM</a>
+                Дополнительные материалы</a>
             </h4>
         </div>
         <div id="collapse1" class="panel-collapse collapse in">
@@ -26,8 +26,8 @@ lang: ru
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module6/how-i-came-to-hate-orm.jpg" | relative_url}}" class="products-img">
                             </div>
-                            <h4><span class="item-head">Как я возненавидел ORM</span></h4>
-                            <p>Расскажем историю из нашего текущего проекта на Android, какие проблемы нам принесла ORM и как мы их решали. Докладчик - Сергей Боиштян</p>
+                            <h4><span class="item-head">Использование ORM на реальном проекте</span></h4>
+                            <p>Доклад с конференции Mobius 2017 Moscow, в котором рассказывается история проекта на Android для компании Тинькофф - какие проблемы принесла ORM и как они решались (Сергей Боиштян, Тинькофф).</p>
                         </a>
                     </div>                    
                 </div>
@@ -38,5 +38,5 @@ lang: ru
 
 ## Вы можете
 
-* [Перейти к заданиям по модулю](tds_module2-tasks.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
-* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Перейти на страницу с учебными материалами модуля](tds_module2-learn.html)
+- [Перейти к заданиям по модулю](tds_module2-tasks.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+- <i class="fa fa-arrow-left" aria-hidden="true"></i> [Перейти на страницу с учебными материалами модуля](tds_module2-learn.html)
