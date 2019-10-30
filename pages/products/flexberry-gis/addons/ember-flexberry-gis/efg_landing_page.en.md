@@ -10,7 +10,7 @@ hash: 3c7457a5fa186812b412836c8f144d8e597021b232c84e2c1289e26716d52b1b
 published: true 
 --- 
 
-## product Information 
+## Product Information 
 
 [ember-flexberry-gis](https://github.com/Flexberry/ember-flexberry-gis) is [ember-addon](https://ember-cli.com/extending/#developing-addons-and-blueprints), which can optionally be installed in any [ember-flexberry](https://github.com/Flexberry/ember-flexberry) application, adding to it an ability to add custom interactive map, the data having geograficheskoy binding. 
 
@@ -20,15 +20,15 @@ An example of an interactive map integrated into the ember-flexbery the applicat
 
 The sample application includes several examples of such maps are located at [flexberry.github.io/ember-flexberry-gis](http://flexberry.github.io/ember-flexberry-gis/) 
 
-## the product 
+## The product 
 
 The main elements that make up the addon ember-flexberry-gis: 
 
 * ember-flexberry-data model for an interactive map (or several maps) and models for the layers filling карту; 
 * ember-flexberry-data serializer to these моделям; 
 * Base classes of ranting and controllers for list form view/edit interactive карты; 
-* Maps and layers, which can optionally be included in the application if there are large number of maps and layers for них; 
-* ember-components of an interactive map, its layers, and its инструментов; 
+* Maps and layers, which can optionally be included in the application if there are large number of maps and layers for them; 
+* ember-components of an interactive map, its layers, and its tools; 
 
 ## Model of the interactive map and its layers 
 
@@ -91,7 +91,7 @@ Field name |field Type |Description
 * [geocoder-osm-ru](efg_geocoder-osm-ru.html) 
 * [geocoder-osm overpass](efg_geocoder-osm-overpass.html) 
 * [geocoder-yandex](efg_geocoder-yandex.html) 
+  
+## Map's JS API
 
-
-
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}
+When working with a map, sometimes it is necessary to manage its individual functions from different modules of the map itself, and sometimes from external applications in which it is embedded, and for this the map has a [JS API](efg_jsapi.html).

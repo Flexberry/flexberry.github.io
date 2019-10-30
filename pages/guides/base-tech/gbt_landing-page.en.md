@@ -6,7 +6,7 @@ toc: false
 permalink: en/gbt_landing-page.html
 lang: en
 autotranslated: true
-hash: b16b024b5e0a24564a92e70efcd423dfaf92b9e638a040c13b3084d72692f4a7
+hash: 8221126a4f4a6dd64cb336cb8a0eea9077c9f04f5d569b5c815843dfda6f3ddf
 summary: course on the basic technologies used in the platform Flexberry.
 ---
 
@@ -81,6 +81,7 @@ Below are a list of resources where you can find courses in various fields. Some
 * [Coursera](https://ru.coursera.org/)
 * [edX](https://www.edx.org/)
 * [Udemy](https://www.udemy.com/)
+* [egghead.io](https://egghead.io/)
 * [Microsoft Learn](https://docs.microsoft.com/ru-ru/learn/)
 * [Yandex.Workshop](https://praktikum.yandex.ru/)
 * [GeekBrains](https://geekbrains.ru/)
