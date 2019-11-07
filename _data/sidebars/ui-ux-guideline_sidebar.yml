@@ -77,6 +77,10 @@ entries:
       title_ru: Формы отчетности
       url: /uiuxg_report.html
       output: web
+      title: Default Forms
+      title_ru: Стандартные формы
+      url: /uiuxg_default_forms.html
+      output: web
     - title: Highly loaded forms
       title_ru: Высоконагруженные формы
       url: /uiuxg_complex_forms.html
