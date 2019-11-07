@@ -44,7 +44,7 @@ lang: ru
 4. TFS. Для выполнения работ рекомендуется использовать бесплатный облачный сервис Visual Studio Online
 5. NodeJS версии 6.17.1: [https://nodejs.org/dist/latest-v6.x/](https://nodejs.org/dist/latest-v6.x/)
 6. Последняя версия Yarn [https://yarnpkg.com/ru/docs/install#windows-stable](https://yarnpkg.com/ru/docs/install#windows-stable)
-7. EmberJS версии 3.1.4 (для установки после настройки Yarn выполнить `yarn global add ember-cli@3.1.4`)
+7. EmberJS версии 3.1.4 или 2.4.3, в зависимости от планируемой к использованию версии `ember-flexberry` (для установки после настройки Yarn выполнить `yarn global add ember-cli@3.1.4` или `yarn global add ember-cli@2.4.3`)
 8. Последняя версия Bower (для установки после настройки Yarn выполнить `yarn global add bower`)
 
 ### Настройка Yarn
