@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module3-learn.html
 lang: en
 autotranslated: true
-hash: 9718e9c75b18a0973c069a8de0994b57b8a08f7cf6356999b8f5923564f353ab
+hash: dd43335f34fd3fa330e7f161911529024e8c0a14e5c5fdc0794c34cd6745bd98
 ---
 
 ## The module
@@ -904,7 +904,7 @@ Application testing</a>
 </div>
 <div class="row items">
 <div class="col-sm-6 col-md-4 portfolio-item">
-<a href="{{ 'https://www.youtube.com/watch?v=sI5RlzJ4Q7s' | relative_url }}" class="portfolio-link" target="_blank">
+<a href="{{ 'https://www.youtube.com/playlist?list=PLvTBThJr861xKTf1x6P49MwN6yoN4v69k' | relative_url }}" class="portfolio-link" target="_blank">
 <div class="img-wrapper">
 <img src="{{ "/images/pages/trainings/developers-school/module3/di-ioc.jpg" | relative_url}}" class="products-img">
 </div>
