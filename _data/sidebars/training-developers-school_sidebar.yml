@@ -90,6 +90,10 @@ entries:
       title_ru: Дополнительные материалы
       url: /tds_module3-appendix.html
       output: web 
+    - title: Tasks
+      title_ru: Задания
+      url: /tds_module3-tasks.html
+      output: web    
   - title: Module 4. 
     title_ru: Модуль 4. 
     output: web
