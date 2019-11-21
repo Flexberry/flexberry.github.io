@@ -6,7 +6,7 @@ toc: true
 permalink: en/gt_flexberry-ember-case-21.html
 lang: en
 autotranslated: true
-hash: 9b7cb5b8947064a6ee8ea25691489705ecb71a2ad26301f0cb65cd6ad4081aa3
+hash: fd661c485f7653a6b9fdbb8cc7393e6deac8290c57e20f8e87e9f1c97a3a72b5
 summary: the Variant end-to-end specifications for the design and development using the framework Flexberry Ember
 ---
 
@@ -38,9 +38,10 @@ You want to implement an algorithm for calculating the optimal distribution of w
 Between the points of applications of the brigade moved 1 hour. An incomplete application is void.
 
 The input to this algorithm is:
-• An array of applications: number, importance
-• An array of works: the name of the planned duration of the execution number of the application
-• An array of teams: name, start time shift, end time shift
+
+* An array of applications: number, importance
+* An array of works: the name of the planned duration of the execution number of the application
+* An array of teams: name, start time shift, end time shift
 
 The output should be obtained two-dimensional array in which each row represents one team, and each element in the row by the number of bypass requests.
 
