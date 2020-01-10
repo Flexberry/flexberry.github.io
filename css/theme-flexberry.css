@@ -584,7 +584,7 @@ a[data-toggle="collapse"] {
   content: "";
   left: 0;
   right: 0;
-  background-image: url(/images/poster.jpg);
+  background-image: url(/images/poster.png);
   background-size: auto 100%;
   background-position: center;
   z-index: -1;
