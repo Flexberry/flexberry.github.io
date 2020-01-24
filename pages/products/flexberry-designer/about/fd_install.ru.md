@@ -112,6 +112,17 @@ lang: ru
 
 ## Возможные проблемы при установке Flexberry Designer 
 
+### Ошибка «Setup has detected that the file ... has changed since it was initially published» при установке
+
+На данный момент в ClickOnce-установщиках Microsoft есть проблемы с автоматической установкой некоторых компонентов, поэтому перед установкой Flexberry Designer требуется:
+1.	Вручную установить Microsoft SQL Server 2012 Express вместе с LocalDB:
+<https://www.microsoft.com/ru-ru/download/details.aspx?id=29062>
+
+2.	Вручную установить Microsoft SQL Server® 2012 Native Client:
+<https://www.microsoft.com/ru-ru/download/details.aspx?id=50402>
+
+Всё скачивается бесплатно с сервера Microsoft.
+
 ### Медленная инициализация MS SQL Server 2012 Express LocalDB
 
 В некоторых случаях MS SQL Server 2012 Express LocalDB очень долго проводит инициализацию собственных компонент. В случае, если при запуске приложения возникла ошибка, рекомендуется подождать некоторое время и попробовать запустить приложение повторно с созданного на рабочем столе ярлыка. Если проблема была именно в медленной инициализации MS SQL Server 2012 Express LocalDB, то приложение запустится.
