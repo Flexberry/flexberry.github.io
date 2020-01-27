@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_install.html
 lang: en
 autotranslated: true
-hash: 44aef8da05800d57efabf67d66b3642a003120a9e2b94fd68e4b72816b6d574d
+hash: 0ce174b5e0b5fbe7fb1a81241febd5adfe90d60705594b7fd3e936c90f589787
 ---
 
 To set [Flexberry Designer](fd_landing_page.html) you need to perform [check](https://designer.flexberry.net/#/login-or-register) on the website [Flexberry.net](https://flexberry.net).
@@ -113,6 +113,17 @@ When you upgrade `Flexberry Designer` using `LocalDB` update algorithm is somewh
 3.Further on specified in item 1 of this section, the algorithm to decrypt the file `FlexberryDesigner.mdf` on previously saved.
 
 ## Possible problems when installing Flexberry Designer
+
+### Qmo error Setup has detected that the file ... has changed since it was initially published» with the installation
+
+At this point in the ClickOnce installers Microsoft have problems with automatic installation of some components, so before installing Flexberry Designer required:
+1. Manually install Microsoft SQL Server 2012 Express with LocalDB:
+<https://www.microsoft.com/ru-ru/download/details.aspx?id=29062>
+
+2. Manually install Microsoft SQL Server® 2012 Native Client:
+<https://www.microsoft.com/ru-ru/download/details.aspx?id=50402>
+
+Everything is downloaded for free from the Microsoft server.
 
 ### Slow initialization of MS SQL Server 2012 Express LocalDB
 
