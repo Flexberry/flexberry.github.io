@@ -8,7 +8,7 @@ permalink: ru/fe_list-restriction-tools.html
 lang: ru
 ---
 
-Для того чтобы настроить ограничения на списках, компонент Flexberry Objectlistview включает в себя следующие инструменты:
+Для того чтобы настроить ограничения на списках, компонент `{{flexberry-objectlistview}}` включает в себя следующие инструменты:
 
 * фильтрация списков
 * наложение ограничения (метод `objectListViewLimitPredicate`)
@@ -27,41 +27,101 @@ lang: ru
 
 ### Настройка шаблона формы
 
-Настройка шаблона формы осуществляется следующим образом:
+В шаблоне формы необходимо указать для компонента `{{flexberry-objectlistview}}` следующие свойства:
 
 ```hbs
-{% raw %}{{flexberry-objectlistview
+{% raw %}
 {{flexberry-objectlistview
-// ...
-enableFilters=true
-filters=filters
-applyFilters=(action "applyFilters")
-resetFilters=(action "resetFilters")
-componentForFilter=(action "componentForFilter")
-conditionsByType=(action "conditionsByType")
-// ...
-}}{% endraw %}
+  enableFilters=true
+  filters=filters
+  applyFilters=(action "applyFilters")
+  resetFilters=(action "resetFilters")
+  // ...
+}}
+{% endraw %}
 ```
 
 ### Настройка контроллера формы
 
-Можно переопределить компоненты, используемые в фильтрах для выбора значений:
+Контроллер формы должен наследоваться от `ListFormController` или `EditFormController`:
 
 ```javascript
-componentForFilter(type, relation) {
-  switch (type) {
-    case 'decimal': return { name: 'flexberry-textbox', properties: { class: 'compact fluid' } };
-    default: return {};
-  }
-},
+import ListFormController from 'ember-flexberry/controllers/list-form';
+
+export default ListFormController.extend({
+});
+```
+
+Можно переопределить доступне условия фильтрации, и компоненты используемые для ввода значений:
+
+```javascript
+import ListFormController from 'ember-flexberry/controllers/list-form';
+
+export default ListFormController.extend({
+  actions: {
+    /**
+      @method actions.conditionsByType
+      @param {String} type The type name.
+      @param {Object} attribute An object with an attribute description.
+      @return {Array} An array with items for `flexberry-dropdown` component.
+    */
+    conditionsByType(type, attribute) {
+      return ['eq', 'neq'];
+    },
+
+    /**
+      @method actions.componentForFilter
+      @param {String} type The type name.
+      @param {Boolean} relation If this is a relation, then `true`.
+      @param {Object} attribute An object with an attribute description.
+      @return {Object} An object with component description.
+    */
+    componentForFilter(type, relation, attribute) {
+      switch (type) {
+        case 'decimal':
+          return { name: 'flexberry-textbox', properties: { class: 'compact fluid' } };
+
+        default:
+          return {};
+      }
+    },
+  },
+});
+```
+
+```hbs
+{% raw %}
+{{flexberry-objectlistview
+  componentForFilter=(action "componentForFilter")
+  conditionsByType=(action "conditionsByType")
+  // ...
+}}
+{% endraw %}
 ```
 
 ### Настройка роута формы
 
-Переопределить, как будет строится предикат, можно следующим образом:
+Роут формы должен наследоваться от `ListFormRoute` или `EditFormRoute`:
 
 ```javascript
-predicateForFilter(filter) {
+import ListFormRoute from 'ember-flexberry/routes/list-form';
+
+export default ListFormRoute.extend({
+});
+```
+
+Переопределив метод `predicateForFilter` в роуте, можно изменить логику создания предиката для фильрации:
+
+```javascript
+import ListFormRoute from 'ember-flexberry/routes/list-form';
+
+export default ListFormRoute.extend({
+  /**
+    @method predicateForFilter
+    @param {Object} filter An object with filter description.
+    @return {BasePredicate} The predicate or null.
+  */
+  predicateForFilter(filter) {
     if (filter.type === 'string' && filter.condition === 'like') {
       return new StringPredicate(filter.name).contains(filter.pattern);
     }
@@ -72,63 +132,26 @@ predicateForFilter(filter) {
 
     return this._super(...arguments);
   },
+});
 ```
 
 #### Фильтрация по датам без учета времени
 
-Если нужно фильтровать поля с датами не учитывая время, то нужно в роуте в predicateForFilter добавить условие:
+Если нужно фильтровать поля с датами не учитывая время, то нужно в роуте в методе `predicateForFilter` добавить условие:
 
 ```javascript
 predicateForFilter(filter) {
-    if (filter.type === 'date') {
-      return new DatePredicate(filter.name, filter.condition, filter.pattern, true);
-    }
+  if (filter.type === 'date') {
+    return new DatePredicate(filter.name, filter.condition, filter.pattern, true);
+  }
 
-    return this._super(...arguments);
-  },
+  return this._super(...arguments);
+},
 ```
 
 #### Пользовательские функции для фильтров
 
 Если на прикладном уровне нужны специфические фильтры, то можно использовать функцию `predicateForAttribute`. Данная функция получает на вход атрибут, по которому происходит фильтрация, значение, по которому фильтровать, условие фильтра и возвращает предикат, по которому затем формируется параметр `$filter` в [OData-запросе](fo_orm-odata-service.html).
-
-### Указание операций сравнения
-
-Операции сравнения указываются через функцию `conditionsByType`, возвращающую массив для дропдауна с операциями. Для этого:
-
-1.В [контроллере](ef_controller.html) списковой формы прописать функцию с необходимыми значениями:
-
-```javascript
-conditionsByType(type) {
-      switch (type) {
-        case 'file':
-          return null;
-
-        case 'date':
-        case 'number':
-          return ['eq', 'neq', 'le', 'ge'];
-
-        case 'string':
-          return ['eq', 'neq', 'like'];
-
-        case 'boolean':
-          return ['eq'];
-
-        default:
-          return ['eq', 'neq'];
-      }
-    },
-```
-
-2.В шаблоне списка указать соответствующее событие:
-
-```hbs
-{% raw %}{{flexberry-objectlistview
-    // ...
-    conditionsByType=(action "conditionsByType")
-    // ...
-}}{% endraw %}
-```
 
 ### Операции "пусто" и "не пусто"
 
@@ -167,9 +190,8 @@ import Ember from 'ember';
 import ListFormRoute from 'ember-flexberry/routes/list-form';
 import { StringPredicate } from 'ember-flexberry-data/query/predicate';
 
-// ...
 export default ListFormRoute.extend({
-  objectListViewLimitPredicate: function(options) {
+  objectListViewLimitPredicate(options) {
     let methodOptions = Ember.merge({
       modelName: undefined,
       projectionName: undefined,
@@ -202,18 +224,19 @@ export default ListFormRoute.extend({
 Настройка шаблона формы осуществляется следующим образом:
 
 ```hbs
-{% raw %}{{flexberry-objectlistview
-    // ...
-    filters=filters
-    applyFilters=(action "applyFilters")
-    resetFilters=(action "resetFilters")
-    filterButton=true
-    filterText=filter
-    filterByAnyWord=filterByAnyWord // поиск по некоторым словам
-    filterByAllWords=filterByAllWords // поиск по всем словам
-    filterByAnyMatch=(action 'filterByAnyMatch')
-    // ...
-}}{% endraw %}
+{% raw %}
+{{flexberry-objectlistview
+  filters=filters
+  applyFilters=(action "applyFilters")
+  resetFilters=(action "resetFilters")
+  filterButton=true
+  filterText=filter
+  filterByAnyWord=filterByAnyWord // поиск по некоторым словам
+  filterByAllWords=filterByAllWords // поиск по всем словам
+  filterByAnyMatch=(action 'filterByAnyMatch')
+  // ...
+}}
+{% endraw %}
 ```
 
 `filterByAnyWord` - в результате будут выданы все строки, в которых указано заданное в поиске слово/несколько слов.
@@ -239,25 +262,25 @@ export default ListFormRoute.extend({
 
 ```javascript
 predicateForAttribute(attribute, filter) {
-    switch (attribute.type) {
-      case 'boolean':
-        let yes = ['TRUE', 'True', 'true', 'YES', 'Yes', 'yes', 'ДА', 'Да', 'да', '1', '+'];
-        let no = ['FALSE', 'False', 'false', 'NO', 'No', 'no', 'НЕТ', 'Нет', 'нет', '0', '-'];
+  switch (attribute.type) {
+    case 'boolean':
+      let yes = ['TRUE', 'True', 'true', 'YES', 'Yes', 'yes', 'ДА', 'Да', 'да', '1', '+'];
+      let no = ['FALSE', 'False', 'false', 'NO', 'No', 'no', 'НЕТ', 'Нет', 'нет', '0', '-'];
 
-        if (yes.indexOf(filter) > 0) {
-          return new SimplePredicate(attribute.name, 'eq', 'true');
-        }
+      if (yes.indexOf(filter) > 0) {
+        return new SimplePredicate(attribute.name, 'eq', 'true');
+      }
 
-        if (no.indexOf(filter) > 0) {
-          return new SimplePredicate(attribute.name, 'eq', 'false');
-        }
+      if (no.indexOf(filter) > 0) {
+        return new SimplePredicate(attribute.name, 'eq', 'false');
+      }
 
-        return null;
+      return null;
 
-      default:
-        return this._super(...arguments);
-    }
-  },
+    default:
+      return this._super(...arguments);
+  }
+},
 ```
 
 Настройка предиката необходима для корректного поиска значений, имеющих два признака истина/ложь.
