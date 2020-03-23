@@ -7,10 +7,10 @@ toc: true
 permalink: en/fe_list-restriction-tools.html
 lang: en
 autotranslated: true
-hash: 9a2595bd3b37564c27f175e7f01f3b3c0c23cafdffc41ebb385a0c12a061038b
+hash: 117575292e6beada5e34fa403192716f560bb993d5387400777c51c3a02bca7f
 ---
 
-To set restrictions on the lists Flexberry Objectlistview component includes the following tools:
+To set restrictions on the lists, component `flexberry-objectlistview` includes the following tools:
 
 * filtering lists
 * the imposition of limits (method `objectListViewLimitPredicate`)
@@ -29,41 +29,101 @@ The default filter can not only refresh button of the list, but and key `Enter`.
 
 ### Setup form template
 
-Customize a form template is as follows:
+In the form template, you must specify for a component `flexberry-objectlistview` the following properties:
 
 ```hbs
-{% raw %}{{flexberry-objectlistview
+{% raw %}
 {{flexberry-objectlistview
-// ... 
-enableFilters=true
-filters=filters
-applyFilters=(action "applyFilters")
-resetFilters=(action "resetFilters")
-componentForFilter=(action "componentForFilter")
-conditionsByType=(action "conditionsByType")
-// ... 
-}}{% endraw %}
+  enableFilters=true
+  filters=filters
+  applyFilters=(action "applyFilters")
+  resetFilters=(action "resetFilters")
+  // ... 
+}}
+{% endraw %}
 ```
 
 ### Controller configuration forms
 
-You can override components used in the filters to select the values:
+Controller forms should inherit from `ListFormController` or `EditFormController`:
 
 ```javascript
-componentForFilter(type, relation) {
-  switch (type) {
-    case 'decimal': return { name: 'flexberry-textbox', properties: { class: 'compact fluid' } };
-    default: return {};
-  }
-},
+import ListFormController from 'ember-flexberry/controllers/list-form';
+
+export default ListFormController.extend({
+});
+```
+
+You can override the available filter conditions, and components used to enter values:
+
+```javascript
+import ListFormController from 'ember-flexberry/controllers/list-form';
+
+export default ListFormController.extend({
+  actions: {
+    /** 
+@method actions.conditionsByType 
+@param {String} type The type name. 
+@param {Object} attributes An object with an attribute description. 
+@return {Array} An array with items for `flexberry-dropdown` component. 
+*/
+    conditionsByType(type, attribute) {
+      return ['eq', 'neq'];
+    },
+
+    /** 
+@method actions.componentForFilter 
+@param {String} type The type name. 
+@param {Boolean} If this relation is a relation, then `true`. 
+@param {Object} attributes An object with an attribute description. 
+@return {Object} An object with the component description. 
+*/
+    componentForFilter(type, relation, attribute) {
+      switch (type) {
+        case 'decimal':
+          return { name: 'flexberry-textbox', properties: { class: 'compact fluid' } };
+
+        default:
+          return {};
+      }
+    },
+  },
+});
+```
+
+```hbs
+{% raw %}
+{{flexberry-objectlistview
+  componentForFilter=(action "componentForFilter")
+  conditionsByType=(action "conditionsByType")
+  // ... 
+}}
+{% endraw %}
 ```
 
 ### Configure the router forms
 
-To override, as is the predicate in the following way:
+Route the form must inherit from `ListFormRoute` or `EditFormRoute`:
 
 ```javascript
-predicateForFilter(filter) {
+import ListFormRoute from 'ember-flexberry/routes/list-form';
+
+export default ListFormRoute.extend({
+});
+```
+
+Overriding method `predicateForFilter` in the router, you can change the logic of creating a predicate for filtering:
+
+```javascript
+import ListFormRoute from 'ember-flexberry/routes/list-form';
+
+export default ListFormRoute.extend({
+  /** 
+@method predicateForFilter 
+@param {Object} An object filter with filter description. 
+@return {BasePredicate} The predicate or null. 
+*/
+  predicateForFilter(filter) {
     if (filter.type === 'string' && filter.condition === 'like') {
       return new StringPredicate(filter.name).contains(filter.pattern);
     }
@@ -74,63 +134,26 @@ predicateForFilter(filter) {
 
     return this._super(...arguments);
   },
+});
 ```
 
 #### Filtering by date without time
 
-If you want to filter the fields with dates are not given time, then you need to get in predicateForFilter add a condition:
+If you want to filter the fields with dates are not given time, then you need to get in the method `predicateForFilter` add a condition:
 
 ```javascript
 predicateForFilter(filter) {
-    if (filter.type === 'date') {
-      return new DatePredicate(filter.name, filter.condition, filter.pattern, true);
-    }
+  if (filter.type === 'date') {
+    return new DatePredicate(filter.name, filter.condition, filter.pattern, true);
+  }
 
-    return this._super(...arguments);
-  },
+  return this._super(...arguments);
+},
 ```
 
 #### User-defined functions for filters
 
 If at the application level need specific filters, you can use the function `predicateForAttribute`. This function receives the input of the attribute that is filtered, the value on which to filter, the filter condition and returns a predicate, which then formed a parameter `$filter` in [OData-query](fo_orm-odata-service.html).
-
-### Specify the comparison operations
-
-Comparison operations are indicated via `conditionsByType` function that returns an array for dropdown operations. To do this:
-
-1.In [controller](ef_controller.html) list of forms to register the function with the required values:
-
-```javascript
-conditionsByType(type) {
-      switch (type) {
-        case 'file':
-          return null;
-
-        case 'date':
-        case 'number':
-          return ['eq', 'neq', 'le', 'ge'];
-
-        case 'string':
-          return ['eq', 'neq', 'like'];
-
-        case 'boolean':
-          return ['eq'];
-
-        default:
-          return ['eq', 'neq'];
-      }
-    },
-```
-
-2.In the template list to specify the appropriate event:
-
-```hbs
-{% raw %}{{flexberry-objectlistview
-    // ... 
-    conditionsByType=(action "conditionsByType")
-    // ... 
-}}{% endraw %}
-```
 
 ### Operation "empty" and "not empty"
 
@@ -169,9 +192,8 @@ import Ember from 'ember';
 import ListFormRoute from 'ember-flexberry/routes/list-form';
 import { StringPredicate } from 'ember-flexberry-data/query/predicate';
 
-// ... 
 export default ListFormRoute.extend({
-  objectListViewLimitPredicate: function(options) {
+  objectListViewLimitPredicate(options) {
     let methodOptions = Ember.merge({
       modelName: undefined,
       projectionName: undefined,
@@ -204,18 +226,19 @@ In order to [list form](fe_object-list-view.html) to implement a search capabili
 Customize a form template is as follows:
 
 ```hbs
-{% raw %}{{flexberry-objectlistview
-    // ... 
-    filters=filters
-    applyFilters=(action "applyFilters")
-    resetFilters=(action "resetFilters")
-    filterButton=true
-    filterText=filter
-    filterByAnyWord=filterByAnyWord // search for some words 
-    filterByAllWords=filterByAllWords // search for all words 
-    filterByAnyMatch=(action 'filterByAnyMatch')
-    // ... 
-}}{% endraw %}
+{% raw %}
+{{flexberry-objectlistview
+  filters=filters
+  applyFilters=(action "applyFilters")
+  resetFilters=(action "resetFilters")
+  filterButton=true
+  filterText=filter
+  filterByAnyWord=filterByAnyWord // search for some words 
+  filterByAllWords=filterByAllWords // search for all words 
+  filterByAnyMatch=(action 'filterByAnyMatch')
+  // ... 
+}}
+{% endraw %}
 ```
 
 `filterByAnyWord` - as a result you will be given all the lines that contain the specified search word/few words.
@@ -241,25 +264,25 @@ To override, as is the predicate in the following way:
 
 ```javascript
 predicateForAttribute(attribute, filter) {
-    switch (attribute.type) {
-      case 'boolean':
-        let yes = ['TRUE', 'True', 'true', 'YES', 'Yes', 'yes', 'ДА', 'Да', 'да', '1', '+'];
-        let no = ['FALSE', 'False', 'false', 'NO', 'No', 'no', 'НЕТ', 'Нет', 'нет', '0', '-'];
+  switch (attribute.type) {
+    case 'boolean':
+      let yes = ['TRUE', 'True', 'true', 'YES', 'Yes', 'yes', 'ДА', 'Да', 'да', '1', '+'];
+      let no = ['FALSE', 'False', 'false', 'NO', 'No', 'no', 'НЕТ', 'Нет', 'нет', '0', '-'];
 
-        if (yes.indexOf(filter) > 0) {
-          return new SimplePredicate(attribute.name, 'eq', 'true');
-        }
+      if (yes.indexOf(filter) > 0) {
+        return new SimplePredicate(attribute.name, 'eq', 'true');
+      }
 
-        if (no.indexOf(filter) > 0) {
-          return new SimplePredicate(attribute.name, 'eq', 'false');
-        }
+      if (no.indexOf(filter) > 0) {
+        return new SimplePredicate(attribute.name, 'eq', 'false');
+      }
 
-        return null;
+      return null;
 
-      default:
-        return this._super(...arguments);
-    }
-  },
+    default:
+      return this._super(...arguments);
+  }
+},
 ```
 
 Setting the predicate required for the correct search values with two criteria true/false.
