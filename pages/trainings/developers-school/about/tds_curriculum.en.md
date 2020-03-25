@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_curriculum.html
 lang: en
 autotranslated: true
-hash: ff7b153981ace0630b8ad3503b6941dba899cbf1899c560cd876a89777e7bf12
+hash: 3fd704db9520cbf8ec0eececc5b6ce4d1b8fbe987dca47eb9a9c8089bbf85934
 ---
 
 ## The training program
@@ -17,7 +17,7 @@ hash: ff7b153981ace0630b8ad3503b6941dba899cbf1899c560cd876a89777e7bf12
 4. Application development on Ember.js
 5. RESTful services and OData Protocol
 6. Flexberry Designer
-7. Flexberry ORM
+7. [Flexberry ORM](tds_module6-about.html)
 8. Flexberry Ember (frontend)
 9. Flexberry ODataService (backend)
 10. Auxiliary subsystem Flexberry
