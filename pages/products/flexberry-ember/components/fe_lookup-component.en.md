@@ -6,7 +6,7 @@ toc: false
 permalink: en/fe_lookup-component.html
 lang: en
 autotranslated: true
-hash: b60948c602a457ab471dd713acbce11a132f3c95ddda477f1bcaf62b21c16a34
+hash: 82bec240603991a233bdadba1e04e117b54fd462d73c02f0eff108f6a91fac29
 summary: the basic features of LookUp-s
 ---
 
@@ -390,20 +390,23 @@ In the controller editor to specify:
 
 ```javascript
 export default EditFormController.extend({
-    // ... 
-    getLookupFolvProperties: function(options) {
+  actions: {
+    getLookupFolvProperties(options) {
       if (options.relationName === 'type') { // Property LookUp-and. 
         return {
-            // Whether to show the toggle button in the hierarchy, if the hierarchy for a list of available 
-            // (if false, the button is displayed) 
-            disableHierarchicalMode: false,
+          // Whether to show the toggle button in the hierarchy, if the hierarchy for a list of available 
+          // (if false, the button is displayed) 
+          disableHierarchicalMode: false,
 
-            // Activate the hierarchy when you load a lookup-form. 
-            inHierarchicalMode: true,
-            hierarchicalAttribute: 'Name' // A property on which to build the hierarchy. 
+          // Activate the hierarchy when you load a lookup-form. 
+          inHierarchicalMode: true,
+
+          // A property on which to build the hierarchy. 
+          hierarchicalAttribute: 'Name',
         };
       }
-    }
+    },
+  }
 });
 ```
 
