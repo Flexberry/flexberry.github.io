@@ -1,143 +1,76 @@
-{% if page.sidebar == "home_sidebar" %}
-{% assign sidebar = site.data.sidebars.home_sidebar.entries %}
-
-{% elsif page.sidebar == "product1_sidebar" %}
-{% assign sidebar = site.data.sidebars.product1_sidebar.entries %}
-
-{% elsif page.sidebar == "product2_sidebar" %}
-{% assign sidebar = site.data.sidebars.product2_sidebar.entries %}
-
-{% elsif page.sidebar == "ember-flexberry-gis_sidebar" %}
-{% assign sidebar = site.data.sidebars.ember-flexberry-gis_sidebar.entries %}
-
-{% elsif page.sidebar == "ember-flexberry-geolocation_sidebar" %}
-{% assign sidebar = site.data.sidebars.ember-flexberry-geolocation_sidebar.entries %}
-
-{% elsif page.sidebar == "ember-flexberry-gis-csw_sidebar" %}
-{% assign sidebar = site.data.sidebars.ember-flexberry-gis-csw_sidebar.entries %}
-
-{% elsif page.sidebar == "ember-flexberry-gis-esri_sidebar" %}
-{% assign sidebar = site.data.sidebars.ember-flexberry-gis-esri_sidebar.entries %}
-
-{% elsif page.sidebar == "ember-flexberry-gis-yandex_sidebar" %}
-{% assign sidebar = site.data.sidebars.ember-flexberry-gis-yandex_sidebar.entries %}
-
-{% elsif page.sidebar == "ember-flexberry-security_sidebar" %}
-{% assign sidebar = site.data.sidebars.ember-flexberry-security_sidebar.entries %}
-
-{% elsif page.sidebar == "flexberry-servicebus_sidebar" %}
-{% assign sidebar = site.data.sidebars.flexberry-servicebus_sidebar.entries %}
-
-{% elsif page.sidebar == "flexberry-designer_sidebar" %}
-{% assign sidebar = site.data.sidebars.flexberry-designer_sidebar.entries %}
-
-{% elsif page.sidebar == "flexberry-winforms_sidebar" %}
-{% assign sidebar = site.data.sidebars.flexberry-winforms_sidebar.entries %}
-
-{% elsif page.sidebar == "flexberry-analytics_sidebar" %}
-{% assign sidebar = site.data.sidebars.flexberry-analytics_sidebar.entries %}
-
-{% elsif page.sidebar == "flexberry-audit_sidebar" %}
-{% assign sidebar = site.data.sidebars.flexberry-audit_sidebar.entries %}
-
-{% elsif page.sidebar == "flexberry-ember_sidebar" %}
-{% assign sidebar = site.data.sidebars.flexberry-ember_sidebar.entries %}
-
-{% elsif page.sidebar == "flexberry-aspnet_sidebar" %}
-{% assign sidebar = site.data.sidebars.flexberry-aspnet_sidebar.entries %}
-
-{% elsif page.sidebar == "flexberry-bpm_sidebar" %}
-{% assign sidebar = site.data.sidebars.flexberry-bpm_sidebar.entries %}
-
-{% elsif page.sidebar == "flexberry-odataservice_sidebar" %}
-{% assign sidebar = site.data.sidebars.flexberry-odataservice_sidebar.entries %}
-
-{% elsif page.sidebar == "flexberry-orm_sidebar" %}
-{% assign sidebar = site.data.sidebars.flexberry-orm_sidebar.entries %}
-
-{% elsif page.sidebar == "flexberry-platform_sidebar" %}
-{% assign sidebar = site.data.sidebars.flexberry-platform_sidebar.entries %}
-
-{% elsif page.sidebar == "flexberry-security_sidebar" %}
-{% assign sidebar = site.data.sidebars.flexberry-security_sidebar.entries %}
-
-{% elsif page.sidebar == "flexberry-gis_sidebar" %}
-{% assign sidebar = site.data.sidebars.flexberry-gis_sidebar.entries %}
-
-{% elsif page.sidebar == "leaflet-wfst_sidebar" %}
-{% assign sidebar = site.data.sidebars.leaflet-wfst_sidebar.entries %}
-
-{% elsif page.sidebar == "leaflet-wms_sidebar" %}
-{% assign sidebar = site.data.sidebars.leaflet-wms_sidebar.entries %}
-
-{% elsif page.sidebar == "leaflet-export_sidebar" %}
-{% assign sidebar = site.data.sidebars.leaflet-export_sidebar.entries %}
-
-{% elsif page.sidebar == "leaflet-history_sidebar" %}
-{% assign sidebar = site.data.sidebars.leaflet-history_sidebar.entries %}
-
-{% elsif page.sidebar == "leaflet-switch-scale-control_sidebar" %}
-{% assign sidebar = site.data.sidebars.leaflet-switch-scale-control_sidebar.entries %}
-
-{% elsif page.sidebar == "leaflet-zoomslider_sidebar" %}
-{% assign sidebar = site.data.sidebars.leaflet-zoomslider_sidebar.entries %}
-
-{% elsif page.sidebar == "leaflet-editable-measures_sidebar" %}
-{% assign sidebar = site.data.sidebars.leaflet-editable-measures_sidebar.entries %}
-
-{% elsif page.sidebar == "guide-base-tech_sidebar" %}
-{% assign sidebar = site.data.sidebars.guide-base-tech_sidebar.entries %}
-
-{% elsif page.sidebar == "guide-tasks_sidebar" %}
-{% assign sidebar = site.data.sidebars.guide-tasks_sidebar.entries %}
-
-{% elsif page.sidebar == "guide-practical-guides_sidebar" %}
-{% assign sidebar = site.data.sidebars.guide-practical-guides_sidebar.entries %}
-
-{% elsif page.sidebar == "guide-mobile-app_sidebar" %}
-{% assign sidebar = site.data.sidebars.guide-mobile-app_sidebar.entries %}
-
-{% elsif page.sidebar == "guide-bigdata-app_sidebar" %}
-{% assign sidebar = site.data.sidebars.guide-bigdata-app_sidebar.entries %}
-
-{% elsif page.sidebar == "guide-bpm-app_sidebar" %}
-{% assign sidebar = site.data.sidebars.guide-bpm-app_sidebar.entries %}
-
-{% elsif page.sidebar == "ui-ux-guideline_sidebar" %}
-{% assign sidebar = site.data.sidebars.ui-ux-guideline_sidebar.entries %}
-
-{% elsif page.sidebar == "training-developers-school_sidebar" %}
-{% assign sidebar = site.data.sidebars.training-developers-school_sidebar.entries %}
-
-{% elsif page.sidebar == "mydoc_sidebar" %}
-{% assign sidebar = site.data.sidebars.mydoc_sidebar.entries %}
-
-{% else %}
-{% assign sidebar = site.data.sidebars.home_sidebar.entries %}
-{% endif %}
-
-
-
-{% comment %}
-sidebar configuration for print files
-{% endcomment %}
-
-{% if site.product == "mydoc" %}
-{% assign sidebar_pdf = site.data.sidebars.mydoc_sidebar.entries %}
-{% endif %}
-
-{% if site.product == "product1" %}
-{% assign sidebar_pdf = site.data.sidebars.product1_sidebar.entries %}
-{% endif %}
-
-{% if site.product == "product2" %}
-{% assign sidebar_pdf = site.data.sidebars.product2_sidebar.entries %}
-{% endif %}
-
-{% if site.product == "ember-flexberry-gis" %}
-{% assign sidebar_pdf = site.data.sidebars.ember-flexberry-gis_sidebar.entries %}
-{% endif %}
-
-{% if site.product == "ember-flexberry-security" %}
-{% assign sidebar_pdf = site.data.sidebars.ember-flexberry-security_sidebar.entries %}
-{% endif %}
+{% if page.sidebar == "home_sidebar" %} {% assign sidebar = site.data.sidebars.home_sidebar.entries
+%} {% elsif page.sidebar == "product1_sidebar" %} {% assign sidebar =
+site.data.sidebars.product1_sidebar.entries %} {% elsif page.sidebar == "product2_sidebar" %} {%
+assign sidebar = site.data.sidebars.product2_sidebar.entries %} {% elsif page.sidebar ==
+"ember-flexberry-gis_sidebar" %} {% assign sidebar =
+site.data.sidebars.ember-flexberry-gis_sidebar.entries %} {% elsif page.sidebar ==
+"ember-flexberry-geolocation_sidebar" %} {% assign sidebar =
+site.data.sidebars.ember-flexberry-geolocation_sidebar.entries %} {% elsif page.sidebar ==
+"ember-flexberry-gis-csw_sidebar" %} {% assign sidebar =
+site.data.sidebars.ember-flexberry-gis-csw_sidebar.entries %} {% elsif page.sidebar ==
+"ember-flexberry-gis-esri_sidebar" %} {% assign sidebar =
+site.data.sidebars.ember-flexberry-gis-esri_sidebar.entries %} {% elsif page.sidebar ==
+"ember-flexberry-gis-yandex_sidebar" %} {% assign sidebar =
+site.data.sidebars.ember-flexberry-gis-yandex_sidebar.entries %} {% elsif page.sidebar ==
+"ember-flexberry-security_sidebar" %} {% assign sidebar =
+site.data.sidebars.ember-flexberry-security_sidebar.entries %} {% elsif page.sidebar ==
+"flexberry-servicebus_sidebar" %} {% assign sidebar =
+site.data.sidebars.flexberry-servicebus_sidebar.entries %} {% elsif page.sidebar ==
+"flexberry-designer_sidebar" %} {% assign sidebar =
+site.data.sidebars.flexberry-designer_sidebar.entries %} {% elsif page.sidebar ==
+"flexberry-winforms_sidebar" %} {% assign sidebar =
+site.data.sidebars.flexberry-winforms_sidebar.entries %} {% elsif page.sidebar ==
+"flexberry-analytics_sidebar" %} {% assign sidebar =
+site.data.sidebars.flexberry-analytics_sidebar.entries %} {% elsif page.sidebar ==
+"flexberry-audit_sidebar" %} {% assign sidebar = site.data.sidebars.flexberry-audit_sidebar.entries
+%} {% elsif page.sidebar == "flexberry-ember_sidebar" %} {% assign sidebar =
+site.data.sidebars.flexberry-ember_sidebar.entries %} {% elsif page.sidebar ==
+"flexberry-aspnet_sidebar" %} {% assign sidebar =
+site.data.sidebars.flexberry-aspnet_sidebar.entries %} {% elsif page.sidebar ==
+"flexberry-bpm_sidebar" %} {% assign sidebar = site.data.sidebars.flexberry-bpm_sidebar.entries %}
+{% elsif page.sidebar == "flexberry-odataservice_sidebar" %} {% assign sidebar =
+site.data.sidebars.flexberry-odataservice_sidebar.entries %} {% elsif page.sidebar ==
+"flexberry-orm_sidebar" %} {% assign sidebar = site.data.sidebars.flexberry-orm_sidebar.entries %}
+{% elsif page.sidebar == "flexberry-platform_sidebar" %} {% assign sidebar =
+site.data.sidebars.flexberry-platform_sidebar.entries %} {% elsif page.sidebar ==
+"flexberry-security_sidebar" %} {% assign sidebar =
+site.data.sidebars.flexberry-security_sidebar.entries %} {% elsif page.sidebar ==
+"flexberry-gis_sidebar" %} {% assign sidebar = site.data.sidebars.flexberry-gis_sidebar.entries %}
+{% elsif page.sidebar == "leaflet-wfst_sidebar" %} {% assign sidebar =
+site.data.sidebars.leaflet-wfst_sidebar.entries %} {% elsif page.sidebar == "leaflet-wms_sidebar" %}
+{% assign sidebar = site.data.sidebars.leaflet-wms_sidebar.entries %} {% elsif page.sidebar ==
+"leaflet-export_sidebar" %} {% assign sidebar = site.data.sidebars.leaflet-export_sidebar.entries %}
+{% elsif page.sidebar == "leaflet-history_sidebar" %} {% assign sidebar =
+site.data.sidebars.leaflet-history_sidebar.entries %} {% elsif page.sidebar ==
+"leaflet-switch-scale-control_sidebar" %} {% assign sidebar =
+site.data.sidebars.leaflet-switch-scale-control_sidebar.entries %} {% elsif page.sidebar ==
+"leaflet-zoomslider_sidebar" %} {% assign sidebar =
+site.data.sidebars.leaflet-zoomslider_sidebar.entries %} {% elsif page.sidebar ==
+"leaflet-editable-measures_sidebar" %} {% assign sidebar =
+site.data.sidebars.leaflet-editable-measures_sidebar.entries %} {% elsif page.sidebar ==
+"guide-base-tech_sidebar" %} {% assign sidebar = site.data.sidebars.guide-base-tech_sidebar.entries
+%} {% elsif page.sidebar == "guide-tasks_sidebar" %} {% assign sidebar =
+site.data.sidebars.guide-tasks_sidebar.entries %} {% elsif page.sidebar ==
+"guide-practical-guides_sidebar" %} {% assign sidebar =
+site.data.sidebars.guide-practical-guides_sidebar.entries %} {% elsif page.sidebar ==
+"guide-okr-guideline_sidebar" %} {% assign sidebar =
+site.data.sidebars.guide-okr-guideline_sidebar.entries %} {% elsif page.sidebar ==
+"guide-mobile-app_sidebar" %} {% assign sidebar =
+site.data.sidebars.guide-mobile-app_sidebar.entries %} {% elsif page.sidebar ==
+"guide-bigdata-app_sidebar" %} {% assign sidebar =
+site.data.sidebars.guide-bigdata-app_sidebar.entries %} {% elsif page.sidebar ==
+"guide-bpm-app_sidebar" %} {% assign sidebar = site.data.sidebars.guide-bpm-app_sidebar.entries %}
+{% elsif page.sidebar == "ui-ux-guideline_sidebar" %} {% assign sidebar =
+site.data.sidebars.ui-ux-guideline_sidebar.entries %} {% elsif page.sidebar ==
+"training-developers-school_sidebar" %} {% assign sidebar =
+site.data.sidebars.training-developers-school_sidebar.entries %} {% elsif page.sidebar ==
+"mydoc_sidebar" %} {% assign sidebar = site.data.sidebars.mydoc_sidebar.entries %} {% else %} {%
+assign sidebar = site.data.sidebars.home_sidebar.entries %} {% endif %} {% comment %} sidebar
+configuration for print files {% endcomment %} {% if site.product == "mydoc" %} {% assign
+sidebar_pdf = site.data.sidebars.mydoc_sidebar.entries %} {% endif %} {% if site.product ==
+"product1" %} {% assign sidebar_pdf = site.data.sidebars.product1_sidebar.entries %} {% endif %} {%
+if site.product == "product2" %} {% assign sidebar_pdf = site.data.sidebars.product2_sidebar.entries
+%} {% endif %} {% if site.product == "ember-flexberry-gis" %} {% assign sidebar_pdf =
+site.data.sidebars.ember-flexberry-gis_sidebar.entries %} {% endif %} {% if site.product ==
+"ember-flexberry-security" %} {% assign sidebar_pdf =
+site.data.sidebars.ember-flexberry-security_sidebar.entries %} {% endif %}
