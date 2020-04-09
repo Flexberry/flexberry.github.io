@@ -7,7 +7,7 @@ toc: true
 permalink: en/fe_speedup-ember-build.html
 lang: en
 autotranslated: true
-hash: 9f9716b6b9c99cde8b0212be2d17ae87e65a2d1bff0dc2117e36852a66cb5566
+hash: 3d5649899278d709c8d8cd2d88860318aa9f5aced10928a8b50182487f604acb
 summary: Recommendations for configuring the environment to optimize the speed of Assembly of EmberJS applications.
 ---
 
@@ -34,6 +34,7 @@ If a project build takes more than 1-3 minutes, then try to use the following re
 * [Tips for improving build time of large apps](https://discuss.emberjs.com/t/tips-for-improving-build-time-of-large-apps)
 * [How we speed up testing and building process of our brand new Ember app at? ~2.5 x faster!](https://medium.com/@tommaqs/how-we-speed-up-testing-and-building-process-of-our-ember-app-at-brandnew-2-5x-faster-299dd4995a97)
 * [Build performance](https://github.com/ember-cli/ember-cli/blob/master/docs/perf-guide.md)
+* [How we cut down our build time ember?](https://www.gokatz.me/blog/how-we-cut-down-our-ember-build-time)
 
 
 
