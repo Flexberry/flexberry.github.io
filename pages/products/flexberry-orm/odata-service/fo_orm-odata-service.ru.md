@@ -1,20 +1,16 @@
 ---
-title: Flexberry ORM ODataService
+title: ODataService
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM ODataService, OData
+keywords: OData
 summary: Особенности, ограничения, рекомендации по применению ODataService
 toc: true
 permalink: ru/fo_orm-odata-service.html
 lang: ru
 ---
 
-## Информация о продукте
+`Flexberry ORM ODataService` позволяет удобным образом создать OData-сервис поверх хранилища.
 
-`Flexberry ORM ODataService` является [продуктом платформы Flexberry](fp_landing_page.html). Сайт продукта: [http://flexberry.ru](http://flexberry.ru/FlexberryORM).
-
-`Flexberry ORM ODataService` позволяет удобным образом создать OData-сервис.
-
-{% include note.html content="`Flexberry ORM ODataService` доступно для установки в проект через [NuGet-пакет](https://www.nuget.org)." %}
+{% include note.html content="`Flexberry ORM ODataService` доступно для установки в проект через [NuGet-пакет](https://www.nuget.org/packages/NewPlatform.Flexberry.ORM.ODataService)." %}
 
 ## Список библиотек `Flexberry ORM ODataService`
 
@@ -612,8 +608,8 @@ private static Страна[] FunctionExportExcel(QueryParameters queryParameter
 
 `Flexberry ORM` позволяет строить [ограничения на "ассоциацию в обратную сторону" или "псевдодетейлы"](fo_psedodetails-linq-provider.html). Данная возможность предоставляется и при работе с данными через ODataService.  
 Для того, чтобы появилась возможность построить ограничение подобного вида, надо объявить её допустимость на уровне метаданных в EDM-модели OData.  
-Рассмотрим данную схему в качестве примера:
-![](/images/pages/products/flexberry-orm/query-language/pseudo-details.png)
+Рассмотрим данную схему в качестве примера:  
+![schema](/images/pages/products/flexberry-orm/query-language/pseudo-details.png)  
 Пример регистрации псевдодетейла:
 
 ```csharp

@@ -605,11 +605,11 @@ entries:
       url: /fo_programmer-brackets.html
       output: web
 
-  - title: Flexberry ORM ODataService
+  - title: OData
     output: web, pdf
     folderitems:
-    - title: Flexberry ORM ODataService
-      title_ru: Flexberry ORM ODataService
+    - title: ODataService
+      title_ru: ODataService
       url: /fo_orm-odata-service.html
       output: web
 
