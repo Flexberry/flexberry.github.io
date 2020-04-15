@@ -68,10 +68,9 @@ lang: ru
 * [UI-независимый пользовательский интерфейс](u-i-independent-user-interface.html)
 * [Локализация пользовательского интерфейса](localization--u-i.html)
 ## Настройки приложения Winforms
-* [Установка и конфигурирование заглушки COM+](Установка-и-конфигурирование-заглушки--c-o-m.html)
-* [Установка и конфигурирование заглушки IISHosted](Установка-и-конфигурирование-заглушки--i-i-s-hosted.html)
+
 * [Конфигурирование бизнес-фасадов из настроек приложения ](configuring-business-facades-of-application-settings.html)
-* [Бизнес-серверы, обёртки, бизнес-фасад](fo_businesserver.html)
+* [Бизнес-серверы](fo_business-server.html)
 * [Настройка контролов, понятие провайдера контролов, стандартный провайдер контролов](control-provider-winforms.html)
 * [Настройка отладочных пакетов и выбор активного отладочного пакета](visual-studio-design-packages.html)
 * [Подсистема настроек](setting-manager.html)

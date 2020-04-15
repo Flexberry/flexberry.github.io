@@ -518,7 +518,7 @@ entries:
     folderitems:
     - title: Business servers
       title_ru: Бизнес-сервер
-      url: /fo_businesserver.html
+      url: /fo_business-server.html
       output: web
     - title: Business logic
       title_ru: Бизнес-логика

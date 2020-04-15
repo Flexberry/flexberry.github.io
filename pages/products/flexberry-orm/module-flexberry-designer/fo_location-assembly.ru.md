@@ -29,8 +29,8 @@ __Пакетом__ называется некоторое логическое 
 Внутри каждого пакета могут находиться следующие исходные коды сборок(в отдельных каталогах, с указанными именами):
 
 * `BusinessServers` - сборка классов со стереотипами [businessserver](fd_business-servers.html);
-* `BusinessServersComPlus` - сборка [обёртки для обращения к бизнес-серверу](fo_businesserver.html) через COM+ для бизнес-серверов, у которых установлена галочка `GenerateComPlusServer`; 
-* `BusinessServersHttp` - сборка обёртки для обращения к бизнес-серверуfo_businesserver.html через веб-сервис для серверов, у которых установлена галочка `GenerateHTTPRemoteServer`; 
+* `BusinessServersComPlus` - сборка [обёртки для обращения к бизнес-серверу](fo_business-server.html) через COM+ для бизнес-серверов, у которых установлена галочка `GenerateComPlusServer`; 
+* `BusinessServersHttp` - сборка обёртки для обращения к бизнес-серверуfo_business-server.html через веб-сервис для серверов, у которых установлена галочка `GenerateHTTPRemoteServer`; 
 * `Catchers` - для классов со стереотипом [eventarg](fd_eventarg.html), у которых установлена галочка `GenerateCatcher` в эту сборку генерируются классы-перехватчики событий; 
 * `Objects` - классы со стереотипами: [implementation](fd_data-classes.html), `type`, [enumeration](fd_enumerations.html), `eventarg`. 
 * `Scripts` - сценарии, определённые диаграммным методом `EBSD`. 
