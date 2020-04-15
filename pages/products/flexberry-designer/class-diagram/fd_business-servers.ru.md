@@ -8,7 +8,7 @@ permalink: ru/fd_business-servers.html
 lang: ru
 ---
 
-Для описания [бизнес-сервера](fo_bs-wrapper.html) необходимо создать на диаграмме класс со [стереотипом](fd_key-concepts.html) `businessserver`.
+Для описания [бизнес-сервера](fo_businesserver.html) необходимо создать на диаграмме класс со [стереотипом](fd_key-concepts.html) `businessserver`.
 
 Например:
 

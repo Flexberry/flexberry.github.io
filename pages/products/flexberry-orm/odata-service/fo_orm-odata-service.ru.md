@@ -619,7 +619,7 @@ public static void Configure(HttpConfiguration config, IUnityContainer container
     var pseudoDetailDefinitions = new PseudoDetailDefinitions();
 
     pseudoDetailDefinitions.Add(new DefaultPseudoDetailDefinition<Клиент, Кредит>(
-        Блоха.Views.PseudoDetailView,
+        Кредит.Views.PseudoDetailView,
         Information.ExtractPropertyPath<Кредит>(x => x.Клиент),
         "Кредиты"));
 
