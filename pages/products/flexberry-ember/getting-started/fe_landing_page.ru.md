@@ -68,7 +68,12 @@ lang: ru
 В файл `package.json` добавить
 
 ```javascript
+"devDependencies": {
+  ...
+  "resolve": "1.11.0",
+  ...
+},
 "resolutions": {
-"resolve": "1.11.0"
+  "resolve": "1.11.0"
 }
 ```
