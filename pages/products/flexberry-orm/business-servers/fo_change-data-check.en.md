@@ -7,12 +7,12 @@ toc: true
 permalink: en/fo_change-data-check.html
 lang: en
 autotranslated: true
-hash: 09bbd52b5f3927c2a4b89292bb3083a86d6c6cf186051903d52f9d8e7a0afc3e
+hash: 7e3c5997996960fd7500309063046f4534857760a4a0744c773b2f3be3e02e9a
 ---
 
 ## Modifying object data
 
-There are times when you can prevent the changing of any fields in the object only if it satisfies certain conditions relative to the old value of the same field. However, at the time of exposure of the object in the [business server](fo_bs-wrapper.html) (in method [OnUpdate](fo_bs-example.html)), information about the old value of the field is already missing.
+There are times when you can prevent the changing of any fields in the object only if it satisfies certain conditions relative to the old value of the same field. However, at the time of exposure of the object in the [business server](fo_business-server.html) (in method [OnUpdate](fo_bs-example.html)), information about the old value of the field is already missing.
 
 The old value field, you can learn subtracts it from the database, because the changed object is stored in application memory, but the changes were not yet in the database.
 

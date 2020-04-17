@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_orm-odata-service.html
 lang: en
 autotranslated: true
-hash: 5bdba5cada306358faf111e3b3cde6d7d20d77f870dfa4dc056ab40fcf66f59c
+hash: 6e25e3294f4584450d88dca20b22644c284c18b93d7d844843abb36937a57314
 ---
 
 `Flexberry ORM ODataService` allows a convenient way to create OData services on top of storage.
@@ -621,7 +621,7 @@ public static void Configure(HttpConfiguration config, IUnityContainer container
     var pseudoDetailDefinitions = new PseudoDetailDefinitions();
 
     pseudoDetailDefinitions.Add(new DefaultPseudoDetailDefinition<Клиент, Кредит>(
-        Блоха.Views.PseudoDetailView,
+        Кредит.Views.PseudoDetailView,
         Information.ExtractPropertyPath<Кредит>(x => x.Клиент),
         "Loans"));
 

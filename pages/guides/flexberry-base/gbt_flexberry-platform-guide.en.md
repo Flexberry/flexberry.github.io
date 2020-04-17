@@ -6,7 +6,7 @@ toc: true
 permalink: en/gbt_flexberry-platform-guide.html
 lang: en
 autotranslated: true
-hash: 972ccfb92ec077744084da38b98c3be128b8323d914cfe88302dd5814961a1aa
+hash: b41ac7ac426593a351d73096afec03f4504de4c11c2810dde203df8fdf51967d
 ---
 
 # Outdated tutorial programmer Flexberry Platform
@@ -70,10 +70,9 @@ hash: 972ccfb92ec077744084da38b98c3be128b8323d914cfe88302dd5814961a1aa
 * [UI-independent user interface](u-i-independent-user-interface.html)
 * [Localization of the user interface](localization--u-i.html)
 ## Configure a Winforms application
-* [Installing and configuring a stub COM ](Установка-и-конфигурирование-заглушки--c-o-m.html)
-* [Installing and configuring a stub IISHosted](Установка-и-конфигурирование-заглушки--i-i-s-hosted.html)
+
 * [Configuring the business facades from the application settings ](configuring-business-facades-of-application-settings.html)
-* [Business servers, wrappers, business facade](fo_bs-wrapper.html)
+* [Business server](fo_business-server.html)
 * [Customize controls, the concept of provider controls, standard controls provider](control-provider-winforms.html)
 * [Setting the debug packets and the debug package](visual-studio-design-packages.html)
 * The [system settings](setting-manager.html)
@@ -85,7 +84,7 @@ hash: 972ccfb92ec077744084da38b98c3be128b8323d914cfe88302dd5814961a1aa
 * [LookUp's](fa_lookup-overview.html)
 * [Uniform field ](Универсальная-форма-редактирования.html)
 * [Schema support Windows XP](support-schemes--windows--x-p.html)
-* [Service locks](lock-service.html)
+* [Service lock](lock-service.html)
 * [Creating and connecting the monitor task](fo_creating-connection-bt-monitor.html)
 * [Subsystem powers](efs_right-manager-module.html)
 * [Other features](class-image.html)

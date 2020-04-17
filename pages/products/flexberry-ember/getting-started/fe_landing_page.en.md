@@ -7,7 +7,7 @@ toc: true
 permalink: en/fe_landing_page.html
 lang: en
 autotranslated: true
-hash: bd17bd3cb3c93cc0938664c8d1690bb5369983a38b8598bbb5d59bce7acb80ca
+hash: 15716f469d350f537f0d06b7547be41d41a589e586c4ef55bad885eb28ea96ca
 ---
 
 `Ember-flexberry` is [part of the platform Flexberry](http://flexberry.ru), implemented in javascript frameworks [EmberJS](http://emberjs.com/).
@@ -70,8 +70,13 @@ To ember-generator to work correctly is required in the configuration file CASEB
 In file `package.json` add
 
 ```javascript
+"devDependencies": {
+  ...
+  "resolve": "1.11.0",
+  ...
+},
 "resolutions": {
-"resolve": "1.11.0"
+  "resolve": "1.11.0"
 }
 ```
 
