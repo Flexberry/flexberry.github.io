@@ -174,6 +174,30 @@ Settings for preview modal dialog.
 
 If you press the block predprostora opens a modal dialog, which is tied to the body.
 
+## Base64 files
+
+Component `flexberry-file` can work with files in base64 format. 
+
+To make it works, we need to set several properties:
+
+  ```hbs
+  {% raw %}{{flexberry-file
+    ...
+    base64Value=base64String
+    base64FileName="test"
+    base64FileExtension="jpg"
+  }}{% endraw %}
+  ```
+`base64Value` - property should contains string in base64 format. When `base64Value` changes, after successfull processing, value is set to `null`. This is due to the specifics of file-control and is necessary for situations when the user wants to attach/replace a file selected from the file system after using `base64Value`.
+
+`base64FileName` and `base64FileExtension` - name attributes for created files. 
+Name will be set as : 
+```javascript
+`{base64FileName}.{base64FileExtension}`
+```
+
+To display the modal error window when processing base64 files, you must set the parameter `showModalDialogOnUploadError` to `true`.
+
 ## Appearance settings in the mobile view
 
 Component `flexberry-file` has a special view for mobile devices.
