@@ -1,5 +1,5 @@
 ---
-title: Objectives & Key results in Skyori.com
+title: Objectives & Key results
 keywords: okr, гайдлайн, гайд, инструкция, оглавление, содержание
 sidebar: guide-okr-guideline_sidebar
 toc: true
