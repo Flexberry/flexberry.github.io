@@ -8,13 +8,18 @@ entries:
     output: web, pdf
 
     folderitems:
+    - title: Flexberry Designer Online
+      title_ru: Flexberry Designer Online
+      url: /fd_ember-flexberry-desinger.html
+      output: web
+
     - title: Flexberry Designer
       title_ru: Flexberry Designer
       url: /fd_landing_page.html
       output: web
 
     - title: Ember Flexberry Designer
-      title_ru: Flexberry Designer
+      title_ru: Ember Flexberry Designer
       url: /fd_ember-flexberry-desinger.html
       output: web
 
