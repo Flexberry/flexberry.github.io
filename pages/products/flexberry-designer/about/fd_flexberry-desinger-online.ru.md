@@ -4,7 +4,7 @@ keywords: Ember Flexberry Designer, UML, основы проектировани
 summary: Общие сведения об Ember Flexberry Designer
 sidebar: flexberry-designer_sidebar
 toc: false
-permalink: ru/fd_ember-flexberry-desinger.html
+permalink: ru/fd_flexberry-desinger-online.html
 lang: ru
 ---
 

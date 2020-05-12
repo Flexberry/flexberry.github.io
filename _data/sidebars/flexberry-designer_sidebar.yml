@@ -10,7 +10,7 @@ entries:
     folderitems:
     - title: Flexberry Designer Online
       title_ru: Flexberry Designer Online
-      url: /fd_ember-flexberry-desinger.html
+      url: /fd_flexberry-desinger-online.html
       output: web
 
     - title: Flexberry Designer
