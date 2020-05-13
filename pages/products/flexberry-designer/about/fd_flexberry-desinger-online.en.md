@@ -7,7 +7,7 @@ toc: false
 permalink: en/fd_flexberry-desinger-online.html
 lang: en
 autotranslated: true
-hash: 49a4fc5eece2c03ba65510c6bdd447c49eae1cb9f39c7a9f5f6b0e54eead52ac
+hash: 69a3abb4306a972c1a16618fd44afb8cab5242c8d33cdb3881a6dfb5801de4df
 ---
 
 ## Start Flexberry Designer and create a new project
@@ -72,10 +72,6 @@ For export project need to open the page `Настройки` and under `Дей�
 You can also make backup project button `Я want to make a backup проекта`.
 
 ## Creating basic types of charts. Basics of IC design
-
-### Briefly about the UML and maintained in Flexberry Designer Online version of the language
-
-### Briefly about the types of graphs and their purpose (in UML and Flexberry Designer Online)
 
 ### Order IC design
 
@@ -187,6 +183,9 @@ Communication with the master is stored is a flag for generation of a field in D
 * `Автогенерируемый TypeUsage` – identifier for the attribute, limiting the list of types in the inheritance hierarchy.
 * `TypeUsage` - an attribute that limits the list of types in the inheritance hierarchy that is covered by this communication. When using inheritance, the problem arises of determining the right type to use for Association. In other words, if the master type is the type associated with inheritance, it is unclear what specific type of an inheritance hierarchy is a master. Class a is the master M, which has at least two successor: M1 and M2. To resolve the problem, you can use special metadata that allows you to specify that a property M (link to the artisan class) in the class data A, in this particular (practical) case, can take only values of type M, and also M1 and M2. This is done at the level of program code.
 Accordingly, if a data object a (an instance of class A) that his master could be an instance of any of the classes M, M1, M2.
+
+![A typeusage](/images/pages/products/flexberry-designer/about/flexberry-designer-online005.png)
+
 * `Имя connection to database данных` is the name of the field in the database in which to store a reference to the master
 
 #### Properties of the composition
