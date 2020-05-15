@@ -12,7 +12,7 @@ hash: a14f23e9cd2324b8da737aeb191cffdff1da6d07c05af7ae071c411febc9a93f
 
 __To display in the form of a list of objects__ there is a specialized control that `ObjectListView`.
 
-The object list can be generated based on the model [Flexberry Desinger](fd_landing_page.html) or created manually.
+The object list can be generated based on the model [Flexberry Desinger](fd_flexberry-designer.html) or created manually.
 
 To display a list of objects without generating you must:
 

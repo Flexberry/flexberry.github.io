@@ -10,17 +10,17 @@ lang: ru
 
 __Для отображения на форме списка объектов__ существует специализированный элемент управления, `ObjectListView`.
 
-Список объектов может быть сгенерирован на основе модели [Flexberry Desinger](fd_landing_page.html) или создан вручную.
+Список объектов может быть сгенерирован на основе модели [Flexberry Desinger](fd_flexberry-designer.html) или создан вручную.
 
 Для отображения списока объектов без генерации необходимо:
 
-*	Поместить `ObjectListView` на форму.
-*	Присоединить к `ObjectListView` [сервис данных](fo_data-service.html). Для этого проинициализировать у `ObjectListView` свойство `DataService`. Если на форме уже реализованы сервисы данных, то указать можно в окне редактирования свойств, где есть для этого выпадающий список.
-*	Настроить отладочный пакет (если есть необходимость).
-*	Выбрать один или несколько классов для отображения. Для этого проинициализировать у `ObjectListView` свойство `DataObjectTypes`. Это можно также сделать при помощи специального дизайнера, доступного из окна редактирования свойств.
-*	Выбрать совместимое со всеми классами представление. Для этого необходимо проинициализировать у `ObjectListView` свойство `ViewName`. Это также можно сделать из окна редактирования свойств. Внимание! В выпадающий список попадают только совместимые со всеми типами, перечисленными в `DataObjectTypes`, представления.
-*	Установить, при необходимости, ограничение. Для этого проинициализировать свойство `LimitFunction`. Если делать в среде VS из окна редактирования свойств, то через свойство `Limit`.
-*	Настроить при необходимости видимость и ширину колонок. Для этого настроить у `ObjectListView` свойство `Columns` через окно редактирования свойств.
+* Поместить `ObjectListView` на форму.
+* Присоединить к `ObjectListView` [сервис данных](fo_data-service.html). Для этого проинициализировать у `ObjectListView` свойство `DataService`. Если на форме уже реализованы сервисы данных, то указать можно в окне редактирования свойств, где есть для этого выпадающий список.
+* Настроить отладочный пакет (если есть необходимость).
+* Выбрать один или несколько классов для отображения. Для этого проинициализировать у `ObjectListView` свойство `DataObjectTypes`. Это можно также сделать при помощи специального дизайнера, доступного из окна редактирования свойств.
+* Выбрать совместимое со всеми классами представление. Для этого необходимо проинициализировать у `ObjectListView` свойство `ViewName`. Это также можно сделать из окна редактирования свойств. Внимание! В выпадающий список попадают только совместимые со всеми типами, перечисленными в `DataObjectTypes`, представления.
+* Установить, при необходимости, ограничение. Для этого проинициализировать свойство `LimitFunction`. Если делать в среде VS из окна редактирования свойств, то через свойство `Limit`.
+* Настроить при необходимости видимость и ширину колонок. Для этого настроить у `ObjectListView` свойство `Columns` через окно редактирования свойств.
 
 ## Основная функциональность ObjectListView для пользователя
 
@@ -28,42 +28,33 @@ __Для отображения на форме списка объектов__ 
 
 Основная функциональность `ObjectListView` для пользователя:
 
-![](/images/pages/products/flexberry-winforms/controls/olv/primer15.jpg)
+![Пример](/images/pages/products/flexberry-winforms/controls/olv/primer15.jpg)
 
 Пользователь может:
 
 * Просматривать список объектов (в т.ч. и разнотипных)
-* Обновить список объектов ![](/images/pages/products/flexberry-winforms/controls/olv/primer16.jpg)
+* Обновить список объектов ![Пример](/images/pages/products/flexberry-winforms/controls/olv/primer16.jpg)
 
-* Вернуть выбранные объекты (LookUp) ![](/images/pages/products/flexberry-winforms/controls/olv/primer17.jpg)
+* Вернуть выбранные объекты (LookUp) ![Пример](/images/pages/products/flexberry-winforms/controls/olv/primer17.jpg)
 
-*  Выполнять сортировку объектов, для чего необходимо ткнуть мышью в заголовок колонки
-* Создать объект (если DataObjectTypes содержит несколько типов, то пользователь может из выпадающего списка выбрать, какого типа необходимо создать объект) ![](/images/pages/products/flexberry-winforms/controls/olv/primer18.jpg)
+* Выполнять сортировку объектов, для чего необходимо ткнуть мышью в заголовок колонки
+* Создать объект (если DataObjectTypes содержит несколько типов, то пользователь может из выпадающего списка выбрать, какого типа необходимо создать объект) ![Пример](/images/pages/products/flexberry-winforms/controls/olv/primer18.jpg)
 
-* Создать объект на основе выделенного ![](/images/pages/products/flexberry-winforms/controls/olv/primer19.jpg)
-
-* Отредактировать один или несколько выделенных объектов ![](/images/pages/products/flexberry-winforms/controls/olv/primer20.jpg)
-
-* Удалить один или несколько выделенных объектов ![](/images/pages/products/flexberry-winforms/controls/olv/primer21.jpg)
-
-* Настроить видимость колонок (пользователь может скрыть часть колонок для удобства) ![](/images/pages/products/flexberry-winforms/controls/olv/primer22.jpg)
-
-* Наложить ограничение на список отображаемых объектов ![](/images/pages/products/flexberry-winforms/controls/olv/primer23.jpg)
-
-* Выполнить поиск по списку ![](/images/pages/products/flexberry-winforms/controls/olv/primer24.jpg)
+* Создать объект на основе выделенного ![Пример](/images/pages/products/flexberry-winforms/controls/olv/primer19.jpg)
+* Отредактировать один или несколько выделенных объектов ![Пример](/images/pages/products/flexberry-winforms/controls/olv/primer20.jpg)
+* Удалить один или несколько выделенных объектов ![Пример](/images/pages/products/flexberry-winforms/controls/olv/primer21.jpg)
+* Настроить видимость колонок (пользователь может скрыть часть колонок для удобства) ![Пример](/images/pages/products/flexberry-winforms/controls/olv/primer22.jpg)
+* Наложить ограничение на список отображаемых объектов ![Пример](/images/pages/products/flexberry-winforms/controls/olv/primer23.jpg)
+* Выполнить поиск по списку ![Пример](/images/pages/products/flexberry-winforms/controls/olv/primer24.jpg)
 
 Также пользователю доступны:
 
-* Предварительный просмотр печати списка ![](/images/pages/products/flexberry-winforms/controls/olv/primer25.jpg)
+* Предварительный просмотр печати списка ![Пример](/images/pages/products/flexberry-winforms/controls/olv/primer25.jpg)
+* Печать списка ![Пример](/images/pages/products/flexberry-winforms/controls/olv/primer26.jpg)
+* Настройки печати ![Пример](/images/pages/products/flexberry-winforms/controls/olv/primer27.jpg)
+* Копирование выделенного в буфер обмена ![Пример](/images/pages/products/flexberry-winforms/controls/olv/primer28.jpg)
+* Операции с пометками и выделением ![Пример](/images/pages/products/flexberry-winforms/controls/olv/primer29.jpg)
 
-* Печать списка ![](/images/pages/products/flexberry-winforms/controls/olv/primer26.jpg)
-
-* Настройки печати ![](/images/pages/products/flexberry-winforms/controls/olv/primer27.jpg)
-
-* Копирование выделенного в буфер обмена ![](/images/pages/products/flexberry-winforms/controls/olv/primer28.jpg)
-
-* Операции с пометками и выделением ![](/images/pages/products/flexberry-winforms/controls/olv/primer29.jpg)
- 
 ## Обновление рабочего стола
 
 Для принудительного обновления дерева папок и списка рабочего стола необходимо вызвать метод `DesktopCtrl.ReloadDesktopcustomizer()`.
@@ -72,7 +63,7 @@ __Для отображения на форме списка объектов__ 
 
 Сообщение с вопросом о продолжении загрузки возникает при исчерпании физической памяти, выделенной приложению, т.к. выделение памяти в файле подкачки требует значительных временных затрат.
 
-![](/images/pages/products/flexberry-winforms/controls/olv/load-question.jpg)
+![Пример](/images/pages/products/flexberry-winforms/controls/olv/load-question.jpg)
 
 Для включения данной функции необходимо присвоить свойству ''MemoryTimeLoadLimit'' любое положительное значение.
 

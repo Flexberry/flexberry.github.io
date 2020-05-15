@@ -8,7 +8,7 @@ permalink: ru/fo_reverse-data-base.html
 lang: ru
 ---
 
-[Flexberry Designer](fd_landing_page.html) позволяет создавать диаграммы классов по базе данных для:
+[Flexberry Designer](fd_flexberry-designer.html) позволяет создавать диаграммы классов по базе данных для:
 
 * MS SQL Server,
 * ORACLE,
@@ -25,7 +25,7 @@ lang: ru
 * Создать новый System в этой Стадии.
 * Выделить System, выбрать в меню [ORM -> Построить диаграммы по БД -> Microsoft SQL Server](fo_orm-case-plugin.html).
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/reengineering-plugin.png)
+![Пример](/images/pages/products/flexberry-orm/module-flexberry-designer/reengineering-plugin.png)
 
 * Дождаться выполнения операции.
 
@@ -41,36 +41,37 @@ __Например:__ тип `VARCHAR(255)` есть по умолчанию в 
 
 * Создать диаграмму классов, на основе которой будет создана база:
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/reeng-step-7-0.png)
+![Пример](/images/pages/products/flexberry-orm/module-flexberry-designer/reeng-step-7-0.png)
 
 * Выделить стадию и указать путь к базе данных (в данном случае будет использоваться база с именем A-Test-DB).
 * Сгенерировать скрипт изменения базы данных:
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/reeng-step-3.png)
+![Пример](/images/pages/products/flexberry-orm/module-flexberry-designer/reeng-step-3.png)
 
 и применить его на A-Test-DB.
+
 * Создать стадию для генерации диаграммы классов по базе данных, указать путь к базе A-Test-DB.
 * Создать объект System.
 * Выделить объект System и сгенерировать диаграмму:
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/reengineering-plugin.png)
+![Пример](/images/pages/products/flexberry-orm/module-flexberry-designer/reengineering-plugin.png)
 
 * Проверить результат: должны быть созданы 4 диаграммы классов
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/reeng-step-7-1.png)
+![Пример](/images/pages/products/flexberry-orm/module-flexberry-designer/reeng-step-7-1.png)
 
 `Reverse:`
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/reeng-step-7-2.png)
+![Пример](/images/pages/products/flexberry-orm/module-flexberry-designer/reeng-step-7-2.png)
 
 `Reverse Object1:`
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/reeng-step-7-3.png)
+![Пример](/images/pages/products/flexberry-orm/module-flexberry-designer/reeng-step-7-3.png)
 
 `Reverse Object2:`
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/reeng-step-7-4.png)
+![Пример](/images/pages/products/flexberry-orm/module-flexberry-designer/reeng-step-7-4.png)
 
 `Reverse Object3:`
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/reeng-step-7-5.png)
+![Пример](/images/pages/products/flexberry-orm/module-flexberry-designer/reeng-step-7-5.png)

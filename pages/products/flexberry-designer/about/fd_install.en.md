@@ -10,7 +10,7 @@ autotranslated: true
 hash: 0ce174b5e0b5fbe7fb1a81241febd5adfe90d60705594b7fd3e936c90f589787
 ---
 
-To set [Flexberry Designer](fd_landing_page.html) you need to perform [check](https://designer.flexberry.net/#/login-or-register) on the website [Flexberry.net](https://flexberry.net).
+To set [Flexberry Designer](fd_flexberry-designer.html) you need to perform [check](https://designer.flexberry.net/#/login-or-register) on the website [Flexberry.net](https://flexberry.net).
 
 For the application on the computer must have the following software installed (in the installation process Flexberry Designer, this list will be automatically checked and, if necessary, lacking IN will be automatically installed):
 
@@ -61,7 +61,7 @@ In rare cases where not all installed third-party software time to tune, when yo
 
 ## Installation and renewal of licenses
 
-When you download [Flexberry Designer](fd_landing_page.html) from [Flexberry.net](https://flexberry.net) install licenses will occur as follows:
+When you download [Flexberry Designer](fd_flexberry-designer.html) from [Flexberry.net](https://flexberry.net) install licenses will occur as follows:
 
 * In the process of installing the application the user will be prompted for your login (E-mail) and password that was Aksana when [registering on the website Flexberry.net](https://designer.flexberry.net/#/fd-try). In the case of correct credentials, the license will be automatically downloaded.
 * To renew your license you must go to [Licensee](https://designer.flexberry.net/#/download-win-app) after [after logging in Flexbery.net](https://designer.flexberry.net/#/login-or-register), and complete the request academic or corporate license by clicking on the appropriate button. Notification of successful license renewal will be sent by E-mail, specified during registration on site [Flexberry.net](https://flexberry.net).

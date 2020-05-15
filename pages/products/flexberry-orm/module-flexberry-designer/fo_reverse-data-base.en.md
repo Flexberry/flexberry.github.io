@@ -10,7 +10,7 @@ autotranslated: true
 hash: 172de0fda41468dfd4028ca5ccc63390dfda606262a45f4fa1842eeb135ccd36 
 --- 
 
-[Flexberry Designer](fd_landing_page.html) allows you to create class diagrams for database to: 
+[Flexberry Designer](fd_flexberry-designer.html) allows you to create class diagrams for database to: 
 
 * MS SQL Server 
 * ORACLE 

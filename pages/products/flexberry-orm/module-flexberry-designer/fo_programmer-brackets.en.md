@@ -53,7 +53,7 @@ Add custom brackets, the programmer is not supported.
 
 ## errors 
 
-If when generating [Flexberry Designer](fd_landing_page.html) is added to the log information of the following type: 
+If when generating [Flexberry Designer](fd_flexberry-designer.html) is added to the log information of the following type: 
 
 * `Ошибка: Not found the end brackets in the file "D:\Проекты\КредитыTestBuild\Кредиты\Objects\Клиент.cs"`, it means that somewhere in the file has been deleted or added an extra brace. 
 

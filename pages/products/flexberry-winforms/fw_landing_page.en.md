@@ -20,7 +20,7 @@ The product website `Flexberry Winforms`: [flexberry.ru](http://flexberry.ru/Fle
 
 `Flexberry Winforms` consists of the following modules:
 
-* Expansion module [Flexberry Designer](fd_landing_page.html) for generating win-applications in uml models.
+* Expansion module [Flexberry Designer](fd_flexberry-designer.html) for generating win-applications in uml models.
 * Win-controls and win forms.
 
 ## Information controls and components

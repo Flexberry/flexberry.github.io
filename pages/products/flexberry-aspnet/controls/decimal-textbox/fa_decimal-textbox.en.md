@@ -29,7 +29,7 @@ At the moment, [DataObject](fo_data-object.html) does not store metadata about t
 
 If you do not initialize a property `MaxDecimalPlaces` in the above case, the edit form after changing the properties of an existing data object in the component `DecimalTextBox` and then saving the data without closing the form, a real number may not be displayed correctly - the displayed number of decimal places may not correspond to the number of characters that is specified for the corresponding type in the database (to be displayed will be the value that the user entered before saving). When adding a new data object for this behavior is not observed, because it is an additional request to the server to retrieve primary key values from the new object data, resulting in re-read a data object before it is displayed on the form (the field values are displayed as they are stored in the database). 
 
-Perhaps in future versions [Flexberry Designer](fd_landing_page.html) will be able to specify and store the number of digits after the decimal point for real types C# at the level of metadata, then the need to manually set the MaxDecimalPlaces will disappear. 
+Perhaps in future versions [Flexberry Designer](fd_flexberry-designer.html) will be able to specify and store the number of digits after the decimal point for real types C# at the level of metadata, then the need to manually set the MaxDecimalPlaces will disappear. 
 
 ## DecimalTextBox in AjaxGroupEdit 
 

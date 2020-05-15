@@ -35,7 +35,7 @@ It is also possible to add or remove roles, assign them to users and set privile
 
 ### features of use of the subsystem powers 
 
-[Engine powers Web-applications](fa_right-manager.html) does not require third-party services and comes along with the application in the generation of [Flexberry Designer](fd_landing_page.html). 
+[Engine powers Web-applications](fa_right-manager.html) does not require third-party services and comes along with the application in the generation of [Flexberry Designer](fd_flexberry-designer.html). 
 
 For windows applications is used [Service authority Flexberry Rights](efs_security-legacy-services.html). 
 

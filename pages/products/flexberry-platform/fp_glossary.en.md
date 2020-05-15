@@ -13,7 +13,7 @@ hash: 2aa23d657747c8ad8cb3bf91d20a206718a3f976999a9c980054157e8ceb5df4
 | Use the concept | Value |
 |-----------------------| ---------|
 | [Platform Flexberry](fp_landing_page.html) | Set of products and subsystems that enable you to develop a broad range of applications based on various frameworks (from "Board" to complex mobile options, using, including, systems, lines of authority, change tracking and map data) |
-| [Flexberry Designer](fd_landing_page.html) | this [CASE tool](https://ru.wikipedia.org/wiki/CASE), which can be used for both business modeling (analysis of business-processes, reengineering of business processes) and object-oriented design of software and databases. As the notation used by [UML](http://www.uml.org) |
+| [Flexberry Designer](fd_flexberry-designer.html) | this [CASE tool](https://ru.wikipedia.org/wiki/CASE), which can be used for both business modeling (analysis of business-processes, reengineering of business processes) and object-oriented design of software and databases. As the notation used by [UML](http://www.uml.org) |
 | `Модули extensions Flexberry Designer` | Plugins generating Flexberry Designer, allowing to create applications on the basis of Ember, ASP.NET or Wimforms engineered models, and applications, including GIS subsystem |
 | [Flexberry Ember](fe_landing_page.html) | Product platform Flexberry implemented on javascript-framework [EmberJS](http://emberjs.com/) |
 | [Flexberry ASP.NET](fa_landing_page.html) | Product platform Flexberry based on freeware ASP.NET and allows you to create WEB-apps |

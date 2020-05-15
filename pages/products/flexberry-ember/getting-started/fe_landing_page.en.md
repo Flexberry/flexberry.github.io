@@ -40,7 +40,7 @@ To create the application using the product `ember-flexberry` you need to instal
 
 ### Software
 
-1. [Flexberry Desinger](https://flexberry.github.io/ru/fd_landing_page.html). [Set](https://flexberry.github.io/ru/fd_install.html) Flexberry Desinger from [flexberry.net](https://flexberry.net/). At the initial installation is given a promotional license for 14 days. Then it can [extend](https://designer.flexberry.net/#/download-win-app) for a period of 6 to 12 months. For students of colleges and Universities free academic license for six months.
+1. [Flexberry Desinger](https://flexberry.github.io/ru/fd_flexberry-designer.html). [Set](https://flexberry.github.io/ru/fd_install.html) Flexberry Desinger from [flexberry.net](https://flexberry.net/). At the initial installation is given a promotional license for 14 days. Then it can [extend](https://designer.flexberry.net/#/download-win-app) for a period of 6 to 12 months. For students of colleges and Universities free academic license for six months.
 2. Visual Studio 2017 or later. In working with applications based on [Ember.js](https://emberjs.com/) and `ember-flexberry` will also help [Visual Studio Code](https://code.visualstudio.com/), [Sublime Text](http://www.sublimetext.com/) or their [counterparts](https://jpnsoft.ru/visual-studio-code/).
 3. PostgreSQL. For performance of works it is recommended to use a free cloud service [https://www.elephantsql.com/](https://www.elephantsql.com/).
 4. TFS. For performance of works it is recommended to use a free cloud service Visual Studio Online

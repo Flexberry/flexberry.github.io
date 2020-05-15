@@ -12,7 +12,7 @@ hash: 80da89a3d4abf68f7c088c42124665c78ffd5d4be1280c7efd958e0c4a42c022
 
 There are two ways to add to the edit form [Lookup](fw_lookup.html) to select an object unrelated to the editable on the current form:
 
-1. Add a calculated field in the main object and re-generate the form using [Flexberry Desinger](fd_landing_page.html).
+1. Add a calculated field in the main object and re-generate the form using [Flexberry Desinger](fd_flexberry-designer.html).
 2. In your application code to add a Lookup to the form.
 
 ### The algorithm add a LookUp in the application code

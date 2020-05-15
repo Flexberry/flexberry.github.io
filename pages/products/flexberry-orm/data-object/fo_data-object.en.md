@@ -14,7 +14,7 @@ In Flexberry ORM **data objects** instances of classes are called heirs of the a
 
 ## data Objects in the model 
 
-[Classes of data objects](fo_data-object-structure.html) are described in [class diagram](fd_class-diagram-constraction.html) in [Flexberry Designer](fd_landing_page.html) and have the stereotype [implementation](fd_data-classes.html). In the description of the data object are specified [attributes](fo_attributes-class-data.html), and metadata. 
+[Classes of data objects](fo_data-object-structure.html) are described in [class diagram](fd_class-diagram-constraction.html) in [Flexberry Designer](fd_flexberry-designer.html) and have the stereotype [implementation](fd_data-classes.html). In the description of the data object are specified [attributes](fo_attributes-class-data.html), and metadata. 
 
 The attributes of the data object can be of two types standard (described in the diagram) and dynamic [dynamic properties of the data object](fo_dynamic-properties.html). If the attribute value is not supposed to be placed in the repository, it can be declared as [phranky](fo_not-stored-attributes.html). In the description of the attributes may be assigned to the [default values](fo_features-dafault-value.html). 
 

@@ -10,7 +10,7 @@ hash: 92796554020353a986091303c5bbe3d08b282a19ccba6466bf3797f5320149a6
 --- 
 
 ## Audit 
-Setting the [audit](fa_audit-web.html) [Flexberry Designer](fd_landing_page.html) is carried out in several stages. 
+Setting the [audit](fa_audit-web.html) [Flexberry Designer](fd_flexberry-designer.html) is carried out in several stages. 
 
 ### configuring database audit 
 Database auditing can be stored in a separate database and database application. 

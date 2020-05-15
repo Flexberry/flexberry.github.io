@@ -25,7 +25,7 @@ Level 5 | System. The system is the lowest level in the project hierarchy and co
 
 ## recommended the division of the configurations under 
 
-[Flexberry Designer](fd_landing_page.html) in no way imposes any of the production life cycle of the software, but we recommend the "big" stage inside the following configurations: 
+[Flexberry Designer](fd_flexberry-designer.html) in no way imposes any of the production life cycle of the software, but we recommend the "big" stage inside the following configurations: 
 
 * A survey that identifies: functional requirements, main fact, and framework проекта; 
 * Analysis and design where a detailed clarification of the subject characteristics and the functionality of the system, to get "drawn" the model of the system. 

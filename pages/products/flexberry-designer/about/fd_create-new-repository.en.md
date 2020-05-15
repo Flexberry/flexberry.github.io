@@ -10,7 +10,7 @@ autotranslated: true
 hash: 2fe27917f5a5f1f79a0135e409dd5b2eae17f368c86bac52c3f6e9e2ff16efc6 
 --- 
 
-After starting [Flexberry Designer](fd_landing_page.html) you can create a new `Репозиторий` to work by selecting the menu item `Репозиторий` – `Создать новый`: 
+After starting [Flexberry Designer](fd_flexberry-designer.html) you can create a new `Репозиторий` to work by selecting the menu item `Репозиторий` – `Создать новый`: 
 
 ![](/images/pages/products/flexberry-designer/about/create-new-repository.png) 
 

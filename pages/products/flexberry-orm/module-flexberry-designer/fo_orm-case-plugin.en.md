@@ -10,7 +10,7 @@ autotranslated: true
 hash: 8d4054e54e8776f06be9266e94ee8ea6f00c3a957667be2f18a218e065de192f 
 --- 
 
-`Flexberry ORM Plugin` is an expander [Flexberry Designer](fd_landing_page.html), provides opportunities for the creation and correction of application models, generate code and databases. 
+`Flexberry ORM Plugin` is an expander [Flexberry Designer](fd_flexberry-designer.html), provides opportunities for the creation and correction of application models, generate code and databases. 
 
 Depending on the [level of repository object](fd_recommended-structure-repository.html) plug-in provides different features. 
 

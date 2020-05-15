@@ -15,7 +15,7 @@ hash: 9ad29fad84f99e419244865a2bb4e630f2ab1181ccc312f5224ca7a221b85d25
 Products [platform Flexberry](http://flexberry.net):
 
 * Tools design and editing:
-* [Flexberry Designer](fd_landing_page.html). To install by downloading from the website [flexberry.net](https://designer.flexberry.net/#/download-win-app).
+* [Flexberry Designer](fd_flexberry-designer.html). To install by downloading from the website [flexberry.net](https://designer.flexberry.net/#/download-win-app).
 * Frameworks:
 * [Flexberry Ember](fe_landing_page.html)
 * [Flexberry ASP.NET](fa_landing_page.html)

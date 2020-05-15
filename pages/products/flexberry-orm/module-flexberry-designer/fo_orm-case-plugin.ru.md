@@ -8,7 +8,7 @@ permalink: ru/fo_orm-case-plugin.html
 lang: ru
 ---
 
-`Flexberry ORM Plugin` является модулем расширения [Flexberry Designer](fd_landing_page.html), предоставляет возможности по созданию и коррекции модели приложения, генерации программного кода и баз данных.
+`Flexberry ORM Plugin` является модулем расширения [Flexberry Designer](fd_flexberry-designer.html), предоставляет возможности по созданию и коррекции модели приложения, генерации программного кода и баз данных.
 
 В зависимости от [уровня репозитарного объекта](fd_recommended-structure-repository.html) плагин предоставляет различные возможности.
 
@@ -98,19 +98,19 @@ lang: ru
 
 В данном пункте собрана информация о взаимосвязи между классами и указание типа связи, а также количество упоминаний связей.
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/association-manager.png)
+![Пример](/images/pages/products/flexberry-orm/module-flexberry-designer/association-manager.png)
 
 #### Менеджер наследований
 
 Данный пункт содержит информацию о [наследовании](fd_inheritance.html): указание предка, наследника(ов), количество упоминаний.
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/inheritance-manager.png)
+![Пример](/images/pages/products/flexberry-orm/module-flexberry-designer/inheritance-manager.png)
 
 #### Менеджер представлений
 
 В данном пункте содержится информация обо всех [представлениях](fd_view-definition.html), существующих в моделях: указание класса, к которому относится представление, название и свойства представления.
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/view-manager.png)
+![Пример](/images/pages/products/flexberry-orm/module-flexberry-designer/view-manager.png)
 
 #### Обновить представления
 
@@ -142,7 +142,7 @@ lang: ru
 
 #### Импорт стадии
 
-Позволяет импортировать стадию в указанную конфигурацию. 
+Позволяет импортировать стадию в указанную конфигурацию.
 
 Помимо данного, для импорта стадий существует особый механизм импорта.
 

@@ -10,7 +10,7 @@ autotranslated: true
 hash: ff7468e66028ad4d739f33d39e2c1f2f4071e589febf82630bba5524fc3bf514 
 --- 
 
-`XMLFileDataService` data service is designed to work with the database in XML format. For correct operation of the service data required by the XSD schema of the database and the XML database file. You can get them using [XMLSchemaGenerator](fo_xml-schema-generator.html) (extension module [Flexberry Designer](fd_landing_page.html) to generate the XSD schema of the database). 
+`XMLFileDataService` data service is designed to work with the database in XML format. For correct operation of the service data required by the XSD schema of the database and the XML database file. You can get them using [XMLSchemaGenerator](fo_xml-schema-generator.html) (extension module [Flexberry Designer](fd_flexberry-designer.html) to generate the XSD schema of the database). 
 
 To work with data in XML format is used `System.Data.DataSet` support transactions and SQL queries. PstrfDataSet` also supports referential integrity constraints. To work `XMLFileDataService` you must enable the referential integrity constraints. Enable referential integrity by enabling properties `EnforceConstraints`. `XMLSchemaGenerator` by default, this property adds to `true`. 
 

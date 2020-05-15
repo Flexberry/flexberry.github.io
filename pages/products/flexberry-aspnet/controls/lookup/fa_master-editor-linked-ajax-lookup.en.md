@@ -36,7 +36,7 @@ Algorithm setup and tuning `LinkedLookup`:
 
 ### customize the appearance of detail 
 
-[E-view](fd_e-view.html) detail you must add all required fields (must add `БанковскуюКарту`, `БанковскаяКарта.Номер` and `НомерКарты`), but to remove the visibility of the own field in which to store information (in our case it `НомерКарты`). This is done in [Flexberry Desinger](fd_landing_page.html) using [date view](fd_view-edit-form.html). 
+[E-view](fd_e-view.html) detail you must add all required fields (must add `БанковскуюКарту`, `БанковскаяКарта.Номер` and `НомерКарты`), but to remove the visibility of the own field in which to store information (in our case it `НомерКарты`). This is done in [Flexberry Desinger](fd_flexberry-designer.html) using [date view](fd_view-edit-form.html). 
 
 ### Setting WebControlProvider 
 

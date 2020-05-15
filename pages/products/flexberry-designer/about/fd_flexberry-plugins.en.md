@@ -10,7 +10,7 @@ autotranslated: true
 hash: a93341f2ed4b088ece458682cc04345c97637f25daa852a98f4c07f21ea2c434 
 --- 
 
-Expansion modules add functionality in [Flexberry Designer](fd_landing_page.html), providing new opportunities. The module can be generator source code search utility, import / export, etc. 
+Expansion modules add functionality in [Flexberry Designer]fd_flexberry-designer.html(fd_flexberry-designer.html), providing new opportunities. The module can be generator source code search utility, import / export, etc. 
 
 When using the expansion modules have additional menu items when you select repository objects Flexberry Designer: [Configuration Stage or System](fd_recommended-structure-repository.html). 
 
