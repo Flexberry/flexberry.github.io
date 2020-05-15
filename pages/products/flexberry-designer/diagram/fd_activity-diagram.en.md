@@ -10,7 +10,7 @@ autotranslated: true
 hash: 0cefe0009901b67628ff6cd276978776f12f5fc8fd6642b05b79ea434e20f7ed 
 --- 
 
-**Chart of activities (types of activities)** - one of the available [kinds of graphs](fd_editing-diagram.html) supported [Flexberry Designer](fd_landing_page.html). 
+**Chart of activities (types of activities)** - one of the available [kinds of graphs](fd_editing-diagram.html) supported [Flexberry Designer](fd_flexberry-designer.html). 
 She, like [state diagram](fd_statechart-diagram.html), **reflects the dynamic aspects of system behavior**. Essentially, this diagram is a flowchart that shows the flow of control passes from one activity to another. 
 
 ![](/images/pages/products/flexberry-designer/diagram/activity diagram.png) 

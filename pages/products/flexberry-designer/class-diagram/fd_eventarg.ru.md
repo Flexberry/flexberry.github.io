@@ -10,7 +10,7 @@ lang: ru
 
 ## Описание события
 
-[Flexberry Designer](fd_landing_page.html) позволяет пользователю описывать события и их аргументы, для возможной последующей генерации в исходный код на CLR-совместимом языке (в частности, `C#`).
+[Flexberry Designer](fd_flexberry-designer.html) позволяет пользователю описывать события и их аргументы, для возможной последующей генерации в исходный код на CLR-совместимом языке (в частности, `C#`).
 
 События описываются [внутри UML-классов, в секции методов](fd_class-diagram-constraction.html), в следующем виде:
 
@@ -22,7 +22,7 @@ lang: ru
 
 Пример описания аргументов события и самого события:
 
-![](/images/pages/products/flexberry-designer/class-diagram/eventeventargs.png)
+Пример
 
 ### Генерация класса аргументов события
 
@@ -32,10 +32,9 @@ lang: ru
    // *** Start programmer edit section *** (Аргументы CustomAttributes)
     // *** End programmer edit section *** (Аргументы CustomAttributes)
     public class Аргументы : System.EventArgs
-    {        
+    {
         private string fарг1;
         // *** Start programmer edit section *** (Аргументы CustomMembers)
-        
         // *** End programmer edit section *** (Аргументы CustomMembers)
         // *** Start programmer edit section *** (Аргументы.арг1 CustomAttributes)
         // *** End programmer edit section *** (Аргументы.арг1 CustomAttributes)
@@ -69,7 +68,7 @@ lang: ru
 
 ```csharp
  public event ICSSoft.Product.АргументыHandler Событие;
-        
+
         // *** Start programmer edit section *** (OnСобытие CustomAttributes)
         // *** End programmer edit section *** (OnСобытие CustomAttributes)
         private void OnСобытие(ICSSoft.Product.Аргументы ea)
@@ -83,7 +82,7 @@ lang: ru
 
 ## Основные свойства аргументов события
 
-![](/images/pages/products/flexberry-designer/class-diagram/argpropsclass.jpg)
+![Пример](/images/pages/products/flexberry-designer/class-diagram/argpropsclass.jpg)
 
 Свойство | Описание | Генерация в .Net-язык
 :--------------------|:--------------------|:---------------------------------------------------------
@@ -95,7 +94,7 @@ lang: ru
 
 ## Свойства атрибутов аргументов события
 
-![](/images/pages/products/flexberry-designer/class-diagram/argpropsattrs.jpg)
+![Пример](/images/pages/products/flexberry-designer/class-diagram/argpropsattrs.jpg)
 
 Свойство | Описание | Генерация в .Net-язык
 :-------------------|:---------------------------|:----------------------------------------------
@@ -110,15 +109,16 @@ lang: ru
 `PBSetStart` | Скобка программиста | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения кода после начала аксессора set.
 
 ## Свойства методов аргументов события
+
 Свойства и генерация методов, см. в [статье Методы классов и параметры методов](fd_methods-parameters.html).
 
-![](/images/pages/products/flexberry-designer/class-diagram/eventprops.jpg)
+![Пример](/images/pages/products/flexberry-designer/class-diagram/eventprops.jpg)
 
 Свойство | Описание | Генерация в .Net-язык
 :-------------------|:----------------------------|:-------------------------------------------
 `AccessModifier` | Модификатор события | Соответствующий модификатор в определении события (# - protected, + - public, - - private)
 `Name` | Имя события | Имя события
 `Description` | Описание | `DocComment` перед определением метода OnСобытие
-`Type` | | Не учитывается 
+`Type` | | Не учитывается
 `IsEvent` | Указывает, что это - событие, а не метод, дублирует "/" в определении события. | Генерируется событие, а не метод.
 `PBCustomAttributes` | | Если флажок выставлен, - генерируется скобка программиста перед определением метода OnСобытие

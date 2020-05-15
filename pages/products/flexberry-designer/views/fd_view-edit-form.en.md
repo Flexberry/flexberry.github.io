@@ -73,7 +73,7 @@ When the selected attribute is a master, there are three additional properties i
 
 #### Properties of interfaces in performance 
 
-In [Flexberry Designer](fd_landing_page.html) is supported by adding a [view](fd_view-definition.html) properties declared at the [interfaces](fd_interfaces.html), from which inherits the [classes of objects](fd_data-classes.html). 
+In [Flexberry Designer](fd_flexberry-designer.html) is supported by adding a [view](fd_view-definition.html) properties declared at the [interfaces](fd_interfaces.html), from which inherits the [classes of objects](fd_data-classes.html). 
 
 For example, suppose there is a chart of the form: 
 

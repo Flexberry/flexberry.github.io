@@ -47,7 +47,7 @@ The name of the button | Description
 **Print** | output the chart to the printer. 
 **Printer settings** | Discovery settings dialog box the printer properties. 
 **Cut the selected objects** | Similar to copy objects, only the selected elements are removed from the graph. 
-**Copy the selected objects** | Highlighted in the chart items copied to the clipboard *Windows*. The copied elements can be inserted as in [Flexberry Designer](fd_landing_page.html) another similar figure, and in any other application (e.g., a text or graphics editor) *Windows metafile (WMF)*. 
+**Copy the selected objects** | Highlighted in the chart items copied to the clipboard *Windows*. The copied elements can be inserted as in [Flexberry Designer](fd_flexberry-designer.html) another similar figure, and in any other application (e.g., a text or graphics editor) *Windows metafile (WMF)*. 
 **Paste from clipboard** | Paste previously copied to the clipboard, the items on the chart. 
 **Save the graph as a Windows metafile (WMF)** | Allows you to save the graph as a vector image, it is possible to export the graph in wmf format as system-level and stage level. 
 **Delete selected elements** | Highlighted on the chart objects are deleted. 
@@ -124,7 +124,7 @@ All selected objects will be set the same width, equal to the maximum width of t
 
 ## Pessimistic locking of repository objects 
 
-[Flexberry Designer](fd_landing_page.html) is intended primarily for project teams, not individual developers. 
+[Flexberry Designer](fd_flexberry-designer.html) is intended primarily for project teams, not individual developers. 
 To ensure joint work on a UML model in the diagram editor provides a mechanism **pessimistic locking**. This means that if one team member begins work on any repository object (stage, diagram, class, relationship), others that this same item is available only for viewing. 
 As soon as the first user finishes editing a repository object is available for editing by other users. 
 If the repository object was not closed properly (power failure or other problems), unlocking is as simple as re-running Flexberry Designer. 

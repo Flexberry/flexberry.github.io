@@ -10,7 +10,7 @@ autotranslated: true
 hash: 8007e12f4fb02d03799fc91f6cf96092a2a4c78ce27fbc1de050033795ad0136 
 --- 
 
-[Flexberry Designer](fd_landing_page.html) allows the user to describe the interfaces to generate the source code on `CLR`-compatible language, in particular, `C#`. 
+[Flexberry Designer](fd_flexberry-designer.html) allows the user to describe the interfaces to generate the source code on `CLR`-compatible language, in particular, `C#`. 
 
 To describe the interface, you must create the diagram UML class with the stereotype `interface`. 
 

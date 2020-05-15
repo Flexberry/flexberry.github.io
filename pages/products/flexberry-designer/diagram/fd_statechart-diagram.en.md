@@ -10,7 +10,7 @@ autotranslated: true
 hash: 9c33069629c28cf075e641a7364ca48c7ed7f52e908ee497071d944330358017 
 --- 
 
-**State diagram** - one of the available [kinds of graphs](fd_editing-diagram.html) supported [Flexberry Designer](fd_landing_page.html). 
+**State diagram** - one of the available [kinds of graphs](fd_editing-diagram.html) supported [Flexberry Designer](fd_flexberry-designer.html). 
 
 ![](/images/pages/products/flexberry-designer/diagram/statechart-diagram.png) 
 

@@ -10,7 +10,7 @@ autotranslated: true
 hash: 0729f1a3fa2307302c917442d6bbc31a6e6defd0c3d4c4b27c866f73a6d308a4
 ---
 
-After the generation of prototype applications using the [Flexberry Desinger](fd_landing_page.html) there is a need for its setup and completion. In each project the process will have its own characteristics, however, we can identify a set of typical challenges inherent in any project.
+After the generation of prototype applications using the [Flexberry Desinger](fd_flexberry-designer.html) there is a need for its setup and completion. In each project the process will have its own characteristics, however, we can identify a set of typical challenges inherent in any project.
 
 Mandatory for completion of tasks allocate the following:
 

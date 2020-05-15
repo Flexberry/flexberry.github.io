@@ -8,9 +8,9 @@ permalink: ru/fd_sequence-diagram.html
 lang: ru
 ---
 
-**Диаграмма последовательности** - один из доступных [видов диаграмм](fd_editing-diagram.html), поддерживаемых [Flexberry Designer](fd_landing_page.html).
+**Диаграмма последовательности** - один из доступных [видов диаграмм](fd_editing-diagram.html), поддерживаемых [Flexberry Designer](fd_flexberry-designer.html).
 
-![](/images/pages/products/flexberry-designer/diagram/sequence-diagram.png)
+![Пример](/images/pages/products/flexberry-designer/diagram/sequence-diagram.png)
 
 **Диаграммы последовательностей используются для уточнения диаграмм прецедентов**, более детального описания логики сценариев использования. Это отличное средство документирования проекта с точки зрения сценариев использования!
 
@@ -26,20 +26,20 @@ lang: ru
 
 ## Основные элементы диаграммы последовательности
 
-На диаграмме последовательности можно отобразить следующие элементы нотации UML, доступные в панели элементов: 
+На диаграмме последовательности можно отобразить следующие элементы нотации UML, доступные в панели элементов:
 
 Элемент/Нотация | Предназначение
 :-----------------------------------------|:-------------------------------------------------------
-![](/images/pages/products/flexberry-designer/diagram/actor.jpg) | Участник (Actor)
-![](/images/pages/products/flexberry-designer/diagram/objectseq.jpg) | Объект (Object)
-![](/images/pages/products/flexberry-designer/diagram/activeobjectseq.jpg) | Активный объект (Active object)
-![](/images/pages/products/flexberry-designer/diagram/terminator.jpg) | Терминатор (Terminator)
-![](/images/pages/products/flexberry-designer/diagram/fwdnestedmsg.jpg) | Вызов процедуры (Procedure call)
-![](/images/pages/products/flexberry-designer/diagram/fwdmessage.jpg) | Сообщение (Flat message)
-![](/images/pages/products/flexberry-designer/diagram/fwdasyncmsg.jpg) | Асинхронное сообщение (Async message)
-![](/images/pages/products/flexberry-designer/diagram/dependency.jpg) | Сообщение с результатом (Return message)
-![](/images/pages/products/flexberry-designer/diagram/inscope.jpg) | Временной интервал (In scope)
-![](/images/pages/products/flexberry-designer/diagram/timeconstraint.jpg) | Временное ограничение (Time constraint)
-![](/images/pages/products/flexberry-designer/diagram/corner.jpg) | Точка изгиба связей (Point)
-![](/images/pages/products/flexberry-designer/diagram/note.jpg) | Комментарий (Note)
-![](/images/pages/products/flexberry-designer/diagram/noteconn.jpg) | Коннектор комментария (Note connector)
+![Пример](/images/pages/products/flexberry-designer/diagram/actor.jpg) | Участник (Actor)
+![Пример](/images/pages/products/flexberry-designer/diagram/objectseq.jpg) | Объект (Object)
+![Пример](/images/pages/products/flexberry-designer/diagram/activeobjectseq.jpg) | Активный объект (Active object)
+![Пример](/images/pages/products/flexberry-designer/diagram/terminator.jpg) | Терминатор (Terminator)
+![Пример](/images/pages/products/flexberry-designer/diagram/fwdnestedmsg.jpg) | Вызов процедуры (Procedure call)
+![Пример](/images/pages/products/flexberry-designer/diagram/fwdmessage.jpg) | Сообщение (Flat message)
+![Пример](/images/pages/products/flexberry-designer/diagram/fwdasyncmsg.jpg) | Асинхронное сообщение (Async message)
+![Пример](/images/pages/products/flexberry-designer/diagram/dependency.jpg) | Сообщение с результатом (Return message)
+![Пример](/images/pages/products/flexberry-designer/diagram/inscope.jpg) | Временной интервал (In scope)
+![Пример](/images/pages/products/flexberry-designer/diagram/timeconstraint.jpg) | Временное ограничение (Time constraint)
+![Пример](/images/pages/products/flexberry-designer/diagram/corner.jpg) | Точка изгиба связей (Point)
+![Пример](/images/pages/products/flexberry-designer/diagram/note.jpg) | Комментарий (Note)
+![Пример](/images/pages/products/flexberry-designer/diagram/noteconn.jpg) | Коннектор комментария (Note connector)

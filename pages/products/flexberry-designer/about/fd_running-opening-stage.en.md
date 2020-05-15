@@ -10,7 +10,7 @@ autotranslated: true
 hash: 9ac488620ec69c39de2603df55a4206a2139d03554e869bf124ab118867c523d 
 --- 
 
-There is an opportunity to make a few shortcuts to [Flexberry Designer](fd_landing_page.html), each of which would open up a different stage. 
+There is an opportunity to make a few shortcuts to [Flexberry Designer](fd_flexberry-designer.html), each of which would open up a different stage. 
 
 For this you need to configure the shortcut as follows: the argument to start you need to pass a parameter `path:the Path to стадии` 
 
@@ -22,7 +22,7 @@ Flexberry.exe path:Репозиторий\Проект\Конфигурация\
 
 ![](/images/pages/products/flexberry-designer/about/path.JPG) 
 
-{% include note.html content="as the path can be specified as repository, project, configuration, stage or system. You can copy the path from the pull-down path string in [Flexberry Designer](fd_landing_page.html)." %} 
+{% include note.html content="as the path can be specified as repository, project, configuration, stage or system. You can copy the path from the pull-down path string in [Flexberry Designer](fd_flexberry-designer.html)." %} 
 
 
 

@@ -10,7 +10,7 @@ autotranslated: true
 hash: 14580955df42b20acbb71524a1eedcc659e3807a8828c06d17a03d6d1fa7245e 
 --- 
 
-**Deployment diagram** - one of the available [kinds of graphs](fd_editing-diagram.html) supported [Flexberry Designer](fd_landing_page.html). 
+**Deployment diagram** - one of the available [kinds of graphs](fd_editing-diagram.html) supported [Flexberry Designer](fd_flexberry-designer.html). 
 Enterprise applications often require for its operation a certain it infrastructure, store information in databases located somewhere on the company servers, cause the web services, share resources, etc. In such cases, it is useful to have a graphical representation of the infrastructure on which the application will be deployed. What is needed, and deployment diagram, which is sometimes referred to charts placement. 
 
 ![](/images/pages/products/flexberry-designer/diagram/deployment-diagram.png) 

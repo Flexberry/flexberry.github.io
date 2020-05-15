@@ -12,9 +12,9 @@ hash: c976e2e3aaa0b3376dd5e32444c46c182bd68b051ffe0031f57e858c469cb4ca
 
 ## Model-Driven Development 
 
-When developing applications using [Flexberry Designer](fd_landing_page.html) use [Model-Driven Architecture](https://ru.wikipedia.org/wiki/Model_Driven_Architecture) - that is, development is by creating and refining models. 
+When developing applications using [Flexberry Designer](fd_flexberry-designer.html) use [Model-Driven Architecture](https://ru.wikipedia.org/wiki/Model_Driven_Architecture) - that is, development is by creating and refining models. 
 
-Unfortunately, to confine the creation of a model is impossible, since you need to implement are unique to each project logic. However, [Flexberry Designer](fd_landing_page.html) allows you to take on a routine of creating applications and significantly speed up the development process. 
+Unfortunately, to confine the creation of a model is impossible, since you need to implement are unique to each project logic. However, [Flexberry Designer](fd_flexberry-designer.html) allows you to take on a routine of creating applications and significantly speed up the development process. 
 
 ### Model 
 

@@ -10,7 +10,7 @@ autotranslated: true
 hash: 6cd0e131371db4cef70cabb1f5058982f3f50d9156db743b91cb9e6686f59795 
 --- 
 
-This article describes the analysis phase of application creation with the help of [Flexberry Desinger](fd_landing_page.html). 
+This article describes the analysis phase of application creation with the help of [Flexberry Desinger](fd_flexberry-designer.html). 
 The result of this phase is the creation of the application model. 
 
 ## the Algorithm for creating the model 

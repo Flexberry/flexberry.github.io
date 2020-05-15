@@ -10,7 +10,7 @@ autotranslated: true
 hash: 431ec4bf6a613e2e1b7de8391fb0485139a3b2f6dda5098aea5b846b31b4cc34 
 --- 
 
-Diagram of use cases - one of the available [kinds of graphs](fd_editing-diagram.html) supported [Flexberry Designer](fd_landing_page.html). 
+Diagram of use cases - one of the available [kinds of graphs](fd_editing-diagram.html) supported [Flexberry Designer](fd_flexberry-designer.html). 
 
 ![](/images/pages/products/flexberry-designer/diagram/use-case-diagram.png) 
 

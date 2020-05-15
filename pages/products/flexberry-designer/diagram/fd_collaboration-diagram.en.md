@@ -10,7 +10,7 @@ autotranslated: true
 hash: b8506db9326de355458cb0e0d23b14652debc433a4b771deb71f6b494b3bac0c 
 --- 
 
-**Collaboration diagram** - one of the available [kinds of graphs](fd_editing-diagram.html) supported [Flexberry Designer](fd_landing_page.html). 
+**Collaboration diagram** - one of the available [kinds of graphs](fd_editing-diagram.html) supported [Flexberry Designer](fd_flexberry-designer.html). 
 
 ![](/images/pages/products/flexberry-designer/diagram/collaboration-diagram.png) 
 

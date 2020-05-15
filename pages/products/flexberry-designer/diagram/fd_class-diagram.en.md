@@ -10,7 +10,7 @@ autotranslated: true
 hash: 24df09901e7f9a68a25d49cf6c5d241b45d051443a5f617951a1bf1b1a62631a 
 --- 
 
-**Class diagram** - one of the available [kinds of graphs](fd_editing-diagram.html) supported [Flexberry Designer](fd_landing_page.html). 
+**Class diagram** - one of the available [kinds of graphs](fd_editing-diagram.html) supported [Flexberry Designer](fd_flexberry-designer.html). 
 
 A class diagram is a key element [editor UML diagrams](fd_editing-diagram.html), because often applications are generated from the class diagram. 
 The class diagram is a collection of static declarative model elements. Class diagrams can be used with the direct design, that is in the process of developing new systems and reverse engineering - description of existing and used systems. Information from the class diagram directly displayed in the application's source code. Thus, the class diagram is the final result of the design and the starting point of the development process. 

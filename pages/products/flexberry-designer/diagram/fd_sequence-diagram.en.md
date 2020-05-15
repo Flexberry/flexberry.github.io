@@ -10,7 +10,7 @@ autotranslated: true
 hash: c419fac51397764e2cb5fa9b2862b474262d810ce4ea336433fa333d8e7a670d 
 --- 
 
-**Sequence diagram** - one of the available [kinds of graphs](fd_editing-diagram.html) supported [Flexberry Designer](fd_landing_page.html). 
+**Sequence diagram** - one of the available [kinds of graphs](fd_editing-diagram.html) supported [Flexberry Designer](fd_flexberry-designer.html). 
 
 ![](/images/pages/products/flexberry-designer/diagram/sequence-diagram.png) 
 
