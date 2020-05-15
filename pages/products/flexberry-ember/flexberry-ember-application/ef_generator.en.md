@@ -31,7 +31,7 @@ In the configuration file Flexberry Designer, you can add the setting, which is 
 
 ## Call generator
 
-The challenge comes from the stage in the [Flexberry Designer](fd_landing_page.html).
+The challenge comes from the stage in the [Flexberry Designer](fd_flexberry-designer.html).
 
 Causes click PCM under the shortcut menu, select it in the Ember
 ![](/images/pages/products/flexberry-ember/ember-flexberry/generation/Ember-plugin-menu.jpg)

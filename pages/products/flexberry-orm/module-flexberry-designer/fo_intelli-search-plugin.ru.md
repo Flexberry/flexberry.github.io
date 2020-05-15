@@ -8,21 +8,21 @@ permalink: ru/fo_intelli-search-plugin.html
 lang: ru
 ---
 
-Модуль расширения [Flexberry Designer](fd_landing_page.html): `IntelliSearch` разработан для поиска фрагментов диаграмм по выбранным проектам репозитория.
+Модуль расширения [Flexberry Designer](fd_flexberry-designer.html): `IntelliSearch` разработан для поиска фрагментов диаграмм по выбранным проектам репозитория.
 
 ## Подключение
 
 Подключение осуществляется по следующему алгоритму:
 
 * Зарегистрировать плагин в CASEBERRY
-    * Открыть меню `Полезности` - `Модули`
-    * Нажать `Создать`
-    * Указать путь к библиотеке `IntelliSearch.dll`
+  * Открыть меню `Полезности` - `Модули`
+  * Нажать `Создать`
+  * Указать путь к библиотеке `IntelliSearch.dll`
 
 * Добавить плагин к репозиторию
-    * Открыть свойства репозитория, выбрав пункт меню `Репозитарий` - `Редактировать свойства`
-    * В разделе `Модули` нажать `Создать`, в добавившейся строке в колонке `Модуль` выбрать `IntelliSearchPlugin`
-    * Сохранить изменения
+  * Открыть свойства репозитория, выбрав пункт меню `Репозитарий` - `Редактировать свойства`
+  * В разделе `Модули` нажать `Создать`, в добавившейся строке в колонке `Модуль` выбрать `IntelliSearchPlugin`
+  * Сохранить изменения
 
 {% include note.html content="Подробнее о модулях и их подключении можно посмотреть в статье [Модули расширения функциональности](fd_flexberry-plugins.html)." %}
 
@@ -34,17 +34,17 @@ lang: ru
 
 * Создать пустую диаграмму классов в любой стадии
 * Нарисовать объекты (классы, связи и пр.), которые необходимо найти
-* Нажать кнопку `Искать в других стадиях` 
+* Нажать кнопку `Искать в других стадиях`
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/search-example.png)
+![Пример](/images/pages/products/flexberry-orm/module-flexberry-designer/search-example.png)
 
-* В открывшемся окне "Стадии для поиска" выбрать интересующие стадии 
+* В открывшемся окне "Стадии для поиска" выбрать интересующие стадии
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/search-studys.png)
+![Пример](/images/pages/products/flexberry-orm/module-flexberry-designer/search-studys.png)
 
 * При необходимости настроить параметры поиска (порог релевантности и важность совпадения имен\типов данных\значений по умолчанию\кардинальностей) нажав на кнопку `Параметры поиска`
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/search-params.png)
+![Пример](/images/pages/products/flexberry-orm/module-flexberry-designer/search-params.png)
 
 * Нажать кнопку `Поиск`.
 
@@ -52,4 +52,4 @@ lang: ru
 
 Результат представляется в виде дерева стадий со скриншотами диаграмм, на которых найдены схожие фрагменты. Скриншот диаграммы можно открыть в натуральную величину.
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/search-results.png)
+![Пример](/images/pages/products/flexberry-orm/module-flexberry-designer/search-results.png)

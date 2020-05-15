@@ -38,7 +38,7 @@ lang: ru
 
 ### Программное обеспечение
 
-1. [Flexberry Desinger](https://flexberry.github.io/ru/fd_landing_page.html). [Установить](https://flexberry.github.io/ru/fd_install.html) Flexberry Desinger можно с сайта [flexberry.net](https://flexberry.net/). При первичной установке дается промо-лицензия на 14 дней. Затем ее можно [продлить](https://designer.flexberry.net/#/download-win-app) на срок от 6 до 12 месяцев. Для студентов колледжей и ВУЗов предоставляется бесплатная академическая лицензия на полгода.
+1. [Flexberry Desinger](https://flexberry.github.io/ru/fd_flexberry-designer.html). [Установить](https://flexberry.github.io/ru/fd_install.html) Flexberry Desinger можно с сайта [flexberry.net](https://flexberry.net/). При первичной установке дается промо-лицензия на 14 дней. Затем ее можно [продлить](https://designer.flexberry.net/#/download-win-app) на срок от 6 до 12 месяцев. Для студентов колледжей и ВУЗов предоставляется бесплатная академическая лицензия на полгода.
 2. Visual Studio 2017 или новее. В работе с приложениям на базе [Ember.js](https://emberjs.com/) и `ember-flexberry` также помогут [Visual Studio Code](https://code.visualstudio.com/), [Sublime Text](http://www.sublimetext.com/) или их [аналоги](https://jpnsoft.ru/visual-studio-code/).
 3. PostgreSQL. Для выполнения работ рекомендуется использовать бесплатный облачный сервис [https://www.elephantsql.com/](https://www.elephantsql.com/).
 4. TFS. Для выполнения работ рекомендуется использовать бесплатный облачный сервис Visual Studio Online

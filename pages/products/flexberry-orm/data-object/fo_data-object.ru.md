@@ -12,7 +12,7 @@ lang: ru
 
 ## Объекты данных в модели
 
-[Классы объектов данных](fo_data-object-structure.html) описываются на [диаграмме классов](fd_class-diagram-constraction.html) в [Flexberry Designer](fd_landing_page.html) и имеют стереотип [implementation](fd_data-classes.html). При описании объекта данных задаются [атрибуты](fo_attributes-class-data.html), связи и метаданные.
+[Классы объектов данных](fo_data-object-structure.html) описываются на [диаграмме классов](fd_class-diagram-constraction.html) в [Flexberry Designer](fd_flexberry-designer.html) и имеют стереотип [implementation](fd_data-classes.html). При описании объекта данных задаются [атрибуты](fo_attributes-class-data.html), связи и метаданные.
 
 Атрибуты объекта данных могут быть двух типов стандартные (описанные на диаграмме) и динамические [динамические свойства объекта данных](fo_dynamic-properties.html). В случае если значение атрибута не предполагается размещать в хранилище, он может быть объявлен как [нехранимый](fo_not-stored-attributes.html). При описании атрибутов им могут быть присвоены [значения по умолчанию](fo_features-dafault-value.html).
 
