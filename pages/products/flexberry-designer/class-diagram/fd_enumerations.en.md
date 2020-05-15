@@ -25,7 +25,7 @@ Bookmark `Класс`
 ![](/images/pages/products/flexberry-designer/class-diagram/enumpropp1.jpg) 
 
 * `Name` - the name of the enum type, what is displayed directly on `UML` class. 
-* `Description` - if necessary, a detailed description, to enhance the information content of the model in [Flexberry Designer](fd_landing_page.html) is generated in the code on the `.Net`-language `DocComment`; 
+* `Description` - if necessary, a detailed description, to enhance the information content of the model in [Flexberry Designer](fd_flexberry-designer.html) is generated in the code on the `.Net`-language `DocComment`; 
 * `OnlyShowSelectedValue` - not used (reserved for future versions); 
 * `Packet, NamespacePostfix` - allow to set the Assembly and namespace in which to generate the type, see [assemblies Location after code generation](fo_location-assembly.html). 
 
@@ -36,7 +36,7 @@ Bookmark `Возможные значения`
 Use this page to configure the properties values of an enumerated type. For each property: 
 
 * `Name` - value name of an enumerated type, it is displayed directly on a UML class. 
-* `Description` - ri necessary, a detailed description of the values, to enhance the information content of the model in [Flexberry Designer](fd_landing_page.html) is generated in the code on the `.Net`-language `DocComment`; 
+* `Description` - ri necessary, a detailed description of the values, to enhance the information content of the model in [Flexberry Designer](fd_flexberry-designer.html) is generated in the code on the `.Net`-language `DocComment`; 
 * `Caption` - allows you to specify a value that is informative for the user (used in the UI); 
 * `DefaultValue` - [integer value to an enumerated type](http://msdn.microsoft.com/en-us/library/sbbt4032(v=vs.71).aspx). 
 

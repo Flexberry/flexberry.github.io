@@ -10,7 +10,7 @@ autotranslated: true
 hash: 08e7224784a5d08e4dfb18bbe141247fe767d898b7f8cab5e13eb76b0b5fd1e9 
 --- 
 
-Setting procedure [Flexberry Designer](fd_landing_page.html) to support [Nullable-types](fd_nullable-types.html) by building type `bool?`. 
+Setting procedure [Flexberry Designer](fd_flexberry-designer.html) to support [Nullable-types](fd_nullable-types.html) by building type `bool?`. 
 
 You want to use [the class diagram](fd_class-diagram.html) type `bool?`. To do this: 
 

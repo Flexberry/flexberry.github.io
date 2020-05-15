@@ -10,7 +10,7 @@ autotranslated: true
 hash: 1ffc73d1564c7ae4de043d6491341a02c441323c7390f62af4f96abcd1ee0ccb 
 --- 
 
-There are [several ways to install and configure](fd_install.html) [Flexberry Designer](fd_landing_page.html). One of them is the installation of the application from the archive. 
+There are [several ways to install and configure](fd_install.html) [Flexberry Designer](fd_flexberry-designer.html). One of them is the installation of the application from the archive. 
 
 1.To start Flexberry Designer you must have [supported DBMS](fo_data-service.html) (installed on the computer, or somewhere on the network) and [the installed license](fd_install.html). 
 2.It is necessary to check availability **access** to the server that You will use on Your computer. 

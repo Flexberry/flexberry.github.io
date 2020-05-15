@@ -10,7 +10,7 @@ autotranslated: true
 hash: 09da320444af809a9abc73e7f5016b609cc3f2178e587660a80b303decf4efd3 
 --- 
 
-The following stereotypes **not supported** the basic version [Flexberry Designer](fd_landing_page.html) and require additional generators: 
+The following stereotypes **not supported** the basic version [Flexberry Designer](fd_flexberry-designer.html) and require additional generators: 
 
 * Classes with [stereotypes](fd_key-concepts.html) "*form" (`listform`, `editform`, `userform`) [class diagram](fd_class-diagram.html) represent the form: 
 * `listform` - form with the list of objects of a particular class. 

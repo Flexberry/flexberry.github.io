@@ -21,7 +21,7 @@ About SQL Server Express LocalDB 2016 described in MSDN:
 
 1.Download the version of SQL Server Express LocalDB 2014/2016 (the algorithm is described in the article above). 
 
-2.After starting [Flexberry Designer](fd_landing_page.html) you can change the connection string by selecting the menu item `Настройка` – `Сменить DB...` or in the configuration file by choosing the menu item `Настройка` – `Открыть configuration file...` 
+2.After starting [Flexberry Designer](fd_flexberry-designer.html) you can change the connection string by selecting the menu item `Настройка` – `Сменить DB...` or in the configuration file by choosing the menu item `Настройка` – `Открыть configuration file...` 
 
 3.In the configuration file, which is called `CASEBERRY.exe.config` change the connection string like the following (the name of the server and database may be different): 
 

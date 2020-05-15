@@ -12,7 +12,7 @@ hash: 574a55b724959d9e51d17e7afc77f73fa3a0c1534795d64cea4e932b8cd227e1
 
 ## event Description 
 
-[Flexberry Designer](fd_landing_page.html) allows the user to describe the events and their arguments, for possible subsequent generation of source code in a CLR-compatible language (in particular, `C#`). 
+[Flexberry Designer](fd_flexberry-designer.html) allows the user to describe the events and their arguments, for possible subsequent generation of source code in a CLR-compatible language (in particular, `C#`). 
 
 The events described [inside the UML classes in the section methods](fd_class-diagram-constraction.html), as follows: 
 

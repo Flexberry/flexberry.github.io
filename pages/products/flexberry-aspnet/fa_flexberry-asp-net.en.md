@@ -13,7 +13,7 @@ Flexberry ASP.NET is [product platform Flexberry](fp_landing_page.html). The pro
 
 ## Description of product
 
-By [Flexberry Designer](fd_landing_page.html) it is possible to create [class diagram](fd_class-diagram.html). This [chart](fd_class-diagram.html) you can generate the required database structure (DB), the object model and ready web application.
+By [Flexberry Designer](fd_flexberry-designer.html) it is possible to create [class diagram](fd_class-diagram.html). This [chart](fd_class-diagram.html) you can generate the required database structure (DB), the object model and ready web application.
 
 ## The product
 

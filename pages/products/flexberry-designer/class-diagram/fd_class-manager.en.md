@@ -20,7 +20,7 @@ Opening is available in any class for the edit - it will be the same way you edi
 
 `Количество упоминаний` is a count of the number of occurrences of a class in all [charts](fd_class-diagram.html) stage. For example, there are two charts, each of them 2 times found in the same class. Then the number of references is 4. 
 
-It is possible that the number of references may not reflect the actual condition of the charts. This situation is erroneous if it is possible to reproduce the sequence of actions that leads to a conflicting situation, you should contact support. For experienced users [Flexberry Designer](fd_landing_page.html) have the option to manually correct this error condition by increasing\decreasing the number of references to the class. 
+It is possible that the number of references may not reflect the actual condition of the charts. This situation is erroneous if it is possible to reproduce the sequence of actions that leads to a conflicting situation, you should contact support. For experienced users [Flexberry Designer](fd_flexberry-designer.html) have the option to manually correct this error condition by increasing\decreasing the number of references to the class. 
 
 ### Based On 
 

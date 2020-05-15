@@ -7,7 +7,7 @@ permalink: ru/fa_right-manager.html
 lang: ru
 ---
 
-На данный момент [подсистема полномочий](efs_right-manager-module.html) Web-приложений не требует сторонних сервисов и поставляется вместе с приложением при генерации из [Flexberry Designer](fd_landing_page.html).
+На данный момент [подсистема полномочий](efs_right-manager-module.html) Web-приложений не требует сторонних сервисов и поставляется вместе с приложением при генерации из [Flexberry Designer](fd_flexberry-designer.html).
 
 База данных может располагаться как в базе приложения, так и в отдельной базе.
 
@@ -27,7 +27,7 @@ lang: ru
           <!-- Тут надо прописать имя приложения -->
           <param name="sИмяПриложения" type="System.String" value="WebApp" />
         </constructor>
-      </register>      
+      </register>
     </container>
   </unity>
 
@@ -94,7 +94,7 @@ lang: ru
 
 Использование `CaseberryDomainRoleProvider` описано в соотвествующей [статье](fa_domain-role-provider.html).
 
-## CaseberryMembershipProvider 
+## CaseberryMembershipProvider
 
 Использование `CaseberryMembershipProvider` описано в соотвествующей [статье](fa_membership-provider.html).
 
