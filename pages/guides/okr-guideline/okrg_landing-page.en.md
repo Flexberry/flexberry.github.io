@@ -1,5 +1,5 @@
 ---
-title: & Objectives Key results
+title: Objectives Key results
 keywords: okr, guideline, guide, manual, table of contents, contents
 sidebar: guide-okr-guideline_sidebar
 toc: true
@@ -10,7 +10,7 @@ hash: 49b9ad7f85ffb55915adfa87173549a110544310982ff077aabdae6aeabe7402
 summary: materials on the OKR methodology and recommendations for their application in the company
 ---
 
-## Materials on the OKR methodology and recommendations for their application in the company:
+## Materials on the OKR methodology and recommendations for their application in the company
 
 Hi!
 
@@ -22,7 +22,5 @@ This is the page with all the Goodies and the right words at the OKR. The sequen
 4. [John Doerr "Measure what matters most" - the whole book](https://yadi.sk/i/0gvrVWdWJI3zJg "4 hours of reading")
 5. [Conference "OKR Russia 2020" - review of reports (table of contents) from Eugene Hubareva link to the video](https://docs.google.com/document/d/1iHdfC5YeHAqDFXSe_t41cmKLTQ4iNb3NMIVNXMohv-0/edit "20 VIDOS comments")
 6. [Questions and answers on the OKR team Skyori.com that is updated in real time](https://docs.google.com/document/d/1Ny9TL_79Q2MV79cllQu8llvuXG32ZHyRX5c1emZR-nY/edit?usp=sharing "I want to ask - first look table of contents")
-
-
 
 {% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

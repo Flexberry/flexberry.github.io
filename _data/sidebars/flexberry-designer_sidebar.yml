@@ -10,12 +10,12 @@ entries:
     folderitems:
     - title: Flexberry Designer Online
       title_ru: Flexberry Designer Online
-      url: /fd_flexberry-desinger-online.html
+      url: /fd_landing_page.html
       output: web
 
     - title: Flexberry Designer
       title_ru: Flexberry Designer
-      url: /fd_landing_page.html
+      url: /fd_flexberry-desinger.html
       output: web
 
     - title: Ember Flexberry Designer
