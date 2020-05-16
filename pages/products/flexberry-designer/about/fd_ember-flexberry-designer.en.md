@@ -4,7 +4,7 @@ keywords: Ember Flexberry Desinger, UML, design basics, modules, configure
 summary: General information about Ember Flexberry Desinger
 sidebar: flexberry-designer_sidebar
 toc: false
-permalink: en/fd_ember-flexberry-desinger.html
+permalink: en/fd_ember-flexberry-designer.html
 lang: en
 autotranslated: true
 hash: 5bd20d9ad6983926f5254f5cb56ae5252722769a5cdad2077c25773cf6b31f74

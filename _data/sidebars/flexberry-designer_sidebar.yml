@@ -15,12 +15,12 @@ entries:
 
     - title: Flexberry Designer
       title_ru: Flexberry Designer
-      url: /fd_flexberry-desinger.html
+      url: /fd_flexberry-designer.html
       output: web
 
     - title: Ember Flexberry Designer
       title_ru: Ember Flexberry Designer
-      url: /fd_ember-flexberry-desinger.html
+      url: /fd_ember-flexberry-designer.html
       output: web
 
     - title: Definition of design
