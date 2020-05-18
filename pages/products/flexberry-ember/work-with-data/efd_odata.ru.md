@@ -1,7 +1,7 @@
 ---
 title: Поддержка протокола OData v4
 sidebar: flexberry-ember_sidebar
-keywords: function, action, callAction, callEmberOdataAction, callFunction, callEmberOdataFunction
+keywords: function, action, callAction, callEmberOdataAction, callFunction, callEmberOdataFunction, batch, batchUpdate, batchDelete, batchCreate, batchInsert
 toc: true
 permalink: ru/efd_odata.html
 lang: ru
@@ -16,7 +16,7 @@ ember-flexberry-data поддерживает протокол OData v4.
 
 ## Поддержка транзакционных изменений данных
 
-С версии `ember-flexberry-data@2.2.0-beta.0` появилась поддержка отправки нескольких объектов модели для сохранения изменений в одной транзакции.
+Поддержка отправки нескольких объектов модели для сохранения изменений в одной транзакции реализована через метод `batchUpdate` объекта `store`. Для получения актуального состояния объектов данных с учётом логики бизнес-серверов и триггеров базы данных для каждого запроса INSERT, UPDATE, DELETE отправляется дополнительный SELECT на изменяемые сущности.
 
 Пример использования:
 
