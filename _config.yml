@@ -55,6 +55,7 @@ feedback_email: mail@flexberry.net
 # used as a contact email for the Feedback link in the top navigation bar
 
 # Build settings
+encoding: utf-8
 markdown: kramdown
 kramdown:
  input: GFM

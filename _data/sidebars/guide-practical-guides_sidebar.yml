@@ -77,7 +77,6 @@ entries:
       title_ru: Создание прототипа
       url: /gpg_prototype-creating.html
       output: web 
-
     
     - title: Configuring the application structure
       title_ru: Настройка структуры приложения
@@ -166,9 +165,11 @@ entries:
 
   - title: Practical guide by Flexberry Ember
     title_ru: Практическое руководство по Flexberry Ember
+    output: web 
     
     folderitems:
     - title: Setting the language and structure of the model
       title_ru: Настройка языка и структуры модели
       url: /gpg_setting-language-and-structure.html
       output: web  
+      
