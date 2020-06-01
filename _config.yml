@@ -148,5 +148,5 @@ sidebars:
 - ui-ux-guideline_sidebar
 - training-developers-school_sidebar
 
-gems:
+plugins:
   - jekyll-seo-tag
