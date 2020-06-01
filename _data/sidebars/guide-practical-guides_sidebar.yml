@@ -163,3 +163,12 @@ entries:
       title_ru: Блокировка элемента на форме редактирования
       url: /gpg_set-ctrl-read-only.html
       output: web      
+
+  - title: Practical guide by Flexberry Ember
+    title_ru: Практическое руководство по Flexberry Ember
+    
+    folderitems:
+    - title: Setting the language and structure of the model
+      title_ru: Настройка языка и структуры модели
+      url: /gpg_setting-language-and-structure.html
+      output: web  
