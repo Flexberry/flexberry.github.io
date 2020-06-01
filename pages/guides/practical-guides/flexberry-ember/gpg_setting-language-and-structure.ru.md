@@ -1,7 +1,7 @@
 ---
 title: Настройка языка и структуры модели
 sidebar: guide-practical-guides_sidebar
-keywords: guide, ember-flexxberry, flexberry designer, стадия, диаграмма классов
+keywords: guide, ember-flexberry, flexberry designer, стадия, диаграмма классов
 toc: true
 permalink: ru/gpg_setting-language-and-structure.html
 lang: ru
