@@ -118,4 +118,4 @@ E - **представление для формы редактирования*
 
 * [Практическое руководство  «Делай как я»](gpg_landing-page.html) <i class="fa fa-arrow-up" aria-hidden="true"></i>
 * [Настройка языка и структуры модели](gpg_setting-language-and-structure.html) <i class="fa fa-arrow-left" aria-hidden="true"></i>
-<!-- * [Кастомизация форм](gpg_customize-forms.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> -->
+* [Кастомизация форм](gpg_customize-forms.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>

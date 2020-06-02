@@ -178,3 +178,8 @@ entries:
       url: /gpg_create-and-configure-application-structure.html
       output: web  
       
+    - title: Customization forms
+      title_ru: Кастомизация форм
+      url: /gpg_customize-forms.html
+      output: web  
+      
