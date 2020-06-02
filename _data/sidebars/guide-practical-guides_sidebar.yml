@@ -186,5 +186,10 @@ entries:
     - title: Autocomplete and data types
       title_ru: Автозаполнение и типы данных
       url: /gpg_autocomplete-and-data-types.html
+      output: web   
+      
+    - title: Ember-application generation
+      title_ru: Генерация Ember-приложения
+      url: /gpg_ember-application-generation.html
       output: web 
       
