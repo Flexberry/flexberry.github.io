@@ -213,3 +213,8 @@ entries:
       url: /gpg_ember-flexberry-components.html
       output: web 
       
+    - title: Computable properties and projections of models
+      title_ru: Вычислимые свойства и проекции моделей
+      url: /gpg_computable-properties-and-projections-of-models.html
+      output: web 
+      

@@ -138,4 +138,4 @@ actions: {
 * [Практическое руководство  «Делай как я»](gpg_landing-page.html) <i class="fa fa-arrow-up" aria-hidden="true"></i>
 
 * [Условное отображение полей](gpg_conditional-display-fields.html) <i class="fa fa-arrow-left" aria-hidden="true"></i>
-<!-- * [Компоненты ember-flexberry](gpg_ember-flexberry-components.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> -->
+* [Вычислимые свойства и проекции моделей](gpg_computable-properties-and-projections-of-models.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
