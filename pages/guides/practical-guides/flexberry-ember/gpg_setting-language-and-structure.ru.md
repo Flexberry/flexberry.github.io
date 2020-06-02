@@ -229,3 +229,4 @@ lang: ru
 ## Перейти
 
 * [Практическое руководство  «Делай как я»](gpg_landing-page.html) <i class="fa fa-arrow-up" aria-hidden="true"></i>
+* [Создание и настройка структуры приложения](gpg_create-and-configure-application-structure.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>

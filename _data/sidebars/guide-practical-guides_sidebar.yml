@@ -173,3 +173,8 @@ entries:
       url: /gpg_setting-language-and-structure.html
       output: web  
       
+    - title: Creating and configuring the structure of the application
+      title_ru: Создание и настройка структуры приложения
+      url: /gpg_create-and-configure-application-structure.html
+      output: web  
+      
