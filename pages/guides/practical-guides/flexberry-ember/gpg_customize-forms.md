@@ -168,4 +168,4 @@ lang: ru
 
 * [Практическое руководство  «Делай как я»](gpg_landing-page.html) <i class="fa fa-arrow-up" aria-hidden="true"></i>
 * [Создание и настройка структуры приложения](gpg_create-and-configure-application-structure.html) <i class="fa fa-arrow-left" aria-hidden="true"></i>
-<!-- * [Автозаполнение и типы данных](gpg_autocomplete-and-data-types.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> -->
+* [Автозаполнение и типы данных](gpg_autocomplete-and-data-types.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
