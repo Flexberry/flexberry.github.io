@@ -196,5 +196,10 @@ entries:
     - title: Ember-application launch
       title_ru: Запуск Ember-приложения
       url: /gpg_launch-ember-applications.html
+      output: web     
+      
+    - title: Filling application primary data
+      title_ru: Заполнение первичных данных приложения
+      url: /gpg_filling-application-primary-data.html
       output: web 
       
