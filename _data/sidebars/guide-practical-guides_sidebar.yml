@@ -208,3 +208,8 @@ entries:
       url: /gpg_conditional-display-fields.html
       output: web 
       
+    - title: Ember-flexberry Components
+      title_ru: Компоненты ember-flexberry
+      url: /gpg_ember-flexberry-components.html
+      output: web 
+      
