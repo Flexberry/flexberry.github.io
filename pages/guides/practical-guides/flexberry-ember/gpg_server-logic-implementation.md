@@ -397,4 +397,4 @@ private static DataObject[] changeOrderStatusPaid(IIS.Shop.Order UpdatedObject)
 * [Практическое руководство  «Делай как я»](gpg_landing-page.html) <i class="fa fa-arrow-up" aria-hidden="true"></i>
 
 * [Бизнес-серверы и режим отладки](gpg_business-servers-and-debug-mode.html) <i class="fa fa-arrow-left" aria-hidden="true"></i>
-<!-- * [Реализация серверной логики](gpg_server-logic-implementation.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> -->
+* [Реализация презентационной логики](gpg_implementation-of-presentation-logic.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>

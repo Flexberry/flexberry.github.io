@@ -243,3 +243,8 @@ entries:
       url: /gpg_server-logic-implementation.html
       output: web 
       
+    - title: Implementation of presentation logic
+      title_ru: Реализация презентационной логики
+      url: /gpg_implementation-of-presentation-logic.html
+      output: web 
+      
