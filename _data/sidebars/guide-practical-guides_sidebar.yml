@@ -233,3 +233,8 @@ entries:
       url: /gpg_lookup-restrictions.html
       output: web 
       
+    - title: Business-servers and debug mode
+      title_ru: Бизнес-серверы и режим отладки
+      url: /gpg_business-servers-and-debug-mode.html
+      output: web 
+      

@@ -594,4 +594,4 @@ actions: {
 * [Практическое руководство  «Делай как я»](gpg_landing-page.html) <i class="fa fa-arrow-up" aria-hidden="true"></i>
 
 * [Автозаполнение элементов формы](gpg_autofill-form-elements.html) <i class="fa fa-arrow-left" aria-hidden="true"></i>
-<!-- * [Наложение ограничений на лукапы](gpg_lookup-restrictions.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> -->
+* [Бизнес-серверы и режим отладки](gpg_business-servers-and-debug-mode.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
