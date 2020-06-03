@@ -238,3 +238,8 @@ entries:
       url: /gpg_business-servers-and-debug-mode.html
       output: web 
       
+    - title: Server logic implementation
+      title_ru: Реализация серверной логики
+      url: /gpg_server-logic-implementation.html
+      output: web 
+      
