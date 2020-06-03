@@ -218,3 +218,8 @@ entries:
       url: /gpg_computable-properties-and-projections-of-models.html
       output: web 
       
+    - title: Custom validation
+      title_ru: Настройка кастомной валидации
+      url: /gpg_custom-validation.html
+      output: web 
+      
