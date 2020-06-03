@@ -193,7 +193,7 @@ let Model = EmberFlexberryDataModel.extend(OfflineModelMixin, OrderItemMixin, Va
 {% highlight javascript%}
 {% raw %}
 let Model = EmberFlexberryDataModel.extend(OfflineModelMixin, OrderItemMixin, Validations, {
-
+    
   ...
 
   /*
@@ -386,4 +386,4 @@ import { buildValidations } from 'ember-cp-validations';
 * [Практическое руководство  «Делай как я»](gpg_landing-page.html) <i class="fa fa-arrow-up" aria-hidden="true"></i>
 
 * [Настройка кастомной валидации](gpg_custom-validation.html) <i class="fa fa-arrow-left" aria-hidden="true"></i>
-<!-- * [Наложение ограничений на лукапы](gpg_lookup-restrictions.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> -->
+* [Наложение ограничений на лукапы](gpg_lookup-restrictions.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>

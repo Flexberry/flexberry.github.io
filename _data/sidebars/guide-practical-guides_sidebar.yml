@@ -228,3 +228,8 @@ entries:
       url: /gpg_autofill-form-elements.html
       output: web 
       
+    - title: Lookup restrictions
+      title_ru: Наложение ограничений на лукапы
+      url: /gpg_lookup-restrictions.html
+      output: web 
+      

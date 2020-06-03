@@ -65,7 +65,6 @@ let Model = EmberFlexberryDataModel.extend(OfflineModelMixin, EmployeeMixin, Val
       projection="EmployeeL"
       title=(t "forms.i-i-s-shop-order-e.manager-caption")
       readonly=readonly
-      lookupLimitPredicate=managerLimitPredicate
       componentName="managerLookup"
     }}
     {{flexberry-validationmessage error=(v-get validationObject "manager" "messages")}}
