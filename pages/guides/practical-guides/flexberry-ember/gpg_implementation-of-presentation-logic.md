@@ -43,12 +43,20 @@ paymentDate: {
 
 {% highlight javascript%}
 {% raw %}
+import OrderStatusEnum from '../enums/i-i-s-shop-order-status';
+import { computed } from '@ember/object';
+{% endraw %}
+{% endhighlight %}
+
+{% highlight javascript%}
+{% raw %}
 paymentDate: {
   descriptionKey: 'models.i-i-s-shop-order.validations.paymentDate.__caption__',
   validators: [
     validator('ds-error'),
     validator('date'),
-    validator('presence', true,
+    validator('presence', 
+      presence: true,
       disabled: computed('model.status', function() {
         return this.get('model.status') !== OrderStatusEnum.Paid;
       })
@@ -86,12 +94,19 @@ paymentDate: {
 
 {% highlight javascript%}
 {% raw %}
+import OrderStatusEnum from '../enums/i-i-s-shop-order-status';
+import { computed } from '@ember/object';
+{% endraw %}
+{% endhighlight %}
+
+{% highlight javascript%}
+{% raw %}
 let Model = DocumentModel.extend(OrderMixin, Validations, {
   isPaid: computed('status', function() {
     const status = this.get('status');
     const dirtyAttributes = this.get('hasDirtyAttributes');
 
-    return (status === OrderStatusEnum.Paid || status === OrderStatusEnum.Canceled) && !dirtyAttributes;
+    return status === OrderStatusEnum.Paid && !dirtyAttributes;
   })
 });
 {% endraw %}
@@ -175,13 +190,16 @@ let Model = EmberFlexberryDataModel.extend(OfflineModelMixin, OrderItemMixin, Va
 ---
 
 **_Самостоятельно_** настройте блокировку формы заказа для статуса "Отмененный".
-Подсказка: можно расширить функционал существующей блокировки для статуса "Оплаченный".
+
+*<u>Подсказка</u>*: можно расширить функционал существующей блокировки для статуса "Оплаченный" (isPaid) до общего врианта isBlocked.
 
 ---
 
 ## Итог
 
 В процессе внесенных в данной главе изменений мы настроили поведение формы редактирования Заказа в соответствиями с требуемой логикой. В результате форма "Заказ" приобрела вид, с которым комфортно было бы работать потенциальному пользователю.
+
+ **[Итоговое приложение](https://github.com/Flexberry/flexberry-developers-school/tree/master/%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D1%8B/%D0%9C%D0%BE%D0%B4%D1%83%D0%BB%D1%8C%208/%D0%9F%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5%20%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%B0/%D0%9F%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5%20%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE%20%D0%BF%D0%BE%20%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8E%20%D0%B2%D0%B5%D0%B1-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9%20%D0%BD%D0%B0%20Flexberry%20Ember)** размещено в репозитории: стадии до и после работы, скрипт на создание структуры базы данных, приложение со всеми доработками (кроме самостоятельных заданий).
 
 ## Самостоятельная работа
 

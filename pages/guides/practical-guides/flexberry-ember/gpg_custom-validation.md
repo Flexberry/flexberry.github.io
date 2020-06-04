@@ -182,31 +182,27 @@ return message;
 
 Валидатор создан. Подключим его к нужной модели и проверим работоспособность валидатора:
 
-*`app → models → i-i-s-shop-order-item.js`*
+*`app → mixins/regenerated → models → i-i-s-shop-order-item.js`*
 
 {% highlight javascript%}
 {% raw %}
-import { validator } from 'ember-cp-validations';
-{% endraw %}
-{% endhighlight %}
-
-{% highlight javascript%}
-{% raw %}
-const Validations = buildValidations(ValidationRules, {
-  dependentKeys: ['model.i18n.locale'],
-
+export let ValidationRules = {
   amount: {
+    descriptionKey: 'models.i-i-s-shop-order-item.validations.amount.__caption__',
     validators: [
-      validator('check-product-amount', { showSuggestions: true }),
+      validator('ds-error'),
+      validator('number', { allowString: true, allowBlank: true, integer: true }),
+      validator('check-product-amount', {
+        showSuggestions: false,
+       }),
     ],
   },
-});
+
+  ...
+
+}
 {% endraw %}
 {% endhighlight %}
-
-![Подключение валидатора](/images/pages/guides/flexberry-ember/5-4-custom-validation/5-4-12.png)
-
-{% include note.html content="Кастомную валидацию условимся подключать в модели, а встроенную - в миксинах." %}
 
 Из раздела ("[Заполнение первичных данных приложения](gpg_filling-application-primary-data.html)") мы помним, что на складах присутствуют следующие товары:
 
