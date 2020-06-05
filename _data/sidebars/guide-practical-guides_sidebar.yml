@@ -169,7 +169,7 @@ entries:
     
     folderitems:
     - title: Setting the language and structure of the model
-      title_ru: Настройка языка и структуры модели
+      title_ru: Добработка модели предметной области
       url: /gpg_setting-language-and-structure.html
       output: web  
       
