@@ -59,7 +59,7 @@ lang: ru
 
 ---
 
-{% include warning.html content="Избегайте использование ключевых слов языка JavaScript, а также \"стандартных\" имен из [объектной модели Ember.js](https://api.emberjs.com/ember/3.1), в качестве имен классов (например, если класс Склад назвать не Storehouse, а Store, то при запуске Ember-приложения может возникнуть конфликт с именем сервиса store из библиотеки Ember Data в соответствующих частях кода)." %}
+{% include warning.html content="Избегайте использование [ключевых слов языка JavaScript](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Lexical_grammar#%D0%9A%D0%BB%D1%8E%D1%87%D0%B5%D0%B2%D1%8B%D0%B5_%D1%81%D0%BB%D0%BE%D0%B2%D0%B0), а также \"стандартных\" имен из [объектной модели Ember.js](https://api.emberjs.com/ember/3.1), в качестве имен классов (например, если класс Склад назвать не Storehouse, а Store, то при запуске Ember-приложения может возникнуть конфликт с именем сервиса store из библиотеки Ember Data в соответствующих частях кода)." %}
 
 **В результате** данного шага у вас должна получиться следующая диаграмма:
 
