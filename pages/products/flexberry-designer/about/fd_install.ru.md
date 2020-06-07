@@ -121,9 +121,11 @@ lang: ru
 <https://www.microsoft.com/ru-ru/download/details.aspx?id=29062>
 
 2.Вручную установить Microsoft SQL Server® 2012 Native Client:
+
 <https://www.microsoft.com/ru-ru/download/details.aspx?id=50402>
 
 3.Вручную установить Microsoft SQL Server® 2012 Command Line Tools:
+
 <https://www.microsoft.com/ru-ru/download/details.aspx?id=35580>
 
 Всё скачивается бесплатно с сервера Microsoft.
