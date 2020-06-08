@@ -174,7 +174,7 @@ entries:
       output: web  
       
     - title: Creating and configuring the structure of the application
-      title_ru: Создание и настройка структуры приложения
+      title_ru: Создание представлений, классов форм и класса приложения
       url: /gpg_create-and-configure-application-structure.html
       output: web  
       

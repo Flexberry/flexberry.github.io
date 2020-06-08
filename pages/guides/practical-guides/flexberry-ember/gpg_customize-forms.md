@@ -13,7 +13,7 @@ lang: ru
 
 Для настройки конкретных представлений и форм откроем диаграмму классов Сущности. Разберем процесс настройки на примере класса Order (Заказ). Для этого перейдем:
 
-*`Order → [правая кнопка мыши] → ORM: Редактировать свойства → Представления`*
+_`Order → [правая кнопка мыши] → ORM: Редактировать свойства → Представления`_
 
 ![Представления класса Order](/images/pages/guides/flexberry-ember/2-2-customize-forms/2-2-1.png)
 
@@ -27,7 +27,7 @@ lang: ru
 
 ![Новое L-представление класса Order](/images/pages/guides/flexberry-ember/2-2-customize-forms/2-2-3.png)
 
-> Number ‒ Номер*  
+> Number ‒ Номер\*  
 > Status ‒ Статус  
 > CreateDate ‒ Дата оформления <sup>1</sup>  
 > Manager (LastName) ‒ Менеджер <sup>2</sup>  
@@ -35,8 +35,8 @@ lang: ru
 > PaymentDate‒ Дата оплаты  
 > ShipmentDate ‒ Дата отгрузки
 
-<sup>1</sup>  атрибуты наследуются от класса Document (Документ);  
-<sup>2</sup>  атрибут принадлежит связанному ассоциацией классу Employee (Сотрудник).
+<sup>1</sup> атрибуты наследуются от класса Document (Документ);  
+<sup>2</sup> атрибут принадлежит связанному ассоциацией классу Employee (Сотрудник).
 
 Аналогично **настроим** представление для формы редактирования (**OrderE**):
 
@@ -52,12 +52,14 @@ lang: ru
 **_Самостоятельно_** настройте порядок и заголовки представлений остальных классов:
 
 **OrderItem**
+
 > Product (Name) ‒ Товар  
 > Amount ‒ Количество  
 > PriceWTaxes ‒ Цена с налогом  
-> Total Sum ‒ Сумма по позиции 
+> Total Sum ‒ Сумма по позиции
 
 **Invoice**
+
 > Number ‒ Номер  
 > Status ‒ Статус  
 > CreateDate ‒ Дата оформления  
@@ -70,6 +72,7 @@ lang: ru
 > ResponsiblePerson (LastName) ‒ Товар выдал
 
 **InvoiceItem**
+
 > Product (Name) ‒ Товар  
 > Amount ‒ Количество  
 > Weight ‒ Вес (кг)  
@@ -77,15 +80,18 @@ lang: ru
 > TotalSum ‒ Сумма по позиции
 
 **Storehouse**
+
 > Number ‒ Номер  
 > Address ‒ Адрес  
 > StoreKeeper (LastName) ‒ Кладовщик
 
 **StoreProduct**
+
 > Product.Name ‒ Товар  
 > Amount ‒ Количество
 
 **Product**
+
 > Product code ‒ Код товара  
 > Name ‒ Наименование  
 > Measure ‒ Единица измерения  
@@ -94,6 +100,7 @@ lang: ru
 > Weight - Вес в кг
 
 **Employee**
+
 > Number ‒ Табельный номер  
 > LastName ‒ Фамилия  
 > FirstName ‒ Имя  
@@ -110,7 +117,7 @@ lang: ru
 
 Рассмотрим на примере класса Order (Заказ) предварительный внешний вид формы:
 
-*`Order → [ПКМ] → ORM: Редактировать свойства → Представления → OrderE → [...] → Атрибуты → Просмотр`*
+_`Order → [ПКМ] → ORM: Редактировать свойства → Представления → OrderE → [...] → Атрибуты → Просмотр`_
 
 ![Предпросмотр формы радктирования Order](/images/pages/guides/flexberry-ember/2-2-customize-forms/2-2-5.png)
 
@@ -130,31 +137,36 @@ lang: ru
 
 ![Настройка лукапа поля Manager формы редактирования Order](/images/pages/guides/flexberry-ember/2-2-customize-forms/2-2-7.png)
 
-Теперь все мастера и детейлы для E-представления класса Order настроены. 
-В L-представлении этого делать не требуется, т.к. лукапы и детейлы на соответствующей списковой форме не отображаются, а получение мастеровых свойств для списка мы указали через "мастер.свойство” на предыдущем шаге. 
+Теперь все мастера и детейлы для E-представления класса Order настроены.
+В L-представлении этого делать не требуется, т.к. лукапы и детейлы на соответствующей списковой форме не отображаются, а получение мастеровых свойств для списка мы указали через "мастер.свойство” на предыдущем шаге.
 
 ---
 
 **_Самостоятельно_** настройте порядок и заголовки представлений остальных классов:
 
 **Invoice**
-> *<u>Детейл</u>*: Invoice string → Список товаров к выдаче  
-> *<u>Мастеры</u>*:  
+
+> _<u>Детейл</u>_: Invoice string → Список товаров к выдаче  
+> _<u>Мастеры</u>_:  
 >  Order (Заказ) → Number  
 >  ResponsiblePerson (Материально ответственное лицо) → LastName
 
 **Storehouse**
-> *<u>Детейл</u>*: Stock product → Список товаров  
-> *<u>Мастер</u>*: Storekeeper (Кладовщик) → LastName  
+
+> _<u>Детейл</u>_: Stock product → Список товаров  
+> _<u>Мастер</u>_: Storekeeper (Кладовщик) → LastName
 
 **InvoiceItem**
-> *<u>Мастер</u>*: Product (Товар) → Name
+
+> _<u>Мастер</u>_: Product (Товар) → Name
 
 **OrderItem**
-> *<u>Мастер</u>*: Product (Товар) → Name
+
+> _<u>Мастер</u>_: Product (Товар) → Name
 
 **StoreProduct**
-> *<u>Мастер</u>*: Product (Товар) → Name
+
+> _<u>Мастер</u>_: Product (Товар) → Name
 
 ---
 
@@ -166,6 +178,6 @@ lang: ru
 
 ## Перейти
 
-* [Практическое руководство  «Делай как я»](gpg_landing-page.html) <i class="fa fa-arrow-up" aria-hidden="true"></i>
-* [Создание и настройка структуры приложения](gpg_create-and-configure-application-structure.html) <i class="fa fa-arrow-left" aria-hidden="true"></i>
-* [Автозаполнение и типы данных](gpg_autocomplete-and-data-types.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+- [Практическое руководство «Делай как я»](gpg_landing-page.html) <i class="fa fa-arrow-up" aria-hidden="true"></i>
+- [Создание представлений, классов форм и класса приложения](gpg_create-and-configure-application-structure.html) <i class="fa fa-arrow-left" aria-hidden="true"></i>
+- [Автозаполнение и типы данных](gpg_autocomplete-and-data-types.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
