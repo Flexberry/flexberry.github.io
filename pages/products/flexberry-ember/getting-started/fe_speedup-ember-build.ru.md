@@ -33,3 +33,4 @@ summary: Рекомендации по настройке окружения д�
 * [How we speed up testing and building process of our Ember app at Brandnew? ~2.5x faster!](https://medium.com/@tommaqs/how-we-speed-up-testing-and-building-process-of-our-ember-app-at-brandnew-2-5x-faster-299dd4995a97)
 * [Build performance](https://github.com/ember-cli/ember-cli/blob/master/docs/perf-guide.md)
 * [How we cut down our ember build time?](https://www.gokatz.me/blog/how-we-cut-down-our-ember-build-time)
+* [Ember performance tweaks: Optimising build timelines & bundle size](https://abhilashlr.in/ember-performance-tweaks-part-1)
