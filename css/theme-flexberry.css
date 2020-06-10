@@ -554,23 +554,27 @@ a[data-toggle="collapse"] {
   }
 }
 
-#webinar {
+#sticky-panel {
   position: -webkit-sticky;
   position: -moz-sticky;
   position: -ms-sticky;
   position: -o-sticky;
   position: sticky;
+  left: 0;
+  top: 100px;
+}
+
+#webinar {
   border: 1px black solid;
   width: 260px;
   height: 150px;
-  left: 0;
-  top: 100px;
   margin: 2em 0;
   color: #fff;
   font-weight: bold;
   padding-top: 1em;
   overflow: hidden;
   z-index:1;
+  position: relative;
 }
 
 #webinar:hover::before{
