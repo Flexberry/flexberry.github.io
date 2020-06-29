@@ -168,12 +168,12 @@ entries:
     output: web 
     
     folderitems:
-    - title: Setting the language and structure of the model
+    - title: Improvement of domain model
       title_ru: Добработка модели предметной области
       url: /gpg_setting-language-and-structure.html
       output: web  
       
-    - title: Creating and configuring the structure of the application
+    - title: Creating views and classes of forms and application
       title_ru: Создание представлений, классов форм и класса приложения
       url: /gpg_create-and-configure-application-structure.html
       output: web  
