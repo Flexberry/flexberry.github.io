@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_flexberry-asp-net.html
 lang: en
 autotranslated: true
-hash: c035c9719212f7e09fb28ad47062b00781348208ad14d6c3e7c0a58ccef5f915
+hash: 9fa6bc417cf5f9566744f2b224ca3f28e7054e260425fbdb9bc2aad9c3a4f91d
 ---
 
 Flexberry ASP.NET is [product platform Flexberry](fp_landing_page.html). The product website Flexberry ASP.NET: [flexberry.ru](http://flexberry.ru/Flexberry/ForDevelopers/FlexberryASPNet).
@@ -32,21 +32,21 @@ Flexberry ASP.NET consists of the following modules:
 ### Related articles
 
 * ASP.NET web controls, components
-* [WebObjectListView](fa_web-object-list-view.html)
-* [Sorting in list form, raised on locapo](fa_lookup-form-sort.html)
-* [Opening lookup-enabled form hierarchy](fa_lookup-form-hierarchy.html)
-* [Advanced constraint editor in the WEB](fa_advanced-limit-editor.html)
-* [External-classes in the advanced editor, limitations](fa_web-limit-editor-external-class.html)
-* [Empty/is non-empty in the advanced editor, limitations in the WEB](fa_web-limit-editor-null.html)
-* [Display on the interface shape and datalow](fo_masters-details.html)
-* [ViewColumnProvider](fa_view-column-provider.html)
+ * [WebObjectListView](fa_web-object-list-view.html)
+ * [Sorting in list form, raised on locapo](fa_lookup-form-sort.html)
+ * [Opening lookup-enabled form hierarchy](fa_lookup-form-hierarchy.html)
+ * [Advanced constraint editor in the WEB](fa_advanced-limit-editor.html)
+ * [External-classes in the advanced editor, limitations](fa_web-limit-editor-external-class.html)
+ * [Empty/is non-empty in the advanced editor, limitations in the WEB](fa_web-limit-editor-null.html)
+ * [Display on the interface shape and datalow](fo_masters-details.html)
+ * [ViewColumnProvider](fa_view-column-provider.html)
 * Lock
-* [Working with locks in the web](fa_working-locks-web.html)
-* [WebLockHelper](fa_web-lock-helper.html)
+ * [Working with locks in the web](fa_working-locks-web.html)
+ * [WebLockHelper](fa_web-lock-helper.html)
 * Design and development of web applications
-* [Set of columns for placing the controls on the level of representation Flexberry Designer](fd_specify-column-controls.html)
-* [Routing in a Web app](fa_routing.html)
-* [Scripting web development](fa_scenario-web.html)
+ * [Set of columns for placing the controls on the level of representation Flexberry Designer](fd_specify-column-controls.html)
+ * [Routing in a Web app](fa_routing.html)
+ * [Scripting web development](fa_scenario-web.html)
 
 ## Features settings for Unity Lifetime Managers
 

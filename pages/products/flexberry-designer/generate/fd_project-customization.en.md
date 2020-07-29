@@ -1,47 +1,48 @@
---- 
-title: setup of models to generate 
-sidebar: flexberry-designer_sidebar 
-keywords: Flexberry Audit, Flexberry Designer, plugin, stage 
-summary: Add auditing to the application and the basic properties of the stage 
-toc: true 
-permalink: en/fd_project-customization.html 
-lang: en 
-autotranslated: true 
-hash: 92d13056281baa0159c86c3765e211a2c4e91f94338b1733b594fdc38a606e7c 
---- 
+---
+title: setup of models to generate
+sidebar: flexberry-designer_sidebar
+keywords: Flexberry Audit, Flexberry Designer, plugin, stage
+summary: Add auditing to the application and the basic properties of the stage
+toc: true
+permalink: en/fd_project-customization.html
+lang: en
+autotranslated: true
+hash: 88d9ba3e2f470243f292b46eccd0186614de522f7656f98c6e646bcf4be57031
+---
 
-Form property settings of the model allows to describe basic and advanced properties of the model. This form is called via the menu [plugin](fo_orm-case-plugin.html). 
+Form property settings of the model allows to describe basic and advanced properties of the model. This form is called via the menu [plugin](fo_orm-case-plugin.html).
 
-## Basic properties 
+## Basic properties
 
-![](/images/pages/products/flexberry-designer/generate/stage-properties.png) 
+Example
 
-Here: 
-* `Название стадии` - phase name (the name of the stage where the work with the model in [Flexberry Designer](fd_flexberry-designer.html)); 
-* `Описание` - description stage (in this field you can add for example a short description of the purpose for which it was created (testing, modeling "how to be", etc.).); 
-* `Название компании` - the name of the developer or owner (may be considered in determining [the namespace of the generated project](fo_location-assembly.html)); 
-* `Название продукта` - the name of the application for which a model(may be relevant to determining the namespace of the generated project]); 
-* `Copyright` - line identity copyright, falls within the description сборок; 
-* `Версия` version of the modeled application. (falls into the descriptions of assemblies); 
-* `Каталог for the original кода` - the path to the folder into which code is generated приложения; 
-* `Карта типов` - [map types](fd_types-map.html). 
+Here:
 
-## Configure auditing 
+* `Название стадии` - phase name (the name of the stage where the work with the model in [Flexberry Designer](fd_flexberry-designer.html));
+* `Описание` - description stage (in this field you can add for example a short description of the purpose for which it was created (testing, modeling "how to be", etc.).);
+* `Название компании` - the name of the developer or owner (may be considered in determining [the namespace of the generated project](fo_location-assembly.html));
+* `Название продукта` - the name of the application for which a model(may be relevant to determining the namespace of the generated project]);
+* `Copyright` - line identity copyright, falls within the description сборок;
+* `Версия` version of the modeled application. (falls into the descriptions of assemblies);
+* `Каталог for the original кода` - the path to the folder into which code is generated приложения;
+* `Карта типов` - [map types](fd_types-map.html).
 
-This tab contains the audit settings for the model. For the functioning of the audit __additional packages__. 
+## Configure auditing
 
-Additionally ## 
-![](/images/pages/products/flexberry-designer/generate/stage-properties-ext.png) 
+This tab contains the audit settings for the model. For the functioning of the audit __additional packages__.
 
-* `Namespace` - namespace (may be considered in determining [the namespace of the generated project](fo_location-assembly.html)). 
-* `DefaultBaseClass` {is a base class (ancestor), from which it is inherited .Net classes and corresponding [UML class with the stereotype `implementation`](fd_data-classes.html); 
-* `DefaultDetailArrayClass` - base class (ancestor), from which it is inherited .Net classes corresponding to tatalovich arrays of objects (for classes datalow [with the stereotype `implementation`](fd_data-classes.html)). 
+## Additionally
+
+![Example](/images/pages/products/flexberry-designer/generate/stage-properties-ext.png)
+
+* `Namespace` - namespace (may be considered in determining [the namespace of the generated project](fo_location-assembly.html)).
+* `DefaultBaseClass` {is a base class (ancestor), from which it is inherited .Net classes and corresponding [UML class with the stereotype `implementation`](fd_data-classes.html);
+* `DefaultDetailArrayClass` - base class (ancestor), from which it is inherited .Net classes corresponding to tatalovich arrays of objects (for classes datalow [with the stereotype `implementation`](fd_data-classes.html)).
 * `DefaultEditScriptName` - the script name (EBSI-interpreted) to the editing form that uses the edit form if it is not registered (empty) property `ScriptName`. If not provided, uses a predefined scenario, sewn in [Flexberry Designer](fd_flexberry-designer.html).
-* `DefaultListScriptName` - the script name (EBSI-interpreted) to a form list that is used is used by the edit form if it is not spelled out (empty) the ScriptName property. If not provided, uses a predefined scenario, sewn in [Flexberry Designer](fd_flexberry-designer.html). 
-* `ScriptPacket` is the name of the package that is generated by the provider of the script that contains all scenarios that are defined inside of this stage using EBSD-chart. 
-* `ScriptNamespacePostfix` - the namespace for the package with the scripts. 
-* `Подписывать сборки` - set [of signatures generated Assembly](fd_sign-assembly.html). 
-
+* `DefaultListScriptName` - the script name (EBSI-interpreted) to a form list that is used is used by the edit form if it is not spelled out (empty) the ScriptName property. If not provided, uses a predefined scenario, sewn in [Flexberry Designer](fd_flexberry-designer.html).
+* `ScriptPacket` is the name of the package that is generated by the provider of the script that contains all scenarios that are defined inside of this stage using EBSD-chart.
+* `ScriptNamespacePostfix` - the namespace for the package with the scripts.
+* `Подписывать сборки` - set implementation [of signatures generated Assembly](fd_sign-assembly.html).
 
 
 

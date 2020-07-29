@@ -6,7 +6,7 @@ toc: true
 permalink: en/fe_setting-lists.html
 lang: en
 autotranslated: true
-hash: 2abf5b75f31b402edd743d4d96d2b7ffc1f8771ef3048c406f6b0b6ec6139963
+hash: 73e3699338ebba649269ca27beef80794e6508cb6f32ad29bf88c742204f5fa3
 summary: setting up the control panel, custom buttons, tools, work with objects on the list, lock individual cells, hierarchical list of computable properties, the establishment by
 ---
 
@@ -248,28 +248,28 @@ import ListFormController from 'ember-flexberry/controllers/list-form';
 
 export default ListFormController.extend({
   /** 
-Property to count user clicks on a button. 
+ Property to count user clicks on a button. 
 
-@property clickCounter 
-@type Number 
-@default 1 
-*/
+ @property clickCounter 
+ @type Number 
+ @default 1 
+ */
   clickCounter: 1,
 
   /** 
-Property to show message after user click on user button. 
+ Property to show message after user click on user button. 
 
-@property messageForUser 
-@type String 
-*/
+ @property messageForUser 
+ @type String 
+ */
   messageForUser: undefined,
 
   /** 
-Property to form an array of special structures of custom user buttons. 
+ Property to form an array of special structures of custom user buttons. 
 
-@property customButtons 
-@type Array 
-*/
+ @property customButtons 
+ @type Array 
+ */
   customButtons: Ember.computed('i18n.locale', function() {
     let i18n = this.get('i18n');
     return [{
@@ -281,10 +281,10 @@ Property to form an array of special structures of custom user buttons.
 
   actions: {
     /** 
-Handler for user click on custom button. 
+ Handler for user click on custom button. 
 
-@method userButtonActionTest 
-*/
+ @method userButtonActionTest 
+ */
     userButtonActionTest: function() {
       let i18n = this.get('i18n');
       let clickCounter = this.get('clickCounter');
@@ -321,13 +321,70 @@ Button "Mark all on current page", "select all on all pages" and "Set default so
 
 ## Configuring a hierarchical list
 
-If the list is hierarchical (the object has a reference to itself), the hierarchy for the list is set by default.
+Component `{% raw %}{{flexberry-objectlistview}}{% endraw %}` has the ability to display a list of objects in a hierarchical mode.
+
+If the object has a reference to itself, a list of such objects is hierarchical.
+If the object has only one link above the list of objects is displayed, a button for switching the list in a hierarchical mode.
+
+If the object has more than one link to itself to display the list in hierarchical mode, you must specify in the property `hierarchyByAttribute`, the name of the attribute that will build the hierarchy.
+
+```hbs
+{% raw %}
+{{flexberry-objectlistview
+  ...
+  hierarchyByAttribute="parent"
+  ...
+}}{% endraw %}
+```
+
+If you want to disable the ability to display the list in hierarchical mode, you need a property `disableHierarchicalMode` be set to `true`.
+
+```hbs
+{% raw %}
+{{flexberry-objectlistview
+  ...
+  disableHierarchicalMode=true
+  ...
+}}{% endraw %}
+```
+
+When displaying the object list in a hierarchical mode, for each object, a separate query is run to verify the presence of the child objects.
+To get rid of unnecessary requests, implement object attribute to determine whether the object has child objects.
+This will allow you to instantly display button to view the child objects, and load them only when the button is clicked by the user.
+
+This attribute may not be stored, and to determine the presence of child objects using a query expression for the data service.
+In the model for the client application, this can be a simple Boolean attribute.
+
+```csharp
+[NotStored]
+[DataServiceExpression(typeof(SQLDataService), "SELECT COUNT(*) > 0 FROM MyObject WHERE MyObject.Parent = StormMainObjectKey")]
+public bool IsParentRecord
+{
+    get => fIsParentRecord;
+    set => fIsParentRecord = value;
+}
+```
+
+```javascript
+isParentRecord: DS.attr('boolean'),
+```
+
+If the attribute is called `IsParentRecord`, it is used by default in the component, otherwise the property `isParentRecordPropertyName` to specify the name of this attribute.
+
+```hbs
+{% raw %}
+{{flexberry-objectlistview
+  ...
+  isParentRecordPropertyName="hasChildren"
+  ...
+}}{% endraw %}
+```
+
+Don't forget to add this attribute to the view which is used to load the object list, it can be hidden.
+
+An example of a component that displays a list of objects in a hierarchical mode:
 
 ![](/images/pages/ABratchikova/Hierarchy folv.png)
-
-If the hierarchy for the list you want to disable, then in the template you should register `disableHierarchicalMode = true`.
-
-If in the model there are two or more links themselves (which might be hierarchy), then you need to specify the name of the `по which should be иерархия`: `hierarchyByAttribute = propertyName`.
 
 ## Locking individual cells in a list
 

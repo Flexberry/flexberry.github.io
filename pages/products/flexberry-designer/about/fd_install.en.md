@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_install.html
 lang: en
 autotranslated: true
-hash: 0ce174b5e0b5fbe7fb1a81241febd5adfe90d60705594b7fd3e936c90f589787
+hash: 3328c967bbf96064b79eda572d085ed5988838233011ffd4d99951997619481f
 ---
 
 To set [Flexberry Designer](fd_flexberry-designer.html) you need to perform [check](https://designer.flexberry.net/#/login-or-register) on the website [Flexberry.net](https://flexberry.net).
@@ -29,33 +29,33 @@ For the application on the computer must have the following software installed (
 
 3.When downloading apps in `Google Chrome` browser may block the download. You also need to allow the download.
 
-![](/images/pages/products/flexberry-designer/about/save-chrome.png)
+![Example](/images/pages/products/flexberry-designer/about/save-chrome.png)
 
 5.Run the downloaded installer.
 
 6.If the installation dialog box will appear, pictured below, it is necessary in this window click "More" to give the app the necessary permissions.
 
-![](/images/pages/products/flexberry-designer/about/let-setup0.png)
+![Example](/images/pages/products/flexberry-designer/about/let-setup0.png)
 
-![](/images/pages/products/flexberry-designer/about/let-setup.png)
+![Example](/images/pages/products/flexberry-designer/about/let-setup.png)
 
 7.Confirm the installation of the application.
 
-![](/images/pages/products/flexberry-designer/about/let-setup2.png)
+![Example](/images/pages/products/flexberry-designer/about/let-setup2.png)
 
 8.If all prerequisites installed, installation will fail quite quickly (or additional installs required).
 
-![](/images/pages/products/flexberry-designer/about/install-designer.png)
+![Example](/images/pages/products/flexberry-designer/about/install-designer.png)
 
-![](/images/pages/products/flexberry-designer/about/let-setup3.png)
+![Example](/images/pages/products/flexberry-designer/about/let-setup3.png)
 
 9.Enter your login (E-mail) and password you specified during [the registration on the website Flexberry.net](https://designer.flexberry.net/#/fd-try) to obtain licenses.
 
-![](/images/pages/products/flexberry-designer/about/login-flexberry2.png)
+![Example](/images/pages/products/flexberry-designer/about/login-flexberry2.png)
 
 10.Choose the path where to generate the app, designed with the help of Flexberry Designer.
 
-![](/images/pages/products/flexberry-designer/about/set-generation-path.png)
+![Example](/images/pages/products/flexberry-designer/about/set-generation-path.png)
 
 In rare cases where not all installed third-party software time to tune, when you first start Flexberry Designer, an error may occur. In this case, it is recommended to run the app again through the created desktop shortcut.
 
@@ -95,18 +95,18 @@ When you upgrade `Flexberry Designer` using `LocalDB` update algorithm is somewh
 
 * Use the task pane:
 
-* Click on the taskbar icon `Flexberry Designer`, right-click, then right click on the "CASEBERRY" and select "Properties".
+ * Click on the taskbar icon `Flexberry Designer`, right-click, then right click on the "CASEBERRY" and select "Properties".
 
-![](/images/pages/products/flexberry-designer/about/update-fd-menu.png)
+ ![Example](/images/pages/products/flexberry-designer/about/update-fd-menu.png)
 
-* Copy the file path .exe, paste into Windows Explorer and find the file `FlexberryDesigner.mdf` and copy it to another folder.
+ * Copy the file path .exe, paste into Windows Explorer and find the file `FlexberryDesigner.mdf` and copy it to another folder.
 
-![](/images/pages/products/flexberry-designer/about/update-fd-settings.png)
+ ![Example](/images/pages/products/flexberry-designer/about/update-fd-settings.png)
 
 * Use the task Manager:
 
-* Run task Manager, find in the list of running applications `Flexberry Designer`.
-* Click on it, right click and select "Open file location" open the directory in which you want to find and copy to another folder the file `FlexberryDesigner.mdf`.
+ * Run task Manager, find in the list of running applications `Flexberry Designer`.
+ * Click on it, right click and select "Open file location" open the directory in which you want to find and copy to another folder the file `FlexberryDesigner.mdf`.
 
 2.Update `Flexberry Designer`.
 
@@ -117,11 +117,18 @@ When you upgrade `Flexberry Designer` using `LocalDB` update algorithm is somewh
 ### Qmo error Setup has detected that the file ... has changed since it was initially published» with the installation
 
 At this point in the ClickOnce installers Microsoft have problems with automatic installation of some components, so before installing Flexberry Designer required:
-1. Manually install Microsoft SQL Server 2012 Express with LocalDB:
+
+1.Manually install Microsoft SQL Server 2012 Express with LocalDB:
+
 <https://www.microsoft.com/ru-ru/download/details.aspx?id=29062>
 
-2. Manually install Microsoft SQL Server® 2012 Native Client:
+2.Manually install Microsoft SQL Server® 2012 Native Client:
+
 <https://www.microsoft.com/ru-ru/download/details.aspx?id=50402>
+
+3.Manually install Microsoft SQL Server® 2012 Command Line Tools:
+
+<https://www.microsoft.com/ru-ru/download/details.aspx?id=35580>
 
 Everything is downloaded for free from the Microsoft server.
 

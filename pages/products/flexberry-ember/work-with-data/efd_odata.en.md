@@ -1,12 +1,12 @@
 ---
 title: Support for OData v4
 sidebar: flexberry-ember_sidebar
-keywords: function, action, callAction, callEmberOdataAction, callFunction, callEmberOdataFunction
+keywords: function, action, callAction, callEmberOdataAction, callFunction, callEmberOdataFunction, batch batchUpdate, batchDelete, batchCreate, batchInsert
 toc: true
 permalink: en/efd_odata.html
 lang: en
 autotranslated: true
-hash: cee7a021e686d3813a7c7ef5a41565de5d6c34bfb7a1c633d6234bb12a782ac4
+hash: c80a8028ae81ecacaf8ed8757ea5cd8361b4161d90c04eeecb0635f101897139
 summary: the Components for communicating with the backend via OData support transactional changes to data, call functions and actions via Ajax, examples of usage
 ---
 
@@ -18,7 +18,7 @@ ember-flexberry-data supports the OData Protocol v4.
 
 ## Support transactional data changes
 
-Version `ember-flexberry-data@2.2.0-beta.0` added support for sending multiple model objects to save the changes in a single transaction.
+Support sending multiple model objects to save the changes in a single transaction implemented through the `batchUpdate` object `store`. To obtain the current status of data objects given the business logic servers and database triggers for each query, INSERT, UPDATE, DELETE, sends extra SELECT statement for the updated entities.
 
 Example usage:
 

@@ -7,7 +7,7 @@ toc: true
 permalink: en/fe_landing_page.html
 lang: en
 autotranslated: true
-hash: 15716f469d350f537f0d06b7547be41d41a589e586c4ef55bad885eb28ea96ca
+hash: 75aa40a4e867dd0dfbdf32a4e06e8a3888a23a19b1756623b22e8f36563d84a6
 ---
 
 `Ember-flexberry` is [part of the platform Flexberry](http://flexberry.ru), implemented in javascript frameworks [EmberJS](http://emberjs.com/).

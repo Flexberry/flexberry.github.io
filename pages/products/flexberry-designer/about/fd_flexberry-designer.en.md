@@ -7,7 +7,7 @@ toc: false
 permalink: en/fd_flexberry-designer.html
 lang: en
 autotranslated: true
-hash: ae300eb830b80752d590fa82aca4d091259bb62f4e55e74f816353464047ce8d
+hash: 5340adfcbc254f82a8358a316e16128ee24d4bf2dc8cd8bd88e0aa4746822597
 ---
 
 ## Flexberry Designer
@@ -20,7 +20,7 @@ Flexberry Designer is [product platform Flexberry](fp_landing_page.html).
 
 ### Repository of UML models
 
-The model repository allows you to conveniently store the chart in a structured way. To work with repository is used [repository browser Flexberry Designer](fd_repository-browser.html).
+The model repository allows you to conveniently store the chart in a structured way. To work with repository is used [browser repositories Flexberry Designer](fd_repository-browser.html).
 
 [Repository has a structure](fd_recommended-structure-repository.html), not limiting the user to any methodology.
 
@@ -28,7 +28,7 @@ For the chart as a repository object implemented [additional opportunities for m
 
 ### Editor UML diagrams
 
-Implemented wide possibilities of modeling (creation of models in the notation of `UML`) appropriate diagrammatic methods in [editor UML diagrams](fd_editing-diagram.html).
+Implemented wide possibilities of modeling (creation of models in the notation of `UML`) appropriate diagrammatic methods in the framework [editor UML diagrams](fd_editing-diagram.html).
 
 ### Expansion modules Flexberry Designer
 
@@ -51,7 +51,7 @@ To work Flexberry Designer must be installed the correct license for all product
 
 Additionally Flexberry Designer provides the following useful features:
 
-* [Start Flexberry Designer with the specified opening stage](fd_running-opening-stage.html)
+* [Start Flexberry Designer with a specified opening stage](fd_running-opening-stage.html)
 
 
 

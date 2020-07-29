@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_lookup-another-object.html
 lang: en
 autotranslated: true
-hash: 80da89a3d4abf68f7c088c42124665c78ffd5d4be1280c7efd958e0c4a42c022
+hash: 27d12a16180ece48c71b66a03f96f9cf5269c5f9421adae1ee0411db5af2d152
 ---
 
 There are two ways to add to the edit form [Lookup](fw_lookup.html) to select an object unrelated to the editable on the current form:
@@ -145,7 +145,7 @@ public override void OnEdit(string propertyname, ICSSoft.STORMNET.DataObject dat
             if (dataobject is ДежурнаяГруппаСмены && propertyname == "Diomyopathy.Emergroup")
             {
                 if (((ДежурнаяГруппаСмены)dataobject).ТипДежурнойГруппы != null)
-                {                    
+                {
                     tag = FunctionBuilder.BuildEquals("Tiptionary", ((ДежурнаяГруппаСмены)dataobject).ТипДежурнойГруппы);
                 }
                 dataobject = new ЧленДежурнойГруппы();

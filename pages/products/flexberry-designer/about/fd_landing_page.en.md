@@ -7,7 +7,7 @@ toc: false
 permalink: en/fd_landing_page.html
 lang: en
 autotranslated: true
-hash: 69a3abb4306a972c1a16618fd44afb8cab5242c8d33cdb3881a6dfb5801de4df
+hash: ae6e3eb9988d297614afee7e3a3ee2dd073145433e05bcca85bde1eb407c0105
 ---
 
 ## Start Flexberry Designer and create a new project
@@ -110,29 +110,29 @@ In order to create a new class open the project. The default open menu item `М�
 
 #### Stereotypes of classes
 
-`Сущность` – the class representing the real-world object whose instances will be stored in the application database. Create a pair.
+`Сущность` (implementation) – the class representing the real-world object whose instances will be stored in the application database. Create a pair.
 
-`Перечисление` – a data type that is defined in the set of identifiers. Create a pair.
+`Перечисление` (enumeration) data type, which is defined as a set of identifiers. Create a pair.
 
-`Бизнес-класс` class whose code is invoked in the process of changing instances of related entities.
+`Бизнес-класс` (businessserver) is a class whose code is invoked in the process of changing instances of related entities.
 
-`Тип` – complex data type or a real-world object whose instances will be stored in the application database. It is advisable to create, if necessary in code, secondary business objects that do not need to be stored in the database.
+`Тип` (type) – a complex data type or a real-world object whose instances will be stored in the application database. It is advisable to create, if necessary in code, secondary business objects that do not need to be stored in the database.
 
-`Typedef` - a data type that can be mapped manually generated to the database or application data types. Need, if you do not have default types.
+`Typedef` (typedef) is a type of data that can be mapped manually generated to the database or application data types. Need, if you do not have default types.
 
-`Интерфейс` – contract in the form of a list of public properties and methods that must be implemented in the related entities or types.
+`Интерфейс` (interface) contract in the form of a list of public properties and methods that must be implemented in the related entities or types.
 
-`Внешняя сущность` class that is not explicitly declared in the model but will be available in the source code, including an entity from a different project. When generating code-level means that the Declaration of this class contains the external or system library. In private means that you can specify for an external class reference to the class from another project (stage) in Flexberry Designer. In this particular case means that the class code is declared in another solyushene (addon), which must be connected to the main developers to the project manually (e.g., via a NuGet package is created based on another солюшена; connection of "external" libraries on the level generation is not implied). When it is used: the reference to class from other projects (i.e., stages) is indicated when multiple projects have some shared libraries, and classes from it pericolosa in different projects. Another option is the external class is a class from the system library or any external libraries (add-on). Then at the model level it is possible to put a link to an external class and include it in the view base class, and the code after generating the data type for the corresponding property will be a class that is declared in the "external" library (it needs to connect manually by the developer in проект; if it's a class from the system Assembly, for example, it is already the first generation of the project can be automatically already connected as an option).
+`Внешняя сущность` (external) – a class that is not explicitly declared in the model but will be available in the source code, including an entity from a different project. When generating code-level means that the Declaration of this class contains the external or system library. In private means that you can specify for an external class reference to the class from another project (stage) in Flexberry Designer. In this particular case means that the class code is declared in another solyushene (addon), which must be connected to the main developers to the project manually (e.g., via a NuGet package is created based on another солюшена; connection of "external" libraries on the level generation is not implied). When it is used: the reference to class from other projects (i.e., stages) is indicated when multiple projects have some shared libraries, and classes from it pericolosa in different projects. Another option is the external class is a class from the system library or any external libraries (add-on). Then at the model level it is possible to put a link to an external class and include it in the view base class, and the code after generating the data type for the corresponding property will be a class that is declared in the "external" library (it needs to connect manually by the developer in проект; if it's a class from the system Assembly, for example, it is already the first generation of the project can be automatically already connected as an option).
 
-`Приложение` class which keeps General information about the generated application.
+`Приложение` (application) class that stores General information about the generated application.
 
-`Пользовательская форма` class representing» «blank form of application (all markup and logic for it to be done fully manually by the developer), which can also be added to the menu structure (in "container" class with the stereotype "application"). Can be used in the case when the level of the application model required special forms, which are neither list nor edit forms are not (i.e., to look at the model it was obvious what forms in the app).
+`Пользовательская форма` (userform) – class representing» «blank form of application (all markup and logic for it to be done fully manually by the developer), which can also be added to the menu structure (in "container" class with the stereotype "application"). Can be used in the case when the level of the application model required special forms, which are neither list nor edit forms are not (i.e., to look at the model it was obvious what forms in the app).
 
-`Слой geo-сервера` class, which configures the layer GIS subsystem.
+`Слой geo-сервера` (geolayer) class, which configures the layer GIS subsystem.
 
-`Стиль layer of geo-сервера` class, which configures the layer GIS subsystem.
+`Стиль layer of geo-сервера` (geolayerstyle) class, which configures the layer GIS subsystem.
 
-`Сущность with custom стереотипом` class with arbitrary semantics, which code is not generated to the application.
+`Сущность стереотипом` with user-defined (custom) class with arbitrary semantics, which code is not generated to the application.
 
 In the list of charts automatically generated charts for each class.
 In the search field on the form `Модель приложения` enter the name (or part of) the class from the list. Mapped class (or several classes) that meet the specified condition.
@@ -233,5 +233,7 @@ Classes for communication can be assigned to the role (ask the name of the forei
 4.You cannot inherit a class from multiple classes (the class MB many descendants but only one parent).
 
 ![Example constraint diagrams 4](/images/pages/products/flexberry-designer/about/flexberry-designer-online004.png)
+
+
 
 {% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

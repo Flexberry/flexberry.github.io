@@ -7,7 +7,7 @@ toc: false
 permalink: en/fd_ember-flexberry-designer.html
 lang: en
 autotranslated: true
-hash: 5bd20d9ad6983926f5254f5cb56ae5252722769a5cdad2077c25773cf6b31f74
+hash: 1839f4e92a02301dac58405063c5117a1418a196f1ec62b46c859f29c4a7f41e
 ---
 
 **Ember Flexberry Designer** - CASE-tool with a web interface [Flexberry Designer](fd_flexberry-designer.html) is used for analysis and design of object-oriented systems, as well as generating prototypes of web applications based on the constructed models. Implemented using the framework [Ember.js](https://ru.wikipedia.org/wiki/Ember.js).
@@ -54,7 +54,7 @@ In this case, the project ID specified in your configuration before you build th
 Project ID is specified in the file `environment.js` application:
 
 ```javascript
-var ENV = {    
+var ENV = {
     …
     APP: {
       …
@@ -87,14 +87,15 @@ The application structure is the basic form, which is the key to create the appl
 * Levogo dereva (list of classes). This is a list of all data classes of the applications, as well as all of the list form and edit form bound to the appropriate data classes (nested nodes). Classes of different types have different icon. The left tree allows you to create/delete/edit data classes and forms to the list of classes in the form of a table (similar to the Manager class in the desktop version of the designer).
 * Pravogo dereva (the structure of the target application) to edit the navigation structure (menu structure) of the design application. In this tree you can create menus of arbitrary nesting by grouping menu items into folders» «at various levels. The navigation items (not counting the» «folders, which are used to group elements) can be list form, form editing, or menu items that refer to an arbitrary URL. Available operations:
 
-* adding a new navigation item (menu item) with reference to an arbitrary address URL;
-* edit properties (title and description) of the selected item навигации;
-* delete item навигации;
-* add new folders» «in the structure навигации;
-* change the order of navigation controls (move up and down);
-* save the navigation.
+ * adding a new navigation item (menu item) with reference to an arbitrary address URL;
+ * edit properties (title and description) of the selected item навигации;
+ * delete item навигации;
+ * add new folders» «in the structure навигации;
+ * change the order of navigation controls (move up and down);
+ * save the navigation.
 
 To add list forms or edit forms (from a list of all the possible forms that appear in the left tree), you must select the appropriate form in the left tree, then select the corresponding» «folder in the right tree and click on add form in the navigation structure.
+
 * tabs allowing you to configure and edit properties of a class `application`, stages and forms.
 
 

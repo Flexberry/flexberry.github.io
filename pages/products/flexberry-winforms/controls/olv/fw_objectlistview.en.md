@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_objectlistview.html
 lang: en
 autotranslated: true
-hash: a14f23e9cd2324b8da737aeb191cffdff1da6d07c05af7ae071c411febc9a93f
+hash: 32ec588b7d364f88a76e8e420a4afb8890192991e79fdc5ceca8972e5327509c
 ---
 
 __To display in the form of a list of objects__ there is a specialized control that `ObjectListView`.
@@ -30,41 +30,32 @@ To display a list of objects without generating you must:
 
 The main functionality `ObjectListView` for the user:
 
-![](/images/pages/products/flexberry-winforms/controls/olv/primer15.jpg)
+![Example](/images/pages/products/flexberry-winforms/controls/olv/primer15.jpg)
 
 The user can:
 
 * To view a list of objects (including different types)
-* Refresh the list of objects ![](/images/pages/products/flexberry-winforms/controls/olv/primer16.jpg)
+* Refresh the list of objects ![Example](/images/pages/products/flexberry-winforms/controls/olv/primer16.jpg)
 
-* Return the selected objects (LookUp) ![](/images/pages/products/flexberry-winforms/controls/olv/primer17.jpg)
+* Return the selected objects (LookUp) ![Example](/images/pages/products/flexberry-winforms/controls/olv/primer17.jpg)
 
 * To sort objects, which is necessary to poke the mouse in the column heading
-* Create the object (if DataObjectTypes contains several types, you can choose from the drop down list to choose which type you want to create the object) ![](/images/pages/products/flexberry-winforms/controls/olv/primer18.jpg)
+* Create the object (if DataObjectTypes contains several types, you can choose from the drop down list to choose which type you want to create the object) ![Example](/images/pages/products/flexberry-winforms/controls/olv/primer18.jpg)
 
-* To create an object based on the selected ![](/images/pages/products/flexberry-winforms/controls/olv/primer19.jpg)
-
-* To edit one or more selected objects ![](/images/pages/products/flexberry-winforms/controls/olv/primer20.jpg)
-
-* Remove one or more selected objects ![](/images/pages/products/flexberry-winforms/controls/olv/primer21.jpg)
-
-* Customize the visibility of columns (the user can hide some columns for convenience) ![](/images/pages/products/flexberry-winforms/controls/olv/primer22.jpg)
-
-* To restrict the list of displayed objects ![](/images/pages/products/flexberry-winforms/controls/olv/primer23.jpg)
-
-* To search the list ![](/images/pages/products/flexberry-winforms/controls/olv/primer24.jpg)
+* To create an object based on the selected ![Example](/images/pages/products/flexberry-winforms/controls/olv/primer19.jpg)
+* To edit one or more selected objects ![Example](/images/pages/products/flexberry-winforms/controls/olv/primer20.jpg)
+* Remove one or more selected objects ![Example](/images/pages/products/flexberry-winforms/controls/olv/primer21.jpg)
+* Customize the visibility of columns (the user can hide some columns for convenience) ![Example](/images/pages/products/flexberry-winforms/controls/olv/primer22.jpg)
+* To restrict the list of displayed objects ![Example](/images/pages/products/flexberry-winforms/controls/olv/primer23.jpg)
+* To search the list ![Example](/images/pages/products/flexberry-winforms/controls/olv/primer24.jpg)
 
 Also available to the user:
 
-* The print preview of the list ![](/images/pages/products/flexberry-winforms/controls/olv/primer25.jpg)
-
-* Print list ![](/images/pages/products/flexberry-winforms/controls/olv/primer26.jpg)
-
-* Print settings ![](/images/pages/products/flexberry-winforms/controls/olv/primer27.jpg)
-
-* Copy the selection to the clipboard ![](/images/pages/products/flexberry-winforms/controls/olv/primer28.jpg)
-
-* Operations with notes and highlighting ![](/images/pages/products/flexberry-winforms/controls/olv/primer29.jpg)
+* The print preview of the list ![Example](/images/pages/products/flexberry-winforms/controls/olv/primer25.jpg)
+* Print list ![Example](/images/pages/products/flexberry-winforms/controls/olv/primer26.jpg)
+* Print settings ![Example](/images/pages/products/flexberry-winforms/controls/olv/primer27.jpg)
+* Copy the selection to the clipboard ![Example](/images/pages/products/flexberry-winforms/controls/olv/primer28.jpg)
+* Operations with notes and highlighting ![Example](/images/pages/products/flexberry-winforms/controls/olv/primer29.jpg)
 
 ## Desktop update
 
@@ -74,7 +65,7 @@ To force a refresh of the folder tree and list the desktop you want to call a me
 
 The message continued loading occurs when the exhaustion of physical memory allocated to the application, because the allocation of memory in the swap file takes time.
 
-![](/images/pages/products/flexberry-winforms/controls/olv/load-question.jpg)
+![Example](/images/pages/products/flexberry-winforms/controls/olv/load-question.jpg)
 
 To enable this feature, you must set the property "MemoryTimeLoadLimit" any positive value.
 
@@ -93,14 +84,14 @@ You need to specify `ObjectListView` `UseHotkeyForEdit = false;`. This will affe
 ## Useful links
 
 * Objects in ObjectListView
-* [Entire list of objects in ObjectListView](fw_put-list-objects.html)
-* [Events ОbjectListView](fw_olv-event.html)
+ * [Entire list of objects in ObjectListView](fw_put-list-objects.html)
+ * [Events ОbjectListView](fw_olv-event.html)
 * Design and functionality
-* [Set date display default](fw_date-format.html)
+ * [Set date display default](fw_date-format.html)
 * Different
-* [Assignment LimitFunction for the second ObjectListView](fw_assigning-limit-function-second-objectlistview.html)
-* [Availability of the operations on the ObjectListView depending on user rights](fw_objectlistview-rights.html)
-* [Customize and add columns and records in ObjectListView](fw_desktop-operations.html)
+ * [Assignment LimitFunction for the second ObjectListView](fw_assigning-limit-function-second-objectlistview.html)
+ * [Availability of the operations on the ObjectListView depending on user rights](fw_objectlistview-rights.html)
+ * [Customize and add columns and records in ObjectListView](fw_desktop-operations.html)
 
 
 

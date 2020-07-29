@@ -1,19 +1,19 @@
---- 
-title: the Subsystem authorizations for Flexberry ASP.NET 
-sidebar: flexberry-aspnet_sidebar 
-keywords: Flexberry ASP-NET Flexberry Security 
-toc: true 
-permalink: en/fa_right-manager.html 
-lang: en 
-autotranslated: true 
-hash: 5d4d897bac78bd86e92a9c5c66374bd63ac0c353fbce26a594e503af32c470c7 
---- 
+---
+title: the Subsystem authorizations for Flexberry ASP.NET
+sidebar: flexberry-aspnet_sidebar
+keywords: Flexberry ASP-NET Flexberry Security
+toc: true
+permalink: en/fa_right-manager.html
+lang: en
+autotranslated: true
+hash: e9e29d4afc3265fc82afb365362136e3824e6dd64a6ea92474694fade63db2a9
+---
 
-At the moment [subsystem powers](efs_right-manager-module.html) Web application does not require third-party services and comes along with the application in the generation of [Flexberry Designer](fd_flexberry-designer.html). 
+At the moment [subsystem powers](efs_right-manager-module.html) Web application does not require third-party services and comes along with the application in the generation of [Flexberry Designer](fd_flexberry-designer.html).
 
-The database can be located in the application or in a separate database. 
+The database can be located in the application or in a separate database.
 
-In the configuration file for configuration meets the following unit (Forms authentication): 
+In the configuration file for configuration meets the following unit (Forms authentication):
 
 ```xml  
 <!-- Authority system -->
@@ -29,7 +29,7 @@ In the configuration file for configuration meets the following unit (Forms auth
           <!-- Here it is necessary to register the name of the application -->
           <param name="imprisone" type="System.String" value="WebApp" />
         </constructor>
-      </register>      
+      </register>
     </container>
   </unity>
 
@@ -54,9 +54,9 @@ In the configuration file for configuration meets the following unit (Forms auth
       <add name="CaseberryRoleProvider" type="ICSSoft.STORMNET.Security.CaseberryRoleProvider" />
     </providers>
   </roleManager>
- ``` 
+ ```
 
-As well as the variant with Windows authentication: 
+As well as the variant with Windows authentication:
 
 ```xml  
 <authentication mode="Windows" />
@@ -78,35 +78,35 @@ As well as the variant with Windows authentication:
       <add name="CaseberryDomainRoleProvider" type="CheckingLibrary.CaseberryDomainRoleProvider" applicationName="SLAuthSample" />
     </providers>
   </roleManager>
-``` 
+```
 
-To use AzMan substitute providers. 
+To use AzMan substitute providers.
 
-Powers can also be configured using the [Security Console](efs_security-console.html). 
+Powers can also be configured using the [Security Console](efs_security-console.html).
 
-## Add users to the database system of authority in windows authentication 
+## Add users to the database system of authority in windows authentication
 
-Add users to the database system of authority when windows-authentication is described in the appropriate [article](fa_authentication-adapter.html). 
+Add users to the database system of authority when windows-authentication is described in the appropriate [article](fa_authentication-adapter.html).
 
-## the Creation of powers for classes for Flexberry ASP.NET 
+## The creation of powers for classes for Flexberry ASP.NET
 
-The creation of powers for classes for Flexberry ASP.NET described in the appropriate [article](fa_authority-classes.html). 
+The creation of powers for classes for Flexberry ASP.NET described in the appropriate [article](fa_authority-classes.html).
 
-## CaseberryDomainRoleProvider 
+## CaseberryDomainRoleProvider
 
-Use `CaseberryDomainRoleProvider` described in the appropriate [article](fa_domain-role-provider.html). 
+Use `CaseberryDomainRoleProvider` described in the appropriate [article](fa_domain-role-provider.html).
 
-## CaseberryMembershipProvider 
+## CaseberryMembershipProvider
 
-Use `CaseberryMembershipProvider` described in the appropriate [article](fa_membership-provider.html). 
+Use `CaseberryMembershipProvider` described in the appropriate [article](fa_membership-provider.html).
 
-## Web forms subsystem powers 
+## Web forms subsystem powers
 
-The subsystem authorizations for the web-form described in [the Web forms subsystem powers](fa_security-forms.html). 
+The subsystem authorizations for the web-form described in [the Web forms subsystem powers](fa_security-forms.html).
 
-## UserSettingsService 
+## UserSettingsService
 
-Use `UserSettingsService` described in the appropriate [article](fa_user-settings-service.html). 
+Use `UserSettingsService` described in the appropriate [article](fa_user-settings-service.html).
 
 
 

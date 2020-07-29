@@ -6,7 +6,7 @@ toc: true
 permalink: en/ef_generator.html
 lang: en
 autotranslated: true
-hash: 1fc165c1cab156339e7f647c0842bdb643c5eebec85a6ce04b5816b6ccbf2f36
+hash: 2bbbb8cf0f99c9aacab1fa93451474cc886fdcc6d618cb87072b6da32039a4b9
 summary: Generate Ember-app from the menu Flexberry Designer.
 ---
 
@@ -34,7 +34,7 @@ In the configuration file Flexberry Designer, you can add the setting, which is 
 The challenge comes from the stage in the [Flexberry Designer](fd_flexberry-designer.html).
 
 Causes click PCM under the shortcut menu, select it in the Ember
-![](/images/pages/products/flexberry-ember/ember-flexberry/generation/Ember-plugin-menu.jpg)
+![Example](/images/pages/products/flexberry-ember/ember-flexberry/generation/Ember-plugin-menu.jpg)
 
 ## Menu generator
 
@@ -62,21 +62,21 @@ In the process of generation types .NET of card types will be automatically repl
 
 * `Frontend`
 
-* `EmberJS` - generation Front a on EmberJS
-* `Генерировать` - Performs generation of Ember-based application.
-* `Открыть каталог` - Opens the catalog with Ember-app.
-* `Apache Cordova`
+ * `EmberJS` - generation Front a on EmberJS
+ * `Генерировать` - Performs generation of Ember-based application.
+ * `Открыть каталог` - Opens the catalog with Ember-app.
+ * `Apache Cordova`
 
 * `Backend`
-* ASP.NET
-* JAVA
-* PHP
+ * ASP.NET
+ * JAVA
+ * PHP
 
 * `Storage`
-* Microsoft SQL server
-* Postgre SQL
-* Oracle
-* Microsoft Access
+ * Microsoft SQL server
+ * Postgre SQL
+ * Oracle
+ * Microsoft Access
 
 * `Утилиты`
 * `Информация about лицензии`
@@ -87,11 +87,11 @@ The first stage is the creation of metadata (catalogue `vendor\flexberry`) to be
 
 Next generation can be accomplished in two ways:
 
-1) In an empty directory ember-app - comes complete to install the application [addon ember-flexberry](https://github.com/Flexberry/ember-flexberry) and generating entities of the application Ember teams `ember generate ...`.
+1)In an empty directory ember-app - comes complete to install the application [addon ember-flexberry](https://github.com/Flexberry/ember-flexberry) and generating entities of the application Ember teams `ember generate ...`.
 
 At initial start of the generator for the selected model Flexberry need to run option 1).
 
-2) When a non-empty directory ember-app - Runs only the generate models command `ember generate ...`.
+2)When a non-empty directory ember-app - Runs only the generate models command `ember generate ...`.
 
 This option is suitable for subsequent runs of the generator.
 
@@ -121,7 +121,7 @@ If in the generation process, an error occurs in which occurs the line:
 
 `... You have to be inside an ember-cli project...`
 
-you need to perform in the project directory Ember ('ember-app') the following command:
+you need to perform in the project directory Ember(directory 'ember-app') the following command:
 
 ```bash
 ember init
@@ -136,23 +136,23 @@ As the generator is still under development, the team `ember install ember-flexb
 
 * Create in advance the archive node_modules.7z using the following steps:
 
-* To create a new folder and run command
-* ember init
-* install ember ember-flexberry
-* npm install
-* bower install
-* npm uninstall ember-flexberry
-* 7z a-r node_modules.7z node_modules
+ * To create a new folder and run command
+ * ember init
+ * install ember ember-flexberry
+ * npm install
+ * bower install
+ * npm uninstall ember-flexberry
+ * 7z a-r node_modules.7z node_modules
 
 * Before starting the generator always clean the folder where it should be generated ember-app
 
-* Copy the file folder from node_modules.7z, obtained in step 1 and run the commands:
+ * Copy the file folder from node_modules.7z, obtained in step 1 and run the commands:
 
-* 7z x node_modules.7z
-* ember init
-* install ember ember-flexberry
-* npm install
-* bower install
+ * 7z x node_modules.7z
+ * ember init
+ * install ember ember-flexberry
+ * npm install
+ * bower install
 
 In addition to the possible speed commands `ember...` will be achieved you have the latest version `ember-flexberry`.
 For a quick cleanup of the folder can not delete folder `node_modules`, and move it to another location and then purge the folder ember-app.
@@ -162,8 +162,8 @@ For a quick cleanup of the folder can not delete folder `node_modules`, and move
 * Addon needs to be created manually, with the command ember addon called addon, then switch to this directory is created with the addon
 * In the addon you need to install ember-flexberry team `ember install ember-flexberry`
 * Need metadata to generate. While the plugin itself from Flexberry not understand what he should do in the addon, not a regular application. But the metadata that are generated in the vendor folder qmo\flexberry» versatile and suitable for both options. You need to generate app using a conventional plug-in generate ember-application - it will be a separate app, it will not be used, only metadata. Then there are 2 options:
-* Copy metadata from a folder vendor\flexberry in the same folder you created the addon.
-* Specify the path to the folder with the metadata when you call blueprints generation, article [Blueprints the means in ember-flexberry](ef_blueprints.html).
+ * Copy metadata from a folder vendor\flexberry in the same folder you created the addon as well.
+ * Specify the path to the folder with the metadata when you call blueprints generation, article [Blueprints the means in ember-flexberry](ef_blueprints.html).
 * Trigger generation of metadata: `ember g flexberry-application`
 * If you need to specify the path to the metadata, you can use this format: `ember g flexberry-addon addon --metadata-dir vendor\flexberry`
 * You can generate shapes and models for Dummy application of this same generator, for this you need to run the command genraly flag `--dummy`: `ember g flexberry-application app --metadata-dir vendor\flexberry --dummy`
