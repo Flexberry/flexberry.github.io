@@ -184,7 +184,7 @@ entries:
       output: web  
       
     - title: Autocomplete and data types
-      title_ru: Автозаполнение и типы данных
+      title_ru: Настройка свойств атрибутов класса и типов данных
       url: /gpg_autocomplete-and-data-types.html
       output: web   
       

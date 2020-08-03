@@ -25,7 +25,7 @@ lang: ru
 
 ![Версии базовых пакетов в консоли](/images/pages/guides/flexberry-ember/3-ember-application-generation/3-1.png)
 
-Для установки валидной версии Node.js: 
+Для установки валидной версии Node.js:
 
 > [win-x64/](https://nodejs.org/dist/latest-v10.x/win-x64/)  
 > [win-x86/](https://nodejs.org/dist/latest-v10.x/win-x86/)
@@ -79,7 +79,7 @@ lang: ru
 
 ![Окно настройки БД на PostgreSQL](/images/pages/guides/flexberry-ember/3-ember-application-generation/3-5.png)
 
-Нажимаем “Сохранить и закрыть”.
+Нажимаем "Сохранить и закрыть".
 
 ## Генерация базы данных
 
@@ -108,7 +108,7 @@ lang: ru
 
 ![Окно свойств модели](/images/pages/guides/flexberry-ember/3-ember-application-generation/3-9.png)
 
-Нажимаем “Сохранить и закрыть”.
+Нажимаем "Сохранить и закрыть".
 
 ## Генерация проекта
 
@@ -149,8 +149,8 @@ lang: ru
 
 В результате генерации приложения мы имеем 3 составляющие:
 
-1. База данных (в данном примере созданная на 
-[PostgreSQL](https://www.postgresql.org/) ‒ её можно посмотреть при помощи приложения [pgAdmin](https://www.pgadmin.org/download/));
+1. База данных (в данном примере созданная на
+   [PostgreSQL](https://www.postgresql.org/) ‒ её можно посмотреть при помощи приложения [pgAdmin](https://www.pgadmin.org/download/));
 2. Бэкенд на [ASP.NET Web API](https://dotnet.microsoft.com/apps/aspnet/apis);
 3. Фронтенд на [Ember.js](https://guides.emberjs.com/v3.1.0/).
 
@@ -158,6 +158,6 @@ lang: ru
 
 ## Перейти
 
-* [Практическое руководство  «Делай как я»](gpg_landing-page.html) <i class="fa fa-arrow-up" aria-hidden="true"></i>
-* [Автозаполнение и типы данных](gpg_autocomplete-and-data-types.html) <i class="fa fa-arrow-left" aria-hidden="true"></i>
+* [Практическое руководство «Делай как я»](gpg_landing-page.html) <i class="fa fa-arrow-up" aria-hidden="true"></i>
+* [Настройка свойств атрибутов класса и типов данных](gpg_autocomplete-and-data-types.html) <i class="fa fa-arrow-left" aria-hidden="true"></i>
 * [Запуск Ember-приложения](gpg_launch-ember-applications.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
