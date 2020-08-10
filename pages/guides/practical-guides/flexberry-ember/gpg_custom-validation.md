@@ -13,7 +13,7 @@ lang: ru
 
 Настройка валидации в аддоне ember-flexberry версии **3.x.x** осуществляется при помощи аддона **[ember-cp-validations](http://offirgolan.github.io/ember-cp-validations/docs/modules/Usage.html)** (для версий 2.x.x используют аддон [ember-validations](https://github.com/DavyJonesLocker/ember-validations)). Он не только предоставляет определенное количество встроенных валидаторов, но также позволяет писать кастомные.
 
-В прошлом разделе "[Заполнение первичных данных приложения](gpg_filling-application-primary-data.html)" мы говорили о том, что на форме "Заказ" существует поле, которое при заполнении должно валидироваться особым образом:
+В прошлом разделе "[Добавление тестовых данных](gpg_filling-application-primary-data.html)" мы говорили о том, что на форме "Заказ" существует поле, которое при заполнении должно валидироваться особым образом:
 
 ![Логика валидации](/images/pages/guides/flexberry-ember/5-4-custom-validation/5-4-2.png)
 
@@ -204,7 +204,7 @@ export let ValidationRules = {
 {% endraw %}
 {% endhighlight %}
 
-Из раздела ("[Заполнение первичных данных приложения](gpg_filling-application-primary-data.html)") мы помним, что на складах присутствуют следующие товары:
+Из раздела ("[Добавление тестовых данных](gpg_filling-application-primary-data.html)") мы помним, что на складах присутствуют следующие товары:
 
 1. Монитор Samsung C24F390FHI - 4 + 1 = 5 (шт.)
 2. Системный блок Acer Aspire XC-330 DT.BD2ER.001 - 2 + 0 = 2 (шт.)

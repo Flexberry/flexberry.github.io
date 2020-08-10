@@ -55,5 +55,5 @@ lang: ru
 * [Практическое руководство  «Делай как я»](gpg_landing-page.html) <i class="fa fa-arrow-up" aria-hidden="true"></i>
 
 * [Генерация Ember-приложения](gpg_ember-application-generation.html) <i class="fa fa-arrow-left" aria-hidden="true"></i>
-* [Заполнение первичных данных приложения](gpg_filling-application-primary-data.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+* [Добавление тестовых данных](gpg_filling-application-primary-data.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
 
