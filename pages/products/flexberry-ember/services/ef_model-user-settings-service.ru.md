@@ -146,6 +146,8 @@ developerUserSettings: ...
 });
 ```
 
+{% include note.html content="Настройки для роута `/new` нужно указывать отдельно." %}
+
 При стандартных пользовательских настройках формат свойства `developerUserSettings`
 
 ```javascript

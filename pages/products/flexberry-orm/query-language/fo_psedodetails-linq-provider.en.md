@@ -1,38 +1,38 @@
---- 
-title: Pseudometal in LinqProvider 
-sidebar: flexberry-orm_sidebar 
-keywords: Flexberry ORM Limitations 
-summary: Options for specifying constraints, methods used, communication with DetailVariableDef 
-toc: true 
-permalink: en/fo_psedodetails-linq-provider.html 
-lang: en 
-autotranslated: true 
-hash: 6f655a1ab84c5bc7cf568533a180aabd1b642ad0d395e48eff30f533a279dc62 
---- 
+---
+title: Pseudometal in LinqProvider
+sidebar: flexberry-orm_sidebar
+keywords: Flexberry ORM Limitations
+summary: Options for specifying constraints, methods used, communication with DetailVariableDef
+toc: true
+permalink: en/fo_psedodetails-linq-provider.html
+lang: en
+autotranslated: true
+hash: 151491f614d94caa60a6858b5ddd0f001b45a0c6afc819ced665196df8c2dee7
+---
 
-## formulation of the problem of specifying limits on pseudometal 
+## Statement of the problem of specifying limits on pseudometal
 
-Let the entities "Customer" and "Credit" are connected shown in the image. 
+Let the entities "Customer" and "Credit" are connected shown in the image way.
 
-![](/images/pages/products/flexberry-orm/linq provider/pseudo-details.png) 
+![](/images/pages/products/flexberry-orm/query language/pseudo-details.png)
 
-You need to restrict clients by setting the limit to reference them loans. The specificity of this problem is that according to the model, the client does not know what the credits refer to it. 
+You need to restrict clients by setting the limit to reference them loans. The specificity of this problem is that according to the model, the client does not know what the credits refer to it.
 
-## setting limits on pseudometal 
+## Setting limits on pseudometal
 
-Let: 
+Let:
 
 ```csharp
 var ds = (SQLDataService)DataServiceProvider.DataService;
-``` 
+```
 
-Job restriction pseudometal a little less intuitive than the use of [other features LinqProvider](fo_linq-provider-faetures.html). 
+Job restriction pseudometal a little less intuitive than the use of [other features LinqProvider](fo_linq-provider-faetures.html).
 
-To set restrictions on pseudometal in [LinqProvider](fo_linq-provider.html) added entity `PseudoDetail`. For `PseudoDetail` you have a few options to the constructor. 
+To set restrictions on pseudometal in [LinqProvider](fo_linq-provider.html) added entity `PseudoDetail`. For `PseudoDetail` you have a few options to the constructor.
 
-### the designer's Options `PseudoDetail` 
+### The designer's options `PseudoDetail`
 
-(A large number of designers due to the fact that a Linq expression complexity using constructors with default value). 
+(A large number of designers due to the fact that a Linq expression complexity using constructors with default value).
 
 ```csharp
 /// <summary> 
@@ -43,7 +43,7 @@ To set restrictions on pseudometal in [LinqProvider](fo_linq-provider.html) adde
 public PseudoDetail(
 	ICSSoft.STORMNET.View view,
 	string masterLinkName)
-``` 
+```
 
 ```csharp
 /// <summary> 
@@ -54,16 +54,16 @@ public PseudoDetail(
 public PseudoDetail(
 	ICSSoft.STORMNET.View view,
 	Expression<Func<TP, object>> masterLink)
-``` 
+```
 
 ```csharp
 /// <summary> 
-/// Constructor entity that represents a Linq expression real detail (pseudometal this method will be incorrect). 
+/// Constructor entity that represents a Linq expression real detail (for pseudometal this method will be incorrect). 
 /// </summary> 
 /// <param name="view"> the View of detail. </param> 
 public PseudoDetail(
 	ICSSoft.STORMNET.View view)
-``` 
+```
 
 ```csharp
 /// <summary> 
@@ -76,7 +76,7 @@ public PseudoDetail(
 	ICSSoft.STORMNET.View view,
 	Expression<Func<TP, object>> masterLink,
 	string masterToDetailPseudoProperty)
-``` 
+```
 
 ```csharp
 /// <summary> 
@@ -91,7 +91,7 @@ public PseudoDetail(
 	Expression<Func<TP, object>> masterLink,
 	string masterToDetailPseudoProperty,
 	string[] masterConnectProperties)
-``` 
+```
 
 ```csharp
 /// <summary> 
@@ -104,7 +104,7 @@ public PseudoDetail(
 	ICSSoft.STORMNET.View view,
 	string masterLinkName,
 	string masterToDetailPseudoProperty)
-``` 
+```
 
 ```csharp
 /// <summary> 
@@ -119,11 +119,11 @@ public PseudoDetail(
 	string masterLinkName,
 	string masterToDetailPseudoProperty,
 	string[] masterConnectProperties)
-``` 
+```
 
-### Methods `PseudoDetail` 
+### Methods `PseudoDetail`
 
-Pseudometal possible to impose constraints of existence and universality. 
+Pseudometal possible to impose constraints of existence and universality.
 
 ```csharp
 /// <summary> 
@@ -131,7 +131,7 @@ Pseudometal possible to impose constraints of existence and universality.
 /// </summary> 
 /// <returns> When compiling returns true when interpreted in Linq is formed DetailVariableDef. </returns> 
 public bool Any()
-``` 
+```
 
 ```csharp
 /// <summary> 
@@ -140,7 +140,7 @@ public bool Any()
 /// <param name="predicate"> LimitFunction for pseudometal. </param> 
 /// <returns> When compiling returns true when interpreted in Linq is formed DetailVariableDef. </returns> 
 public bool Any(Expression<Func<TP, bool>> predicate)
-``` 
+```
 
 ```csharp
 /// <summary> 
@@ -149,11 +149,11 @@ public bool Any(Expression<Func<TP, bool>> predicate)
 /// <param name="predicate"> LimitFunction for pseudometal. </param> 
 /// <returns> When compiling returns true when interpreted in Linq is formed DetailVariableDef. </returns> 
 public bool All(Expression<Func<TP, bool>> predicate)
-``` 
+```
 
-#### Restriction existence on pseudometal 
+#### The limitation of existence to pseudometal
 
-**An object of type `PseudoDetail` is defined outside of the linq expression:** 
+**An object of type `PseudoDetail` is defined outside of the linq expression:**
 
 ```csharp
 var pseudoDetail = new PseudoDetail<Порода, Кошка>(
@@ -163,9 +163,9 @@ var pseudoDetail = new PseudoDetail<Порода, Кошка>(
 // All breeds who have cats 
 ds.Query<Порода>(Порода.Views.ПородаE).Where(
 	y => pseudoDetail.Any()).ToList();
-``` 
+```
 
-**An object of type `PseudoDetail` is defined within linq expressions:** 
+**An object of type `PseudoDetail` is defined within linq expressions:**
 
 ```csharp
 // All breeds who have a cat whose nickname is not "snow leopard" 
@@ -177,9 +177,9 @@ ds.Query<Порода>(Порода.Views.ПородаE)
 				Information.ExtractPropertyPath<Кошка>(x => x.Порода))
 			.Any(x.Кличка != "Barsik"))
 	.ToList();
-``` 
+```
 
-#### Limiting the generality of pseudometal 
+#### The constraint of universality on pseudometal
 
 ```csharp
 // All breeds where the cats don't wear the nickname "snow leopard" 
@@ -191,13 +191,13 @@ ds.Query<Порода>(Порода.Views.ПородаE)
 				Information.ExtractPropertyPath<Кошка>(x => x.Порода))
 			.All(x.Кличка != "Barsik"))
 	.ToList();
-``` 
+```
 
-## PseudoDetail and DetailVariableDef 
+## PseudoDetail and DetailVariableDef
 
-Below shows a code sample that demonstrates the relationship `PseudoDetail` and [DetailVariableDef](fo_variable-def.html). 
+Below shows a code sample that demonstrates the relationship `PseudoDetail` and [DetailVariableDef](fo_variable-def.html).
 
-`ComparePseudoDetailWithDetailvariabledef` is a method of conducting a conversion from linq to lcs and compare the results. 
+`ComparePseudoDetailWithDetailvariabledef` is a method of conducting a conversion from linq to lcs and compare the results.
 
 ```csharp
 const string masterToDetailPropertyName = "SomePropertyName";
@@ -215,7 +215,7 @@ ComparePseudoDetailWithDetailVariableDef(
 		Information.GetView("Koskee", typeof(Кошка)),
 		"Breed",
 		masterConnectProperties));
-``` 
+```
 
 
 

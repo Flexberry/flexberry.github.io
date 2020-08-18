@@ -21,13 +21,13 @@ ICSSoft.STORMNET.Web.AjaxControls.DecimalTextBox - это [web-контрол](f
 
 ## Особенности использования
 
-Когда компонент `DecimalTextBox` используется для отображения вещественных чисел, для которых в базе данных используется тип с фиксированным количеством знаков после запятой (в том числе с 0 знаками после запятой), необходимо устанавливать свойство MaxDecimalPlaces для корректного отображения числа в компоненте. 
+Когда компонент `DecimalTextBox` используется для отображения вещественных чисел, для которых в базе данных используется тип с фиксированным количеством знаков после запятой (в том числе с 0 знаками после запятой), необходимо устанавливать свойство MaxDecimalPlaces для корректного отображения числа в компоненте.
 
 На данный момент [DataObject](fo_data-object.html) не хранит метаданные о количестве знаков после запятой для вещественных типов C#, поэтому при генерации приложений нет возможности автоматизировать инициализацию свойства MaxDecimalPlaces.
 
 Если не инициализировать свойство `MaxDecimalPlaces` в указанном выше случае, то на форме редактирования после изменения свойств существующего объекта данных в компоненте `DecimalTextBox` и последующего сохранения данных без закрытия формы, вещественное число может отображаться не корректно - отображаемое количество знаков после запятой может не соответствовать тому количеству знаков, которое указано для соответствующего типа в базе данных (отображаться будет то значение, которое ввел пользователь перед сохранением). При добавлении нового объекта данных такого поведения не наблюдается, поскольку выполняется дополнительный запрос к серверу для получения значения первичного ключа у нового объекта данных, в результате чего происходит повторное считывание объекта данных перед отображением на форме (при этом значения полей отображаются так, как они хранятся в базе данных).
 
-Возможно, в будущих версиях [Flexberry Designer](fd_landing_page.html) появится возможность указывать и хранить количество знаков после запятой для вещественных типов C# на уровне метаданных, тогда необходимость в ручной установке свойства MaxDecimalPlaces отпадет.
+Возможно, в будущих версиях [Flexberry Designer](fd_flexberry-designer.html) появится возможность указывать и хранить количество знаков после запятой для вещественных типов C# на уровне метаданных, тогда необходимость в ручной установке свойства MaxDecimalPlaces отпадет.
 
 ## DecimalTextBox в AjaxGroupEdit
 
@@ -53,31 +53,31 @@ ICSSoft.STORMNET.Web.AjaxControls.AjaxGroupEdit.SetControlTuner(SeveralViewsDeta
 ```csharp
 /// <summary>
 /// Делегат для донастройки контрола в AGE.
-/// В данном случае для свойства <see cref="SeveralViewsDetail.Свойство5"/> 
-/// для контрола <see cref="ICSSoft.STORMNET.Web.AjaxControls.DecimalTextBox"/> 
+/// В данном случае для свойства <see cref="SeveralViewsDetail.Свойство5"/>
+/// для контрола <see cref="ICSSoft.STORMNET.Web.AjaxControls.DecimalTextBox"/>
 /// выставляем максимальное количество символов после запятой "3".
 /// </summary>
 /// <param name="control">Текущий подобранный контрол.</param>
 /// <param name="createdControlData">Параметры для контрола.</param>
 private void TuneControlDelegate(Control control, CreatedControlData createdControlData)
 {
-	string searchedProperty = ICSSoft.STORMNET.Information.ExtractPropertyPath<SeveralViewsDetail>(x => x.Свойство5);
-	if (createdControlData.ControlCreationReason == CreatedControlData.CreateControlReason.Edit
-		&& createdControlData.DataObjectType == typeof(SeveralViewsDetail)
-		&& createdControlData.PropertyName == searchedProperty)
-	{
-		if (!(control is ICSSoft.STORMNET.Web.AjaxControls.DecimalTextBox))
-		{
-			throw new System.Exception(
-				string.Format(
-					"Для корректного функционирования теста {0} требуется, чтобы для редактирования свойства {1} использовался контрол {2}.", 
-					typeof(TestDecimalAge).Name, 
-					searchedProperty,
-					typeof(ICSSoft.STORMNET.Web.AjaxControls.DecimalTextBox).Name));
-		}
+  string searchedProperty = ICSSoft.STORMNET.Information.ExtractPropertyPath<SeveralViewsDetail>(x => x.Свойство5);
+  if (createdControlData.ControlCreationReason == CreatedControlData.CreateControlReason.Edit
+    && createdControlData.DataObjectType == typeof(SeveralViewsDetail)
+    && createdControlData.PropertyName == searchedProperty)
+  {
+    if (!(control is ICSSoft.STORMNET.Web.AjaxControls.DecimalTextBox))
+    {
+      throw new System.Exception(
+        string.Format(
+          "Для корректного функционирования теста {0} требуется, чтобы для редактирования свойства {1} использовался контрол {2}.",
+          typeof(TestDecimalAge).Name,
+          searchedProperty,
+          typeof(ICSSoft.STORMNET.Web.AjaxControls.DecimalTextBox).Name));
+    }
 
-		var decimalTextBox = (ICSSoft.STORMNET.Web.AjaxControls.DecimalTextBox)control;
-		decimalTextBox.MaxDecimalPlaces = 3;
-	}
+    var decimalTextBox = (ICSSoft.STORMNET.Web.AjaxControls.DecimalTextBox)control;
+    decimalTextBox.MaxDecimalPlaces = 3;
+  }
 }
 ```

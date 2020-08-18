@@ -6,7 +6,7 @@ toc: true
 permalink: en/efd_query-language.html
 lang: en
 autotranslated: true
-hash: a75f20ad72f96f3667f33cce70dcc91b6649f855a5ffe4d21e759eb6d3578754
+hash: 6b7cb97a548760541fab26e14f6031f61e44f4091e998222e758649df1f5309f
 summary: Description the client language requests.
 ---
 
@@ -37,6 +37,7 @@ The Query namespace contains the following list of classes:
 * `DetailPredicate` class to create a filter in the request for Dethalbum objects.
 * `DatePredicate` class to create a filter in a query on fields of type date.
 * `NotPredicate` class for the inversion of the nested predicate.
+* `IsOfPredicate` class to create a filter in the query type of the data object.
 * `createPredicate` - method to create a predicate on the specified parameters.
 
 An example of using the classes in the namespace:
@@ -445,6 +446,36 @@ Getting a nested predicate:
 ```javascript
 let innerPredicate = np.predicate;
 ```
+
+### Query.IsOfPredicate
+
+#### Designer
+
+Designer `Query.IsOfPredicate` with two parameters takes a string expression that indicates the property of the model, and the string with the model name.
+
+```javascript
+let predicate = new Query.IsOFPredicate('manager', 'employee');
+```
+
+Designer `Query.IsOfPredicate` with one parameter takes a string with the model name.
+
+```javascript
+let predicate = new Query.IsOFPredicate('customer');
+```
+
+There is a method to simplify work with this predicate.
+
+```javascript
+let predicate = new Query.IsOFPredicate('man');
+let builder = new Query.Builder(store, 'creator').where(predicate);
+```
+
+An equivalent expression without using a predicate.
+
+```javascript
+let builder = new Query.Builder(store, 'creator').isOf('man');
+```
+
 ## Logical operators for complex predicates
 
 ### Or

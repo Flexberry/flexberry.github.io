@@ -35,19 +35,19 @@ StyleCop — статический анализатор C# кода на пре
 
 С [перечнем правил](https://github.com/Flexberry/NewPlatform.Flexberry.ORM/blob/develop/Flexberry.ruleset), которые используются в проектах платформы Flexberry можно ознакомится на GitHub-e.
 
-### JSLint
+### ESLint
 
-JSLint — это статический анализатор кода для программ на языке JavaScript, проверяющий их соответствие стандартам оформления кода.
+ESLint — это статический анализатор кода для программ на языке JavaScript, проверяющий их соответствие стандартам оформления кода.
 
-{% include note.html content="JSLint используется на проектах с версией Ember-a 3.X.X" %}
+{% include note.html content="ESLint используется на проектах с версией Ember-a 3.X.X" %}
 
 **Настройка:**
 
 1. Установить npm пакет [ember-cli-eslint](https://www.npmjs.com/package/ember-cli-eslint)
 2. В корне проекта создать и настроить файл `.eslintrc.js`, пример реализации содержится в проекте [ember-flexberry](https://github.com/Flexberry/ember-flexberry/blob/feature-ember-update/.eslintrc.js).
-3. В корне проекта создать файл `.eslintignore` - в него нужно добавить файлы и дериктории которые не должны проверятся JSLint-ом. Пример реализации содержится в проекте [ember-flexberry](https://github.com/Flexberry/ember-flexberry/blob/feature-ember-update/.eslintignore).
+3. В корне проекта создать файл `.eslintignore` - в него нужно добавить файлы и дериктории которые не должны проверятся ESLint-ом. Пример реализации содержится в проекте [ember-flexberry](https://github.com/Flexberry/ember-flexberry/blob/feature-ember-update/.eslintignore).
 
-Более подробную информацию можно найти [на официальном сайте JSLint](https://eslint.org/docs/user-guide/configuring)
+Более подробную информацию можно найти [на официальном сайте ESLint](https://eslint.org/docs/user-guide/configuring)
 
 ### JSHint
 

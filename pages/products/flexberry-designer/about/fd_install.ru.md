@@ -8,7 +8,7 @@ permalink: ru/fd_install.html
 lang: ru
 ---
 
-Для того чтобы установить [Flexberry Designer](fd_landing_page.html) необходимо выполнить [регистрацию](https://designer.flexberry.net/#/login-or-register) на сайте [Flexberry.net](https://flexberry.net).  
+Для того чтобы установить [Flexberry Designer](fd_flexberry-designer.html) необходимо выполнить [регистрацию](https://designer.flexberry.net/#/login-or-register) на сайте [Flexberry.net](https://flexberry.net).  
 
 Для работы приложения на компьютере должно быть установлено следующее программное обеспечение (в процессе установки Flexberry Designer наличие данного перечня ПО будет автоматически проверено, и при необходимости нехватающее ПО будет автоматически установлено):
 
@@ -27,43 +27,43 @@ lang: ru
 
 3.При скачивании приложения в `Google Chrome` браузер может заблокировать загрузку. Требуется дополнительно разрешить данную загрузку.
 
-![](/images/pages/products/flexberry-designer/about/save-chrome.png)
+![Пример](/images/pages/products/flexberry-designer/about/save-chrome.png)
 
 5.Запустить загруженный установщик.
 
 6.Если при установке возникнет диалоговое окно, изображённое ниже, то необходимо в этом окне нажать "Подробнее" и дать приложению необходимые разрешения.
 
-![](/images/pages/products/flexberry-designer/about/let-setup0.png)
+![Пример](/images/pages/products/flexberry-designer/about/let-setup0.png)
 
-![](/images/pages/products/flexberry-designer/about/let-setup.png)
+![Пример](/images/pages/products/flexberry-designer/about/let-setup.png)
 
 7.Подтвердить установку приложения.
 
-![](/images/pages/products/flexberry-designer/about/let-setup2.png)
+![Пример](/images/pages/products/flexberry-designer/about/let-setup2.png)
 
 8.Если всё необходимое ПО установлено, то установка будет выполнена достаточно быстро (либо дополнительно будет выполнена установка необходимого ПО).
 
-![](/images/pages/products/flexberry-designer/about/install-designer.png)
+![Пример](/images/pages/products/flexberry-designer/about/install-designer.png)
 
-![](/images/pages/products/flexberry-designer/about/let-setup3.png)
+![Пример](/images/pages/products/flexberry-designer/about/let-setup3.png)
 
 9.Ввести логин (E-mail) и пароль, указанные при [регистрации на сайте Flexberry.net](https://designer.flexberry.net/#/fd-try) для получения лицензий.
 
-![](/images/pages/products/flexberry-designer/about/login-flexberry2.png)
+![Пример](/images/pages/products/flexberry-designer/about/login-flexberry2.png)
 
 10.Выбрать путь, куда будут генерироваться приложения, спроектированные при помощи Flexberry Designer.
 
-![](/images/pages/products/flexberry-designer/about/set-generation-path.png)
+![Пример](/images/pages/products/flexberry-designer/about/set-generation-path.png)
 
 В редких случаях, когда не всё установленное стороннее ПО успевает настроиться, при первом запуске Flexberry Designer может возникнуть ошибка. В этом случае рекомендуется запустить приложение повторно через созданный на рабочем столе ярлык.
 
 ## Установка и продление лицензий
 
-При загрузке [Flexberry Designer](fd_landing_page.html) с сайта [Flexberry.net](https://flexberry.net) установка лицензий будет происходить следующим образом:
+При загрузке [Flexberry Designer](fd_flexberry-designer.html) с сайта [Flexberry.net](https://flexberry.net) установка лицензий будет происходить следующим образом:
 
-*   В процессе установки приложения у пользователя будут запрошены логин (E-mail) и пароль, которые были уакзаны при [регистрации на сайте Flexberry.net](https://designer.flexberry.net/#/fd-try). В случае корректного ввода учетных данных лицензия будет автоматически загружена.
-*   Для продления лицензии необходимо перейти в раздел [Лицензции](https://designer.flexberry.net/#/download-win-app), предварительно [авторизовавшись на сайте Flexbery.net](https://designer.flexberry.net/#/login-or-register), и выполнить запрос академической или корпоративной лицензии, нажав на соответствующую кнопку. Уведомление об успешном продлении срока лицензии будет отправлено на E-mail, указанный при регистрации на сйте [Flexberry.net](https://flexberry.net).
-*   По окончании срока лицензии при запуске приложения пользователю вновь будет предложено ввести [учётные данные для сайта Flexberry.net](https://designer.flexberry.net/#/fd-try) для загрузки [приобретённой лицензии](https://designer.flexberry.net/#/fd-try).
+* В процессе установки приложения у пользователя будут запрошены логин (E-mail) и пароль, которые были уакзаны при [регистрации на сайте Flexberry.net](https://designer.flexberry.net/#/fd-try). В случае корректного ввода учетных данных лицензия будет автоматически загружена.
+* Для продления лицензии необходимо перейти в раздел [Лицензции](https://designer.flexberry.net/#/download-win-app), предварительно [авторизовавшись на сайте Flexbery.net](https://designer.flexberry.net/#/login-or-register), и выполнить запрос академической или корпоративной лицензии, нажав на соответствующую кнопку. Уведомление об успешном продлении срока лицензии будет отправлено на E-mail, указанный при регистрации на сйте [Flexberry.net](https://flexberry.net).
+* По окончании срока лицензии при запуске приложения пользователю вновь будет предложено ввести [учётные данные для сайта Flexberry.net](https://designer.flexberry.net/#/fd-try) для загрузки [приобретённой лицензии](https://designer.flexberry.net/#/fd-try).
 
 ## Установка новой версии Flexberry Desinger (обновление)
 
@@ -71,7 +71,7 @@ lang: ru
 
 Для того чтобы установить обновления для Flexberry Desinger, необходимо выполнить следующие шаги:
 
-1.Открыть раздел [Лицензии](https://designer.flexberry.net/#/download-win-app) и нажать кнопку `Установить`. 
+1.Открыть раздел [Лицензии](https://designer.flexberry.net/#/download-win-app) и нажать кнопку `Установить`.
 
 *Может потребоваться залогиниться на сайт, если это не было сделано ранее. При скачивании приложения в Google Chrome браузер может заблокировать загрузку. Требуется дополнительно разрешить данную загрузку.*
 
@@ -93,24 +93,42 @@ lang: ru
 
 * Использовать панель задач:
 
-    * Кликнуть на панели задач на иконку `Flexberry Designer` правой кнопкой мыши, затем кликнуть правой кнопкой по "CASEBERRY" и выбрать пункт "Свойства".
+  * Кликнуть на панели задач на иконку `Flexberry Designer` правой кнопкой мыши, затем кликнуть правой кнопкой по "CASEBERRY" и выбрать пункт "Свойства".
 
-        ![](/images/pages/products/flexberry-designer/about/update-fd-menu.png)
+    ![Пример](/images/pages/products/flexberry-designer/about/update-fd-menu.png)
 
     * Скопировать путь к файлу .exe, вставить в проводник и найти файл `FlexberryDesigner.mdf` и скопировать его в другую папку.
 
-        ![](/images/pages/products/flexberry-designer/about/update-fd-settings.png)
+    ![Пример](/images/pages/products/flexberry-designer/about/update-fd-settings.png)
 
 * Использовать диспетчер задач:
 
-    * Запустить диспетчер задач, найти в списке запущенных приложений `Flexberry Designer`. 
-    * Кликнуть по нему правой кнопкой и выбрать пункт "Открыть расположение файла" - открыт каталог, в котором требуется найти и скопировать в другую папку файл `FlexberryDesigner.mdf`. 
+  * Запустить диспетчер задач, найти в списке запущенных приложений `Flexberry Designer`.
+  * Кликнуть по нему правой кнопкой и выбрать пункт "Открыть расположение файла" - открыт каталог, в котором требуется найти и скопировать в другую папку файл `FlexberryDesigner.mdf`.
 
 2.Обновить `Flexberry Designer`.
 
 3.Далее по указаному в п.1 данного раздела алгоритму подменить файл `FlexberryDesigner.mdf` на сохраненный ранее.
 
-## Возможные проблемы при установке Flexberry Designer 
+## Возможные проблемы при установке Flexberry Designer
+
+### Ошибка «Setup has detected that the file ... has changed since it was initially published» при установке
+
+На данный момент в ClickOnce-установщиках Microsoft есть проблемы с автоматической установкой некоторых компонентов, поэтому перед установкой Flexberry Designer требуется:
+
+1.Вручную установить Microsoft SQL Server 2012 Express вместе с LocalDB:
+
+<https://www.microsoft.com/ru-ru/download/details.aspx?id=29062>
+
+2.Вручную установить Microsoft SQL Server® 2012 Native Client:
+
+<https://www.microsoft.com/ru-ru/download/details.aspx?id=50402>
+
+3.Вручную установить Microsoft SQL Server® 2012 Command Line Tools:
+
+<https://www.microsoft.com/ru-ru/download/details.aspx?id=35580>
+
+Всё скачивается бесплатно с сервера Microsoft.
 
 ### Медленная инициализация MS SQL Server 2012 Express LocalDB
 

@@ -18,7 +18,7 @@ lang: ru
 
 `Flexberry Winforms` состоит из следующих модулей:
 
-* Модуль расширения [Flexberry Designer](fd_landing_page.html) для генерации win-приложений по uml-моделям.
+* Модуль расширения [Flexberry Designer](fd_flexberry-designer.html) для генерации win-приложений по uml-моделям.
 * Win-контролы и win-формы.
 
 ## Информация о контролах и компонентах

@@ -7,7 +7,7 @@ toc: false
 permalink: en/fp_landing_page.html
 lang: en
 autotranslated: true
-hash: 9ad29fad84f99e419244865a2bb4e630f2ab1181ccc312f5224ca7a221b85d25
+hash: e941833da472e2458455bef282fd0a9efaefa50e1568b6a97918f962cfe0cca1
 ---
 
 ![Platform architecture Flexberry](/images/pages/products/flexberry-platform/architecture/flexberry-platform-app-architecture.png)
@@ -15,22 +15,22 @@ hash: 9ad29fad84f99e419244865a2bb4e630f2ab1181ccc312f5224ca7a221b85d25
 Products [platform Flexberry](http://flexberry.net):
 
 * Tools design and editing:
-* [Flexberry Designer](fd_landing_page.html). To install by downloading from the website [flexberry.net](https://designer.flexberry.net/#/download-win-app).
+ * [Flexberry Designer](fd_flexberry-designer.html). To install by downloading from the website [flexberry.net](https://designer.flexberry.net/#/download-win-app).
 * Frameworks:
-* [Flexberry Ember](fe_landing_page.html)
-* [Flexberry ASP.NET](fa_landing_page.html)
-* [Flexberry Winforms](fw_landing_page.html)
+ * [Flexberry Ember](fe_landing_page.html)
+ * [Flexberry ASP.NET](fa_landing_page.html)
+ * [Flexberry Winforms](fw_landing_page.html)
 * Functional subsystems:
-* Flexberry Foundation
-* [Flexberry GIS](fg_landing_page.html)
-* [Flexberry Service Bus](fsb_landing_page.html)
-* Flexberry Analytics
-* [Flexberry BPM](fbpm_landing_page.html)
-* Flexberry Portal
+ * Flexberry Foundation
+ * [Flexberry GIS](fg_landing_page.html)
+ * [Flexberry Service Bus](fsb_landing_page.html)
+ * Flexberry Analytics
+ * [Flexberry BPM](fbpm_landing_page.html)
+ * Flexberry Portal
 * Technology components
-* [ORM Flexberry](fo_landing_page.html)
-* Flexberry Security
-* Flexberry Audit
+ * [ORM Flexberry](fo_landing_page.html)
+ * Flexberry Security
+ * Flexberry Audit
 
 A complete list of platform capabilities Flexberry displayed on the [home page](index.html) of the site documentation.
 
@@ -50,23 +50,25 @@ __The following will be required:__
 
 * **Browser** and the Ember inspector extension that helps you debug ember-app:
 
-* [chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-* [firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector)
+ * [chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
+ * [firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector)
 * **Console** for git, npm, bower, ember-cli, etc.
-* **linux**, might go to any terminal.
-* **windows** standard cmd.exe not the best choice.
-Recommended:
-* PowerShell.
-* ConEmu.
-* Cmder.
+ * **linux**, might go to any terminal.
+ * **windows** standard cmd.exe not the best choice.
+ Recommended:
+
+ * PowerShell.
+ * ConEmu.
+ * Cmder.
 * **IDE and text editor**. IDE for js is very resource costly, therefore it is recommended to use text editors such as:
-* Visual Studio Code
-* Atom (it is recommended to install the extensions, tight work)
-* [file-icons](https://atom.io/packages/file-icons)
-* [platformio-ide-terminal](https://atom.io/packages/platformio-ide-terminal)
-* [language-markdown](https://atom.io/packages/language-markdown)
-* [markdown-preview-plus](https://atom.io/packages/markdown-preview-plus)
-* and other.
+ * Visual Studio Code
+ * Atom (it is recommended to install the extensions, tight work)
+
+ * [file-icons](https://atom.io/packages/file-icons)
+ * [platformio-ide-terminal](https://atom.io/packages/platformio-ide-terminal)
+ * [language-markdown](https://atom.io/packages/language-markdown)
+ * [markdown-preview-plus](https://atom.io/packages/markdown-preview-plus)
+ * and other.
 
 {% include note.html content="the ember-cli.com](http://www.ember-cli.com/user-guide/#editors) says some of the recommendations, with some editors." %}
 
@@ -98,8 +100,8 @@ At least:
 
 * You must specify the name and email attached to Your account on GitHub:
 
-* Name: `git config --global user.name: "John Doe"`
-* Email: `git config --global user.email johndoe@example.com`
+ * Name: `git config --global user.name: "John Doe"`
+ * Email: `git config --global user.email johndoe@example.com`
 
 The next step is to become a member of the team [Flexberry on GitHub](https://github.com/Flexberry).
 It is necessary to send commits to the remote repository on GitHub.
@@ -122,7 +124,7 @@ It is necessary to send commits to the remote repository on GitHub.
 __Algorithm install Docker:__
 
 1. Install Docker Desktop.
-2. Enable virtualization in the BIOS.
+2. Enable virtualization in the BIOS-e.
 
 ### Tools to work with ASP.NET applications
 
@@ -141,10 +143,10 @@ __Use:__
 * SQL Toolbelt;
 * LinqPad;
 * .NET Developer Bundle™;
-* ANTS Performance Profiler;
-* ANTS Memory Profiler;
-* Exception Hunter;
-* .NET Reflector Pro;
+ * ANTS Performance Profiler;
+ * ANTS Memory Profiler;
+ * Exception Hunter;
+ * .NET Reflector Pro;
 * DevArt Data Compare;
 * DevArt Schema Compare.
 

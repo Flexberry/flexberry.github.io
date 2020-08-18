@@ -13,7 +13,7 @@ lang: ru
 Продукты [платформы Flexberry](http://flexberry.net):
 
 * Инструменты проектирования и редактирования:
-  * [Flexberry Designer](fd_landing_page.html). Установить можно, скачав с сайта [flexberry.net](https://designer.flexberry.net/#/download-win-app).
+  * [Flexberry Designer](fd_flexberry-designer.html). Установить можно, скачав с сайта [flexberry.net](https://designer.flexberry.net/#/download-win-app).
 * Фреймворки:
   * [Flexberry Ember](fe_landing_page.html)
   * [Flexberry ASP.NET](fa_landing_page.html)
@@ -54,12 +54,14 @@ __Далее потребуются:__
   * **linux**, возможно, пойдет любой терминал.
   * **windows** стандартный cmd.exe не лучший выбор.
         Рекомендуются:
-        * PowerShell.
-        * ConEmu.
-        * Cmder.
+
+          * PowerShell.
+          * ConEmu.
+          * Cmder.
 * **IDE и текстовый редактор**. IDE для js очень ресурсно затратна, поэтому рекомендуется использовать текстовые редакторы такие как:
   * Visual Studio Code
   * Atom (к нему рекомендуется установить расширения, облегающие работу)
+  
         * [file-icons](https://atom.io/packages/file-icons)
         * [platformio-ide-terminal](https://atom.io/packages/platformio-ide-terminal)
         * [language-markdown](https://atom.io/packages/language-markdown)

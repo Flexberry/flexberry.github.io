@@ -102,19 +102,14 @@ public static object ObjectFromBinaryString(string s)
 
 ### Пример SOAP-сериализации LimitFunction
 
-```csharp
-            SQLWhereLanguageDef ldef = SQLWhereLanguageDef.LanguageDef;
-            Function fn = ldef.GetFunction(
-                ldef.funcAND,
-                ldef.GetFunction(
-                ldef.funcEQ, new VariableDef(ldef.StringType,"ПарамПамПам"), "кто ходит в гости по утрам"
-                ),
-                ldef.GetFunction(
-                ldef.funcOR,
-                ldef.GetFunction(ldef.funcEQ, new VariableDef(ldef.StringType, "ТотПоступаетМудро"), Environment.UserName),
-                ldef.GetFunction(ldef.funcIsNull, new VariableDef(ldef.StringType, "НаТоОноИУтро"))
+```csharp            
+            Function fn = FunctionBuilder.BuildAnd(
+                FunctionBuilder.BuildEquals("ПарамПамПам", "кто ходит в гости по утрам"),
+                FunctionBuilder.BuildOr(
+                    FunctionBuilder.BuildEquals("ТотПоступаетМудро", Environment.UserName),
+                    FunctionBuilder.BuildIsNull("НаТоОноИУтро")
                 )
-                );
+            );             
 
             string serializedFn = Utils.ObjectToString((new ExternalLangDef()).FunctionToSimpleStruct(fn));
             Assert.IsNotNull(serializedFn);

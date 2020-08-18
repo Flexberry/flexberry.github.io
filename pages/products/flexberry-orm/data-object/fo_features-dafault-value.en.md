@@ -1,53 +1,53 @@
---- 
-title: features of setting default values 
-sidebar: flexberry-orm_sidebar 
-keywords: data Objects, Flexberry ORM data types 
-summary: Features methods of specifying the value default 
-toc: true 
-permalink: en/fo_features-dafault-value.html 
-lang: en 
-autotranslated: true 
-hash: dd47192e5257cbbfd7843a7cd9c971db4937f2841c17fff2258d113fd2088b14 
---- 
+---
+title: features of setting default values
+sidebar: flexberry-orm_sidebar
+keywords: data Objects, Flexberry ORM data types
+summary: Features methods of specifying the value default
+toc: true
+permalink: en/fo_features-dafault-value.html
+lang: en
+autotranslated: true
+hash: ab4c6cf2d10f70df935004328592dfe01a5fc8f8e9d586b83976290a4da5ae2b
+---
 
-Set default values available when you edit a [class diagram](fd_class-diagram.html) and in the code. Consider the main features of these methods. 
+Set default values available when you edit a [class diagram](fd_class-diagram.html) and in the code. Consider the main features of these methods.
 
-## Assignment default values on the class diagram 
+## Assignment default values on the class diagram
 
-### Scalar types 
+### Scalar types
 
-To indicate [the class diagram](fd_class-diagram.html) the default value for fields scalar types it is sufficient to define it in the [DefaultValue](fo_attributes-class-data.html) in the appropriate fields (note the peculiarities of generation for the [DefaultValue](fo_attributes-class-data.html)). 
+To indicate [the class diagram](fd_class-diagram.html) the default value for fields scalar types it is sufficient to define it in the [DefaultValue](fo_attributes-class-data.html) in the appropriate fields (note the peculiarities of generation for the [DefaultValue](fo_attributes-class-data.html)).
 
-{% include note.html content="If the type of default value is not appropriate for the field type, the project will be generated but will not be compiled." %} 
+{% include note.html content="If the type of default value is not appropriate for the field type, the project will be generated but will not be compiled." %}
 
-### nullable Scalar types 
+### Nullable scalar types
 
-The job defaults to [class diagram](fd_class-diagram.html) for [nullable scalar-types](fd_nullable-types.html) is similar to scalar types. 
+The job defaults to [class diagram](fd_class-diagram.html) for [nullable scalar-types](fd_nullable-types.html) is similar to scalar types.
 
-Generic Nullable types can be initialized with values that accrue from the internal types. For example, if you assign a value `Now` `Default` in the field for the attribute on the class diagram, you can obtain this code: 
+Generic Nullable types can be initialized with values that accrue from the internal types. For example, if you assign a value `Now` `Default` in the field for the attribute on the class diagram, you can obtain this code:
 
 ```cs
 private System.Nullable<System.DateTime> fRelease = System.DateTime.Now;
-``` 
-{% include note.html content="Please note that set default `null` will not work." %} 
+```
+{% include note.html content="Please note that set default `null` will not work." %}
 
-### Complex types 
+### Complex types
 
-To set the default value on the class diagram for the field of complex type (for example specified by the class with the [stereotype](fd_key-concepts.html) [Types of data classes with the stereotype-type-and-their-properties](fd_data-types-properties.html)) in the General case impossible. 
+To set the default value on the class diagram for the field of complex type (for example specified by the class with the [stereotype](fd_key-concepts.html) [Types of data classes with the stereotype-type-and-their-properties](fd_data-types-properties.html)) in the General case impossible.
 
-### type Synonyms 
+### Type synonyms
 
-[Synonyms types](fd_typedef.html) set a default value on the class diagram, is similar to how it occurs in types, synonyms, which they are. 
+For [synonyms types](fd_typedef.html) set a default value on the class diagram, is similar to how it occurs in types, synonyms, which they are.
 
-## Task default values in the code 
+## The task default values in the code
 
-| Admission | Advantages | Disadvantages | 
-|---|---|---| 
-| Set the default values in the form's code Allows for each form to define their default values | - Requires to initialize the default values in each form | 
-| Set the default values in the [data object](fo_data-object.html) | Allows you to set the default value in one place | - Complication of code if each form requires its own defaults | 
-| Set the default values in the [business server](fo_bs-wrapper.html) | sets the value default in one place and separate logic from UI | - Complication of code if each form requires its own defaults | 
+| Admission | Advantages | Disadvantages |
+|---|---|---|
+| Set the default values in the form's code Allows for each form to define their default values | - Requires to initialize the default values in each form |
+| Set the default values in the [data object](fo_data-object.html) | Allows you to set the default value in one place | - Complication of code if each form requires its own defaults |
+| Set the default values in the [business server](fo_business-server.html) | Allows you to set the default value in one place and separate logic from UI | - Complication of code if each form requires its own defaults |
 
-### Task default values in the form's code 
+### The task default values in the form's code
 
 ```csharp
 public class WinformC__ПациентE : ICSSoft.STORMNET.UI.BaseWinEdit, IIS.BSTest.DPDIC__ПациентE
@@ -59,9 +59,9 @@ public class WinformC__ПациентE : ICSSoft.STORMNET.UI.BaseWinEdit, IIS.BS
 	}
 	//... 
 }
-``` 
+```
 
-### Task default values in the data object 
+### The task default values in the data object
 
 ```csharp
 public class Пациент : ICSSoft.STORMNET.DataObject
@@ -81,10 +81,10 @@ public class Пациент : ICSSoft.STORMNET.DataObject
 	}
 	//... 
 }
-``` 
+```
 
-### specify a default business server 
-Form code: 
+### Specify a default business server
+Form code:
 
 ```csharp
 public class WinformC__ЗаписьНаПриёмE : ICSSoft.STORMNET.UI.BaseWinEdit, IIS.BSTest.DPDIC__ЗаписьНаПриёмE
@@ -102,9 +102,9 @@ public class WinformC__ЗаписьНаПриёмE : ICSSoft.STORMNET.UI.BaseWin
 	}
 	//... 
 }
-``` 
+```
 
-Code business server: 
+Code business server:
 
 ```csharp
 public class TestBS : ICSSoft.STORMNET.Business.BusinessServer
@@ -115,7 +115,7 @@ public class TestBS : ICSSoft.STORMNET.Business.BusinessServer
 	}
 	//... 
 }
-``` 
+```
 
 
 

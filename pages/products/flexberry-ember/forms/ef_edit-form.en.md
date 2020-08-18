@@ -6,7 +6,7 @@ toc: true
 permalink: en/ef_edit-form.html
 lang: en
 autotranslated: true
-hash: 302413906be9c0ef0f321f99c958095c2b4c202335fb601ab81aed9ce59e763b
+hash: ef236853e88c8aad3fd45e6889b751fd0e068c7cf286483149ace3d29e7e9ea0
 summary: Purpose, structure, functions and error displays on the edit form
 ---
 
@@ -14,9 +14,9 @@ summary: Purpose, structure, functions and error displays on the edit form
 
 Edit form is used to edit the object. Creation form to create a new object (although in the General case is very similar in logic forms).
 
-To create the edit form - [models](efd_model.html) [view](efd_model-projection.html), define the appropriate [ranting](ef_route.html), [controllers](ef_controller.html) and [templates](ef_template.html).
+To create the edit form - [models](efd_model.html) by [view](efd_model-projection.html), define the appropriate [ranting](ef_route.html), [controllers](ef_controller.html) and [templates](ef_template.html).
 
-Implemented technology [form](ef_forms.html) the basic elements are a [controller](ef_controller.html), [template](ef_template.html) and different [ranting](ef_route.html) (for route creation form inherited from the roat for the editing form).
+Implemented technology [form](ef_forms.html) the basic elements are a [controller](ef_controller.html) one [template](ef_template.html) and different [ranting](ef_route.html) (for route creation form inherited from the roat for the editing form).
 
 ## Creation form
 
@@ -44,7 +44,7 @@ Operations:
 | Normal form | Dealova form without saving | Dealova form c saving |
 | (edit form) |(detail-edit-form) | (detail-edit-form)
 :------------| :---------------| :-------------------| :-----------------
-`ReadOnly IsNew `| close Only. The model does not change. | Close only. The status of unavailable. | Close only. The status of unavailable.
+`ReadOnly IsNew`| close Only. The model does not change. | Close only. The status of unavailable. | Close only. The status of unavailable.
 `ReadOnly Saved` |close Only. The model does not change.|Only a close. The model does not change.|Only a close. The model does not change.
 `Not ReadOnly IsNew` | save, Save and close, close (rollback models).| Removal (full) and closing (without rolling back the model).| Save, save and close, close (rollback models).
 `Not ReadOnly Saved` |save, Save and close, delete (complete), closure (rollback models).|Removal (mark) and closing (without rolling back the model).| Save, save and close, delete (complete), closure (rollback models).
@@ -55,11 +55,11 @@ Thus, in the design [template](ef_template.html) the edit form is the usual form
 
 ```hbs
 `#unless readonly`
-	<button type="submit" class="ui primary button" `action 'save'`>Save</button>
-	<button type="submit" class="ui primary button" `action 'saveAndClose'`>Save and close</button>
-	`#unless model.isNew`
-		<button type="submit" class="ui primary button" `action 'delete'`>Delete</button>
-	`/unless`
+  <button type="submit" class="ui primary button" `action 'save'`>Save</button>
+  <button type="submit" class="ui primary button" `action 'saveAndClose'`>Save and close</button>
+  `#unless model.isNew`
+  <button type="submit" class="ui primary button" `action 'delete'`>Delete</button>
+  `/unless`
 `/unless`
 <button type="submit" class="ui primary button" `action 'close'`>Close</button>
 ```
@@ -76,22 +76,28 @@ Thus, when you make the template edit form of detail given the read-only mode an
 
 ```hbs
 `#unless readonly`
-	`#unless (and hasParentRoute (not saveBeforeRouteLeave))`
-		<button type="submit" class="ui positive button" `action 'save'`>Save</button>
-	`/unless`
-	`#unless (and hasParentRoute (not saveBeforeRouteLeave))`
-		<button type="submit" class="ui positive button" `action 'saveAndClose'`>Save and close</button>
-	`/unless`
-	`#unless (and model.isNew (and (not hasParentRoute) (not saveBeforeRouteLeave)))`
-		<button type="submit" class="ui negative button" `action 'delete'`>Delete</button>
-	`/unless`
+  `#unless (and hasParentRoute (not saveBeforeRouteLeave))`
+  <button type="submit" class="ui positive button" `action 'save'`>Save</button>
+  `/unless`
+    `#unless (and hasParentRoute (not saveBeforeRouteLeave))`
+    <button type="submit" class="ui positive button" `action 'saveAndClose'`>Save and close</button>
+  `/unless`
+  `#unless (and model.isNew (and (not hasParentRoute) (not saveBeforeRouteLeave)))`
+  <button type="submit" class="ui negative button" `action 'delete'`>Delete</button>
+  `/unless`
 `/unless`
 <button type="submit" class="ui button" `action 'close'`>Close</button>
 ```
 
 ### Error display on the edit form
 
-If the error appeared when loading the object to open the form, the edit template is displayed `error.hbs`. To change this behavior you can use the default behavior of ember.
+If the error appeared when loading the object to open the form, the edit template is displayed `error.hbs`. To change this behavior you can use the default behavior of ember and.
+
+### QueryParams for the edit form
+
+In the controller edit-form there is [queryParams](https://github.com/Flexberry/ember-flexberry/blob/adb541c44d902152d8c43ff588aa55d376a98ec8/addon/controllers/edit-form.js#L171). Setting this field is carried out the regular mechanisms Ember. A service lock provides `transition` on route with `readonly=true`, if he sees that the object is locked.
+
+If you have to open up the editor to read, you can implement this similarly, by passing in query parameters (queryParam) the readonly option with the value true.
 
 
 

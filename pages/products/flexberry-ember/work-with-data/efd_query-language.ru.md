@@ -35,6 +35,7 @@ import { Query } from 'ember-flexberry-data';
 * `DetailPredicate` - класс для создания фильтра в запросе по детейловым объектам.
 * `DatePredicate` - класс для создания фильтра в запросе по полям с типом дата.
 * `NotPredicate` - класс для инверсии вложенного предиката.
+* `IsOfPredicate` - класс для создания фильтра в запросе по типу объекта данных.
 * `createPredicate` - метод для создания предиката по заданным параметрам.
 
 Пример использования классов из пространства имен:
@@ -443,6 +444,36 @@ let np = new Query.NotPredicate(new Query.SimplePredicate('creator.name', Query.
 ```javascript
 let innerPredicate = np.predicate;
 ```
+
+### Query.IsOfPredicate
+
+#### Конструктор
+
+Конструктор `Query.IsOfPredicate` с двумя параметрами принимает строку с выражением, указывающим на свойство модели, и строку с именем модели.
+
+```javascript
+let predicate = new Query.IsOFPredicate('manager', 'employee');
+```
+
+Конструктор `Query.IsOfPredicate` с одним параметром принимает строку с именем модели.
+
+```javascript
+let predicate = new Query.IsOFPredicate('customer');
+```
+
+Есть метод упрощающий работу с этим предикатом.
+
+```javascript
+let predicate = new Query.IsOFPredicate('man');
+let builder = new Query.Builder(store, 'creator').where(predicate);
+```
+
+Равнозначное выражение без использования предиката.
+
+```javascript
+let builder = new Query.Builder(store, 'creator').isOf('man');
+```
+
 ## Логические операторы для сложных предикатов
 
 ### Or

@@ -388,20 +388,23 @@ getLookupFolvProperties: function(options) {
 
 ```javascript
 export default EditFormController.extend({
-    // ...
-    getLookupFolvProperties: function(options) {
+  actions: {
+    getLookupFolvProperties(options) {
       if (options.relationName === 'type') { // Свойство LookUp-а.
         return {
-            // Показывать ли кнопку переключения иерархии, если иерархия для списка доступна
-            // (при false кнопка показывается)
-            disableHierarchicalMode: false,
+          // Показывать ли кнопку переключения иерархии, если иерархия для списка доступна
+          // (при false кнопка показывается)
+          disableHierarchicalMode: false,
 
-            // Активировать иерархию при загрузке lookup-формы.
-            inHierarchicalMode: true,
-            hierarchicalAttribute: 'Name' // Свойство, по которому строится иерархия.
+          // Активировать иерархию при загрузке lookup-формы.
+          inHierarchicalMode: true,
+
+          // Свойство, по которому строится иерархия.
+          hierarchicalAttribute: 'Name',
         };
       }
-    }
+    },
+  }
 });
 ```
 

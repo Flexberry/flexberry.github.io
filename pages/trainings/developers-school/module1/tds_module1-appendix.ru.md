@@ -40,6 +40,26 @@ lang: ru
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=WNVcwW7mC34' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module1/https.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">Протокол HTTPS</span></h4>
+                            <p>Доклад, посвященный деталям работы и настройки протоколов HTTP и HTTPS (Вячеслав Бирюков, Яндекс).</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=bTLJRhxXv58' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module1/lets-encrypt-service.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">Сервис Let’s Encrypt</span></h4>
+                            <p>Доклад, посвященный сервису Let’s Encrypt, который позволяет получить бесплатные SSL-сертификаты (Олег Матвиенко, Fleberry PLATFORM).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
                         <a href="{{ 'http://youtu.be/XR0YXH0ue2I' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module1/postman.jpg" | relative_url}}" class="products-img">
@@ -48,8 +68,6 @@ lang: ru
                             <p>Вебинар, на котором рассмотрены основы работы с Postman и Fiddler на практическом примере (Антон Серпутько, Terrasoft).</p>
                         </a>
                     </div>
-                </div>
-                <div class="row items">
                     <div class="col-sm-6 col-md-4 portfolio-item">
                         <a href="{{ 'http://youtu.be/woB6yiX-Ll8' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
@@ -59,6 +77,8 @@ lang: ru
                             <p>Доклад с митапа, на котором рассматривается создание тестовых коллекций в Postman на практическом примере (Алексей Чумагин, Provectus).</p>
                         </a>
                     </div>
+                </div>
+                <div class="row items">
                     <div class="col-sm-6 col-md-4 portfolio-item">
                         <a href="{{ 'https://www.youtube.com/watch?v=RXBe4bgjktA&start=4437' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
@@ -77,6 +97,60 @@ lang: ru
                             <p>Вебинар, на котором рассмотрены основы работы с SoapUI на практическом примере (Эд Изотов, Компьютерная школа Hillel).</p>
                         </a>
                     </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/playlist?list=PLvWwA9iDlhHA4kzfpRbu2cH-Z2ss6tB99' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module1/chrome-dev-tools.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">Инструменты разработчика Google Chrome</span></h4>
+                            <p>Серия скринкастов, посвященная использованию инструментов разработчика Google Chrome (Никита Красник, MakeWeb.me).</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse2">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse2">
+                Инфраструктура и архитектура веб-приложений</a>
+            </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=o0rudc7YTv0' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module1/web-projects-infrastructure.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">Инфраструктура веб-проектов</span></h4>
+                            <p>Урок, в котором рассматривается, что такое инфраструктура веб-проектов и зачем нужны дополнительные средства, не решающие бизнес-задачи напрямую: какими средствами окружить проект, чтобы разработка оказалась удобной и быстрой, а решение было стабильным (Андрей Прокопюк, Академия Яндекса).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=mWeq5Kh6tlM' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module1/software-architecture.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">Архитектура программного обеспечения</span></h4>
+                            <p>Урок, в котором рассматривается архитектура как часть разработки программного обеспечения: что это такое, какие функции она выполняет и какие проблемы решает. Также рассматриваются наиболее популярные для фронтенда архитектурные подходы: Model-View-Controller и Flux (Анна Карпелевич, Академия Яндекса).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=FF-GZ7iipwc' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module1/micro-service-architecture.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">Микросервисная архитектура приложений</span></h4>
+                            <p>Доклад с конференции HighLoad Siberia++ 2019, в котором рассматриваются плюсы и минусы микросервисной ахритектуры приложений, причины её популярности, а также пример проектирования микросервисной архитектуры и соответствующие технологии (Кирилл Ветчинкин, TYME).</p>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -85,5 +159,5 @@ lang: ru
 
 ## Вы можете
 
-* [Перейти к заданиям по модулю](tds_module1-tasks.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
-* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Перейти на страницу с учебными материалами модуля](tds_module1-learn.html)
+- [Перейти к заданиям по модулю](tds_module1-tasks.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+- <i class="fa fa-arrow-left" aria-hidden="true"></i> [Перейти на страницу с учебными материалами модуля](tds_module1-learn.html)

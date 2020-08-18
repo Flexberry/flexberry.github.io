@@ -6,7 +6,7 @@ toc: false
 permalink: en/tds_module1-tasks.html
 lang: en
 autotranslated: true
-hash: a4d333569e7287a3a3dca1242a2e3fc65f8cdfd9915a056fc8251e03a8ea10a9
+hash: 598277786d3981fac1b8efe0c6f086890bfb5d981909a7be833dac211ace5010
 ---
 
 ## The expected results of tasks execution
@@ -31,7 +31,7 @@ According to the results of assignments the student must:
 3. Each row in the list on the main page to add buttons to Change ««and»» Delete to perform the corresponding actions on a specific invoice using a form.
 4. For a list on the main page of the application must podderzhivaetsya filter the displayed rows by the value of the selected field (using the "equal" operation).
 5. For a list on the main page of the application must be supported by a full text search on all fields.
-6. For a list on the main page of the application must podderzhivaetsya sort one field in three modes: "sort", "ascending", "descending".
+6. For a list on the main page of the application must podderzhivaetsya sort one field in three modes: "unsorted", "ascending", "descending".
 7. Filter, sort and search for the list on the main page of the application must be able to work together, ie in the request must include all that the user has selected.
 
 **Approximate appearance of the application:**
@@ -48,12 +48,12 @@ According to the results of assignments the student must:
 1. The application must be implemented in JavaScript without using JS client-framwrok.
 2. To get a list of invoices must be queried to the server REST-based API.
 3. As a server for publishing a REST API require you to use the JSON Server](https://github.com/typicode/json-server).
-4. Data that should be published by the server at the start are in the file [db.json](https://github.com/Flexberry/flexberry-developers-school/blob/master/Tasks/1. Introduction to web development/db.json).
+4. Data that should be published by the server at the start are in the file [db.json](https://github.com/Flexberry/flexberry-developers-school/blob/master/Задания/Модуль 1. Introduction to web development/db.json).
 5. The server must be deployed on [Heroku](https://www.heroku.com/) using [this](https://github.com/jesperorb/json-server-heroku) tool.
-6. To make requests to the server from the application, you need to use AJAX (jQuery tools)
+6. To make requests to the server from the application, you need to use AJAX (it is possible by means of jQuery)
 7. The application can be both single-page and multi-page (SPA or MPA).
 8. Additional JavaScript libraries (like jQuery etc), CSS frameworks can be used.
-9. Additional libraries should be installed in the application using package managers [npm](https://www.npmjs.com/), [bower](https://bower.io/) or [yarn](https://yarnpkg.com/ru/) (optional).
+9. Additional libraries should be installed in the application using package managers like [npm](https://www.npmjs.com/), [bower](https://bower.io/) or [yarn](https://yarnpkg.com/ru/) (optional).
 10. The language of the user interface of the application can be in both Russian and English
 11. The app should be laid out on GitHub personal repository, and publish on [GitHub Pages](https://pages.github.com/).
 12. As a result of the assignment to send links to the GitHub repository page on GitHub Pages.
@@ -109,8 +109,8 @@ After you export your collections to start a prepared collection of tests on the
 1. [Official documentation for the JSON Server](https://github.com/typicode/json-server/blob/master/README.md).
 2. [Introduction to Postman](https://habr.com/ru/company/kolesa/blog/351250/)
 3. [Test collection Postman Echo](https://docs.postman-echo.com/) - to add a test collection in Postman, click on "Run in Postman" in the upper right corner. In a test collection you can see examples of tests for various test cases.
-4. [How to test query by using Fiddler](https://help.mindbox.ru/операции-и-интеграция/операции/как-тестировать-запросы-с-помощью-fiddler)
-5. [Basics of how to use Fiddler](https://learn.javascript.ru/fiddler)
+4. [How to test requests using Fiddler](https://help.mindbox.EN/operations-and-integration/surgery/how-test-queries-with-using-fiddler)
+5. [Basic use Fiddler](https://learn.javascript.ru/fiddler)
 6. [Instructions to install and run Fiddler on a Mac OS](https://blogs.msdn.microsoft.com/jpsanders/2018/02/08/usinginstalling-fiddler-on-mac-os/)
 
 ## You can

@@ -11,13 +11,13 @@ lang: ru
 
 1. [Введение в веб-разработку](tds_module1-about.html)
 2. [Технологии командной разработки](tds_module2-about.html)
-3. Погружение в JavaScript-разработку
+3. [Погружение в JavaScript-разработку](tds_module3-about.html)
 4. Разработка приложений на Ember.js
 5. RESTful-сервисы и протокол OData
 6. Flexberry Designer
-7. Flexberry Ember (frontend)
-8. Flexberry ORM
-9. Flexberry Ember (backend)
+7. [Flexberry ORM](tds_module6-about.html)
+8. Flexberry Ember (frontend)
+9. Flexberry ODataService (backend)
 10. Вспомогательные подсистемы Flexberry
 
 ## Вы можете

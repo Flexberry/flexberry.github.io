@@ -1,44 +1,44 @@
---- 
-title: Cancellation of removal used the values from the directory 
-sidebar: flexberry-orm_sidebar 
-keywords: data Objects, business server, restrictions 
-summary: meeting the challenges of uninformative messages when deleting object 
-toc: true 
-permalink: en/fo_delete-cancel.html 
-lang: en 
-autotranslated: true 
-hash: a91e6bd1c675227cf897743171869adac2c0ee4108027ca65a7bd39f22729210 
---- 
+---
+title: Cancellation of removal used the values from the directory
+sidebar: flexberry-orm_sidebar
+keywords: data Objects, business server, restrictions
+summary: meeting the challenges of uninformative messages when deleting object
+toc: true
+permalink: en/fo_delete-cancel.html
+lang: en
+autotranslated: true
+hash: 656a6ee899dd5a62f1d87bde4a99264458f3f4a2d4641fa9c58b616404aa04aa
+---
 
-## Used links wizard 
+## Used links wizard
 
-This article addresses the question **cancel** values from a table storing the master used in other objects. 
+This article addresses the question **cancel** values from a table storing the master used in other objects.
 
-The question of how to **remove** the values considered in the paper [Cascade deleting objects](fo_cascade-delete.html). 
+The question of how to **remove** the values considered in the paper [Cascade deleting objects](fo_cascade-delete.html).
 
-## Attempt removal wizard 
+## The attempt to delete the master
 
-Given the following diagram: 
+Given the following diagram:
 
-![](/images/pages/products/flexberry-orm/business-servers/kredit-diagramm.png) 
+![](/images/pages/products/flexberry-orm/business-servers/kredit-diagramm.png)
 
-If in the database there are objects of type `Клиент` referencing it when trying to delete object of type `Адрес` error is displayed: 
+If in the database there are objects of type `Клиент` referencing it when trying to delete object of type `Адрес` error is displayed:
 
-![](/images/pages/products/flexberry-orm/business-servers/delete-error.png) 
+![](/images/pages/products/flexberry-orm/business-servers/delete-error.png)
 
-The database will not delete such an object, and the user will be uninformative message. 
+The database will not delete such an object, and the user will be uninformative message.
 
-## solution to the problem 
+## The solution to the problem
 
-To solve this problem is to use the [business server](fo_bs-wrapper.html) of a deleted object: 
+To solve this problem is to use the [business server](fo_business-server.html) of a deleted object:
 
-* To know the number of objects that reference the deleted. 
-* If it is not equal to 0, throw exception with a user-friendly description of the problem. 
-* If necessary, catch the exception and handle in a special way. 
+* To know the number of objects that reference the deleted.
+* If it is not equal to 0, throw exception with a user-friendly description of the problem.
+* If necessary, catch the exception and handle in a special way.
 
-## Example 
+## Example
 
-For the above-described conditions: to add validation to a business class server `Адрес`: 
+For the above-described conditions: to add validation to a business class server `Адрес`:
 
 ```csharp
 if (UpdatedObject.GetStatus() == ObjectStatus.Deleted)
@@ -53,13 +53,13 @@ if (UpdatedObject.GetStatus() == ObjectStatus.Deleted)
         throw new Exception(string.Format("Could not remove Address. At this address is home to {0} client(s)(s)", clientsCount));
     }
 }
-``` 
+```
 
-As a result, when you try to remove the address at which the registered clients, the user will give the following message: 
+As a result, when you try to remove the address at which the registered clients, the user will give the following message:
 
-![](/images/pages/products/flexberry-orm/business-servers/delete-error-plus.png) 
+![](/images/pages/products/flexberry-orm/business-servers/delete-error-plus.png)
 
-The message has changed to be more meaningful. 
+The message has changed to be more meaningful.
 
 
 

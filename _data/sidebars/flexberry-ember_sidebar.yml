@@ -4,7 +4,7 @@
 entries:
 - title: Sidebar
   product: Flexberry Ember
-  version: 0.12.1
+  version: 2.3.0
   folders:
 
   - title: Getting started
@@ -20,6 +20,11 @@ entries:
     - title: Ember-CLI via Docker Image
       title_ru: Ember-CLI via Docker Image
       url: /fe_docker-for-ember-cli.html
+      output: web, pdf
+
+    - title: EmberJS build speedup
+      title_ru: Ускорение сборки EmberJS
+      url: /fe_speedup-ember-build.html
       output: web, pdf
 
     - title: Ember-CLI update
