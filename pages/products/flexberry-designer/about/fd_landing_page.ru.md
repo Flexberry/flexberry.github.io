@@ -42,8 +42,8 @@ Flexberry Designer является [продуктом платформы Flexb
 
 Существует несколько вариантов установки Flexberry Designer на различных реляционных СУБД:
 
-*   [из дистрибутива](fd_standalone-install.html).
-*   [с сайта продукта](fd_install.html).
+* [из дистрибутива](fd_standalone-install.html).
+* [с сайта продукта](fd_install.html).
 
 Для работы Flexberry Designer должна быть установлена корректная лицензия на все используемые продукты.
 
