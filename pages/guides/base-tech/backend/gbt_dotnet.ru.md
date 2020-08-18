@@ -17,7 +17,7 @@ lang: ru
 
 ## Примеры использования
 
-### Компоненты .NET Framework до версии 4.5 включительно:
+### Компоненты .NET Framework до версии 4.5 включительно
 
 ![Компоненты .NET Framework до версии 4.5 включительно](/images/pages/guides/base-technologies/backend/DotNet.png)
 
