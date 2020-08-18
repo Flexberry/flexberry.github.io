@@ -17,17 +17,7 @@ MongoDB имеет следующие уровни представления д
 2. Коллекция (таблица)- однотипные документы хранятся в отдельной коллекции. Документы в коллекции могуть быть проиндекированы. Доступ к докумениту возможен как по ключу, так и по значению полей.
 3. База данных - набор коллекций.
 
-Поддержка MongoDB реализована для большинства языков программирования:
-- C;
-- C++;
-- C#;
-- Java;
-- Node.js;
-- Perl;
-- PHP;
-- Python;
-- Ruby;
-- Scala.
+Поддержка MongoDB реализована для большинства языков программирования: ```C```, ```C++```, ```C#```, ```Java```, ```Node.js```, ```Perl```, ```PHP```, ```Python```, ```Ruby```, ```Scala```.
 
 Отличия MongoDB от реляционных баз данных:
 - Не  поддерживаются транзации. Атомарность гарантируется только на уровне целого документа, то есть частичного обновления документа произойти не может.
@@ -38,23 +28,40 @@ MongoDB имеет следующие уровни представления д
  - Формат хранения данных (документ) близок к формату представления данных в языках программирования (объектов) не требуется сложных и дорогостоящих запросов для получения нужного объекта.
 - Поддержка операций MapReduce для массовой параллельной обработки данных.
 
+## Пример использования
 
-##  Ссылки на материалы для изучения
+### Работа с MongoDB через СУБД Navicat
 
-* [Getting Started with MongoDB (MongoDB Shell Edition)](https://docs.mongodb.com/getting-started/shell/);
-* [MongoDB Краткое руководство](http://www.w3ii.com/ru/mongodb/mongodb_quick_guide.html);
-* [Руководство по MongoDB (Записки задумчивого программиста)](http://proselyte.net/tutorials/mongodb/);
-* [Руководство по безопасности MongoDB](http://security-corp.org/administration/sys_admin/39539-rukovodstvo-po-bezopasnosti-mongodb.html)
+![MongoDB](/images/pages/guides/base-technologies/storage/MongoDB.png)
 
-### Презентация
-* [MongoDB вводная лекция](https://www.youtube.com/watch?v=tgckAOyjXPI)
+## «Для тех, кто предпочитает один раз увидеть»
 
-### Рекомендованные книги
+<div class="thumb-wrap">
+    <iframe width="854" height="480" src="https://www.youtube.com/embed/tgckAOyjXPI" frameborder="0" allowfullscreen></iframe>
+</div>
 
-* [MongoDB в действии](https://www.ozon.ru/context/detail/id/8688130/);
-* [MongoDB в действии (электронный вариант)](https://cafe-aristokrat.nethouse.ru/static/doc/0000/0000/0165/165988.c2f3acpbax.pdf)
-* [The Little MongoDB Book](http://www.pvsm.ru/download/mongodb-ru.pdf);
-
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse1">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse1">
+                Больше информации по теме</a>
+            </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <p>Для установки mongoDB удобнее всего воспользоваться<a href="https://hub.docker.com/_/mongo/"> docker-образом MongoDB.</a></p>
+                    <p>Запуск сервера производится командой:</p>
+                    <p><pre>docker run --name mongodb -p 27017:27017 -d mongo</pre></p>
+                    <p>Для работы с сервером mongo в конейнере рекомендуется запустить в рамках запущенного контейнера mongo-shell командой:</p>
+                    <p><pre>docker exec -it mongodb mongo</pre></p>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
 
 ## Программное обеспечение
 
@@ -62,31 +69,108 @@ MongoDB имеет следующие уровни представления д
 * [Официальный Docker-образ MongoDB](https://hub.docker.com/_/mongo/)
 * [Официальный Docker-образ WEB-интерфейса MongoDB](https://hub.docker.com/_/mongo-express/)
 
-## Лабораторные работы и практические задания
+## Ресурсы
 
-Для установки mongoDB удобнее всего воспользоваться [docker-образом MongoDB](https://hub.docker.com/_/mongo/).
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse2">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse2">
+                Базовые ресурсы</a>
+            </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="https://docs.mongodb.com/getting-started/shell/">Getting Started with MongoDB (MongoDB Shell Edition)</a><i> — MongoDB Documentation</i></li>
+                    <li><a href="http://proselyte.net/tutorials/mongodb/">Руководство по MongoDB</a><i> — PROSELYTE Записки задумчивого программиста</i></li>
+                    <li><a href="http://security-corp.org/administration/sys_admin/39539-rukovodstvo-po-bezopasnosti-mongodb.html">Руководство по безопасности MongoDB</a><i> — security-corp.org</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
 
-Запуск сервера производится командой:
-```sh
-docker run --name mongodb -p 27017:27017 -d mongo
-```
-Для работы с сервером mongo в конейнере рекомендуется запустить в рамках запущенного контейнера mongo-shell командой:
-```sh
-docker exec -it mongodb mongo
-```
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse3">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse3">
+                Рекомендованные книги</a>
+            </h4>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li>MongoDB в действии: <a href="https://www.ozon.ru/context/detail/id/8688130/"><i> — ozon.ru</i></a> ;<a href="https://cafe-aristokrat.nethouse.ru/static/doc/0000/0000/0165/165988.c2f3acpbax.pdf"><i> — электронный вариант на cafe-aristokrat.nethouse.ru</i></a></li>
+                    <li><a href="http://www.pvsm.ru/download/mongodb-ru.pdf">The Little MongoDB Book (Маленькая книга о MongoDB)</a><i> — pvsm.ru</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
 
-В качестве практических заданий  для лабораторных работ можно использовать [Задания к лабораторной работе 5 MongoDB](https://github.com/mesdt/course/wiki/Tasks-Mongo). На данной странице приведены как [ссылка на тестовые наборы данных](https://yadi.sk/d/3l92O1G6fJst5), так и список заданий по выполнению операций на данных наборах данных.
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse4">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse4">
+                Лабораторные работы и практические задания</a>
+            </h4>
+        </div>
+        <div id="collapse4" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    В качестве практических заданий  для лабораторных работ можно использовать <a href="https://github.com/mesdt/course/wiki/Tasks-Mongo"> Задания к лабораторной работе 5 MongoDB</a>. На данной странице приведены как<a href="https://yadi.sk/d/3l92O1G6fJst5"> тестовые наборы данных</a>, так и список заданий по выполнению операций на данных наборах данных.
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
 
-## Примеры
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse5">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse5">
+                Примеры</a>
+            </h4>
+        </div>
+        <div id="collapse5" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    Примеры выполнения CRUD и aggregation операций над указанными в предыдущем разделе наборами данных приведены на страницах:
+                    <li><a href="https://github.com/mesdt/course/wiki/Cheat-list-Mongo">Команды CRUD в MongoDB</a><i> — github.сom</i></li>
+                    <li><a href="https://github.com/mesdt/course/wiki/Cheat-list-Mongo-Aggregation-Framework">Aggregation Framework в MongoDB</a><i> — github.сom</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
 
-Примеры выполнения CRUD и aggregation операций над указанными в предыдущем разделе наборами данных приведены на страницах: 
-* [Команды CRUD в MongoDB](https://github.com/mesdt/course/wiki/Cheat-list-Mongo)
-* [Aggregation Framework в MongoDB](https://github.com/mesdt/course/wiki/Cheat-list-Mongo-Aggregation-Framework)
-
-## Возможности по сертификации
-
-* [MongoDB Professional Certification Program ](https://university.mongodb.com/certification)
-* [Сертификация mongoDB](https://habrahabr.ru/post/273011/)
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse6">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse6">
+                Возможности по сертификации</a>
+            </h4>
+        </div>
+        <div id="collapse6" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="https://university.mongodb.com/certification">MongoDB Professional Certification Program</a><i> — MongoDB University</i></li>
+                    <li><a href="https://habrahabr.ru/post/273011/">Сертификация mongoDB</a><i> — habr</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
 
 ## Перейти
 
