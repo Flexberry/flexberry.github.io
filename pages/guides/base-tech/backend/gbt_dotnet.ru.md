@@ -4,7 +4,6 @@ keywords: Programming
 sidebar: guide-base-tech_sidebar
 toc: true
 permalink: ru/gbt_dotnet.html
-folder: guides/base-tech/backend/
 lang: ru
 ---
 
@@ -16,7 +15,7 @@ lang: ru
 
 .NET является патентованной технологией корпорации Microsoft и официально рассчитана на работу под операционными системами семейства Microsoft Windows, существуют независимые проекты (прежде всего это Mono и Portable.NET), позволяющие запускать программы .NET на некоторых других операционных системах. В настоящее время .NET Framework получает развитие в виде .NET Core, изначально предполагающей кросплатформенную разработку и эксплуатацию.
 
-##  Примеры использования
+## Примеры использования
 
 ### Компоненты .NET Framework до версии 4.5 включительно:
 
@@ -37,7 +36,7 @@ lang: ru
 * [LINQPad (The .NET Programmer’s Playground)](https://www.linqpad.net/)
 * [dotPeek (Free .NET Decompiler and Assembly Browser)](https://www.jetbrains.com/decompiler/)
 
-##  Ресурсы
+## Ресурсы
 
 <div class="panel-group">
     <div class="panel panel-default">
@@ -50,11 +49,11 @@ lang: ru
         </div>
         <div id="collapse1" class="panel-collapse collapse">
             <div class="panel-body">
-                <div>                    
+                <div>
                     <li><a href="https://msdn.microsoft.com/ru-ru/library/zw4w595w.aspx?f=255&MSPPError=-2147217396"> Общие сведения о платформе .NET Framework</a><i> - Microsoft Docs</i></li>
                     <li><a href="https://msdn.microsoft.com/ru-ru/library/bb399567(v=vs.110).aspx"> Общие сведения о платформе Entity Framework</a><i> - Microsoft Docs</i></li>
                     <li><a href="https://msdn.microsoft.com/ru-ru/library/aa139615.aspx">Разработка на .NET</a><i> - Microsoft Developer Network</i></li>
-                </div>   
+                </div>
             </div>
         </div>
     </div>
@@ -75,7 +74,7 @@ lang: ru
                     <li><a href="https://professorweb.ru/my/csharp/base_net/level1/net_index.php"> Основы .NET Framework</a><i> - professorweb.ru</i></li>
                     <li><a href="https://professorweb.ru/my/csharp/assembly/level1/assembly_index.php"> Сборки .NET Framework</a><i> - professorweb.ru</i></li>
                     <li><a href="https://professorweb.ru/my/csharp/optimization/level1/"> Оптимизация приложений на .NET Framework</a><i> - professorweb.ru</i></li>
-                </div>   
+                </div>
             </div>
         </div>
     </div>
@@ -96,7 +95,7 @@ lang: ru
                     <li><a href="https://www.youtube.com/playlist?list=PLvItDmb0sZw86Ph0CL6H2BfgXu47-rOvk"> Видеокурс WCF Essential</a><i> - youtube-аккаунт «ITVDN»</i></li>
                     <li><a href="https://www.youtube.com/watch?v=29sxHG3nFx8"> Сборка мусора в .NET</a><i> - youtube-аккаунт «Enterra Holdings Inc»</i></li>
                     <li><a href="https://www.youtube.com/watch?v=fqYaXrwEkl4"> Практические приёмы оптимизации .NET-приложений</a><i> - youtube-аккаунт «Alexander Byndyu»</i></li>
-                </div>   
+                </div>
             </div>
         </div>
     </div>
@@ -115,7 +114,7 @@ lang: ru
             <div class="panel-body">
                 <div>
                     <li><a href="http://www.ozon.ru/context/detail/id/21236101/"> CLR via C#. Программирование на платформе Microsoft.NET Framework 4.5 на языке C#</a><i> - ozon.ru</i></li>
-                </div>   
+                </div>
             </div>
         </div>
     </div>
@@ -135,7 +134,7 @@ lang: ru
                 <div>
                     <li><a href="http://www.specialist.ru/vendor/microsoft"> Курсы и сертификации Microsoft</a><i> - Специалист.ру</i></li>
                     <li><a href="https://habrahabr.ru/post/249331/"> Сертификация Microsoft</a><i> - habr.сom</i></li>
-                </div>   
+                </div>
             </div>
         </div>
     </div>

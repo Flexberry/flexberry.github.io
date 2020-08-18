@@ -4,7 +4,6 @@ keywords: Programming
 sidebar: guide-base-tech_sidebar 
 toc: true 
 permalink: en/gbt_dotnet.html 
-folder: guides/base-tech/backend/ 
 lang: en 
 autotranslated: true 
 hash: d11274de413916bdf452572aa1de4a88e47c9e7327d103db40623979cf6c781d 
