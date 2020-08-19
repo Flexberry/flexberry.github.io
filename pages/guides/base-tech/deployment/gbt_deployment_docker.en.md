@@ -4,9 +4,9 @@ keywords: Programming
 sidebar: guide-base-tech_sidebar
 toc: true
 permalink: en/gbt_deployment_docker.html
-lang: en 
-autotranslated: true 
-hash: 474b91a0f1d50cff280aea4f1614b82cca29d82985cccfb4cd7c1570a2973f4f
+lang: en
+autotranslated: true
+hash: a4c11f9dac18ef9aa110b8bf1e7bb18a7509ea194632771771baea783bf8ffcb
 ---
 
 ## Description
@@ -44,12 +44,12 @@ The technology for creating docker images based on existing You can examine on t
 
 The following images based on the base docker image distribution [ALTLinux/BaseALT P8](https://hub.docker.com/r/fotengauer/altlinux-p8/). In addition, created similar images on the basis of the distribution [ALTLinux C7](https://hub.docker.com/r/fotengauer/altlinux-p7/):
 
-* [kafnevod/altlinux.p7-apache2](https://hub.docker.com/r/kafnevod/altlinux.p7-apache2/) - image of the Apache2 server 
+* [kafnevod/altlinux.p7-apache2](https://hub.docker.com/r/kafnevod/altlinux.p7-apache2/) - image of the Apache2 server
 * [flexberry/altlinux.p7-apache2-mono4.6.2.7](https://hub.docker.com/r/flexberry/altlinux.p7-apache2-mono4.6.2.7/) image Apache2/Mono4 servers.
 
 These images use the certified distribution library ALTLinux C7 and, if necessary, can be used instead of the described in this document images [kafnevod/altlinux.p8-apache2](https://hub.docker.com/r/kafnevod/altlinux.p8-apache2/), [flexberry/altlinux.p8-apache2-mono4.6.2.7](https://hub.docker.com/r/flexberry/altlinux.p8-apache2-mono4.6.2.7/) collected on the distribution ALTLinux/BaseALT P8.
 
-When you run container You can pass it various parameters to bind TCP ports application container to various ports on the HOST system, mount the directory HOST system in the subdirectories of the container. 
+When you run container You can pass it various parameters to bind TCP ports application container to various ports on the HOST system, mount the directory HOST system in the subdirectories of the container.
 
 All these mechanisms allow you to run within a single OS:
 
@@ -59,11 +59,11 @@ All these mechanisms allow you to run within a single OS:
 * swarm (swarm) container that supports some сервис;
 * etc.
 
-### Image WEB server Apache2: kafnevod/altlinux.p8-apache2 
+### The image WEB server Apache2: kafnevod/altlinux.p8-apache2
 
-#### install the image and run the container
+#### Install the image and run the container
 
-Let's say You need to run Ember-app under WEB-server Apache2. 
+Let's say You need to run Ember-app under WEB-server Apache2.
 You can simply download the image server for distribution ALTLinux P8:
 
 ```sh
@@ -95,7 +95,7 @@ Column NAMES - the container name.
 Column CONTAINER ID - ID (UID) of the container.
 Column list of the PORTS attached ports container ports on the HOST system.
 The STATUS column - status of the container (start up, restart, ...).
-Column CREATED - time since the start of the container. 
+Column CREATED - time since the start of the container.
 The COMMAND column is the name and parameters of the root process of the container.
 
 Using the docker exec command You can start the process in the working container, for example, the pstree command (process tree):
@@ -111,7 +111,7 @@ httpd2---2*[httpd2---26*[{httpd2}]]
 
 ```
 
-You can also run bash-interpretator
+You can also run bash interpretator
 
 ```sh
 # docker exec -it apache2 bash
@@ -124,12 +124,12 @@ For example, to dynamically view the log files apache2-server with the command:
 # tail -f /var/log/httpd2/*log
 ```
 
-#### check the operation of the container
+#### Check the operation of the container
 
 To test the operation of the container type in the browser URL: http://localhost/.
 The browser will display the text: **It works!**
 
-> Here and below we consider the case when the container is launched on the user's computer. If You launch a container on a remote server, replace the server name in the URL from localhost to the IP address of the server or the domain name under which the server works. For testing purposes You can specify one or more domains of the server in the /etc/hosts file. 
+> Here and below we consider the case when the container is launched on the user's computer. If You launch a container on a remote server, replace the server name in the URL from localhost to the IP address of the server or the domain name under which the server works. For testing purposes You can specify one or more domains of the server in the /etc/hosts file.
 
 > If Your browser runs through a proxy server, describe the test addresses and server domains in the field _"do not use proxy server"_ window proxy server settings of the browser.
 
@@ -140,14 +140,14 @@ If You are in a container started the above command logs view **tail**, it will 
 172.18.0.1 - - [26/Dec/2016:10:25:17 +0000] "GET / HTTP/1.1" 200 45
 ```
 
-#### Start their own virtual website within container 
+#### Running your own virtual website within container
 
 The description file of the virtual sites on apache2 server container is in the file /conf/vhosts.conf image.
 To start their own virtual site (for example demo) You must:
 * Place the tree of the website in a separate directory (e.g. /var/www/vhosts/demo/) HOST system.
 Let this be a simple test page /var/www/vhosts/demo/index.html:
 
-```
+```html
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
   <head>
@@ -162,7 +162,7 @@ Let this be a simple test page /var/www/vhosts/demo/index.html:
 
 * Describe the configuration of that virtual host in the configuration file vhosts.conf a separate directory. For example, /etc/docker/apache2/conf/vhosts.conf:
 
-```
+```text
 NameVirtualHost *:80
 <VirtualHost *:80>
         DocumentRoot "/var/www/vhosts/demo/"
@@ -205,15 +205,14 @@ ip-адрес_сервера demo.local
 
 >If You run a virtual website for external access, instead of editing /etc/hosts file Zaregistriruytes domain (e.g. demo.ics.perm.ru) with your ISP domain and specify it in the description of the configuration file /etc/docker/apache2/conf/vhosts.conf.
 
-#### check the operation of the virtual site in the container
+#### Check the operation of the virtual site in the container
 
 To check the operation of the virtual website type in your browser's URL: http://demo.local/.
 The browser will display the text: **Wirtualny host demo.local container kafnevod/altlinux.p8-apache2 works!_**
 
+### Server image Mono/.NET applications flexberry/altlinux.p8-apache2-mono4.6.2.7
 
-### server Image Mono/.NET applications flexberry/altlinux.p8-apache2-mono4.6.2.7 
-
-#### install the image and run the container 
+#### Install the image and run the container
 
 To run mono applications download flexberry image/altlinux.p8-apache2-mono4.6.2.7:
 
@@ -221,7 +220,7 @@ To run mono applications download flexberry image/altlinux.p8-apache2-mono4.6.2.
 # docker pull flexberry/altlinux.p8-apache2-mono4.6.2.7
 ```
 
-Please note - as the way flexberry/altlinux.p8-apache2-mono4.6.2.7 is an extension of the image kafnevod/altlinux.p8-apache2, the layers of the file system that are already present in the parent image to the child image is not downloaded.
+Please note - as the way flexberry/altlinux.p8-apache2-mono4.6.2.7 is an extension of the image kafnevod/altlinux.p8-apache2, then the layers of the file system that are already present in the parent image to the child image is not downloaded.
 
 ```
 6ed0c8c1348d: Already exists 
@@ -238,33 +237,32 @@ To check the test website, run a container loaded image:
 # docker run -d -p 880:880 --name=apache2Mono flexberry/altlinux.p8-apache2-mono4.6.2.7
 ```
 
-#### check the operation of the container
+#### Check the operation of the container
 
 Check the status of the container:
 
 ```sh
-# docker ps -a -f name=apache2Mono
+docker ps -a -f name=apache2Mono
 CONTAINER_ID IMAGE                                    COMMAND CREATED     STATUS      PORTS                          NAMES
 38c7e2a7a8aa flexberry/altlinux.p8-apache2-mono4.6.2.7 httpd2 2minutes ago Up 2minutes 80/tcp, 0.0.0.0:880->880/tcp   apache2Mono
 ```
 
 Type in the browser the URL of the virtual test site with Mono-app http://localhost:880/. In the browser to display the result of the test mono-app - key **Click me!**.
 
-#### Start their own virtual Mono/.NET site within the container 
+#### Start your own virtual Mono/.NET site within the container
 
-Start your own virtual Mono/.NET site is equivalent to running [virtual site Apache2-server](#Запуск-own-virtual-website-in-part of container-apache):
+Start your own virtual Mono/.NET site is equivalent to running [virtual site Apache2-server](#Launch-own-virtual-website-in-part of container-apache):
 
 * Place trees site in a separate directory (for example /var/www/vhosts/myMonoApp/) HOST system.
 * Copy the virtual host configuration file of Mono application from a running container:
 
-```
-# docker cp apache2Mono:/conf/vhosts.conf /etc/docker/apache2/conf/vhosts.conf
-
+```sh
+docker cp apache2Mono:/conf/vhosts.conf /etc/docker/apache2/conf/vhosts.conf
 ```
 
 * Add the configuration of Your virtual host in the copied configuration file: /etc/docker/apache2/conf/vhosts.conf using the template:
 
-```
+```text
 Listen 881
 NameVirtualHost *:881
 
@@ -303,9 +301,9 @@ NameVirtualHost *:881
   flexberry/altlinux.p8-apache2-mono4.6.2.7
 ```
 
-#### check the operation of the virtual site in the container Mono/.NET applications
+#### Check the operation of the virtual site in the container Mono/.NET applications
 
-Refer the browser to the root page of the virtual website URL: http://localhost:881/. 
+Refer the browser to the root page of the virtual website URL: http://localhost:881/.
 
 ### Comments
 
@@ -323,7 +321,7 @@ To remove a completed container-use the rm command:
 # docker rm ID_контейнера_или_его_имя
 ```
 
-Intensive process of starting the containers (usually during testing) the list of stopped containers can be quite large and cleaning this list may create some temporary problems. 
+Intensive process of starting the containers (usually during testing) the list of stopped containers can be quite large and cleaning this list may create some temporary problems.
 If You do not plan to restart the container after its completion, or plan to repeatedly run the named container, use the --rm flag after an argument run start command. In this case, the container after automatically deleted from the list of completed containers. For example
 
 ```sh
@@ -331,7 +329,7 @@ docker run -d -p 80:80 --rm --name=apache2 kafnevod/altlinux.p8-apache2
 ```
 
 
-If You need to automatically restart a container after it (emergency) stop and automatically start the container after restarting the system, use the --restart flag=unless-stopped argument after the run command that starts the container.For example:
+If You need to automatically restart a container after it (emergency) stop and automatically start the container after restarting the system, use the --restart flag=unless-stopped argument after the run command that starts the container. For example:
 
 ```sh
 docker run -d -p 80:80 --restart=unless-stopped --name=apache2 kafnevod/altlinux.p8-apache2
@@ -350,19 +348,19 @@ When you run Linux containers in HyperV create a virtual machine of Linux, boot 
 ### Run Windows containers on Windows Server 2016 and Windows 10 Professional
 
 Supported [two startup mode of Windows-containers](https://dev-ops-notes.ru/docker/windows-контейнеры-и-docker/):
-* Windows Server container - the container runs within the HOST OS and uses the kernel and shared resources of the HOST system.
+* the Windows Server container - the container runs within the HOST OS and uses the kernel and shared resources of the HOST system.
 * Hyper-V container container runs in a separate virtual machine on Hyper-V.
-
 
 ## Links to materials for the study
 
 ### Lectures, courses, presentations, videos
 
 * [DOCKER: INTRODUCTION TO VIRTUALIZATION TECHNOLOGIES](https://dev-ops-notes.ru/docker/docker-введение-в-технологии-виртуализаци/)
-* [DOCKER: CONTAINER SECURITY](https://dev-ops-notes.ru/docker/docker-проверка-контейнеров-на-безопаснос/)
+* [DOCKER: the CONTAINER SECURITY](https://dev-ops-notes.ru/docker/docker-проверка-контейнеров-на-безопаснос/)
 
 
 #### Docker for Linux
+
 * [Docker Video Tutorials](https://www.docker.com/products/resources/video-tutorials)
 * [Docker YouTube Channel](https://www.youtube.com/user/dockerrun)
 * [5 must-watch videos Docker](https://opensource.com/business/15/5/must-watch-docker-videos)
@@ -379,17 +377,13 @@ Supported [two startup mode of Windows-containers](https://dev-ops-notes.ru/dock
 - [Play with Kubernetes Classroom](https://training.play-with-kubernetes.com/);
 
 #### Docker for Windows
-* [WINDOWS CONTAINERS AND DOCKER](https://dev-ops-notes.ru/docker/windows-контейнеры-и-docker/)
-* [WORKING WITH CONTAINERS AND DOCKER IN WINDOWS](https://dev-ops-notes.EN/docker/jobs-with-containers-in-windows-and-docker/)
+* [WINDOWS CONTAINERS AND DOCKER](https://dev-ops-notes.EN/docker/windows-containers-and-docker/)
+* [WORKING WITH CONTAINERS AND DOCKER IN WINDOWS](https://dev-ops-notes.ru/docker/работа-с-контейнерами-в-windows-и-docker/)
 * [Docker: Windows and Linux containers on a single machine](https://blog.amartynov.ru/docker-windows-и-linux-в-контейнерах-на-одной-машине/)
-
-
 
 ### Recommended books
 
 * [The Docker Book. "James Turnbull" November 26, 2016](https://www.dockerbook.com/TheDockerBook_sample.pdf)
-
-
 
 ## Software
 
@@ -404,4 +398,4 @@ Supported [two startup mode of Windows-containers](https://dev-ops-notes.ru/dock
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -1,44 +1,49 @@
----
-title: Prototyping
-sidebar: flexberry-orm_sidebar
-keywords: DataObject, Flexberry ORM, methods
-summary: Features of creating a data object based on the existing
-toc: true
-permalink: en/fo_data-object-prototype.html
-lang: en
----
+--- 
+title: Prototypical 
+sidebar: flexberry-orm_sidebar 
+keywords: DataObject Flexberry ORM methods 
+summary: Features create data object based on an existing 
+toc: true 
+permalink: en/fo_data-object-prototype.html 
+lang: en 
+autotranslated: true 
+hash: 171c606b21a40589f787377dca328496c53e94b8d4865521748a4ecb96eff925 
+--- 
 
-`Прототипизация` - создание [объекта данных](fo_data-object.html) на основе другого.
+`Прототипизация` - create [data object](fo_data-object.html) on the basis of another. 
 
-## Методы для прототипизации DataObject
+## Methods for prototypical DataObject 
 
-Для прототипизации [DataObject](fo_data-object.html) существует метод `Prototyping`.
+For prototypical [DataObject](fo_data-object.html) there is a method `Prototyping`. 
 
 ```csharp
-/// <summary>
-/// Прототипизировать
-/// </summary>
-/// <param name="withDetails">с детейлами или без</param>
+/// <summary> 
+/// Prototypicality 
+/// </summary> 
+/// <param name="withDetails">detalaj or without</param> 
 public virtual void Prototyping(bool withDetails)
-```
+``` 
 
-Также существует перегрузка данного метода без параметров (в этом случае будет просто произведён вызов метода `Prototyping(true)`).
+There is also an overload of this method without any parameters (in this case just made the call to the method `Prototyping(true)`). 
 
-## Прототипизация DataObject
+## Prototypical DataObject 
 
-При прототипизации происходят следующие действия:
+If prototypization the following actions occur: 
 
-* сбрасывается значение [первичного ключа объекта](fo_primary-keys-objects.html) (генерируется новое);
-* [статус объекта](fo_object-status.html) изменяется на `ObjectStatus.Created`;
-* [состояние загрузки объекта](fo_object-status.html) устанавливается в `LoadingState.NotLoaded`;
-* [вызывается метод InitDataCopy](fo_data-object-copy.html).
+* resets the [primary key object](fo_primary-keys-objects.html) (new generated); 
+* [status](fo_object-status.html) is changed to `ObjectStatus.Created`; 
+* [download status object](fo_object-status.html) is set to `LoadingState.NotLoaded`; 
+* [a method is called InitDataCopy](fo_data-object-copy.html). 
 
-Если переданный параметр `withDetails` имеет значение `true`, то прототипизация будет выполнена и для всех детейлов.
+If the passed parameter has a value `withDetails` `true`, prototypical will be performed for all detailov. 
 
-## Примечания по протитопизации
+## notes proletarization 
 
-* Получить [первичный ключ объекта](fo_primary-keys-objects.html), который он имел до прототипизации, можно через свойство `PrototypeKey`.
-* Очистка свойства `PrototypeKey` происходит при вызове метода `ClearPrototyping` (если вызов был произведён без параметров или значение параметра было `true`, то соответствующее свойство будет очищено и у детейлов).
-* Вызов метода `ClearPrototyping(true)` также происходит при сохранении объекта через [SQLDataService](fo_sql-data-service.html).
-* Узнать, был ли объект прототипизирован можно через свойство `Prototyped`.
-* При выполнении [дочитки объекта](fo_additional-loading.html) сервис данных будет осуществлять вычитку свойств прототипизированного объекта, используя в качестве [первичного ключа](fo_primary-keys-objects.html) `PrototypeKey` (но при выполнении [UpdateObject](fo_data-service.html) в БД будет создан новый объект).
+* Get a [primary key object](fo_primary-keys-objects.html), which he had before prototypically, through property `PrototypeKey`. 
+* Cleaning properties `PrototypeKey` happens when you call a method `ClearPrototyping` (if the call was made with no parameters or the parameter value was `true`, the corresponding property will be cleared and datalow). 
+* Call method `ClearPrototyping(true)` also happens when saving an object via the [SQLDataService](fo_sql-data-service.html). 
+* To know whether prototipazione through the property `Prototyped`. 
+* When you perform [decide object](fo_additional-loading.html) the data service will carry out the proofreading properties prototipazione object, using as [primary key](fo_primary-keys-objects.html) `PrototypeKey` (but when you run [UpdateObject](fo_data-service.html) in the database will create a new object).
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

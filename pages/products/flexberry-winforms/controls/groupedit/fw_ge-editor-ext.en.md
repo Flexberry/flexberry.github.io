@@ -1,42 +1,44 @@
----
-title: Editing the details on a separate form
-sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Winforms, Controls, GroupEdit, GEEditorExt
-summary: Правила подключения компонента для редактирования детейлов на отдельной форме
-toc: true
-permalink: en/fw_ge-editor-ext.html
-lang: en
----
+--- 
+title: Editing of datalow on a separate form 
+sidebar: flexberry-winforms_sidebar 
+keywords: Flexberry Winforms, Controls, GroupEdit, GEEditorExt 
+summary: the connection Rules component to edit detailov on a separate form 
+toc: true 
+permalink: en/fw_ge-editor-ext.html 
+lang: en 
+autotranslated: true 
+hash: 07eaebeca0190d1fd0a74176753f4047d9894ef63d72e164a7fc0ae9bbd23428 
+--- 
 
-`GEEditorExt` - расширение компонента [GroupEdit](fw_group-edit.html), позволяющее организовать следующее поведение:
+`GEEditorExt` - extension component [GroupEdit](fw_group-edit.html), allowing to organize the following behavior: 
 
-1. На панель инструментов `GroupEdit` добавляются кнопки "Создать" и "Открыть"
-2. При нажатии на кнопку "Открыть" поднимается форма редактирования, соответствующая типу объекта в `GroupEdit`. При поднятии формы данные, введённые в `GroupEdit`, отражаются на форме.
-3. При нажатии на "Создать" поднимается форма редактирования детейла, соответствующая типу объекта в `GroupEdit`, при сохранении которого создаётся строчка в `GroupEdit`.
-4. При сохранении детейла на форме редактирования не происходит запись в БД - детейл запишется в БД вместе со своим мастером при его сохранении.
-5. В  случае, когда объект открыт на форме редактирования, запрещено его редактировать в `GroupEdit`(выдаётся предупреждение и выводится на передний план форма редактирования). Для согласованности отображения в `GroupEdit` изменённых на форме данных синхронизируется отображение данных при выходе с формы редактирования и при ее активации.
+1. Toolbar `GroupEdit` added buttons "Create" and "Open" 
+2. When you click on the button "Open" up the edit form corresponding to the object type in `GroupEdit`. When you pick up the form data entered in `GroupEdit` are recorded on the form. 
+3. When you click on "Create" up edit form of detail corresponding object type in `GroupEdit`, while maintaining which creates a line in the `GroupEdit`. 
+4. When you save detail on the edit form does not record in the database - detail will be recorded in the database along with his master when it is saved. 
+5. In the case when the object is open for editing, it is forbidden to edit it in `GroupEdit`(a warning message is issued and displayed on the foreground of the edit form). For consistency of display in `GroupEdit` changed to the form data synchronized display of data in the edit form and when you activate it. 
 
-{% include important.html content="GEEditorExt не входит в стандартную поставку Flexberry Winforms." %}
+{% include important.html content="GEEditorExt not supplied as standard Flexberry Winforms." %} 
 
-## Как подключить GEEditorExt
+## How to connect GEEditorExt 
 
-Подключение `GEEditorExt` рассмотрено на примере: "Покупатель" - это [класс мастера](fd_key-concepts.html), "Покупка" - [класс детейла](fd_key-concepts.html).
+Connection `GEEditorExt` considered by the example: "Buyer" is [class wizard](fd_key-concepts.html): Purchase - [class of detail](fd_key-concepts.html). 
 
-![Пример диаграммы](/images/pages/products/flexberry-winforms/controls/groupedit/class-diagram_-customer-purchase2.jpg)
+![Example diagrammy](/images/pages/products/flexberry-winforms/controls/groupedit/class-diagram_-customer-purchase2.jpg) 
 
-{% include note.html content="Для редактирования детейлов необходимо сгенерировать соответствующую форму редактирования (при быстрой прототипизации она не создаётся)." %}
+{% include note.html content="To edit detailov you must generate the appropriate form of editing (the quick prototypization it is not created)." %} 
 
-1.В классе формы агрегатора объявляется переменную типа `GEEditorExt`:
+1.In the form class aggregator declares a variable of type `GEEditorExt`: 
 
 ```csharp
 public class WinformC__ПокупательE : ICSSoft.STORMNET.UI.BaseWinEdit, IIS.MasterField.DPDIC__ПокупательE
 {
     IIS.AMS02.GEEditorExt extGEПокупки;
-    //...
+    //... 
 }
-```
+``` 
 
-2.В метод `Edit` формы агрегатора добавляется код  по инициализации данной переменной. Конструктору класса `GEEditorExt` в качестве параметра передается [`GroupEdit`](fw_group-edit.html), функциональность которого планируется расширить.
+2.In the method `Edit` forms of the aggregator adds code for initialization of this variable. The class constructor `GEEditorExt` as a parameter is passed [`GroupEdit`](fw_group-edit.html), the functionality of which is expected to increase. 
 
 ```csharp
 public class WinformC__ПокупательE : ICSSoft.STORMNET.UI.BaseWinEdit, IIS.MasterField.DPDIC__ПокупательE
@@ -44,37 +46,37 @@ public class WinformC__ПокупательE : ICSSoft.STORMNET.UI.BaseWinEdit, 
     IIS.AMS02.GEEditorExt extGEПокупки;
     public override void Edit(ICSSoft.STORMNET.DataObject dataobject, string contpath, string propertyname, object tag)
     {
-        //...
+        //... 
         #region возможность создания и редактирования реагирований на отдельной формы из GE
                         if (this.extGEПокупки == null)
                                 this.extGEПокупки = new IIS.AMS02.GEEditorExt(Покупки);
                 #endregion возможность создания и редактирования реагирований на отдельной формы из GE
-        //...
+        //... 
     }
-    //...
+    //... 
 }
-```
+``` 
 
-{% include note.html content="Вместо пунктов 1 и 2, если не надо совершать дополнительных действий с кнопками (скрывать их, переименовывать и т.п.) можно использовать метод-расширение у GroupEdit." %}
+{% include note.html content="in place of paragraphs 1 and 2, if it is not necessary to perform additional actions with the buttons (hide, rename them, etc.) you can use the extension from the GroupEdit." %} 
 
-3.В метод `GetEditor` формы агрегатора добавляется код, указывающий, какую форму поднимать для редактирования конкретного детейла:
+3.In the method `GetEditor` forms of the aggregator code is added that indicates which form to raise for editing specific detail: 
 
 ```csharp
 public class WinformC__ПокупательE : ICSSoft.STORMNET.UI.BaseWinEdit, IIS.MasterField.DPDIC__ПокупательE
 {
     public override Type GetEditor(ICSSoft.STORMNET.UI.EventType eventtype, ICSSoft.STORMNET.DataObject dataobject, string contpath, string propertyname)
     {
-        if ((propertyname == "Покупка"))
+        if ((propertyname == "Buy"))
         {
-            return System.Type.GetType("IIS.MasterField.C__ПокупкаE");
+            return System.Type.GetType("IIS.MasterField.C__Pokupke");
         }
-        //...
+        //... 
     }
-    //...
+    //... 
 }
-```
+``` 
 
-4.Переопределить метод `PromtUserForActionAtClose` формы детейла (это связанно с особенностью 1 класса `GEEditorExt`):
+4.Override method `PromtUserForActionAtClose` forms of detail (this is due to the feature of the 1st class `GEEditorExt`): 
 
 ```csharp
 public class WinformC__ПокупкаE : ICSSoft.STORMNET.UI.BaseWinEdit, IIS.MasterField.DPDIC__ПокупкаE
@@ -82,58 +84,62 @@ public class WinformC__ПокупкаE : ICSSoft.STORMNET.UI.BaseWinEdit, IIS.Ma
     public override ICSSoft.STORMNET.UI.DialogResult PromtUserForActionAtClose()
     {
         if (EditManager.DataObject.GetStatus() == ICSSoft.STORMNET.ObjectStatus.Created &&
-            EditManager.DataObject.DynamicProperties.ContainsKey("Псевдосохранен") ||
+            EditManager.DataObject.DynamicProperties.ContainsKey("Pseudocoherent") ||
             EditManager.DataObject.GetStatus() == ICSSoft.STORMNET.ObjectStatus.UnAltered &&
             EditManager.DataObject.GetAlteredPropertyNames().Length == 0)
             return ICSSoft.STORMNET.UI.DialogResult.Yes;
         return base.PromtUserForActionAtClose();
     }
-    //...
+    //... 
 }
-```
+``` 
 
-5.В независимой форме детейла переопределить метод вычитки из БД (для того, чтобы не вычитывался полностью объект при поднятии формы редактирования):
+5.Independently of detail to override the reading from the DB (in order not shall be deducted the entire object when lifting the edit form): 
 
 ```csharp
 public class C__ПокупкаE : ICSSoft.STORMNET.UI.BaseIndpdEdit
 {
     protected override void PrepareDataObjectForEdit(ICSSoft.STORMNET.DataObject dobject)
     {
-        // *** Start programmer edit section *** (PrepareDataObjectForEdit (DataObject) start)
+        // *** Start programmer edit section *** (PrepareDataObjectForEdit (DataObject) start) 
         if (dobject.GetStatus(false) == ICSSoft.STORMNET.ObjectStatus.Altered)
         {
-            m_objView = ICSSoft.STORMNET.Information.GetView("C__ПокупкаE", typeof(IIS.MasterField.Покупка));
+            m_objView = ICSSoft.STORMNET.Information.GetView("C__Pokupke", typeof(IIS.MasterField.Покупка));
             return;
         }
-        // *** End programmer edit section *** (PrepareDataObjectForEdit (DataObject) start)
-        m_objView = ICSSoft.STORMNET.Information.GetView("C__ПокупкаE", typeof(IIS.MasterField.Покупка));
+        // *** End programmer edit section *** (PrepareDataObjectForEdit (DataObject) start) 
+        m_objView = ICSSoft.STORMNET.Information.GetView("C__Pokupke", typeof(IIS.MasterField.Покупка));
         if ((dobject.GetStatus(false) != ICSSoft.STORMNET.ObjectStatus.Created)
                     || dobject.Prototyped)
         {
             ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(m_objView, dobject, false, false);
             dobject.InitDataCopy();
         }
-        // *** Start programmer edit section *** (PrepareDataObjectForEdit (DataObject) end)
+        // *** Start programmer edit section *** (PrepareDataObjectForEdit (DataObject) end) 
 
-        // *** End programmer edit section *** (PrepareDataObjectForEdit (DataObject) end)
+        // *** End programmer edit section *** (PrepareDataObjectForEdit (DataObject) end) 
     }
-    //...
+    //... 
 }
-```
+``` 
 
-Здесь предполагается, что представления для отображения детейла на форме редактирования и в [GroupEdit](fw_group-edit.html) совпадают (т.е. это одно и то же представление или представления с одинаковым набором атрибутов). Если представления разные, то код в скобках программиста в приведенном выше методе `PrepareDataObjectForEdit` надо заменить на такой:
+It assumes that the view to display detail on the edit form and in [GroupEdit](fw_group-edit.html) are the same (i.e. it is the same view, or views with the same set of attributes). If the views are different, then the code between the brackets of the programmer in the above method `PrepareDataObjectForEdit` should be replaced by this: 
 
 ```csharp
-m_objView = ICSSoft.STORMNET.Information.GetView("C__ПокупкаE", typeof(IIS.MasterField.Покупка));
+m_objView = ICSSoft.STORMNET.Information.GetView("C__Pokupke", typeof(IIS.MasterField.Покупка));
 ICSSoft.STORMNET.View ge_View = ICSSoft.STORMNET.Information.GetView("C__ПокупкаD", typeof(IIS.MasterField.Покупка));
-//дочитываем то, что есть на форме редактирования, но нет в GE
+//finish what is on the edit form, but not in the GE 
 ICSSoft.STORMNET.View дочитать_View = m_objView - ge_View;
-//из этого представления убираем свойства, которые могли быть изменены на форме редактирования,
-//если она открывалась ранее
+//from this view, remove properties that could be changed on the edit form, 
+//if it has been opened before 
 foreach (string altprop in dobject.GetAlteredPropertyNames())
     дочитать_View.RemoveProperty(altprop);
 ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(дочитать_View, dobject, false, false);
 return;
-```
+``` 
 
-Однако в данном случае (в случае разных представлений) проявится особенность: если открыть мастер, ничего на нем не менять, открыть детейл на редактирование и сразу закрыть форму, то она закроется без вопроса о сохранении, а форма мастера спросит о сохранении. Это связано с тем, что после вычитывания дополнительных свойств детейла его набор атрибутов в копии мастера будет отличаться от набора в самом мастере. Избавиться от этого можно ручным исправлением копии мастера перед открытием формы редактирования детейла.
+However, in this case (in the case of different representations) will appear feature: if you open the master, with nothing else on it not to change, to open detail on the edit and close the form, it closes without issue of preservation and the form wizard will ask about saving. This is due to the fact that after subtraction of additional properties of detail its set of attributes in the copy of the master will differ from a set in the wizard. To get rid of it by manual correction of the copy wizard before opening the edit form of detail. 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

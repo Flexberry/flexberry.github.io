@@ -53,6 +53,7 @@ lang: ru
       <!-- … -->
       <!-- Конфигурация сервиса кеширования. -->
       <register type="NewPlatform.Flexberry.Caching.ICacheService, NewPlatform.Flexberry.Caching" mapTo="NewPlatform.Flexberry.Caching.MemoryCacheService, NewPlatform.Flexberry.Caching">
+        <lifetime type="singleton" />
         <constructor>
           <param name="cacheName" type="System.String" value="defaultCacheForApplication" />
         </constructor>
@@ -62,6 +63,7 @@ lang: ru
       <register name="securityManagerWithoutRightsCheck" type="ICSSoft.STORMNET.Security.ISecurityManager, ICSSoft.STORMNET.DataObject"
          mapTo="ICSSoft.STORMNET.Security.EmptySecurityManager, ICSSoft.STORMNET.DataObject">
         <lifetime type="singleton" />
+        <constructor />
       </register>
 
       <!-- Сервис данных, через который будет идти запрос к полномочиям. Здесь дублируется тип сервиса данных, а также указывается строка соединения с БД полномочий. Использовать данный сервис данных где-либо ещё крайне нежелательно. -->
@@ -80,6 +82,7 @@ lang: ru
       <!-- Сервис кэширования, который будет использоваться для временного хранения настроек, вычитанных из базы данных для менеджера полномочий. По имени данного кэша его можно полностью очистить в случае необходимости. -->
       <register name="cacheServiceForSecurityManager" type="NewPlatform.Flexberry.Caching.ICacheService, NewPlatform.Flexberry.Caching"
         mapTo=" NewPlatform.Flexberry.Caching.MemoryCacheService, NewPlatform.Flexberry.Caching" >
+        <lifetime type="singleton" />
         <constructor>
           <!-- Имя кэша, по которому можно будет осуществить его очистку. -->
           <param name="cacheName" type="System.String" value="cacheForSecurityManager" />
@@ -88,6 +91,7 @@ lang: ru
       
       <!-- Сервис кэширования, который будет использоваться для временного хранения настроек, вычитанных из базы данных для менеджера агентов. По имени данного кэша его можно полностью очистить в случае необходимости. -->
       <register name="cacheServiceForAgentManager" type="NewPlatform.Flexberry.Caching.ICacheService, NewPlatform.Flexberry.Caching" mapTo="NewPlatform.Flexberry.Caching.MemoryCacheService, NewPlatform.Flexberry.Caching">
+        <lifetime type="singleton" />
         <constructor>
           <param name="cacheName" type="System.String" value="cacheForAgentManager" />
         </constructor>

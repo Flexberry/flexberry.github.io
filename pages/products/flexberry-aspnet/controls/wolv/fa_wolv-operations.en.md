@@ -1,105 +1,110 @@
 ---
-title: Операции WebObjectListView
+title: Operations WebObjectListView
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: en/fa_wolv-operations.html
 lang: en
+autotranslated: true
+hash: 7e264dc36a64f40d050c1ab6ece92addf405073f2d8c81765a8a2c239050dbea
 ---
 
-При помощи Операций можно настроить поведение WebObjectListView.
+By using Operations, you can configure the behavior WebObjectListView.
 
-Получить доступ к Операциям можно через свойство `Operations` контрола.
+To access the Transactions through the property `Operations` control.
 
-Чтобы включить отображение кнопки печати списка, необходимо выполнить следующий код при загрузке страницы:
+To enable print button, list, execute the following code when the page loads:
 
 ```csharp
 webObjectListView1.Operations.Print = true;
 ```
 
-## Операции по умолчанию
+## The default operation
 
-Настроить операции по умолчанию для всего приложения сразу можно через файл конфигурации `web.config`
+To set the default operation for all applications through the configuration file `web.config`
 
-Для этого необходимо добавить ключ `WOLVDefaultOperations`, в качестве значения указать список операций через запятую.
-Ключ добавляется в секцию `configuration` - `appSettings`:
+For this you need to add the key `WOLVDefaultOperations`, as the value to specify the list of operations separated by commas.
+The key is added to the section `configuration` - `appSettings`:
 
 ```xml
 <configuration>
   <appSettings>
-    <!--Другие ключи-->
+    <!--Other keys-->
     <add key="WOLVDefaultOperations" value="Refresh,Filter,Search,New,Delete,ShowMarks,EditInRow,ConfigureColumns,NewByExampleInRow,ExportToExcel,AllowColumnResizing,LimitEdit,EditOnClickInRow,FixTableHeader,HighlightObject" />
-    <!--Другие ключи-->
+    <!--Other keys-->
   </appSettings>
 </configuration>
 ```
 
-## Список операций
+## The list of operations
 
-| Операция | Описание |
+| Transaction | Description |
 | -------- | -------- |
-| AdjustListHeight | Отображать WOLV на всю высоту страницы |
-| AllowColumnResizing | Дать пользователю возможность изменять ширину столбцов списка
-| CheckChanges | Включать ли проверку изменений на форме редактирования при переходе с неё, инициированным данным списком (по умолчанию true). Подробнее см. ниже. |
-| ConfigureColumns  | Кнопка на тулбаре для редактирования отображения столбцов |
-| Delete  | Кнопка "Удалить" |
-| DeleteInRow  | Кнопка "Удалить" в строке |
-| Edit  | Кнопка "Редактировать" |
-| EditInRow  | Кнопка "Редактировать" в строке |
-| EditOnClickInRow  | Поднимать на редактирование по клику в строке (если форма не на лукапе) |
-| ExportToExcel  | Кнопка "Экспорт в Excel" |
-| ExportToXML  | Кнопка "Экспорт в XML" |
-| Filter  | Кнопка "Фильтр" (простой) |
-| FilterStartPercent  | Фильтровать с уже подставленными % в начале строки (по умолчанию true) |
-| FilterEndPercent  | Фильтровать с уже подставленными % в конце строки (по умолчанию true) |
-| FilterSubString  | Фильтровать по подстроке: % уже подставлены в начало и конец строки, все пробелы так же заменяются на % (по умолчанию false). |
-| FixTableHeader | Зафиксировать заголовок таблицы. При прокрутке заголовок будет оставаться на месте. |
-| FullViewSearch  | Изменить поиск на поиск по всем полям ([подробнее](fa_wolv-search.html)). |
-| HighlightObject  | Подсветка объекта, pk которого был указан в URL ("PK" или WOLVSO) (по умолчанию true). Подсветка делается проставлением класса для td |
-| LimitEdit | Расширенный редактор ограничений |
-| MultiSelect  | Множественное выделение объектов |
-| New  | Кнопка "Новый" |
-| NewByExampleInRow  | Кнопка "Создать на основе" в строке (подробнее см. [здесь](fa_web-data-object-prototyping.html)) |
-| OpenEditorInNewWindow | Открывать форму редактирования (при создании\редактировании\просмотре объекта) в другом окне браузера |
-| OpenEditorInModalWindow  | Отображать форму редактирования (при создании\редактировании\просмотре объекта) в модальной форме. Работает только если `OpenEditorInNewWindow == true`; Кастомный заголовок модальному окну можно задать через необязательное свойство WOLV-a `EditorInModalWindowCaption` |
-| Order | Кнопки перемещения строк при наличии в представлении Oreded-атрибутов |
-| Print  | Печать списка |
-| ReadCommittedUsage  | Отменить использование грязного чтения |
-| ReturnUrlParams | Параметры, которые допишутся в `ReturnUrl`. Должны быть в формате `param1=value1&amp;param2=value2`. Если на списковой форме уже есть параметр, который передается через `ReturnUrlParams`, то приоритет будет у `ReturnUrlParams` (т.е. перезапишется параметр, находившийся на списковой форме). |
-| Refresh | Кнопка "Обновить" |
-| Search  | Кнопка "Поиск" |
-| ShowInRow | Отображать кнопку для поднятия формы просмотра объекта. Если она не установлена, то используется форма редактирования в режиме Read-Only. |
-| ShowMarks  | Показывать галки |
-| SwitchNextPage | Переход на следующую страницу при редактировании последнего объекта на текущей странице |
-| UseLocalizedCaptions | Использование механизма локализации заголовков колонок |
-| OverflowWordEllipsis | Задает поведение содержимого ячейки при переполнении по ширине столбца. Если опция установлена в False (по умолчанию), то происходит перенос содержимого ячейки на новую строку. Если опция установлена в True, то содержимое ячейки обрезается и в конец добавляется многоточие. |
-| UserColumnsSort | Включает или отключает настройку пользователем сортировки списка и восстановление пользовательских настроек сортировки. |
+| AdjustListHeight | Show on WOLV the entire height of the page |
+| AllowColumnResizing | Give the user the ability to change the width of list columns
+| CheckChanges | whether to Enable verification of changes on the edit form when you move from it, triggered by this list (default true). See below for more information. |
+| ConfigureColumns | Button on the toolbar to edit the column display |
+Delete The "Delete" Button |
+| DeleteInRow | Remove Button in the line |
+| Edit | Edit Button |
+| EditInRow | Edit Button in the line |
+| EditOnClickInRow | Up to edit by clicking the line (if the form is not on lukapa) |
+| ExportToExcel | Button "Export to Excel" |
+| ExportToXML | Button "Export to XML" |
+| Filter | "Filter" Button (simple) |
+| FullViewFilter | Button "Filter on all fields" |
+| FilterStartPercent | Filter already filled with % at the beginning of the string (default true) |
+| FilterEndPercent | Filter already filled with % in the end of the row (default true) |
+| FilterSubString | Filter by a substring: % already substituted at the beginning and end of the string, all spaces are also replaced with % (default false). |
+| FixTableHeader | freeze table header. When you scroll the header will stay in place. |
+| FullViewSearch | Change from search to search all fields ([more](fa_wolv-search.html)). |
+| FullViewSearchSplitBySpace | When using the search all view properties to replace spaces with %. |
+| HierarchyDisableAutoSelectChildren | Disable automatic selection of child items when you click the parent in the presence of hierarchy in the list. |
+| HighlightObject | Backlight object pk which was specified in the URL ("PK" or WOLVSO) (default true). Highlighting is done by selecting the class for td |
+| LimitEdit | Advanced editor |
+| MultiSelect | Multiple selection |
+| New | "New" Button |
+| NewByExampleInRow | Button "Create" in the string (see [here](fa_web-data-object-prototyping.html)) |
+| OpenEditorInNewWindow | Open the edit form (when you create\edit\view the object) in another browser window |
+| OpenEditorInModalWindow | Show the edit form (when you create\edit\view the object) in a modal form. Only works if `OpenEditorInNewWindow == true`; Custom title of modal window can be set via the optional property WOLV-a `EditorInModalWindowCaption` |
+| Order | Buttons to move the rows when the view Oreded attributes |
+| Print | Print list |
+| ReadCommittedUsage | Cancel the use of dirty read |
+| ReturnUrlParams | Options that will be added in `ReturnUrl`. Must be in the format `param1=value1&amp;param2=value2`. If the list form is already a parameter that is passed through `ReturnUrlParams`, the priority will have `ReturnUrlParams` (i.e. overwrite option were on a list form). |
+| Refresh | "Refresh" Button |
+| Search | Search |
+| ShowInRow | Display button to set the view object. If it is not set, it uses edit form in Read-Only mode. |
+| ShowMarks | Show jackdaws |
+| SwitchNextPage | go to the next page when you edit the last item on the current page |
+| UseLocalizedCaptions | use of the mechanism of localization of the column headers |
+| OverflowWordEllipsis | Sets the behavior of the cell contents overflow the width of the column. If the option is set to False (the default), then transfer the contents of a cell on a new line. If this option is set to True, then the contents of the cell will be clipped and added to the end of the ellipsis. |
+| UserColumnsSort | Enables or disables setting the user sort the list and restore the user settings sort. |
 
 ## CheckChanges
 
-Данное свойство работает только в случаях, когда WOLV располагается на форме редактирования.
+This property works only in cases where the WOLV is on the edit form.
 
-При попытке уйти со страницы (к примеру, нажав на кнопку "Закрыть"), включается проверка изменений, внесенных в объект. Если в объект были внесены изменения, то пользователю задастся вопрос, хочет ли он сохранить его.
+When you try to leave the page (for example, clicking on the "Close" button) is enabled verification of changes made to the object. If the object has been modified, the user will wonder whether he wants to keep it.
 
-Аналогичная функциональность была добавлена в список, располагающийся на форме редактирования: к примеру, если пользователь попытается добавить новый элемент (и таким образом совершить переход с формы редактирования одного объекта на форму редактирования другого), то система спросит его, хочет ли он сохранить изменения.
+Similar functionality was added to the list located on the edit form: for example, if the user tries to add a new item (and thus to make the transition form one object to the edit form of another), then the system will ask him if he wants to save the changes.
 
-Операция `CheckChanges` включает или выключает данную проверку.
+Operation `CheckChanges` enables or disables this check.
 
-{% include note.html content="Eсли данная настройка выключена, то обработка сохранения изменений возлагается на прикладного программиста.  
-Для этого можно использовать [события](fa_wolv-events.html) списка, или его [JS API](fa_js-api-wolv.html)." %}
+{% include note.html content="If this setting is disabled, the processing of saving the changes imposed on the application programmer.
+You can use the [events](fa_wolv-events.html list), or [JS API](fa_js-api-wolv.html)." %}
 
-По умолчанию данная настройка включена.
+By default this option is enabled.
 
-## Внешний вид WOLV с включенными операциями
+## Appearance WOLV-enabled operations
 
 ![](/images/pages/products/flexberry-aspnet/controls/wolv/all-operations-wolv.png)
 
-## Применение настроек для WOLV'а на лукапе
+## Application settings for WOLV'and lucapa
 
-Для прикладных проектов реализован функционал настройки WOLV внутри LookUp'а. Настройки применяются в классе
-`WOLWSettApplyer.cs`, который расположен в корневой директории.В нём нужно переопределить метод `ApplyLookUpSettings`.
-Сначала вызывается базовый метод `base.ApplyLookUpSettings(wolv)`; после него то что вы хотите переопределить.
-Например для того, чтобы в лукапе фильтр работал без использования * нужно:
+For applied projects implemented functional configuration WOLV inside LookUp'. Settings are applied in the classroom
+`WOLWSettApplyer.cs`, which is located in the root directory.It is necessary to override `ApplyLookUpSettings`.
+First, call the base method `base.ApplyLookUpSettings(wolv)`; after him that you want to override.
+For example, in order to lucapa the filter operated without the use * need:
 
 ```csharp
 public override void ApplyLookUpSettings(WebObjectListView wolv)
@@ -109,3 +114,7 @@ public override void ApplyLookUpSettings(WebObjectListView wolv)
             wolv.Operations.FilterSubString = true;
         }
 ```
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

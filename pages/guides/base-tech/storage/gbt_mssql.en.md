@@ -6,7 +6,7 @@ toc: true
 permalink: en/gbt_mssql.html 
 lang: en 
 autotranslated: true 
-hash: d8d82b73c9314ecda279e79bccbeef51b87f2b6a2a34cf46efc3c7d1ea4e5e3e 
+hash: 00a15d2fc60bce8d3e47c086fa0877062f2f9011943aa6c6d5bcc245b2b5a279 
 --- 
 
 ## Brief description 
@@ -70,4 +70,4 @@ hash: d8d82b73c9314ecda279e79bccbeef51b87f2b6a2a34cf46efc3c7d1ea4e5e3e
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

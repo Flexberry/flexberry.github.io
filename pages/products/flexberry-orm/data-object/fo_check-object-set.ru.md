@@ -34,5 +34,3 @@ public class Кредит : ICSSoft.STORMNET.DataObject
 ```
 
 Другие методы проверки данных на форме описаны в статье [Валидация данных](fw_edit-form-validation.html).
- 
-Сравнение этого метода с некоторыми другими можно найти в статье [Проверка данных на форме во время редактирования](fw_check-form-field-during-edit.html).

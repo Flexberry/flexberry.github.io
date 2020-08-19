@@ -1,27 +1,33 @@
----
-title: Move or copy function
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry Designer, Flexberry ORM
-summary: Types of repository objects available for copying and moving
-toc: true
-permalink: en/fo_move-case-plugin.html
-lang: en
----
+--- 
+title: Function of moving or copying 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry Designer, Flexberry ORM 
+summary: Types of repository objects available for copying and moving 
+toc: true 
+permalink: en/fo_move-case-plugin.html 
+lang: en 
+autotranslated: true 
+hash: 7eb6a92843f3c6d6be048ba47d0b37190a357e8f096c62aebd93ee2a4328c299 
+--- 
 
-## Перемещение репозиторных объектов Flexberry Designer
+## Moving repository objects Flexberry Designer 
 
-Для перемещения репозиторных объектов применяется функция `Утилиты -> Переместить...`. Функция перемещения данного плагина доступна для следующих типов репозиторных объектов:
+To move repository objects to apply the function `Утилиты -> Move...`. The move function of this plugin is available for the following types of repository objects: 
 
-* Проект
-* Конфигурация
-* Стадия
+* Project 
+* Configuration 
+* Stage 
 
-Целевой репозиторный объект выбирается в соответствующем окне.
+Target repository object selected in the corresponding window. 
 
-## Копирование репозиторных объектов Flexberry Designer
+## Copying repository objects Flexberry Designer 
 
-Для копирования репозиторных объектов применяется функция `Утилиты -> Cкопировать...`. Функция копирования данного плагина доступна для следующих типов репозиторных объектов:
+To copy repository objects to apply the function `Утилиты -> Copy...`. The copy function of this plugin is available for the following types of repository objects: 
 
-* Система
+* 
 
-При копировании система помещается в целевую стадию, при этом копируются все диаграммы, которые входят в данную систему, а также репозиторные объекты `Класс`, `Ассоциация` или `Агрегация`, `Наследование`, которые встречаются на копируемых диаграммах. Таким образом можно разделить одну стадию на несколько отдельных стадий, сохранив метаданные, например, представления.
+If you are copying system is placed in the target stage, this copies all charts that are included in this system as well as repository objects `Класс`, `Ассоциация` or `Агрегация`, `Наследование` that occur on the copied chart. Thus it is possible to divide one stage into several separate stages, keeping the metadata, for example, views. 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

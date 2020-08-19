@@ -1,119 +1,119 @@
 ---
-title: Psedodetails in LinqProvider
+title: Pseudometal in LinqProvider
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Ограничения
-summary: Варианты задания ограничений, используемые методы, связь с DetailVariableDef
+keywords: Flexberry ORM Limitations
+summary: Options for specifying constraints, methods used, communication with DetailVariableDef
 toc: true
 permalink: en/fo_psedodetails-linq-provider.html
 lang: en
+autotranslated: true
+hash: 151491f614d94caa60a6858b5ddd0f001b45a0c6afc819ced665196df8c2dee7
 ---
 
-## Постановка задачи задания ограничений на псевдодетейлы
+## Statement of the problem of specifying limits on pseudometal
 
-Пусть сущности "Клиент" и "Кредит" связаны представленным на изображении образом.
+Let the entities "Customer" and "Credit" are connected shown in the image way.
 
-![](/images/pages/products/flexberry-orm/query-language/pseudo-details.png)
+![](/images/pages/products/flexberry-orm/query language/pseudo-details.png)
 
-Нужно ограничить клиентов, задав при этом ограничение на ссылающихся на них кредиты. Специфика данной задачи состоит в том, что согласно модели клиент не знает, какие кредиты на него ссылаются.
+You need to restrict clients by setting the limit to reference them loans. The specificity of this problem is that according to the model, the client does not know what the credits refer to it.
 
-## Задание ограничений на псевдодетейлы
+## Setting limits on pseudometal
 
-Пусть:
+Let:
 
 ```csharp
 var ds = (SQLDataService)DataServiceProvider.DataService;
 ```
 
-Задание ограничение на псевдодетейлы чуть менее интуитивно, чем использование [других возможностей LinqProvider](fo_linq-provider-faetures.html).
+Job restriction pseudometal a little less intuitive than the use of [other features LinqProvider](fo_linq-provider-faetures.html).
 
-Для задания ограничения на псевдодетейл в [LinqProvider](fo_linq-provider.html) добавлена дополнительная сущность `PseudoDetail`. Для `PseudoDetail` доступно несколько вариантов конструктора.
+To set restrictions on pseudometal in [LinqProvider](fo_linq-provider.html) added entity `PseudoDetail`. For `PseudoDetail` you have a few options to the constructor.
 
-### Варианты конструктора `PseudoDetail`
+### The designer's options `PseudoDetail`
 
-(Большое число конструкторов обусловлено тем, что в Linq-выражении сложности с использованием конструкторов со значением по умолчанию).
+(A large number of designers due to the fact that a Linq expression complexity using constructors with default value).
 
 ```csharp
-// Вариант 1
-
-/// <summary>
-/// Конструктор сущности, представляющей в Linq-выражении псевдодетейл.
-/// </summary>
-/// <param name="view"> Представление псевдодетейла. </param>
-/// <param name="masterLinkName"> Имя связи от псевдодетейла к мастеру. </param>
+/// <summary> 
+/// Constructor entity that represents a Linq expression pseudometal. 
+/// </summary> 
+/// <param name="view"> the View of pseudometal. </param> 
+/// <param name="masterLinkName"> the relationship Name from pseudometal to the master. </param> 
 public PseudoDetail(
 	ICSSoft.STORMNET.View view,
 	string masterLinkName)
+```
 
-// Вариант2
-
-/// <summary>
-/// Конструктор сущности, представляющей в Linq-выражении псевдодетейл.
-/// </summary>
-/// <param name="view"> Представление псевдодетейла. </param>
-/// <param name="masterLink"> Метод, определяющий имя связи от псевдодетейла к мастеру (определение идёт через "Information.ExtractPropertyPath(masterLink)"). </param>
+```csharp
+/// <summary> 
+/// Constructor entity that represents a Linq expression pseudometal. 
+/// </summary> 
+/// <param name="view"> the View of pseudometal. </param> 
+/// <param name="masterLink"> Method that defines the relationship name from pseudometal to the master (the definition goes through "Information.ExtractPropertyPath(masterLink)"). </param> 
 public PseudoDetail(
 	ICSSoft.STORMNET.View view,
 	Expression<Func<TP, object>> masterLink)
+```
 
-// Вариант 3
-
-/// <summary>
-/// Конструктор сущности, представляющей в Linq-выражении настоящий детейл (для псевдодетейлов данный метод будет некорректен).
-/// </summary>
-/// <param name="view"> Представление детейла. </param>
+```csharp
+/// <summary> 
+/// Constructor entity that represents a Linq expression real detail (for pseudometal this method will be incorrect). 
+/// </summary> 
+/// <param name="view"> the View of detail. </param> 
 public PseudoDetail(
 	ICSSoft.STORMNET.View view)
+```
 
-// Вариант 4
-
-/// <summary>
-/// Конструктор сущности, представляющей в Linq-выражении псевдодетейл.
-/// </summary>
-/// <param name="view"> Представление псевдодетейла. </param>
-/// <param name="masterLink"> Метод, определяющий имя связи от псевдодетейла к мастеру (определение идёт через "Information.ExtractPropertyPath(masterLink)"). </param>
-/// <param name="masterToDetailPseudoProperty"> Имя связи от мастера к псевдодетейлу (псевдосвойство). </param>
+```csharp
+/// <summary> 
+/// Constructor entity that represents a Linq expression pseudometal. 
+/// </summary> 
+/// <param name="view"> the View of pseudometal. </param> 
+/// <param name="masterLink"> Method that defines the relationship name from pseudometal to the master (the definition goes through "Information.ExtractPropertyPath(masterLink)"). </param> 
+/// <param name="masterToDetailPseudoProperty"> the name of the relationship from master to pseudometal (pseudovoigt). </param> 
 public PseudoDetail(
 	ICSSoft.STORMNET.View view,
 	Expression<Func<TP, object>> masterLink,
 	string masterToDetailPseudoProperty)
+```
 
-// Вариант 5
-
-/// <summary>
-/// Конструктор сущности, представляющей в Linq-выражении псевдодетейл.
-/// </summary>
-/// <param name="view"> Представление псевдодетейла. </param>
-/// <param name="masterLink"> Метод, определяющий имя связи от псевдодетейла к мастеру (определение идёт через "Information.ExtractPropertyPath(masterLink)"). </param>
-/// <param name="masterToDetailPseudoProperty"> Имя связи от мастера к псевдодетейлу (псевдосвойство). </param>
-/// <param name="masterConnectProperties"> Свойства мастера, по которым можно произвести соединение. Аналог OwnerConnectProp для <see cref="DetailVariableDef"/> в lcs. </param>
+```csharp
+/// <summary> 
+/// Constructor entity that represents a Linq expression pseudometal. 
+/// </summary> 
+/// <param name="view"> the View of pseudometal. </param> 
+/// <param name="masterLink"> Method that defines the relationship name from pseudometal to the master (the definition goes through "Information.ExtractPropertyPath(masterLink)"). </param> 
+/// <param name="masterToDetailPseudoProperty"> the name of the relationship from master to pseudometal (pseudovoigt). </param> 
+/// <param name="masterConnectProperties"> Properties of the master, by which you can make the connection. Analogue OwnerConnectProp for <see cref="DetailVariableDef"/> in the lcs. </param> 
 public PseudoDetail(
 	ICSSoft.STORMNET.View view,
 	Expression<Func<TP, object>> masterLink,
 	string masterToDetailPseudoProperty,
 	string[] masterConnectProperties)
+```
 
-// Вариант 6
-
-/// <summary>
-/// Конструктор сущности, представляющей в Linq-выражении псевдодетейл.
-/// </summary>
-/// <param name="view"> Представление псевдодетейла. </param>
-/// <param name="masterLinkName"> Имя связи от псевдодетейла к мастеру. </param>
-/// <param name="masterToDetailPseudoProperty"> Имя связи от мастера к псевдодетейлу (псевдосвойство). </param>
+```csharp
+/// <summary> 
+/// Constructor entity that represents a Linq expression pseudometal. 
+/// </summary> 
+/// <param name="view"> the View of pseudometal. </param> 
+/// <param name="masterLinkName"> the relationship Name from pseudometal to the master. </param> 
+/// <param name="masterToDetailPseudoProperty"> the name of the relationship from master to pseudometal (pseudovoigt). </param> 
 public PseudoDetail(
 	ICSSoft.STORMNET.View view,
 	string masterLinkName,
 	string masterToDetailPseudoProperty)
+```
 
-// Вариант 7
-
-/// <summary>
-/// Конструктор сущности, представляющей в Linq-выражении псевдодетейл.
-/// </summary>
-/// <param name="view"> Представление псевдодетейла. </param>
-/// <param name="masterLinkName"> Имя связи от псевдодетейла к мастеру. </param>
-/// <param name="masterToDetailPseudoProperty"> Имя связи от мастера к псевдодетейлу (псевдосвойство). </param>
-/// <param name="masterConnectProperties"> Свойства мастера, по которым можно произвести соединение. Аналог OwnerConnectProp для <see cref="DetailVariableDef"/> в lcs. </param>
+```csharp
+/// <summary> 
+/// Constructor entity that represents a Linq expression pseudometal. 
+/// </summary> 
+/// <param name="view"> the View of pseudometal. </param> 
+/// <param name="masterLinkName"> the relationship Name from pseudometal to the master. </param> 
+/// <param name="masterToDetailPseudoProperty"> the name of the relationship from master to pseudometal (pseudovoigt). </param> 
+/// <param name="masterConnectProperties"> Properties of the master, by which you can make the connection. Analogue OwnerConnectProp for <see cref="DetailVariableDef"/> in the lcs. </param> 
 public PseudoDetail(
 	ICSSoft.STORMNET.View view,
 	string masterLinkName,
@@ -121,85 +121,83 @@ public PseudoDetail(
 	string[] masterConnectProperties)
 ```
 
-### Методы PseudoDetail
+### Methods `PseudoDetail`
 
-На псевдодетейлы возможно накладывать ограничения существования и всеобщности.
+Pseudometal possible to impose constraints of existence and universality.
 
 ```csharp
-// Вариант 1
-
-/// <summary>
-/// Вспомогательный метод, преобразуемый на этапе компиляции Linq-выражения в funcExist.
-/// </summary>
-/// <returns> При компиляции вернёт true, при интерпретации в Linq формируется DetailVariableDef. </returns>
+/// <summary> 
+/// Helper method that can be converted at compile Linq expressions in funcExist. 
+/// </summary> 
+/// <returns> When compiling returns true when interpreted in Linq is formed DetailVariableDef. </returns> 
 public bool Any()
+```
 
-// Вариант 2
-
-/// <summary>
-/// Вспомогательный метод, преобразуемый на этапе компиляции Linq-выражения в funcExist.
-/// </summary>
-/// <param name="predicate"> LimitFunction для псевдодетейла. </param>
-/// <returns> При компиляции вернёт true, при интерпретации в Linq формируется DetailVariableDef. </returns>
+```csharp
+/// <summary> 
+/// Helper method that can be converted at compile Linq expressions in funcExist. 
+/// </summary> 
+/// <param name="predicate"> LimitFunction for pseudometal. </param> 
+/// <returns> When compiling returns true when interpreted in Linq is formed DetailVariableDef. </returns> 
 public bool Any(Expression<Func<TP, bool>> predicate)
+```
 
-// Вариант 3
-
-/// <summary>
-/// Вспомогательный метод, преобразуемый на этапе компиляции Linq-выражения в funcExistExact.
-/// </summary>
-/// <param name="predicate"> LimitFunction для псевдодетейла. </param>
-/// <returns> При компиляции вернёт true, при интерпретации в Linq формируется DetailVariableDef. </returns>
+```csharp
+/// <summary> 
+/// Helper method that can be converted at compile Linq expressions in funcExistExact. 
+/// </summary> 
+/// <param name="predicate"> LimitFunction for pseudometal. </param> 
+/// <returns> When compiling returns true when interpreted in Linq is formed DetailVariableDef. </returns> 
 public bool All(Expression<Func<TP, bool>> predicate)
 ```
 
-#### Ограничение существования на псевдодетейлы
+#### The limitation of existence to pseudometal
 
-**Объект типа `PseudoDetail` определяется вне linq-выражения:**
+**An object of type `PseudoDetail` is defined outside of the linq expression:**
 
 ```csharp
 var pseudoDetail = new PseudoDetail<Порода, Кошка>(
-	Information.GetView("КошкаE", typeof(Кошка)),
+	Information.GetView("Koskee", typeof(Кошка)),
 	Information.ExtractPropertyPath<Кошка>(x => x.Порода));
 
-// Все породы, для которых определены кошки
+// All breeds who have cats 
 ds.Query<Порода>(Порода.Views.ПородаE).Where(
 	y => pseudoDetail.Any()).ToList();
 ```
 
-**Объект типа `PseudoDetail` определяется внутри linq-выражения:**
+**An object of type `PseudoDetail` is defined within linq expressions:**
 
 ```csharp
-// Все породы, для которых определены кошки, у которых кличка не "Барсик"
+// All breeds who have a cat whose nickname is not "snow leopard" 
 ds.Query<Порода>(Порода.Views.ПородаE)
 	.Where(
 		y => 
 			new PseudoDetail<Порода, Кошка>(
-				Information.GetView("КошкаE", typeof(Кошка)),
+				Information.GetView("Koskee", typeof(Кошка)),
 				Information.ExtractPropertyPath<Кошка>(x => x.Порода))
-			.Any(x.Кличка != "Барсик"))
+			.Any(x.Кличка != "Barsik"))
 	.ToList();
 ```
 
-#### Ограничение всеобщности на псевдодетейлы
+#### The constraint of universality on pseudometal
 
 ```csharp
-// Все породы, где кошки не носят кличку "Барсик"
+// All breeds where the cats don't wear the nickname "snow leopard" 
 ds.Query<Порода>(Порода.Views.ПородаE)
 	.Where(
 		y => 
 			new PseudoDetail<Порода, Кошка>(
-				Information.GetView("КошкаE", typeof(Кошка)),
+				Information.GetView("Koskee", typeof(Кошка)),
 				Information.ExtractPropertyPath<Кошка>(x => x.Порода))
-			.All(x.Кличка != "Барсик"))
+			.All(x.Кличка != "Barsik"))
 	.ToList();
 ```
 
-## PseudoDetail и DetailVariableDef
+## PseudoDetail and DetailVariableDef
 
-Ниже показан пример кода, демонстрирующий связь `PseudoDetail` и [DetailVariableDef](fo_variable-def.html).
+Below shows a code sample that demonstrates the relationship `PseudoDetail` and [DetailVariableDef](fo_variable-def.html).
 
-`ComparePseudoDetailWithDetailVariableDef` - это метод, проводящий конвертацию из linq в lcs и сравнивающий результаты.
+`ComparePseudoDetailWithDetailvariabledef` is a method of conducting a conversion from linq to lcs and compare the results.
 
 ```csharp
 const string masterToDetailPropertyName = "SomePropertyName";
@@ -207,14 +205,18 @@ var masterConnectProperties = new string[] { "Property1", "Property2" };
 
 ComparePseudoDetailWithDetailVariableDef(
 	new PseudoDetail<Порода, Кошка>(
-		Information.GetView("КошкаE", typeof(Кошка)),
+		Information.GetView("Koskee", typeof(Кошка)),
 		Information.ExtractPropertyPath<Кошка>(x => x.Порода),
 		masterToDetailPropertyName,
 		masterConnectProperties),
 	new DetailVariableDef(
 		this.ldef.GetObjectType("Details"),
 		masterToDetailPropertyName,
-		Information.GetView("КошкаE", typeof(Кошка)),
-		"Порода",
+		Information.GetView("Koskee", typeof(Кошка)),
+		"Breed",
 		masterConnectProperties));
 ```
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

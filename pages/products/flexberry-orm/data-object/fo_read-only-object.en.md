@@ -1,16 +1,18 @@
----
-title: Variants of opening an object for Readonly
-sidebar: flexberry-orm_sidebar
-keywords: DataObject, Flexberry ORM
-summary: Variants of object editing blocking
-toc: true
-permalink: en/fo_read-only-object.html
-lang: en
----
+--- 
+title: Options to open the object read-only 
+sidebar: flexberry-orm_sidebar 
+keywords: DataObject ORM Flexberry 
+summary: Variants of the block edit facility 
+toc: true 
+permalink: en/fo_read-only-object.html 
+lang: en 
+autotranslated: true 
+hash: ce62df2406d2dc54cc15b5600bfa5072ec8ea189af6527f2d02161c1cab0b4b9 
+--- 
 
-### Вариант 1: упреждающее действие
+### Option 1: proactive action 
 
-Если становится понятно что объект нужно будет открыть только на чтение ещё до того как он будет открыт, то можно воспользоваться следующим примером:
+If it becomes clear that the object will need to access read-only before it is opened, you can use the following example: 
 
 ```csharp
 private void button1_Click(object sender, EventArgs e)
@@ -18,17 +20,17 @@ private void button1_Click(object sender, EventArgs e)
         ICSSoft.STORMNET.DataObject[] dObjs = objectListView1.GetObjectsByMarks();
         foreach (ICSSoft.STORMNET.DataObject d in dObjs)
         {
-            //ключ блокировки нужен для разблокировки объекта (разблокировать объект другим ключом будет невозможно).
+            //lock needed to unlock object (unlock the object with a different key will be impossible). 
             Guid key = new Guid();
             d.LockObject(key);
             OnEditEvent("", d, "");
         }
     }
-```
+``` 
 
-В этом случае блокировка в базу отправляться не будет.
+In this case, the database lock will not be sent. 
 
-### Вариант 2: форма уже открыта
+### Option 2: the form is already open 
 
 ```csharp
  public override void Edit(ICSSoft.STORMNET.DataObject dataobject, string contpath, string propertyname, object tag)
@@ -39,9 +41,12 @@ private void button1_Click(object sender, EventArgs e)
             if (!((Квалификация)dataobject).Актуально)
             {
                 this.SetEditManagerReadOnly(true);
-                this.Caption += " (неактуально)";
+                this.Caption += "(date)";
             }
 
             base.Edit(dataobject, contpath, propertyname, tag);
         }
 ```
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

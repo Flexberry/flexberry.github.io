@@ -1,50 +1,52 @@
 ---
-title: Call an independent master
+title: Call to independent artists
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms, Controls, LookUp, master
-summary: Алгоритм добавления ссылок на независимого мастера для основной формы редактирования и детейлов, примеры использования
+summary: Algorithm add links to independent artists for the main form editing and detailov, usage examples
 toc: true
 permalink: en/fw_lookup-another-object.html
 lang: en
+autotranslated: true
+hash: 27d12a16180ece48c71b66a03f96f9cf5269c5f9421adae1ee0411db5af2d152
 ---
 
-Существует два способа добавить на форму редактирования [Lookup](fw_lookup.html) для выбора объекта, несвязанного с редактируемым на текущей форме:
+There are two ways to add to the edit form [Lookup](fw_lookup.html) to select an object unrelated to the editable on the current form:
 
-1. Добавить вычислимое поле в основной объект и перегенерировать форму с помощью [Flexberry Desinger](fd_landing_page.html).
-2. В коде приложения добавить Lookup на форму.
+1. Add a calculated field in the main object and re-generate the form using [Flexberry Desinger](fd_flexberry-designer.html).
+2. In your application code to add a Lookup to the form.
 
-### Алгоритм добавления LookUp в коде приложения
+### The algorithm add a LookUp in the application code
 
-* Добавить на форму [LookUp-контрол](fw_lookup.html).
-* Создать еще один [EditManager](fw_editmanager.html).
-* Приписать `LookUp` к созданному `EditManager` в методе `TuneLookupInformation`, а также добавить соответсвующую запись в метод `GetRunners()`.
-* Добавить в конец пути контрола "(GroupEditBase)".
+* Add to the form [LookUp-control](fw_lookup.html).
+* Create another [EditManager](fw_editmanager.html).
+* To attribute to the created `LookUp` `EditManager` in the method `TuneLookupInformation`, and add the appropriate entry to the method `GetRunners()`.
+* Add to the end of the line of control "(GroupEditBase)".
 
-{% include important.html content="Последний пункт нужен для того, чтобы система не считала данный лукап и объект, который в нём выбирается, редактируемым объектом. Без указания этого пути система будет сохранять данный объект в базу сразу после выбора объекта." %}
+{% include important.html content="the Last item needed in order for the system to not consider this lookup and the object that it is selectable, editable object. Without specifying this path, the system will save the object to database immediately after the object's selection." %}
 
-## Пример вызова независимого списка мастеровых объектов
+## An example of a call independent artisans list of objects
 
-На примере показано, как можно вызвать на лукап список объектов, не имеющих связей c объектом-инициатором и не являющихся мастером для какого-либо другого объекта в модели предметной области:
+For example, you can call on lookup the list of objects that have no relationship with c object-initiated and is not a master for any other object in the domain model:
 
-* вызывается списочная форма объектов для выбора,
-* процедуре вызова этой формы передаётся класс и название свойства этого класса, значением которого является объект класса, выбираемый на форме.
+* is called list form objects for selection,
+* the call procedure this is the class and name property of this class, whose value is the class object that you select on the form.
 
-Если такого класса нет, то его следует _создать_.
+If such class does not exist, it should sozdati.
 
-### Пример
+### Example
 
-Есть класс `Реагирование` и не связанный с ним (отношениями ассоциации или композиции) класс `ДежурнаяГруппа`.
+There is a class `Реагирование` and is not connected with him (relationship, Association or composition) class `ДежурнаяГруппа`.
 
-С формы редактирования `Реагирования` требуется вызвать список дежурных групп для размазывания свойств конкретной выбранной дежурной группы по свойствам `Реагирования` (точнее, добавления соответствующих детейлов).
+With the edit form `Реагирования` you want to call up a list of rescue groups for smearing the properties of a particular selected duty band on properties `Реагирования` (or rather, add the appropriate datalow).
 
-В модели нет класса, который содержал бы ссылку на дежурную группу, соответственно, его необходимо доьавить:
+There is no class that would contain a link to a call center group, respectively, it must dalavich:
 
-1.Создать _класс_ внутри формы Реагирования (где осуществляется вызов списка). Объект должен быть _нехранимым_. Таким образом не требуеся менять модель на диаграмме, так как класс ннеобходим только для LookUp.
+1.To create class inside the shape of the Response (where a call is made the list). The object must be nagraniem. Thus trebuetsja to change the model in the chart as a class neobhodim only for LookUp.
 
 ```csharp
 public class WinformРеагированиеE : ICSSoft.STORMNET.UI.BaseWinEdit, ICSSoft.AMS02.Происшествия.DPDIРеагированиеE
 {
-    // .....
+    // ..... 
 
     [AutoAltered()]
     [NotStored()]
@@ -64,37 +66,37 @@ public class WinformРеагированиеE : ICSSoft.STORMNET.UI.BaseWinEdit,
         }
     }
 
-    //.....
+    //..... 
 }
 ```
 
-{% include important.html content="ДЖ должно быть свойством (а не публичным полем), т.к. вызывается метод __SetPropByName__, который работает только со __свойствами__. При несоблюдении отображается ошибка о невозможности внести изменения в свойство." %}
+{% include important.html content="J must be a property (not a public field), because the method is called __SetPropByName__ that only works with __properties__. Failure to comply with the error about the impossibility to make changes to the property." %}
 
-2.Для кнопки открытия списка добавляется следующее:
+2.Button to open list is added the following:
 
 ```csharp
-  string propertyName = "ДЖ";
+  string propertyName = "J";
   string contPath = "";
   base.OnEdit(propertyName, new Временный_ДежурнаяГруппа(), contPath, null);
 ```
 
-__propertyName__ - имя свойства класса, который  передаётся вторым параметром (в данном случае Временный_ДежурнаяГруппа), в который вернётся выбранный элемент.
+__propertyName__ is the property name of the class that is passed as a second parameter (in this case Vremenima), which will return the selected item.
 
-Применимо в случае, если класс _хранимый_, т.к. возврат параметров происходит через `SaveEvent`.
+Applicable if the class hranimyj, because the reset occurs through `SaveEvent`.
 
-Чтобы этого избежать следует:
+To avoid this you should:
 
 ```csharp
   {
     object form = null;
     System.Type FormType = null;
     ICSSoft.STORMNET.DataObject dobj = null;
-    string propertyName = "ДЖ";
+    string propertyName = "J";
 
-    FormType = System.Type.GetType("ICSSoft.AMS02.Происшествия.ДежурнаяГруппаL,Происшествия(Forms)");
+    FormType = System.Type.GetType("ICSSoft.AMS02.Of the incident.ДежурнаяГруппаL,Incidents(Forms)");
 
     Временный_ДежурнаяГруппа FL = new Временный_ДежурнаяГруппа();
-    //FL.ДЖ = ...;
+    //FL.J = ...; 
     dobj = FL;
 
     form = ICSSoft.STORMNET.UI.ContRunner.RunForm(FormType);
@@ -113,18 +115,18 @@ __propertyName__ - имя свойства класса, который  пер�
   }
 ```
 
-3.Подписаться на созданный обработчик сохранения и дописать все необходимые операции. Если FL.ДЖ присвоить конкретное значение, то в списке будет подсвечен (выбран) этот элемент.
+3.Subscribe to the created handler for the save and finish all necessary operations. If FL.J. to assign a specific value, the list will be highlighted (selected) in this element.
 
-## Использование в GroupEdit
+## Use in GroupEdit
 
-Например, есть класс __ДежурнаяГруппаСмены__ и не связанный с ним (отношениями ассоциации или композиции) класс __ДежурнаяГруппа__. По лукапу номера группы нужно вызвать список ДежурныхГрупп для заполнения полей ДежурнойГруппыСмены из свойств выбранной ДежурнойГруппы.
+For example, there is a class __Diamaguene__ and is not connected with him (relationship, Association or composition) class __Dezhurnaya__. For lucapa group numbers need to display a list of Degennaro fields Giornalismo of the properties of the selected Diurnally.
 
-Для этого:
+To do this:
 
-* В методе __GetControl__ класса CustomControlProvide устанавить контрол для поля НомерГруппы:
+* The __GetControl__ class CustomControlProvide to install the control for the field of Nomography:
 
 ```csharp
-            if (view.Name #  "ДежурнаяГруппаСменыE" && propertyName  "НомерГруппы")
+            if (view.Name #  "Diamaguene" && propertyName  "Emergroup")
             {
                 ICSSoft.STORMNET.Windows.Forms.LookUp lookUp = new ICSSoft.STORMNET.Windows.Forms.LookUp();
 
@@ -132,42 +134,40 @@ __propertyName__ - имя свойства класса, который  пер�
             }
 ```
 
-* Переопределить метод `OnEdit` в winformДежурнаяСменаE. Так как класс ДежурнаяГруппаСмены не имеет ссылки на ДежурнуюГруппу, то выбрать любой другой класс, имеющий такую ссылку, например, _ЧленДежурнойГруппы_.
+* Override method `OnEdit` in winformДежурнаяСменаE. Since the class Diamagnetism has no reference to Diourou, then choose any other class that has such a link, for example, Slanderously.
 
 ```csharp
-dataobject = new ЧленДежурнойГруппы(); //класс, имеющий ссылку на дежурную группу
-propertyname = "ДежураяГруппа"; //имя ссылки
+dataobject = new ЧленДежурнойГруппы(); //class that has a reference to the strike team 
+propertyname = "Daguragu"; //the name of the link 
 
 public override void OnEdit(string propertyname, ICSSoft.STORMNET.DataObject dataobject, string contpath, object tag)
         {
-            if (dataobject is ДежурнаяГруппаСмены && propertyname == "ДежурныеГруппыСмены.НомерГруппы")
+            if (dataobject is ДежурнаяГруппаСмены && propertyname == "Diomyopathy.Emergroup")
             {
                 if (((ДежурнаяГруппаСмены)dataobject).ТипДежурнойГруппы != null)
                 {
-                    SQLWhereLanguageDef langdef = new SQLWhereLanguageDef();
-                    tag = langdef.GetFunction(langdef.funcEQ,
-                            new VariableDef(langdef.GuidType, "ТипДежурнойГруппы"), ((ДежурнаяГруппаСмены)dataobject).ТипДежурнойГруппы.__PrimaryKey);
+                    tag = FunctionBuilder.BuildEquals("Tiptionary", ((ДежурнаяГруппаСмены)dataobject).ТипДежурнойГруппы);
                 }
                 dataobject = new ЧленДежурнойГруппы();
-                propertyname = "ДежураяГруппа";
+                propertyname = "Daguragu";
             }
 
             base.OnEdit(propertyname, dataobject, contpath, tag);
         }
 ```
 
-* Переопределить метод __Edited__ в winformДежурнаяСменаE. Записываем все необходимые свойства в ДежурнуюГруппуСмены из выбранной ДежурнойГруппы:
+* Override method __Edited__ in winformДежурнаяСменаE. Write down all the required properties in Diourouzon selected Diurnally:
 
 ```csharp
 public override void Edited(ICSSoft.STORMNET.DataObject dataobject, string contpath, string propertyname)
         {
             base.Edited(dataobject, contpath, propertyname);
 
-            if (dataobject is ЧленДежурнойГруппы && propertyname == "ДежураяГруппа")
+            if (dataobject is ЧленДежурнойГруппы && propertyname == "Daguragu")
             {
                 ДежурнаяГруппаСмены ДежГрСмены = (ДежурнаяГруппаСмены)ДежурныеГруппыСмены.EditManager.DataObject;
                 ДежурнаяГруппа ДежГр = ((ЧленДежурнойГруппы)dataobject).ДежураяГруппа;
-                ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject("ДежурнаяГруппаE", ДежГр);
+                ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject("Diurnale", ДежГр);
                 ДежГрСмены.НомерГруппы = ДежГр.НомерГруппы;
                 ДежГрСмены.ТипДежурнойГруппы = ДежГр.ТипДежурнойГруппы;
                 ДежГрСмены.Руководитель = ДежГр.Руководитель;
@@ -189,3 +189,7 @@ public override void Edited(ICSSoft.STORMNET.DataObject dataobject, string contp
             }
         }
 ```
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

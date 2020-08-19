@@ -6,12 +6,12 @@ toc: true
 permalink: en/gbt_orm.html 
 lang: en 
 autotranslated: true 
-hash: 664e818d6e2d27dcd2c8f62aafbe8b067c0a61eaa7832d18fac42bbbf978b6d3 
+hash: 707b254a20490b547d61402829f3db2ad6c22cb235046df0072c5ee028809028 
 --- 
 
 ## Brief description 
 
-**ORM (eng. Object-Relational Mapping, eng. object-relational mapping)** — a programming technique that links databases to the concepts of object-oriented programming languages, creating a "virtual object database". There are both proprietary and free implementations of this technology. 
+**ORM (eng. Object-Relational Mapping, eng. object-relational mapping)** — a programming technique that links databases to the concepts of object-oriented programming languages, creating a «virtual object database». There are both proprietary and free implementations of this technology. 
 
 **Task.** You need to work with the data in terms of classes instead of tables of data and conversely, to transform the terms and the data classes in the data suitable for storage in the DBMS. It is also necessary to provide an interface for CRUD operations on the data. In General, it is necessary to eliminate the need to write SQL code to interact in a DBMS 
 
@@ -66,4 +66,4 @@ hash: 664e818d6e2d27dcd2c8f62aafbe8b067c0a61eaa7832d18fac42bbbf978b6d3
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

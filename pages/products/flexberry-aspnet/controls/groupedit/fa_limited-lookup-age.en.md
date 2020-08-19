@@ -1,58 +1,60 @@
 ---
-title: Ограничение для LookUp в AjaxGroupEdit
+title: the Limit for LookUp in AjaxGroupEdit
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: en/fa_limited-lookup-age.html
 lang: en
+autotranslated: true
+hash: 0b7cb9e93642a2414017518b0f32522ff0703a3986eb4b989e99b31dd5d16e3d
 ---
 
-Бывают ситуации, когда в [LookUp](fa_master-editor-ajax-lookup.html) для строк [детейла](fo_detail-associations-properties.html) нужно вставлять только определенные значения. Для этого [список](fa_web-object-list-view.html), открываемый на LookUp-форме необходимо ограничить. Однако для [AjaxGroupEdit](fa_ajax-group-edit.html) имеются свои особенности, которые необходимо учитывать. В результате чего [код выглядит чуть сложнее](fa_settings-lookup-age.html), чем при [ограничении на "обычном" LookUp](fa_lookup-limit-web.html).
+There are times when in the [LookUp](fa_master-editor-ajax-lookup.html) for strings [detail](fo_detail-associations-properties.html) you want to insert only certain values. For this [list](fa_web-object-list-view.html) opened on the LookUp form you want to restrict. However, [AjaxGroupEdit](fa_ajax-group-edit.html) has its own characteristics that must be considered. Resulting in [the code looks a little more complicated](fa_settings-lookup-age.html) than at the [restriction to "normal" LookUp](fa_lookup-limit-web.html).
 
-Предположим, есть следующая [модель данных](fd_design.html):
+Suppose we have the following [model data](fd_design.html):
 
 ![](/images/pages/products/flexberry-aspnet/controls/groupedit/lookup-diagram-age.png)
 
-При добавлении строки-детейла у "МастерАгрегатор" для свойства "СвойствоДетейлаДляЛукапа" должно быть доступно только свойство "СвойствоЛукапМастера2" у "ЛукапМастер".
+When you add a row of detail the "Mastergrader" for property "Svistoplyaska" should be available only property "СвойствоЛукапМастера2 from Loopmaster".
 
-В коде приложения это будет выглядеть следующим образом:
+In application code this will look like the following:
 
 ```csharp
-/// <summary>
-/// Здесь лучше всего писать бизнес-логику, оперируя только объектом данных.
-/// </summary>
+/// <summary> 
+/// It is best to write the business logic, operating only with the data object. 
+/// </summary> 
 protected override void PreApplyToControls()
 {
-	ExternalLangDef langdef = ExternalLangDef.LanguageDef;
-	
 	ctrlКомната.AddLookUpSettings(Information.ExtractPropertyPath<МастерАгрегатор>(r => r.ЛукапМастер), new LookUpSetting
 	{
-		LimitFunction = langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.[ТипСвойстваЛукапМастер], "СвойствоЛукапМастера2"),     [ЗначениеСвойстваЛукапМастер])
+		LimitFunction = FunctionBuilder.BuildEquals<ЛукапМастер>(x => x.[СвойствоЛукапМастера2], [ЗначениеСвойстваЛукапМастер])
 	});
 }      
 ```
 
-## Пример
+## Example
 
-На реальном примере выглядит следующим образом:
+On a real example as follows:
 
-### Диаграмма
+### Chart
 
 ![](/images/pages/products/flexberry-aspnet/controls/groupedit/lookup-age-example.png)
 
-### Код
+### Code
 
 ```csharp
-ExternalLangDef langdef = ExternalLangDef.LanguageDef;
-
 ctrlКомната.AddLookUpSettings(Information.ExtractPropertyPath<Комната>(r => r.НазначениеКомнаты), new LookUpSetting
 	{
-		LimitFunction = langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.BoolType, "Актуально"), true)
+		LimitFunction = FunctionBuilder.BuildEquals<НазначениеКомнаты>(x => x.Актуально, true)
 	});
 ```
 
-### Вид в приложении
+### View in the app
 
-![](/images/pages/products/flexberry-aspnet/controls/groupedit/lookup-age-application.png)
+![](/images/pages/products/flexberry-aspnet/controls/groupedit/lookup-age application.png)
 
-**Примечание:** Если ограничение на LookUp-форме не применено, следует проверить, правильно ли указаны названия мастеровых классов, представлений и свойств.
+**Note:** If a limit on the LookUp form is not applied, you must check whether the specified name artisan classes, performances and properties.
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

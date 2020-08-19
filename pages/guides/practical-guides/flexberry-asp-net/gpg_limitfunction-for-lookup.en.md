@@ -4,21 +4,21 @@ sidebar: guide-practical-guides_sidebar
 keywords: guide
 toc: true
 permalink: en/gpg_limitfunction-for-lookup.html
-lang: en 
-autotranslated: true 
-hash: f484468876b6ba0ea9984b1c8ac49289e1735b9bc1e7ee3a8e527e6400d4c377
+lang: en
+autotranslated: true
+hash: 5a5edf3650c4fe584f796b2e2189abfad48ad319223fae99bd4ff0167854454e
 ---
 
-## refinement of the model
+## Refinement of the model
 
 For imposing restrictions on the list of employees needs to be clarified class diagram: introduced an enum type `Должность` and attribute `Должность` in class `Сотрудник`.
 
 ![](/images/pages/guides/flexberry-aspnet/add-class-for-limit.png)
 
 You also need to change ideas `СотрудникL` and `СотрудникE` to attribute `Должность` hit them.
-Then re-generate the objects and to align the database. 
+Then re-generate the objects and to align the database.
 
-## Imposing restrictions on LookUp
+## The imposition of restrictions on LookUp
 
 In the terminology `Flexberry` button that causes a list of choices, is called lucapa (`LookUp`).
 
@@ -26,9 +26,9 @@ In the terminology `Flexberry` button that causes a list of choices, is called l
 
 Purpose: to restrict the list of employees to select the employee who filled the order.
 In the list of employees there are employees with different positions.
-On the edit form of the order by clicking on lookup need to withdraw only managers (to avoid incorrect input from the user system). 
+On the edit form of the order by clicking on lookup need to withdraw only managers (to avoid incorrect input from the user system).
 
-In order to specify a restriction is necessary: 
+In order to specify a restriction is necessary:
 
 1.Go to the web page `ZakazE.aspx` where to find the control `MasterEditorAjaxLookUp` and remember it `ID` (in this case `ctrlМенеджер`).
 
@@ -40,7 +40,7 @@ In order to specify a restriction is necessary:
 
 ![](/images/pages/guides/flexberry-aspnet/zakaz-no-gen.png)
 
-3.Add the following lines (to select options uses Ctrl-Space): 
+3.Add the following lines (to select options uses Ctrl-Space):
 
 ```csharp
 using ICSSoft.STORMNET.FunctionalLanguage;
@@ -52,10 +52,7 @@ using ICSSoft.STORMNET.FunctionalLanguage.SQLWhere;
 ```csharp
 protected override void PreApplyToControls()
 {
-	SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
-
-	Function lf = langdef.GetFunction(langdef.funcEQ,
-		new VariableDef(langdef.StringType, Information.ExtractPropertyName<Сотрудник>(x => x.Должность)), EnumCaption.GetCaptionFor(Должность.Менеджер));
+	Function lf = FunctionBuilder.BuildEquals<Сотрудник>(x => x.Должность), Должность.Менеджер);	
 
 	ctrlМенеджер.LimitFunction = lf;
 }
@@ -72,4 +69,4 @@ In the code of this method is formed by special design `LimitFunction` which all
 * [Indication of current date](gpg_date-time-now.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

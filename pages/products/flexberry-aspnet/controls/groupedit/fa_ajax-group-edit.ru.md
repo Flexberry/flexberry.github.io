@@ -7,8 +7,6 @@ permalink: ru/fa_ajax-group-edit.html
 lang: ru
 ---
 
-## Описание
-
 `AjaxGroupEdit`- контрол, который позволяет редактировать множество объектов. Является аналогом [GroupEdit](fw_group-edit.html), для Web-приложений.
 
 ## Настройка внешнего вида контрола
@@ -19,11 +17,11 @@ lang: ru
 
 * Вид таблицы по умолчанию:
 
-![](/images/pages/products/flexberry-aspnet/controls/groupedit/bluesky-default-age.png)
+![Вид таблицы по умолчанию](/images/pages/products/flexberry-aspnet/controls/groupedit/bluesky-default-age.png)
 
-* Классический вид таблицы:
+* Вид таблицы по умолчанию:
 
-![](/images/pages/products/flexberry-aspnet/controls/groupedit/bluesky-classic-age.png)
+![Вид таблицы по умолчанию](/images/pages/products/flexberry-aspnet/controls/groupedit/bluesky-classic-age.png)
 
 По умолчанию используется новый стиль с вертикальной зеброй, для того чтобы изменить раскраску на классическую нужно в `_VariablesBasic.less` изменить значение переменной `@BlueSkyTableStyle` на `false`.
 
@@ -61,6 +59,7 @@ lang: ru
 ctrlMyWebGroupEdit.Operations.Add = false;
 ctrlMyWebGroupEdit.Operations.PlusInRow = false;
 ```
+
 ### Добавление объектов в AjaxGroupEdit при инициализации формы (новый объект)
 
 Описание алгоритма добавление можно прочитать в [статье Добавление объектов в AjaxGroupEdit при инициализации формы (новый объект)](fa_add-objects-age-initialization.html).
@@ -89,7 +88,7 @@ ctrlMyWebGroupEdit.Operations.PlusInRow = false;
 
 Для того, чтобы корректно показывать HTML значения в ячейках, нужно для атрибута проставить атрибут
 
-```
+```html
 [IsHTML()|IsHTML()]
 ```
 
@@ -175,13 +174,34 @@ ctrlMyWebGroupEdit.Operations.PlusInRow = false;
 * `url` - url сервиса, к которому будут идти запросы при смене значения в мастеровом лукапе
 * `method` - метод сервиса, к которому будут идти запросы при смене значения в мастеровом лукапе
 
+При этом в серверной части кода должно присутствовать описание метода, ограничивающего связанные лукапы:
+
+```csharp
+// <summary>
+/// Серверный метод для обработки зависимых лукапов на клиенте.
+/// </summary>
+/// <param name="lfKey">
+/// The lf key.
+/// </param>
+/// <param name="masterPk">
+/// The master pk.
+/// </param>
+/// <returns>
+/// The <see cref="string"/>.
+/// </returns>
+[System.Web.Services.WebMethod]
+protected void GetPageMethod(string lfKey, string masterPk)
+{
+}
+```
+
 Пример [зависимых лукапов](fa_change-lcs-lookup-age.html).
 
 ## Возможные ошибки
 
 * Не сохраняются изменения (например, добавленные объекты):
-    * Убедитесь, что на странице нет js ошибок;
-    * Проверьте, вызывается ли метод сохранения в AGE, который хранится в `document.WgeSaveHandlers`.
+  * Убедитесь, что на странице нет js ошибок;
+  * Проверьте, вызывается ли метод сохранения в AGE, который хранится в `document.WgeSaveHandlers`.
 
 Например, по-умолчанию вызов происходит в masterpage.js:
 

@@ -1,57 +1,65 @@
 ---
-title: Диаграмма классов (Class diagram)
+title: class Diagram (Class diagram)
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, диаграммы, диаграмма классов, ассоциация, композиция, наследование, класс
-summary: Основные сведения о диаграмме классов и ее особенностях
+keywords: Flexberry Designer, diagram class, Association, composition, inheritance, class
+summary: Basic information about the class diagram and its features
 toc: true
 permalink: en/fd_class-diagram.html
 lang: en
+autotranslated: true
+hash: cbdd77bcb28a6acac042a4fc14ab2e17840f283eff82bb341aad3c7c7ee86384
 ---
 
-**Диаграмма классов** - один из доступных [видов диаграмм](fd_editing-diagram.html), поддерживаемых [Flexberry Designer](fd_landing_page.html).
+**Class diagram** - one of the available [kinds of graphs](fd_editing-diagram.html) supported [Flexberry Designer](fd_flexberry-designer.html).
 
-Диаграмма классов является ключевым элементом [редактора UML-диаграмм](fd_editing-diagram.html), поскольку зачастую приложения генерируются именно с диаграммы классов.
-Диаграмма классов - это набор статических, декларативных элементов модели. Диаграммы классов могут применяться и при прямом проектировании, то есть в процессе разработки новой системы, и при обратном проектировании - описании существующих и используемых систем. Информация с диаграммы классов напрямую отображается в исходный код приложения. Таким образом, диаграмма классов - конечный результат проектирования и отправная точка процесса разработки.
+A class diagram is a key element [editor UML diagrams](fd_editing-diagram.html), because often applications are generated from the class diagram.
+The class diagram is a collection of static declarative model elements. Class diagrams can be used with the direct design, that is in the process of developing new systems and reverse engineering - description of existing and used systems. Information from the class diagram directly displayed in the application's source code. Thus, the class diagram is the final result of the design and the starting point of the development process.
 
-## Особенности построения диаграмм классов
+## Features charting classes
 
-Основные особенности построения диаграмм классов указаны в следующих статьях:
-* [Ключевые понятия объектной структуры для прикладных систем, разрабатывающихся в Flexberry Designer](fd_key-concepts.html).
-* [Особенности построения диаграммы классов](fd_class-diagram-constraction.html)
+The main features of the charting classes provided in the following articles:
 
-## Возможности диаграмм классов
+* [The key concepts of object-oriented framework for application systems, developed in Flexberry Designer](fd_key-concepts.html).
+* [Features of construction of the class diagram](fd_class-diagram-constraction.html)
 
-Основные возможности при работе с диаграммами указаны в статье [Редактор UML-диаграмм](fd_editing-diagram.html).
+## Capabilities class diagrams
 
-Специфичные для диаграмм классов возможности:
-* Изменение [стереотипа класса](fd_key-concepts.html) через контекстное меню.
-* Просмотр зависимостей через контекстное меню (функционирование аналогично отображению зависимостей класса в [менеджере классов](fd_class-manager.html)).
+Main features when working with the charts provided in the article [Editor UML diagrams](fd_editing-diagram.html).
 
-## Основные элементы диаграммы классов
+Specific diagrams features:
 
-На диаграмме классов можно отобразить следующие элементы нотации UML, доступные в панели элементов: 
+* Change [stereotype class](fd_key-concepts.html) via the context menu.
+* View dependencies through the context menu (functioning similarly to the dependency mapping class [class Manager](fd_class-manager.html)).
 
-Элемент/Нотация | Предназначение
+## The main elements of class diagrams
+
+On the class diagram, you can display the following elements of UML notation that are available in the Toolbox:
+
+Element/Notation | Purpose
 :------------------------------|:---------------------------------------
-![](/images/pages/products/flexberry-designer/diagram/assoc.jpg) | [Ассоциация](fd_master-association.html) (Association)
-![](/images/pages/products/flexberry-designer/diagram/aggregation.jpg) | Агрегация (Aggregation)
-![](/images/pages/products/flexberry-designer/diagram/composition.jpg) | [Композиция](fo_detail-associations-properties.html) (Composition)
-![](/images/pages/products/flexberry-designer/diagram/inheritance.jpg) | [Наследование](fd_inheritance.html)/обобщение (Inheritance/generalization)
-![](/images/pages/products/flexberry-designer/diagram/implement.jpg) | Реализация (Realization)
-![](/images/pages/products/flexberry-designer/diagram/nested.jpg) | Ассоциация вложенного класса (Nested class association)
-![](/images/pages/products/flexberry-designer/diagram/class.jpg) | Класс (Class)
-![](/images/pages/products/flexberry-designer/diagram/templateclass.jpg) | Класс-шаблон (Template class)
-![](/images/pages/products/flexberry-designer/diagram/instance.jpg) | Экземпляр класса (instance)
-![](/images/pages/products/flexberry-designer/diagram/activeobject.jpg) | Активный объект (Active object)
-![](/images/pages/products/flexberry-designer/diagram/multiobject.jpg)  | Мультиобъект (Multiobject)
-![](/images/pages/products/flexberry-designer/diagram/object.jpg) | Объект (Property object)
-![](/images/pages/products/flexberry-designer/diagram/naryassoc.jpg) | N-арная ассоциация (N-ary association)
-![](/images/pages/products/flexberry-designer/diagram/naryconn.jpg) | Коннектор n-арной ассоциации (N-ary association connector)
-![](/images/pages/products/flexberry-designer/diagram/qcomposition.jpg) | Квалифицированная композиция (Qualified composition link)
-![](/images/pages/products/flexberry-designer/diagram/qaggregation.jpg) | Квалифицированная агрегация (Qualified aggregation link)
-![](/images/pages/products/flexberry-designer/diagram/moreclasses.jpg) | Ещё классы (More classes)
-![](/images/pages/products/flexberry-designer/diagram/dependency.jpg) | Зависимость (Dependency)
-![](/images/pages/products/flexberry-designer/diagram/package.jpg) | Пакет (Package)
-![](/images/pages/products/flexberry-designer/diagram/corner.jpg) | Точка изгиба связей (Point)
-![](/images/pages/products/flexberry-designer/diagram/note.jpg) | Комментарий (Note)
-![](/images/pages/products/flexberry-designer/diagram/noteconn.jpg) | Коннектор комментария (Note connector)
+![Example](/images/pages/products/flexberry-designer/diagram/assoc.jpg) | [Association](fd_master-association.html) (Association)
+![Example](/images/pages/products/flexberry-designer/diagram/aggregation.jpg) | Aggregation (Aggregation)
+![Example](/images/pages/products/flexberry-designer/diagram/composition.jpg) | [Composition](fo_detail-associations-properties.html) (Composition)
+![Example](/images/pages/products/flexberry-designer/diagram/inheritance.jpg) | [Inheritance](fd_inheritance.html)/generalization (Inheritance/generalization)
+![Example](/images/pages/products/flexberry-designer/diagram/implement.jpg) | Implementation (Realization)
+![Example](/images/pages/products/flexberry-designer/diagram/nested.jpg) | Association nested class (Nested class association)
+![Example](/images/pages/products/flexberry-designer/diagram/class.jpg) | Class (Class)
+![Example](/images/pages/products/flexberry-designer/diagram/templateclass.jpg) | the template Class (Template class)
+![Example](/images/pages/products/flexberry-designer/diagram/instance.jpg) | class Instance (instance)
+![Example](/images/pages/products/flexberry-designer/diagram/activeobject.jpg) | the Active object (Active object)
+![Example](/images/pages/products/flexberry-designer/diagram/multiobject.jpg) | Multiobject (Multiobject)
+![Example](/images/pages/products/flexberry-designer/diagram/object.jpg) | Object (Property object)
+![Example](/images/pages/products/flexberry-designer/diagram/naryassoc.jpg) | N-ary Association (N-ary association)
+![Example](/images/pages/products/flexberry-designer/diagram/naryconn.jpg) | Connector n-ary Association (N-ary association connector)
+![Example](/images/pages/products/flexberry-designer/diagram/qcomposition.jpg) | Qualified composition (composition Qualified link)
+![Example](/images/pages/products/flexberry-designer/diagram/qaggregation.jpg) | Qualified aggregation (Qualified link aggregation)
+![Example](/images/pages/products/flexberry-designer/diagram/moreclasses.jpg) | More classes (More classes)
+![Example](/images/pages/products/flexberry-designer/diagram/dependency.jpg) | Addiction (Dependency)
+![Example](/images/pages/products/flexberry-designer/diagram/package.jpg) | Package (Package)
+![Example](/images/pages/products/flexberry-designer/diagram/corner.jpg) | Point of bending of the links (Point)
+![Example](/images/pages/products/flexberry-designer/diagram/note.jpg) | Comment (Note)
+![Example](/images/pages/products/flexberry-designer/diagram/noteconn.jpg) | Connector review (Note the connector)
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

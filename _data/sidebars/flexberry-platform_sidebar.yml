@@ -19,6 +19,10 @@ entries:
       title_ru: Архитектура платформы
       url: /fp_architecture.html
       output: web
+    - title: Glossary
+      title_ru: Глоссарий
+      url: /fp_glossary.html
+      output: web  
 
   - title: Platform development
     title_ru: Разработка платформы

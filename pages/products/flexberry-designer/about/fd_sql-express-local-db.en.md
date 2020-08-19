@@ -1,53 +1,60 @@
 ---
-title: Настройка строки соединения c БД
+title: setting up connection strings with DB
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Desinger, строка соединения, connection string, установка, install, setup
-summary: Взаимодействие с SQL Server, изменение строки соединения, настройка строки соединения
+keywords: Flexberry Desinger, connection string, connection string, install, install, setup
+summary: Interaction with the SQL Server, change the connection string, configure connection string
 toc: true
 permalink: en/fd_sql-express-local-db.html
 lang: en
+autotranslated: true
+hash: 47cf5bd5e795d6ffbfb583b09927e8fd9a6f3a3e9c3499315fac16089b416ae3
 ---
 
-## Работа Flexberry Desinger c SQL Server 2014/2016
+## Work Flexberry Desinger SQL Server 2014/2016
 
-[Скачать версию SQL Server 2014 Express](https://www.microsoft.com/ru-ru/download/details.aspx%3Fid%3D42299)
+[Download the SQL Server 2014 Express](https://www.microsoft.com/ru-ru/download/details.aspx?id=42299)
 
-Об SQL Server 2016 Express LocalDB изложено в MSDN:
+About SQL Server Express LocalDB 2016 described in MSDN:
 
-* [На русском языке](http://msdn.microsoft.com/ru-ru/library/hh510202.aspx)
-* [На английском языке](http://msdn.microsoft.com/en-us/library/hh510202.aspx)
+* [Russian](http://msdn.microsoft.com/ru-ru/library/hh510202.aspx)
+* [English](http://msdn.microsoft.com/en-us/library/hh510202.aspx)
 
-1.Скачать версию SQL Server 2014/2016 Express LocalDB (алгоритм описан в статях выше).  
+1.Download the version of SQL Server Express LocalDB 2014/2016 (the algorithm is described in the article above).
 
-2.После запуска [Flexberry Designer](fd_landing_page.html) можно изменить строку соединения, выбрав пункт меню `Настройка` – `Сменить БД...` или в файле конфигурации выбрав пункт меню `Настройка` – `Открыть файл конфигурации...`
+2.After starting [Flexberry Designer](fd_flexberry-designer.html) you can change the connection string by selecting the menu item `Настройка` – `Сменить DB...` or in the configuration file by choosing the menu item `Настройка` – `Открыть configuration file...`
 
-3.В файле конфигурации, который называется `CASEBERRY.exe.config` изменяем строку соединения примерно следующим образом (имя сервера и базы данных может отличаться):
+3.In the configuration file, which is called `CASEBERRY.exe.config` change the connection string like the following (the name of the server and database may be different):
 
-Изменения для строки подключения к SQL server Express или другой версии: 
+Change connection string to SQL server Express or another version:
 
 ```xml
 <add key="CustomizationStrings" value="SERVER=nameComp\SQLEXPRESS;Trusted_connection=yes;DATABASE=CaseLocalDB;"/>
 ```
-* **nameComp** - это имя локального компьютера или сервера, а также возможно IP-адрес сервера, где установлен SQL Server.
-* **SQLEXPRESS** - это имя установленого экземпляра SQL Server на компьютере.
 
-Изменения для строки подключения к SQL server 2014/2016 Express LocalDB: 
+* **nameComp** is the name of the local computer or server and IP address of the server where SQL Server is installed.
+* **SQLEXPRESS** is the name of the installed instance of SQL Server on the computer.
+
+Change connection string to SQL server Express LocalDB 2014/2016:
 
 ```xml
 <add key="CustomizationStrings" value="SERVER=(localdb)\MSSQLLocalDB;Trusted_connection=yes;AttachDbFilename=|DataDirectory|\FlexberryDesigner.mdf;"/>
 ```
 
-4.Если вместо русских букв начнут отображаться знаки вопроса, то у соответствующих баз данных необходимо в качестве `Collation` поставить `Cyrillic_General_CI_AS`. Как это сделать, указано в следующих статьях: 
+4.If instead of Russian letters are displayed as question marks, then the relevant databases is necessary as `Collation` to put `Cyrillic_General_CI_AS`. How to do this are outlined in the following articles:
 
-* [SQL Server 2014](http://technet.microsoft.com/en-us/library/ms175835(v=sql.120).aspx) 
-* [SQL Server 2016](http://technet.microsoft.com/en-us/library/ms179254.aspx) 
+* [SQL Server 2014](http://technet.microsoft.com/en-us/library/ms175835(v=sql.120).aspx)
+* [SQL Server 2016](http://technet.microsoft.com/en-us/library/ms179254.aspx)
 
-## Работа Flexberry Desinger c SQL Server 2012 Express LocalDB
+## Work Flexberry Desinger SQL Server 2012 Express LocalDB
 
-Если по какой-то причине не удалось скачать SQL Server 2016 Express LocalDB, можно воспользоваться версией [2012](http://www.microsoft.com/ru-ru/download/details.aspx?id=35579).
+If for some reason you are unable to download SQL Server Express LocalDB 2016, you can use the version of [2012](http://www.microsoft.com/ru-ru/download/details.aspx?id=35579).
 
-Пример строки соединения для LоcalDB:
+Connection string example for LоcalDB:
 
 ```xml
 <add key="CustomizationStrings" value="Server=(LocalDB)\v11.0; Integrated Security=true;AttachDbFilename=|DataDirectory|\FlexberryDesigner.mdf;"/>
 ```
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

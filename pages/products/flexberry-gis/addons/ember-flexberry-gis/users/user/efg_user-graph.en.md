@@ -5,5 +5,9 @@ keywords: Flexberry Ember Gis, admin, setup
 toc: true
 permalink: en/efg_user-graph.html
 lang: en
-summary: 
+summary:
 ---
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

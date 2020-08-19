@@ -128,10 +128,6 @@ private void TuneControlDelegateMethod(Control control, CreatedControlData creat
 }
 ```
 
-## FileControlView
-
-Подробнее о `FileControlView` в [статье](fa_file-control-view.html).
-
 ## Использование FileControl на формах редактирования
 
 Использование FileControl на формах редактирования описано в соответствующей [статье](fa_file-control-description.html).

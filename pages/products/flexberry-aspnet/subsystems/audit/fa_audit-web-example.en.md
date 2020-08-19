@@ -1,83 +1,85 @@
----
-title: Пример подключения аудита к существующему Web-приложению с использованием перегенерации проекта
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Flexberry Audit, Flexberry Designer
-toc: true
-permalink: en/fa_audit-web-example.html
-lang: en
----
+--- 
+title: Connection Example of an audit to an existing Web application using regeneration project 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET Flexberry Audit, Flexberry Designer 
+toc: true 
+permalink: en/fa_audit-web-example.html 
+lang: en 
+autotranslated: true 
+hash: b907650d661581d03cc5df3fbdce0188a83dc3c2705c5daf2f0a7cb466b2041a 
+--- 
 
-{% include note.html content="Если перегенерировать проект нет желания\возможности
-следует ознакомиться со статьей [Пример подключения аудита к существующему Web-приложению без использования перегенерации проекта](fa_audit-web-example-manual.html)" %}
+{% include note.html content="If you regenerate your project there is no desire\possibility 
+you should read the article [connection Example of an audit to an existing Web application without using regeneration project](fa_audit-web-example-manual.html)" %} 
 
-## Подключение аудита
+## Connection audit 
 
-Подключение аудита к существующей системе будет рассмотрено на примере.
+The audit connection to the existing system will be reviewed by example. 
 
-### Задача
+### Task 
 
-Добавить аудирование создаваемых и удаляемых объектов в существующую систему. Также необходимо вести аудит изменения для класса `Кредит`
+Add listening of created and deleted objects in the existing system. Also need to change auditing for a class `Кредит` 
 
-## Диаграмма классов
+## class Diagram 
 
-![](/images/pages/products/flexberry-aspnet/audit/filter-ex-diagram.png)
+![](/images/pages/products/flexberry-aspnet/audit/filter-ex-diagram.png) 
 
-### Настройка аудита
+### configuration audit 
 
-#### Настройка базы данных
+#### database setup 
 
-Для начала необходимо настроить базу данных аудита. Для этого форму настройки [свойств стадии](fo_audit-setup.html).
+First we need to configure the audit database. In the form settings [properties stage](fo_audit-setup.html). 
 
-![](/images/pages/products/flexberry-aspnet/audit/audit_app-settings.png)
+![](/images/pages/products/flexberry-aspnet/audit/audit_app-settings.png) 
 
-База аудита может храниться как в отдельной базе, так и в базе приложения. Это определяется настройкой `БД аудита в БД приложения`. Если принято решение хранить данные вместе. Установим эту настройку, а также настройку `Не удалять существующие таблицы`.
+Database auditing can be stored in a separate database and database application. This is determined by the setting `БД audit database приложения`. If you decide to keep the data together. Select this setting and configure `Не remove existing таблицы`. 
 
-Сохранть настройки и закрыть форму.
+Save the settings and close the form. 
 
-#### Настройка стадии
+#### setting the stage 
 
-Открыть форму настройки стадии и перейти на вкладку `Настройка аудита`
+Open the settings form the stage and go to the tab `Настройка аудита` 
 
-![](/images/pages/products/flexberry-aspnet/audit/audit-settings-stady.png)
+![](/images/pages/products/flexberry-aspnet/audit/audit-settings-stady.png) 
 
-* Нажать кнопку `Включить аудит во всех классах` ([подробнее](fo_audit-setup.html))
+* Click `Включить audit in all классах` ([more](fo_audit-setup.html)) 
 
-* Сохранить настройки и закрыть форму
+* Save the settings and close the form 
 
-#### Настройка классов
+#### set up the classes 
 
-Аудит операций создания и удаления включается по умолчанию. Следовательно, чтобы выполнить поставленную задачу, необходимо включить аудит операции изменения для класса `Кредит`.
+Audit creation and deletion is enabled by default. Therefore, to complete the task, you need to enable auditing of changes to class `Кредит`. 
 
-Открть свойства класса `Кредит` и установить настройку `Вести аудит операции изменения`.
+Odrt class properties `Кредит` and install `Вести audit operations изменения`. 
 
-![](/images/pages/products/flexberry-aspnet/audit/audit-settings-class.png)
+![](/images/pages/products/flexberry-aspnet/audit/audit-settings-class.png) 
 
-Сохранить настройки и закрыть форму.
+Save the settings and close the form. 
 
-#### Настройка класса со стереотипом Application
+#### setup a class with the stereotype Application 
 
-### Генерация приложения
+### Generation applications 
 
-Чтобы сгенерировать приложение, необходимо:
+To generate the application, you must: 
 
-* [Привести в соответствие базу данных приложения](fd_matching-db.html)
-* Сгенерировать классы
-* Скомпилировать классы
-* Сгенерировать ASP.NET приложение
+* [Align database applications](fd_matching-db.html) 
+* Generate classes 
+* Compile classes 
+* Generate ASP.NET app 
 
-### Результат
+### Result 
 
-В проект добавились [web-страницы для отображения аудита](fa_audit-web-forms.html):
+The project has added [web pages to display audit](fa_audit-web-forms.html): 
 
-![](/images/pages/products/flexberry-aspnet/audit/audit-files-in-project.png)
+![](/images/pages/products/flexberry-aspnet/audit/audit-files-in-project.png) 
 
-В каждый класс данных (класс со стереотипом [Implementation](fd_data-classes.html)) добавился класс AuditSettings, хранящий настройки аудита для этого класса.
+In each data class (class with the stereotype [Implementation](fd_data-classes.html)) added class AuditSettings to store audit settings for this class. 
 
-Помимо этого, в классы добавились представления для аудита `AuditView`, а также 4 новых поля: `Creator`, `CreateTime`, `Editor`, `EditTime` - последствия выставления настройки Добавить поля аудита ([подробнее](efs_flexberry-audit-object-fields.html)).
+In addition, classes were added to the submission for audit `AuditView`, and 4 new fields: `Creator`, `CreateTime`, `Editor`, `EditTime` - the consequences of placing the settings to Add audit fields ([more](efs_flexberry-audit-object-fields.html)). 
 
-#### Просмотр операций аудита
+#### Viewing operations audit 
 
-Как уже упоминалось выше, в проекте появились [web-страницы для просмотра данных аудита](fa_audit-web-forms.html). По умолчанию файл конфигурации, отвечающий за эти страницы (файл лежит в папке forms\audit, изображен на рисунке выше), выглядит следующим образом:
+As mentioned above, the project appeared [web page to view audit data](fa_audit-web-forms.html). By default, the configuration file responsible for these pages (the file is in the folder forms\audit shown in the figure above), as follows: 
 
 ```xml
 <authorization>
@@ -85,26 +87,30 @@ lang: en
   <allow roles="admin" />
   <deny users="*" />
 </authorization>
-```
+``` 
 
-Это означает, что доступ закрыт для всех пользователей, исключая пользователей с ролью admin ([подробнее в MSDN](https://msdn.microsoft.com/ru-ru/library/8aeskccd(v=vs.90).aspx))
+This means that access is closed to all users except users with the admin role ([read more on MSDN](https://msdn.microsoft.com/ru-ru/library/8aeskccd(v=vs.90).aspx)) 
 
-Чтобы не заниматься конфигурированием системы полномочий, следует изменить файл конфигурации следующим образом:
+To deal with system configuration authority, you must change the configuration file as follows: 
 
 ```xml
 <authorization>
   <deny users="?"/>
 </authorization>
-```
+``` 
 
-Таким образом, доступ к этим страницам будет запрещен только неавторизованным пользователям.
+Thus, access to these pages would only be prohibited to unauthorized users. 
 
-Ссылки на страницу `AuditEntityL.aspx` можно вынести на [рабочий стол](fa_add-page-web-desktop.html) или просто ввести в адресную строку адрес страницы.
+Links to the page `AuditEntityL.aspx` can be put on the [Desk](fa_add-page-web-desktop.html) or simply type in the address bar the page address. 
 
-На форме можно увидеть стандартный [WebObjectListView](fa_web-object-list-view.html) пока пустой, т.к. аудированных операций еще не было совершено.
+On the form you can see the standard [WebObjectListView](fa_web-object-list-view.html) is empty, as audited operations have not yet been committed. 
 
-Далее можно создать нового `Клиента`, изменить существующий `Кредит`, а затем обновим форму отображения данных аудита:
+Next, you can create a new `Клиента`, edit an existing `Кредит`, and then update the form display the audit data: 
 
-![](/images/pages/products/flexberry-aspnet/audit/audit-wolv.png)
+![](/images/pages/products/flexberry-aspnet/audit/audit-wolv.png) 
 
-Как можно заметить, фиксируется время и тип операции; объект, над которым была произведена операция (его primaryKey); кем и откуда была произведена операция, а также результат выполнения операции.
+As you can see, time is fixed and the type операции; the object on which the operation was performed (its primaryKey); by whom and where the operation was performed, and the result of the operation. 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

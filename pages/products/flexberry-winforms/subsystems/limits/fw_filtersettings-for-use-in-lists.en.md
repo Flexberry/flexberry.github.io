@@ -1,34 +1,30 @@
 ---
-title: Откуда берутся фильтерсеттинги для применения на списках
+title: Where are filtersetting for use in lists
 sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (Контролы), Ограничения
-summary: Объясняется как определяется пользователь для отображения настроек списка только для текущего пользователя
+keywords: Windows UI (Controls), Limitations
+summary: Explains how to determine the user to display the list settings for the current user only
 toc: true
 permalink: en/fw_filtersettings-for-use-in-lists.html
 folder: products/flexberry-winforms/
 lang: en
+autotranslated: true
+hash: 26f5a838a9b2be24ef6da90bbfba8f118f8537124dc16c1985e1bdc5bc3f02ad
 ---
 
- А берутся они после применения примерно такого ограничения: ___AND ( = ( Module IIS.AMS02.Происшествия.WinformЗадержанныйL/objectListView1(ObjectListView) ) OR ( = ( User KOSHEL Sergey ) ISNULL ( User) ) )___
+And they are taken after applying around this limitation: ___AND ( = ( Module IIS.AMS02.Of the incident.WinformЗадержанныйL/objectListView1(ObjectListView) ) OR ( = ( User Sergey KOSHEL ) ISNULL ( User) ) )___
 
-Код, используемый для построения ограничения: 
+Code used to build restrictions:
 
 ```csharp
-var ldef = SQLWhereLanguageDef.LanguageDef;
-lcs.LimitFunction = ldef.GetFunction(
-    ldef.funcAND,
-    ldef.GetFunction(
-    ldef.funcEQ, vdModule, prv_GenModuleName(ObjectListView)
-    ),
-    ldef.GetFunction(
-    ldef.funcOR,
-    ldef.GetFunction(ldef.funcEQ, vdUser, Settings.SettingManager.GetUserName()),
-    ldef.GetFunction(ldef.funcIsNull, vdUser)
-    )
-    );
+lcs.LimitFunction = FunctionBuilder.BuildAnd(
+    FunctionBuilder.BuildEqials(vdModule, prv_GenModuleName(ObjectListView)),
+    FunctionBuilder.BuildOr(
+        FunctionBuilder.BuildEqials(vdUser, Settings.SettingManager.GetUserName()),
+        FunctionBuilde.BuildIsNull(vdUser)
+    ));
 ```
 
-То есть, юзер берется из Settings.SettingManager.GetUserName(). А там, в свою очередь, либо из установленного значения, либо из AD, либо из Environment: 
+That is, the user is taken from the Settings.SettingManager.GetUserName(). And there, in turn, either from the specified value, either from AD or from the Environment:
 
 ```csharp
 public static string GetUserName()
@@ -38,10 +34,10 @@ public static string GetUserName()
            try
            {
                 System.DirectoryServices.DirectorySearcher ds = new System.DirectoryServices.DirectorySearcher("(&(objectClass=user)(sAMAccountName= "+Environment.UserName+"))",
-                     new string[]{"cn"});
+                     new string[]{cn});
                 ds.CacheResults = true;
                 System.DirectoryServices.SearchResult sr =  ds.FindOne();
-                username = sr.Properties["cn"][0].ToString();
+                username = sr.Properties[cn][0].ToString();
            }
            catch
            {
@@ -51,3 +47,6 @@ public static string GetUserName()
       return username;
 }
 ```
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -38,7 +38,7 @@ dvd.ConnectMasterPorp = "Сервер";
 dvd.OwnerConnectProp = new string[] { SQLWhereLanguageDef.StormMainObjectKey };
 dvd.View = view;
 dvd.Type = ldef.GetObjectType("Details");
-lcsСервер.LimitFunction = ldef.GetFunction(funcExist,
+lcsСервер.LimitFunction = ldef.GetFunction(ldef.funcExist,
                                             dvd,
                                             ldef.GetFunction(ldef.funcEQ,
                                                             new VariableDef(ldef.GuidType, "Подразделение"),
@@ -61,7 +61,7 @@ var dvd = new ICSSoft.STORMNET.Windows.Forms.DetailVariableDef
                     View = view,
                     Type = ldef.GetObjectType("Details")
                 };
-lcsСервер.LimitFunction = ldef.GetFunction(funcExistExact,
+lcsСервер.LimitFunction = ldef.GetFunction(ldef.funcExistExact,
                                             dvd,
                                             ldef.GetFunction(ldef.funcEQ,
                                                             new VariableDef(ldef.GuidType, "Подразделение"),

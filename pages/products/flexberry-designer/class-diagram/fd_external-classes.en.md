@@ -1,32 +1,38 @@
----
-title: Внешние классы (классы со стереотипом external) 
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Flexberry ORM, external-класс, external, генерация, стереотип
-summary: Описание особенностей external-классов и их генерации
-toc: true
-permalink: en/fd_external-classes.html
-lang: en
----
+--- 
+title: External classes (classes with stereotype external) 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Designer, Flexberry ORM, external-class, external, generation, stereotype 
+summary: features Description external classes and their generation 
+toc: true 
+permalink: en/fd_external-classes.html 
+lang: en 
+autotranslated: true 
+hash: a370f9c40f2361e5a92a7735f0325a19d3fa49f76002290161387cf2479d2ebb 
+--- 
 
-[Стереотип](fd_key-concepts.html) `external` позволяет объявить класс, соответствующий любому внешнему (не объявленному, языковому) классу. Это удобно и необходимо в тех случаях, когда требуется оперировать типом, который в модели не объявлен, но объявлен где-то на уровне кода (для случая `.Net`-языка, - в исходных или подключенных к исходным сборках).
+[Stereotype](fd_key-concepts.html) `external` allows you to declare a class that corresponds to any external (not declared, language) class. It is convenient and necessary in cases when you want to operate with the type that the model has not been announced, but declared somewhere in the code (for the case of `.Net`-language - source or connected to the source builds). 
 
-Пример внешнего класса:
+An example of the outer class: 
 
-![](/images/pages/products/flexberry-designer/class-diagram/external.jpg)
+![](/images/pages/products/flexberry-designer/class-diagram/external.jpg) 
 
-## Что генерируется с описания внешнего класса
+## That is generated describing the external class 
 
-Что генерируется | Генерация в SQL DDL | Генерация в .Net-язык
-:-------------------------------|:----------------------------|:------------------------------
-Любая часть любого UML-класса (атрибут, параметр метода и т.д.), объявленная этим типом | Как есть или указывается преобразование в карте типов для генератора | Как есть. Атрибут, параметр метода и т.п. объявляются этим типом
+Generated | Generate SQL DDL Generation .Net language 
+:-------------------------------|:----------------------------|:------------------------------ 
+Any part of any UML class (attribute, method parameter, etc.) declared by this class | or As is specified in the transformation map types for the generator As is. Attribute, method parameter, etc. are declared by this type 
 
-## Ссылки на другие стадии
+## Links to other stages 
 
-Так же через external-класс можно поставить ссылку на другую стадию. В этом случае будет генерироваться всё множество классов из этой и из той стадии. SQL будет аналогично сгенерирован для классов обоих стадий.
+Through external class, you can put a link on another stage. In this case, will be generated all the variety of classes from this and from the stage. The generated SQL will be similar classes for both stages. 
 
-## Особенности генерации
+## Features generating 
 
-Если в исходной стадии и external стадии есть классы с одинаковым именем, то приоритет отдается external классу. При генерации БД все атрибуты из external класса сохраняются и к ним добавляются атрибуты из исходного класса. Если атрибут уже есть, то он не будет добавлен.  
-Приоритет отдается external классу, т.к. чаще всего это общеприкладные компоненты, например, "Аудит", "Полномочия" и изменять их нельзя.  
-**Например**: Во внешней стадии есть класс с названием `Класс1` и атрибутами `А1` и `А2:string`, а в исходной стадии есть класс с таким же названием и атрибутами `А2:int` и `А3`. Тогда, при приведении базы данных в соответствие, будет сгенерирован класс `Класс1` с атрибутами `А1`, `А2:string` и `А3`. 
+If in the initial stage and external stage there are classes with the same name, priority is given to external class. When generating the database all the attributes of external classes are stored and added to them the attributes of the original class. If the attribute is already present, it will not be added. 
+Priority is given to external class, because most often it is obepechenie components, for example, "Audit", "Authority" and you cannot change them. 
+**Example**: the outer stage there is a class called `Класс1` and attributes `А1` and `А2:string`, and in the initial stage there is a class with the same name and attributes `А2:int` and `А3`. Then, when bringing the database into compliance, it will generate a class with attributes `Класс1` `А1`, `А2:string` and `А3`. 
 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

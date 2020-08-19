@@ -1,37 +1,43 @@
----
-title: Запуск редактора ограничений без WOLV
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Web UI (Контролы)
-toc: true
-permalink: en/fa_limit-editor-without-wolv.html
-lang: en
----
+--- 
+title: Run the editor without restrictions WOLV 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET, Web UI (Controls) 
+toc: true 
+permalink: en/fa_limit-editor-without-wolv.html 
+lang: en 
+autotranslated: true 
+hash: 2611d05d3a88b74a5bd56307d4671e098a90aa2ebf80bb641ede078d694d2d6d 
+--- 
 
-Запуск редактора ограничения без WOLVW может быть полезен в тех случаях, когда требуется возможность вызывать редактор ограничений, например, с формы редактирования. 
+Edit restrictions without WOLVW can be useful in cases when you want to invoke the constraint editor, for example editing form. 
 
-{% include note.html content="В предложенном примере используется метод работы с сессией. Данный метод не единственный возможный, всё зависит от задачи." %}
+{% include note.html content="In the proposed example uses the work session. This method is not only possible, it all depends on the task." %} 
 
-## Работа примера
+## Work example 
 
-Страница с примером:
+Page with example: 
 
-![](/images/pages/products/flexberry-aspnet/controls/limit-editor/limit-editor-without-wolv1.png)
+![](/images/pages/products/flexberry-aspnet/controls/limit-editor/limit-editor-without-wolv1.png) 
 
-По кнопке вызывается редактор ограничений
+The button is called the constraint editor 
 
-![](/images/pages/products/flexberry-aspnet/controls/limit-editor/limit-editor-without-wolv2.png)
+![](/images/pages/products/flexberry-aspnet/controls/limit-editor/limit-editor-without-wolv2.png) 
 
-После нажатия на кнопку «Применить» текстовое представление функции обновляется в текстбоксе формы.
+After clicking the button to Apply» «text representation of the functions is updated in the text boxes of the form. 
 
-![](/images/pages/products/flexberry-aspnet/controls/limit-editor/limit-editor-without-wolv3.png)
+![](/images/pages/products/flexberry-aspnet/controls/limit-editor/limit-editor-without-wolv3.png) 
 
 
-## Технические детали
+## Technical details 
 
-В реализованном примере редактор ограничений запускается следующем образом:
+In the implemented example, the constraint editor is started as follows: 
 
-* На кнопку вешается обработчик для открытия редактора ограничений.
-* Формируется ключ сессии.
-* При каждой перезагрузке из сессии по ключу считывается записанное туда ограничение (если ничего не записано, то записывается пустое ограничение).
-* При открытии редактора ограничений он по ключу сессии получает текущее ограничение.
-* Когда нажимается `Применить`, ограничение записывается в сессию. В реализованном примере также настроена перезагрузка  родительской страницы, что позволяет перевычитать из сессии объект с ограничением и как-то отобразить его на интерфейсе.
+* The button is hung up the handler to open the editor restrictions. 
+* A session key. 
+* Each time you restart the session key is read recorded there the limit (if nothing is recorded, then recorded the empty constraint). 
+* Open the editor restrictions on session key gets the current limit. 
+* When pressed `Применить`, the restriction is recorded in the session. In the implemented example also is configured to reload the parent page, allowing privacitat from the session object with a limit and somehow display it on the interface. 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

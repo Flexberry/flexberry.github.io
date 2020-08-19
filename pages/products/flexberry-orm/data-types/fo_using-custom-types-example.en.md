@@ -1,24 +1,29 @@
 ---
-title: An example of using custom types
+title: Design your own types
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, data types, example
-summary: Using typedef in applications
+keywords: Flexberry ORM, data types, example, custom, compare, IComparableType
+summary: Example of using classes with steriotip type applications
 toc: true
 permalink: en/fo_using-custom-types-example.html
 lang: en
+autotranslated: true
+hash: 1ef574f16f9a8c48ecf105c0b1a1f6509fadb94ae4ab77fa5f01d5842e479819
 ---
 
-Существует возможность создать собственный тип данных на диаграмме Flexberry Desinger. Для этого следует разместить новый класс на диаграмме и изменить его стереотип на "type". Как результат, класс будет доступен для определения свойств классов с собственным типом во всей стадии Flexberry Desinger.
+You can create your own data types in the diagram Flexberry Desinger. This should place the new class in the diagram and change its stereotype to» «type. As a result, the class will be available to define the properties of classes with a native type in all stage Flexberry Desinger.
 
-Flexberry ORM генерирует пустой шаблон класса в C#. Также, необходимо разрешить [typedef](fd_typedef.html), в котором будет храниться этот тип в БД. Э Это можно сделать на [карте типов](fd_types-map.html).
+Flexberry ORM generates an empty class template in C# for classes with the stereotype» «type.
 
-Например, существует класс `Dollar` на диаграмме `Entities`, а также на его сгенерированный код в CDLIB(Objects)/Dollar.cs:
+Be sure to specify the type of storage that will be stored in the database the field corresponding to attribute this to our type. You can do this on the [map types](fd_types-map.html) differently for each DBMS.
+
+The chart should also set the StoreInstancesInType, which will define the correspondence between service type and data .NET type, which will be cast when reading from the database. This .NET type must match the type of the storage in the map types to the mechanisms ADO.NET practiced correctly.
+
+For example, there is a class `Dollar` `Entities` in the diagram and also the generated code in CDLIB(Objects)/Dollar.cs:
 
 ```csharp
 [ICSSoft.STORMNET.StoreInstancesInType(typeof(SQLDataService), typeof(decimal))]
 public class Dollar
 {
-    
     private int fDollars;
     private int fCents;
     
@@ -35,7 +40,7 @@ public class Dollar
         get{return fDollars;}
         set 
         {
-            if (value>=0) 
+            if (value >= 0) 
                 fDollars = value; 
         }
     }
@@ -62,9 +67,9 @@ public class Dollar
 }
 ```
 
-Этот класс был реализован вручную на основе автоматически сгенерированного шаблона. Он позволяет отображать доллар в дружественном к пользователю виде: $1.24 или .46¢.
+This class was implemented manually based on automatically generated template. It allows you to display the dollar in the user friendly form: $or 1.24 .46¢.
 
-Как указано в атрибуте [StoreInstancesInType](fo_convert-type-property.html), этот класс будет храниться в БД в виде decimal. Это возможно благодаря определенным в классе преобразованиям:
+As indicated in the attribute [StoreInstancesInType](fo_convert-type-property.html) and the map types, this class will be stored in the database in the form `decimal`. This is possible thanks to a specific class to change:
 
 ```csharp
 public static implicit operator decimal(Dollar value)
@@ -78,7 +83,7 @@ public static implicit operator Dollar(decimal value)
 }
 ```
 
-`Dollar` используется как тип свойства `Price` в классе `CD`:
+`Dollar` is used as the property type `Price` in the class `CD`:
 
 ```csharp
 public virtual IIS.CDLIB.Dollar Price
@@ -95,7 +100,16 @@ public virtual IIS.CDLIB.Dollar Price
 }
 ```
 
-### Пример загрузки и сохранения объекта с собственными типами
+## Compare attributes of user-defined types between
+
+For the correct operation of the ORM analysis when the changed fields of the object should choose one of the following strategies:
+
+1. Override method `ToString()` that is guaranteed to answer the question as to whether the 2 variables of the specified type between them. This method is used ORM-Ohm by default for all non-standard types.
+2. To inherit a developed type of the interface `IComparableType`. This can be done even on the chart through the use of a class with the stereotype externalinterface» «and Inheritance. If the data type of such an interface, the ORM performs a comparison not using a cast to string and using the method from this interface. This method is preferred for performance reasons.
+
+Read more about how to work check for changes in the data objects written in [this article](fo_object-status.html).
+
+### Example of loading and saving object with its own types
 
 ```csharp
 IDataService dataService = DataServiceProvider.DataService;
@@ -105,14 +119,18 @@ object primaryKey = ormSample.GetSomeObjectPrimaryKey(typeof(CDDA));
 CDDA cdda = new CDDA();
 cdda.SetExistObjectPrimaryKey(primaryKey);
 
-// Загрузка объекта из БД по представлению CD_E.
+// Load object from DB upon submission CD_E. 
 dataService.LoadObject(CD.Views.CD_E, cdda);
 
-// Изменим цену.
+// Will change the price. 
 cdda.Price = new Dollar(0, 55);
 
-// Сохраним объект в БД.
+// Save the object to the database. 
 dataService.UpdateObject(cdda);
 
 Console.WriteLine(string.Format("'{0}' price is {1}", cdda.Name, cdda.Price));
 ```
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

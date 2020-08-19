@@ -1,27 +1,29 @@
----
-title: Экспорт в Excel и XML
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_export-excel-xml.html
-lang: en
----
+--- 
+title: Export to Excel and XML 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_export-excel-xml.html 
+lang: en 
+autotranslated: true 
+hash: 0b3f8413dab96b5c21f3f8aeadea219b687f247f3dd66a695d6a30b8c21897b6 
+--- 
 
-Вся логика экспорта в Excel и XML находится в Web.Tools.
+The whole logic of the export to Excel and XML, is a Web.Tools. 
 
-## Использование в контролах
+## Use controls 
 
-В данный момент выгрузка используется в [WOLV](fa_web-object-list-view.html)
+At the moment unloading is used in [WOLV](fa_web-object-list-view.html) 
 
-## Изменение значения и типа ячеек в Excel
+## change the value and type of cells in Excel 
 
-Для того, чтобы сменить значение и тип ячейки при выгрузке нужно переопределить статическое поле, например:
+In order to change the value and type of the cell when discharging you want to override a static field, for example: 
 
 ```csharp
 Web.Tools.WOLVFeatures.ExcelXMLExport.InitExcelCell = AllForms.InitExcelCell;
-```
+``` 
 
-И реализовать инициализацию свойств, например:
+And implement the initialization properties like: 
 
 ```csharp
 public static void InitExcelCell(ExcelCellEventArgs args)
@@ -29,62 +31,62 @@ public static void InitExcelCell(ExcelCellEventArgs args)
     if (args.PropValue is bool)
     {
         args.CellStyleId = DataType.String;
-        args.StringedPropValue = ((bool)args.PropValue) ? "Да" : "Нет";
+        args.StringedPropValue = ((bool)args.PropValue) ? Yes : "No";
         args.Handled = true;
     }
 }
-```
+``` 
 
-## Задание формата выгрузки для дат
+## specify extraction format for dates 
 
-Для того, чтобы задать формат даты при выгрузке, нужно переопределить статическое поле:
+In order to set the date format when uploading, you need to override a static field: 
 
 ```csharp
 ICSSoft.STORMNET.Web.Tools.WOLVFeatures.ExcelXMLExport.InitExcelCellFormatDelegate
-```
+``` 
 
-и обработать параметр необходимым образом. Передаваемый параметр следующий:
+and process the parameter as needed. Parameter passed in the following: 
 
 ```csharp
 public class ExcelCellFormatEventArgs : EventArgs
 {
-	/// <summary>
-	/// Тип объекта.
-	/// </summary>
+	/// <summary> 
+	/// The object type. 
+	/// </summary> 
 	public readonly Type ObjectType;
 
-	/// <summary>
-	/// Тип свойства.
-	/// </summary>
+	/// <summary> 
+	/// Type properties. 
+	/// </summary> 
 	public readonly Type PropertyType;
 
-	/// <summary>
-	/// Имя свойства.
-	/// </summary>
+	/// <summary> 
+	/// The name of the property. 
+	/// </summary> 
 	public readonly string PropertyName;
 
-	/// <summary>
-	/// Результирующий пользовательский формат.
-	/// </summary>
+	/// <summary> 
+	/// The resulting custom format. 
+	/// </summary> 
 	public string Format;
 
-	/// <summary>
-	/// Флаг, обозначающий, что значение было обработано.
-	/// По умолчанию <c>false</c>.
-	/// </summary>
+	/// <summary> 
+	/// Flag to indicate that the value has been processed. 
+	/// By default, <c>false</c>. 
+	/// </summary> 
 	public bool Handled;
 }
-```
+``` 
 
-Например, зададим для свойства "PoleDateTime" класса "LimitEditorMainAgregator" следующий формат даты: "dd.MM.yyyy hh:mm:ss".
+For example, ask for the property "PoleDateTime" class "LimitEditorMainAgregator" the following date format: "dd.MM.yyyy hh:mm:ss". 
 
 ```csharp
 ICSSoft.STORMNET.Web.Tools.WOLVFeatures.ExcelXMLExport.InitExcelFormat = InitExcelFormat;
 
-/// <summary>
-/// Настройка формата дат при экспорте в Excel.
-/// </summary>
-/// <param name="args">Параметры формата даты.</param>
+/// <summary> 
+/// Setting the format of dates when exporting to Excel. 
+/// </summary> 
+/// <param name="args">the parameters of the date format.</param> 
 private static void InitExcelFormat(ExcelCellFormatEventArgs args)
 {
 	if (args.ObjectType == typeof(LimitEditorMainAgregator)
@@ -94,6 +96,10 @@ private static void InitExcelFormat(ExcelCellFormatEventArgs args)
 		args.Format = "dd.MM.yyyy hh:mm:ss";
 	}
 }
-```
+``` 
 
-{% include note.html content="При установке формата дат необходимо, чтобы Excel понимал передаваемый формат (следующие форматы были корректно обработаны: `dd.MM.yyyy hh:mm:ss`, `dd.MM.yyyy hh:mm`, `dd.MM.yyyy`, `hh:mm:ss`, `hh:mm`, `dd.MMM.yyyy`, `MM.dd.yyyy`, `yyyy.mm.dd`)." %}
+{% include note.html content="When setting the date format you need to Excel recognize the transmitted format (the following formats has been correctly processed: `dd.MM.yyyy hh:mm:ss`, `dd.MM.yyyy hh:mm`, `dd.MM.yyyy`, `hh:mm:ss`, `hh:mm`, `dd.MMM.yyyy`, `MM.dd.yyyy`, `yyyy.mm.dd`)." %} 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

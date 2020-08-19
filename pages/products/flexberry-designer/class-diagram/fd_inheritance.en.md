@@ -1,23 +1,29 @@
----
+--- 
 title: Inheritance 
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Desinger, Flexberry ORM, DataObject
-summary: Basic inheritance properties
-toc: true
-permalink: en/fd_inheritance.html
-lang: en
----
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Desinger, Flexberry ORM data objects 
+summary: the Main properties of inheritance 
+toc: true 
+permalink: en/fd_inheritance.html 
+lang: en 
+autotranslated: true 
+hash: 973c77f5b75f95ca19202d2b91775b5b20bcb0fd0555458e83ef70a3f13b0bbd 
+--- 
 
-Ассоциации наследования, подобные `Internal-InternalChild` называются `наследованием`, внутренний класс в такой ассоциации — `предок`, а внешний — `потомок`. 
+Association of inheritance, such `Internal-InternalChild` called `наследованием` class in the Association — `предок` and the external `потомок`. 
 
-![](/images/pages/products/flexberry-designer/about/uml-example1.jpg)
+![](/images/pages/products/flexberry-designer/about/uml-example1.jpg) 
 
-## Основные свойства наследования
+## Basic properties of inheritance 
 
-* При наследовании атрибутный состав и состав связей всегда расширяется и не может сокращаться (при этом каждая унаследованная таблица [хранит `все` атрибуты `всех` предков](fo_storing-data-objects.html)).
-* Наследнику доступны все атрибуты и ассоциации предка. Так, если взять за внутренний класс `InternalChild`, то его атрибуты будут `Attr1` и `Attr2`, мастера `Master1`, `Master2`, `Master3`, детейлы `Detail1, Detail2, Detail3, Detail4`.
-* Предок обеспечивает полиморфный доступ ко всем своим наследникам, что означает, что экземпляру внутреннего класса и его наследникам (в данном случае — `Internal и InternalChild`) может быть установлен как экземпляр мастерового класса (в данном случае `Master2`), так и экземпляр любого наследника мастера (в данном случае `Master2Child`). Аналогична ситуация и с детейлами: экземпляр `Internal` одинаково, через `Detail2` оперирует с экземплярами `Detail2 и Detail2Child`, аналогично и для атрибутов и методов класса. На практике данное явление может вызвать [проблему, решаемую с помощью TypeUsage](fo_type-usage-problem.html), которое [особым образом отображается в структуру данных](fo_type-usage.html).
-* Если у наследника есть атрибут, метод (с тем же составом параметров), ассоциация (с тем же именем роли), то это значит, что наследник `перегружает` данный элемент предка.
-* Наследник от мастера может являться детейлом того же внутреннего класса (как в ситуации `Internal-Master1-Detail4`), это нормально.
+* When you inherit the attribute structure and composition of links is always increasing and can not be reduced (each inherited table [stores `все` attributes `всех` ancestors](fo_storing-data-objects.html)). 
+* The heir is available in the all attributes and associations of the ancestor. So, if we take an inner class `InternalChild`, its attributes will be `Attr1` and `Attr2`, masters `Master1`, `Master2`, `Master3`, detaily `Detail1, Detail2, Detail3, Detail4`. 
+* Ancestor provides polymorphic access to all his heirs, which means that the instance of the inner class and its heirs (in this case `Internal and InternalChild`) can be set as an instance of the artisan class (in this case `Master2`) and an instance of any heir of the master (in this case `Master2Child`). The situation is similar with detaylari: instance `Internal` equally through `Detail2` operates with instances and `Detail2 Detail2Child`, and similarly for attributes and methods of the class. In practice, this phenomenon can cause the problem to be solved with the help of a typeusage](fo_type-usage-problem.html) that [in a particular way is displayed in the data structure](fo_type-usage.html). 
+* If the heir has the attribute method (with the same composition parameters), the Association (with the same role name), it means that the heir `перегружает` this element ancestor. 
+* Heir from the master can be detailon the same inner class (as in a situation `Internal-Master1-Detail4`), that's fine. 
 
-{% include note.html content="Часто задаётся вопрос, почему таблицы [наследников](fd_inheritance.html) хранят все атрибуты всех предков, а не только свои. Ответ: тогда при чтении объекта-наследника необходимо собирать все атрибуты от таблиц предков по цепочке через `JOIN`, что очень медленно, особенно при чтении разнотипных объектов одним запросом. Следовательно, производительность приложения будет падать с ростом числа уровней наследования, что неприемлемо." %}
+{% include note.html content="a Frequently asked question as to why the table [of the heirs](fd_inheritance.html) keep all attributes of all ancestors, not just their own. A: then when reading the object-the heir you need to collect all the attributes from the tables of their ancestors along the chain through `JOIN` which is very slow, especially when reading different types of objects in a single query. Therefore, application performance will decrease with increasing number of levels of inheritance, which is unacceptable." %} 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

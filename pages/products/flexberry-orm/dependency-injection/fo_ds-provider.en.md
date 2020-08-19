@@ -1,20 +1,22 @@
----
-title: Default data service
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, data service
-summary: Data service initialization algorithm
-toc: true
-permalink: en/fo_ds-provider.html
-lang: en
----
+--- 
+title: Receiving service data 
+sidebar: flexberry-orm_sidebar 
+keywords: Dataserviceprovider, DataService, connectionstring config, app.config web.config 
+summary: How to configure the data service and get its authority from anywhere in the application 
+toc: true 
+permalink: en/fo_ds-provider.html 
+lang: en 
+autotranslated: true 
+hash: 44521544d5e3234f0d31b8a66b6803ed7b139f8e127dbe772d433632ea2ae457 
+--- 
 
-`DataServiceProvider.DataService` - это [сервис данных](fo_data-service.html), который инициализируется на основании параметров, заданных в файле конфигурации. Таким образом, `DataServiceProvider.DataService` является [сервисом данных](fo_data-service.html) по умолчанию.
+`DataServiceProvider.DataService` is [service data](fo_data-service.html), which is initialized based on the settings specified in the configuration file (`App.cobfig` or `Web.config`). Thus, `DataServiceProvider.DataService` is [service data](fo_data-service.html) by default. 
 
-### Алгоритм инициализации DataServiceProvider.DataService
+### Algorithm initialization DataServiceProvider.DataService 
 
-При инициализации `DataServiceProvider.DataService` используется следующий алгоритм (инициализация происходит, если нет закэшированного значения, либо стоит флаг, что всегда нужно возвращать новый сервис данных):
+Initialization `DataServiceProvider.DataService` use the following algorithm (initialization, if there is a cached value, or is the flag that should always return a new data service): 
 
-1.Производится попытка разрешить тип [сервиса данных](fo_data-service.html) через Unity. Например, чтобы использовался [MSSQLDataService](fo_mssql-data-service.html) из перечня [стандартных сервисов данных](fo_standard-data-services.html), в файле конфигурации требуется добавить следующее определение:
+1.Attempts to resolve type [service data](fo_data-service.html) through Unity. For example, to use MSSQLDataService in the configuration file you want to add the following definition: 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -32,11 +34,11 @@ lang: en
     </container>
   </unity>
 </configuration>
-```
+``` 
 
-2.Если тип [сервиса данных](fo_data-service.html) удалось разрешить через Unity, то определяется строка соединения. Сначала в web-стиле, потом в win-стиле.
+2.If the type of [data service](fo_data-service.html) was resolved via Unity, is determined by the connection string. First, in the web style, then win in style. 
 
-**web-стиль**:
+**web style**: 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -48,9 +50,9 @@ lang: en
     <add key="DefaultConnectionStringName" value="SomeConnectionStringName"/>
   </appSettings>
 </configuration>
-```
+``` 
 
-**win-стиль**:
+**win-style**: 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -59,9 +61,10 @@ lang: en
     <add key="CustomizationStrings" value="SERVER=server;Trusted_connection=yes;DATABASE=dbname;"/>
   </appSettings>
 </configuration>
-```
+``` 
 
-3. Если сервис данных не удалось получить, то он конструируется следующим образом: тип [сервиса данных](fo_data-service.html) определяется через настройку `DataServiceType` в файле конфигурации. А строка соединения определяется в зависимости от того, в каком режиме приложение, web или win.
+
+3.Next, get DataServiceProvider.DataService occurs in the old algorithm. Type [service data](fo_data-service.html) - setting DataServiceType in the configuration file. And the connection string is determined depending on in which mode the app, web or win. 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -70,10 +73,14 @@ lang: en
     <add key="DataServiceType" value="ICSSoft.STORMNET.Business.MSSQLDataService, ICSSoft.STORMNET.Business.MSSQLDataService" />
   </appSettings>
 </configuration>
-```
+``` 
 
-## Строки соединения
+## connection String 
 
-Подробнее почитать про строки подключения для LocalDB можно почитать в  статье [Настройка строки соединения c БД](fd_sql-express-local-db.html).
+You can read more about connection strings for LocalDB can be read in [this article](fd_sql-express-local-db.html). 
 
-Про строки подключения в целом написано в [msdn](https://msdn.microsoft.com/ru-ru/library/ms254500(v=vs.110).aspx).
+About the connection strings in General can be found in [msdn](https://msdn.microsoft.com/ru-ru/library/ms254500(v=vs.110).aspx). 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -1,14 +1,13 @@
----
-title: Microsoft .NET Framework
-keywords: Programming
-sidebar: guide-base-tech_sidebar
-toc: true
-permalink: en/gbt_dotnet.html
-folder: guides/base-tech/backend/
+--- 
+title: Microsoft .NET Framework 
+keywords: Programming 
+sidebar: guide-base-tech_sidebar 
+toc: true 
+permalink: en/gbt_dotnet.html 
 lang: en 
 autotranslated: true 
-hash: 1fe926662325446f2897c6818f4ab106d46b81fa2e94ac797aa95a19cc387a60
----
+hash: d11274de413916bdf452572aa1de4a88e47c9e7327d103db40623979cf6c781d 
+--- 
 
 ## Brief description
 
@@ -70,6 +69,4 @@ It is believed that platform .NET Framework has been the response of Microsoft o
 * [ASP.NET](gbt_aspnet.html)
 * [Course home page](gbt_landing-page.html)
 
-
-
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -1,81 +1,111 @@
 ---
-title: Приложение и рабочий стол
+title: Application and desktop
 sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (формы)
-summary: Приведено описание рабочего стола приложения, рассмотрены возможности прикладного программиста по его настройке, полезные ссылки
+keywords: Flexberry Winforms
+summary: desktop apps, desktop customization, adding your own forms
 toc: true
 permalink: en/fw_app-desktop.html
-folder: products/flexberry-winforms/
 lang: en
+autotranslated: true
+hash: 16a2500b8bcc1784c3066ec4c2987ef1eea1a92b1a7e182d911a07271273e283
 ---
-## Приложение
-Приложение предназначено для запуска настольного варианта системы. Приложение содержит код формы рабочего стола. Форма рабочего стола наследуется от `ICSSoft.STORMNET.Windows.Forms.Desktop`.
 
+The application is designed to run a desktop system. The application contains form code desktop. Form desktop inherited from `ICSSoft.STORMNET.Windows.Forms.Desktop`.
 
-Форма рабочего стола предназначена для доработки  и допрограммирования прикладным разработчиком в соответствии с прикладными требованиями.
+Form desktop is designed to Refine and zaprogramirovan an application developer in accordance with application requirements.
 
-## Windows-приложение
-### Настройка рабочего стола
-Рабочий стол представляет из себя следующее (внешний вид, пример):
+## Customize your desktop
 
-![](/images/pages/products/flexberry-winforms/desktop/windesktop.png)
+Desk consists of the following (external view example):
 
-В левой части — древовидная структура пунктов меню.
+![Desktop winforms application](/images/pages/products/flexberry-winforms/desktop/windesktop.png)
 
-В правой части — список т.н. «стартеров» (Runner) для пункта меню, выбранного в левой части меню.
+In the left part is a tree structure of menu items.
 
-Программист может настроить состав, расположение и внешний вид пунктов меню, состав и внешний вид стартеров.
+In the right part — the list of so-called starters» «(Runner) for the menu item selected in the left part of the menu.
 
-Настройка обеспечивается через специальный класс — настройщик рабочего стола, потомок от ICSSoft.STORMNET.UI.DesktopCustomizer. Настройщик рабочего стола устанавливается в свойство `DesktopCustomizer` формы рабочего стола.
+The programmer can modify the structure, layout and appearance of the menu items, the composition and appearance of the starters.
 
-Для указания состава стартеров и размещения по пунктам меню, следует перегрузить в настройщике рабочего стола метод `GetRunners()`, возвращающий одномерный массив стартеров `ICSSoft.STORMNET.UI.Runner`.
+Configuration is provided through a special class — Adjuster desktop, a descendant from ICSSoft.STORMNET.UI.DesktopCustomizer. The Adjuster desktop is installed in the property `DesktopCustomizer` form the desktop.
 
-#### Стартеры
-Базовый стартер `ICSSoft.STORMNET.UI.Runner` имеет: 
-* Путь по меню, уровни разделяются обратным слешем «\»;
+To indicate the composition of starters and placing the menu items, you should overload the Adjuster desktop method `GetRunners()` that returns a one-dimensional array of starters `ICSSoft.STORMNET.UI.Runner`.
+
+### Starters
+
+Basic starter `ICSSoft.STORMNET.UI.Runner` has:
+
+* The menu path, the levels are separated with a backslash «\»;
 * Заголовок;
-* Описание.
+* A description of the.
 
-Существует несколько специализированных стартёров:
-* `ICSSoft.STORMNET.Windows.Forms.FormRunner` — стартер формы, отличающийся от стандартного тем, что имеется свойство — тип формы, которая должна открываться. Соответственно, стартер предназначен для открытия форм. Метод `Run()` перегружен так, что конструирует форму и вызывает метод `Show()`;
-* `ICSSoft.STORMNET.UI.ContRunner` — стартер независимого спискового контейнера, одновременно запускающий находящийся в этом контейнере сценарий на исполнение. Имеет свойство — тип контейнера. Метод `Run()` перегружен таким образом, что конструирует контейнер, достаёт сценарий и запускает его на выполнение.
-* `ICSSoft.STORMNET.UI.ScriptRunner` — стартер сценария, находящегося в указываемом типе, реализующем интерфейс `Scriptizer.DataObjects.IScripted`. Метод `Run()` перегружен таким образом, что запускает этот сценарий на выполнение.
+There are a few specialized starters:
 
-Разумеется разработчик может реализовать и свои собственные стартеры с целью реализации своей функциональности или изменения базовой в частности, можно перегрузить ряд методов:
-* `GetBigImage(), GetImage()` для изменения иконки стартера;
-* `Run()` для реализации действия, происходящего при выборе с рабочего стола.
+* `ICSSoft.STORMNET.Windows.Forms.FormRunner` — starter form that is different from the standard that a property — the type of form that should open. Accordingly, the starter for opening forms. Method `Run()` overloaded so that designs in the form and calls the method `Show()`;
+* `ICSSoft.STORMNET.UI.ContRunner` — starter independent list container, simultaneously launching in the container the script for execution. Has a property type of the container. Method `Run()` overloaded in such a way that builds a container, takes the script and runs it.
+* `ICSSoft.STORMNET.UI.ScriptRunner` — starter script, located in the specified type implementing the interface `Scriptizer.DataObjects.IScripted`. Method `Run()` overloaded in such a way that launches this script.
 
-#### Форма
-На форме рабочего стола приложения (<ИмяПриложения>Desktop.cs в стартовом проекте) у объекта desktopCtrl2 типа ICSSoft.STORMNET.Windows.Forms.DesktopCtrl есть следующие свойства:
-* __SortRunners__ отвечает за сортировку элементов в дереве и в списке:
-    *	_true_ - алфавитный порядок
-    *	_false_ - без сортировки, порядок совпадает с порядком задания в Flexberry
-* __ViewMode__ отвечает за тип отображения элементов списка (иконки, список, таблица)
-* __Font__ отвечает за шрифт элементов в дереве и в списке
+It is possible to configure starters for the needs of a particular application to implement a given functionality or change the underlying. In particular, it is possible to overload a number of methods:
 
-{% include note.html content="Подробнее о контроле рабочего стола можно посмотреть [здесь](fw_objectlistview-in-desktop-ctrl.html)" %}
+* `GetBigImage(), GetImage()` to change the icons стартера;
+* `Run()` to implement the steps that occur when you select from the desktop.
 
-## Web-приложение
-В Web-приложении рабочий стол превращается в набор ссылок в меню SiteMaster'a.
+### Form
 
-![](/images/pages/products/flexberry-winforms/desktop/webdesktop.png)
+In the form of desktop applications (<ApplicationName>Desktop.cs in the initial design) object of type desktopCtrl2 ICSSoft.STORMNET.Windows.Forms.DesktopCtrl has the following properties:
 
-Меню настраивается при помощи [Карты сайта ASP.NET](http://msdn.microsoft.com/ru-ru/library/yy2ykkab%28v=vs.100%29.aspx), по умолчанию используется файл `Web.sitemap` из директории приложения (генерируется системой Flexberry). Настроить карту сайта по умолчанию можно в `Web.config` в разделе `SiteMap`. 
+* `SortRunners` is responsible for sorting of items in tree and list:
+* `true` - alphabetical order
+* `false` - without sorting, the order matches the order of the tasks in Flexberry
+* `ViewMode` responsible for the type of display list elements (icons, list, table)
+* `Font` responsible for the fonts in the tree and in the list
 
-Карта сайта отображается с помощью технологического контрола [IcsTreeView](fa_ics-treeview.html) (данный контрол имеет [ряд полезных настроек отображения](fa_ics-treeview.html)).
+Read more about control your desktop can be found in the article [desktop Control](fw_desktop-operations.html)
 
-__Примечание__: стоит учитывать, что при перегенерации Flexberry ASP.NET через Flexberry, внесенные в файл `Web.sitemap` изменения могут потеряться.
+## Add forms to your desktop
 
-## Сценарии доработки
+To add your own form on the windows desktop application, you must:
 
-* [Настройка Стартеров рабочего стола](fd_application.html)
-* Добавление собственных форм на рабочий стол ([Win](fw_add-form-to-win-desktop.html), [Web](fa_add-page-web-desktop.html))
+1. To open a file `<Projectname>DesktopCustomizer.cs`.
+2. In the file to find the method `GetRunner()`.
+3. In [brackets programmer](fo_programmer-brackets.html) it is necessary to add the required `Стартеры`.
 
-## См. также
-[Передача параметров от ContRunner до формы редактирования](fw_parameters-from-cont-runner-to-editform.html)
+In the end you should get something like the following:
 
-[Ярлыки рабочего стола](fw_win-desktop-links.html)
+```csharp
+public override ICSSoft.STORMNET.UI.Runner[] GetRunners()
+{
+    System.Collections.ArrayList arr = new System.Collections.ArrayList();
+    arr.AddRange(base.GetRunners());
+    // *** Start programmer edit section *** (Credits GetRunners()) 
+
+    // *** End programmer edit section *** (Credits GetRunners()) 
+    arr.Add(new ICSSoft.STORMNET.UI.ContRunner(typeof(IIS.Кредиты.КредитныйИнспекторL), "The accounting system of credits", "Loan officer", ""));
+    arr.Add(new ICSSoft.STORMNET.UI.ContRunner(typeof(IIS.Кредиты.КредитL), "The accounting system of credits", "Credit", ""));
+    arr.Add(new ICSSoft.STORMNET.UI.ContRunner(typeof(IIS.Кредиты.КлиентL), "The accounting system of credits", "Client", ""));
+    // *** Start programmer edit section *** (Credits GetRunners() End) 
+    arr.Add(new ICSSoft.STORMNET.UI.ContRunner(typeof(IIS.Кредиты.КлиентL), "The accounting system of credits\\Clients", Customers, ""));
+    arr.Add(new ICSSoft.STORMNET.Windows.Forms.FormRunner(typeof(winformОтчеты), "The accounting system of credits", Reports, ""));
+    // *** End programmer edit section *** (Credits GetRunners() End) 
+    ICSSoft.STORMNET.UI.Runner[] retArray = new ICSSoft.STORMNET.UI.Runner[arr.Count];
+    arr.CopyTo(retArray);
+    return retArray;
+}
+```
+
+Note1: you Can specify the path in the tree menu.
+
+Note2: the Form is usually called with the prefix `winform`.
+
+After launching the application, you can observe the following picture:
+
+![Desktop customization](/images/pages/products/flexberry-winforms/desktop/win-desktop-plus.png)
+
+## Cm. also
+
+* [Customize desktop Starter](fd_application.html)
+* [Pass parameters from ContRunner to edit form](fw_editform.html)
+* [Desktop shortcuts](fw_desktop-operations.html)
 
 
 
-
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

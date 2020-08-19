@@ -12,7 +12,7 @@ lang: ru
 
 Пусть сущности "Клиент" и "Кредит" связаны представленным на изображении образом.
 
-![](/images/pages/products/flexberry-orm/linq-provider/pseudo-details.png)
+![](/images/pages/products/flexberry-orm/query-language/pseudo-details.png)
 
 Нужно ограничить клиентов, задав при этом ограничение на ссылающихся на них кредиты. Специфика данной задачи состоит в том, что согласно модели клиент не знает, какие кредиты на него ссылаются.
 

@@ -12,7 +12,7 @@ lang: ru
 
 Атрибуты UML-класса являются значениями перечислимого типа.
 
-![](/images/pages/products/flexberry-designer/class-diagram/enumeration.jpg)
+![Пример](/images/pages/products/flexberry-designer/class-diagram/enumeration.jpg)
 
 ## Дополнительно редактируемые свойства
 
@@ -20,23 +20,23 @@ lang: ru
 
 Закладка `Класс`
 
-![](/images/pages/products/flexberry-designer/class-diagram/enumpropp1.jpg)
+![Пример](/images/pages/products/flexberry-designer/class-diagram/enumpropp1.jpg)
 
-* `Name` - имя перечислимого типа, то же, что и отображается непосредственно на `UML`-классе. 
-* `Description` -  при необходимости, некоторое подробное описание, для повышения информативности модели в [Flexberry Designer](fd_landing_page.html), генерируется в код на `.Net`-языке как `DocComment`; 
-* `OnlyShowSelectedValue` - не используется (зарезервировано для будущих версий); 
+* `Name` - имя перечислимого типа, то же, что и отображается непосредственно на `UML`-классе.
+* `Description` -  при необходимости, некоторое подробное описание, для повышения информативности модели в [Flexberry Designer](fd_flexberry-designer.html), генерируется в код на `.Net`-языке как `DocComment`;
+* `OnlyShowSelectedValue` - не используется (зарезервировано для будущих версий);
 * `Packet, NamespacePostfix` - позволяют настроить сборку и пространство имен, в которое должен генерироваться тип, см. [Расположение сборок после генерации кода](fo_location-assembly.html).
 
 Закладка `Возможные значения`
 
-![](/images/pages/products/flexberry-designer/class-diagram/enumpropp2.jpg)
+![Пример](/images/pages/products/flexberry-designer/class-diagram/enumpropp2.jpg)
 
 Эта страница предназначена для настройки свойств значений перечислимого типа. Для каждого свойства:
 
-* `Name` - имя значения перечислимого типа, оно же отображается непосредственно на UML-классе. 
-* `Description` - ри необходимости, некоторое подробное описание значения, для повышения информативности модели в [Flexberry Designer](fd_landing_page.html), генерируется в код на `.Net`-языке как `DocComment`; 
-* `Caption` - позволяет указать значение, информативное для пользователя (используется в пользовательском интерфейсе); 
-* `DefaultValue` - [целое число для значения перечислимого типа](http://msdn.microsoft.com/en-us/library/sbbt4032%28v=vs.71%29.aspx). 
+* `Name` - имя значения перечислимого типа, оно же отображается непосредственно на UML-классе.
+* `Description` - ри необходимости, некоторое подробное описание значения, для повышения информативности модели в [Flexberry Designer](fd_flexberry-designer.html), генерируется в код на `.Net`-языке как `DocComment`;
+* `Caption` - позволяет указать значение, информативное для пользователя (используется в пользовательском интерфейсе);
+* `DefaultValue` - [целое число для значения перечислимого типа](http://msdn.microsoft.com/en-us/library/sbbt4032%28v=vs.71%29.aspx).
 
 ## Что генерируется с описания перечислимого типа
 
@@ -44,23 +44,23 @@ lang: ru
 :--------------|:----------------------------|:----------------------------------------------
 Имя UML-класса | | Имя .Net-типа (перечислимый тип)
 Имя атрибута UML-класса | Выбирается самое длинное имя из всех в перечислимом типе, считается число символов, поле в таблице объявляется типа VARCHAR(число символов).Далее, сервисы данных сохраняют значения перечислимого типа как строковые константы, соответствующие именам | Имя константы в перечислимом типе
-Свойство Caption атрибута UML-класса | `Значения перечислимого типа хранятся в БД значениями заголовков` | Генерируется .Net-атрибут [EnumCaption](fo_function-list.html) (`Namespace: ICSSoft.STORMNET Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll) `)
+Свойство Caption атрибута UML-класса | `Значения перечислимого типа хранятся в БД значениями заголовков` | Генерируется .Net-атрибут [EnumCaption](fo_function-list.html) (`Namespace: ICSSoft.STORMNET Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll)`)
 Свойство `DefaultValue` атрибута UML-класса | | [Целое число для значения перечислимого типа](http://msdn.microsoft.com/en-us/library/sbbt4032%28v=vs.71%29.aspx) (если не указано иначе, то при редактировании поля перечислимого типа по умолчанию будет отображён элемент с минимальным `DefaultValue`, а в выпадающем списке элементы перечислимого типа будут отображаться в порядке возрастания их `DefaultValue`)
 
 Пример сгенерированного в C# кода перечислимого типа:
 
 ```csharp
 public enum СостояниеОшибки
-{ 
-    Черновик, 
-    Зарегистрирована, 
-    Оценка, 
-    Подтверждена, 
-    Отладка, 
-    Задержка, 
-    Повторена, 
-    AlphaTesting, 
-    BetaTesting, 
+{
+    Черновик,
+    Зарегистрирована,
+    Оценка,
+    Подтверждена,
+    Отладка,
+    Задержка,
+    Повторена,
+    AlphaTesting,
+    BetaTesting,
     Исправлена,
 }
 ```
@@ -74,17 +74,18 @@ public enum СостояниеОшибки
 Часто бывает удобным, чтобы значения перечислимых типов имели некоторый заголовок, понятный пользователю. Этот заголовок приписывается атрибутом `Caption` непосредственно значениям перечислимого типа.
 
 Пример:
-```
+
+```code
 
 public enum AccessModifier
-	{
-		[Caption("+")]
-		Public,
-		[Caption("-")]
-		Private,
-		[Caption("#")]
-		Protected
-	}
+  {
+    [Caption("+")]
+    Public,
+    [Caption("-")]
+    Private,
+    [Caption("#")]
+    Protected
+  }
 ```
 
 `Значения перечислимого типа хранятся в БД значениями заголовков.`
@@ -93,7 +94,7 @@ public enum AccessModifier
 
 Чтобы добавить пустое значение в перечисление (пустую строку), необходимо создать новый элемент и в его `Caption` поставить знак "тильда" (~):
 
-![](/images/pages/products/flexberry-designer/class-diagram/enum-empty.png)
+![Пример](/images/pages/products/flexberry-designer/class-diagram/enum-empty.png)
 
 В результате, в коде появится следующая запись:
 

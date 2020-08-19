@@ -1,86 +1,92 @@
----
-title: Ключевые понятия объектной структуры
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, мастер, детейл, ассоциация, наследование, стереотипы
-summary: Понятие мастера, детейла, связей между классами, стереотипы классов
-toc: true
-permalink: en/fd_key-concepts.html
-lang: en
----
+--- 
+title: Key concepts object structure 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Designer, master, detail, Association, inheritance, stereotypes 
+summary: the Concept of the master, detail, relationships between classes, stereotypes of classes 
+toc: true 
+permalink: en/fd_key-concepts.html 
+lang: en 
+autotranslated: true 
+hash: 96a3c07205a5b3331825ff9f3d800335d4f35815a0aa78aa23b71dd6d834876f 
+--- 
 
-## Ключевые понятия
+## Key concepts 
 
-Структура данных определяет структуру приложения. В основу систем кладётся структура данных, выражаемая диаграммой классов UML.
+The data structure defines the structure of the application. The basis of the system is placed to the data structure, expressed as a UML class diagram. 
 
-Рассмотрим на примере диаграммы классов основные понятия на основе элементарных понятий `UML` (не рассматриваются понятия атрибута, метода, параметра метода, типа, роли ассоциации и т.п., поскольку они очевидны и целиком заимствуются из `UML`). Данная [диаграмма классов](fd_class-diagram.html) также иллюстрирует типовые ситуации, возникающие при проектировании. Любые другие ситуации — следствия из данной диаграммы.
+Consider the example of the class diagram concepts on the basis of elementary concepts `UML` (not the concepts of attribute, method, method parameter, type, role, Association, etc., because they are obvious and entirely borrowed from `UML`). This [class diagram](fd_class-diagram.html) also illustrates typical situations that arise in the design. Any other situation — the implications of this chart. 
 
-![](/images/pages/products/flexberry-designer/about/uml-example1.jpg)
+![](/images/pages/products/flexberry-designer/about/uml-example1.jpg) 
 
-Класс, относительно которого в конкретной ситуации рассматриваются ассоциации, называется `внутренним классом`, а остальные — `внешними`.
+Class, relatively to which in a particular situation are considered Association, called `внутренним классом` and the rest `внешними`. 
 
-`Вложением (подобъектом)` называется атрибут класса, чей тип — другой класс.
+`Вложением (subobject)` called class attribute whose type is another class. 
 
-### Мастеровые ассоциации
+### Artisans Association 
 
-Ассоциации, подобные ассоциации между `Internal` и `Master1` называются [мастеровыми](fd_master-association.html), а внешний класс со стороны множественности 1, либо 0..1 называется `мастеровым` или `мастером`. 
+Association similar to the Association between `Internal` and `Master1` called [the mechanics](fd_master-association.html), and the outer class from the multiplicity 1 or 0..1 is called `мастеровым` or `мастером`. 
 
-[Мастеровая ассоциация](fd_master-association.html) может быть проведена между классами, каждый из которых является детейлом, а шапка у них общая. Пример этому — ассоциация `Detail2-Detail3`.
+[Artisans Association](fd_master-association.html) can be drawn between the classes, each of which is detalam, and hat they have in common. An example of this is the Association `Detail2-Detail3`. 
 
-### Детейловые композиции, агрегатор, шапка
+### Decalogue composition, aggregator, hat 
 
-Ассоциации агрегации или агрегации-композиции, подобные `Internal-Detail1` называются [детейловыми](fo_detail-associations-properties.html), а внешний класс — `детейловым`, либо просто `детейлом`. Внутренний класс по отношению к детейлу также называют `агрегатором или шапкой`.
+Association aggregation or aggregation-composition, such `Internal-Detail1` called [metalowymi](fo_detail-associations-properties.html) and the external class — `детейловым`, or just `детейлом`. Inner class in relation to detailo also called `агрегатором or шапкой`. 
 
-### Наследование
+### Inheritance 
 
-Ассоциации наследования, подобные `Internal-InternalChild` называются [наследованием](fd_inheritance.html), внутренний класс в такой ассоциации — `предок`, а внешний — `потомок`. 
+Association of inheritance, such `Internal-InternalChild` called [inheritance](fd_inheritance.html), an internal class in the Association — `предок` and the external `потомок`. 
 
-*При наследовании атрибутный состав и состав связей всегда расширяется и не может сокращаться.*
+*When you inherit the attribute structure and composition of links is always increasing and can not be reduced.* 
 
-[Flexberry ORM](fo_flexberry-orm.html) полностью реализует объектно-ориентированную концепцию, поскольку кроме инкапсуляции и полиморфизма даёт возможность полноценно использовать наследование при объектно-реляционном отображении.
+[Flexberry ORM](fo_flexberry-orm.html) fully implements object-oriented concept, because in addition to encapsulation and polymorphism makes it possible to use inheritance with object-relational mapping. 
 
-### Стереотипы
+### Stereotypes 
 
-Классам на диаграмме классов приписываются стереотипы, позволяющие указать назначение того или иного `UML`-класса.
+Classes on the class diagram, the stereotypes attributed to that allows you to specify the appointment of an `UML` class. 
 
-В `Flexberry Designer` предопределены следующие стереотипы:
+In `Flexberry Designer` the following predefined stereotypes: 
 
-* [Implementation](fd_data-classes.html), стереотип по-умолчанию (на диаграммах указывается пустым значением), обычный `UML`-класс, реализуемый в исходный код классами объектов данных. Классы могут связываться любыми ассоциациями;
-* [TypeDef](fd_typedef.html), стереотип, указывающий синоним типа. При генерации кода синонимы приводятся к базовым типам целевого языка с помощью пользователя (в код попадает базовый тип, а синоним не указывается никак). На диаграммах не может быть связан никакими ассоциациями;
-* [Type](fd_data-types-properties.html), стереотип, вводящий новый тип. При генерации кода на целевом языке объявляется этот тип, и при объявлениях членов классов, параметров и т.п. используется он. 
-* [Enumeration](fd_enumerations.html), стереотип, вводящий перечислимый тип. На диаграммах не может быть связан никакими ассоциациями;
-* [Interface](fd_interfaces.html), стереотип, вводящий `.Net`-интерфейс. Интерфейсы могут связываться любыми ассоциациями;
-* [BusinessServer](fd_business-servers.html), стереотип, соответствующий бизнес-серверу — `.Net` классу, где расположена реализация бизнес-операций прикладной системы;
-* [EditForm](fd_additional-stereotypes.html), стереотип, соответствующий форме редактирования — `.Net` классу, где расположена реализация формы для редактирования объекта данных;
-* [ListForm](fd_additional-stereotypes.html), стереотип, соответствующий форме списка — `.Net` классу, где расположена реализация формы для отображения списка объектов данных;
-* PrintForm, стереотип, соответствующий форме печати — .Net классу, где расположена реализация формы для печати;
-* [UserForm](fd_additional-stereotypes.html), стереотип, соответствующий пустой форме;
-* [EventArg](fd_eventarg.html), стереотип, соответствующий параметрам события (event), при генерации полученный класс наследуется от `System.EventArgs`;
-* [Application](fd_additional-stereotypes.html), стереотип, соответствующий приложению: форме рабочего стола и настроечному классу;
-* Role, стереотип, соответствующий роли в системе полномочий;
-* [External](fd_external-classes.html), стереотип, соответствующий любому внешнему (не объявленному в `CASE`, языковому) классу.
-* [ExternalInterface](fd_externalInterface.html), стереотип, соответствующий любому внешнему (не объявленному) интерфейсу.
-* Пользователь может указать произвольный стереотип.
+* [Implementation](fd_data-classes.html), the stereotype of default (the charts specify an empty value), the usual `UML` class implemented in the source code of classes of data objects. Classes can contact any ассоциациями; 
+* [TypeDef](fd_typedef.html), a stereotype indicating the type of synonym. When generating code synonyms are given to basic types in the target language by the user (in the code gets the base type, but a synonym does not specify in any way). The diagrams may not be associated with any ассоциациями; 
+* [Type](fd_data-types-properties.html), the stereotype to introduce a new type. When generating code in the target language you declare the type, and when declaring members of classes, parameters, etc is used. 
+* [Enumeration](fd_enumerations.html), a stereotype that introduces the enum type. The diagrams may not be associated with any ассоциациями; 
+* [Interface](fd_interfaces.html), stereotype, introducing `.Net` interface. The interfaces can contact any ассоциациями; 
+* [BusinessServer](fd_business-servers.html), the stereotype, the corresponding business server `.Net` class, where the implementation of the business operations of applied системы; 
+* [EditForm](fd_additional-stereotypes.html), a stereotype that corresponds to the edit form — `.Net` class, where the implementation of forms for editing of the object данных; 
+* [ListForm](fd_additional-stereotypes.html), a stereotype that conforms to the shape of the list — `.Net` class, where the implementation of the form for displaying list of objects данных; 
+* PrintForm, stereotype corresponding to the form of printing .Net class, where the implementation of forms for печати; 
+* [UserForm](fd_additional-stereotypes.html), stereotype corresponding to the empty форме; 
+* [EventArg](fd_eventarg.html), stereotype corresponding to the parameters of the event (event), when generating the resulting class inherits from `System.EventArgs`; 
+* [Application](fd_additional-stereotypes.html), a stereotype that corresponds to the application: the form of desktop and adjustment классу; 
+* Role, stereotype, appropriate role in the system полномочий; 
+* [External](fd_external-classes.html), a stereotype that corresponds to any external (not declared in `CASE`, language) class. 
+* [ExternalInterface](fd_externalInterface.html), a stereotype that corresponds to any external (non-declared) interface. 
+* User can specify arbitrary stereotype. 
 
-### Неочевидные ограничения объектной структуры (как не надо делать)
+### non-Obvious restrictions of the object structure (what not to do) 
 
-Нотация `UML` описывает назначение своих элементов, однако никак не декларирует «правильность» их использования.
+Notation `UML` describes the purpose of its elements, but does not declare the correctness of the» «their use. 
 
-Поэтому, рассмотрим основные неочевидные ограничения, которые не описываются нотацией, вызывают затруднения при понимании, невозможны при реализации, __которых следует избегать__.
+Therefore, we consider the main non-obvious restriction that is not described notation, cause difficulty in understanding, impossible in implementation, __to avoid__.
 
-#### Циклические детейлы
+#### Cyclic detaily 
 
-Детейл любого уровня не может являться наследником шапки, поскольку в таком случае получается что объект наследника должен включать сам себя.
+Detail any level can not be the heir to the caps, as in this case, it turns out that the object of the heir should include himself. 
 
-![](/images/pages/products/flexberry-designer/about/uml-example2.jpg)
+![](/images/pages/products/flexberry-designer/about/uml-example2.jpg) 
 
-#### Противоречивая агрегация
+#### Contradictory aggregation 
 
-Наследник от детейла не может являться детейлом наследника шапки.
+The heir of detail may not be detalam heir hats. 
 
-![](/images/pages/products/flexberry-designer/about/uml-example3.jpg)
+![](/images/pages/products/flexberry-designer/about/uml-example3.jpg) 
 
-#### Однако
+However #### 
 
-Вот такая ситуация возможна:
+This situation is possible: 
 
-![](/images/pages/products/flexberry-designer/about/lookup-as-master.png)
+![](/images/pages/products/flexberry-designer/about/lookup-as-master.png) 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -1,59 +1,65 @@
 ---
-title: Location of assemblies after code generation
+title: assemblies Location after code generation
 sidebar: flexberry-orm_sidebar
-keywords:  Flexberry Designer, Flexberry ORM
-summary: The concept of a package, the structure, name and location of the catalogs of the generated application
+keywords: Flexberry Designer, Flexberry ORM
+summary: the Concept of the package structure, the name and location of the directory of the generated application
 toc: true
 permalink: en/fo_location-assembly.html
 lang: en
+autotranslated: true
+hash: 01ad075499517a19c228fd8892f37183abfd068796c07ec27b8d8c2956da3ee1
 ---
 
-## Понятие пакета
+## The concept of the package
 
-__Пакетом__ называется некоторое логическое объединение генерируемых исходных кодов сборок. После генерации исходники, объединённые в пакет, располагаются в отдельном подкаталоге.
+__Package__ is called a logical grouping of the generated source code builds. After generating the source files, which are packaged, are placed in a separate subdirectory.
 
-### Структура каталогов после генерации кода выглядит следующим образом
+### Directory structure after code generation as follows
 
-* Каталог, указанный в "Каталога для исходного кода" настроек стадии 
-* Приложение 1 
-* Приложение 2 
-* ... 
-* Приложение N 
-* Пакет 1 
-* Пакет 2 
-* ... 
-* Пакет N 
+* The directory specified in "Directory for the source code" stage settings
+1
+* Annex 2
+* ...
+* Annex N
+* Package 1
+* Pack of 2
+* ...
+* Pack N
 
-Если имя пакета не указано внутри какого-либо класса, то в качестве имени пакета используется [свойство "Название продукта"](fd_project-customization.html) из настроек стадии.
+If the package name is not specified inside any class, the package name uses [the property "product Name"](fd_project-customization.html) from the settings stage.
 
-Внутри каждого пакета могут находиться следующие исходные коды сборок(в отдельных каталогах, с указанными именами):
+Inside each package can contain following source code builds(in separate directories with the specified names):
 
-* `BusinessServers` - сборка классов со стереотипами [businessserver](fd_business-servers.html);
-* `BusinessServersComPlus` - сборка [обёртки для обращения к бизнес-серверу](fo_bs-wrapper.html) через COM+ для бизнес-серверов, у которых установлена галочка `GenerateComPlusServer`; 
-* `BusinessServersHttp` - сборка обёртки для обращения к бизнес-серверуfo_bs-wrapper.html через веб-сервис для серверов, у которых установлена галочка `GenerateHTTPRemoteServer`; 
-* `Catchers` - для классов со стереотипом [eventarg](fd_eventarg.html), у которых установлена галочка `GenerateCatcher` в эту сборку генерируются классы-перехватчики событий; 
-* `Objects` - классы со стереотипами: [implementation](fd_data-classes.html), `type`, [enumeration](fd_enumerations.html), `eventarg`. 
-* `Scripts` - сценарии, определённые диаграммным методом `EBSD`. 
+* `BusinessServers` - Assembly classes with stereotypes [businessserver](fd_business-servers.html);
+* `BusinessServersComPlus` - Assembly [wrapper for accessing a business server](fo_business-server.html) via COM for business servers that have a check mark `GenerateComPlusServer`;
+* `BusinessServersHttp` - Assembly wrapper to access бизнес-серверуfo_business-server.html using a web service for servers that have a check mark `GenerateHTTPRemoteServer`;
+* `Catchers` - for classes with the stereotype [eventarg](fd_eventarg.html) that have a checkmark `GenerateCatcher` in this Assembly generated classes-interceptors событий;
+* `Objects` classes with stereotypes: [implementation](fd_data-classes.html), `type`, [enumeration](fd_enumerations.html), `eventarg`.
+* `Scripts` - scripts defined diagram technique `EBSD`.
 
-Дополнительно (при наличии специальных генераторов) могут генерироваться:
+In addition (in the presence of special generators) can be generated:
 
-* `DesktopCustomizers` - сборка классов - настройщиков классов со стереотипом [application](fd_additional-stereotypes.html); 
-* `Forms` - классы со стереотипами: [editform, listform, printform, userform](fd_additional-stereotypes.html); 
+* `DesktopCustomizers` - assembling classes of Adjusters classes with the stereotype [application](fd_additional-stereotypes.html);
+* `Forms` classes with stereotypes: [editform, listform, printform, userform](fd_additional-stereotypes.html);
 
-Если нет в стадии классов, попадающих в соответствующую категорию, то исходные коды не генерируются и каталог не создаётся.
+If not under classes, falling in the respective category, the source codes are not generated and the directory is not created.
 
-### Пространства имён
+### Namespace
 
-Внутри сборок определяются пространства имен. Разработчик может управлять пространствами имен, для чего имеются следующие возможности:
+Inside the Assembly defines the namespace. The developer can manage namespaces, which has the following features:
 
-* каждый класс имеет свойство `NamespacePostfix`; 
-* стадия имеет свойство [Namespace](fd_project-customization.html). 
+* each class has a property `NamespacePostfix`;
+* stage has the property [Namespace](fd_project-customization.html).
 
-Пространства имён формируются следующим образом (слитно приписывается, точка между ними не ставится):
+Namespaces are generated as follows (one word is attributed, the point between them is not placed):
 
 ``` csharp
 <Namespace стадии> + <NamespacePostfix класса>
 ```
-Если NamespacePostfix класса не указан, то остаётся только "<Namespace стадии>".
+If NamespacePostfix class is not specified, then only the "<Namespace stage>".
 
-Если <Namespace стадии> не указан, то он формируется как "<Название компании>.<Название продукта>" из настроек стадии. [Подробнее...](fd_project-customization.html).
+If <Namespace stages> is not specified, it is formed as "<company Name>.<Product name>" from the settings stage. [Read more...](fd_project-customization.html).
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -16,93 +16,281 @@ lang: ru
 
 В 86 % смартфонов, проданных во втором квартале 2014 года, была установлена операционная система Android. При этом за весь 2014 год было продано более 1 миллиарда Android-устройств.
 
-##  Ссылки на материалы для изучения
+## Пример использования
 
-### Базовый курс
+### Окно Android Studio - интегрированной среды разработки на Android
 
-* Java
-    * [Java — Википедия](https://ru.wikipedia.org/wiki/Java)
-    * [Java — Викиучебник](https://ru.wikibooks.org/wiki/Java)
-    * [Полный справочник Java™ Platform, Standard Edition 8, API Specification](http://docs.oracle.com/javase/8/docs/api/index.html)
+![Android Studio](/images/pages/guides/base-technologies/mobile/android_studio.jpg)
 
-* Android
-    * [Android - Википедия](https://ru.wikipedia.org/wiki/Android)
-    * [Android](https://www.android.com/intl/ru_ru/)
-    * [Developers for Android](https://developer.android.com/index.html)
+## «Для тех, кто предпочитает один раз увидеть»
 
-### Самоучители
-
-* Java
-    * [JavaRush — онлайн-курс обучения программированию на Java](https://javarush.ru/)
-    * [Руководство по языку программирования Java](https://metanit.com/java/tutorial/)
-    * [Java - Учебник для начинающих программистов](http://proglang.su/java)
-
-* Android
-    * [Уроки программирования под ОС Андроид](http://startandroid.ru/ru/uroki/vse-uroki-spiskom.html)
-    * [Программирование под ОС Андроид](https://metanit.com/java/android/)
-
-### Видеокурсы
-
-* [Основы разработки в Android Studio приложений для андроид](https://www.youtube.com/playlist?list=PLyfVjOYzujugap6Rf3ETNKkx4v9ePllNK)
-* [Школа мобильной разработки 2016](https://www.youtube.com/playlist?list=PLQC2_0cDcSKBNCR8UWeElzCUuFkXASduz)
-
-### Презентация
-
-<div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px">
-    <iframe src="//www.slideshare.net/slideshow/embed_code/key/5UHG988FqV0fYs" width="854" height="480" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+<div class="thumb-wrap">
+    <iframe width="854" height="480" src="https://onedrive.live.com/embed?cid=2FB293CA43965F14&resid=2FB293CA43965F14%21124&authkey=AHZZOzBv3y6hfHk&em=2" frameborder="0" allowfullscreen></iframe>
 </div>
-
-### Рекомендованные книги
-
-* Java
-    * [Java 8. Руководство для начинающих](http://www.ozon.ru/context/detail/id/32167369/)
-    * [Java 8. Полное руководство](http://www.ozon.ru/context/detail/id/31249554/)
-    * [Java. Библиотека профессионала. Том 1. Основы](http://www.ozon.ru/context/detail/id/137377512/)
-    * [Java. Библиотека профессионала. Том 2. Расширенные средства программирования](http://www.ozon.ru/context/detail/id/25151190/)
-    * [Алгоритмы на Java](http://www.ozon.ru/context/detail/id/18319699/)
-
-* Android
-    * [Android для разработчиков](http://www.ozon.ru/context/detail/id/136331151/)
-    * [Android. Программирование для профессионалов](http://www.ozon.ru/context/detail/id/136792911/)
 
 ## Программное обеспечение
 
 * Java
     * [NetBeans IDE](https://netbeans.org/downloads/)
+    * [Java SE Downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
 * Android
     * [Android Studio. The Official IDE for Android](https://developer.android.com/studio/index.html)
 
-* [Java SE Downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 * [Eclipse](https://www.eclipse.org/downloads/)
 * [JetBrains IntelliJ IDEA](https://www.jetbrains.com/idea/#chooseYourEdition)
 
+##  Ресурсы
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse1">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse1">
+                Базовые ресурсы</a>
+            </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li>Java</li>
+                    <ul>
+                        <li><a href="https://ru.wikibooks.org/wiki/Java">Статья о Java</a><i> — Викиучебник</i></li>
+                        <li><a href="http://docs.oracle.com/javase/8/docs/api/index.html">Java™ Platform, Standard Edition 8, API Specification</a><i> — Oracle</i></li>
+                    </ul>
+                    <li>Android</li>
+                    <ul>
+                        <li><a href="https://www.android.com/intl/ru_ru/">Официальный сайт Android</a><i> — android.сom</i></li>
+                        <li><a href="https://developer.android.com/index.html">Developers for Android</a><i> — developer.android.сom</i></li>
+                    </ul>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse2">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse2">
+                Самоучители</a>
+            </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li>Java</li>
+                    <ul>
+                        <li><a href="https://javarush.ru/">Онлайн-курс обучения программированию на Java</a><i> — JavaRush</i></li>
+                        <li><a href="https://metanit.com/java/tutorial/">Руководство по языку программирования Java</a><i> — metanit.сom</i></li>
+                        <li><a href="http://proglang.su/java">Java - Учебник для начинающих программистов</a><i> — ProgLang</i></li>
+                    </ul>
+                    <li>Android</li>
+                    <ul>
+                        <li><a href="http://startandroid.ru/ru/uroki/vse-uroki-spiskom.html">Уроки программирования под ОС Андроид</a><i> — STARTANDROID</i></li>
+                        <li><a href="https://metanit.com/java/android/">Программирование под ОС Андроид</a><i> — metanit.сom</i></li>
+                    </ul>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse3">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse3">
+                Видеокурсы</a>
+            </h4>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="https://www.youtube.com/playlist?list=PLyfVjOYzujugap6Rf3ETNKkx4v9ePllNK">Уроки по основам разработки android-приложений на Java</a><i> — youtube-аккаунт «Start Android»</i></li>
+                    <li><a href="https://www.youtube.com/playlist?list=PLQC2_0cDcSKBNCR8UWeElzCUuFkXASduz">Школа мобильной разработки</a><i> — youtube-аккаунт «Разработка»</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse4">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse4">
+                Рекомендованные книги</a>
+            </h4>
+        </div>
+        <div id="collapse4" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li>Java</li>
+                    <ul>
+                        <li><a href="http://www.ozon.ru/context/detail/id/32167369/">Java 8. Руководство для начинающих</a><i> — ozon.ru</i></li>
+                        <li><a href="http://www.ozon.ru/context/detail/id/31249554/">Java 8. Полное руководство</a><i> — ozon.ru</i></li>
+                    </ul>
+                    <li>Android</li>
+                    <ul>
+                        <li><a href="http://www.ozon.ru/context/detail/id/136331151/">Android для разработчиков</a><i> — ozon.ru</i></li>
+                        <li><a href="http://www.ozon.ru/context/detail/id/136792911/">Android. Программирование для профессионалов</a><i> — ozon.ru</i></li>
+                    </ul>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse5">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse5">
+                Примеры</a>
+            </h4>
+        </div>
+        <div id="collapse5" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href=" "> </a><i>  </i></li>
+                    <li><a href=" "> </a><i>  </i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse6">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse6">
+                Возможности по сертификации</a>
+            </h4>
+        </div>
+        <div id="collapse6" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href=" "> </a><i>  </i></li>
+                    <li><a href=" "> </a><i>  </i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
+
 ## Лабораторные работы и практические задания
 
-* [-]()
-* [-]()
-
-Варианты заданий для самостоятельного выполнения с последующей проверкой со стороны преподавателя.
-
-### Вариант №1
-
-### Вариант №2
-
-### Вариант №3
-
-### Вариант №4
-
-### Вариант №5
-
-## Примеры
-
-* [-]()
-* [-]()
-
-## Возможности по сертификации
-
-* [-]()
-* [-]()
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse7">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse7">
+                Варианты заданий для самостоятельного выполнения с последующей проверкой со стороны преподавателя</a>
+            </h4>
+        </div>
+        <div id="collapse7" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse8">&#9660;</a>
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#collapse8">
+                                    Вариант №1</a>
+                                </h4>
+                            </div>
+                            <div id="collapse8" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div>                                       
+                                    </div>   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse9">&#9660;</a>
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#collapse9">
+                                    Вариант №2</a>
+                                </h4>
+                            </div>
+                            <div id="collapse9" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div>                                       
+                                    </div>   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse10">&#9660;</a>
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#collapse10">
+                                    Вариант №3</a>
+                                </h4>
+                            </div>
+                            <div id="collapse10" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div>
+                                    </div>   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse11">&#9660;</a>
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#collapse11">
+                                    Вариант №4</a>
+                                </h4>
+                            </div>
+                            <div id="collapse11" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div>
+                                    </div>   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse12">&#9660;</a>
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#collapse12">
+                                    Вариант №5</a>
+                                </h4>
+                            </div>
+                            <div id="collapse12" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div>
+                                    </div>   
+                                </div>
+                            </div>
+                        </div>
+                    </div>                                       
+                 </div>   
+            </div>
+        </div>
+    </div>
+</div>
 
 ## Перейти
 

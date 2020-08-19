@@ -1,40 +1,42 @@
----
-title: Несколько кнопок сохранения на web-форме редактирования
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_few-save-buttons-editform.html
-lang: en
----
+--- 
+title: a Few buttons to save web-form editing 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_few-save-buttons-editform.html 
+lang: en 
+autotranslated: true 
+hash: 0050be3d3f1fa62bd49bbc2ad04bcc3dc90949f82fdbb583aa179879043bb329 
+--- 
 
-Данная статья описывает алгоритм добавления нескольких кнопок сохранения на [web-форму редактирования](fa_editform.html).
+This article describes the algorithm of adding multiple buttons save to [web editor](fa_editform.html). 
 
-## Алгоритм добавления нескольких кнопок
+## Algorithm adding a few buttons 
 
-* Добавить кнопку в разметку страницы.
-* Изменить селекторы в настройках плагина icsEditForm.js.
-* Изменить ID всех кнопок на странице так, чтобы они "находились" данным селектором.
+* Add a button to the page layout. 
+* Change the selectors in the plugin settings icsEditForm.js. 
+* To change the IDs of all buttons on the page so that they "were" the given selector. 
 
-### Добавление кнопки в разметку страницы
+### the Add button in the page markup 
 
-Чтобы добавить кнопку, достаточно скопировать уже существующую кнопку сохранения и поместить её в нужное место. Она примет следующий вид:
+To add a button, simply copy the existing save button and place it to the right place. It looks like this: 
 
 ```csharp
 <asp:ImageButton ID="ImageButton1" runat="server" SkinID="SaveBtn" OnClick="SaveBtn_Click" AlternateText="<%$ Resources: Resource, Save %>" ValidationGroup="savedoc" />
-```
+``` 
 
-Оставим её в таком виде и перейдем к следующему пункту.
+Leave it like this and move on to the next item. 
 
-### Изменение селекторов
+### Change selectors 
 
-Подробнее о настройках плагина формы редактирования можно посмотреть в [этой статье](fa_editform-configuration.html).
+Read more about the plugin settings edit form you can see in [this article](fa_editform-configuration.html). 
 
-Добавим на страницу следующий код:
+Add to the page with the following code: 
 
 ```csharp
-/// <summary>
-/// Переопределение настроек инициализации плагина
-/// </summary>
+/// <summary> 
+/// Override settings on plugin initialization 
+/// </summary> 
 public override object PluginInitSettings
 {
     get 
@@ -45,20 +47,24 @@ public override object PluginInitSettings
             };
     }
 }
-```
+``` 
 
-{% include note.html content="Если необходимо добавить кнопку `Сохранить и закрыть`, необходимо переопределить `saveAndCloseBtnSelector`. " %}
+{% include note.html content="If you want to add the button `Сохранить and закрыть`, you need to override `saveAndCloseBtnSelector`. "%} 
 
-### Изменение ID кнопок на форме
+### change the ID of the buttons on the form 
 
-По умолчанию, saveBtnSelector "ищет" кнопки, ID которых оканчивается на **SaveBtn** (не забываем, что реально на странице он превратится в **ContentPlaceHolder1_SaveBtn**). 
+By default, saveBtnSelector "looking" button, the ID ends in **SaveBtn** (do not forget what is really on the page it will turn into a **ContentPlaceHolder1_SaveBtn**). 
 
-На предыдущем шаге мы переопределили его так, чтобы он "искал" ID, оканчивающиеся на **SaveBtn**. 
+In the previous step, we override it so that it "searched" ID ending in **SaveBtn**. 
 
-Таким образом, можно не трогать ID уже существующей кнопки, но надо изменить ID добавленной нами на 1 шаге кнопки следующим образом:
+Thus, it is possible not to touch the ID of an existing button, but you have to change the ID we added in step 1 of the button as follows: 
 
 ```csharp
 <asp:ImageButton ID="BottomSaveBtn" runat="server" SkinID="SaveBtn" OnClick="SaveBtn_Click" AlternateText="<%$ Resources: Resource, Save %>" ValidationGroup="savedoc" />
-```
+``` 
 
-В качестве ID можно использовать любой ID, который удовлетворит селектору "input[id$=\"SaveBtn\"]".
+As ID you can use any ID that satisfies the selector "input[id$=\"SaveBtn\"]". 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

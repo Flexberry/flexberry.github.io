@@ -1,29 +1,35 @@
----
-title: Сервис данных WebObjectListView
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_wolv-data-service.html
-lang: en
----
+--- 
+title: Service data WebObjectListView 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_wolv-data-service.html 
+lang: en 
+autotranslated: true 
+hash: 1840cbaa7db8aeba28f4a4eddfd22162512c7995fd14d17198935f05e2153446 
+--- 
 
-## Сервис данных WOLV
+## data Service WOLV 
 
-У [WOLV](fa_web-object-list-view.html) имеется публичное свойство `DataService`, через которое можно получать используемый сервис данных и/или устанавливать свой.
+[WOLV](fa_web-object-list-view.html) there is a public property `DataService` through which it is possible to used the data service and/or install your. 
 
-Для этого было используется публичное свойство:
+This was used public property: 
 
 ```csharp
 public IDataService DataService { get; set; }
-```
+``` 
 
-Получив используемый сервис данных можно добавлять свои [обработчики некоторых событий](fo_sql-data-service.html), к примеру:
+Having used the service data, you can add your [handlers of some events](fo_sql-data-service.html), for example: 
 
 ```csharp
 (webObjectListView.DataService as SQLDataService).AfterUpdateObjects += delegate(object sender, DataObjectsEventArgs args)
 {
-    // ...
+    // ... 
 }
-```
+``` 
 
-{% include note.html content="Без приведения к конкретному типу `DataService`, события привязать будет невозможно." %}
+{% include note.html content="Without a cast to a specific type `DataService`, events bind will fail." %} 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

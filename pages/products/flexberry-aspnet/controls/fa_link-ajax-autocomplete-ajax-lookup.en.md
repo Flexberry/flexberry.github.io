@@ -1,45 +1,51 @@
 ---
-title: Связывание AjaxAutocomplete и AjaxLookup
+title: Bondage AjaxAutocomplete and AjaxLookup
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: en/fa_link-ajax-autocomplete-ajax-lookup.html
 lang: en
+autotranslated: true
+hash: 9778fb809bd433ceed0798c63ae6423ea6be0748c80efdfc51cb52aa2e6db0c8
 ---
 
-Имеется возможность привязать AjaxAutocomplete к AjaxLookup. Т.е. при выборе значения в контроле с поддержкой `AjaxAutocomplete` будет автоматически проставляться значение лукапа, если значение заданного свойства будет найдено в мастеровых объектах, иначе лукапу проставится пустое значение.
-__Внимание:__ Не стоит путать это с поддержкой `автодополнения в AjaxLookup`.
+Has the ability to bind AjaxAutocomplete to AjaxLookup. Ie, if you select in control with the support `AjaxAutocomplete` will automatically put the value of lucapa, if the value of the specified property will be found in artisan objects, otherwise lucapa put down an empty value.
+__Attention:__ do Not confuse it with the support `автодополнения in AjaxLookup`.
 
-__Внимание:__ Если требуется использовать вычислимое свойство, то обязательно должно быть указано представление!
+__Attention:__ If you want to use a calculated property, it must be indicated the introduction!
 
-## Возможная ситуация
+## Possible
 
 ![](/images/pages/products/flexberry-aspnet/controls/link-autocomplete.png)
 
-Например, на форме редактирования `Организация` отображаются лукап для мастера `Адрес` и собственное свойство `АдресСтрокой`. Вам нужно добавить автодополнение для `АдресСтрокой`, значения которые будут браться из `Адрес.АдресПолностью`. При совпадении введенного значения и значения мастера в свойстве `Адрес.АдресПолностью` проставится значение лукапа(ссылка на объект). Если вы ввели значение, которого нет в мастеровых значениях, то `АдресСтрокой` просто сохранится, а ссылка на мастера не будет проставлена.
+For example, the edit form is displayed `Организация` lookup for the master `Адрес` and private property `АдресСтрокой`. You need to add autocompletion for `АдресСтрокой`, the values of which will be taken from `Адрес.АдресПолностью`. The coincidence of the entered value and the value of the master property `Адрес.АдресПолностью` put down the value of lucapa(the object reference). If you entered a value that is not in artisan values, the `АдресСтрокой` just continue, and reference to a master will not bear.
 
-## Пример
+## Example
 
 ```csharp
-AjaxAutocomplete.AddLinkedAutocomplete(ctrlАдрес, ctrlАдресСтрокой, typeof(Адрес), "АдресПолностью");
+AjaxAutocomplete.AddLinkedAutocomplete(ctrlАдрес, ctrlАдресСтрокой, typeof(Адрес), "Adrasmanskiy");
 ```
 
-{% include note.html content="Данный код можно расположить в методе `PreApplyToControls` [формы редактирования](fa_form-interaction.html)." %}
+{% include note.html content="This code can be placed in the method `PreApplyToControls` [edit form](fa_form-interaction.html)." %}
 
-Также, имеется настройка связи между лукапом и полем для ввода. Например, если нужно изменять значение в поле для ввода, если меняется значение в лукапе.
+Also, there is a setting connection between lucapa and input field. For example, if you change the value in the input field, if you change the value in lucapa.
 
-## Пример
+## Example
 
 ```csharp
 bool changeValueWithLookup = true;
-AjaxAutocomplete.AddLinkedAutocomplete(ctrlАдрес, ctrlАдресСтрокой, typeof(Адрес), "АдресПолностью", changeValueWithLookup);
+AjaxAutocomplete.AddLinkedAutocomplete(ctrlАдрес, ctrlАдресСтрокой, typeof(Адрес), "Adrasmanskiy", changeValueWithLookup);
 ```
 
-## Пример явного задания ограничения для автодополнения
+## An example of an explicit limit for completion
 
-__Внимание__: Если задано ограничение ajax-лукапу и он связан с текстовым полем, при этом явно не задано ограничение на автодополнение, то ограничение на автодополнение возьмется из лукапа.
+__Warning__: If the limit is set ajax lucapa and it is associated with a text field, not a restriction on completion, the limit on the completion of lucapa will undertake.
 
 ```csharp
-Function licenceFunc = ldef.GetFunction(ldef.funcSQL, "(select count(*) from ЛицензияОрганизации where STORMMainObjectKey = Организация) > 0");
-AjaxAutocomplete.AddLinkedAutocomplete(ctrlСоздательГеопункта, ctrlСоздательГеопунктаСтрокой, typeof(Организация), "ОрганизацияПроп",  true, true, licenceFunc);
+Function licenceFunc = FunctionBuilder.BuildSQL("(select count(*) from Licenzirovanie where STORMMainObjectKey = Organization) > 0");
+AjaxAutocomplete.AddLinkedAutocomplete(ctrlСоздательГеопункта, ctrlСоздательГеопунктаСтрокой, typeof(Организация), "ORGANIZACIJA",  true, true, licenceFunc);
 ```
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

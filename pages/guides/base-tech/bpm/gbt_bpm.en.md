@@ -6,11 +6,11 @@ toc: true
 permalink: en/gbt_bpm.html 
 lang: en 
 autotranslated: true 
-hash: 620bbec60d6225e481fd399f70026111d858e93761c48de8c1ac92b6515aa179 
+hash: def9986df6a0e954732242037cf133b00615802153f83a6b925a2455d5286f2e 
 --- 
 
 ## About BPM 
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

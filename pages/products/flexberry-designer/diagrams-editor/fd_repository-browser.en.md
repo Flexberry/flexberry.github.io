@@ -1,51 +1,57 @@
----
-title: Браузер репозиториев
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, репозиторий, интерфейс, браузер репозиториев
-summary: Использование пользовательского интерфейса, работа с уровнями репозитория
-toc: true
-permalink: en/fd_repository-browser.html
-lang: en
----
+--- 
+title: a repository Browser 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Designer, repository, interface repository browser 
+summary: Using the user interface, work with the levels of the repository 
+toc: true 
+permalink: en/fd_repository-browser.html 
+lang: en 
+autotranslated: true 
+hash: 752f56a08d5a47f033b08cef1ec8ef08a4cceae6e9c28397c5241314d56ab7fe 
+--- 
 
-## Назначение и структура
+## Purpose and structure 
 
-Репозиторий является универсальным хранилищем информации о моделях. Специальный браузер обеспечивает доступ к [структуре и элементам репозитория](fd_recommended-structure-repository.html).
+The repository is a generic repository of information about models. Special browser provides access to [the structure and elements of the repository](fd_recommended-structure-repository.html). 
 
-На иллюстрации представлен внешний вид браузера:
+The illustration shows the appearance of the browser: 
 
-![](/images/pages/products/flexberry-designer/diagrams-editor/repository-browser.png)
+![](/images/pages/products/flexberry-designer/diagrams-editor/repository-browser.png) 
 
-В левой части отображается структура репозитория по уровням, в правой - содержимое выбранного в левой части уровня.
+The left side shows the structure of the repository through the levels, the right content is selected in the left part of the level. 
 
-Репозиторий представляет собой хранилище всей информации о моделях. Информация в репозитории хранится в иерархическом виде.
+The repository is a repository of all information about models. Information in the repository is stored in a hierarchical form. 
 
-## Пользовательский интерфейс
+## User interface 
 
-Поле "Размещение" показывает текущий путь внутри репозитория.
+The Location field shows the current path inside the repository. 
 
-Назначение кнопок панели инструментов браузера.
+The buttons of the toolbar of the browser. 
 
-![](/images/pages/products/flexberry-designer/diagrams-editor/repbrowsertoolbar.jpg)
+![](/images/pages/products/flexberry-designer/diagrams-editor/repbrowsertoolbar.jpg) 
 
-## Создание/удаление уровней репозитория
+## Create/delete repository 
 
-* Для создания нового объекта (проекта, конфигурации, фазы, системы) необходимо перейти на соответствующий уровень в браузере (например, для создания системы необходимо перейти на уровень фазы) и нажать кнопку ![](/images/pages/products/flexberry-designer/diagrams-editor/newbtn.jpg). В появившемся окне необходимо ввести имя и описание создаваемого объекта.
-* Для переименования или редактирования свойств уровня, необходимо выбрать его мышкой и нажать кнопку редактирования свойств объекта ![](/images/pages/products/flexberry-designer/diagrams-editor/propertiesbtn.jpg). 
-В появившемся окне отредактируйте свойства.
-* Для удаления объекта необходимо выбрать его мышкой в правой половине окна браузера и нажать кнопку ![](/images/pages/products/flexberry-designer/diagrams-editor/delbtn.jpg).
+* To create a new object (project, configuration, phase, system) should go to the appropriate level in the browser (for example, to create the system you need to go to the level of phase), and press the button ![](/images/pages/products/flexberry-designer/diagrams-editor/newbtn.jpg). In the window that appears you must enter a name and description for the created object. 
+* To rename or edit the properties of the level, you must select it with the mouse and click the edit object properties ![](/images/pages/products/flexberry-designer/diagrams-editor/propertiesbtn.jpg). 
+In the window that appears, edit the properties. 
+* To delete an object, select it with the mouse to the right half of the browser window and press the button ![](/images/pages/products/flexberry-designer/diagrams-editor/delbtn.jpg). 
 
-### Горячие клавиши
+### hotkeys 
 
-Нажатие этих клавиш, при выделенной строке уровня вызовет следующее действие:
+Pressing the keys, when the selected line will cause the following action: 
 
-* **Enter** - переход на уровень ниже;
-* **F2** - открытие редактирования свойств выделенного уровня. Аналогично нажатию ![](/images/pages/products/flexberry-designer/diagrams-editor/propertiesbtn.jpg);
-* **Delete** - удаление объекта. Аналогично нажатию ![](/images/pages/products/flexberry-designer/diagrams-editor/delbtn.jpg).
+* **Enter** - go to level ниже; 
+* **F2** - opens the edit properties of the currently selected level. Similarly pressing ![](/images/pages/products/flexberry-designer/diagrams-editor/propertiesbtn.jpg); 
+* **Delete** - delete the object. Similarly pressing ![](/images/pages/products/flexberry-designer/diagrams-editor/delbtn.jpg). 
 
-{% include note.html content="Горячие клавиши работают только в центральном окне (в списке слева не работают)." %}
+{% include note.html content="Hot keys only work in the Central window (in the list on the left not working)." %} 
 
-## Дополнительные возможности браузера репозитариев
+## Additional features of the browser repositories 
 
-* [Ярлыки для диаграмм в Flexberry Designer](fd_diagram-links.html)
-* [Работа с диаграммами в браузере репозитория](fd_working-repository-browser.html)
+* [Labels for charts in Flexberry Designer](fd_diagram-links.html) 
+* [Working with diagrams in the repository browser](fd_working-repository-browser.html) 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -1,124 +1,125 @@
 ---
 title: AjaxGroupEdit
 sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, JavaScript API, Web UI (Контролы)
+keywords: Flexberry ASP NET, JavaScript API, Web UI (Controls)
 toc: true
 permalink: en/fa_ajax-group-edit.html
 lang: en
+autotranslated: true
+hash: e11ed7ca2486f8d159ade398fd1679799d19f91fef612de854c0f616e4be0701
 ---
 
-## Описание
+`AjaxGroupEdit` - control that allows to edit many objects. Is analogous to [GroupEdit](fw_group-edit.html) for Web applications.
 
-`AjaxGroupEdit`- контрол, который позволяет редактировать множество объектов. Является аналогом [GroupEdit](fw_group-edit.html), для Web-приложений.
+## Customize the appearance of control
 
-## Настройка внешнего вида контрола
+### Customize the appearance of tables in the theme BlueSky
 
-### Настройка внешнего вида таблиц в теме BlueSky
+The topic BlueSky was added 2 version of the coloring table:
 
-В тему BlueSky были добавлены 2 варианта раскраски таблиц:
+* The default table:
 
-* Вид таблицы по умолчанию:
+![Table-default](/images/pages/products/flexberry-aspnet/controls/groupedit/bluesky-default-age.png)
 
-![](/images/pages/products/flexberry-aspnet/controls/groupedit/bluesky-default-age.png)
+* The default table:
 
-* Классический вид таблицы:
+![Table-default](/images/pages/products/flexberry-aspnet/controls/groupedit/bluesky-classic-age.png)
 
-![](/images/pages/products/flexberry-aspnet/controls/groupedit/bluesky-classic-age.png)
+The default is the new style with vertical Zebra, to change the coloring on classic need to `_VariablesBasic.less` to change the value of the variable `@BlueSkyTableStyle` on `false`.
 
-По умолчанию используется новый стиль с вертикальной зеброй, для того чтобы изменить раскраску на классическую нужно в `_VariablesBasic.less` изменить значение переменной `@BlueSkyTableStyle` на `false`.
+{% include important.html content="this also will change the table style WOLV" %}
 
-{% include important.html content="При этом также изменится и стиль таблиц WOLV" %}
+## Configure the controls inside AGE
 
-## Настройка контролов внутри AGE
+Configure the controls inside the AGE described in [configuring the controls inside AjaxGroupEdit](fa_controls-age.html).
 
-Настройка контролов внутри AGE описана в [статье Настройка контролов внутри AjaxGroupEdit](fa_controls-age.html).
+### The limit for LookUp in AjaxGroupEdit
 
-### Ограничение для LookUp в AjaxGroupEdit
+The use of restraints to LookUp in AjaxGroupEdit described in [article Limit for LookUp in AjaxGroupEdit](fa_limited-lookup-age.html).
 
-Использование ограничений для LookUp в AjaxGroupEdit описано в [статье Ограничение для LookUp в AjaxGroupEdit](fa_limited-lookup-age.html).
+### Settings for LookUp in AjaxGroupEdit
 
-### Настройки для LookUp в AjaxGroupEdit
+Settings for LookUp in AjaxGroupEdit described in the corresponding [article](fa_settings-lookup-age.html).
 
-Настройки для LookUp в AjaxGroupEdit описаны в соответствующей [статье](fa_settings-lookup-age.html).
+## CSS classes AGE
 
-## CSS-классы AGE
+Description CSS classes of AGE can be cleaned in [article CSS classes AjaxGroupEdit](fa_age-css.html).
 
-Описание CSS-классов AGE можно прочистить в [статье CSS-классы AjaxGroupEdit](fa_age-css.html).
+## Operations
 
-## Операции
+Description of operations AGE can be read in [the article Operation AjaxGroupEdit](fa_age-operations.html).
 
-Описание операций AGE можно прочесть в [статье Операции AjaxGroupEdit](fa_age-operations.html).
+## Events
 
-## События
+Description of the event AGE can be read in [article Events AjaxGroupEdit](fa_age-events.html).
 
-Описание событий AGE можно прочитать в [статье События AjaxGroupEdit](fa_age-events.html).
+## Add new object
 
-## Добавление нового объекта
-
-Для создания объекта в WGE имеется последняя строчка для ввода данных. Для того, чтобы ее совсем скрыть нужно указать не только `Add = false`, но и `PlusInRow = false`
+To create the object in the WGE has the last line for data entry. In order to completely hide, you need to specify not only `Add = false`, but `PlusInRow = false`
 
 ```csharp
 ctrlMyWebGroupEdit.Operations.Add = false;
 ctrlMyWebGroupEdit.Operations.PlusInRow = false;
 ```
-### Добавление объектов в AjaxGroupEdit при инициализации формы (новый объект)
 
-Описание алгоритма добавление можно прочитать в [статье Добавление объектов в AjaxGroupEdit при инициализации формы (новый объект)](fa_add-objects-age-initialization.html).
+### Adding objects to AjaxGroupEdit at form initialization (new object)
 
-## Редактирование объектов
+Description of the algorithm add can be read in [the article Adding objects to AjaxGroupEdit at form initialization (new object)](fa_add-objects-age-initialization.html).
 
-Существует возможность открытия формы редактирования объектов AGE в отдельном окне. Подробно данная возможность изложена в [статье Открытие окна редактирования в AjaxGroupEdit](fa_open-windows-age.html).
+## Edit features
 
-## Order-атрибуты
+There is the possibility of opening the edit form of the objects AGE in a separate window. In detail, this possibility is set out in [article open the edit window in AjaxGroupEdit](fa_open-windows-age.html).
 
-Если в представлении есть order атрибут, то AjaxGroupEdit сбросит сортировку и наложит сортировку по этому атрибуту. В тулбар добавятся 2 кнопки для перемещения строк "вверх" и "вниз", которые уменьшают\увеличивают значение order-атрибута.
+## Order attributes
 
-{% include warning.html content="Атрибут `Order` выставляется через Flexberry или добавляется вручную в код: `[Order()]`
+If the view have a order attribute, AjaxGroupEdit will reset the sort, and would impose sorting on this attribute. In the toolbar added 2 buttons to move rows up and down, which reduce\increase the value of the order attribute.
 
-Атрибут Order применим только к полям типа `int`." %}
+{% include warning.html content="the Attribute `Order` exhibited through Flexberry or added manually in code: `[Order()]`
 
-## Группировка
+The Order attribute applies only to fields of type `int`." %}
 
-Описание алгоритма настройки группировки описано в [статье Настройка группировки в AjaxGroupEdit](fa_grouping-age.html).
+## Group
 
-## Включение режима Read-only для отдельных столбцов
+Algorithm description settings group is described in [configuring groups in AjaxGroupEdit](fa_grouping-age.html).
 
-Описание алгоритма настройки режима Read-only для отдельных столбцов описано в [статье Включение режима Read-only для отдельных столбцов AGE](fa_read-only-age.html).
+## Enable Read-only mode for an individual column
 
-## Показ HTML значений
+Algorithm description configure Read-only mode for individual columns are described in [article Enable Read-only mode for an individual column AGE](fa_read-only-age.html).
 
-Для того, чтобы корректно показывать HTML значения в ячейках, нужно для атрибута проставить атрибут
+## Display HTML values
 
-```
+In order to correctly display HTML values in the cells, it is necessary for the attribute to put the attribute
+
+```html
 [IsHTML()|IsHTML()]
 ```
 
-Т.е. аналогично [HTML в AjaxLookup](fa_master-editor-ajax-lookup.html) и [WOLV](fa_web-object-list-view.html).
+That is, similarly to [HTML AjaxLookup](fa_master-editor-ajax-lookup.html) [WOLV](fa_web-object-list-view.html).
 
 ## JavaScript API
 
-Для манипуляций с AGE на стороне клиента следует использовать AGE JS API, который представляет собой jQuery плагин (`ajaxgroupedit`).
+For manipulation of AGE on the client side you should use AGE JS API, which is a jQuery plugin (`ajaxgroupedit`).
 
-### Методы
+### Methods
 
-| Наименование | Параметры | Описание|
+| Name | Parameters | Description|
 |:---------------------|:-------------------|:----------------------------------------------|
-| `getDataRows`| `selector`| Метод, возвращающий все `tr`, исключая удаленные. Если `selector` принимает значение "all", то удаленные строки исключены не будут.|
-| `addNewRow` | `ИмяПараметра1` - описание назначения | Создание новой строки редактирования.|
-| `updateVisualState`| `$container`/ `statusValue`| Метод, проставляющий "звёздочку" для отредактированных значений и прячущий удалённые.|
-| `addDependedLookups`| `settings`| Добавление зависимых лукапов (подробнее см. ниже).|
-| `deleteRows`| `rows` - jQuery-объект или массив HtmlElement, соответствующий удаляемым строкам | Удаление указанных строк.|
-| `deleteAllRows`| | Удаление всех строк.|
+| `getDataRows`| `selector`| Method that returns all `tr`, except for the remote. If `selector` takes the value "all", then the deleted rows will not be deleted.|
+| `addNewRow` | `ИмяПараметра1` - a description of the purpose | create a new line edit.|
+| `updateVisualState`| `$container`/ `statusValue`| Method, affix a "star" for edited values and hiding the remote.|
+| `addDependedLookups`| `settings`| Adding dependent lyapov (see below).|
+| `deleteRows`| `rows` - jQuery object or array of HtmlElement corresponding to the deleted rows and Remove the specified rows.|
+| `deleteAllRows`| | Delete all rows.|
 
-### Примеры использования
+### Examples of usage
 
-#### Добавление новой строки
+#### Add a new line
 
 ```javascript
  $('#<%=ctrlКомната.ClientID %>').ajaxgroupedit('addNewRow');
 ```
 
-#### Удаление всех строк
+#### Deleting all rows
 
 ```javascript
 <script type="text/javascript">
@@ -130,9 +131,9 @@ ctrlMyWebGroupEdit.Operations.PlusInRow = false;
 </script>
 ```
 
-#### Подсчет количества строк
+#### Count the number of rows
 
-Используем метод `getDataRows`:
+Use the method `getDataRows`:
 
 ```javascript
 <script type="text/javascript">
@@ -151,9 +152,9 @@ ctrlMyWebGroupEdit.Operations.PlusInRow = false;
 </script>
 ```
 
-### Зависимые лукапы внутри AGE
+### Dependent lucapa inside AGE
 
-Для реализации зависимых лукапов есть метод `addDependedLookups`:
+For implementation dependent lyapov there is a method `addDependedLookups`:
 
 ```javascript
 <script type="text/javascript">
@@ -168,22 +169,43 @@ ctrlMyWebGroupEdit.Operations.PlusInRow = false;
 </script>
 ```
 
-Здесь:
+Here:
 
-* `master` - название свойства, которое отвечает за мастеровой лукап
-* `depended` - название свойства, которое отвечает за зависимый лукап
-* `url` - url сервиса, к которому будут идти запросы при смене значения в мастеровом лукапе
-* `method` - метод сервиса, к которому будут идти запросы при смене значения в мастеровом лукапе
+* `master` - the name of the property that is responsible for artisan lucap
+* `depended` - the name of the property that is responsible for the dependent lookup
+* `url` - url, which will go to queries if you change the values in Masterova lucapa
+* `method` method, which will go to queries if you change the values in Masterova lucapa
 
-Пример [зависимых лукапов](fa_change-lcs-lookup-age.html).
+While in server side code must contain a description of the method, limiting associated lucapa:
 
-## Возможные ошибки
+```csharp
+// <summary> 
+/// Server method to handle dependent lyapov on the client. 
+/// </summary> 
+/// <param name="lfKey"> 
+/// The lf key. 
+/// </param> 
+/// <param name="masterPk"> 
+/// The master pk. 
+/// </param> 
+/// <returns> 
+/// The <see cref="string"/>. 
+/// </returns> 
+[System.Web.Services.WebMethod]
+protected void GetPageMethod(string lfKey, string masterPk)
+{
+}
+```
 
-* Не сохраняются изменения (например, добавленные объекты):
-    * Убедитесь, что на странице нет js ошибок;
-    * Проверьте, вызывается ли метод сохранения в AGE, который хранится в `document.WgeSaveHandlers`.
+An example of a [dependent lyapov](fa_change-lcs-lookup-age.html).
 
-Например, по-умолчанию вызов происходит в masterpage.js:
+## Possible errors
+
+* Not saved changes (e.g., added features):
+* Make sure the page has no js ошибок;
+* Check whether the method is called the preservation AGE, which is stored in `document.WgeSaveHandlers`.
+
+For example, by default a masterpage.js:
 
 ```javascript
 if (typeof document.WgeSaveHandlers !== 'undefined') {
@@ -198,14 +220,18 @@ if (typeof document.WgeSaveHandlers !== 'undefined') {
 }
 ```
 
-## Пользовательские настройки
+## Customizing
 
-Описание настроек содержится в [статье Пользовательские настройки AjaxGroupEdit](fa_age-user-settings.html).
+Description of settings contained in [article Customizing AjaxGroupEdit](fa_age-user-settings.html).
 
-## Встраивание прикладных контролов
+## The embedding application controls
 
-Информацию о встраивании прикладных контролов можно прочитать в [статье Встраивание прикладных контролов в AjaxGroupEdit](fa_age-applied-controls.html).
+Information about embedding application controls can be read in [the article Embedding application controls in AjaxGroupEdit](fa_age-applied-controls.html).
 
-## Множественный LookUp в AGE
+## Multiple LookUp in AGE
 
-Информацию о множественных LookUp'ах можно прочитать в [статье Использование множественного выбора в LookUp в AjaxGroupEdit](fa_multi-lookup-age.html).
+Information about multiple LookUp'Ah can be read in [the article Using multiple choice. in AjaxGroupEdit](fa_multi-lookup-age.html).
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

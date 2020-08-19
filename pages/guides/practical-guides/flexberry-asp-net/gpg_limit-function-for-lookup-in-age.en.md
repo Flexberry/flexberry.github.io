@@ -4,9 +4,9 @@ sidebar: guide-practical-guides_sidebar
 keywords: guide
 toc: true
 permalink: en/gpg_limit-function-for-lookup-in-age.html
-lang: en 
-autotranslated: true 
-hash: cb8b74d633ce5453fb1f264ecff29b55d8a953384099c9e7f9e6937de5cd5de5
+lang: en
+autotranslated: true
+hash: cb2c9124c04ed39c2ab07c966d73b1c39c060dfd9e34948c8f5a02d196cdf0cd
 ---
 
 The imposition of restrictions on a list of selectable items in the order.
@@ -14,7 +14,7 @@ The imposition of restrictions on a list of selectable items in the order.
 Objective: in the order it was impossible to specify multiple single product, it is necessary to impose restrictions so that the already selected items in the list for a new selection no longer appeared.
 You have to add the constraint for commodities, which will vary depending on the state of the list of items on the page.
 
-1.In block pluggable namespaces, add the following lines: 
+1.In block pluggable namespaces, add the following lines:
 
 ```
 using System;
@@ -27,12 +27,12 @@ using ICSSoft.STORMNET.Web.Tools;
 2.In `ZakazE.aspx.cs` add the following method:
 
 ```csharp
-/// <summary>
-/// Method modifies the LCS in lucapa, located in AGE.
-/// </summary>
-/// <param name="ordKeys">the Key.</param>
-/// <param name="lfKey">session Key.</param>
-/// <returns>the session Key.</returns>
+/// <summary> 
+/// Method modifies the LCS in lucapa, located in AGE. 
+/// </summary> 
+/// <param name="ordKeys">the Key.</param> 
+/// <param name="lfKey">session Key.</param> 
+/// <returns>the session Key.</returns> 
 [WebMethod]
 public static string CreateLf(string[] ordKeys, string lfKey)
 {
@@ -40,17 +40,8 @@ public static string CreateLf(string[] ordKeys, string lfKey)
 	{
 		lfKey = Guid.NewGuid().ToString("B");
 	}
-
-	SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
-	var clientKeys = new List<object>
-															{
-																	new VariableDef(
-																			langdef.GuidType,
-																			SQLWhereLanguageDef.StormMainObjectKey)
-															};
-
-	clientKeys.AddRange(ordKeys);
-	Function lf = langdef.GetFunction(langdef.funcNOT, langdef.GetFunction(langdef.funcIN, clientKeys.ToArray()));
+	
+	Function lf = FunctionBuilder.BuildNotIn(ordKeys);
 	LimitFunctionsHolder.PersistLimitFunction(lfKey, lf);
 
 	return lfKey;
@@ -101,8 +92,8 @@ Attaching the attribute to a method `WebMethod` `Public` means that this method 
 						$(this).icsMasterEditorAjaxLookup('updateOptions', { lookup: { LFName: lfName } });
 					});
 			};
-			/**
-* Iterate in Agay ctrlСтрокаЗаказа all lucapa ctrlТовар and stamped the changed limit function.
+			/** 
+* Iterate in Agay ctrlСтрокаЗаказа all lucapa ctrlТовар and stamped the changed limit function. 
 */
 			if (ordKeys) {
 				changeLf();
@@ -111,22 +102,22 @@ Attaching the attribute to a method `WebMethod` `Public` means that this method 
 						$(this).icsMasterEditorAjaxLookup('updateOptions', { lookup: { LFName: lfName } });
 					});
 			}
-			/**
-* If one of lyapov ctrlТовар changed the value, then override all lucapa ctrlТовар in Agay ctrlСтрокаЗаказа.
+			/** 
+* If one of lyapov ctrlТовар changed the value, then override all lucapa ctrlТовар in Agay ctrlСтрокаЗаказа. 
 */
 			$( '#<%=ctrlСтрокаЗаказа.ClientID%>' ).on('change', '[id$=ctrlТовар]', function() {
 				changeAll();
 				autoCalc(this, this.parentNode.parentNode.parentNode.parentNode);
 			});
-			/**
-* If new row added in Agay, just assign the limit function.
-* @param {int} row Number of the added row.
+			/** 
+* If new row added in Agay, just assign the limit function. 
+* @param {int} row Number of the added row. 
 */
 			$('#<%=ctrlСтрокаЗаказа.ClientID%>').on('rowadded.ajaxgroupedit', function(e, d) {
 				$('[id$=ctrlТовар]', d).icsMasterEditorAjaxLookup('updateOptions', { lookup: { LFName: lfName } });
 			});
-			/**
-* If the deleted row in AGAY, just change limit function.
+			/** 
+* If the deleted row in AGAY, just change limit function. 
 */
 			$('#<%=ctrlСтрокаЗаказа.ClientID%>').on('rowdeleted.ajaxgroupedit', function () {
 				changeAll();
@@ -148,8 +139,8 @@ Attaching the attribute to a method `WebMethod` `Public` means that this method 
 				$('#<%=ctrlЦена.ClientID%>').val(sum.toFixed(2));
 			}
 
-			/**
-* Calculating rates and amounts.
+			/** 
+* Calculating rates and amounts. 
 */
 			$('#<%=ctrlСтрокаЗаказа.ClientID%>').on('change', '[id$=ctrlКоличество]', function (e) {
 				autoCalc(this, this.parentNode.parentNode.parentNode);
@@ -163,8 +154,8 @@ Attaching the attribute to a method `WebMethod` `Public` means that this method 
 ## Go
 
 * <i class="fa fa-arrow-left" aria-hidden="true"></i> [Automatic calculation](gpg_auto-calculation.html)
-* [Exception handling](gpg_set-exception.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> 
+* [Exception handling](gpg_set-exception.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -1,185 +1,187 @@
 ---
-title: DataObject
+title: data Objects
 sidebar: flexberry-orm_sidebar
-keywords: DataObject, Flexberry ORM, methods
+keywords: DataObject Flexberry ORM methods
 summary: Characteristics, methods, and properties of the data object
 toc: true
 permalink: en/fo_data-object.html
 lang: en
+autotranslated: true
+hash: 1f5924578a85ba5da5dd5c9c0f47cfb40f2afcd2f85e82d49662279c74ead6b9
 ---
 
-В Flexberry ORM **объектами данных** называются экземпляры классов наследников абстрактного класса `ICSSoft.STORMNET.DataObject`. Для объектов данных генераторами Flexberry создаётся код класса на .Net CLR-совместимом языке (C#, VB и т.п.).
+In Flexberry ORM **data objects** instances of classes are called heirs of the abstract class `ICSSoft.STORMNET.DataObject`. For data objects Flexberry generators generate code for class .Net CLR-compliant language (C#, VB, etc.).
 
-## Объекты данных в модели
+## Data objects in the model
 
-[Классы объектов данных](fo_data-object-structure.html) описываются на [диаграмме классов](fd_class-diagram-constraction.html) в [Flexberry Designer](fd_landing_page.html) и имеют стереотип [implementation](fd_data-classes.html). При описании объекта данных задаются [атрибуты](fo_attributes-class-data.html), связи и метаданные. 
+[Classes of data objects](fo_data-object-structure.html) are described in [class diagram](fd_class-diagram-constraction.html) in [Flexberry Designer](fd_flexberry-designer.html) and have the stereotype [implementation](fd_data-classes.html). In the description of the data object are specified [attributes](fo_attributes-class-data.html), context and metadata.
 
-Атрибуты объекта данных могут быть двух типов стандартные (описанные на диаграмме) и динамические [динамические свойства объекта данных](fo_dynamic-properties.html). В случае если значение атрибута не предполагается размещать в хранилище, он может быть объявлен как [нехранимый](fo_not-stored-attributes.html). При описании атрибутов им могут быть присвоены [значения по умолчанию](fo_features-dafault-value.html).
+The attributes of the data object can be of two types standard (described in the diagram) and dynamic [dynamic properties of the data object](fo_dynamic-properties.html). If the attribute value is not supposed to be placed in the repository, it can be declared as [phranky](fo_not-stored-attributes.html). In the description of the attributes may be assigned to the [default values](fo_features-dafault-value.html).
 
-Также в Flexberry ORM поддерживаются несколько видов связей: [наследование](fd_inheritance.html), [мастеровые](fd_master-association.html) и [детейловые](fo_detail-associations-properties.html) связи.
+Also Flexberry ORM supports several types of links: [inheritance](fd_inheritance.html), [artisans](fd_master-association.html) and [Decalogue](fo_detail-associations-properties.html) communication.
 
-К объектам данным может быть привязана дополнительная информация (метаинформация), например, [представления](fd_view-definition.html) или [изображение](fo_class-image.html). 
+The data objects may be linked to additional information (meta-information), for example, [views](fd_view-definition.html) or [picture](fo_class-image.html).
 
-Стереотип [implementation](fd_data-classes.html) является значением по умолчанию, т.е. при разработке диаграммы его можно не указывать, оставляя пустое значение.
+Stereotype [implementation](fd_data-classes.html) is the default value, i.e. when developing the chart it can be omitted leaving a blank.
 
-## Объекты данных вo время выполнения
+## Data objects at run time
 
-Жизненный цикл объекта данных традиционно состоит из трех этапов:
+The life cycle of a data object traditionally consists of three stages:
 
-* Создание.
-* Обработка.
-* Сохранение.
+* Create.
+* Treatment.
+* Save.
 
-## Создание объекта данных
+## Create a data object
 
-Объект данных может быть создан следующими способами:
+The data object can be created in the following ways:
 
-* Создание экземпляра класса стандартными средствами языка 
-* Загрузка из хранилища методами LoadObject/LoadObjects [сервиса данных](fo_data-service.html).
-* [Прототипирование](fo_data-object-prototype.html)
-* [Копирование](fo_copying-data-objects.html).
-* [Десериализация ранее сохраненного объекта](fo_aggregating-function.html).
+* Create an instance of the class standard means of language
+* Download from repository methods LoadObject/LoadObjects [data service](fo_data-service.html).
+* [Prototyping](fo_data-object-prototype.html)
+* [Copy](fo_copying-data-objects.html).
+* [Deserialize a previously saved object](fo_aggregating-function.html).
 
-## Обработка объекта данных
+## Processing of the data object
 
-Одним из основных атрибутов объекта является [ключ объекта](fo_primary-keys-objects.html), для доступа к которому используется свойство `PrimaryKey`. В большинстве случаев для ключа используется глобальный уникальный идентификатор (GUID), хотя при необходимости могут быть использованы другие типы.
+One of the main attributes of an object is [object key](fo_primary-keys-objects.html), for which property is used `PrimaryKey`. In most cases, the key is the global unique identifier (GUID), although if necessary, can be used other types.
 
-Наиболее часто встречаются следующие задачи обработки объектов данных: 
+The most common problems in the processing data objects:
 
-* [Изменение значений атрибутов](fo_own-object-attributes.html).
-* [Получение информации о статусе объекта](fo_processing-status-condition-load.html).
-* [Получение информации о загруженных свойствах](fo_definition-loaded-properties.html).
-* [Получение метаданных объекта](fo_methods-class-information.html).
-* [Блокировка объекта для монопольного редактирования](fo_lock-service.html).
-* [Проверка совместимости объекта и представления](fo_test-object-for-viewing.html).
-* [Получение презентационного значения для объекта данных](fo_get-presentation-value.html)
-* [Дочитка объекта данных](fo_additional-loading.html)
+* [Change in attribute values](fo_own-object-attributes.html).
+* [Obtaining information about the object status](fo_processing-status-condition-load.html).
+* [Obtaining information about the loaded properties](fo_definition-loaded-properties.html).
+* [Obtaining object metadata](fo_methods-class-information.html).
+* [Lock object for exclusive editing](fo_lock-service.html).
+* [Verification of compatibility of object and representation](fo_test-object-for-viewing.html).
+* [Receipt of presentation of the value of the data object](fo_get-presentation-value.html)
+* [Dochitcu of data object](fo_additional-loading.html)
 
-## Сохранение объекта данных в хранилище
+## Saving the data object in the repository
 
-Для сохранения объекта данных используются методы [сервиса данных](fo_data-service.html) UpdateObject/UpdateObjects. При работе с объектами данных важными понятиями являются [статус объектов, состояние загрузки](fo_object-status.html) и [копия данных](fo_data-object-copy.html).
+To save the data object uses the methods of [data service](fo_data-service.html) UpdateObject/UpdateObjects. When working with data objects important concepts are [the status of objects, the upload status](fo_object-status.html) and [copy data](fo_data-object-copy.html).
 
-## Основные свойство и методы ICSSoft.STORMNET.DataObject
+## The basic properties and methods ICSSoft.STORMNET.DataObject
 
-### Работа с копией данных
+### Work with a copy of the data
 
 #### GetDataCopy
 
-__Назначение__: Получить внутреннюю копию объекта данных
+__Assign__: Get the internal copy of the data object
 
-__Сигнатура__:
+__Signature__:
 
 ```csharp
 DataObject ICSSoft.STORMNET.DataObject.GetDataCopy()
 ```
 
-#### InitDataCopy 
+#### InitDataCopy
 
-__Назначение__: Проинициализировать копию данных
+__Assign__ to Initialize the copy of the data
 
-__Параметры__:
- 
-`DataObjectCache` 
- 
-__Сигнатура__:
+__Settings__:
+
+`DataObjectCache`
+
+__Signature__:
 
 ```csharp
-// 1
+// 1 
 void ICSSoft.STORMNET.DataObject.InitDataCopy()
 
-// 2
+// 2 
 void ICSSoft.STORMNET.DataObject.InitDataCopy(DataObjectCache DataObjectCache)
 ```
 
 #### SetDataCopy
 
-__Назначение__: Установить внутреннюю копию объекта данных
+__Assign__: Set the internal copy of the data object
 
-__Параметры__:
- 
-`value` - Устанавливаемый объект как копия существующего 
- 
-__Сигнатура__:
+__Settings__:
+
+`value` - Set object as a copy of an existing
+
+__Signature__:
 
 ```csharp
-void ICSSoft.STORMNET.DataObject.SetDataCopy (DataObject value) 
+void ICSSoft.STORMNET.DataObject.SetDataCopy (DataObject value)
 ```
 
-### Получение и установка состояния объекта
+### Getting and setting the state of the object
 
 #### ContainsAlteredProps
 
-__Назначение__: Установить было ли изменение значений свойств объекта по сравнению с внутренней копией 
+__Assign__: Set whether the values of object properties in comparison with internal copy of
 
-__Сигнатура__:
+__Signature__:
 
 ```csharp
 bool ICSSoft.STORMNET.DataObject.ContainsAlteredProps()
 ```
 
-#### GetAlteredPropertyNames 
+#### GetAlteredPropertyNames
 
-__Назначение__: Возвращает список свойств (атрибутов, мастеров, детейлов), значения которых изменились по сравнению с внутренней копией объекта.
+__Assign__: Returns a list of properties (attributes, supervisors, datalow), the values of which are changed in comparison with the internal copy of the object.
 
-__Сигнатура__:
+__Signature__:
 
 ```csharp
 string[] ICSSoft.STORMNET.DataObject.GetAlteredPropertyNames()
 ```
 
-#### CheckNotNullProperties  
+#### CheckNotNullProperties
 
-__Назначение__: Вернуть список незаполненных полей (значения не могут быть пустыми согласно модели данных)
+__Assign__: Return a list of blank fields (values can't be empty according to data model)
 
-__Параметры__:
-    
-* `detailSkip` - Пропускать при проверке удаленные детейлы. Словарь со списком типов детейлов и флагами для них. Если детейла нет в словаре или значение для него False, то проверка детейла не будет пропущена. Параметр может иметь значение null.
-* `view` - Представление, по свойствам которого происходит проверка и возвращение заголовков свойств. 
-* `returnCaptions` - true при необходимости вернуть заголовки свойств из представления, а не имена свойств, false в противном случае.
+__Settings__:
 
-__Сигнатура__:
+* `detailSkip` - Skip if you check the deleted detaily. A dictionary with a list of the types of datalow and flags for them. If detail not in the dictionary or a value for it to False, then check detail not to be missed. The parameter can be null.
+* `view` - the View on which properties are checked and the return of property title.
+* `returnCaptions` - true if the necessity to return the header properties from the view, not the names of the properties, false otherwise.
+
+__Signature__:
 
 ```csharp
-// 1
+// 1 
 public string[] CheckNotNullProperties()
 
-// 2
+// 2 
 string [] ICSSoft.STORMNET.DataObject.CheckNotNullProperties (Dictionary<Type, bool> detailSkip)
 
-// 3
+// 3 
 public string[] CheckNotNullProperties(View view, bool returnCaptions)
 
-// 4
+// 4 
 public string[] CheckNotNullProperties(View view, bool returnCaptions, Dictionary<Type, bool> detailSkip)
 ```
 
 #### GetStatus
 
-__Назначение__: Получение значения статуса объекта
+__Assign__: getting the value of object status
 
-__Параметры__:
- 
-`recountIfAutoaltered` - обновить значение принудительно (если класс с автоматическим вычислением статуса)
- 
-__Сигнатура__:
+__Settings__:
+
+`recountIfAutoaltered` - update value of the force (if a class with automatic calculation status)
+
+__Signature__:
 
 ```csharp
-// 1
+// 1 
 ObjectStatus ICSSoft.STORMNET.DataObject.GetStatus()
 
-// 2
+// 2 
 ObjectStatus ICSSoft.STORMNET.DataObject.GetStatus(bool recountIfAutoaltered)
 ```
 
-#### SetLoadingState 
+#### SetLoadingState
 
-__Назначение__: Установка состояния загрузки.
+__Assign__: set the status of the download.
 
-__Параметры__:
- 
-`newState` - Состояние загрузки, устанавливаемое объекту. 
- 
-__Сигнатура__:
+__Settings__:
+
+`newState` - load Status, set by the object.
+
+__Signature__:
 
 ```csharp
 void ICSSoft.STORMNET.DataObject.SetLoadingState (LoadingState newState)
@@ -187,48 +189,48 @@ void ICSSoft.STORMNET.DataObject.SetLoadingState (LoadingState newState)
 
 #### SetLoadedProperties
 
-__Назначение__: Установка состояния загрузки.
+__Assign__: set the status of the download.
 
-__Параметры__:
- 
-`newState` - Состояние загрузки, устанавливаемое объекту. 
- 
-__Сигнатура__:
+__Settings__:
+
+`newState` - load Status, set by the object.
+
+__Signature__:
 
 ```csharp
 void ICSSoft.STORMNET.DataObject.SetLoadingState (LoadingState newState)
 ```
 
-#### SetStatus  
+#### SetStatus
 
-__Назначение__: Установка статуса
+__Assign__: set status
 
-__Параметры__:
- 
-`newState` - Статус, устанавливаемый объекту.
- 
-__Сигнатура__:
+__Settings__:
+
+`newState` - Status, set by the object.
+
+__Signature__:
 
 ```csharp
 virtual void ICSSoft.STORMNET.DataObject.SetStatus (ObjectStatus newState)
 ```
 
-### Копирование и дублирование объектов данных
+### Copying and duplication of data objects
 
-#### CopyTo  
+#### CopyTo
 
-__Назначение__: Создать копию объекта данных. Если полученный в результате копирования объект планируется поместит в хранилище, у него необходимо   вызвать методы `InitDataCopy` или `ClearDataCopy`.
+__Assign__ to Create copy of the data object. If the resulting copy of the object will be placed in storage, it is necessary to call the methods `InitDataCopy` or `ClearDataCopy`.
 
-__Параметры__:
-    
-* `toObject` = объект данный, в который  
-* `CreateDataObjectsCopy` - true - создавать копии связанных объектов, false - ограничиться копированием ссылки 
-* `PrimaryKeyCopy` - true - копировать первичные ключи 
-* `UseParentCaching` - использовать ранее установленное кеширование 
+__Settings__:
 
-__Сигнатура__:
+* `toObject` = object this, which
+* `CreateDataObjectsCopy` - true - to create copies of linked objects, false - limited to copying and pasting the link
+* `PrimaryKeyCopy` - true - copy primary keys
+* `UseParentCaching` - use a previously-installed caching
 
-```csharp 
+__Signature__:
+
+```csharp
   virtual void ICSSoft.STORMNET.DataObject.CopyTo(DataObject toObject,  
   bool  CreateDataObjectsCopy,  
   bool  PrimaryKeyCopy,  
@@ -236,60 +238,64 @@ __Сигнатура__:
  )
  ```
 
-#### Prototyping  
+#### Prototyping
 
-__Назначение__: Прототипизировать
+__Assign__ A: Prototypicality
 
-__Параметры__:
- 
-`withDetails` - с детейлами или без
- 
-__Сигнатура__:
+__Settings__:
+
+`withDetails` - with or without detaylari
+
+__Signature__:
 
 ```csharp virtual void ICSSoft.STORMNET.DataObject.Prototyping()
 virtual void ICSSoft.STORMNET.DataObject.Prototyping(bool withDetails)
 ```
 
-#### SetExistObjectPrimaryKey  
+#### SetExistObjectPrimaryKey
 
-__Назначение__: Установить первичный ключ в объект данных. Выполняется операция Clear() для объекта, присваивается первичный ключ, SetLoadingState(LoadingState.LightLoaded); SetLoadedProperties("__PrimaryKey");
+__Assign__: Set the primary key in the data object. The operation is performed Clear() object is assigned a primary key, SetLoadingState(LoadingState.LightLoaded); SetLoadedProperties("__PrimaryKey");
 
-__Параметры__:
- 
-`primaryKey` - первичный ключ 
- 
-__Сигнатура__:
+__Settings__:
+
+`primaryKey` - primary key
+
+__Signature__:
 
 ```csharp
 void ICSSoft.STORMNET.DataObject.SetExistObjectPrimaryKey (object primaryKey)
 ```
 
-### Блокировка объекта
+### Lock object
 
-#### LockObject 
+#### LockObject
 
-__Назначение__: Заблокировать объект
+__Assign__ to Lock the object
 
-__Параметры__:
- 
-`key` - ключ блокировки объекта
- 
-__Сигнатура__:
+__Settings__:
+
+`key` key lock facility
+
+__Signature__:
 
 ```csharp
 void ICSSoft.STORMNET.DataObject.LockObject(object key)
 ```
 
-#### UnLockObject  
+#### UnLockObject
 
-__Назначение__: Разблокировать объект
+__Assign__: to Unlock the object
 
-__Параметры__:
- 
-`key` - ключ блокировки объекта.
- 
-__Сигнатура__:
+__Settings__:
+
+`key` - the key lock feature.
+
+__Signature__:
 
 ```csharp
 void ICSSoft.STORMNET.DataObject.UnLockObject (object key)
 ```
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

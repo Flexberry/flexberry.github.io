@@ -1,105 +1,116 @@
 ---
-title: Форма редактирования представлений
+title: the edit Form submissions
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, View, представление, мастер, детейл, форма редактирования, атрибуты
-summary: Настройка представлений
+keywords: Flexberry Designer, View, submission, master, detail, editing form attributes
+summary: view customization
 toc: true
 permalink: en/fd_view-edit-form.html
 lang: en
+autotranslated: true
+hash: 1349e17cf606b0ff0c3389492fed5e32df31be7f426ba77a59dd029d0468e76d
 ---
 
-[Представление](fd_view-definition.html) описывает некоторую логическую совокупность:
+[View](fd_view-definition.html) describes some logical combination of:
 
-* [собственных атрибутов класса](fo_attributes-class-data.html),
-* [мастеров](fd_master-association.html) любой вложенности и их атрибутов,
-* представлений [детейлов](fo_detail-associations-properties.html).
+* [own class attributes](fo_attributes-class-data.html),
+* [masters](fd_master-association.html) of any depth and their attributes
+* representations [of datalow](fo_detail-associations-properties.html).
 
-Поэтому, для удобного редактирования [представления](fd_view-definition.html) используется специальная форма-редактор. 
-Данная форма вызывается с вкладки `Представления` при редактировании [свойств класса](fd_data-classes.html).
+Therefore, for easy editing [view](fd_view-definition.html) uses a special form editor.
+This form is invoked from the tab `Представления` when editing [class properties](fd_data-classes.html).
 
-### Вызов формы редактирования представлений
+### Call edit form submissions
 
-* Открыть диаграмму классов
+* Open a class diagram
 
-![](/images/pages/products/flexberry-designer/views/form-edit-view1.jpg)
+![Example](/images/pages/products/flexberry-designer/views/form-edit-view1.jpg)
 
-* Выбрать класс, шелчком правой клавиши мыши на нем вызвать контекстное меню
-* Выбрать пункт редактировать свойства
+* Choose a class, selcom the right mouse button on it to open the context menu
+* Select edit properties
 
-![](/images/pages/products/flexberry-designer/views/form-edit-view2.jpg)
+![Example](/images/pages/products/flexberry-designer/views/form-edit-view2.jpg)
 
-* В открывшемся окне `Class (редактирование)` перейти на вкладку `Представления`;
-* Выбрать строку, в строке нажать на ячейке `Properties`. В правом углу ячейки появиться кнопка `...`
-* Нажать на кнопку `...` (Это вызовет форму редактирования представлений)
+* In the opened window `Class (edit)` go to the tab `Представления`;
+* Select the row in the row click on the cell `Properties`. In the right corner of the cell button should appear `...`
+* Click `...` (This will cause the edit form submissions)
 
-![](/images/pages/products/flexberry-designer/views/form-edit-view3.jpg)
+![Example](/images/pages/products/flexberry-designer/views/form-edit-view3.jpg)
 
-### Закладки формы редактирования представлений
+### Bookmark edit form submissions
 
-Форма имеет следующие закладки: 
-* Закладка `Атрибуты` для редактирования состава [собственных](fo_attributes-class-data.html) и мастеровых атрибутов в представлении,
-* Закладка`Представления` для указания представлений [детейловых классов](fo_detail-associations-properties.html).
+The form has the following tabs:
 
-#### Закладка Атрибуты
+* Bookmark `Атрибуты` to edit the list of [private](fo_attributes-class-data.html) and workmen of the attributes in the view
+* Закладка`Представления` to specify views [metalowych classes](fo_detail-associations-properties.html).
 
-![](/images/pages/products/flexberry-designer/views/vieweditor1.jpg)
+#### The Attributes Tab Page
 
-В левом списке расположены все [собственные атрибуты класса](fo_attributes-class-data.html), а также [связи с мастеровыми объектами](fd_master-association.html), раскрывая их иерархию, можно `добраться` до атрибутов мастеровых объектов. В правом списке находятся атрибуты, входящие в представление. Добавление/убавление атрибутов в представлении происходит выбором кнопок `влево`, `вправо`. Порядок следования атрибутов в представлении указывается кнопками `вверх`, `вниз`, которые позволяют перемещать в списке выделенные курсором атрибуты.
+![Example](/images/pages/products/flexberry-designer/views/vieweditor1.jpg)
 
-Передвигая курсор по правому списку, можно настраивать свойства для конкретного атрибута в представлении:
-* `Заголовок` - указывает заголовок для форм.
-* Кнопка `Создать` позволяет сгенерировать некоторый заголовок из полного имени атрибутов.
-* `Путь` - указывает путь (расположение) для элемента управления, обеспечивающего указание значения атрибута пользователем на форме редактирования. Путь указывается строкой вида: 
+In the left list are all private attributes of a class](fo_attributes-class-data.html) and also [in connection with the mechanics of objects](fd_master-association.html) revealing their hierarchy, you can `добраться` to the attributes of the mechanics of objects. The right list contains attributes that are included in the presentation. Add/decrease of attributes in the show is a selection of buttons `влево`, `вправо`. The order of the attributes in the submission buttons `вверх`, `вниз` that allow you to move in the list currently highlighted by the cursor attributes.
 
-```
+Moving the cursor on the right list, you can set properties for a specific attribute in the view:
+
+* `Заголовок` - specifies a title for the forms.
+* Button `Создать` allows you to generate a certain title from the full name of the attributes.
+* `Путь` - specifies the path (location) for the control providing an indication of attribute values by the user on the edit form. The path is a string of the form:
+
+```code
 @@[-|)[Имя)[\ [-|)[Имя))@@
 ```
 
-    * `-` означает группировку (GroupBox),
-    * `|` - закладку (Tab) на формах редактирования.
-    * `\` — разделитель пути.
-    * `Имя` — имя соответствующей закладки/группы. Эта настройка влияет на автоматическое размещение.
-* `Видимость` - если убрать эту галочку, атрибут в [представлении](fd_view-definition.html) будет указан как скрытый.
+* `-` refers to grouping (GroupBox),
+* `|` - tab (Tab) on the edit forms.
+* `\` — the path separator.
+* `Имя` — the name of the corresponding bookmark/groups. This setting affects the automatic placement.
+* `Видимость` - if you uncheck this box, the attribute in a [view](fd_view-definition.html) will be listed as hidden.
 
-Когда выбранный атрибут - мастер, появляются три дополнительные свойства, предназначенные для дополнительной настройки мастера в [представлении](fd_view-definition.html) (в итоге - генерируется в исходный код атрибутом [MasterViewDefineAttribute](fd_view-definition.html)):
-* `Тип лукапа` - тип выбора (`lookup type`) мастерового объекта:
-    * `standard` - стандартный,
-    * `combo` - в виде выпадающего списка,
-    * `default` - атрибут `MasterViewDefineAttribute` вообще не генерируется в код
-* `Свойство мастера` - Имя отображаемого атрибута при типе выбора `LookupTypeEnum.Combo`.
-* `Настройка выборки` - Строка инициализации объекта (контрола) выбора мастерового объекта.
+When the selected attribute is a master, there are three additional properties intended for additional wizard in a [view](fd_view-definition.html) (the result is generated in the source code attribute [MasterViewDefineAttribute](fd_view-definition.html)):
 
-#### Свойства интерфейсов в представлении
+* `Тип лукапа` - type selection (`lookup type`) of the workman of the object:
+ * `standard` - standard,
+ * `combo` in a dropdown list
+ * `default` - attribute `MasterViewDefineAttribute` do not generated in code
+* `Свойство мастера` is the name of the attribute in the selection type `LookupTypeEnum.Combo`.
+* `Настройка выборки` - Line initialization of the object (control) selection of the workman of the object.
 
-Во [Flexberry Designer](fd_landing_page.html) поддерживается добавление в [представление](fd_view-definition.html) свойств, объявленных у [интерфейсов](fd_interfaces.html), от которых наследовались [классы объектов](fd_data-classes.html).
+#### Properties of interfaces in performance
 
-Например, пусть есть диаграмма вида: 
+In [Flexberry Designer](fd_flexberry-designer.html) is supported by adding a [view](fd_view-definition.html) properties declared at the [interfaces](fd_interfaces.html), from which inherits the [classes of objects](fd_data-classes.html).
 
-![](/images/pages/products/flexberry-designer/views/interface-inheritance.png)
+For example, suppose there is a chart of the form:
 
-Тогда при задании на форме представления для класса `КлассСОбъектами` будут доступны все свойства, наследованные от интерфейсов:
+![Example](/images/pages/products/flexberry-designer/views/interface-inheritance.png)
 
-![](/images/pages/products/flexberry-designer/views/intInh-properties.png)
+Then, when the job submission form for a class `КлассСОбъектами` will be available to all properties inherited from interfaces:
 
-#### Закладка `Детейлы`
+![Example](/images/pages/products/flexberry-designer/views/intInh-properties.png)
 
-Кнопки `Добавить детейл`, `Удалить`, позволяют, соответственно поместить в [представление](fd_view-definition.html) какой-либо [детейл](fo_detail-associations-properties.html) или удалить из [представления](fd_view-definition.html). В списке указаны имеющиеся в представлении детейлы. Для каждого указанного детейла в исходный код генерируется указание атрибута [AssociatedDetailViewAttribute](fd_view-definition.html).
+#### Bookmark `Детейлы`
 
-Передвигаясь курсором по списку можно настроить свойства, расположенные в правой части формы: 
-* `Заголовок`, `Путь`, `Видимость`- аналогичны тем же свойствам для атрибутов.
-* `Представление` - включаемое [представление](fd_view-definition.html)[детейлового класса](fo_detail-associations-properties.html) (помните о том, что в [представление](fd_view-definition.html)[шапки](fd_key-concepts.html) включается [представление](fd_view-definition.html)[детейла](fo_detail-associations-properties.html) а не он сам).
-* `Загружать вместе с шапкой` - при загрузке сервисом данных объекта [шапки](fd_key-concepts.html) в данном [представлении](fd_view-definition.html), будут ли прочитаны [детейлы](fo_detail-associations-properties.html) в этом [представлении](fd_view-definition.html).
+Button `Добавить детейл`, `Удалить`, allow, respectively, to put in a [view](fd_view-definition.html) any [detail](fo_detail-associations-properties.html) or remove from the [views](fd_view-definition.html). The list contains the existing view detaily. For each specified detail in the source code is generated specifying the attribute [AssociatedDetailViewAttribute](fd_view-definition.html).
 
-![](/images/pages/products/flexberry-designer/views/vieweditor2.jpg)
+Moving the mouse over the list, you can configure the properties that are located in the right part of the form:
 
-### Горячие клавиши
+* `Заголовок`, `Путь`, `Видимость` - similar to the same properties for the attributes.
+* `Представление` - include a [view](fd_view-definition.html)[metalowego class](fo_detail-associations-properties.html) (remember that in a [view](fd_view-definition.html)[hats](fd_key-concepts.html) turn on [view](fd_view-definition.html)[detail](fo_detail-associations-properties.html) and not himself).
+* `Загружать with шапкой` - when loading service data object [cap](fd_key-concepts.html) this [view](fd_view-definition.html), will read [detaily](fo_detail-associations-properties.html) this [view](fd_view-definition.html).
 
-![](/images/pages/products/flexberry-designer/views/view-edit-from.jpg)
+![Example](/images/pages/products/flexberry-designer/views/vieweditor2.jpg)
 
-Рассмотрим на примере свойства `Подразделение.Название`
+### Hotkeys
 
-Необходимо выделить добавленное свойство в представление и нажать одну из соответствующих комбинаций:
-* `Ctrl+D` - Создать заголовок (`Название Подразделение`)
-* `Ctrl+T` - Создать заголовок с разбиением на слова (`Название подразделение`)
-* `Ctrl+Sift+T` - Создать заголовок с разбиением на слова, исключив мастеровые названия (`Название`)
-* `Del` - удалить атрибут из представления
+![Example](/images/pages/products/flexberry-designer/views/view-edit-from.jpg)
+
+Consider the example properties `Подразделение.Название`
+
+It is necessary to allocate property is added to the view and click one of the corresponding combinations:
+
+* `Ctrl D` - Create a title (`Название Подразделение`)
+* `Ctrl T` - Create a title with word breaking (`Название подразделение`)
+* `Ctrl Sift T` - Create a title with the word-breaking, deleting the names of the artisans (`Название`)
+* `Del` is to remove the attribute from the view
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

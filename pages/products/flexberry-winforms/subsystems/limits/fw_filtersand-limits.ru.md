@@ -21,12 +21,12 @@ __Фильтры__ - это инструмент наложения пользо
 Подробнее о редакторе можно посмотреть в [этой статье](fw_limit-editor-simple-view.html)
 
 ## Настройки фильтров (FilterSettings)
+
 Для задания [FilterSettings](fw_filter-settings.html) необходимо воспользоваться Flexberry Administrative Console (AdmConsole).
 
+Если используется генератор настроек фильтров, то необходимо обратить внимание на следующие моменты:
 
-Если используется генератор настроек фильтров, то необходимо обратить внимание на следующие моменты: 
-
-* Для работы его можно определить как [ярлык](fw_win-desktop-links.html) на [рабочий стол](fw_app-desktop.html):
+* Для работы его можно определить как [ярлык](ffw_desktop-operations.html) на [рабочий стол](fw_app-desktop.html):
 
 ```csharp
 arr.Add(new IIS.WinUI.Runners.EditFormRunner(typeof(IIS.Core.App_FilterSettingsGeneratorE), "Администрирование", "Генератор настроек фильтров", "", new IIS.Core.App_FilterSettingsGenerator(), typeof(IIS.Core.App_FilterSettingsGenerator), false));
@@ -56,7 +56,7 @@ arr.Add(new IIS.WinUI.Runners.EditFormRunner(typeof(IIS.Core.App_FilterSettingsG
 
 {% include note.html content="AdmConsole адекватно [создаёт настройки автоматически](fw_filter-settings.html), если приложение собрано для .Net Framework версии 3.0 или 3.5. Альтернативным решением проблемы версий фреймворков может быть [указание более высокой версии фреймворка](gbt_set-runtime-dotnet-version.html) для AdmConsole." %}
 
-{% include note.html content="Для того, чтобы ограничение «сам объект» заработало - нужно создать STORMFILTERLOOKUP для этого объекта." %}
+{% include note.html content="Для того, чтобы ограничение `сам объект` заработало - нужно создать STORMFILTERLOOKUP для этого объекта." %}
 
 ## Форма задания ограничений AdvLimit
 [AdvLimit](fw_limitation-editform.html) позволяет задавать ограничения; для расширения функциональности необходимо настроить FilterSettings (см. выше, [здесь](fw_filter-settings.html) и [здесь](fw_filter-example.html)).

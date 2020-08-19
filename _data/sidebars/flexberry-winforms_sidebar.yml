@@ -27,6 +27,11 @@ entries:
       url: /fw_winforms-ui-faq.html
       output: web
 
+    - title: Ui synchronization context
+      title_ru: Запуск кода в основном потоке приложения из другого потока
+      url: /fw_ui-synchronization-context.html
+      output: web
+
   - title: Controls
     title_ru: Контролы
     output: web, pdf
@@ -68,11 +73,6 @@ entries:
       url: /fw_high-lighter.html
       output: web
 
-    - title: Focus and Ctrl-S
-      title_ru: Фокус ввода и «Ctrl+S»
-      url: /fw_focus-and-ctrl-s.html
-      output: web
-  
     - title: Predict input
       title_ru: Предиктивный ввод в Windows-приложениях
       url: /fw_predict-input.html
@@ -167,44 +167,24 @@ entries:
 
     folderitems:
 
-    - title: Edit form
+    - title: Features of forms in Windows applications
+      title_ru: Особенности форм в Windows-приложениях
+      url: /fw_form-features.html
+      output: web
+
+    - title: Form interaction
+      title_ru: Межформенное взаимодействие в Windows-приложениях
+      url: /fw_form-interaction.html
+      output: web
+
+    - title: Editform
       title_ru: Формы редактирования (классы со стереотипом editform)
       url: /fw_editform.html
       output: web
 
-    - title: Edit data objects on forms
-      title_ru: Как редактировать объекты данных на формах, связывание полей ввода со свойствами объекта данных 
-      url: /fw_edit-data-objects-on-forms.html
-      output: web
-
-    - title: Form position
-      title_ru: Положение формы на экране
-      url: /fw_base-win-position.html
-      output: web
-
-    - title: edit form validation
-      title_ru: Валидация данных
-      url: /fw_edit-form-validation.html
-      output: web
-
-    - title: Check form data during edit
-      title_ru: Проверка данных на форме во время редактирования
-      url: /fw_check-form-field-during-edit.html
-      output: web    
-
-    - title: Check form data during save
-      title_ru: Проверка данных на форме во время сохранения
-      url: /fw_check-form-field-during-save.html
-      output: web
-
-    - title: Check not null fields
-      title_ru: Проверка обязательных полей
-      url: /fw_check-not-null-fields.html
-      output: web
-
-    - title: Check data on save event example
-      title_ru: Пример проверки данных на форме через OnSave/OnSaveEvent
-      url: /fw_check-through-on-save-event-example.html
+    - title: List form caption
+      title_ru: Установка заголовка списковой формы
+      url: /fw_list-form-caption.html
       output: web
 
     - title: Custom form tuner
@@ -214,72 +194,7 @@ entries:
 
     - title: Customizing the user interface
       title_ru: Настройка пользовательского интерфейса
-      url: /fw_customizing-the-user-interface.html
-      output: web
-
-    - title: Data object error provider
-      title_ru: DataObjectErrorProvider
-      url: /fw_data-object-error-provider.html
-      output: web
-
-    - title: Detail as master
-      title_ru: Детейл в качестве мастера
-      url: /fw_detail-as-master.html
-      output: web
-
-    - title: Empty enum value validation
-      title_ru: «Тараканы» и перечислимый тип
-      url: /fw_empty-enum-value-validation.html
-      output: web
-
-    - title: Error box
-      title_ru: ErrorBox
-      url: /fw_error-box.html
-      output: web
-
-    - title: Forbid closing form
-      title_ru: Как запретить закрытие формы Flexberry Winforms
-      url: /fw_forbid-closing-form.html
-      output: web
-
-    - title: Force call editing form
-      title_ru: Принудительный вызов формы редактирования
-      url: /fw_force-call-editing-form.html
-      output: web
-
-    - title: Form interaction
-      title_ru: Межформенное взаимодействие в Windows-приложениях
-      url: /fw_form-interaction.html
-      output: web
-
-    - title: Interaction between forms when editing objects
-      title_ru: Межформенное взаимодействие при редактировании объектов
-      url: /fw_interaction-between-forms-when-editing-objects.html
-      output: web
-
-    - title: Implementation interfaces independent and dependent forms and relationship between them
-      title_ru: Реализация интерфейсов независимыми и зависимыми формами и отношения между ними
-      url: /fw_implementation-interfaces-independent-and-dependent-forms-and-relationship-between-them.html
-      output: web
-
-    - title: Interfaces editforms
-      title_ru: Интерфейсы форм редактирования
-      url: /fw_interfaces-editforms.html
-      output: web
-
-    - title: Switch editing object
-      title_ru: Переключение редактируемого объекта без закрытия формы редактирования
-      url: /fw_switch-editing-object.html
-      output: web
-
-    - title: Uni win edit
-      title_ru: Универсальная форма редактирования 
-      url: /fw_uni-win-edit.html
-      output: web
-
-    - title: Parameters from cont runner to editform
-      title_ru: Передача параметров от ContRunner до формы редактирования
-      url: /fw_parameters-from-cont-runner-to-editform.html
+      url: /fw_customizing-user-interface.html
       output: web
 
     - title: Processing date in control provider
@@ -287,35 +202,22 @@ entries:
       url: /fw_processing-date-in-control-provider.html
       output: web
 
-    - title: Readonly in editmanager
-      title_ru:  Определение контролов, доступных только на чтение, с помощью EditManager
-      url: /fw_readonly-in-editmanager.html
+  - title: Editform
+    title_ru: Форма редактирования
+    output: web, pdf
+
+    folderitems:
+
+    - title: Edit data objects on forms
+      title_ru: Редактирование объектов данных на формах 
+      url: /fw_edit-objects-on-forms.html
       output: web
 
-    - title: Update the local copy of the form object
-      title_ru: Обновление локальной копии объекта формы
-      url: /fw_update-the-local-copy-of-the-form-object.html
+    - title: edit form validation
+      title_ru: Валидация данных
+      url: /fw_edit-form-validation.html
       output: web
 
-    - title: Work with several objects on editform
-      title_ru: Работа на форме редактирования с полями нескольких объектов 
-      url: /fw_work-with-several-objects-on-editform.html
-      output: web
-
-    - title: List form caption
-      title_ru: Установка заголовка списковой формы
-      url: /fw_list-form-caption.html
-      output: web
-
-    - title: Uniformly handle all application forms
-      title_ru: Как единообразно обработать все формы приложения
-      url: /fw_uniformly-handle-all-application-forms.html
-      output: web
-
-    - title: Change list name on lookup
-      title_ru: Изменение названия списка при лукапе
-      url: /fw_change-name-list-with-lookup.html
-      output: web
 
   - title: Application
     title_ru: Приложение
@@ -328,63 +230,18 @@ entries:
       url: /fw_app-desktop.html
       output: web
 
-    - title: Add form to win desktop
-      title_ru: Добавить собственную форму на рабочий стол Windows-приложения
-      url: /fw_add-form-to-win-desktop.html
-      output: web
-
-    - title: Close all opened forms
-      title_ru: Закрытие всех открытых форм Flexberry
-      url: /fw_close-all-opened-forms.html
-      output: web
-
     - title: Desktop operations
-      title_ru: Кнопка «Свернуть/развернуть папки» на рабочем столе
+      title_ru: Операции рабочего стола
       url: /fw_desktop-operations.html
       output: web
 
-    - title: Different applications and fields
-      title_ru: Определение доступных для редактирования полей для одной формы, но разных приложений
-      url: /fw_different-applications-and-fields.html
-      output: web
-
-    - title: Form tuner
-      title_ru: Настройка форм для приложения
-      url: /fw_form-tuner.html
-      output: web
-
-    - title: Objectlistview in desktop ctrl
-      title_ru: Контрол рабочего стола
-      url: /fw_objectlistview-in-desktop-ctrl.html
-      output: web
-
     - title: Readonly win
-      title_ru: Режим "Только чтение" в Windows-приложениях
+      title_ru: Блокировка изменений на формах
       url: /fw_readonly-win.html
       output: web
 
-    - title: Support schemes Windows XP
-      title_ru: Поддержка схем Windows XP
-      url: /fw_support-schemes-windows-x-p.html
-      output: web
-
-    - title: Ui synchronization context
-      title_ru: Запуск кода в основном потоке приложения из другого потока
-      url: /fw_ui-synchronization-context.html
-      output: web
-
-    - title: Win desktop links
-      title_ru: Ярлыки рабочего стола
-      url: /fw_win-desktop-links.html
-      output: web
-
-    - title: Work with menu in main form app
-      title_ru: Работа с меню в главной форме приложения
-      url: /fw_work-with-menu-in-main-form-app.html
-      output: web
-
     - title: Working with menu
-      title_ru: И опять работа с меню
+      title_ru: Организация меню winforms-приложений
       url: /fw_working-with-menu.html
       output: web
 
@@ -521,36 +378,16 @@ entries:
 
     folderitems:
 
-    - title: Design time errors
-      title_ru: Если что-либо «глючит» в Design-Time
-      url: /fw_design-time-errors.html
-      output: web
-
-    - title: Include error log
-      title_ru: Как включить лог ошибок
-      url: /fw_include-error-log.html
-      output: web
-
-    - title: Send to email bug report provider
-      title_ru: Отправка сообщения об ошибке по электронной почте
-      url: /fw_send-to-email-bug-report-provider.html
+    - title: Exception handling in winforms applications
+      title_ru: Обработка исключений в winforms-приложениях
+      url: /fw_error-box.html
       output: web
 
     - title: Visualstudio design packages
       title_ru: Настройка отладочных пакетов и выбор активного отладочного пакета
       url: /fw_visualstudio-design-packages.html
       output: web
-
-    - title: Winform business task monitor
-      title_ru: Стандартный монитор задач WinformBusinessTaskMonitor
-      url: /fw_winform-business-task-monitor.html
-      output: web
-
-    - title: Several classes of applications in a single stage
-      title_ru: Несколько классов приложений в одной стадии
-      url: /fw_several-classes-single-stage.html
-      output: web
-
+    
   - title: Bindings
     title_ru: Bindings
     output: web, pdf
@@ -558,7 +395,7 @@ entries:
     folderitems:
 
     - title: Control provider winforms
-      title_ru: Настройка контролов, понятие провайдера контролов, стандартный провайдер контролов
+      title_ru: Провайдер контролов для Flexberry Winforms
       url: /fw_control-provider-winforms.html
       output: web
 
@@ -566,22 +403,7 @@ entries:
       title_ru: EditManager
       url: /fw_editmanager.html
       output: web
-
-    - title: Control for bind struct
-      title_ru: ControlForBindStruct
-      url: /fw_control-for-bind-struct.html
-      output: web
-
-    - title: Editmanager change
-      title_ru: EditManager.Change
-      url: /fw_editmanager-change.html
-      output: web
-
-    - title: Editmanager set readonly flag properties
-      title_ru: Метод EditManager.SetReadonlyFlagProperties
-      url: /fw_editmanager-set-readonly-flag-properties.html
-      output: web
-
+ 
   - title: Rights
     title_ru: Подсистема полномочий
     output: web, pdf

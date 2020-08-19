@@ -5,7 +5,6 @@ keywords: Windows UI (формы)
 summary: Указаны две базовые концепции Flexberry Platform по интеграции частей пользовательского интерфейса и бизнес-логики в работающую систему
 toc: true
 permalink: ru/fw_general-concepts.html
-folder: products/flexberry-winforms/
 lang: ru
 ---
 

@@ -1,33 +1,38 @@
----
-title: DataObjectCopy
-sidebar: flexberry-orm_sidebar
-keywords: DataObject, Flexberry ORM, copying
-summary: Features of using data object copying
-toc: true
-permalink: en/fo_data-object-copy.html
-lang: en
----
+--- 
+title: Copy of the data object 
+sidebar: flexberry-orm_sidebar 
+keywords: data Objects, Flexberry ORM copying 
+summary: Features use the copy of data objects 
+toc: true 
+permalink: en/fo_data-object-copy.html 
+lang: en 
+autotranslated: true 
+hash: 94e544065744c32f44f2241483ee87260f8c698e4945ae796708eceb2319e4dd 
+--- 
 
-[Сервис данных](fo_data-service.html) выполняет построение запросов на изменение строк в БД на основе информации об изменённых свойствах объекта. Для получения этой информации в самом [объекте](fo_data-object.html) хранится отдельная полная копия объекта (при этом для выявления изменений требуется лишь сравнить текущие значения полей объекта данных и соответствующих значений в его копии).
+[Service data](fo_data-service.html) builds a query to change rows in the database based on information about the changed properties of the object. To obtain this information at [the facility](fo_data-object.html) is a separate full copy of the object (in this case change detection is only required to compare the current field values of the object data and the corresponding values in its copies). 
 
-Копия объекта данных доступна через метод `dataobject.GetDataCopy()`.
+A copy of the data object available through the method `dataobject.GetDataCopy()`. 
 
-Копия данных заполняется из значений полей объекта в нескольких случаях:
+A copy of the data is populated from the values of the fields object in the following cases: 
 
-* При вычитке объекта из БД (если не было указано, что инициализировать копию данных не надо).
-* При вызове метода `dataobject.InitDataCopy()` программистом.
+* Review each object from the database (if you did not specify what to initialize the copy of the data is not necessary). 
+* When you call a method `dataobject.InitDataCopy()` programmer. 
 
-## Оптимизация работы
+## Optimization 
 
-Операция создания копии данных - довольно дорогостоящая операция в плане производительности, поэтому рекомендуется при вычитке объектов, которые точно не будут обновляться в БД, отключать инициализацию копии данных в свойствах [LoadingCustomizationStruct](fo_loading-customization-struct.html): 
+The operation of creating copies of data is expensive in terms of performance, so it is recommended when editing objects that are not exactly updated in the database, disable the initialization of the copy data properties [LoadingCustomizationStruct](fo_loading-customization-struct.html): 
 
 ```csharp
-LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Шапка), "ШапкаE");
+LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Шапка), "Chapchae");
 lcs.InitDataCopy = false;
-```
+``` 
 
-Также в целях оптимизации не происходит инициализация мастеровых полей. Для мастеров инициализируются только [первичные ключи](fo_primary-keys-objects.html). Если мастеровой объект был вычитан с достаточным количеством полей и его планируется обновлять в БД, то сразу после зачитки для него необходимо вызвать метод `InitDataCopy()`.
+Also in order to optimize not initialize the mechanics field. For masters only initialized [primary keys](fo_primary-keys-objects.html). If the workman the object has been checked with a sufficient number of fields and it is planned to update in the database, then immediately after zachistki for him, you must call the `InitDataCopy()`. 
 
-## Копия данных созданного объекта
+## copy of the data object created 
 
-Если объект имеет [статус `Created`](fo_object-status.html), то у него отсутствует копия данных после инициализации копии данных (`InitDataCopy`), поскольку копия данных объекту, у которого статус `Created` не нужна (при обновлении данный объект весь пойдёт в базу, и InitDataCopy пропускает такие объекты).
+If the object has [`Created` status](fo_object-status.html), then it does not have a copy of the data after the initialization copies the data (`InitDataCopy`), since the copy of the data object whose status `Created` is not necessary (while updating the object all goes into the database, and InitDataCopy skips such objects).
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

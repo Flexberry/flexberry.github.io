@@ -89,3 +89,7 @@ published: true
   * [geocoder-osm-ru](efg_geocoder-osm-ru.html)
   * [geocoder-osm-overpass](efg_geocoder-osm-overpass.html)
   * [geocoder-yandex](efg_geocoder-yandex.html)
+  
+## JS API карты
+
+При работе с картой иногда возникает необходимость управлять отдельными её функциями из разных модулей самой карты, а иногда и из внешних приложений, в которые она встраивается, и для этого у карты имеется [JS API](efg_jsapi.html).

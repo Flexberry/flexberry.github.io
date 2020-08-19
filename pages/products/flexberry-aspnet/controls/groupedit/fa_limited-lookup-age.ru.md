@@ -23,11 +23,9 @@ lang: ru
 /// </summary>
 protected override void PreApplyToControls()
 {
-	ExternalLangDef langdef = ExternalLangDef.LanguageDef;
-	
 	ctrlКомната.AddLookUpSettings(Information.ExtractPropertyPath<МастерАгрегатор>(r => r.ЛукапМастер), new LookUpSetting
 	{
-		LimitFunction = langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.[ТипСвойстваЛукапМастер], "СвойствоЛукапМастера2"),     [ЗначениеСвойстваЛукапМастер])
+		LimitFunction = FunctionBuilder.BuildEquals<ЛукапМастер>(x => x.[СвойствоЛукапМастера2], [ЗначениеСвойстваЛукапМастер])
 	});
 }      
 ```
@@ -43,11 +41,9 @@ protected override void PreApplyToControls()
 ### Код
 
 ```csharp
-ExternalLangDef langdef = ExternalLangDef.LanguageDef;
-
 ctrlКомната.AddLookUpSettings(Information.ExtractPropertyPath<Комната>(r => r.НазначениеКомнаты), new LookUpSetting
 	{
-		LimitFunction = langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.BoolType, "Актуально"), true)
+		LimitFunction = FunctionBuilder.BuildEquals<НазначениеКомнаты>(x => x.Актуально, true)
 	});
 ```
 

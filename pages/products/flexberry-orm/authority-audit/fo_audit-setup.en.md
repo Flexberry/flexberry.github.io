@@ -1,104 +1,112 @@
 ---
-title: Настройка аудита в Flexberry Designer
+title: setting up auditing in Flexberry Designer
 sidebar: flexberry-orm_sidebar
 keywords: Flexberry Audit, Flexberry Designer
 toc: true
 permalink: en/fo_audit-setup.html
 lang: en
+autotranslated: true
+hash: 2c008b5f4ec8ff4b572a39b7f59f27518f65ebbfde7dcad45009635cc029f540
 ---
 
-## Аудит
+## Audit
 
-Настройка [аудита](fa_audit-web.html) через [Flexberry Designer](fd_landing_page.html) осуществляется в несколько этапов.
+Setting the [audit](fa_audit-web.html) using [Flexberry Designer](fd_flexberry-designer.html) is carried out in several stages.
 
-### Настройка базы аудита
+### Configuring database audit
 
-База аудита может храниться как в отдельной базе, так и в базе приложения.
+Database auditing can be stored in a separate database and database application.
 
-Настройка совершается на форме настройки [MS SQL Direct Generator](fd_configure-ms-sql-generator.html) (см. пункт БД аудита в БД приложения). Также часть настроек базы данных находится в свойствах класса со стереотипом [Application](fd_application.html).
+The configuration is done on the settings form [MS SQL Direct Generator](fd_configure-ms-sql-generator.html) (see para database audit, database applications). Also part of the database configuration is in the properties of a class with the stereotype [Application](fd_application.html).
 
-{% include note.html content="При использовании базы приложения в качестве хранилища для аудита `рекомедуется` установить галочку `Не удалять существующие таблицы` на форме настройки [MS SQL Direct Generator](fd_configure-ms-sql-generator.html), чтобы избежать проблем с приведением в соответствие базы данных и модели приложения." %}
+{% include note.html content="When using database applications as a repository for audit `рекомедуется` to tick `Не remove existing таблицы` on the settings form [MS SQL Direct Generator](fd_configure-ms-sql-generator.html) to avoid problems with alignment of the database and application model." %}
 
-### Настройка стадии
+### Setup stage
 
-Настройки аудита для стадии осуществляются на форме настроек Стадии на вкладке `Настройка аудита`
+Configure auditing for the stage are performed on the settings form the Stage tab `Настройка аудита`
 
-![](/images/pages/products/flexberry-orm/audit/audit-settings-stady.png)
+![Example](/images/pages/products/flexberry-orm/audit/audit-settings-stady.png)
 
-* `Вести аудит приложения` - необходимость вести аудит для всего приложения.
-* `Режим записи аудита по умолчанию` - режим записи данных аудита в базу данных по умолчанию (синхронный или асинхронный). Будет устанавливаться для классов при генерации настроек аудита. Если в классе указана другая настройка, то для конкретно этого класса будет использоваться указанная в нем => приоритет настроек стадии меньше приоритета настроек класса.
-* `Включить аудит во всех классах` - кнопка включения аудита во всех **существующих** классах стадии. Включение аудита подразумевает установку настройки `Вести аудит класса`, создание представления `AuditView` и проставление настроек аудита по умолчанию.  
-Настройка аудита по умолчанию включает в себя:
-* Установку настройки `Вести аудит класса`
-* Установку настройки `Добавить поля аудита`
-* Установку настройки `Вести аудит операции создания`
-* Установку настройки `Вести аудит операции удаления`
-* Установку настройки `Режим записи аудита` как `Синхронный`
+* `Вести audit приложения` - the need to audit for the entire application.
+* `Режим audit records for умолчанию` - mode recording audit data in the default database (synchronous or asynchronous). Will be set for classes when you generate the audit settings. If the class you specify a different configuration for this particular class will be used this it => priority settings the stage is less than the priority of the settings class.
+* `Включить audit in all классах` - button switch audit all **available** classes stage. Enable auditing involves the installation settings `Вести audit класса`, create view `AuditView` and stamp of audit settings by default.
+Setting default audit includes:
+* Installation configuration audit `Вести класса`
+* Installation settings `Добавить field аудита`
+* Installation configuration audit `Вести operations создания`
+* Installation configuration audit `Вести operations удаления`
+* Installation settings `Режим record аудита` as `Синхронный`
 
-При добавлении новых классов необходимо ручное включение аудита или повторное нажатие этой кнопки.  
-По мере выполнения операции включения будет выводиться информация в лог.
+When adding a new class requires that you manually enable auditing or repeated pressing of this button.
+As the operation enable to output information to the log.
 
-## Настройка классов
+## Set up the classes
 
-Настройки аудита для классов осуществляются на форме настроек Класса на вкладке `Настройка аудита`
+Configure auditing for classes are on the Class settings tab `Настройка аудита`
 
-![](/images/pages/products/flexberry-orm/audit/audit-settings-class.png)
+![Example](/images/pages/products/flexberry-orm/audit/audit-settings-class.png)
 
-### Настройки аудита
+### Configure auditing
 
-Название настройки | Описание
-:-----------------------------|:---------------------------------------------------
-`Вести аудит класса` | Вести аудит для этого класса
-`Добавить поля аудита` | Добавлять ли [собственные поля аудита](efs_flexberry-audit-object-fields.html) в поля класса. 
-`Использовать представление по умолчанию` | Использовать для всех операций представление по умолчанию (представление по умолчанию является представление с именем `AuditView`
-`Вести аудит операции создания` | Необходимость ведения аудита создания объектов
-`Имя представления для аудита операции создания` | Представление, по которому будет вестись аудит создания объектов. Если указано представление по умолчанию, данная настройка игнорируется
-`Вести аудит операции удаления` | Необходимость ведения аудита удаления объектов
-`Имя представления для аудита операции удаления` | Представление, по которому будет вестись аудит удаления объектов. Если указано представление по умолчанию, данная настройка игнорируется
-`Вести аудит операции изменения` | Необходимость ведения аудита изменения объектов
-`Имя представления для аудита операции изменения` | Представление, по которому будет вестись аудит изменения объектов. Если указано представление по умолчанию, данная настройка игнорируется
-`Вести аудит операции чтения` | Необходимость ведения аудита чтения объектов (*на настоящий момент не поддерживается*).
-`Имя представления для аудита операции чтения` | Представление, по которому будет вестись аудит чтения объектов. Если указано представление по умолчанию, данная настройка игнорируется
-`Путь к форме просмотра объекта` | Путь к форме просмотра данных объекта (*опция пока недоступна*). Дает возможность просмотреть каким был объект в определенное время (с формы просмотра аудита)
-`Режим записи аудита` | Режим записи данных аудита в базу данных по умолчанию (синхронный или асинхронный)
+Setting name | Description
+:------------------|:--------
+`Вести класса` audit | audit this class
+`Добавить field аудита` | Add the private field audit](efs_flexberry-audit-object-fields.html) in the field class.
+`Использовать view умолчанию` | Use for all operations in the default view (the default view is the view with the name `AuditView`
+`Вести audit operations создания` | necessity of conducting the audit object creation
+`Имя submission to audit operations создания` | Performance, which is audited create objects. If you specify the default view, this setting is ignored
+`Вести audit operations удаления` | necessity of conducting the audit the deletion of objects
+`Имя submission to audit operations удаления` | Performance, which is audited deletion of objects. If you specify the default view, this setting is ignored
+`Вести audit operations изменения` | the Necessity of conducting a change audit objects
+`Имя submission to audit operations изменения` | Performance, which is audited object changes. If you specify the default view, this setting is ignored
+`Вести audit operations чтения` | necessity of conducting the audit object read (*currently not supported*).
+`Имя submission to audit operations чтения` | Performance, which is audited read objects. If you specify the default view, this setting is ignored
+`Путь to view объекта` | Path to the display form of the object data (*option not yet available*). Allows you to view the object at a certain time (view audit)
+`Режим record аудита` | write Mode audit data in the default database (synchronous or asynchronous)
 
-## AuditView - представление аудита
+## AuditView - performance audit
 
-[Представление](fd_view-definition.html) для аудита генерируется в момент нажатия кнопки `Включить аудит во всех классах` настройки стадии для всех классов данных. Также его можно создать вручную.  
-При изменении объекта будут сохраняться данные об изменении **полей**, находящихся в представлении `AuditView`.  
-Если ни одно из измененных **полей** не попадает в представление, запись об изменении **объекта** все равно создается.  
-Особым образом необходимо [формировать представление при наличии вычислимых свойств](efs_not-stored-properties-and-audit.html).
+[View](fd_view-definition.html) for the audit is generated at the time of pressing the button `Включить audit in all классах` setting the stage for all data classes. It can also be created manually.
+If you change the object will persist data on changes in **fields** in the performance `AuditView`.
+If no changed **field** gets the view change record **object** is still created.
+In a special way, it is necessary [to form an idea in the presence of calculated properties](efs_not-stored-properties-and-audit.html).
 
-## Настройка приложения
+## Customize application
 
-Настройки аудита для класса-приложения (со стереотипом [Application](fd_application.html)) осуществляются на форме настроек rласса на вкладке `Настройка аудита`
+Configure auditing for a class of applications (with the stereotype [Application](fd_application.html)) have been made in the form of glass on the settings tab `Настройка аудита`
 
-![](/images/pages/products/flexberry-orm/audit/audit-app-settings.png)
+![Example](/images/pages/products/flexberry-orm/audit/audit-app-settings.png)
 
-* `Имя строки соединения с БД аудита` - **имя** строки соединения, которая будет передаваться в Win-сервис аудита, для указания на базу данных аудита.  
-* `Адрес сервиса аудита` - адрес, по которому располагается Win-сервис аудита.  
-* `Вести аудит сессий пользователей` - настройка ведения аудита сессий.  
+* `Имя connection string to the database аудита` - **name** connection string that will be passed to Win-an audit service, to point to the audit database.
+* `Адрес service аудита` - the address at which you'll Win-service audit.
+* `Вести audit sessions пользователей` - set of the audit sessions.
 
-**Примечание:** данные настройки будут актуальны только после реализации [второго этапа](devprocess_audit-stages.html)
+**Note:** these settings will only be valid after the implementation of the [second stage](devprocess_audit-stages.html)
 
-## Генерация настроек
+## Generation settings
 
-Среди настроек аудита, определяемых в Flexberry Designer, можно выделить следующие типы:
-* **Настройки стадии** (общие настройки аудита для всех генерируемых со стадии приложений).
-* **Настройки классов со стереотипом `application`** (настройки аудита, определяемые для конкретного генерируемого приложения (на настоящий момент ASP-генератор поддерживает генерацию только одного приложения)).
-* **Настройки классов со стереотипом `implementation`** (настройки аудита, определяемые для конкретных классов, которые войдут в сборку объектов).
+Among the settings of the audit defined in Flexberry Designer, we can distinguish the following types:
 
-Схема генерации настроек аудита из Flexberry Designer в *web-приложение*
+* **Setting the stage** (General settings for all audit generated from the stage of application).
+* **Settings classes with the stereotype `application`** (auditing settings defined for a particular generated application (currently ASP generator supports generating only one application)).
+* **Settings classes with the stereotype `implementation`** (auditing settings that are defined for specific classes that will be included in the Assembly of objects).
 
-![](/images/pages/products/flexberry-orm/audit/audit-setting-generate.png)
+The generation of the settings of the audit of Flexberry Designer *web application*
 
-Настройки классов со стереотипом `implementation` будут генерироваться в код объектов генератором объектов.  
-Настройки стадии и класса со стереотипом `application` будут генерироваться в config-файл web-приложения ASP-генератором.
+![Example](/images/pages/products/flexberry-orm/audit/audit-setting-generate.png)
 
-## Примеры настройки
+Settings classes with the stereotype `implementation` will be generated in the code object a generator object.
+Setting the stage and class with the stereotype `application` will be generated. config file on a web ASP application generator.
 
-* [Пример подключения аудита к существующему Web-приложению с использованием перегенерации](fa_audit-web-example.html)
+## Examples of settings
 
-В случае, если нет желания или возможности перегенерировать проект, можно воспользоваться следующими инструкциями:
-* [Пример подключения аудита к существующему Web-приложению без использования перегенерации проекта](fa_audit-web-example-manual.html)
-* [Пример подключения аудита к существующему Win-приложению без использования перегенерации проекта](efs_audit-win-example-manual.html)
+* [Example of connection audit to an existing Web application using regeneration](fa_audit-web-example.html)
+
+If there is no desire or ability to regenerate your project, you can use the following instructions:
+
+* [Example of connection audit to an existing Web application without using regeneration project](fa_audit-web-example-manual.html)
+* [Example of connection audit to an existing Win application without the use of a regeneration project](efs_audit-win-example-manual.html)
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -1,20 +1,22 @@
----
-title: Pentaho Report Designer Quick Start Guide
-sidebar: flexberry-analytics_sidebar
-keywords: Pentaho, issues, запросы, отчеты, типы данных, псевдонимы, отображение
-toc: true
-permalink: en/fan_pentaho-faq.html
-lang: en
-summary: Часто задаваемые вопросы по Pentaho
----
+--- 
+title: a Quick guide to Pentaho Report Designer 
+sidebar: flexberry-analytics_sidebar 
+keywords: Pentaho, problems, queries, reports, data types, aliases, display 
+toc: true 
+permalink: en/fan_pentaho-faq.html 
+lang: en 
+autotranslated: true 
+hash: 86090313d999b5ce9e0c3215ac4c58addd41f722270e0a4d05fd190927f97bc3 
+summary: Frequently asked questions on Pentaho 
+--- 
 
-В данном руководстве описываются рекомендации по работе с [Pentaho Report Designer](https://help.pentaho.com/Documentation/8.0/Products/Report_Designer) для более быстрого и аккуратного создания отчетов с возможностью более удобного форматирования в дальнейшем в случае необходимости.
+This guide describes best practices for working with [Pentaho Report Designer](https://help.pentaho.com/Documentation/8.0/Products/Report_Designer) for faster and accurate reporting with the possibility of a more convenient format in the future if necessary. 
 
-В качестве примера в руководстве будет использована база данных компьютерных игр.
+As an example, the user database will be used in video games. 
 
-#### Псевдонимы для запрашиваемых полей
+#### Aliases for the requested fields 
 
-Бывают ситуации, в которых при построении запроса необходимо вывести поля с одинаковыми именами из разных таблиц. Например, с помощью запроса нужно вывести название игры, ее цену, жанр и компанию, которая ее разработала. Запрос будет выглядеть следующим образом:
+There are situations where when you build the query should display fields with the same names from different tables. For example, using the query you should print the name of the game, its price, genre and the company that developed it. The query will look like the following: 
 
 ``` sql
 SELECT
@@ -25,151 +27,151 @@ SELECT
 FROM
      "dbo"."Companies" INNER JOIN "dbo"."Games" ON "dbo"."Companies"."Id" = "dbo"."Games"."Companies_Id"
      INNER JOIN "dbo"."Genres" ON "dbo"."Games"."Genres_Id" = "dbo"."Genres"."Id"
-```
+``` 
 
-![](/images/pages/products/flexberry-analytics/pentaho-faq1.png)
+![](/images/pages/products/flexberry-analytics/pentaho-faq1.png) 
 
-Если в запросе имеются поля с одинаковыми именами, то расположить в отчете можно только одно из них.
+If the query has fields with the same names, the positioning in the report is just one of them. 
 
-Чтобы появилась возможность расположить все поля запроса, необходимо присвоить им уникальные (в пределах данного запроса) __alias’ы (псевдонимы)__. Например, `Genre`, `Game`, `Price` и `Company`. В этом случае в отчете можно будет отобразить все поля запроса.
+To have the opportunity to place all the fields in the query, you must assign a unique (within the request) __alias, (alias)__. For example, `Genre`, `Game`, `Price` and `Company`. In this case, the report will display all the fields of the request. 
 
-#### В отчете должен быть обязательно выбран выполняемый запрос
+#### the report must be selected execute the query 
 
-Может возникнуть ситуация, при которой для отчета не будет выбран выполняемый запрос (в этом случае он будет иметь значок черной точки). Это может происходить, например, при создании нового запроса или при переименовании уже имеющегося. Если для данного отчета не выбран выполняемый запрос, то никакие данные выводиться не будут. Чтобы задать выполняемый запрос, необходимо нажать ПКМ по запросу и выбрать пункт `Select Query`. Рядом с выполняемым запросом должен стоять значок папки.
+A situation may arise in which for the report is selected executes the query (in this case, it will have an icon of a black dot). This can occur, for example, when you create a new query, or renames existing ones. If this report is selected, execute the query, no data will not be output. To set the query to be executed, you need click RMB on request and select `Select Query`. Next to the executed query should be a folder icon. 
 
-#### Размещение запросов, возвращающих несколько записей, в области Details
+#### Placement of queries that return multiple records, in the field Details 
 
-Элементы, которые представляют собой результаты запроса, рекомендуется помещать в область `Details`. 
-Области, отличные от `Details`, отображают только первую запись запроса, в то время как `Details` выводит все записи запроса, при условии, что в атрибуте `limit` отчета установлено стандартное значение. Если в атрибуте, например, будет установлено значение 3, то в отчете будут отображаться первые 3 записи (как если бы в самом запросе было прописано `TOP (3)` или `LIMIT 3`).
+The elements that represent the query results, it is recommended to place in the area `Details`. 
+Region that is different from `Details` display only the first record of the query, while `Details` displays all records of the request, provided that the attribute `limit` report standard value has been set. If the attribute, for example, be set to 3, the report will display the first 3 records (as if the query was written `TOP (3)` or `LIMIT 3`).
 
-#### Рекомендуется для разных типов полей запроса выбирать соответствующие элемент отображения
+#### Recommended for different types of query fields to select the appropriate display item 
 
-При переносе полей выполняемого запроса дизайнер автоматически подбирает для него соответствующий элемент отображения в зависимости от типа данного поля (`number-field` для числовых типов, `date-field` для типа даты и т.д.). Рекомендуется для вывода результатов запроса использовать именно такой способ (вместо ручного добавления элемента из панели инструментов и задания ему  результирующего поля в атрибуте `field`), т.к. если элемент отображения не соответствует типу поля в запросе, то при экспорте запроса могут получиться некорректные значения (так Excel будет думать, что числа в ячейках – это строки).
+When migrating fields in the executed query designer automatically selects the appropriate element of the display depending on the type of the field (`number-field` for numeric types, `date-field` for date type, etc.). It is recommended to output the query results to use it this way (instead of manually adding the item from the toolbar and give it the resulting field in the attribute `field`), because if the image element does not match the field type in the query, then when you export the query may be invalid values (so Excel will think that the numbers in the cells are strings). 
 
-#### Выполнение нескольких запросов
+#### running multiple queries 
 
-В одном отчете может быть только один выполняемый запрос. Чтобы создать несколько запросов, есть два способа:
+In one report can have only one query to be executed. To create multiple queries, there are two ways: 
 
-  1. Соединение двух разных запросов в один;
-  2. Создание подотчета.
+1. The Union of two different queries in один; 
+2. Create a subreport. 
 
-_Первый способ предпочтительнее_ благодаря возможности более гибкой настройки отчета, быстрому размещению полей, удобному форматированию. Хотя этот способ сложнее в реализации, т.к. принуждает к ручному написанию сложного запроса вместо использования визуального конструктора.
+Pervy method predpochtitelno due to the possibility of a more flexible report customization, quick arrange fields, convenient format. Although this method is more difficult, because forces to hand-write a complex query instead of using the visual designer. 
 
-_Подотчет_ является таким же отчетом, как и Master Report, со своим выполняемым запросом. 
-При создании подотчета также важно выбрать выполняемый запрос, иначе никакие данные не будут отображены.
+Poduce is the same report as the Master Report, with his the executed query. 
+When you create a sub-report it is also important to choose execute the query, otherwise no data will be displayed. 
 
-В общем случае стоит порекомендовать использовать первый способ как в плане удобства форматирования, так и в плане оптимизации запросов.
+In the General case is recommend to use the first method in terms of ease of formatting and in terms of query optimization. 
 
-Подотчеты стоит создавать в том случае, если запрос в нем никак не пересекается с исходным (другая база данных, другой набор таблиц и т д). Подотчет также можно использовать в целях более удобной отладки.
+The subreport should be created in that case, if the request it does not intersect with the source (another database, another set of tables, and so forth). A subreport can also be used for more convenient debugging. 
 
-#### Циклический вызов запроса
+#### Cyclic query call 
 
-При создании подотчета может возникнуть проблема циклического вызова запроса. Она возникает при условии, что подотчет расположен в области `Details` главного отчета, а поля выполняемого запроса в подотчете также расположены в области `Details` подотчета, и в обоих отчетах в атрибуте `limit`  становлено стандартное значение (отображающее все результаты запроса).
+When you create a sub-report may be a problem of cyclic query call. It occurs when the condition that the sub-report is located in region `Details` main report, and the fields of the executed query in the subreport also located in the area `Details` sub-report, and both reports attribute `limit` ustanovleno standard value (displaying all query results). 
 
-Так, например, если результатом запроса является таблица из 7 записей, то в отчете будет отображено 49 записей.
+For example, if the query result is a table with 7 records, the report will be displayed 49 records. 
 
-![](/images/pages/products/flexberry-analytics/pentaho-faq2.png)
+![](/images/pages/products/flexberry-analytics/pentaho-faq2.png) 
 
-Эту проблему можно решить, установив значение атрибута `limit` главного запроса в 1. 
-Если установить это значение в подотчете, то в результате получится 7 одинаковых записей.
+This problem can be solved by setting the value attribute `limit` the main query in 1. 
+If you set this value to the subreport, then the result will be the same 7 records. 
 
-#### Создание элементов с динамическим размером
+#### Creating elements with dynamic size 
 
-Особенности создания элементов с динамическим размером изложены на форуме [Pentaho Community Forums](http://forums.pentaho.com/showthread.php?218712-Problem-with-variable-length-fields-in-detail-section&highlight=items+height).
+Features create elements with dynamic size stated on the forum [Pentaho Community Forums](http://forums.pentaho.com/showthread.php?218712-Problem-with-variable-length-fields-in-detail-section&highlight=items height).
 
-#### Названия псевдонимов не помещаются в поле
+#### the Names of aliases do not fit in the box 
 
-При указании поля, которое будет выводится в элементе, внутри выписывается псевдоним поля. 
-Если псевдоним будет очень длинный, а ячейка маленькая, то она может раздвинуться, что приведет к некорректному отображения в предпросмотре отчета. __Рекомендуется давать псевдонимам короткие имена__, так, чтобы они входили в ячейки.
+When specifying fields to be displayed in the element inside is written the alias field. 
+If the alias name is very long, and the cell is small, it may slide that will cause incorrect display in the report preview. __Is recommended to give the alias short names are__, so they entered the cell. 
 
-#### Не рисуются границы
+#### does Not draw the border 
 
-Иногда в некоторых полях при выводе отчета могут пропадать границы. Это может происходит из-за того, что в данной ячейке запрос вернул `значение NULL`. Границы с пустыми значениями не рисуются.
+Sometimes in some of the fields in the report output can disappear of the border. It may happens due to the fact that in the cell the query returned `значение NULL`. Border with empty values are not drawn. 
 
-![](/images/pages/products/flexberry-analytics/pentaho-faq3.png)
+![](/images/pages/products/flexberry-analytics/pentaho-faq3.png) 
 
-Чтобы исправить это, достаточно в данном элементе прописать пробел в свойстве `if-null`.
+To fix this, it is enough in this element to register a space in the property `if-null`. 
 
-#### Проблема с накладыванием полей друг на друга
+#### the problem with the overlaying of fields on top of each other 
 
-Пусть в отчете необходимо сначала вывести список игр, и сразу за ним список компаний-разработчиков.
-Для этой задачи можно создать два подотчета (в одном вывести список игр, а в другом список компаний) и расположить их в области `Details` (установив для атрибута `limit` главного отчета значение 1). В этом случае может возникнуть проблема с накладывание текста одного подотчета на текст другого подотчета.
+Let the report you must first display the list of games, followed immediately by a list of software development companies. 
+For this task you can create two sub-report (in one list the games and the other list of companies) and place them in the region `Details` (by setting the attribute `limit` main report a value of 1). In this case, it may be a problem with the text overlaying one sub-report in the text of another sub-report. 
 
-![](/images/pages/products/flexberry-analytics/pentaho-faq4.png)
+![](/images/pages/products/flexberry-analytics/pentaho-faq4.png) 
 
-Можно было бы создать запрос в главном отчете и расположить оба поля в нем (поле игры над полем компании). Однако в этом случае отчет выведет в один столбец значения «Игра», «Компания», «Игра», «Компания», «Игра», «Компания» и т.д.
+It would be possible to create a query in the main report and place both fields in it (the field of play over the field). However, in this case the report displays in one column the values of the» «Game, «Company»,» «Game, «Company»,» «Game, «Company», etc. 
 
-Чтобы расположить в одном столбце сначала все игры, а потом все компании без проблемы с наложением полей можно установить свойство `layout области Details` в значение `block`. В этом случае все элементы, которые располагаются в области `Details` будут растянуты на всю ширину отчета и расположены друг над другом.
+To place in one column all the first game, and then all the company with no problem with the imposition of the fields you can set a property `layout region Details` in the value `block`. In this case, all the elements that are in the area `Details` will be stretched across the entire width of the report and are located one above the other. 
 
-![](/images/pages/products/flexberry-analytics/pentaho-faq5.png)
+![](/images/pages/products/flexberry-analytics/pentaho-faq5.png) 
 
-#### «Пустые» столбцы и строки при экспорте в Excel
+####» «Blank columns and rows when exporting to Excel 
 
-Часто при экспорте в Excel могут возникать пустые столбцы и строки маленьких размеров. 
-Как правило, это происходит из-за неаккуратного расположения элементов в дизайнере.
+Often when exporting to Excel may arise empty columns and rows in small sizes. 
+Usually, this occurs due to careless arrangement of elements in the designer. 
 
-_Например_, пусть в отчете выводятся список игр (text-field с шириной 200 и координатами (0, 0)) 
-и рядом список компаний-разработчиков (text-field с шириной 268 и координатами (201, 0)).
+Naprimer, let the report displays a list of games (text-field with a width of 200 and a coordinate (0, 0)) 
+and next list of companies (text-field with a width of 268 and a position (201, 0)). 
 
-Таким образом общая ширина, занимаемая этими двумя элементами равна 200 + 268 = 468 пунктов плюс 1 пункт между ними = 469.
+Thus the total width occupied by these two elements is equal to 200 268 = 468 points plus 1 point between them = 469. 
 
-Так как стандартная ширина отчета равна 468, то один лишний пункт будет выходить за пределы отчета, из-за чего при экспорте _в Excel образуется лишний столбец_ с очень маленькой шириной.
+Since the standard width is 468, then one extra point will go beyond the report which when exported to Excel no extra stoves is formed with a very small width. 
 
-Чтобы располагать элементы более аккуратно рекомендуется поставить флажок в свойстве `Snap to 
-Elements` в меню `View`. Таким образом, при расположении элементов они будут «приклеиваться» друг к другу и между ними не будет появляться лишних промежутков.
+To position elements more accurately, it is recommended to put the check box in the property `Snap to 
+Elements` menu `View`. Thus, when the location of items they will» «stick to each other and between them there will be extra spaces. 
 
-Однако есть _более удобный способ_, позволяющий автоматизировать аккуратное расположение элементов в отчете. Для этого служит `элемент band`. В него необходимо сложить все элементы, которые будут отображены в одной строке и задать в свойстве `layout` значение `row`, чтобы элементы в группе шли друг за другом слева направо. Так они будут пристыковываться друг к другу по горизонтали и между ними не будет возникать промежутков.
+However, there are bolee convenient sposob that can automate accurate location of items in the report. This is `элемент band`. It is necessary to add up all the items that are displayed in one line and set the property value `layout` `row` that the elements in the group went after each other from left to right. So they will dock to each other horizontally, and between them there will be gaps. 
 
-Чтобы `band’ы` также пристыковывались друг к другу по вертикали необходимо для области `Details` задать в свойстве `layout` значение `block`.
+To `band'ы` also attaches to each other vertically, you need to `Details` field to set a property value `layout` `block`. 
 
-!![](/images/pages/products/flexberry-analytics/pentaho-faq6.png)
+!![](/images/pages/products/flexberry-analytics/pentaho-faq6.png) 
 
-#### Failed Query при попытке посмотреть отчет на сервере
+#### Failed Query when trying to view the report on the server 
 
-Иногда может возникнуть ситуация, когда запрос, который работает в `Pentaho Report Designer`, проваливается при попытке сформировать его на сервере. Возможно причина в том, что для соединения, в котором работает запрос, не установлены необходимые параметры.
+Sometimes a situation may arise when a query that works in `Pentaho Report Designer`, fails when trying to create it on the server. Perhaps the reason is that for the connection over which the query is not set the necessary settings. 
 
-Чтобы это исправить, необходимо зайти в настройки соединения (окно `Database Connection`), выбрать слева `options` и задать `параметр stringtype`, а значение `unspecified` (если они не заданы).
+To fix this, you need to go into the connection settings (window `Database Connection`), select the left `options` and ask `параметр stringtype`, and the value `unspecified` (if not specified). 
 
-#### Пропали результаты запроса в пред просмотре
+#### Missing query results before viewing 
 
-Если запрос возвращает слишком много записей, они могут не поместиться на первый лист. В этом случае они переносятся на следующие листы, однако при экспорте в файл, все записи будут выводиться вместе («начиная с начала»).
+If the query returns too many records, they may not fit on the first sheet. In this case, they are leaves, but when you export to a file, all records will be displayed together («since the beginning of the»). 
 
-#### Обращение к параметрам отчета
+#### reference to the parameters of the report 
 
-Чтобы обратиться к параметру отчета в запросе, необходимо обернуть его в фигурные скобки и поставить перед ними знак доллара (например, если имя параметра `Company`, то в запросе нужно написать `${Company}`).
+To access the report parameter in the query, you must wrap it in braces and put in front of them with a dollar sign (for example, if the parameter name `Company`, then in the query you need to write `${Company}`). 
 
-Если необходимо обратиться к параметру отчета из выражения (например, чтобы составить заголовок «Отчет по компании Square Enix»), то в это случае вместо фигурных скобок ставятся круглые (тогда выражение в поле заголовка будет таким «Отчет по компании `$(Company)`»).
+If you need to refer to the report parameter from the expression (for example, to make a title «Report Square Enix»), in this case, instead of curly brackets are put round (then the expression in the title field will be the «Report `$(Company)`»). 
 
-#### Пустая область при пред просмотре
+#### Blank when pre viewing 
 
-Иногда может случится ситуация, когда при пред просмотре появляется пустая область, между которой выписываются результаты запросов. Это может происходить, когда запрос, результаты которого должны были появиться в этом месте, не выполнился (в этом случае, действительно, его результаты и сопутствующие заголовки выводиться не будут, при условии, что они находились вместе в `band’е` или в подотчете).
+Sometimes it may happen the situation, when before the view appears empty area in between which are written the results of the queries. This can happen when the query, the results of which were to appear in this place, are not fulfilled (in this case, indeed, its results and the associated headers will not be logged, provided that they were together in `band'е` or sub-report). 
 
-При установке параметра автоматического подбора высоты элемента, его размеры, указанные в параметрах `width и height`, могут быть некорректными, хотя сам элемент на области имеет всегда один и тот же размер независимо от этих двух параметров. Пустая область возникает, когда параметр `height` больше действительной высоты элемента. В этом случае нужно уменьшить параметр `height`, так чтобы он был меньше или равен истинному размеру элемента (либо потянуть за край элемента, либо прописать значение высоты вручную). Размер самого элемента при этом не изменится, а в пред просмотре пропадет пустая область. 
+When set auto height of an element, the dimensions specified in parameters `width and height` may be incorrect, although the object on the field has always the same size regardless of those two settings. Blank area occurring when the parameter `height` greater than the actual height of the element. In this case, you want to decrease `height`, so that it is less than or equal to the true size of the item (or pull the edge of the element, or specify a height value manually). The size of the element will not change, and before the view disappears an empty region. 
 
-#### Параметры отчета
+#### report Parameters 
 
-Для параметра даты рекомендуется выбирать `тип Date (SQL)`, т.к. в SQL формат даты отличается от остальных. В качестве формата даты можно указать, например, `dd.MM.yyyy` (именно MM, т.к. mm отвечают за минуты), тогда дата будет выведена в соответствии с российским форматом.
-Если в параметрах отчета участвует `GUID`, то для него необходимо выбирать тип `Object`.
+For the date parameter, it is recommended to choose `тип Date (SQL)`, because in SQL the date format is different from the rest. As of the date format you can specify, for example, `dd.MM.yyyy` (that's MM, because mm is responsible for minutes), then the date will be displayed in accordance with the Russian format. 
+If the report parameters involved `GUID`, then it is necessary to choose the type `Object`. 
 
-Если в пользовательском интерфейсе необходимо отобразить отчет с указанным параметром, то необходимо в URL запроса в область параметров добавить требуемое значение  параметра:
+If in the UI you want to display the report with the specified parameter, it is necessary in the request URL in the settings area to add the required parameter value: 
 
 ```
 <имя_парметра=UUENCODE_значение>
-```
+``` 
 
-Например: 
-
-```
-http://localhost:4200/pentaho/api/repos/:home:msp:report1.prpt/generatedContent?orgId=f5078a44-2ef6-49d9-ad2e-0099ba1cf02d
-```
-
-При этом в URL можно указать и требуемый тип файла отчета:
+For example: 
 
 ```
-http://localhost:4200/pentaho/api/repos/:home:msp:report1.prpt/generatedContent?output-target=table/excel;page-mode=flow&orgId=f5078a44-2ef6-49d9-ad2e-0099ba1cf02d
-```
+http://localhost:4200/pentaho/api/repos/:home:msp:report1.prpt/generatedContent?orgId=f5078a44-2ef6-49d9-ad2e-0099ba1cf02d 
+``` 
 
-Форматы вывода:
+In this URL you can specify the type of report file: 
+
+```
+http://localhost:4200/pentaho/api/repos/:home:msp:report1.prpt/generatedContent?output-target=table/excel;page-mode=flow&orgId=f5078a44-2ef6-49d9-ad2e-0099ba1cf02d 
+``` 
+
+Output formats: 
 
 ```
 table/html;page-mode=page for HTML (Paginated) 
@@ -180,6 +182,10 @@ application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;page-mode=flow
 table/csv;page-mode=stream for Comma Separated Value 
 table/rtf;page-mode=flow for Rich-Text-Format 
 pageable/text for Text 
-```
+``` 
 
-Если при этом нет необходимости менять значение параметра в запросе, необходимо при описании параметра поставить флажок `Hidden`.
+If there is no need to change the parameter value in the query, it is necessary to describe option to check the box `Hidden`. 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

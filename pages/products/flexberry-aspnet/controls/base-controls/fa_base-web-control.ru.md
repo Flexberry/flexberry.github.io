@@ -13,10 +13,6 @@ lang: ru
 
 ## Использование
 
-### BaseListWebControl
-
-BaseListWebControl описан в соответствующей [статье](fa_base-list-web-control.html).
-
 ### BaseEditForm
 
 BaseEditForm описана в соответствующей [статье](fa_base-edit-form.html).

@@ -1,27 +1,37 @@
 ---
-title: Limit Function
+title: Functions limits
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Ограничения
-summary: Определение и предназначение построителей ограничений
+keywords: Flexberry ORM Limitations
+summary: Definition and purpose of the builders restrictions
 toc: true
 permalink: en/fo_limit-function.html
 lang: en
+autotranslated: true
+hash: 635984df750e9e6f0562c998fd426af05a75303caa93e74bac0427fe5852d2bb
 ---
 
-Функции ограничения позволяют осуществлять фильтрацию и ограничения выборки данных и представляют собой специальный расширяемый язык ограничений, разработанный для [Flexberry ORM](fo_flexberry-orm.html).
+The restriction feature allows to filter and limit the data selection and represent a special extensible language constraints developed for [Flexberry ORM](fo_flexberry-orm.html).
 
-Данный механизм лежит в основе функционирования [LINQProvider](fo_linq-provider.html), таким образом, [данные механизмы наложения ограничений тесно связаны](fo_limitation.html).
+This mechanism lies in the basis of functioning [LINQProvider](fo_linq-provider.html) so, [these mechanisms of imposing restrictions closely linked](fo_limitation.html).
 
-Существует [возможность сериализовать функцию ограничения](fo_limit-function-serialization.html). 
+There is [the ability to serialize function limitations](fo_limit-function-serialization.html).
 
-## "Построители" функций ограничений
+## "Builders" functions restrictions
 
-[SQLWhereLanguageDef](fo_function-list.html) - класс-построитель функций для наложения ограничений на вычитываемые объекты.
+[SQLWhereLanguageDef](fo_function-list.html) - class-Builder functions, the restrictions on the deducted objects.
 
-[ExternalLangDef](fo_external-lang-def.html) - расширение языка ограничений для задания ограничений на зависимые объекты (детейлы).
+[ExternalLangDef](fo_external-lang-def.html) - language extension restrictions to set restrictions on the dependent objects (detali).
 
-Существует [возможность расширить реализованные языки ограничений](fo_using-languagedef.html).
+[FunctionBuilder](fo_function-builder.html) is a wrapper class over ExternalLangDef with a less verbose syntax for building functions restrictions objects deducted.
 
-## Применение функций ограничения
+[FunctionBuilder examples](fo_function-builder-examples.html) - more detailed examples for the refaktor `LangDef.GetFunction`.
 
-Работа с функциями ограничений часто связана с вычиткой данных. При вычитке данных функция ограничений указывается в структуре [LoadingCustomizationStruct](fo_loading-customization-struct.html).
+There is an opportunity to expand the implemented languages of limitations](fo_using-languagedef.html).
+
+## Application functions limit
+
+Working with functions restrictions often associated with reading data. When reading data, the function restrictions specified in the structure [LoadingCustomizationStruct](fo_loading-customization-struct.html).
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

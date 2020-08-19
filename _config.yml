@@ -55,6 +55,7 @@ feedback_email: mail@flexberry.net
 # used as a contact email for the Feedback link in the top navigation bar
 
 # Build settings
+encoding: utf-8
 markdown: kramdown
 kramdown:
  input: GFM
@@ -111,8 +112,6 @@ sidebars:
 - mydoc_sidebar
 - product1_sidebar
 - product2_sidebar
-- ember-flexberry_sidebar
-- ember-flexberry-data_sidebar
 - ember-flexberry-security_sidebar
 - ember-flexberry-gis_sidebar
 - ember-flexberry-geolocation_sidebar
@@ -126,6 +125,7 @@ sidebars:
 - flexberry-orm_sidebar
 - flexberry-platform_sidebar
 - flexberry-analytics_sidebar
+- flexberry-audit_sidebar
 - flexberry-ember_sidebar
 - flexberry-security_sidebar
 - flexberry-servicebus_sidebar
@@ -141,10 +141,12 @@ sidebars:
 - guide-base-tech_sidebar
 - guide-tasks_sidebar
 - guide-practical-guides_sidebar
+- guide-okr-guideline_sidebar
 - other
 - guide-mobile-app_sidebar
 - guide-bpm-app_sidebar
 - ui-ux-guideline_sidebar
+- training-developers-school_sidebar
 
-gems:
+plugins:
   - jekyll-seo-tag

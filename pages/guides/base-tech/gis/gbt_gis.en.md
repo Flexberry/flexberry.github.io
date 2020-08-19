@@ -1,69 +1,69 @@
----
-title: GIS
-keywords: Programming
-sidebar: guide-base-tech_sidebar
-toc: true
-permalink: en/gbt_gis.html
-folder: guides/base-tech/gis/
+--- 
+title: GIS 
+keywords: Programming 
+sidebar: guide-base-tech_sidebar 
+toc: true 
+permalink: en/gbt_gis.html 
+folder: guides/base-tech/gis/ 
 lang: en 
 autotranslated: true 
-hash: 178a8156ebb5af1177e7673724f24cbb8a27db52a9729170bee4285a16991744
----
+hash: f8cf8340f4fcae1879b33278c5be32ce86bb6b9e4acdc8624bb5bc0484158966 
+--- 
 
-## Brief description
-* OGC standards
-* Leaflet
-* GeoServer
-* Yandex.Maps, Google maps, 2GIS, OSM
+## Brief description 
+* OGC standards 
+* Leaflet 
+* GeoServer 
+* Yandex.Maps, Google maps, 2GIS, OSM 
 
-## Links to materials for the study
+## Links to materials for the study 
 
-* [-]()
-* [-]()
+* [-]() 
+* [-]() 
 
-### Presentation
+### Presentation 
 
-### Recommended books
+### Recommended books 
 
-* [-]()
-* [-]()
+* [-]() 
+* [-]() 
 
-## Software
+## Software 
 
-* [-]()
-* [-]()
+* [-]() 
+* [-]() 
 
-## Laboratory work and practical tasks
+## Laboratory work and practical tasks 
 
-* [-]()
-* [-]()
+* [-]() 
+* [-]() 
 
-Variants of tasks for independent performance, and then reviewing on the part of the teacher.
+Variants of tasks for independent performance, and then reviewing on the part of the teacher. 
 
-### Option # 1
+### Option # 1 
 
-### Option # 2
+### Option # 2 
 
-### Option # 3
+### Option # 3 
 
-### Option # 4
+### Option # 4 
 
-### Option # 5
+### Option # 5 
 
-## Examples
+## Examples 
 
-* [-]()
-* [-]()
+* [-]() 
+* [-]() 
 
-## Opportunities for certification
+## Opportunities for certification 
 
-* [-]()
-* [-]()
+* [-]() 
+* [-]() 
 
-## Go
+## Go 
 
-* [Testing and debugging](gbt_testing.html)
+* [Testing and debugging](gbt_testing.html) 
 * [Course home page](gbt_landing-page.html)
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -1,23 +1,25 @@
----
-title: Creating a Custom Data Type
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, data types, example
-summary: Example of creating a stereotype typedef
-toc: true
-permalink: en/fo_creating-stereotypes-example.html
-lang: en
----
+--- 
+title: creating a custom data type 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, data types, example 
+summary: an Example of creating a stereotype typedef 
+toc: true 
+permalink: en/fo_creating-stereotypes-example.html 
+lang: en 
+autotranslated: true 
+hash: 7f19157fb8c38661eb5f52a4085ad34f59557eea785b5f3a236e612576731711 
+--- 
 
-Существует возможность определить собственный тип на диаграмме Flexberry. Для этого следует разместить новый класс на диаграмме и поменять его [стереотип на "typedef"](fd_typedef.html).
-Как результат, данный тип можно будет использовать как атрибут для свойств классов во всей стадии Flexberry.
+There is a possibility to define your own type on the chart Flexberry. This should place the new class in the diagram and change its stereotype to "typedef"](fd_typedef.html). 
+As a result, this type can be used as an attribute to class properties at all stages Flexberry. 
 
-Однако, этот тип является лишь псевдонимом, и используется только на уровне абстракции при моделировании.
+However, this type is only an alias, and is used only at the level of abstraction in modeling. 
 
-Необходимо разрешить тип данного "typedef", указав соответствующие типы в C# и SQL на специальной [карте типов Flexberry](fd_types-map.html).
+You need to allow this type of "typedef", putting the corresponding types in SQL C# and special card types Flexberry](fd_types-map.html). 
 
-К примеру, если посмотреть на класс String4000 (Flexberry sample repository, Entities diagram), то видно, что он маппится на классы System.String и VARCHAR(4000).
+For example, if you look at the class String4000 (Flexberry sample repository, Entities diagram), you will see that it mapitse on the System.String and VARCHAR(4000). 
 
-Как пример сгенерированного свойства, следует обратить внимание на Description класса CD:
+As an example of the generated properties, you should pay attention to the Description class CD: 
 
 ```csharp
 [StrLen(4000)]
@@ -26,6 +28,10 @@ public virtual string Description
         get {...}
         set {...}
 }
-```
+``` 
 
-Полный список примеров кода Flexberry ORM находится в статье [Примеры кода](fo_code-samples.html).
+Full list of code examples Flexberry ORM is in [code Examples](fo_code-samples.html). 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

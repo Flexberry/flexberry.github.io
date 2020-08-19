@@ -8,7 +8,6 @@ permalink: ru/fo_trimmed-string-storage.html
 lang: ru
 ---
 
-Чтобы управлять обрезкой строк при вычитке данных из источника, необходимо использовать [TrimmedStringStorageAttribute](fo_attributes-class-data.html), который настраивается вo [Flexberry Designer](fd_landing_page.html) в свойствах атрибута (Trim).
+Чтобы управлять обрезкой строк при вычитке данных из источника, необходимо использовать [TrimmedStringStorageAttribute](fo_attributes-class-data.html), который настраивается вo [Flexberry Designer](fd_flexberry-designer.html) в свойствах атрибута (Trim).
 
 По-умолчанию строки обрезаются (эта логика зашита в [Information.SetPropValueByName()](fo_methods-class-information.html)).
-

@@ -1,110 +1,171 @@
 ---
-title: Настройка контролов, понятие провайдера контролов, стандартный провайдер контролов
+title: Provider of controls for Winforms Flexberry
 sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (Контролы)
-summary: Рассмотрены провайдеры контролов, которые задают соответствие типа свойства объекта данных контролу. Описан стандартный провайдер контролов, предоставляемый технологией, и указано, что следует сделать, чтобы создать собственный провайдер контролов и как его использовать. В т.ч. описано создание нестандартного контрола для редактирования значений нестандартного типа.
+keywords: Flexberry Winforms, forms, controls, binding, provider controls
+summary: Concept, types, according the type of data and control, creation of provider controls, the structure of the processing controls a variety of data types
 toc: true
 permalink: en/fw_control-provider-winforms.html
-folder: products/flexberry-winforms/
 lang: en
+autotranslated: true
+hash: b08273602796ae50ae34b8577d52f5d1d0165ea13f3035067b30073e87d4b8da
 ---
-Существует проблема: когда универсальная форма редактирования и некоторые другие контролы (например, `GroupEdit`, для редактирования значений) «намазывают» контролы, откуда они знают соответствие типа свойства объекта данных контролу? Иначе говоря, например, откуда им известно, что для редактирования свойства типа `string` необходим `TextBox`, а для свойства типа `DateTime DateTimePicker`?
 
+Providers of the controls classes that are inherited from the abstract `ICSSoft.STORMNET.Windows.Forms.Binders.ControlProvider` designed to prevalene in compliance with the type of control and the type of the data object. For example, universal [edit](fw_editform.html).
 
-Для этого существуют т.н. провайдеры контролов, классы, наследующиеся от абстрактного `ICSSoft.STORMNET.Windows.Forms.Binders.ControlProvider`. У этого класса имеется метод `GetControl`, который возвращает структуру `ICSSoft.STORMNET.Windows.Forms.Binders.ControlForBindStruct`, в которой и указывается соответствие контрола типу значения (описывается ниже).
+The class `ICSSoft.STORMNET.Windows.Forms.Binders.ControlProvider` `GetControl` there is a method that returns a structure `ICSSoft.STORMNET.Windows.Forms.Binders.ControlForBindStruct`, which specifies the relationship of the control type value.
 
+There are so-called standartny provider kontrolov `ICSSoft.STORMNET.Windows.Forms.Binders.StandardControlProvider` in which `GetControl` method is overloaded so that it returns the control to some predefined manner.
 
-Существует т.н. стандартный провайдер контролов `ICSSoft.STORMNET.Windows.Forms.Binders.StandardControlProvider`, в котором метод `GetControl` перегружен таким образом, что возвращает контролы некоторым предопределённым образом. 
+## Controls returned StandardControlProvider
 
-## Контролы, возвращаемые `StandardControlProvider`
-
-| Тип | Контрол
+| Type | Control
 |--|--
-| string| System.Windows.Forms.TextBox
+| string| System.Windows.Forms.TextBox |
 | System.Decimal<br>System.Double<br> System.Int16<br>System.Int32<br>System.Int64<br>System.SByte<br>System.Single<br>System.UInt16<br>System.UInt32<br>System.UInt64| System.Windows.Forms.TextBox
 | System.DateTime| ICSSoft.STORMNET.Windows.Forms.DateTimePicker
 | bool| System.Windows.Forms.CheckBox
 | Enum| ICSSoft.STORMNET.Windows.Forms.ExtendedComboBox
 | ICSSoft.STORMNET.DetailArray| ICSSoft.STORMNET.Windows.Forms.GroupEditBase
-| ICSSoft.STORMNET.DataObject| ICSSoft.STORMNET.Windows.Forms.ComboLookup или (в зависимости от параметров) ICSSoft.STORMNET.Windows.Forms.LookUp.LookUp
+| ICSSoft.STORMNET.DataObject| ICSSoft.STORMNET.Windows.Forms.ComboLookup or (depending on settings) ICSSoft.STORMNET.Windows.Forms.LookUp.LookUp
 
-Если требуется, чтобы редактировался другой тип, или другим контролом, необходимо определить свой провайдер контрола и ассоциировать его с типом.
+If you want edited by another type, or another control, you need to define your own provider control and associate it with a type.
 
+There are several common situations:
 
-Существует несколько наиболее распространённых ситуаций:
-* Настройка контрола для редактирования значения стандартного типа;
-* Редактирование нестандартного типа стандартным контролом;
-* Редактирование нестандартного типа нестандартным контролом.
+* To set control for editing the values of the standard типа;
+* Editing a non-standard type standard контролом;
+* Editing non-standard non-standard control.
 
-Рассмотрим эти ситуации подробнее.
+## ControlForBindStruct
 
-## Описание собственного провайдера контролов
-На самом деле, во всех случаях, создание контрола происходит через стандартный провайдер контролов, однако предварительно стандартный провайдер проверяет ассоциированный с типом провайдер контрола. Стандартный провайдер возвращает предопределённые контролы только тогда, когда нет другого ассоциированного провайдера, или метод ассоциированного провайдера вернул `null` либо `ControlForBindStruct.Empty`.
+`ICSSoft.STORMNET.Windows.Forms.Binders.ControlForBindStruct` - structure that defines a control for editing some properties. For example, [Processing date ControlProvider](fw_processing-date-in-control-provider.html)).
 
+For this structure defines three constructors:
 
-Для того чтобы создать собственный провайдер контролов, необходимо унаследоваться от `ICSSoft.STORMNET.Windows.Forms.Binders.ControlProvider` и переопределить метод `GetControl`. Он имеет параметры: 
-* `string ApplicationType` — тип приложения (некоторая строка, идентифицирующая тип пользовательского интерфейса);
-* `Type type` — тип, значения которого нужно редактировать контролом;
-* `ICSSoft.STORMNET.View view` — представление, в котором находится объект данных;
-* `string propertyName` — имя свойства объекта данных, которое нужно редактировать. 
+* `ControlForBindStruct(object control, string controlPropName)` — an instance of the control that will edit значение;
+* `ControlForBindStruct(object control, string controlPropName, Type[] typeMapping)` — name significant properties of the control, i.e., which is and returns значение;
+* `ControlForBindStruct(object control, string controlPropName, Type[] typeMapping, IComponent[] additionalControls)` — mapping (chain explicit or implicit conversions) of types used in the case when significant property is not supported directly the desired type, but is supported by another, to which the type can be converted. If this mapping is specified, then setting the value in the property control conversion occurs sequentially on the specified type starting from the beginning of the array, and if back (if you are installing from a property control in a property of the data object), then the end of the array.
 
-Пример можно посмотреть в [статье](fw_datetime-picker.html).
+### Control
 
-Возвращать контрол можно в зависимости от комбинации значений этих параметров, т.е. гибко настраивать пользовательский интерфейс.
-
-
-Метод возвращает структуру `ICSSoft.STORMNET.Windows.Forms.Binders.ControlForBindStruct` при конструировании которой указывают:
-*	`System.Object control` — экземпляр контрола, который будет редактировать значение;
-*	`System.String controlPropName` — имя значимого свойства контрола, т.е. то, в которое устанавливается и возвращается значение;
-*	`System.Type[] typeMapping` — мапирование (цепочка явных, либо неявных преобразований) типов, используется в случае, когда значимое свойство не поддерживает напрямую нужный тип, но поддерживает другой, к которому нужный тип может преобразовываться. Если это мапирование указано, тогда при установке значения в свойство контрола преобразование происходит последовательно, по указанным типам, начиная с начала массива, а если обратно (при установке из свойства контрола в свойство объекта данных), то с конца массива.
-
-__Примечание__: связывание контрола со значением происходит через стандартный `.Net`-биндинг. Т.е. связываемый контрол должен «понимать» тип значений.
-
-## Ассоциирование провайдера контролов с типом
-После того, как провайдер создан, необходимо ассоциировать его с типом. Для этого служит атрибут `ICSSoft.STORMNET.Windows.Forms.Binders.ControlProviderAttribute`. Параметром указывается тип провайдера.
-Например:
+`control` - an instance of the control that will edit the value.
 
 ```csharp
-[ICSSoft.STORMNET.Windows.Forms.Binders.ControlProvider(typeof(ДеньгиTextBoxControlProvider))] 	
-	public struct Деньги //Кстати, пример пользовательского типа
-	{
-		//И т.д.
+var txtbox = new System.Windows.Forms.TextBox();
+var dateTimePicker = new ICSSoft.STORMNET.Windows.Forms.DateTimePicker();
 ```
 
-Очевидно, что данный способ удобен для нестандартных типов. Но как быть со стандартными типами, к ним ведь никак нельзя приписать атрибут?
+### ControlPropName
 
+`controlPropName` - name significant properties of the control, i.e., which is set and returns the value.
 
-Существует ещё один механизм, установка провайдера контролов, обрабатывающего все типы. Чтобы выполнить это, следует установить в статическое свойство `StandardControlProvider.ControlProviderForNotCustomizedTypes` провайдер контролов.
+Naprimer:_
 
+* for control type `System.Windows.Forms.TextBox` : "Text".
+* for control type `System.Windows.Forms.CheckBox` : "Checked".
+* for control type `System.Windows.Forms.ComboBox` : "Text".
+* for control type `ICSSoft.STORMNET.Windows.Forms.DateTimePicker` : "ObjectValue".
+* ...
 
-Пример:
+### TypeMapping
+
+`typeMapping` is an array used to maprounea value types, which should work `control`.
+
+Naprimer:_
+
+1.If the value of type `System.String` will be processed using `System.Windows.Forms.TextBox`, the mapping can be omitted:
+
+```csharp
+new ControlForBindStruct(new System.Windows.Forms.TextBox(), "Text")
+```
+
+2.If the value of type `ICSSoft.STORMNET.UserDataTypes.NullableDateTime` will be processed using `ICSSoft.STORMNET.Windows.Forms.DateTimePicker` that works with the type `System.DateTime`, it must implement the mapping (a complete example in the article [Processing date ControlProvider](fw_processing-date-in-control-provider.html)):
+
+```csharp
+ControlForBindStruct(new ICSSoft.STORMNET.Windows.Forms.DateTimePicker(), "ObjectValue",
+                            new System.Type[] {typeof(ICSSoft.STORMNET.UserDataTypes.NullableDateTime),
+                                        typeof(System.DateTime)})
+```
+
+3.If the value of type `ICSSoft.STORMNET.UserDataTypes.NullableDecimal` will be processed using `System.Windows.Forms.TextBox` that works with the type `System.String`, the required chain mapping, because the system knows how to translate `ICSSoft.STORMNET.UserDataTypes.NullableDecimal` in `System.Decimal`, and `System.Decimal` already in `System.String`.
+
+```csharp
+ControlForBindStruct(new System.Windows.Forms.TextBox(), "Text",
+                        new Type[] { typeof(ICSSoft.STORMNET.UserDataTypes.NullableDecimal),
+                                        typeof(Decimal), typeof(string) }
+```
+
+## Description private provider of controls
+
+In fact, in all cases, the creation of the control is through a standard provider of controls, but pre-standard provider checks the associated with the type of provider control. Standard provider returns the predefined controls only when no other associate of the provider or the associated provider method returned `null` or `ControlForBindStruct.Empty`.
+
+To create the custom provider controls, you must unasledovala from `ICSSoft.STORMNET.Windows.Forms.Binders.ControlProvider` and override the method `GetControl`. It has parameters:
+
+* `string ApplicationType` — type applications (some string identifying a type of user interface);
+* `Type type` — type values which you want to edit контролом;
+* `ICSSoft.STORMNET.View` View — the view in which the object is данных;
+* `string propertyName` — the property name of the data object that you want to edit.
+
+An example can be found in [DateTimePicker](fw_datetime-picker.html).
+
+Return control is possible depending on combination of values of these parameters, i.e. the flexibility to customize the user interface.
+
+The method returns a structure `ICSSoft.STORMNET.Windows.Forms.Binders.ControlForBindStruct` in the design which indicate:
+
+* `System.Object control`
+* `System.String controlPropName`
+* `System.Type[] typeMapping`
+
+__Note__: linking a control with a value occurs through standard `.Net`-binding. I.e., link control needs to understand» «type values.
+
+## Association provider controls type
+
+Once the provider is created, you must associate it with a type. For this is the attribute `ICSSoft.STORMNET.Windows.Forms.Binders.ControlProviderAttribute`. Parameter specifies the provider type.
+
+Naprimer:_
+
+```csharp
+[ICSSoft.STORMNET.Windows.Forms.Binders.ControlProvider(typeof(ДеньгиTextBoxControlProvider))]
+    public struct Деньги //By the way, an example of a custom type 
+    {
+        //Etc. 
+```
+
+Obviously, this method is useful for custom types. But what about the standard types, they do not attribute the attribute?
+
+There is another mechanism, installation of the provider controls, which handles all the types. To accomplish this, you should set a static property `StandardControlProvider.ControlProviderForNotCustomizedTypes` provider controls.
+
+Primer:_
 
 ```csharp
 StormNetForms.Binders.StandardControlProvider.ControlProviderForNotCustomizedTypes=new РесурсControlProvider();
 ```
 
-## Настройка контрола для редактирования значения стандартного типа
-Необходимо реализовать провайдер контролов и установить его в статическое свойство `StandardControlProvider.ControlProviderForNotCustomizedTypes`.
+## Setting the control for editing the value of a standard type
 
-## Редактирование нестандартного типа стандартным контролом
-Необходимо реализовать провайдер контролов с указанием мапирования типов и ассоциировать его с типом, либо установить его в статическое свойство `StandardControlProvider.ControlProviderForNotCustomizedTypes`.
+You must implement the provider controls and set it in a static property `StandardControlProvider.ControlProviderForNotCustomizedTypes`.
 
-## Редактирование нестандартного типа нестандартным контролом
-Необходимо создать контрол для редактирования значений нестандартного типа.
+## Editing non-standard type standard control
 
-Для этого:
-* Реализуем контрол, как наследник от `ICSSoft.STORMNET.Windows.Forms.Binders.BindableUserControl`
-* Контрол обязательно должен иметь значащее свойство и событие, сигнализирующее об изменении значения, с именем `ХХХХХChanged`, где ХХХХХ — имя значащего свойства. Событие обязательно должно взводиться при изменении значения значащего свойства.
-* Контрол может имплементировать интерфейс `ICSSoft.STORMNET.Windows.Forms.ICustomizableControl` для более точной настройки в зависимости от класса данных, представления, имени свойства.
-* Контрол также может имплементировать интерфейс `ICSSoft.STORMNET.Windows.Forms.IButtonizableControl` специально для более удобного ввода значений через `ICSSoft.STORMNET.Windows.Forms.GroupEditBase`.
+You must implement the provider controls indicating matirovanie types and associate it with a type, or set it in a static property `StandardControlProvider.ControlProviderForNotCustomizedTypes`.
 
-Далее необходимо реализовать провайдер контролов и ассоциировать его с типом, либо установить его в статическое свойство `StandardControlProvider.ControlProviderForNotCustomizedTypes`.
+## Editing non-standard non-standard control
 
-## Общие замечания по провайдерам контролов
+You need to create a control for editing values of custom types.
 
-Поскольку тип и прочие параметры приходят в перегружаемый метод `GetControl` провайдера, разумеется, нет необходимости делать по одному провайдеру для каждого контрола. Можно использовать один на несколько типов, хоть вообще создать один провайдер контролов на всю систему и установить его в `StandardControlProvider.ControlProviderForNotCustomizedTypes`.
+To do this:
 
-Примеры:
-* Реализаций провайдеров контролов, ассоциирования с типами и установки в `StandardControlProvider.ControlProviderForNotCustomizedTypes`;
-* Реализации для редактирования значений стандартных типов;
-* Реализации для редактирования значений нестандартного типа стандартным контролом.
+* Implement control as the heir from `ICSSoft.STORMNET.Windows.Forms.Binders.BindableUserControl`
+* Control must have a meaningful property and event signaling about the change of the value with the name `ХХХХХChanged`, where XXXXX is the name of the significant properties. Event have to cock when you change the value of the most significant properties.
+* The control can implement the interface `ICSSoft.STORMNET.Windows.Forms.ICustomizableControl` for more accurate adjustment depending on the class of the data, presentation, name of the property.
+* Control can also implement the interface `ICSSoft.STORMNET.Windows.Forms.IButtonizableControl` specially for more convenient input of values via `ICSSoft.STORMNET.Windows.Forms.GroupEditBase`.
+
+Next, you implement the provider controls and to associate it with a type, or set it in a static property `StandardControlProvider.ControlProviderForNotCustomizedTypes`.
+
+## General comments on the providers control
+
+Because the type and other parameters come in overloaded method `GetControl` provider, of course, no need to make one provider for each control. You can use one of several types, or create a single provider controls the entire system and install it in `StandardControlProvider.ControlProviderForNotCustomizedTypes`.
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

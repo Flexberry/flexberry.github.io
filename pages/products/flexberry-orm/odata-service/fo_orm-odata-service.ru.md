@@ -1,26 +1,42 @@
 ---
-title: Flexberry ORM ODataService
+title: ODataService
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM ODataService, OData
+keywords: OData
 summary: Особенности, ограничения, рекомендации по применению ODataService
 toc: true
 permalink: ru/fo_orm-odata-service.html
 lang: ru
 ---
 
-## Информация о продукте
+`Flexberry ORM ODataService` позволяет удобным образом создать OData-сервис поверх хранилища.
 
-`Flexberry ORM ODataService` является [продуктом платформы Flexberry](fp_platform-structure.html). Сайт продукта: [http://flexberry.ru](http://flexberry.ru/FlexberryORM).
+{% include note.html content="`Flexberry ORM ODataService` доступно для установки в проект через [NuGet-пакет](https://www.nuget.org/packages/NewPlatform.Flexberry.ORM.ODataService)." %}
 
-`Flexberry ORM ODataService` позволяет удобным образом создать OData-сервис.
-
-{% include note.html content="`Flexberry ORM ODataService` доступно для установки в проект через [NuGet-пакет](https://www.nuget.org)." %}
-
-##№ Список библиотек `Flexberry ORM ODataService`
+## Список библиотек `Flexberry ORM ODataService`
 
 В состав NuGet-пакета `Flexberry ORM ODataService` входят следующие сборки:
 
 * NewPlatform.Flexberry.ORM.ODataService.dll
+
+## Логика работы ODataService
+
+ODataService представляет собой WebApi-контроллер, который предоставляет доступ к данным в БД по протоколу OData V4.  
+Типичный запрос на выборку данных работает следующим образом:
+
+* HTTP GET запрос формулируется клиентом в виде url с указанием типа требуемых данных, нужных атрибутов, фильтрации, сортировки и т.д.
+* ODataService интерпретирует полученный url в термины .NET LINQ
+* LINQ передаётся в [LinqProvider](fo_linq-provider.html), который транслирует LINQ в [LCS](fo_loading-customization-struct.html).
+* LCS передаётся в ORM DataService, который возвращает данные в виде массива объектов данных
+* Полученный из сервиса данных массив объектов данных сериализуется и отправляется клиенту
+
+Типичный запрос на обновление данных работает следующим образом:
+
+* HTTP-запрос соответствующий выполняемой операции передаётся в WebApi-контроллер
+* Данные запроса разбираются для извлечения информации о конкретном изменяемом объекте данных (его тип и первичный ключ)
+* По полученным данным загружается объект данных и его мастера первого уровня с собственными свойствами. Вычислимые поля игнорируются.
+* Над полученными объектами данных выполняется требуемая операция изменения данных. Если это детейл, то догружается агрегатор и ему добавляется данный детейл в коллекцию - это необходимо для срабатывания бизнес-сервера агрегатора при изменении детейла.
+* Изменённый объект данных отправляется в сервис данных.
+* После выполнения операции над хранилищем клиенту возвращается сериализованный объект данных либо ответ об успешности выполнения операции.
 
 ## Ограничения, особенности, рекомендации к проектированию
 
@@ -52,11 +68,8 @@ namespace ODataServiceTemplate
 
     internal static class ODataConfig
     {
-        public static void Configure(HttpConfiguration config, IUnityContainer container)
+        public static void Configure(HttpConfiguration config, IUnityContainer container, HttpServer httpServer)
         {
-            Contract.Requires<ArgumentNullException>(config != null);
-            Contract.Requires<ArgumentNullException>(container != null);
-
             // Use Unity as WebAPI dependency resolver
             config.DependencyResolver = new UnityDependencyResolver(container);
 
@@ -65,7 +78,7 @@ namespace ODataServiceTemplate
             var builder = new DefaultDataObjectEdmModelBuilder(assemblies);
 
             // Map OData Service
-            var token = config.MapODataServiceDataObjectRoute(builder);
+            var token = config.MapODataServiceDataObjectRoute(builder, httpServer);
 
             // User functions
             token.Functions.Register(new Func<QueryParameters, string>(Test));
@@ -101,7 +114,7 @@ namespace ODataServiceTemplate
             IUnityContainer container = new UnityContainer();
             container.LoadConfiguration();
 
-            GlobalConfiguration.Configure(configuration => ODataConfig.Configure(configuration, container));
+            GlobalConfiguration.Configure(configuration => ODataConfig.Configure(configuration, container, GlobalConfiguration.DefaultServer));
         }
     }
 }
@@ -537,7 +550,7 @@ private static IEnumerable<DataObject> ActionWithLcs(QueryParameters queryParame
 }
 ```
 
-## Использование пользовательских функций для экспорта в Excel 
+## Использование пользовательских функций для экспорта в Excel
 
 Пример использования пользовательских функций для экспорта в Excel.
 Пример запроса:
@@ -591,3 +604,28 @@ private static Страна[] FunctionExportExcel(QueryParameters queryParameter
 }
 ```
 
+## Пример ограничений на псевдодетейлы в ODataService
+
+`Flexberry ORM` позволяет строить [ограничения на "ассоциацию в обратную сторону" или "псевдодетейлы"](fo_psedodetails-linq-provider.html). Данная возможность предоставляется и при работе с данными через ODataService.  
+Для того, чтобы появилась возможность построить ограничение подобного вида, надо объявить её допустимость на уровне метаданных в EDM-модели OData.  
+Рассмотрим данную схему в качестве примера:  
+![schema](/images/pages/products/flexberry-orm/query-language/pseudo-details.png)  
+Пример регистрации псевдодетейла:
+
+```csharp
+public static void Configure(HttpConfiguration config, IUnityContainer container, HttpServer httpServer)
+{
+    //...
+    var pseudoDetailDefinitions = new PseudoDetailDefinitions();
+
+    pseudoDetailDefinitions.Add(new DefaultPseudoDetailDefinition<Клиент, Кредит>(
+        Кредит.Views.PseudoDetailView,
+        Information.ExtractPropertyPath<Кредит>(x => x.Клиент),
+        "Кредиты"));
+
+    var builder = new DefaultDataObjectEdmModelBuilder(DataObjectsAssembliesNames, UseNamespaceInEntitySetName, pseudoDetailDefinitions);
+    //...
+}
+```
+
+Данное действие добавляет возможность фильтровать объекты по псевдодетейлам аналогично [фильтрации по детейлам](efd_query-language.html#querydetailpredicate). Для операций изменения данных данная связь не используется, как и нет возможности выбирать данные по этой ссылке.

@@ -5,28 +5,163 @@ entries:
   levels: one
   folders:
 
-  - title: Get started
+  - title: Introduction
     title_ru: Введение
     output: web
     folderitems:
-    - title: Base technologies
-      title_ru: Flexberry Guideline
+    - title: Introduction
+      title_ru: Введение
       url: /uiuxg_landing-page.ru.html
-      output: web    
-  - title: System design
-    title_ru: Проектирование
+      output: web
+  - title: The basics
+    title_ru: Основы
     output: web
     folderitems:
-    - title: System design fundamentals
-      title_ru: Введение в проектирование
-      url: /gbt_information-system-design.html
+    - title: Heuristics
+      title_ru: Эвристики
+      url: /uiuxg_heuristics.html
       output: web
-    - title: ООП
-      url: /gbt_ood.html
+    - title: Color scheme selection
+      title_ru: Выбор цветовой схемы
+      url: /uiuxg_color_selection.html
       output: web
-    - title: UML
-      url: /gbt_uml.html
+    - title: Gost UI Font Rules
+      title_ru: Правила использования шрифта Gost UI
+      url: /uiuxg_fonts_usage.html
       output: web
-    - title: Паттерны проектирования
-      url: /gbt_design-patterns.html
+    - title: Location of building blocks
+      title_ru: Расположение стандартных блоков
+      url: /uiuxg_elements_location.html
+      output: web
+    - title: Location and Filling Fields
+      title_ru: Расположение и заполнение полей
+      url: /uiuxg_fields_location_and_fill.html
+      output: web
+    - title: Dialogs with the system
+      title_ru: Диалоги с системой
+      url: /uiuxg_dialog_with_a_system.html
+      output: web
+    - title: Design tools
+      title_ru: Инструменты проектирования
+      url: /uiuxg_prototyping_tools.html
+      output: web
+  - title: Best examples with recommendations
+    title_ru: Лучшие примеры с рекомендациями
+    output: web
+    folderitems:
+    - title: Desktop
+      title_ru: Рабочий стол
+      url: /uiuxg_main_page_manual.html
+      output: web
+    - title: Navigation menu
+      title_ru: Меню навигации
+      url: /uiuxg_sitemap.html
+      output: web
+    - title: Personal
+      title_ru: Личный кабинет
+      url: /uiuxg_lk.html
+      output: web
+    - title: Search Panels
+      title_ru: Поисковые панели
+      url: /uiuxg_search.html
+      output: web
+    - title: Forms with reference materials
+      title_ru: Формы со справочными материалами
+      url: /uiuxg_help_forms.html
+      output: web
+    - title: Feedback forms
+      title_ru: Формы обратной связи
+      url: /uiuxg_feedback_form.html
+      output: web
+    - title: Reporting Forms
+      title_ru: Формы отчетности
+      url: /uiuxg_report.html
+      output: web
+      title: Default Forms
+      title_ru: Стандартные формы
+      url: /uiuxg_default_forms.html
+      output: web
+    - title: Highly loaded forms
+      title_ru: Высоконагруженные формы
+      url: /uiuxg_complex_forms.html
+      output: web
+    - title: Error Forms
+      title_ru: Формы ошибок
+      url: /uiuxg_error_forms.html
+      output: web
+    - title: Directory Forms
+      title_ru: Формы справочников
+      url: /uiuxg_directory.html
+      output: web
+    - title: Useful links
+      title_ru: Полезные ссылки
+      url: /uiuxg_useful_links.html
+      output: web
+  - title: Components
+    title_ru: Компоненты
+    output: web
+    folderitems:
+    - title: Data entry fields
+      title_ru: Поля ввода данных
+      url: /uiuxg_input_fields.html
+      output: web
+    - title: The location of the elements on the desktop
+      title_ru: Расположение элементов на десктопе
+      url: /desktop_layout.html
+      output: web
+    - title: Arrangement of elements on mobile devices
+      title_ru: Расположение элементов на мобильных устройствах
+      url: /mobile_layout.html
+      output: web
+    - title: Lightbox
+      title_ru: Лайтбокс
+      url: /uiuxg_lightbox.html
+      output: web
+    - title: Side page
+      title_ru: Боковая страница
+      url: /uiuxg_sidepage.html
+      output: web
+    - title: Header
+      title_ru: Шапка
+      url: /uiuxg_header.html
+      output: web
+    - title: Main menu
+      title_ru: Главное меню
+      url: /uiuxg_main_menu.html
+      output: web
+    - title: Informers
+      title_ru: Информеры
+      url: /uiuxg_informers.html
+      output: web
+    - title: Color palettes
+      title_ru: Наборы цветов
+      url: /uiuxg_color_palettes.html
+      output: web
+    - title: Fonts
+      title_ru: Шрифты
+      url: /uiuxg_fonts.html
+      output: web
+    - title: Main page
+      title_ru: Главная страница
+      url: /uiuxg_main_page.html
+      output: web
+    - title: List form
+      title_ru: Списковая форма
+      url: /uiuxg_list_form.html
+      output: web
+    - title: Buttons
+      title_ru: Кнопки
+      url: /uiuxg_buttons.html
+      output: web
+    - title: Flexberry menu
+      title_ru: Flexberry menu
+      url: /uiuxg_flexberry_menu.html
+      output: web
+    - title: Group Editing
+      title_ru: Групповое редактирование
+      url: /uiuxg_group_edit.html
+      output: web
+    - title: Switches
+      title_ru: Переключатели
+      url: /uiuxg_switcher.html
       output: web

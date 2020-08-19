@@ -1,120 +1,124 @@
 ---
-title: Предиктивный ввод в Windows-приложениях
+title: Predictive typing in Windows applications
 sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Winforms, Controls, предиктивный ввод
-summary: Определение, подключение и регистрация в Flexberry Desinger, использование в текстовом поле и фильтрации
+keywords: Flexberry Winforms, Controls, predictive text input
+summary: Definition, connection and check-in Flexberry Desinger, the use in the text box and filter
 toc: true
 permalink: en/fw_predict-input.html
 lang: en
+autotranslated: true
+hash: 9fd743403718e70f1e6e0ff4d9c682dec096ba45e62c95975303f3d91a1ba68c
 ---
 
-`Предиктивный ввод` позволяет модифицировать контролы для выбора мастера ([LookUp](fa_lookup-overview.html)) или ввода текста таким образом, чтобы система подсказывала пользователю возможные варианты по мере ввода данных.
+`Предиктивный ввод` allows you to modify the controls for master ([LookUp](fa_lookup-overview.html)) or text input so that the system suggests to the user possible options as you type data.
 
-## Предиктивный ввод для LookUp
+## Predictive LookUp for
 
-В качестве контрола-подсказчика может выступать
+As a control, the prompter can be
 
-* Контрол, содержащийся в сборке `ICSSoft.STORMNET.Windows.Forms.AdditionalControls.dll` ([ExtendedLookUp](fw_extended-lookup.html) или `ExtLookUpTextControl`)
-* Контрол, созданный программистом ([подробнее в статье Произвольный контрол в качестве лукапа](fo_custom-lookup.html)).
+* Control contained in the Assembly `ICSSoft.STORMNET.Windows.Forms.AdditionalControls.dll` ([ExtendedLookUp](fw_extended-lookup.html) or `ExtLookUpTextControl`)
+* Control, created by the programmer ([read more in the article Arbitrary control as lucapa](fo_custom-lookup.html)).
 
-## Подключение контрола
+## Connection control
 
-Чтобы подключить контрол предиктивного ввода, необходимо:
+To connect the control predictive, you must:
 
-* Зарегистрировать контрол в Стадии Flexberry Desinger
-* В [E-представлении](fd_e-view.html) объекта указать для мастера custom-LookUp
-* Сгенерировать объекты
-* Скомпилировать объекты
-* Сгенерировать формы
-* В проекте Visual Studio установить ссылку на библиотеку с контролом
+* Register the control in Stage Flexberry Desinger
+* In [E-view](fd_e-view.html) of the object pointed to master custom-LookUp
+* To generate objects
+* Compile objects
+* Generate forms
+* In the Visual Studio project to set a reference to the control library
 
-### Регистрация контрола в Стадии Flexberry Desinger
+### Registration control at the Stage Flexberry Desinger
 
-Для регистрации контрола необходимо перейти на Стадию и вызвать контекстное меню, в меню `Winforms` -> `C#` -> `Свойства модели`.
+To register a control, you must go to the Stage and call up the context menu, the menu `Winforms` -> `C#` -> `Свойства модели`.
 
-В открывшейся форме перейти на вкладку `Дополнительно` и нажать на кнопку `Дополнительные настройки`.
+In the form that opens go to the tab `Дополнительно` and click `Дополнительные настройки`.
 
 ![](/images/pages/products/flexberry-winforms/controls/edit-stage.png)
 
-В открывшейся форме дополнительных настроек необходимо в колонке `Путь к сборке` нажать на кнопку `...` и указать путь к DLL-файлу с контролом (для контролов Winforms это файл `ICSSoft.STORMNET.Windows.Forms.AdditionalControls.dll`).
+In the form, additional configuration is required in column `Путь to сборке` click `...` and specify the path to a DLL with the control (for Winforms controls is the file `ICSSoft.STORMNET.Windows.Forms.AdditionalControls.dll`).
 
 ![](/images/pages/products/flexberry-winforms/controls/path2dll.png)
 
-В диалоговой форме выбора типа необходимо отметить `ExtendedLookUp`, `ExtLookUpTextControl` или оба.
+In the dialog form select the type it should be noted `ExtendedLookUp`, `ExtLookUpTextControl` or both.
 
-__Примечание__: рекомендуется использовать только `ExtendedLookUp`.
+__Note__: it is recommended to use only `ExtendedLookUp`.
 
 ![](/images/pages/products/flexberry-winforms/controls/type-select.png)
 
-Сохранить настройки, нажав `OK` - `Сохранить и закрыть`
+Save the settings by pressing `OK` - `Сохранить and закрыть`
 
-Теперь контрол зарегистрирован в стадии Flexberry Desinger.
+Now the control was in stage Flexberry Desinger.
 
-### Указание LookUp мастера в E-представлении объекта
+### Specify the LookUp wizard in the E-representation of the object
 
-Чтобы превратить обычный `LookUp` в `LookUp с предиктивным вводом`, необходимо указать мастеру тип используемого LookUp.
+To turn a regular `LookUp` in `LookUp with predictive вводом`, you need to point the wizard to the type LookUp.
 
-* Открыть E-представление объекта и выделить добавленный мастер, для которого необходимо использовать предиктивный ввод.
+* Open the E-representation of an object and allocate the new, which requires the use of predictive.
 
 ![](/images/pages/products/flexberry-winforms/controls/select-master.png)
 
-* В поле `Тип лукапа` указать `custom`
+* The `Тип лукапа` specify `custom`
 
 ![](/images/pages/products/flexberry-winforms/controls/select-type.png)
 
-* В поле `Свойство мастера` указать свойство __мастера__, по которому будет производиться поиск для предиктивного ввода.
+* The `Свойство мастера` specify the property __wizard__ by which to search for predictive.
 
-__Примечание__: свойство мастера должно содержаться в представлении. Наименование свойства вводится с клавиатуры.
+__Note__: the property master should be in view. The name of the property is entered from the keyboard.
 
 ![](/images/pages/products/flexberry-winforms/controls/select-property.png)
 
-* В поле `Имя лукапа` выбрать из выпадающего списка необходимый LookUp.
+* The `Имя лукапа` choose from the dropdown list LookUp.
 
-__Примечание__: если в выпадающем списке нет необходимого LookUp, следует к пункту `Регистрация контрола в Стадии Flexberry Desinger`.
+__Note__: if dropdown list has no LookUp necessary, should be to the point `Регистрация control under Flexberry Desinger`.
 
 ![](/images/pages/products/flexberry-winforms/controls/select-lookup.png)
 
-* Сохранить изменения, внесенные в представление.
+* To save changes to the view.
 
-### Результат
+### The result
 
 ![](/images/pages/products/flexberry-winforms/controls/predict-lookup.gif)
 
-## Предиктивный ввод для текстового поля
+## Predictive text field
 
-Для реализации предиктивного ввода текста используется контрол ExtendedTextBox(fw_extended-textbox.html), который содержится в сборке `ICSSoft.STORMNET.Windows.Forms`.
+To implement predictive text input control ExtendedTextBox(fw_extended-textbox.html), which is contained in the Assembly `ICSSoft.STORMNET.Windows.Forms`.
 
-Обычно используется для выбора мастерового объекта на основании некоторой строки.
+Typically used for selection of the workman of an object based on some string.
 
-Самый распространённый случай - ввод ФИО: завести справочник ФИО, настроить `ExtendedTextBox` на него и получить быстрый выбор среди людей, имеющихся в БД.
+The most common case entry name to get the directory name, to set `ExtendedTextBox` it and get a quick choice among people, are available in the database.
 
-### Свойства
+### Properties
 
-* Свойство `AutoOpenListForSuggestions` – при значении `true` автоматически открывается список для вариантов при вводе текста.
-* Свойство `UseExtendedMask` – при значении `true` варианты предлагаются при вхождении введенного текста как подстроки. Должно использоваться совместно с `AutoOpenListForSuggestions = true;` и `MaskFormat=”%{0}%”`.
+* Property `AutoOpenListForSuggestions` – if the value `true` automatically opens a list of options when entering text.
+* Property `UseExtendedMask` – if the value `true` options are offered when entering the entered text as a substring. Should be used in conjunction with `AutoOpenListForSuggestions = true;` and `MaskFormat=”%{0}%”`.
 
-## Дополнение введенных слов
+## The addition of the words
 
-При вызове метода `GetCurrentDataObject` у `ExtendedTextBox` происходит дополнение введенного слова, и объект данных будет возвращен для дополненного слова. Иногда возникают ситуации, когда такое поведение нежелательно (например, при нажатии backspace).
-У `ExtendedTextBox` существует перегрузка метода `GetCurrentDataObject`, позволяющая указать необходимость дополнение введенного слова.
+When you call a method `GetCurrentDataObject` have `ExtendedTextBox` is the addition of the word entered, and the data object will be returned for augmented words. Sometimes there are situations where this behavior is undesirable (e.g. when pressing backspace).
+Have `ExtendedTextBox` there is a method overload `GetCurrentDataObject` that allows you to specify whether the addition of the word entered.
 
 ```csharp
 public DataObject GetCurrentDataObject(bool reloadItems)
 ```
 
-При значении параметра `reloadItems` установленном в `false` догрузка не произойдет, при значении `true` вернется объект для дополненного слова.
+If this parameter is set to `reloadItems` `false` reload will not occur if the value `true` will return the object for augmented words.
 
-## Фильтрация записей для предиктивного ввода
+## Filtering records for predictive
 
-Чтобы наложить дополнительную фильтрацию на выводимые предиктивным вводом подсказки, необходимо указать контролу [LimitFunction](fo_function-list.html), накладывающий ограничение.
+To impose additional filtering on the output predictive input prompts, you must specify the control [LimitFunction](fo_function-list.html), subject to the restriction.
 
 ```csharp
-Фильтрация записей для предиктивного ввода по логину
-			SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
-			extTextControl1.LimitFunction = langdef.GetFunction(langdef.funcEQ, 
-				new VariableDef(langdef.StringType, "Логин"), username);
+Фильтрация записей для предиктивного ввода по логину			
+			extTextControl1.LimitFunction = FunctionBuilder.BuildEquals("Login", username);
 ```
 
-## Предиктивный ввод в Web-приложениях
+## Predictive Web applications
 
-Предиктивный ввод в Web-приложениях описан в статье [Предиктивный ввод в Web-приложениях](fa_predict-input-web.html)
+Predictive Web applications described in [Predictive Web applications](fa_predict-input-web.html)
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

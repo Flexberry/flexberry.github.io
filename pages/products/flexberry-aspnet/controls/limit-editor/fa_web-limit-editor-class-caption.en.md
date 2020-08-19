@@ -1,16 +1,22 @@
----
-title: Задание заголовка класса в расширенном редакторе ограничений
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_web-limit-editor-class-caption.html
-lang: en
----
+--- 
+title: Specifies the title of the class in the advanced editor limitations 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_web-limit-editor-class-caption.html 
+lang: en 
+autotranslated: true 
+hash: cb326699ad30bc08302e98bf77759cf737bcce51338c20b483dbb87b361aa549 
+--- 
 
-В [расширенном редакторе ограничений](fa_advanced-limit-editor.html) по умолчанию в качестве заголовка класса (корневая вершина в дереве доступных свойств) используется результат работы метода [Information](fo_methods-class-information.html).GetClassCaption (метод возвращает либо заданный заголовок для класса, либо имя класса).
+In the expanded constraint editor](fa_advanced-limit-editor.html) default in the class header (the root vertex in the tree of available properties) is used the result of method [Information](fo_methods-class-information.html).GetClassCaption (the method returns or set the title for a class or class name). 
 
-Если требуется задать некоторое отличное значение в качестве заголовка класса в [расширенном редакторе ограничений](fa_advanced-limit-editor.html), то можно воспользоваться следующими способами:
+If you want to specify a different value in the class header in the expanded constraint editor](fa_advanced-limit-editor.html), you can use the following methods: 
 
-* У соответствуюшего [WOLV](fa_web-object-list-view.html) задать свойство `LimitEditorClassCaption`.
-* если [расширенный редактор ограничений запускается без WOLV](fa_limit-editor-without-wolv.html), то требуемое имя нужно указать у параметра, заносимого в сессию (`LimitEditorParam.ClassCaption`).
+* The corresponding [WOLV](fa_web-object-list-view.html) to set the `LimitEditorClassCaption`. 
+* if the [advanced constraint editor is started without WOLV](fa_limit-editor-without-wolv.html), then the name you need to specify this option, a recorded session (`LimitEditorParam.ClassCaption`). 
 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

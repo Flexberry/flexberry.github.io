@@ -1,59 +1,65 @@
 ---
-title: Модули расширения функциональности
+title: Modules to extend the functionality
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, подключение модуля, регистрация модуля, создание модуля
-summary: Как подключить и настроить модули для генерации приложений, БД и работы с диаграммами
+keywords: Flexberry Designer, connectivity module, registration module, the creation module
+summary: How to connect and configure modules to generate applications, databases and working with charts
 toc: true
 permalink: en/fd_flexberry-plugins.html
 lang: en
+autotranslated: true
+hash: e08abcaa21d8c675e6d31c9ad7e715ff40a9fbe5067934ef25934e10acbdcdae
 ---
 
-Модули расширения добавляют функциональность во [Flexberry Designer](fd_landing_page.html), предоставляя новые возможности. Модулем может быть генератор исходного кода, утилита поиска, импорта-экспорта и т.п.
+Expansion modules add functionality in [Flexberry Designer](fd_flexberry-designer.html), providing new opportunities. The module can be generator source code search utility, import / export, etc.
 
-При использовании модулей расширения появляются дополнительные пункты меню при выборе репозитарных объектов Flexberry Designer: [Конфигурации, Стадии или Системы](fd_recommended-structure-repository.html).
+When using the expansion modules have additional menu items when you select repository objects Flexberry Designer: [Configuration Stage or System](fd_recommended-structure-repository.html).
 
-Модули хранятся в библиотеках (DLL) и располагаются в папке с исполняемым файлом `Flexberry Designer`.
+The modules are stored in libraries (. DLL) and placed in the folder with the executable file `Flexberry Designer`.
 
-## Подключение модуля
+## The module is connected
 
-Перед использованием модулей, их следует подключить к `Flexberry Designer`:
+Before using the modules, they should be connected to `Flexberry Designer`:
 
-1. Зарегистрировать модули в базе, в которой хранятся репозитарии моделей;
-2. Для конкретного репозитария (или Проекта, или Конфигурации, или Стадии) выбрать из зарегистрированных модулей, с которыми ведётся работа в рамках соответствующего репозитария (Проекта, Конфигурации или Стадии).
+1. To register the modules in the database that stores the repository моделей;
+2. For a specific repository (or Project, or Configurations, or Stages) to choose from registered modules are in the appropriate repository (Project, Configuration or Stage).
 
-### Регистрация модулей в базе репозитариев
+### Check the modules in the database repositories
 
-1.Выберать в меню пункт Настройки\Модули:
+1.Select the menu Configuration\Modules:
 
-![](/images/pages/products/flexberry-designer/about/pluginsreg.png)
+![Example](/images/pages/products/flexberry-designer/about/pluginsreg.png)
 
-2.Нажать кнопку `Создать` в панели инструментов списка модулей:
+2.Click `Создать` in the Toolbox list of modules:
 
-![](/images/pages/products/flexberry-designer/about/addplugin.png)
+![Example](/images/pages/products/flexberry-designer/about/addplugin.png)
 
-3.Выбрать модуль - динамически подключаемую библиотеку (*.dll), где расположен модуль  
-4.Повторить с пункта 2, если нужно зарегистрировать несколько модулей.
+3.To select a module is dynamic - link library (*.dll), where is the module
+4.Repeat from step 2 if you need to register several modules.
 
-### Выбор модуля для репозитария, проекта, конфигурации или стадии
+### The choice of module for repository, project, configuration or stage
 
-1.Открыть форму редактирования свойств репозитария, проекта, конфигурации или стадии:
+1.To open the form for editing the properties of a repository, project, configuration or stage:
 
-![](/images/pages/products/flexberry-designer/about/editrepprop.png)
+![Example](/images/pages/products/flexberry-designer/about/editrepprop.png)
 
-2.Выбрать необходимые модули:
+2.To select the necessary modules:
 
-![](/images/pages/products/flexberry-designer/about/propeditselectmodules.png)
+![Example](/images/pages/products/flexberry-designer/about/propeditselectmodules.png)
 
-3.Надать в панели инструментов кнопку Сохранить.  
-4.Модули подключены.
+3.Set in the toolbar Save button.
+4.The modules are connected.
 
-## Стандартные модули Flexberry Designer
+## Standard modules Flexberry Designer
 
-* [Модуль расширения Flexberry ORM](fo_orm-case-plugin.html)
-* [Модуль расширения Flexberry ASP.NET](fa_asp-net-generator.html)
-* [Модуль расширения Flexberry Ember](ef_generator.html)
-* [Модуль расширения Flexberry WinForms](fw_flexberry-winforms-case-plugin.html)
+* [Expansion module Flexberry ORM](fo_orm-case-plugin.html)
+* [Expansion module Flexberry ASP.NET](fa_asp-net-generator.html)
+* [Expansion module Flexberry Ember](ef_generator.html)
+* [Expander WinForms Flexberry](fw_flexberry-winforms-case-plugin.html)
 
-## Как реализовать свой модуль расширения Flexberry Designer
+## How to implement your extension module Flexberry Designer
 
-[Как создать свой модуль расширения для Flexberry Designer описывается в отдельной статье](fd_plugins-development.html)
+[How to create your own extension module for Flexberry Designer is described in a separate article.](fd_plugins-development.html)
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

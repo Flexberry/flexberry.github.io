@@ -1,5 +1,5 @@
 ---
-title: Связывание LookUp'ов в AjaxGroupEdit с внешним LookUp'ом
+title: Связывание LookUp в AjaxGroupEdit с внешним LookUp
 sidebar: flexberry-aspnet_sidebar
 keywords: FAQ, Flexberry ASP-NET, How to (page)
 toc: true
@@ -8,11 +8,11 @@ lang: ru
 
 ---
 
-**Цель связывания LookUp'ов в AGE с внешним LookUp'ом:** [Функция ограничения](fo_limit-function.html) [LookUp'ов](fa_master-editor-ajax-lookup.html) внутри [AjaxGroupEdit](fa_ajax-group-edit.html) должна зависеть от значения во внешнем LookUp'е.
+**Цель связывания LookUp в AGE с внешним LookUp:** [Функция ограничения](fo_limit-function.html) [LookUp](fa_master-editor-ajax-lookup.html) внутри [AjaxGroupEdit](fa_ajax-group-edit.html) должна зависеть от значения во внешнем LookUp.
 
 Модель:
 
-![](/images/pages/products/flexberry-aspnet/controls/groupedit/model.png)
+![Модель](/images/pages/products/flexberry-aspnet/controls/groupedit/model.png)
 
 Код:
 
@@ -31,11 +31,7 @@ public static string CreateLf(string territoryKey, string lfKey)
         lfKey = Guid.NewGuid().ToString("B");
     }
 
-    var langdef = ExternalLangDef.LanguageDef;
-
-    var lf = langdef.GetFunction(langdef.funcEQ,
-        new VariableDef(langdef.GuidType, Information.ExtractPropertyName<Company>(x => x.Territory)),
-        territoryKey);
+    var lf = FunctionBuilder.BuildEquals<Company>(x => x.Territory, territoryKey);
 
     LimitFunctionsHolder.PersistLimitFunction(lfKey, lf);
 

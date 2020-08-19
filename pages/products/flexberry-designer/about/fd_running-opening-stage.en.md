@@ -1,23 +1,29 @@
 ---
-title: Запуск с открытием указанной стадии
+title: run with the opening of this stage
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, запуск стадии, стадия, ярлык, путь
-summary: Указание пути для открытия стадии, системы, проекта, репозитория
+keywords: Flexberry Designer, startup stage, stage, label, path
+summary: the path for the opening stage, system, project, repository
 toc: true
 permalink: en/fd_running-opening-stage.html
 lang: en
+autotranslated: true
+hash: 2eff3830f9ba3260cc949eb83fe5ac195f9f9f225841dad45370833248a42989
 ---
 
-Есть возможность сделать несколько ярлыков на [Flexberry Designer](fd_landing_page.html), каждый из которых открывал бы разные стадии.
+There is an opportunity to make a few shortcuts to [Flexberry Designer](fd_flexberry-designer.html), each of which would open up a different stage.
 
-Для этого нужно настроить ярлык следующим образом: аргументом для запуска нужно передать параметр `path:Путь до стадии`
+For this you need to configure the shortcut as follows: the argument to start you need to pass a parameter `path:the Path to стадии`
 
-Например, если путь до стадии "`Репозиторий\Проект\Конфигурация\Стадия\`", то строка для запуска будет иметь вид
+For example, if the path to the stage "`Репозиторий\Project\Configuration\stage\`", then the string to start would be
 
-```
+```code
 Flexberry.exe path:Репозиторий\Проект\Конфигурация\Стадия\
 ```
 
-![](/images/pages/products/flexberry-designer/about/path.JPG)
+![Example](/images/pages/products/flexberry-designer/about/path.JPG)
 
-{% include note.html content="В качестве пути может быть указан репозиторий, проект, конфигурация, стадия или система. Путь можно скопировать из выпадающего строки пути во [Flexberry Designer](fd_landing_page.html)." %}
+{% include note.html content="as the path can be specified as repository, project, configuration, stage or system. You can copy the path from the pull-down path string in [Flexberry Designer](fd_flexberry-designer.html)." %}
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

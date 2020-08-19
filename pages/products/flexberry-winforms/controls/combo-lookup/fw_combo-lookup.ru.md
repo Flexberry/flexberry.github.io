@@ -2,7 +2,7 @@
 title: ComboLookup
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms, Controls, Lookup
-summary: Описание основных свойств элемента управления ComboLookup, пример их использования. Особенности генерации.
+summary: Свойства, пример использования, особенности генерации
 toc: true
 permalink: ru/fw_combo-lookup.html
 lang: ru
@@ -24,14 +24,12 @@ comboLookup1.ComboPropertyName = "Название";
 comboLookup1.DataObjectType = typeof(IIS.КошкиСЛапами.Кошка);
 comboLookup1.MasterPropertyName = "Порода";
 
-SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;  
-Function lf = langdef.GetFunction(langdef.funcLike,   
-new VariableDef(langdef.StringType, "Название"), "Перс%");
+Function lf = FunctionBuilder.BuildLike<Порода>(x => x.Название, "Перс%");
 comboLookup1.Limit = new FunctionForControls("ПородаL", lf);
 ```
 
 ## Изменение типа лукапа с Default на Combo
 
-Если форма уже существует, то при попытке изменения типа у существующего лукапа изменения __не применятся__. 
+Если форма уже существует, то при попытке изменения типа у существующего лукапа изменения __не применятся__.
 
 Чтобы изменения вступили в силу необходимо вручную удалить весь код, связанный с контролом, из кода страницы и запустить перегенерацию.

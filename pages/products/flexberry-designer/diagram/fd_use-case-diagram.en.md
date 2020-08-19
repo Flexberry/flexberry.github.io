@@ -1,36 +1,42 @@
 ---
-title: Диаграмма вариантов использования (UseCase diagram)
+title: Diagram of use cases (UseCase diagram)
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, диаграммы, диаграмма вариантов использования, участник, актор, прецедент
-summary: Основные сведения о диаграмме вариантов использования и ее элементах
+keywords: Flexberry Designer, diagram use cases, participant, actor, precedent
+summary: Basic information about the diagram, use cases, and its elements
 toc: true
 permalink: en/fd_use-case-diagram.html
 lang: en
+autotranslated: true
+hash: 043f779d1aae6dbf8f7c068c73b21bd2add7e6758e2698e35a1205b73608edc8
 ---
 
-Диаграмма вариантов использования - один из доступных [видов диаграмм](fd_editing-diagram.html), поддерживаемых [Flexberry Designer](fd_landing_page.html).
+Diagram of use cases - one of the available [kinds of graphs](fd_editing-diagram.html) supported [Flexberry Designer](fd_flexberry-designer.html).
 
-![](/images/pages/products/flexberry-designer/diagram/use-case-diagram.png)
+![Example](/images/pages/products/flexberry-designer/diagram/use-case-diagram.png)
 
-Основные элементы диаграммы - участник (actor) и прецедент (вариант).
+The main elements of the chart - participant (actor) and precedent (option).
 
-**Участник** - это множество логически связанных ролей, исполняемых при взаимодействии с прецедентами или сущностями (система, подсистема или класс). Участником может быть человек или другая система, подсистема или класс, которые представляют нечто вне сущности. Графически участник изображается "человечком".
+**Party** is a set of logically related roles with interaction with precedent or entity (system, subsystem, or class). A participant may be human or another system, subsystem, or class that represent something outside of nature. Graphically, the party represented "the man".
 
-**Прецедент (use case)** - описание множества последовательных событий (включая варианты), выполняемых системой, которые приводят к наблюдаемому участником результату. Прецедент представляет поведение сущности, описывая взаимодействие между участниками и системой. Прецедент не показывает, "как" достигается некоторый результат, а только "что" именно выполняется. Прецеденты обозначаются очень простым образом - в виде эллипса, внутри которого указано его название. 
+**Precedent (use case)** - a description of a set of successive events (including alternatives) performed by the system, which lead to the observed participant results. Precedent represents the behavior of an entity, describing the interaction between the participants and the system. Precedent does not indicate "how" achieved some results, but only "what" it is done. Precedents are identified in a very simple way - in the form of an ellipse, inside which stated his name.
 
-## Основные элементы диаграммы вариантов использования
+## The basic elements of entity relationship diagram
 
-На диаграмме вариантов использования можно отобразить следующие элементы нотации UML, доступные в панели элементов: 
+On the chart use you can display the following elements of UML notation that are available in the Toolbox:
 
-Элемент/Нотация | Предназначение
+Element/Notation | Purpose
 :---------------------|:-----------------------------------------------------
-![](/images/pages/products/flexberry-designer/diagram/actor.jpg) | Участник (Actor)
-![](/images/pages/products/flexberry-designer/diagram/usecase.jpg) | Вариант (Use case)
-![](/images/pages/products/flexberry-designer/diagram/boundary.jpg) | Граница (Boundary
-![](/images/pages/products/flexberry-designer/diagram/assoc.jpg) | Ненаправленная ассоциация (Undirected communication association)
-![](/images/pages/products/flexberry-designer/diagram/dircomm.jpg) | Направленная ассоциация (Directed communication association)
-![](/images/pages/products/flexberry-designer/diagram/inheritance.jpg) | Обобщение (Generalization)
-![](/images/pages/products/flexberry-designer/diagram/objectflow.jpg) | Зависимость (Dependency)
-![](/images/pages/products/flexberry-designer/diagram/corner.jpg) | Точка изгиба связей (Point)
-![](/images/pages/products/flexberry-designer/diagram/note.jpg) | Комментарий (Note)
-![](/images/pages/products/flexberry-designer/diagram/noteconn.jpg) | Коннектор комментария (Note connector)
+![Example](/images/pages/products/flexberry-designer/diagram/actor.jpg) | Participant (Actor)
+![Example](/images/pages/products/flexberry-designer/diagram/usecase.jpg) | Option (Use case)
+![Example](/images/pages/products/flexberry-designer/diagram/boundary.jpg) | Border (Boundary
+![Example](/images/pages/products/flexberry-designer/diagram/assoc.jpg) | non-Directional Association (Undirected communication association)
+![Example](/images/pages/products/flexberry-designer/diagram/dircomm.jpg) | Directed Association (Directed communication association)
+![Example](/images/pages/products/flexberry-designer/diagram/inheritance.jpg) | Generalization (Generalization)
+![Example](/images/pages/products/flexberry-designer/diagram/objectflow.jpg) | Addiction (Dependency)
+![Example](/images/pages/products/flexberry-designer/diagram/corner.jpg) | Point of bending of the links (Point)
+![Example](/images/pages/products/flexberry-designer/diagram/note.jpg) | Comment (Note)
+![Example](/images/pages/products/flexberry-designer/diagram/noteconn.jpg) | Connector review (Note the connector)
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

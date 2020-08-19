@@ -4,9 +4,9 @@ keywords: Mobile, Phone, Cordova, tablet, Android, iOS, App, architecture
 sidebar: guide-mobile-app_sidebar
 toc: true
 permalink: en/gms_architecture-mobile-app.html
-lang: en 
-autotranslated: true 
-hash: 0320aae2c278b8beb59e341e3a9e4992c8bbcd5ce7b924548eee7f30b62ab13f
+lang: en
+autotranslated: true
+hash: 0f05076f3e1ed197c9a293559c6eb2d489d963897ba7e9f2436012d18b6f8c89
 ---
 
 ## Description
@@ -21,7 +21,7 @@ In Apache Cordova application has several components. The following diagram show
 
 ![](/images/pages/guides/mobile-app/cordovaapparchitecture-EN.png)
 
-Based Cordova app lezhit WebView component, which is the download of developed web applications. For the web-application requires local file for filename `index.html` that references CSS, JavaScript, images, media files, or other resources. Learn more about the architecture of a Cordova app can be read [here](https://cordova.apache.org/docs/en/7.x/guide/overview/index.html)
+In the core of the application lies Cordova WebView component, which is the download of developed web applications. For the web-application requires local file for filename `index.html` that references CSS, JavaScript, images, media files, or other resources. Learn more about the architecture of a Cordova app can be read [here](https://cordova.apache.org/docs/en/7.x/guide/overview/index.html)
 
 ## Architecture Flexberry Ember
 
@@ -45,4 +45,4 @@ In the end, was considered the architecture of a Cordova application and Flexber
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

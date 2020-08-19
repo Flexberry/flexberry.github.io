@@ -1,175 +1,181 @@
 ---
-title: Generating application code using uml models
+title: Generation of application code for uml models
 sidebar: flexberry-orm_sidebar
 keywords: Flexberry Designer, Flexberry ORM, plugins
-summary: Features of work with the stage, configuration and system used by the database
+summary: of Osobennosti work with the stage configuration and system database
 toc: true
 permalink: en/fo_orm-case-plugin.html
 lang: en
+autotranslated: true
+hash: 32682583c43c5f787fceece140e7a00dea9f3bfe247cfcc4f12476c12b446e65
 ---
 
-`Flexberry ORM Plugin` является модулем расширения [Flexberry Designer](fd_landing_page.html), предоставляет возможности по созданию и коррекции модели приложения, генерации программного кода и баз данных.
+`Flexberry ORM Plugin` is an expander [Flexberry Designer](fd_flexberry-designer.html), provides opportunities for the creation and correction of application models, generate code and databases.
 
-В зависимости от [уровня репозитарного объекта](fd_recommended-structure-repository.html) плагин предоставляет различные возможности.
+Depending on the [level of repository object](fd_recommended-structure-repository.html) plug-in provides different features.
 
-Предоставляемые возможности в целом разбиты на следующие группы:
+Opportunities in General are divided into the following groups:
 
-* `C#`. В данном пункте меню сосредоточены все операции по работе с кодом приложения.
-* `SQL`. SQL — язык управления базами данных. Данный пункт меню позволяет создавать и редактировать БД смоделированного приложения.
-* `Утилиты`. В данном пункте меню собраны вспомогательные утилиты.
+* `C#`. In this menu item holds all the operations for working with the application code.
+* `SQL`. SQL language for database management. This menu item allows you to create and edit database modelled application.
+* `Утилиты`. In this menu item features utility.
 
-## Возможности для стадии
+## Opportunities for stage
 
-Ниже представлены возможности, предоставляемые плагином, для стадии.
+Below are the features provided by the plugin, for the stage.
 
-### Код (C#)
+### Code (C#)
 
-#### Свойства модели
+#### The properties of the model
 
-Форма настроек свойств модели позволяет описать основные и дополнительные свойства модели. Описание данной формы представлено в статье [Настройка модели для генерации](fd_project-customization.html).
+Form property settings of the model allows to describe basic and advanced properties of the model. Description of the form presented in the article [setting the model for generation](fd_project-customization.html).
 
-#### Генерировать
+#### Generate
 
-Позволяет сгенерировать своего рода "костяк" будещего приложения - базовый код, который в последствии можно дорабатывать.
+Allows to generate a kind of "backbone" of the future application base code, which subsequently can be modified.
 
-При выборе данного пункта меню будет отображена форма с предложением сгенерировать объекты (Objects), бизнес-сервера (BusinessServers). Бизнес-сервера будут сгенерированы только в том случае, если это предусмотрено моделью. Также можно сгенерировать все одновременно.
+Selecting this menu item will display the form with the offer to generate (objects), business server (BusinessServers). Business servers will be generated only if it is provided by the model. Also you can generate all at the same time.
 
-Особенности и возможности генерации кода:
+The features and capabilities of code generation:
 
-* [Описание процесса перегенерации кода](fd_code-generation.html)
-* [Скобки программиста](fo_programmer-brackets.html)
-* [Расположение сборок после генерации кода](fo_location-assembly.html)
-* Заголовок (`Caption`) для классов генерируется только в случае, если он отличается от имени класса.
-* При генерации учитывается [заданный путь для генерации](fd_generation-path.html).
+* [Description of process of generation of code](fd_code-generation.html)
+* [Brackets programmer](fo_programmer-brackets.html)
+* [The location of assemblies after code generation](fo_location-assembly.html)
+* Header (`Caption`) for classes is generated only if it differs from the class name.
+* When the generation is taken into account [the specified path for generation](fd_generation-path.html).
 
-#### Компилировать
+#### Compile
 
-Позволяет получить эквивалентное описание алгоритма на машинно-ориентированном языке. Без компиляции работа с кодом будет невозможна.
+Allows to obtain an equivalent description of the algorithm in machine-oriented language. Without compiling the code will be impossible.
 
-При выборе данного пункта также будет предложено несколько вариантов, аналогичные пункту "Генерировать".
+Selecting this item will also be offered several options, similar to the item "Generate".
 
-#### Генерировать и компилировать
+#### Generate and compile
 
-Позволяет одновременно осуществить генерацию и компиляцию кода приложения на основе созданной модели.
+Allows simultaneous generation and compilation of the application code based on the created model.
 
-#### Открыть в Visual Studio
+#### Open in Visual Studio
 
-При выборе данного пункта меню сгенерированый (или сгенерированный и скомпелированный) код будет открыт в MS Visual Studio той версии, которая установлена на ПК.
+When you select this menu item to be generated (or generated and compiled) code will be opened in MS Visual Studio version that is installed on your PC.
 
 ### SQL
 
-Для всех доступных баз данных список пунктов меню примерно одинаковый.
+For all available databases, the list of menu options is about the same.
 
 `Настройка БД`
 
-Описание настроек БД на примере MS SQL описано в статье [Настройки базы данных](fd_configure-ms-sql-generator.html).
+The settings database in the MS SQL example described in the article [database Settings](fd_configure-ms-sql-generator.html).
 
-`Привести БД в соответствие с моделью`
+`Привести database in accordance with моделью`
 
-При выборе данного пункта меню база данных будет [приведена в соответствие с моделью](fd_matching-db.html) (БД будет создана (если ее не было) и отредактирована в соответствии с изменениями в модели).
+When you select this menu item, the database will be [adjusted in accordance with the model](fd_matching-db.html) (DB will be created (if it wasn't) and edited in accordance with the changes in the model).
 
 `Сгенерировать SQL`
 
-Позволяет сгенерировать скрипт создания/обновления БД.
+Allows you to generate a script to create/update the database.
 
 #### Microsoft SQL Server
 
-Основной используемый язык запросов — `Transact-SQL`. Используется для работы с базами данных размером от персональных до крупных баз данных масштаба предприятия.
+The main query language used — `Transact-SQL`. Used to work with databases in the size from personal to large databases across the enterprise.
 
 #### Oracle
 
-`Oracle` — это одна из самых распространённых на сегодняшний день систем управления баз данных. В этой СУБД выполняются все современные требования, такие как многопользовательский доступ к системе в клиент-серверном режиме, многоступенчатая защита от несанкционированного доступа, реализация принципа независимости данных и т.д.
+`Oracle` is one of the most common of today's database management systems. In this database are all the modern requirements such as multi-user access to the system in client-server mode, multi-level protection from unauthorized access, implementation of the principle of independence of data, etc.
 
 #### Postgre SQL
 
-Свободная объектно-реляционная система управления базами данных. `PostgreSQL` базируется на языке SQL и поддерживает многие из возможностей стандарта SQL:2011.
+A free object-relational database management system. `PostgreSQL` is based on the SQL language and supports many features of the SQL standard:2011.
 
 #### Microsoft Access
 
-Реляционная СУБД. Имеет широкий спектр функций, включая связанные запросы, связь с внешними таблицами и базами данных.
+Relational DBMS. Has a wide range of functions, including related queries, communication with external tables and databases.
 
-### Утилиты
+### Utilities
 
-#### Менеджер классов
+#### Manager classes
 
-[Менеджер классов](fd_class-manager.html) содержит информацию обо всех классах созданной модели, а также указание их типа и количество упоминаний в модели.
+[Manager class](fd_class-manager.html) contains information about all the classes of the created model, and also a indication of type and number of references in the model.
 
-#### Менеджер ассоциаций
+#### Manager associations
 
-В данном пункте собрана информация о взаимосвязи между классами и указание типа связи, а также количество упоминаний связей.
+This paragraph contains information about the relationships between classes and specify the type of connection as well as the number of references to relations.
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/association-manager.png)
+![Example](/images/pages/products/flexberry-orm/module-flexberry-designer/association manager.png)
 
-#### Менеджер наследований
+#### Manager inheritances
 
-Данный пункт содержит информацию о [наследовании](fd_inheritance.html): указание предка, наследника(ов), количество упоминаний.
+This item contains information about the [inheritance](fd_inheritance.html): the indication of the ancestor, the heir(s), the number of references.
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/inheritance-manager.png)
+![Example](/images/pages/products/flexberry-orm/module-flexberry-designer/inheritance-manager.png)
 
-#### Менеджер представлений
+#### Manager views
 
-В данном пункте содержится информация обо всех [представлениях](fd_view-definition.html), существующих в моделях: указание класса, к которому относится представление, название и свойства представления.
+This section contains information about all the [views](fd_view-definition.html), existing models specify the class to which belongs the view name and view properties.
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/view-manager.png)
+![Example](/images/pages/products/flexberry-orm/module-flexberry-designer/view-manager.png)
 
-#### Обновить представления
+#### To update the submission
 
-Данный пункт меню позволяет обнаружить ошибки в представлениях, а также удалить неактуальные свойства.
+This menu item allows you to detect errors in submissions, and to remove irrelevant properties.
 
-#### Найти ошибки в модели
+#### To find the errors in the model
 
-Осуществляется проверка модели на наличие неиспользуемых объектов и ошибок метаданных.
+Check models for the presence of unused objects and error metadata.
 
-#### Экспорт стадии
+#### Export stage
 
-Позволяет экспортировать стадию в любую локальную папку на ПК. Данная возможность позволяет использовать стадию в других моделях приложений.
+Allows you to export the stage to either a local folder on your PC. This allows you to use the stage in other application models.
 
-Для импорта стадии необходимо воспользоваться меню модуля на уровне конфигурации.
+To import stage you need to use a menu module at the configuration level.
 
-#### Сохранить диаграмму в формате wmf
+#### Save chart to wmf format
 
-Позволяет сохранить диаграммы стадии в формате WMF.
+Allows you to save charts of the stages in the WMF format.
 
-### Информация о лицензии
+### License information
 
-Содержит информацию о лицензии: наименование продукта, контактное лицо, время действия, номер лицензионного файла и дополнительную информацию о лицензии. Либо, если лицензия некорректно, пройдёт переадресация [на страницу приобретения лицензии](http://flexberry.ru/Buy).
+Contains information about licenses: product name, contact person, time of action, the license file and additional information about the license. Or, if the license is incorrect, will be to divert [to the page of acquisition of a license](http://flexberry.ru/Buy).
 
-## Возможности для конфигурации
+## Possibilities for configuration
 
-Ниже представлены возможности, предоставляемые плагином, для конфигурации.
+Below are the features provided by the plugin for configuration.
 
-### Утилиты
+### Utilities
 
-#### Импорт стадии
+#### Import stage
 
-Позволяет импортировать стадию в указанную конфигурацию. 
+Allows you to import stage in the specified configuration.
 
-Помимо данного, для импорта стадий существует особый механизм импорта.
+In addition to this, to import stages there is a special import mechanism.
 
-### Информация о лицензии
+### License information
 
-Аналогично как для стадии.
+Similarly as for stage.
 
-## Возможности для системы
+## Opportunities for system
 
-Ниже представлены возможности, предоставляемые плагином, для системы.
+Below are the features provided by the plugin system.
 
-### Утилиты
+### Utilities
 
-#### Создать представления
+#### To create the views
 
-Данный пункт меню вызывает форму создания прототипа.
+This menu item invokes the create prototypes.
 
-В базовой поставке данная форма __функционирует в ограниченном режиме__. В частности, в качестве имени приложения можно вводить произвольное имя, в базовой поставке оно __не учитывается__.
-Префикс приложения определяет префикс имён создаваемых представлений (префикс приложения можно не указывать). В результате работы формы будут сгенерированы представления для всех [классов данных](fd_data-classes.html), представленных на [диаграммах классов](fd_class-diagram.html) системы, со следующими именами:
+The basic version of this form __operates in a restricted mode__. In particular, as the name of the application you can enter an arbitrary name in the base installation it is __ignored__.
+The prefix specifies the prefix name the created views (the prefix can be omitted). The result of the form will generate the presentation for all [classes data](fd_data-classes.html) presented at the [diagrams](fd_class-diagram.html) system, with the following names:
 
-* [<ПрефиксПриложения>_]<ИмяКлассаДанных>L (представление с таким именем не генерируется для [детейлов](fd_key-concepts.html)).
-* [<ПрефиксПриложения>_]<ИмяКлассаДанных>E.
+* [A<prefixpriority>_]<Imagescaling>L (a view with that name is not generated for [datalow](fd_key-concepts.html)).
+* [A<Prefixpriority>_]<Imagescaling>E.
 
-#### Построение диаграммы классов по БД
+#### Charting classes in the database
 
-Есть возможность сгенерировать диаграммы классов [по структуре базы данных](fo_reverse-data-base.html).
+There is possibility to generate class diagrams [on the structure of the database](fo_reverse-data-base.html).
 
-#### Информация о лицензии
+#### License information
 
-Аналогично как для стадии.
+Similarly as for stage.
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -1,0 +1,128 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: Sidebar
+  levels: one
+  product: Школа разработчиков
+  folders:
+
+  - title: About school
+    title_ru: О школе
+    output: web
+    folderitems:
+    - title: Introduction
+      title_ru: Знакомство со школой
+      url: /tds_landing-page.html
+      output: web    
+    - title: Curriculum
+      title_ru: Программа школы
+      url: /tds_curriculum.html
+      output: web    
+    - title: Rating system
+      title_ru: Рейтинговая система
+      url: /tds_rating.html
+      output: web    
+    - title: Resources
+      title_ru: Ресурсы
+      url: /tds_resources.html
+      output: web    
+  - title: Module 1. Introduction to web development
+    title_ru: Модуль 1. Введение в веб-разработку
+    output: web
+    folderitems:
+    - title: About the module
+      title_ru: О модуле
+      url: /tds_module1-about.html
+      output: web    
+    - title: Learn
+      title_ru: Учебные материалы
+      url: /tds_module1-learn.html
+      output: web    
+    - title: Appendix
+      title_ru: Дополнительные материалы
+      url: /tds_module1-appendix.html
+      output: web    
+    - title: Tasks
+      title_ru: Задания
+      url: /tds_module1-tasks.html
+      output: web    
+    - title: Tasks check list
+      title_ru: Чек-лист проверки заданий
+      url: /tds_module1-check-list.html
+      output: web    
+  - title: Module 2. Technologies for team development
+    title_ru: Модуль 2. Технологии командной разработки
+    output: web
+    folderitems:
+    - title: About the module
+      title_ru: О модуле
+      url: /tds_module2-about.html
+      output: web    
+    - title: Learn
+      title_ru: Учебные материалы
+      url: /tds_module2-learn.html
+      output: web    
+    - title: Appendix
+      title_ru: Дополнительные материалы
+      url: /tds_module2-appendix.html
+      output: web    
+    - title: Tasks
+      title_ru: Задания
+      url: /tds_module2-tasks.html
+      output: web    
+    - title: Tasks check list
+      title_ru: Чек-лист проверки заданий
+      url: /tds_module2-check-list.html
+      output: web    
+  - title: Module 3. Diving into JavaScript development
+    title_ru: Модуль 3. Погружение в JavaScript-разработку
+    output: web
+    folderitems:
+    - title: About the module
+      title_ru: О модуле
+      url: /tds_module3-about.html
+      output: web    
+    - title: Learn
+      title_ru: Учебные материалы
+      url: /tds_module3-learn.html
+      output: web    
+    - title: Appendix
+      title_ru: Дополнительные материалы
+      url: /tds_module3-appendix.html
+      output: web 
+    - title: Tasks
+      title_ru: Задания
+      url: /tds_module3-tasks.html
+      output: web    
+  - title: Module 4. 
+    title_ru: Модуль 4. 
+    output: web
+    folderitems:
+    - title: Module 5. 
+    title_ru: Модуль 5.
+    output: web
+    folderitems:
+    - title: Module 6. Flexberry ORM
+    title_ru: Модуль 6. Flexberry ORM
+    output: web
+    folderitems:
+    - title: About the module
+      title_ru: О модуле
+      url: /tds_module6-about.html
+      output: web    
+    - title: Learn
+      title_ru: Учебные материалы
+      url: /tds_module6-learn.html
+      output: web    
+    - title: Appendix
+      title_ru: Дополнительные материалы
+      url: /tds_module6-appendix.html
+      output: web    
+    - title: Tasks
+      title_ru: Задания
+      url: /tds_module6-tasks.html
+      output: web    
+    - title: Tasks check list
+      title_ru: Чек-лист проверки заданий
+      url: /tds_module6-check-list.html
+      output: web   

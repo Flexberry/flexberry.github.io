@@ -1,45 +1,51 @@
 ---
-title: Диаграмма последовательности (Sequence diagram) 
+title: sequence Diagram (Sequence diagram)
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, диаграммы, диаграмма последовательности, объекты, сценарий, время жизни, актор, процедура
-summary: Основные сведения о диаграмме последовательности и ее элементах
+keywords: Flexberry Designer, diagram, sequence diagram, objects, script, lifetime, actor, procedure
+summary: Basic information about the sequence diagram and its elements
 toc: true
 permalink: en/fd_sequence-diagram.html
 lang: en
+autotranslated: true
+hash: 5a23ec7a06f2889706b85a07db7ee2bdcd53403615d5b15e32ecd2b52dc02116
 ---
 
-**Диаграмма последовательности** - один из доступных [видов диаграмм](fd_editing-diagram.html), поддерживаемых [Flexberry Designer](fd_landing_page.html).
+**Sequence diagram** - one of the available [kinds of graphs](fd_editing-diagram.html) supported [Flexberry Designer](fd_flexberry-designer.html).
 
-![](/images/pages/products/flexberry-designer/diagram/sequence-diagram.png)
+![Example](/images/pages/products/flexberry-designer/diagram/sequence-diagram.png)
 
-**Диаграммы последовательностей используются для уточнения диаграмм прецедентов**, более детального описания логики сценариев использования. Это отличное средство документирования проекта с точки зрения сценариев использования!
+**Sequence diagrams are used to clarify the diagram precedents**, a more detailed description of the logic of usage scenarios. This is an excellent tool for documenting project terms of usage scenarios!
 
-Диаграммы последовательностей обычно содержат **объекты**, которые **взаимодействуют в рамках сценария**, **сообщения**, которыми они обмениваются, и **возвращаемые результаты**, связанные с сообщениями. Впрочем, часто возвращаемые результаты обозначают лишь в том случае, если это не очевидно из контекста.
+Sequence diagrams commonly contain **objects** that **interact within the scenario**, **message** they exchange, and **return results** related messages. However, often the results returned indicate that only if it's not obvious from the context.
 
-**Объекты** обозначаются прямоугольниками с подчеркнутыми именами (чтобы отличить их от классов).
+**Objects** are denoted by rectangles with underlined names (to distinguish them from classes).
 
-**Сообщения (вызовы методов)** - линиями со стрелками.
+**Messages (method calls)** lines with arrows.
 
-**Возвращаемые результаты** - пунктирными линиями со стрелками.
+**Return results** - dotted lines with arrows.
 
-Прямоугольники на вертикальных линиях под каждым из объектов показывают **"время жизни" (фокус) объектов**. Впрочем, довольно часто их не изображают на диаграмме, все это зависит от индивидуального стиля проектирования.
+The rectangles on the vertical lines under each object show **"lifetime" (focus) objects**. However, quite often they are not portrayed in the diagram, it all depends on the individual style of designing.
 
-## Основные элементы диаграммы последовательности
+## The basic elements of sequence diagrams
 
-На диаграмме последовательности можно отобразить следующие элементы нотации UML, доступные в панели элементов: 
+On the sequence diagram, you can display the following elements of UML notation that are available in the Toolbox:
 
-Элемент/Нотация | Предназначение
+Element/Notation | Purpose
 :-----------------------------------------|:-------------------------------------------------------
-![](/images/pages/products/flexberry-designer/diagram/actor.jpg) | Участник (Actor)
-![](/images/pages/products/flexberry-designer/diagram/objectseq.jpg) | Объект (Object)
-![](/images/pages/products/flexberry-designer/diagram/activeobjectseq.jpg) | Активный объект (Active object)
-![](/images/pages/products/flexberry-designer/diagram/terminator.jpg) | Терминатор (Terminator)
-![](/images/pages/products/flexberry-designer/diagram/fwdnestedmsg.jpg) | Вызов процедуры (Procedure call)
-![](/images/pages/products/flexberry-designer/diagram/fwdmessage.jpg) | Сообщение (Flat message)
-![](/images/pages/products/flexberry-designer/diagram/fwdasyncmsg.jpg) | Асинхронное сообщение (Async message)
-![](/images/pages/products/flexberry-designer/diagram/dependency.jpg) | Сообщение с результатом (Return message)
-![](/images/pages/products/flexberry-designer/diagram/inscope.jpg) | Временной интервал (In scope)
-![](/images/pages/products/flexberry-designer/diagram/timeconstraint.jpg) | Временное ограничение (Time constraint)
-![](/images/pages/products/flexberry-designer/diagram/corner.jpg) | Точка изгиба связей (Point)
-![](/images/pages/products/flexberry-designer/diagram/note.jpg) | Комментарий (Note)
-![](/images/pages/products/flexberry-designer/diagram/noteconn.jpg) | Коннектор комментария (Note connector)
+![Example](/images/pages/products/flexberry-designer/diagram/actor.jpg) | Participant (Actor)
+![Example](/images/pages/products/flexberry-designer/diagram/objectseq.jpg) | Object (Object)
+![Example](/images/pages/products/flexberry-designer/diagram/activeobjectseq.jpg) | the Active object (Active object)
+![Example](/images/pages/products/flexberry-designer/diagram/terminator.jpg) | the Terminator (Terminator)
+![Example](/images/pages/products/flexberry-designer/diagram/fwdnestedmsg.jpg) | procedure Call (Procedure call)
+![Example](/images/pages/products/flexberry-designer/diagram/fwdmessage.jpg) | Message (Flat message)
+![Example](/images/pages/products/flexberry-designer/diagram/fwdasyncmsg.jpg) | Asynchronous message (Async message)
+![Example](/images/pages/products/flexberry-designer/diagram/dependency.jpg) | message with the result (Return message)
+![Example](/images/pages/products/flexberry-designer/diagram/inscope.jpg) | time interval (In scope)
+![Example](/images/pages/products/flexberry-designer/diagram/timeconstraint.jpg) | temporal limit (Time constraint)
+![Example](/images/pages/products/flexberry-designer/diagram/corner.jpg) | Point of bending of the links (Point)
+![Example](/images/pages/products/flexberry-designer/diagram/note.jpg) | Comment (Note)
+![Example](/images/pages/products/flexberry-designer/diagram/noteconn.jpg) | Connector review (Note the connector)
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

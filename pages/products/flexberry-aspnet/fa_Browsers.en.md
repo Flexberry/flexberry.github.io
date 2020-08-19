@@ -1,51 +1,56 @@
----
-title: Supported browsers list
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_browsers.html
-lang: en
-published: true
----
+--- 
+title: List of supported browsers 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_browsers.html 
+lang: en 
+autotranslated: true 
+hash: 3f3526f6520ffc67cf55e1ce9f0665d3398848135833e0ccdc1abe50917a28aa 
+--- 
 
-## Браузеры
+## Browsers 
 
-At the moment [Flexberry ASP.NET](fa_flexberry-asp-net.html) technology supports following browsers:
+At the moment technology [Flexberry ASP.NET](fa_flexberry-asp-net.html) supports the following browsers: 
 
-* Internet Explorer 8 и старше (за исключением Object.Create(), т.к. он появился только в IE9).
-* Chrome версии 20 и старше
-* Opera версии 15 и старше
-* Mozilla Firefox версии 20 и старше
-* Safari OS X
+* Internet Explorer 8 and older (with the exception of Object.Create(), because it appeared only in IE9). 
+* Chrome version 20 and above 
+* Opera version 15 and above 
+* Mozilla Firefox version 20 and above 
+* Safari on OS X 
 
-## Мобильные устройства
+## Mobile device 
 
-* GalaxyTab2 7.0 под Android 4.1.2: chrome, firefox, opera, dolphin, стандартный предустановленный браузер.
-* Nokia lumia под WinPhone8: в IE и UC Browser.
-* IPhone5: Safari.
-* Nokia lumia под WinPhone7: IE9.
+* GalaxyTab2 7.0 running Android 4.1.2: chrome, firefox, opera, dolphin, standard preset browser. 
+* Nokia lumia under WinPhone8: in IE and UC Browser. 
+* IPhone5: Safari. 
+* Nokia lumia under WinPhone7: IE9. 
 
-## Мобильные браузеры
+## Mobile browsers 
 
-* Safari для iOS 3–7+.
-* Android browser 2.2+, 3.1+, 4+.
-* Chrome для Android 4+ и iOS.
-* Firefox для Android.
-* Win8 IE10/11.
-* Иные WebKit browsers(webOS, Blackberry 7+).
+* Safari for iOS 3-7 . 
+* Android browser 2.2 , 3.1 , 4 . 
+* Chrome for Android 4 and iOS. 
+* Firefox for Android. 
+* Win8 IE10/11. 
+* Other WebKit browsers(webOS, Blackberry 7 ). 
 
-## Выводы и рекомендации
+## Conclusions and recommendations 
 
-Приложения на базе [Flexberry ASP.NET](fa_flexberry-asp-net.html) работают практически на всех платформах, но не на всех браузерах.
-Для того чтобы работало нормально нужно поддержать обработку касаний.
+Applications based on [Flexberry ASP.NET](fa_flexberry-asp-net.html) work on almost all platforms, but not on all browsers. 
+In order to work properly it is necessary to support processing of touches. 
 
-Какие плюсы у этого:
+What are the advantages of this: 
 
-* функционал такой же как для десктопных браузеров.
-* инструментарий для разработки тот же: asp.net,  javaScript, leaflet.
+* the functionality is the same as for desktop browsers. 
+* Toolkit for the development of the same: asp.net, javaScript, leaflet. 
 
-Минусы:
+Cons: 
 
-* есть вероятность, что не везде будет работать, но покрытие устройств большое.
-* есть вероятность, что будет медленно работать (в т.ч. за счет передачи большого объема данных – требуется оптимизация на клиенте).
-* требуется подключение к сети + приличный трафик (см предыдущее).
+* it is likely that not all will work but the coating is devices great. 
+* there is a possibility that will slowly work (including due to the transfer of large volume data requires optimization on the client). 
+* requires network connection decent traffic (see previous). 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

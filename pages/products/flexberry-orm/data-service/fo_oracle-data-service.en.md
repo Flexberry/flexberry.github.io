@@ -1,48 +1,54 @@
----
-title: Data service for working with Oracle Server
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, data service, oracle
-summary: Features of the operation and requirements of Oracle Data Service
-toc: true
-permalink: en/fo_oracle-data-service.html
-lang: en
----
+--- 
+title: data Services to use Oracle Server 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, data services, oracle 
+summary: Features funktsionirovania and requirements OracleDataService 
+toc: true 
+permalink: en/fo_oracle-data-service.html 
+lang: en 
+autotranslated: true 
+hash: 7632aed3e1ac594cad6823ada7c131d105c0f592edf1b8fde371aaed2ec6fdb5 
+--- 
 
-`OracleDataService`- это [сервис данных](fo_data-service.html) для работы с Oracle Server напрямую, минуя ODBC; является реализацией [абстрактного класса SQLDataService](fo_sql-data-service.html).
+`OracleDataService` is [service data](fo_data-service.html) to work with the Oracle Server directly, bypassing ODBC; is an implementation of the [abstract class SQLDataService](fo_sql-data-service.html). 
 
-При указании OracleDataService в качестве сервиса данных используется строка `ICSSoft.STORMNET.Business.OracleDataService, ICSSoft.STORMNET.Business.OracleDataService`.
+When specifying OracleDataService as a service data string is used `ICSSoft.STORMNET.Business.OracleDataService, ICSSoft.STORMNET.Business.OracleDataService`. 
 
-Поскольку для ORACLE понятие "грязного чтения" и блокировок неактуально, то при настройке [DRDataService](fo_dr-data-service.html) также указывается строка `ICSSoft.STORMNET.Business.OracleDataService, ICSSoft.STORMNET.Business.OracleDataService`.
+As for ORACLE, the concept of "dirty reads" and locks are out of date, with [DRDataService](fo_dr-data-service.html) also indicates the line `ICSSoft.STORMNET.Business.OracleDataService, ICSSoft.STORMNET.Business.OracleDataService`. 
 
-## Требования к наличию компонентов
+## Requirements to components 
 
-* Если приложение использует .NET Framework версии ниже 4.0, то для работы с [`OracleDataService` требуется наличие клиентского ПО Oracle](fo_tools-oracle-ds.html).
-Данное требование обусловлено тем, что в данном случае для создания соединений с БД  Oracle используется класс `System.Data.OracleClient.OracleConnection`.
-Существуют ограничения на именование каталогов, в которых размещается ПО, использующее ORACLE. Если ПО разместить в каталоге, в наименовании которого присутствуют спецсимволы (точки, скобки), то всё может перестать работать. Для исправления этой ситуации достаточно переименовать каталог.
-* Для .NET Framework начиная с версии 4.0 установка клиентского ПО Oracle не требуется. 
-Работа с соединениями осуществляется с помощью `Oracle.ManagedDataAccess.Client.OracleConnection`. В этом случае необходимо установить nuget-пакет 
-[`Oracle.ManagedDataAccess`](http://nuget.ics.perm.ru/packages/Oracle.ManagedDataAccess/).
+* If the application uses .NET Framework version is below 4.0, then to work with [`OracleDataService` requires Oracle client software](fo_tools-oracle-ds.html). 
+This requirement is due to the fact that in this case, to create connections to Oracle DB using a class `System.Data.OracleClient.OracleConnection`. 
+There are restrictions on the naming of directories that is using ORACLE. If to place in the directory name which contains special characters (dots, brackets), then everything might stop working. To remedy this situation, it is sufficient to rename the directory. 
+* .NET Framework from version 4.0 to install the Oracle client software is not required. 
+Working with compounds is carried out using `Oracle.ManagedDataAccess.Client.OracleConnection`. In this case, you must install nuget package 
+[`Oracle.ManagedDataAccess`](http://nuget.ics.perm.ru/packages/Oracle.ManagedDataAccess/). 
 
-## Особенности функционирования
+## features of functioning 
 
-Как любой [сервис данных](fo_data-service.html), `OracleDataService` поддерживает отображение типов данных с учётом особенностей их использования в конкретной СУБД. А также позволяет учесть следующие ключевые требования Oracle, в т.ч. синтаксические:
+Like any [service data](fo_data-service.html), `OracleDataService` supports the mapping of data types into account peculiarities of their use in specific DBMS. And also allows you to consider the following key requirements Oracle, including syntax: 
 
-* Длина идентификатора, поддерживаемого ORACLE, ограничена 30 байтами. Причём данное ограничение действует как для имен объектов БД (т.е. учитывается при определении имен хранения  объектов генератором `Oracle SQL Generator` и сервисом данных `OracleDataService`), так и для алиасов, используемых в запросах (учитывается `OracleDataService`).
-При формировании короткого варианта имени идентификатор, создаваемый базовым методом, обрезается до требуемой длины и дополняется хэш-кодом для обеспечения уникальности.
-* Идентификаторы заключаются в двойные кавычки.
-* Аналогом функции ifnull является функция NVL.
-* Ограничение на количество строк в выборке, реализуемое с помощью ключевого слова `<nowiki>TOP</nowiki>` в базовом `SQLDataService`, реализуется посредством задания ограничения на `rownum` в выражении `WHERE`.
+* The identifier length supported by ORACLE is limited to 30 bytes. Moreover, this limitation applies to both the names of database objects (i.e. included in the determination of the names of storage objects generator `Oracle SQL Generator` and data service `OracleDataService`), and aliases used in the query (ignored `OracleDataService`). 
+In the formation of a short version of the name the ID generated by the baseline method, trimmed to the required length and is complemented with the hash to ensure uniqueness. 
+* Identifiers are enclosed in double quotes. 
+* The analogue of the function ifnull is the function NVL.
+* A limit on the number of rows in the sample provided by using the key words `<nowiki>TOP</nowiki>` in the base `SQLDataService` is implemented by setting limits on `rownum` in terms `WHERE`. 
 
-### Регистронезависимость строк в запросах
+### Registronacional of strings in queries 
 
-Поиск строк в базах данных Oracle по-умолчанию является регистрозависимым, т.е., например, при выполнении запроса
+Search strings in databases Oracle by default is case sensitive, i.e., for example, when the query is executed 
 
 ``` sql
 SELECT * FROM Table1 WHERE Field1='что-то'
-```
+``` 
 
-строки таблицы Table1, в которых Field1 имеет значение 'Что-то','ЧТО-ТО',..., в результирующую выборку не попадут.  
+the rows of a table Table1 where Field1 has the value 'something','SOMETHING',... in the sample output will not fall. 
 
-Для организации поиска независимого от регистра следует воспользоваться параметром [CaseInsensitive](fo_insensitivity-register-ds.html) файла конфигурации.
+To search case-insensitive, use the parameter [CaseInsensitive](fo_insensitivity-register-ds.html) configuration file. 
 
-См. также статью [Обработка регистров в именах объектов для СУБД](fo_processing-registers-names.html).
+Cm. article [Processing registers object names to DBMS](fo_processing-registers-names.html). 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

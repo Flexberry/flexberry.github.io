@@ -19,61 +19,144 @@ lang: ru
 * **Контроллеры** используются для того, чтобы добавить модели некую логику отображения. Ранее стандартной практикой было наследовать контроллер от ObjectController если модель представляла собой один объект, и от ArrayController - если модель была массивом записей. Сейчас эти базовые классы считаются устаревшими и нормальной практикой считается обращение к свойствам модели из Ember.Controller.
 * **Шаблоны** написаны на языке HTMLBars (HTML + [handlebars](http://handlebarsjs.com/) = HTMLbars) и описывают пользовательский интерфейс. Шаблоны используются для построения HTML кода приложения и позволяют встраивать в него динамически обновляемые выражения.
 
-##  Ссылки на материалы для изучения
+##  Пример использования
 
-### Примеры
+### Пример запуска Ember-приложения «dice-roller» с использованием `ember-cli`:
 
-* [Приложение для сайта с арендой недвижимости (eng)](https://guides.emberjs.com/v2.16.0/tutorial/ember-cli/)
+```javascript
+$ cd dice-roller
+$ ember serve
+Livereload server on http://localhost:49153
+'instrument' is imported from external module 'ember-data/-debug' but never used
+Warning: ignoring input sourcemap for vendor/ember/ember.debug.js because ENOENT: no such file or directory, open '/Users/coxg/source/me/writing/repos/dice-roller/tmp/source_map_concat-input_base_path-2fXNPqjl.tmp/vendor/ember/ember.debug.map'
+Warning: ignoring input sourcemap for vendor/ember/ember-testing.js because ENOENT: no such file or directory, open '/Users/coxg/source/me/writing/repos/dice-roller/tmp/source_map_concat-input_base_path-Xwpjztar.tmp/vendor/ember/ember-testing.map'
 
-### Базовые сведения
+Build successful (5835ms) – Serving on http://localhost:4200/
 
-* [Официальная документация по Ember.js](https://guides.emberjs.com/v2.16.0/)
-* [Официальная документация по Ember-CLI](https://ember-cli.com/user-guide/)
-* [Ember.js — идеальный фреймворк для веб приложений](https://medium.com/devschacht/graham-cox-ember-the-perfect-framework-for-web-applications-970e817ded98)
-* [Базовая структура приложения](https://guides.emberjs.com/release/getting-started/core-concepts/)
-* Состав приложения
-    * [Маршрутизация](https://guides.emberjs.com/release/routing/)
-    * [Контроллеры](https://guides.emberjs.com/release/controllers/)
-    * [Шаблоны](https://guides.emberjs.com/release/templates/handlebars-basics/)
-    * [Компоненты](https://guides.emberjs.com/release/components/defining-a-component/)
-* [Тестирование](https://guides.emberjs.com/release/testing/)
-    * [Приемочные тесты](https://guides.emberjs.com/release/testing/acceptance/)
-    * [Основы модульного тестирования](https://guides.emberjs.com/release/testing/unit-testing-basics/)
-    * [Тестирование контроллеров](https://guides.emberjs.com/release/testing/testing-controllers/)
-    * [Тестирование маршрутов](https://guides.emberjs.com/release/testing/testing-routes/)
-    * [Тестирование моделей](https://guides.emberjs.com/release/testing/testing-models/)
-    * [Тестирование компонентов](https://guides.emberjs.com/release/testing/testing-components/)
 
-### Детальный обзор
 
-* [Управление зависимостями приложения](https://guides.emberjs.com/release/addons-and-dependencies/managing-dependencies/)
-    * [Установка ember-addon-ов](gbt_embaddon.html)
-    * [Установка npm-пакетов](gbt_embnpm.html)
-    * [Установка bower-пакетов](gbt_embbower.html)
-    * [Vendor](gbt_embvendor.html)
-    * [Каталог assets](gbt_embassets.html)
-    * [Ember-cli-build](gbt_embclibuild.html)
-* [Конфигурирование Ember.js](https://guides.emberjs.com/release/configuring-ember/configuring-your-app/)
-    * [Базовая структура конфигурационного файл](gbt_embbaseconf.html)
-    * [Настройки зависящие от окружения](gbt_embsetting.html)
-    * [Как импортировать его в свои классы  и вычитывать оттуда настройки](gbt_embiosetting.html)
-    * [Ember.getOwner и свойства экзепляра приложения](gbt_embgetowner.html)
-* [Маршрутизация](gbt_embrout.html)
-* [Контроллеры](gbt_embcontr.html)
-* [Шаблоны](gbt_embtemp.html)
-* [Разработка Ember-компонентов](gbt_devcomp.html)
-* [Разработка Ember-сервисов](gbt_devservic.html)
-* [Ember Data](gbt_emddata.html)
-* [Profiling Ember.js Apps](https://speakerdeck.com/selvagsz/profiling-emberjs-apps)
+Slowest Nodes (totalTime => 5% )              | Total (avg)
+----------------------------------------------+---------------------
+Babel (16)                                    | 4625ms (289 ms)
+Rollup (1)                                    | 445ms
 
-## Подписка на новости от команды EmberJS и сообщества
+```
 
-* [The Ember.js Times](https://the-emberjs-times.ongoodbits.com/)
-* [Ember Weekly](http://www.emberweekly.com/)
+## «Для тех, кто предпочитает один раз увидеть»
+
+<div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px">
+    <iframe style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; z-index: 2;" src="https://onedrive.live.com/embed?cid=2FB293CA43965F14&resid=2FB293CA43965F14%21117&authkey=ANqVyK0lG7YX6t0&em=2" frameborder="0" scrolling="no"></iframe>
+</div>
+
+## Больше информации по теме 
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse3">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse3">
+                Детальный обзор</a>
+            </h4>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="https://guides.emberjs.com/release/addons-and-dependencies/managing-dependencies/">Managing Dependencies</a><i> — guides.emberjs.сom</i>
+                    <ul>
+                        <li><a href="gbt_embaddon.html">Установка ember-addon-ов</a></li>
+                        <li><a href="gbt_embnpm.html">Установка npm-пакетов</a></li>
+                        <li><a href="gbt_embbower.html">Установка bower-пакетов</a></li>
+                        <li><a href="gbt_embvendor.html">Работа с Vendor</a></li>
+                        <li><a href="gbt_embassets.html">Каталог assets</a></li>
+                        <li><a href="gbt_embclibuild.html">Работа с Ember-cli-build</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="https://guides.emberjs.com/release/configuring-ember/configuring-your-app/">Configuring Your App</a><i> — guides.emberjs.сom</i>
+                    <ul>
+                        <li><a href="gbt_embbaseconf.html">Базовая структура конфигурационного файла</a></li>
+                        <li><a href="gbt_embsetting.html">Настройки зависящие от окружения</a></li>
+                        <li><a href="gbt_embiosetting.html">Как импортировать его в свои классы  и вычитывать оттуда настройки</a></li>
+                        <li><a href="gbt_embgetowner.html">Ember.getOwner и свойства экзепляра приложения</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="gbt_embrout.html">Маршрутизация</a></li>
+                    <li><a href="gbt_embcontr.html">Контроллеры</a></li>
+                    <li><a href="gbt_embtemp.html">Шаблоны</a></li>
+                    <li><a href="gbt_devcomp.html">Разработка Ember-компонентов</a></li>
+                    <li><a href="gbt_devservic.html">Разработка Ember-сервисов</a></li>
+                    <li><a href="gbt_emddata.html">Работа с Ember Data</a></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
 
 ## Программное обеспечение
 
 * [Ember-CLI](https://guides.emberjs.com/v2.16.0/getting-started/quick-start/)
+
+##  Ресурсы
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse1">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse1">
+                Примеры</a>
+            </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="https://guides.emberjs.com/v2.16.0/tutorial/ember-cli/">Creating Your App Tutorial</a><i> — guides.emberjs.сom</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse2">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse2">
+                Базовые сведения</a>
+            </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="https://guides.emberjs.com/v2.16.0/">Ember.js Guides and Tutorials</a><i> — emberjs.сom</i></li>
+                    <li><a href="https://cli.emberjs.com/release/">The Ember CLI Guides</a><i> — emberjs.сom</i></li>
+                    <li><a href="https://guides.emberjs.com/release/getting-started/core-concepts/">ECore Concepts</a><i> — emberjs.сom</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse4">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse4">
+                Подписка на новости от команды EmberJS и сообщества</a>
+            </h4>
+        </div>
+        <div id="collapse4" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="https://the-emberjs-times.ongoodbits.com/">The Ember.js Times</a><i> — The Ember Times</i></li>
+                    <li><a href="http://www.emberweekly.com/">Ember Weekly</a><i> — Ember Weekly</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
 
 ## Перейти
 

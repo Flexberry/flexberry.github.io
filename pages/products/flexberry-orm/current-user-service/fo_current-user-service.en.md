@@ -1,46 +1,48 @@
----
-title: Current User Service
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, current user, example
-summary: Methods of working with the current user
-toc: true
-permalink: en/fo_current-user-service.html
-lang: en
----
+--- 
+title: Service current user 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, current user, example 
+summary: Methods of work with the current user 
+toc: true 
+permalink: en/fo_current-user-service.html 
+lang: en 
+autotranslated: true 
+hash: 308af940aa6ecf24e983f3712100317efb7363e1289da3c45116a8eab6af9195 
+--- 
 
-`Flexberry CurrentUserService`  является [продуктом платформы Flexberry](fp_landing_page.html) и позволяет получать текущего пользователя приложения, а также менять как отдельные свойства пользователя, так и сам способ работы с ним.
+`Flexberry CurrentUserService` is [product platform Flexberry](fp_landing_page.html) and allows to obtain the current user, and change as individual properties, and the way to work with it. 
 
-{% include note.html content="Flexberry CurrentUserService включен в NuGet-пакет Flexberry ORM." %}
+{% include note.html content="CurrentUserService Flexberry included in the NuGet package Flexberry ORM." %} 
 
-Получить текущего пользователя приложения можно используя `ICSSoft.Services.CurrentUserService.CurrentUser`. Атрибут имеет интерфейс `ICSSoft.Services.CurrentUserService+IUser`:
+To get the current user using `ICSSoft.Services.CurrentUserService.CurrentUser`. An attribute has an interface `ICSSoft.Services.CurrentUserService IUser`: 
 
 ```csharp
 public interface IUser
 {
-	/// <summary>
-	/// Имя пользователя ("VASYA Pupkin").
-	/// </summary>
+	/// <summary> 
+	/// The user name ("VASYA Pupkin"). 
+	/// </summary> 
 	string FriendlyName { get; set; }
 
-	/// <summary>
-	/// Домен пользователя.
-	/// </summary>
+	/// <summary> 
+	/// User domain. 
+	/// </summary> 
 	string Domain { get; set; }
 
-	/// <summary>
-	/// Логин пользователя ("vpupkin").
-	/// </summary>
+	/// <summary> 
+	/// User login ("vpupkin"). 
+	/// </summary> 
 	string Login { get; set; }
 }
-```
+``` 
 
-По умолчанию логин и домен пользователя берутся из переменных окружения (для win-приложений) и из текущего HTTP-контекста (для веб-приложений).
+By default, the username and domain of the user taken from environment variables (for win) and from the current HTTP context (for web applications). 
 
-Имя пользователя, если не установлено явно, вычисляется через логин.
+The user name if not explicitly set, calculated via the login. 
 
-## Переопределение сервиса текущего пользователя
+## rewriting service the current user 
 
-Если необходимо изменить способ работы с текущим пользователем (например, хранить логин пользователя в кэше веб приложения), нужно реализовать интерфейс `ICSSoft.Services.CurrentUserService+IUser` и сопоставить ему получившийся обработчик. Для сопоставления можно использовать метод `ICSSoft.Services.CurrentUserService.ResolveUser<T>()` и настройки в конфигурационном файле (используется [UnityFactory](fo_unity-factory.html)):
+If you want to change the way of working with the current user (e.g., store the user ID in the cache, and a web application), we need to implement the interface `ICSSoft.Services.CurrentUserService IUser` and assign it the handler. For mapping you can use the method `ICSSoft.Services.CurrentUserService.ResolveUser<T>()` and settings in the configuration file (use [UnityFactory](fo_unity-factory.html)): 
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -54,45 +56,45 @@ public interface IUser
   <unity xmlns="http://schemas.microsoft.com/practices/2010/unity">
 	  <alias alias="singleton" type="Microsoft.Practices.Unity.ContainerControlledLifetimeManager, Microsoft.Practices.Unity" />
 	  <container>
-		<register type="ICSSoft.Services.CurrentUserService+IUser, ICSSoft.Services.CurrentUserService" mapTo="<Полное имя типа>, <Имя сборки>">
+		<register type="ICSSoft.Services.CurrentUserService IUser, ICSSoft.Services.CurrentUserService" mapTo="<Full type name>, <Assembly Name>">
 		  <lifetime type="singleton" />
 		</register>
 	  </container>
   </unity>
 </configuration>
-```
+``` 
 
-При этом для переопределяющего типа необходимо заполнить "<Полное имя типа>, <Имя сборки>".
+In addition, for overriding the type necessary to fill in the "<Full type name>, <Assembly Name>". 
 
-### Пример переопределения сервиса текущего пользователя
+### Example rewriting service the current user 
 
-Пусть имя текущего пользователя хранится в статическом поле `IIS.TryAccessSystem.ПользовательПриложения.currentUserLogin`, тогда переопределение сервиса текущего пользователя будет следующим:
+Let the name of the current user stored in the static field `IIS.TryAccessSystem.Polzovatelyami.currentUserLogin`, then rewriting service the current user is the following: 
 
 ``` csharp
 namespace IIS.TryAccessSystem
 {
-    /// <summary>
-    /// Переопределяем сервис текущего пользователя
-    /// </summary>
+    /// <summary> 
+    /// Override the current user service 
+    /// </summary> 
     public class ClassOtherUser : ICSSoft.Services.CurrentUserService.IUser
     {
-        /// <summary>
-        /// Имя пользователя ("VASYA Pupkin")
-        /// </summary>
+        /// <summary> 
+        /// The user name ("VASYA Pupkin") 
+        /// </summary> 
         public string FriendlyName
         {
             get { return IIS.TryAccessSystem.ПользовательПриложения.currentUserLogin; }
             set {}
         }
 
-        /// <summary>
-        /// Домен пользователя
-        /// </summary>
+        /// <summary> 
+        /// Domain user 
+        /// </summary> 
         public string Domain {get; set;}
 
-        /// <summary>
-        /// Логин пользователя ("vpupkin")
-        /// </summary>
+        /// <summary> 
+        /// User login ("vpupkin") 
+        /// </summary> 
         public string Login
         {
             get { return IIS.TryAccessSystem.ПользовательПриложения.currentUserLogin; }
@@ -100,9 +102,9 @@ namespace IIS.TryAccessSystem
         }
     }
 }
-```
+``` 
 
-Если класс `IIS.TryAccessSystem.ClassOtherUser` содержит переопределение сервиса и расположен в сборке `TryAccessSystem(Forms)`, то для переопределения сервиса текущего пользователя в конфигурационный файл приложения достаточно дописать:
+If the class `IIS.TryAccessSystem.ClassOtherUser` contains an override of the service and located in the Assembly `TryAccessSystem(Forms)`, to override the service of the current user in the application configuration file, it is sufficient to add: 
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -116,18 +118,21 @@ namespace IIS.TryAccessSystem
   <unity xmlns="http://schemas.microsoft.com/practices/2010/unity">
 	  <alias alias="singleton" type="Microsoft.Practices.Unity.ContainerControlledLifetimeManager, Microsoft.Practices.Unity" />
 	  <container>
-		<register type="ICSSoft.Services.CurrentUserService+IUser, ICSSoft.Services.CurrentUserService" mapTo="IIS.TryAccessSystem.ClassOtherUser, TryAccessSystem(Forms)">
+		<register type="ICSSoft.Services.CurrentUserService IUser, ICSSoft.Services.CurrentUserService" mapTo="IIS.TryAccessSystem.ClassOtherUser, TryAccessSystem(Forms)">
 		  <lifetime type="singleton" />
 		</register>
 	  </container>
   </unity>
 </configuration>
-```
+``` 
 
-## Возможные ошибки
+## Possible errors 
 
-`CurrentUserService` может выдавать ошибку и сообщать, что не может найти сборку `Microsoft.Practices.Unity`.
+`CurrentUserService` may generate an error and report that it can not find the Assembly `Microsoft.Practices.Unity`. 
 
-Это связано с тем, что этой сборки действительно нет в папке с бинарниками проекта, так как она не копируется туда при сборке проекта. Однако, зачастую бывает, что она есть в глобальной папке со сборками операционной системы.
+This is due to the fact that this build is really not in the folder with the binaries of the project, as it is not copied there when building the project. However, it is often that it is in the global folder with the assemblies of the operating system. 
 
-Чтобы исправить ситуацию необходимо у ссылки на эту сборку (Reference) в проекте поставить свойство `CopyLocal` = `true`.
+To correct the situation you must have a reference to this Assembly (Reference) in the project to put the property `CopyLocal` = `true`.
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -1,31 +1,24 @@
 ---
-title: Использование ToolStrip для организации меню
+title: Организация меню winforms-приложений
 sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (Контролы), Windows UI (формы)
-summary: На примере рассмотрено использование ToolStrip для организации меню на главной форме приложения
+keywords: Flexberry Winforms, desktop, menu
+summary: Использование ToolStrip для организации меню на главной форме приложения
 toc: true
 permalink: ru/fw_working-with-menu.html
-folder: products/flexberry-winforms/
 lang: ru
 ---
 
-На пороге окончательного перехода в Web, не стоит забывать о том, что еще есть потребность в приложениях аля WinForms, а некоторые Заказчики еще работают на системах с DOS-историческим интерфейсом. 
+## Использование ToolStrip
 
-Всем известна ситуация, когда Заказчик воспринимает в штыки интерфейс в создаваемых нами информационных системах т.к. привык к организации меню в своих старых программах. В свою очередь, формирование меню в наших системах не встроено в технологию. 
+Для организации меню на главной форме приложения возможно использование ToolStrip.
 
-Возможен вариант решения.
+__Внимание!__ Версия Visual Studio должна быть 2005 или выше.
 
-Использовать системное меню на Desktop не совсем удобно, да и есть определенные ограничения и неудобства по вставке иконок и горячих клавиш. Поэтому используется ToolStrip.
-
-Единственное ограничение – версия Visual Studio должна быть 2005 или выше.
-
-В основном проекте приложения в скобках программиста добавляете три метода:
+В основном проекте приложения в скобках программиста необходимо указать три метода:
 
 _AddToolStripMenu_
 _ChangeToolStripMenuItem_
 _CopyMenuToStrip_
-
-Код приведен ниже:
 
 ```csharp
 // *** Start programmer edit section *** (ThreatsModelDesktop CustomMembers)
@@ -58,22 +51,21 @@ _CopyMenuToStrip_
                 if (tsmi == null) ts.Items.Add(mtddb);  
                 else tsmi.DropDownItems.Add(mtddb);  
             }
-            mtddb.Tag = mi;   
+            mtddb.Tag = mi;
             for (int i = 0; i < mi.MenuItems.Count; i++)
             {
                 CopyMenuToStrip(mi.MenuItems[i], ts, (ToolStripMenuItem)mtddb);
-            } 
+            }
         }
 ```
- 
 
-В методе main в скобках программиста работаете с меню:
+В методе `main` в скобках программиста изменяются настройки меню:
 
 ```csharp
 //Уберем Properties
-desktop.menuItem1.MenuItems[0].Visible = false;                 
+desktop.menuItem1.MenuItems[0].Visible = false;
 //Вставим обработчик на Help
-desktop.menuItem4.Click += new EventHandler(menuItem4_Click);   
+desktop.menuItem4.Click += new EventHandler(menuItem4_Click);
 //Скопируем существующее меню в ToolStrip
 ToolStrip ts = new ToolStrip();
 ts.Parent = desktop;
@@ -82,7 +74,7 @@ for (int i = 0; i < desktop.mainMenu1.MenuItems.Count; i++)
 CopyMenuToStrip(desktop.mainMenu1.MenuItems[i],ts,null);
 desktop.mainMenu1.MenuItems[i].Visible = false; //скрываем меню..
 }
-//добавляем новые элементы меню с картинками и горячими клавишами
+//Добавить новые элементы меню с картинками и горячими клавишами
 AddToolStripMenu(ts, 0, 0, "Создать модель ИСПДн", (System.Drawing.Image)global::IIS.Product.Properties.Resources.new16,new EventHandler(WorkMenu_Click),Keys.Alt | Keys.N);
 AddToolStripMenu(ts, 0, 1, "Открыть модель ИСПДн...",(System.Drawing.Image)global::IIS.Product.Properties.Resources.Open16, new EventHandler(WorkMenu_Click), Keys.Alt | Keys.O);
 ts.Items.Insert(1,new ToolStripMenuItem("Справочники"));
@@ -95,19 +87,48 @@ ChangeToolStripMenuItem(ts, 0, 3,(System.Drawing.Image)global::IIS.Product.Prope
 ChangeToolStripMenuItem(ts, 2, 0,(System.Drawing.Image)global::IIS.Product.Properties.Resources.Help16,  Keys.F1);
 ```
 
-Что касается меню, вроде бы все!
+В результате компиляции обновляется интерфейс:
 
-Запускаем компиляцию и видим немного обновленный интерфейс:
-![](/images/pages/products/flexberry-winforms/desktop/image001.jpg)
+![Интерфейс](/images/pages/products/flexberry-winforms/desktop/image001.jpg)
+
 Меню «Файл»:
-![](/images/pages/products/flexberry-winforms/desktop/image002.jpg)
+
+![Меню Файл](/images/pages/products/flexberry-winforms/desktop/image002.jpg)
+
 Меню «Справочники»:
-![](/images/pages/products/flexberry-winforms/desktop/image003.jpg)
+
+![Меню Справочники](/images/pages/products/flexberry-winforms/desktop/image003.jpg)
+
 Меню «?»:
-![](/images/pages/products/flexberry-winforms/desktop/image004.jpg)
 
-На данном примере мы решили несколько проблем:
+![Меню Подробнее](/images/pages/products/flexberry-winforms/desktop/image004.jpg)
 
-1. Создали похожее на «старое» меню.
-2. Усилили визуальный эффект от меню за счет иконок.
-3. Расширили возможность горячих клавиш.
+В результате решено несколько проблем:
+
+1. Меню выглядит более консервативно.
+2. Усилен визуальный эффект от меню за счет иконок.
+3. Расширена возможность горячих клавиш.
+
+## Меню в главной форме приложения
+
+В приложении в методе Main необходимо найти переменную desktop, у которой в свойствах находятся все элементы существующего меню.
+
+Пример
+
+1. Убрать видимость элемента меню "Свойства".
+2. Добавить элемент меню "Сменить пользователя" с обработчиком.
+3. Добавить обработчик на элемент меню "Помощь".
+
+```csharp
+[STAThread()]
+static void Main()
+{
+//...
+      БорьбаDesktop desktop = new БорьбаDesktop();
+      //...
+      desktop.menuItem1.MenuItems[0].Visible = false;                 //Свойства;
+      desktop.menuItem1.MenuItems.Add(0,new MenuItem("Сменить пользователя...",new EventHandler(БорьбаDesktop_Click)));
+      desktop.menuItem4.Click += new EventHandler(menuItem4_Click);   //Помощь;
+      //...
+}
+```

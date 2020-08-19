@@ -1,25 +1,30 @@
----
-title: Настройка прав доступа на публикацию ограничений
-sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Security, Flexberry Winforms, Ограничения
-summary: Указано что следует сделать, чтобы настроить права доступа на публикацию ограничений
-toc: true
-permalink: en/fw_setting-permissions-for-publication-restrictions.html
-folder: products/flexberry-winforms/
-lang: en
----
+--- 
+title: configuring access rights to the publication restrictions 
+sidebar: flexberry-winforms_sidebar 
+keywords: Flexberry Security, Flexberry Winforms, Restrictions 
+summary: it has been Specified what should be done to configure access rights to the publication restrictions 
+toc: true 
+permalink: en/fw_setting-permissions-for-publication-restrictions.html 
+lang: en 
+autotranslated: true 
+hash: a2e79ede0d16e192f1d2a69c276e88af43dadc6f039e36253bd98b88d384ea8c 
+--- 
 
-## Описание
+## Description 
 
-Настраивается __AdvLimitComponent__ следующим образом:
+Configurable __AdvLimitComponent__ as follows: 
 
-* В свойстве __PublicateOperationId__ указвается id операции (по умолчанию "-1")
-* В свойстве __PublicateAccess__ указывается возможность доступа по умолчанию (Если __PublicateOperationId__ <= 0 либо AzMan не может проверить доступ и вызывает ошибку)
+* __PublicateOperationId__ transaction id shown (default "-1") 
+* __PublicateAccess__ indicates the possibility of access by default (If __PublicateOperationId__ <= 0 or not AzMan can check the access and causing the error) 
 
-## Настройка в Flexberry Security
+## setting in Flexberry Security 
 
-Данная операция должна быть прописана с именем, соответствующим __PublicateOperationId__. Данное решение не является красивым, но применяется для обеспечения совместимости с системами, работающими на `AzMan` (для возможности быстрого перехода на [Flexberry Rights](efs_security-legacy-services.html)).
+This operation should be registered with a name corresponding to __PublicateOperationId__. This solution is not beautiful, but is used for compatibility with systems running on `AzMan` (for the possibility of a rapid transition to [Flexberry Rights](efs_security-legacy-services.html)). 
 
-## Смотрите также
+## See also 
 
-* [Сценарии использования подсистемы полномочий](efs_rights-scenarios.html).
+* [Usage scenarios subsystem powers](efs_rights-scenarios.html). 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

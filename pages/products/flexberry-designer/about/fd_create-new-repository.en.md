@@ -1,23 +1,25 @@
 ---
-title: Создание нового репозитория
+title: Creating a new repository
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Desinger, репозиторий, создать, плагины
-summary: Описание создания нового репозитория
+keywords: Flexberry Desinger, database, create, plugins
+summary: Description create a new repository
 toc: true
 permalink: en/fd_create-new-repository.html
 lang: en
+autotranslated: true
+hash: fe6229b3f65883be3a459395be3ad401ee702ca3b51cce7c9a77a3d6860e4ecc
 ---
 
-После запуска [Flexberry Designer](fd_landing_page.html) можно создать новый `Репозиторий` для работы, выбрав пункт меню `Репозиторий` – `Создать новый`:
+After starting [Flexberry Designer](fd_flexberry-designer.html) you can create a new `Репозиторий` to work by selecting the menu item `Репозиторий` – `Создать новый`:
 
-![](/images/pages/products/flexberry-designer/about/create-new-repository.png)
+![Example](/images/pages/products/flexberry-designer/about/create-new-repository.png)
 
-Чтобы настроить новый `Репозиторий`, необходимо выбрать пункт меню `Репозиторий` – `Редактировать свойства`, в открывшемся окне можно изменить наименование репозитория, а также необходимо [подключить плагины](fd_flexberry-plugins.html). В нижней части формы необходимо выбрать из списка поочередно все 4 доступных плагина:
+To configure a new `Репозиторий`, you need to select the menu item `Репозиторий` – `Редактировать свойства`, in the opened window you can change the name of the repository, and also need the [enable plugins](fd_flexberry-plugins.html): at the bottom of the form, you must choose from the list each 4 available plugin:
 
-![](/images/pages/products/flexberry-designer/about/edit-repository-properties.png)
+![Example](/images/pages/products/flexberry-designer/about/edit-repository-properties.png)
 
-После этого необходимо `сохранить изменения`.
-
-
+After that you need `сохранить изменения`.
 
 
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

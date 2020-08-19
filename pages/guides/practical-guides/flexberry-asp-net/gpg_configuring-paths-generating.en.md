@@ -4,33 +4,33 @@ sidebar: guide-practical-guides_sidebar
 keywords: guide
 toc: true
 permalink: en/gpg_configuring-paths-generating.html
-lang: en 
-autotranslated: true 
-hash: a10268b4ef17092e17ee895b614761984f03a7be29d9e49880935b0fd68de72c
+lang: en
+autotranslated: true
+hash: b8f97baa7f247837231c99455867a610e89044c6794acae4e50e82b9720d2a87
 ---
 
 By default, project web app all the forms are generated in the following way:
 
 1. In the root folder of the project folder is created `forms`
-2. In the folder `forms` creates a separate folder for each form that is listed on [the class diagram of the prototype application](gpg_prototype-creating.html), and folders for forms created in Latin letters, even if the graph shape was named in Russian. At the same form with the same name but with different stereotypes (usually form stereotypes `listform` and `editform`) are in one folder.
+2. In the folder `forms` creates a separate folder for each form that is listed on [the class diagram of the prototype application](gpg_prototype-creating.html), with folders for forms created in Latin letters, even if the graph shape was named in Russian. At the same form with the same name but with different stereotypes (usually form stereotypes `listform` and `editform`) are in one folder.
 Thus, the structure of the project with the web application default as follows:
 
-![](/images/pages/guides/flexberry-aspnet/project-structure.png)
+![Project structure](/images/pages/guides/flexberry-aspnet/project-structure.png)
 
-For setting the menu of the web application for different user roles would be more convenient to organize the folder structure of the forms in a slightly different way, since each folder will be a file with the settings for users with different roles to the web forms located within these folders. 
-In addition, when you create real enterprise applications, web forms can be quite a lot and requires, usually, a more flexible structure within the project right at the stage of generation of web applications.
+For setting the menu of the web application for different user roles would be more convenient to organize the folder structure of the forms in a slightly different way, since each folder will be a file with the settings for users with different roles to the web forms located within these folders.
+In addition, when you create real enterprise applications, web forms can be quite a lot and requires, as a rule, the possibility of a more flexible structure within the project right at the stage of generation of web applications.
 
 __Note:__ to solve the problem of creating configuration files, folder structure change is not necessary is the desire to optimize in this way the content of configuration files.
 
 To change the way of generating web forms in the design phase, you must:
 
-1.In [Flexberry Designer](fd_landing_page.html) open a chart with [application prototype](gpg_prototype-creating.html) to open the form properties (the class with the appropriate stereotype), the way of generation which you want to change.
+1.In [Flexberry Designer](fd_flexberry-designer.html) open a chart with [application prototype](gpg_prototype-creating.html) to open the form properties (the class with the appropriate stereotype), the way of generation which you want to change.
 
-![](/images/pages/guides/flexberry-aspnet/prototype-change.png)
+![Change in the prototype](/images/pages/guides/flexberry-aspnet/prototype-change.png)
 
 2.In the form you must fill in the property `Packet`.
 
-![](/images/pages/guides/flexberry-aspnet/packet.png)
+![Property](/images/pages/guides/flexberry-aspnet/packet.png)
 
 Property `Packet` for forms should be filled in as follows:
 
@@ -43,7 +43,7 @@ However, after modifying the properties `Packet` and the subsequent generation o
 
 1.To view the path to the generated web application, choose the menu item `Настройки` -> `Путь generation...` on the main form `Flexberry Designer`.
 
-![](/images/pages/guides/flexberry-aspnet/paths-generating.png)
+![Path generation](/images/pages/guides/flexberry-aspnet/paths-generating.png)
 
 2.Close the window to select the path generation applications.
 3.Close `Visual Studio` if it is open.
@@ -53,13 +53,13 @@ Then re-generate the web application (from stage select menu `ASP.NET` -> `C#` -
 
 The resulting structure is re-generated project, the web application should have the following form:
 
-![](/images/pages/guides/flexberry-aspnet/project-structure-new.png)
+![New project structure](/images/pages/guides/flexberry-aspnet/project-structure-new.png)
 
 ## Go
 
 * <i class="fa fa-arrow-left" aria-hidden="true"></i> [Add user roles from an application](gpg_adding-user-roles.html)
-* [Customize application menu for different user roles](gpg_customize-application-menu.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> 
+* [Customize application menu for different user roles](gpg_customize-application-menu.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

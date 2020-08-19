@@ -1,29 +1,31 @@
 ---
-title: Checking the validity of changes to object data in the business server
+title: Check the validity of the data change object in a business server
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, database, business servers, example
-summary: Description of the object change according to the specified conditions
+keywords: Flexberry ORM, database, business server, example
+summary: Description of the object changes according to the preset conditions
 toc: true
 permalink: en/fo_change-data-check.html
 lang: en
+autotranslated: true
+hash: 7e3c5997996960fd7500309063046f4534857760a4a0744c773b2f3be3e02e9a
 ---
 
-## Изменение данных объекта
+## Modifying object data
 
-Бывают ситуации, когда можно допустить изменение какого-либо поля объекта, только если это удовлетворяет некоторым условиям относительно старого значения этого же поля. Однако, на момент попадания объекта в [бизнес-сервер](fo_bs-wrapper.html) (в метод [OnUpdate](fo_bs-example.html)), информация о старом значении поля уже отсутствует.
+There are times when you can prevent the changing of any fields in the object only if it satisfies certain conditions relative to the old value of the same field. However, at the time of exposure of the object in the [business server](fo_business-server.html) (in method [OnUpdate](fo_bs-example.html)), information about the old value of the field is already missing.
 
-Старое значение поля можно узнать, вычитав его из базы, так как измененный объект хранится в памяти приложения, но изменения еще не попали в базу.
+The old value field, you can learn subtracts it from the database, because the changed object is stored in application memory, but the changes were not yet in the database.
 
-{% include important.html content="Важным моментом является необходимость вычитки объекта в `отдельную переменную`, поскольку если вычитать данные в переменную `UpdatedObject`, то все изменения, внесенные в объект, потеряются (если есть потребность вычитать значение поля в тот же объект, то нужно правильно и аккуратно воспользоваться [дочиткой объектов](fo_additional-loading.html))." %}
+{% include important.html content="the Important point is the need for proofreading of the object in `отдельную переменную`, as if to subtract the data in the variable `UpdatedObject`, all changes made to the object will be lost (if there is a need to deduct the value of the field in the same object, then you need to properly and carefully use the [gecitkoy objects](fo_additional-loading.html))." %}
 
-## Пример
+## Example
 
 ![](/images/pages/products/flexberry-orm/business-servers/filter-ex-diagram.png)
 
-В банке, в котором планируется использование этой системы, предусмотрено следующее правило: срок кредита, определенный для клиента при выдаче кредита, может быть продлен, но при этом обязательно увеличение суммы кредита (наложение штрафов). При этом, срок кредита не может быть уменьшен, а только увеличен.
+In the Bank in which you plan to use this system, you have the following rule: loan period defined for the customer when the loan may be extended, but it is sure to increase the amount of the loan (imposition of fines). Thus, the term of the loan may not be reduced, only increased.
 
-* Создать бизнес-сервер для класса `Кредит` (если он еще не был создан).
-* В методе `OnUpdate` напишем следующий код:
+* Create business server for class `Кредит` (if it has not yet been created).
+* PstrfOnUpdate` in the method write the following code:
 
 ```csharp
 if (UpdatedObject.GetStatus() == ObjectStatus.Altered)
@@ -33,19 +35,18 @@ if (UpdatedObject.GetStatus() == ObjectStatus.Altered)
     var oldValue = ds.Query<Кредит>(Кредит.Views.КредитE).Where(k => k.__PrimaryKey == UpdatedObject.__PrimaryKey).First();
 
     if (newValue.СрокКредита > oldValue.СрокКредита && newValue.СуммаКредита <= oldValue.СуммаКредита)
-        throw new Exception("При изменении срока кредита сумма кредита должна увеличиться.");
+        throw new Exception("If you change the term of the loan the loan amount needs to increase.");
 
     if (newValue.СрокКредита < oldValue.СрокКредита)
-        throw new Exception("Срок кредита не может уменьшиться.");
+        throw new Exception("The term of the loan can't decline.");
 }
 ```
 
-`oldValue` можно получить и таким образом:
+`oldValue` can be obtained, and thus:
 
 ```csharp
 LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Кредит), Кредит.Views.КредитE);
-var ld = SQLWhereLanguageDef.LanguageDef;
-lcs.LimitFunction = ld.GetFunction(ld.funcEQ, new VariableDef(ld.GuidType, "Клиент"), UpdatedObject.Клиент.__PrimaryKey);
+lcs.LimitFunction = FunctionBuilder.BuildEquals<Кредит>(x => x.Клиент, UpdatedObject.Клиент);
 var oldValue = DataService.LoadObjects(lcs)[0) as Кредит;
 ```
 
@@ -53,6 +54,9 @@ var oldValue = DataService.LoadObjects(lcs)[0) as Кредит;
 UpdatedObject.GetStatus() == ObjectStatus.Altered
 ```
 
-При такой проверке [статуса](fo_object-status.html) отсекаются варианты, когда объект создан или удален.
+If such verification [status](fo_object-status.html) are truncated when the object is created or deleted.
 
-Таким образом мы можем проверять вводимые данные на основании уже существующих данных.
+Thus we can check the entered data on the basis of already existing data.
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

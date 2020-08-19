@@ -7,6 +7,19 @@ permalink: ru/fa_ics-treeview.html
 lang: ru
 ---
 
+## Рабочий стол
+
+В Web-приложении рабочий стол превращается в набор ссылок в меню SiteMaster'a.
+
+![Рабочий стол web-приложения](/images/pages/products/flexberry-winforms/desktop/webdesktop.png)
+
+Меню настраивается при помощи [Карты сайта ASP.NET](http://msdn.microsoft.com/ru-ru/library/yy2ykkab%28v=vs.100%29.aspx), по умолчанию используется файл `Web.sitemap` из директории приложения (генерируется системой Flexberry). Настроить карту сайта по умолчанию можно в `Web.config` в разделе `SiteMap`.
+
+Карта сайта отображается с помощью технологического контрола `IcsTreeView` (данный контрол имеет ряд полезных настроек отображения).
+
+__Примечание__: стоит учитывать, что при перегенерации Flexberry ASP.NET через Flexberry, внесенные в файл `Web.sitemap` изменения могут потеряться.
+
+
 Веб-контрол `ICSSoft.STORMNET.Web.AjaxControls.IcsTreeView` - наследник `System.Web.UI.WebControls.TreeView`, отличается от него тем, что умеет запоминать состояние в cookies и раскрывать/скрывать ветки по нажатию на саму надпись узла, а не на стрелку слева.
 
 ## Свойства

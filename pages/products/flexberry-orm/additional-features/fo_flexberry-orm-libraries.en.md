@@ -1,32 +1,38 @@
----
-title: Flexberry ORM Libraries
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, libraries, assemblies, nuget
-summary: List of Flexberry ORM libraries available through NuGet
-toc: true
-permalink: en/fo_flexberry-orm-libraries.html
-lang: en
----
+--- 
+title: Libraries Flexberry ORM 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, libraries, assemblies, nuget 
+summary: List of Flexberry ORM libraries, available via NuGet 
+toc: true 
+permalink: en/fo_flexberry-orm-libraries.html 
+lang: en 
+autotranslated: true 
+hash: adf0d68f5a3ca4fe75ae118057437766060632e374f0a276044ac6897bf63ee2 
+--- 
 
-Список библиотек, содержащих Runtime-компоненты [Flexberry ORM](fo_flexberry-orm.html):
+The list of libraries that contain the Runtime components [Flexberry ORM](fo_flexberry-orm.html): 
 
-* **ChangesToSqlBTMonitor.dll** - библиотека, содержащая классы для работы [сервиса записи SQL-скриптов изменения данных](fo_changes-sql-bt-monitor.html).
-* **ExternalLangDef.dll** - библиотека, содержащая [расширение языка ограничений](fo_external-lang-def.html) для [задания ограничений](fo_limit-function.html) на зависимые объекты.
-* **ICSSoft.STORMNET.BF.dll**
-* **ICSSoft.STORMNET.Business.dll** - библиотека, содержащая базовые классы для организации [отображения структуры реляционных таблиц БД на объектную модель](fo_data-service.html).
-* **ICSSoft.STORMNET.Business.DRDataService.dll** - библиотека, содержащая классы для работы [DRDataService](fo_dr-data-service.html).
-* **ICSSoft.STORMNET.Business.LINQProvider.dll** - библиотека, содержащая классы для поддержки LINQ в [Flexberry ORM](fo_flexberry-orm.html).
-* **ICSSoft.STORMNET.Business.LockService.dll** - библиотека, содержащая классы для работы [сервиса блокировок](fo_lock-service.html).
-* **ICSSoft.STORMNET.Business.MSSQLDataService.dll** - библиотека, содержащая классы для [организации отображения структуры реляционных таблиц MS SQL Server (версии 2005 и выше) на объектную модель](fo_data-service.html).
-* **ICSSoft.STORMNET.Business.ODBCDataService.dll**  - библиотека, содержащая классы для работы [ODBCDataService](fo_odbc-data-service.html).
-* **ICSSoft.STORMNET.Business.OracleDataService.dll** - библиотека, содержащая классы для работы [OracleDataService](fo_oracle-data-service.html).
-* **ICSSoft.STORMNET.Business.PostgresDataService.dll** - библиотека, содержащая классы для работы [PostgresDataService](fo_postgres-data-service.html). 
-* **ICSSoft.STORMNET.Collections.dll** - библиотека, содержащая вспомогательные базовые структуры для организации коллекций объектов.
-* **ICSSoft.STORMNET.DataObject.dll** - библиотека, содержащая базовые классы для организации [объектной модели](fo_data-object.html), а также основные вспомогательные методы для работы с ними.
-* ICSSoft.STORMNET.Drawing.dll
-*  **ICSSoft.STORMNET.FunctionalLanguage.dll** - библиотека, содержащая основные классы для функционирования [компоненты работы с фильтрами и ограничениями](fo_limitation.html).
-* **ICSSoft.STORMNET.Tools.dll** - библиотека, содержащая общие вспомогательные методы.
-* **ICSSoft.STORMNET.UserDataTypes.dll** - библиотека, содержащая дополнительно определённые типы данных.
-* **NewPlatform.Flexberry.Data.ODataService.dll**
+* **ChangesToSqlBTMonitor.dll** a library containing classes for working [service record SQL-scripts change data](fo_changes-sql-bt-monitor.html). 
+* **ExternalLangDef.dll** - the library that contains [language extension restrictions](fo_external-lang-def.html) for [constraint](fo_limit-function.html) on the dependent objects. 
+* **ICSSoft.STORMNET.BF.dll** 
+* **ICSSoft.STORMNET.Business.dll** a library containing base classes for organizations [see the structure of relational database tables to an object model](fo_data-service.html). 
+* **ICSSoft.STORMNET.Business.DRDataService.dll** a library containing classes for working [DRDataService](fo_dr-data-service.html). 
+* **ICSSoft.STORMNET.Business.LINQProvider.dll** - the library that contains the classes for LINQ support in [Flexberry ORM](fo_flexberry-orm.html). 
+* **ICSSoft.STORMNET.Business.LockService.dll** a library containing classes for working [service locks](fo_lock-service.html). 
+* **ICSSoft.STORMNET.Business.MSSQLDataService.dll** a library containing classes for [the display of the structure of relational tables in MS SQL Server (version 2005 and above) the object model](fo_data-service.html). 
+* **ICSSoft.STORMNET.Business.ODBCDataService.dll** a library containing classes for working [ODBCDataService](fo_odbc-data-service.html). 
+* **ICSSoft.STORMNET.Business.OracleDataService.dll** a library containing classes for working [OracleDataService](fo_oracle-data-service.html). 
+* **ICSSoft.STORMNET.Business.PostgresDataService.dll** a library containing classes for working [PostgresDataService](fo_postgres-data-service.html). 
+* **ICSSoft.STORMNET.Collections.dll** a library containing auxiliary base structure for organizing collections of objects. 
+* **ICSSoft.STORMNET.DataObject.dll** a library containing base classes for organizations [object model](fo_data-object.html), as well as basic utility methods for working with them. 
+* ICSSoft.STORMNET.Drawing.dll 
+* **ICSSoft.STORMNET.FunctionalLanguage.dll** - the library that contains the core classes for the operation of [the components of filters and limitations](fo_limitation.html). 
+* **ICSSoft.STORMNET.Tools.dll** - the library that contains common helper methods. 
+* **ICSSoft.STORMNET.UserDataTypes.dll** - the library, containing additionally certain types of data. 
+* **NewPlatform.Flexberry.Data.ODataService.dll** 
 
-{% include note.html content="Flexberry ORM доступно для установки в проект через [NuGet package](https://www.nuget.org/packages/NewPlatform.Flexberry.ORM)." %}
+{% include note.html content="Flexberry ORM is available for installation in the project via [NuGet package](https://www.nuget.org/packages/NewPlatform.Flexberry.The ORM)." %} 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

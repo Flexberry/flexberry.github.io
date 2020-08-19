@@ -139,9 +139,8 @@ LookUp.UserImageList.Images.Add("Edit", Properties.Resources.EditImage);
 private void look_LookUpEvent1(object sender, System.EventArgs e)
 {
     Посетитель oПосетитель = (Посетитель)this.EditManager.DataObject;
-
-    SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
-    Function lf = langdef.GetFunction(langdef.funcSQL,"1=1");
+    
+    Function lf = FunctionBuilder.BuildTrue();
 
     //создадим контейнер-раннер
     ICSSoft.АдресноеБюро.ЛичностьL FormЛичностьL = (ICSSoft.АдресноеБюро.ЛичностьL)      ICSSoft.STORMNET.UI.ContRunner.RunForm(typeof(ICSSoft.АдресноеБюро.ЛичностьL));
@@ -215,6 +214,10 @@ m_arrGroupEditInformations.Add(
 * Форма корректно поднята по Lookup:
   * передаётся объект формы-инициатора LookUp, а не тот, который надо редактировать
   * указано существующее свойство или пустая строка
+
+## Изменение названия списка для Lookup
+
+Изменить название списка для Lookup, находящегося на разных формах редактирования можно задать условия на форме редактирования, а на списковой форме добавить обработчик данного события. Например, на  форме редактирования при открытии Lookup в объект данных добавить необходимое название в `DynamicProperties`, а на списковой форме его вычитывать.
 
 ## Дополнительно
 
