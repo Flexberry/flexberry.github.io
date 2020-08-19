@@ -17,16 +17,6 @@ Mono включает в себя компилятор языка C# — dmcs, �
 
 **Mono** содержит альтернативу структуре WPF-приложений (XAML + C# или любой другой язык, который поддерживается в данной среде исполнения). Данный язык называется Glade, при помощи него можно собирать GTK-приложения.
 
-**Mono** может исполнять модули, написанные на языках C#, F#, Visual Basic .NET, Java, Boo, Nemerle, Python, JavaScript, Erlang, SmallTalk, Lisp, PHP и Object Pascal (при наличии компилятора в среде .Net/Mono). 
-
-##  Пример использования
-
-### Архитектура Mono
-
-<a title="Traced by User:Stannered [CC BY-SA 3.0 (http://creativecommons.org/licenses/by-sa/3.0/)], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Mono_architecture.svg"><img width="512" alt="Mono architecture" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Mono_architecture.svg/512px-Mono_architecture.svg.png"></a>
-
-##  «Для тех, кто предпочитает один раз увидеть»
-
 <div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px">
     <iframe width="854" height="480" src="https://www.youtube.com/embed/5oLgQc_gnJg?list=PLaKXsWB2aJ1utjsUDJDmZBUW2KylhYsx0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 </div>

@@ -65,33 +65,69 @@ lang: ru
 2. Вкладка Call Stack показывает стек вызовов, во вкладке Exception Settings можно настроить поведение при различных исключениях.
 3. В разделе Diagnostic Tools находится информация об использовании приложением памяти и ресурсов процессора, данные отображены на таймлайне. Кроме этого, на таймлайн наносятся различные события (например, при работе с ASP.NET на таймлайн наносятся запросы к серверу) и исключения. Нажатие на событие на таймлайне позволяет перейти в режим Historical Debugging.
 
-### Отладка Mono-приложений
+## Отладка Mono-приложений
 
-Для того чтобы приступить к отладке приложения в  Monodevelop из Windows, нужно выполнить следующие шаги:
+1.Выполнить команду
 
 1.Выполнить команду `docker pull flexberry/monodevelop:latest`
+
 2.Установить XServer для Windows, запустить XServer
+
 3.Выполнить команду
 `docker run -dti --network host -e "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/projects/scripts" -e "DISPLAY=XX.XX.XX.XX:0.0" -v d:/projects:/root/projects  flexberry/monodevelop:latest /usr/bin/mate-terminal --disable-factory`
 
-**Вместо XX.XX.XX.XX указать свой ip, вместо d:/projects указать свою папку проектов**
+2.Установить [XServer](http://www.netsarang.com/download/down_xmg.html) под windows.
 
 4.В открывшимся окне терминала выполнить команду:
 `monodevelop&`
+
 5.Открыть нужный проект, в свойствах указать:
 0.0.0.0
 
-![Project Options](../../../../images/pages/guides/base-technologies/debugging/xsp-web.png)
+4.Выполнить команду
 
 Кроме этого в свойствах необходимо отключить сборку. Сборку необходимо осуществлять в Visual Studio, но отлаживать в Mono.
+
 6.Скачать и собрать [MdbConverter.exe](https://github.com/akosinsky/MdbConverter).
+
 В Visual Studio указать:
 `MdbConverter\pdb2mdb\bin\Debug\MdbConverter.exe . d:\projects /root/projects`
 
-![Project Options](../../../../images/pages/guides/base-technologies/debugging/vs-settings.png)
+5.В открывшимся окне терминал выполнить команду:
 
-Теперь можно выполнять отладку из среды Monodevelop под Windows. Открыть отлаживаемый в Mono проект можно по адресу `10.0.75.2`
+```
+monodevelop&
+```
 
+6.Открыть нужный проект и в свойствах указать:
+
+![Свойства проекта](/images/pages/products/base-tech/mono/Monodevelop01.png)
+
+7.В Visual Studio указать:
+
+[MdbConverter.exe](https://github.com/Flexberry/mono/tree/MdbConverter). с:/catalog:/childrencatalog
+
+Чтобы собрать `MdbConverter` необходимо:
+1. Выполнить git clone https://github.com/Flexberry/mono
+2. git checkout MdbConverter
+3. Открыть в Visual Studio проект 
+mono\mcs\tools\pdb2mdb\MdbConverter.csproj
+4. Выполнить Build.
+
+![Выполнение билда](/images/pages/products/base-tech/mono/Monodevelop02.png)
+
+8.В итоге можно выполнять отладку:
+
+![Выполнение отладки](/images/pages/products/base-tech/mono/Monodevelop03.png)
+
+## Программное обеспечение
+
+* [Mono](http://www.mono-project.com/download/#download-win)
+* [Xamarin Studio](https://www.xamarin.com/studio)
+
+Окно отладки в MonoDevelop выглядит следующим образом:
+![Monodevelop](../../../../images/pages/guides/base-technologies/debugging/monodevelop.png)
+Работа с ним аналогична с работой с Visual Studio в режиме отладки.
 ## Перейти
 
 * [Командная разработка](gbt_team-management.html)
