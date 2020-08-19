@@ -10,7 +10,7 @@ lang: ru
 
 ## Изменение данных объекта
 
-Бывают ситуации, когда можно допустить изменение какого-либо поля объекта, только если это удовлетворяет некоторым условиям относительно старого значения этого же поля. Однако, на момент попадания объекта в [бизнес-сервер](fo_bs-wrapper.html) (в метод [OnUpdate](fo_bs-example.html)), информация о старом значении поля уже отсутствует.
+Бывают ситуации, когда можно допустить изменение какого-либо поля объекта, только если это удовлетворяет некоторым условиям относительно старого значения этого же поля. Однако, на момент попадания объекта в [бизнес-сервер](fo_business-server.html) (в метод [OnUpdate](fo_bs-example.html)), информация о старом значении поля уже отсутствует.
 
 Старое значение поля можно узнать, вычитав его из базы, так как измененный объект хранится в памяти приложения, но изменения еще не попали в базу.
 
@@ -44,8 +44,7 @@ if (UpdatedObject.GetStatus() == ObjectStatus.Altered)
 
 ```csharp
 LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Кредит), Кредит.Views.КредитE);
-var ld = SQLWhereLanguageDef.LanguageDef;
-lcs.LimitFunction = ld.GetFunction(ld.funcEQ, new VariableDef(ld.GuidType, "Клиент"), UpdatedObject.Клиент.__PrimaryKey);
+lcs.LimitFunction = FunctionBuilder.BuildEquals<Кредит>(x => x.Клиент, UpdatedObject.Клиент);
 var oldValue = DataService.LoadObjects(lcs)[0) as Кредит;
 ```
 

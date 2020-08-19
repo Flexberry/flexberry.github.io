@@ -128,7 +128,52 @@ lang: ru
     </div>
 </div>
 
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse3">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse3">
+                Дополнительно</a>
+            </h4>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=gclusz3HtDA' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module2/codereview-rules.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">Правила хорошего CodeReview</span></h4>
+                            <p>Видео, в котором даются общие рекомендации о том, как правильно делать ревью кода, на что обратить внимание в первую очередь, а что автоматизировать раз и навсегда. (Дмитрий Рожков, Mesosphere).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://flexberry.github.io/ru/fp_code-review-check-list.html' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module2/codereview-check-list.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">Чек-лист для CodeReview</span></h4>
+                            <p>Статья с инструкциями для выполняющего проверку чужого кода (Flexberry PLATFORM).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/playlist?list=PLvTBThJr861wi883RKRkoPSQe9J3yf4dE' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module2/processes-in-company.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">Процессы в компании</span></h4>
+                            <p>Серия видео с советами по улучшению и оптимизации процессов разработки программного обеспечения в компании (Илья Климов, JavaScript.Ninja/GitLab).</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 ## Вы можете
 
-* [Перейти к заданиям по модулю](tds_module2-tasks.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
-* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Перейти на страницу с учебными материалами модуля](tds_module2-learn.html)
+- [Перейти к заданиям по модулю](tds_module2-tasks.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+- <i class="fa fa-arrow-left" aria-hidden="true"></i> [Перейти на страницу с учебными материалами модуля](tds_module2-learn.html)

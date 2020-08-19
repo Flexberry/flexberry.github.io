@@ -1,5 +1,5 @@
 ---
-title: Учебник программиста Flexberry Platform
+title: Устаревший учебник программиста Flexberry Platform
 sidebar: guide-base-tech_sidebar
 keywords: Учебники
 toc: true
@@ -16,6 +16,12 @@ __Учебник программиста__ - это азы программир
 # Объекты данных
 
 * [Структура классов объектов данных]()
+
+## Оглавление:
+* [Общие концепции](general-concepts.html)
+
+## Объекты данных
+
 * [Конструирование объектов данных](construction--data-objects.html)
 * [Создание объекта данных на основе другого (прототипизация)](data-object-prototype.html)
 * [Статус и состояние загрузки объекта данных](fo_object-status.html)

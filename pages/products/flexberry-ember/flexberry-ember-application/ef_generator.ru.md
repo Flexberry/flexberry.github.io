@@ -29,10 +29,10 @@ summary: Генерация Ember-приложения из меню Flexberry D
 
 ## Вызов генератора
 
-Вызов происходит из стадии во [Flexberry Designer](fd_landing_page.html).
+Вызов происходит из стадии во [Flexberry Designer](fd_flexberry-designer.html).
 
 Вызывает кликом ПКМ на стадии контекстное меню, выбираем в нем Ember
-![](/images/pages/products/flexberry-ember/ember-flexberry/generation/Ember-plugin-menu.jpg)
+![Пример](/images/pages/products/flexberry-ember/ember-flexberry/generation/Ember-plugin-menu.jpg)
 
 ## Меню генератора
 
@@ -85,11 +85,11 @@ summary: Генерация Ember-приложения из меню Flexberry D
 
 Далее генерация может быть выполнена в двух вариантах:
 
-1) При пустом каталоге ember-app - Происходит полная установка приложения, [аддона ember-flexberry](https://github.com/Flexberry/ember-flexberry), а также генерация сущностей приложения Ember командами `ember generate ...`.
+1)При пустом каталоге ember-app - Происходит полная установка приложения, [аддона ember-flexberry](https://github.com/Flexberry/ember-flexberry), а также генерация сущностей приложения Ember командами `ember generate ...`.
 
 При начальном запуске генератора для выбранной модели Flexberry необходимо, чтобы выполнялся вариант 1).
 
-2) При непустом каталоге ember-app - Выполняется только генерация моделей командами `ember generate ...`.
+2)При непустом каталоге ember-app - Выполняется только генерация моделей командами `ember generate ...`.
 
 Этот вариант подходит для последующих запусков генератора.
 

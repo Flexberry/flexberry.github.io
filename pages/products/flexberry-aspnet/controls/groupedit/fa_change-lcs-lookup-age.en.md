@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_change-lcs-lookup-age.html
 lang: en
 autotranslated: true
-hash: e9518736a5cb65b98785799d760978717cac405fd49b56a42aa9fd98ecc501ca
+hash: 1bd01bfe757d5eee97b2f2697e0dcb0ed94651e5a76ae558cbe901f3b63a9656
 
 ---
 
@@ -33,11 +33,7 @@ public static string CreateLf(string territoryKey, string lfKey)
         lfKey = Guid.NewGuid().ToString("B");
     }
 
-    var langdef = ExternalLangDef.LanguageDef;
-
-    var lf = langdef.GetFunction(langdef.funcEQ,
-        new VariableDef(langdef.GuidType, Information.ExtractPropertyName<Company>(x => x.Territory)),
-        territoryKey);
+    var lf = FunctionBuilder.BuildEquals<Company>(x => x.Territory, territoryKey);
 
     LimitFunctionsHolder.PersistLimitFunction(lfKey, lf);
 

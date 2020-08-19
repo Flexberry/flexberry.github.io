@@ -33,11 +33,9 @@ protected override void PreApplyToControls()
 	{
 		var заказ = ctrlЗаказ.SelectedMasterPK;
 		ctrlЗаказ.MasterViewName = Заказ.Views.ЗаказL.Name;
-
-		var langdef = ExternalLangDef.LanguageDef;
+		
 		var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(СтрокаЗаказа), СтрокаЗаказа.Views.СтрокаЗаказаE);
-		lcs.LimitFunction = langdef.GetFunction(langdef.funcEQ,
-										new VariableDef(langdef.GuidType, Information.ExtractPropertyPath<СтрокаЗаказа>(x => x.Заказ)), заказ);
+		lcs.LimitFunction = FunctionBuilder.BuildEquals<СтрокаЗаказа>(x => x.Заказ, заказ);
 		var строкиЗаказа = DataServiceProvider.DataService.LoadObjects(lcs);
 
 		foreach (var s in строкиЗаказа)

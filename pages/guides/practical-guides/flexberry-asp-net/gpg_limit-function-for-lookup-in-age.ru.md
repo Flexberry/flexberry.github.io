@@ -38,17 +38,8 @@ public static string CreateLf(string[] ordKeys, string lfKey)
 	{
 		lfKey = Guid.NewGuid().ToString("B");
 	}
-
-	SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
-	var clientKeys = new List<object>
-															{
-																	new VariableDef(
-																			langdef.GuidType,
-																			SQLWhereLanguageDef.StormMainObjectKey)
-															};
-
-	clientKeys.AddRange(ordKeys);
-	Function lf = langdef.GetFunction(langdef.funcNOT, langdef.GetFunction(langdef.funcIN, clientKeys.ToArray()));
+	
+	Function lf = FunctionBuilder.BuildNotIn(ordKeys);
 	LimitFunctionsHolder.PersistLimitFunction(lfKey, lf);
 
 	return lfKey;

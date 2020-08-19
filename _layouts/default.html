@@ -68,10 +68,39 @@
           {% include sidebar.html %}
           {% unless page.toc == false %} {% include toc.html %} {% endunless %}
           {% if site.github_editme_path %}
-          {% assign page_url = page.url | split: '/' | last | split: "." | first | append: "." | append: page.lang | append: ".md" %}
-          <a target="_blank" href="https://github.com/{{site.github_editme_path}}{{page.path | uri_escape}}" class="btn btn-md btn-primary githubEditButton" role="button">
-              <i class="fa fa-github fa-lg"></i> {% if page.lang == "ru" %} Редактировать{% else %} Edit me{% endif %}
-          </a>
+            <a target="_blank" href='https://github.com/{{site.github_editme_path}}{{page.path | uri_escape}}' class="btn btn-md btn-primary githubEditButton" role="button">
+                <i class="fa fa-github fa-lg"></i> {% if page.lang == "ru" %} Редактировать{% else %} Edit me{% endif %}
+            </a>
+            <div id="sticky-panel">
+                {% if page.lang == "ru" %}
+                <div id="webinar">
+                    <div>Мастер-класс по проектированию с использованием языка UML</div>
+                    <a target="_blank" href="https://flexberry.timepad.ru/event/1272950/" class="btn btn-fill" role="button">
+                    Хочу участвовать!
+                    </a>
+                </div>
+                {% endif %}
+                <!-- Yandex.RTB R-A-586044-1 -->
+                <div id="yandex_rtb_R-A-586044-1"></div>
+                <script type="text/javascript">
+                    (function(w, d, n, s, t) {
+                        w[n] = w[n] || [];
+                        w[n].push(function() {
+                            Ya.Context.AdvManager.render({
+                                blockId: "R-A-586044-1",
+                                renderTo: "yandex_rtb_R-A-586044-1",
+                                async: true
+                            });
+                        });
+                        t = d.getElementsByTagName("script")[0];
+                        s = d.createElement("script");
+                        s.type = "text/javascript";
+                        s.src = "//an.yandex.ru/system/context.js";
+                        s.async = true;
+                        t.parentNode.insertBefore(s, t);
+                    })(this, this.document, "yandexContextAsyncCallbacks");
+                </script>
+            </div>
           {% endif %}
         </nav>
         <!-- Content -->

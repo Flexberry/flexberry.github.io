@@ -4,7 +4,7 @@
 entries:
 - title: Sidebar
   product: Flexberry ORM
-  version: 4.1.0
+  version: 5.0.2
   folders:
 
   - title: О Flexberry ORM
@@ -23,6 +23,21 @@ entries:
       url: /fo_data-object.html
       output: web
 
+    - title: Status and loading state of the data object
+      title_ru: Статус и состояние загрузки объекта данных
+      url: /fo_object-status.html
+      output: web
+
+    - title: How to load data object properties
+      title_ru: Порядок загрузки свойств объекта данных
+      url: /fo_order-loading-property.html
+      output: web
+
+    - title: Access to the object's own attributes and attributes of related objects
+      title_ru: Доступ к собственным атрибутам объекта и атрибутам связанных объектов
+      url: /fo_own-object-attributes.html
+      output: web
+
     - title: Data Class Attributes
       title_ru: Атрибуты классов данных
       url: /fo_attributes-class-data.html
@@ -33,29 +48,9 @@ entries:
       url: /fo_storing-data-objects.html
       output: web
 
-    - title: Checking the object field in the set method
-      title_ru: Проверка поля объекта в методе set
-      url: /fo_check-object-set.html
-      output: web
-
     - title: Designing Data Objects
       title_ru: Конструирование объектов данных
       url: /fo_construction-data-objects.html
-      output: web
-
-    - title: Context-sensitive data object cache
-      title_ru: Контекстно-зависимый кэш объектов данных
-      url: /fo_context-sensitive-cache.html
-      output: web
-
-    - title: Converting the data object property type to a storage type
-      title_ru: Преобразование типа свойства объекта данных к типу хранилища
-      url: /fo_convert-type-property.html
-      output: web
-
-    - title: Copying Data Objects
-      title_ru: Копирование объектов данных
-      url: /fo_copying-data-objects.html
       output: web
 
     - title: Data object as a class attribute
@@ -78,6 +73,41 @@ entries:
       url: /fo_data-object-structure.html
       output: web
 
+    - title: Children's associations and their properties
+      title_ru: Детейловые ассоциации и их свойства
+      url: /fo_detail-associations-properties.html
+      output: web
+
+    - title: Obtaining metadata for objects
+      title_ru: Получение метаданных объектов
+      url: /fo_methods-class-information.html
+      output: web
+
+    - title: Prototyping
+      title_ru: Прототипизация
+      url: /fo_data-object-prototype.html
+      output:
+
+    - title: Context-sensitive data object cache
+      title_ru: Контекстно-зависимый кэш объектов данных
+      url: /fo_context-sensitive-cache.html
+      output: web
+
+    - title: Converting the data object property type to a storage type
+      title_ru: Преобразование типа свойства объекта данных к типу хранилища
+      url: /fo_convert-type-property.html
+      output: web
+
+    - title: Copying Data Objects
+      title_ru: Копирование объектов данных
+      url: /fo_copying-data-objects.html
+      output: web
+
+    - title: Checking the object field in the set method
+      title_ru: Проверка поля объекта в методе set
+      url: /fo_check-object-set.html
+      output: web
+
     - title: Getting a Presentation Value for a Data Object
       title_ru: Получение презентационного значения для объекта данных
       url: /fo_get-presentation-value.html
@@ -88,19 +118,9 @@ entries:
       url: /fo_define-default-object.html
       output: web
 
-    - title: Prototyping
-      title_ru: Прототипизация
-      url: /fo_data-object-prototype.html
-      output:
-
     - title: Setting the value of the field of the object to be created
       title_ru: Задание значения поля создаваемого объекта
       url: /fo_define-field-created.html
-      output: web
-
-    - title: Children's associations and their properties
-      title_ru: Детейловые ассоциации и их свойства
-      url: /fo_detail-associations-properties.html
       output: web
 
     - title: DisableInsertPropertyAttribute
@@ -118,29 +138,9 @@ entries:
       url: /fo_functionality-work-detail-array.html
       output: web
 
-    - title: Obtaining metadata for objects
-      title_ru: Получение метаданных объектов
-      url: /fo_methods-class-information.html
-      output: web
-
     - title: Information.GetPropertyStorageName
       title_ru: Information.GetPropertyStorageName
       url: /fo_information-get-property-storage-name.html
-      output: web
-
-    - title: Status and loading state of the data object
-      title_ru: Статус и состояние загрузки объекта данных
-      url: /fo_object-status.html
-      output: web
-
-    - title: How to load data object properties
-      title_ru: Порядок загрузки свойств объекта данных
-      url: /fo_order-loading-property.html
-      output: web
-
-    - title: Access to the object's own attributes and attributes of related objects
-      title_ru: Доступ к собственным атрибутам объекта и атрибутам связанных объектов
-      url: /fo_own-object-attributes.html
       output: web
 
     - title: Variants of opening an object for Readonly
@@ -194,57 +194,25 @@ entries:
       title_ru: Стандартные сервисы данных Flexberry ORM
       url: /fo_standard-data-services.html
       output: web
-    - title: Support for binary arrays with data service
-      title_ru: Поддержка бинарных массивов сервисом данных
-      url: /fo_binary-array-ds.html
-      output: web
-    - title: Designing a Data Service
-      title_ru: Конструирование сервиса данных
-      url: /fo_construction-ds.html
-      output: web
-    - title: DRDataService
-      title_ru: DRDataService
-      url: /fo_dr-data-service.html
-      output: web
-    - title: Implementing an arbitrary data service
-      title_ru: Реализация собственного сервиса данных
-      url: /fo_implement-custom-ds.html
-      output: web
-    - title: Insensitivity to the register in the data service
-      title_ru: Нечувствительность к регистру в сервисе данных
-      url: /fo_insensitivity-register-ds.html
-      output: web
-    - title: Creating and saving data objects
-      title_ru: Создание и сохранение объектов данных
-      url: /fo_instantiate-persist-objects.html
-      output: web
-    - title: Interception of the formation of SQL-query to the database
-      title_ru: Перехват формирования SQL-запроса к БД
-      url: /fo_intercept-formation-sql-query.html
-      output: web
-    - title: Setting up read options
-      title_ru: Настройка параметров чтения
-      url: /fo_loading-customization-struct.html
-      output: web
-    - title: Tools for Oracle Data Service
-      title_ru: Инструменты для работы Oracle Data Service
-      url: /fo_tools-oracle-ds.html
-      output: web
     - title: SQLDataService
       title_ru: SQLDataService
       url: /fo_sql-data-service.html
+      output: web
+    - title: Data service for working with PostgreSQL
+      title_ru: Cервис данных для работы с PostgreSQL
+      url: /fo_postgres-data-service.html
       output: web
     - title: MSSQLDataService
       title_ru: MSSQLDataService
       url: /fo_mssql-data-service.html
       output: web
-    - title: Updating objects with empty rows
-      title_ru: Обновление объектов с пустыми строками
-      url: /fo_updating-objects-empty-rows.html
+    - title: Data service for working with Oracle Server
+      title_ru: Cервис данных для работы с Oracle Server
+      url: /fo_oracle-data-service.html
       output: web
-    - title: Support for multiple data warehouses in a single application
-      title_ru: Поддержка нескольких хранилищ данных в одном приложении
-      url: /fo_multibase.html
+    - title: Data service for MongoDB
+      title_ru: Cервис данных для работы с MongoDB
+      url: /fo_mongodb-data-service.html
       output: web
     - title: Data service for access to the Access DBMS
       title_ru: Cервис данных для доступа к СУБД Access
@@ -258,17 +226,49 @@ entries:
       title_ru: ODBCMySqlDataService
       url: /fo_odbc-mysql-data-service.html
       output: web
-    - title: Data service for working with Oracle Server
-      title_ru: Cервис данных для работы с Oracle Server
-      url: /fo_oracle-data-service.html
+    - title: DRDataService
+      title_ru: DRDataService
+      url: /fo_dr-data-service.html
       output: web
-    - title: Data service for working with PostgreSQL
-      title_ru: Cервис данных для работы с PostgreSQL
-      url: /fo_postgres-data-service.html
+    - title: Data service for working with XML
+      title_ru: Cервис данных для работы с XML
+      url: /fo_xml-file-ds.html
       output: web
-    - title: Data service for MongoDB
-      title_ru: Cервис данных для работы с MongoDB
-      url: /fo_mongodb-data-service.html
+    - title: Implementing an arbitrary data service
+      title_ru: Реализация собственного сервиса данных
+      url: /fo_implement-custom-ds.html
+      output: web
+    - title: Designing a Data Service
+      title_ru: Конструирование сервиса данных
+      url: /fo_construction-ds.html
+      output: web
+    - title: Insensitivity to the register in the data service
+      title_ru: Нечувствительность к регистру в сервисе данных
+      url: /fo_insensitivity-register-ds.html
+      output: web
+    - title: Creating and saving data objects
+      title_ru: Создание и сохранение объектов данных
+      url: /fo_instantiate-persist-objects.html
+      output: web
+    - title: Interception of the formation of SQL-query to the database
+      title_ru: Перехват формирования SQL-запроса к БД
+      url: /fo_intercept-formation-sql-query.html
+      output: web
+    - title: Processing of the status and status of object loading
+      title_ru: Обработка статуса и состояния загрузки объекта
+      url: /fo_processing-status-condition-load.html
+      output: web
+    - title: Setting up read options
+      title_ru: Настройка параметров чтения
+      url: /fo_loading-customization-struct.html
+      output: web
+    - title: Updating objects with empty rows
+      title_ru: Обновление объектов с пустыми строками
+      url: /fo_updating-objects-empty-rows.html
+      output: web
+    - title: Support for multiple data warehouses in a single application
+      title_ru: Поддержка нескольких хранилищ данных в одном приложении
+      url: /fo_multibase.html
       output: web
     - title: Processing of one object
       title_ru: Обработка одного объекта
@@ -282,10 +282,6 @@ entries:
       title_ru: Обработка регистров в именах объектов
       url: /fo_processing-registers-names.html
       output: web
-    - title: Processing of the status and status of object loading
-      title_ru: Обработка статуса и состояния загрузки объекта
-      url: /fo_processing-status-condition-load.html
-      output: web
     - title: Portion reading
       title_ru: Порционное чтение
       url: /fo_reading-portion.html
@@ -293,6 +289,10 @@ entries:
     - title: Using Postgres as a repository
       title_ru: Использование СУБД Postgres в качестве хранилища
       url: /fo_switching-storages.html
+      output: web
+    - title: Tools for Oracle Data Service
+      title_ru: Инструменты для работы Oracle Data Service
+      url: /fo_tools-oracle-ds.html
       output: web
     - title: SQL-queries in Flexberry
       title_ru: SQL-запросы в Flexberry
@@ -306,9 +306,9 @@ entries:
       title_ru: Обрезка строк сервисом данных
       url: /fo_trimmed-string-storage.html
       output: web
-    - title: Data service for working with XML
-      title_ru: Cервис данных для работы с XML
-      url: /fo_xml-file-ds.html
+    - title: Support for binary arrays with data service
+      title_ru: Поддержка бинарных массивов сервисом данных
+      url: /fo_binary-array-ds.html
       output: web
 
   - title: Типы данных
@@ -415,6 +415,14 @@ entries:
       title_ru: SQLWhereLanguageDef
       url: /fo_function-list.html
       output: web
+    - title: FunctionBuilder
+      title_ru: FunctionBuilder
+      url: /fo_function-builder.html
+      output: web
+    - title: FunctionBuilder examples
+      title_ru: FunctionBuilder примеры
+      url: /fo_function-builder-examples.html
+      output: web
     - title: Function of implication
       title_ru: Функция импликации
       url: /fo_function-implication.html
@@ -508,9 +516,9 @@ entries:
   - title: Бизнес-серверы
     output: web, pdf
     folderitems:
-    - title: Business servers and wrappers
-      title_ru: Бизнес-серверы и обёртки
-      url: /fo_bs-wrapper.html
+    - title: Business servers
+      title_ru: Бизнес-сервер
+      url: /fo_business-server.html
       output: web
     - title: Business logic
       title_ru: Бизнес-логика
@@ -597,11 +605,11 @@ entries:
       url: /fo_programmer-brackets.html
       output: web
 
-  - title: Flexberry ORM ODataService
+  - title: OData
     output: web, pdf
     folderitems:
-    - title: Flexberry ORM ODataService
-      title_ru: Flexberry ORM ODataService
+    - title: ODataService
+      title_ru: ODataService
       url: /fo_orm-odata-service.html
       output: web
 

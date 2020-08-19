@@ -1,87 +1,87 @@
---- 
-title: restrictions on the form of task constraints 
-sidebar: flexberry-winforms_sidebar 
-keywords: Flexberry Winforms, Windows UI (form) Constraints, a draft of the article 
-summary: Lists the methods of the class `ICSSoft.STORMNET.Windows.Forms.Utils` for serialization-десериализации; specified which ones are used for the limit function, given примеры; described problem deserializing limitations when using signed and unsigned assemblies, the approach to the solution 
-toc: true 
-permalink: en/fw_advlimit-function-serialization.html 
-folder: products/flexberry-winforms/ 
-lang: en 
-autotranslated: true 
-hash: c43a3b5edeb51e6fa4538e090eec0c8b308d3960b34f5f0d6ccd87a9fadd34bc 
---- 
+---
+title: restrictions on the form of task constraints
+sidebar: flexberry-winforms_sidebar
+keywords: Flexberry Winforms, Windows UI (form) Constraints, a draft of the article
+summary: Lists the methods of the class `ICSSoft.STORMNET.Windows.Forms.Utils` for serialization-десериализации; specified which ones are used for the limit function, given примеры; described problem deserializing limitations when using signed and unsigned assemblies, the approach to the solution
+toc: true
+permalink: en/fw_advlimit-function-serialization.html
+folder: products/flexberry-winforms/
+lang: en
+autotranslated: true
+hash: 73af8f8400c3bc2b5290d65c44c34732dd4e09f9e16416ab4eef8f50178bd166
+---
 
-## Means serialization-deserialization in `ICSSoft.STORMNET.Windows.Forms.Utils` 
-In the Assembly `ICSSoft.STORMNET.Windows.Forms` class is implemented `ICSSoft.STORMNET.Windows.Forms.Utils`, providing, inter alia, methods for serialization-deserialization, which are applicable including for [parental control](fo_limit-function.html). These methods are a wrapper over the respective methods of Assembly [`ICSSoft.STORMNET.Tools`](fo_ics-soft-stormnet-tools.html), and perform it. 
+## Means serialization-deserialization in `ICSSoft.STORMNET.Windows.Forms.Utils`
+In the Assembly `ICSSoft.STORMNET.Windows.Forms` class is implemented `ICSSoft.STORMNET.Windows.Forms.Utils`, providing, inter alia, methods for serialization-deserialization, which are applicable including for [parental control](fo_limit-function.html). These methods are a wrapper over the respective methods of Assembly [`ICSSoft.STORMNET.Tools`](fo_ics-soft-stormnet-tools.html), and perform it.
 
-### serialization Methods class `ICSSoft.STORMNET.Windows.Forms.Utils`: 
+### The serialization methods of the class `ICSSoft.STORMNET.Windows.Forms.Utils`:
 
-#### `ObjectToString` 
+#### `ObjectToString`
 
-__Assign__: Serialize to a string using `SoapFormatter`. 
+__Assign__: Serialize to a string using `SoapFormatter`.
 
-__Settings__: 
+__Settings__:
 
-`o` Object 
+`o` Object
 
-__The result is__: String. 
+__The result is__: String.
 
-__Signature__: 
+__Signature__:
 
 ```csharp
 public static string ObjectToString(object o)
 {
 	return ICSSoft.STORMNET.Tools.ToolXML.ObjectToString(o);
 }
-``` 
+```
 
-#### `ObjectFromString` 
+#### `ObjectFromString`
 
-__Assign__: Deserialize from a string with `SoapFormatter`. 
+__Assign__: Deserialize from a string with `SoapFormatter`.
 
-__Settings__: 
+__Settings__:
 
-`s` - Serialized object 
+`s` - Serialized object
 
-__The result is__: the Restored object. 
+__The result is__: the Restored object.
 
-__Signature__: 
+__Signature__:
 
 ```csharp
 public static object ObjectFromString(string s)
 {
 	return ICSSoft.STORMNET.Tools.ToolXML.ObjectFromString(s);
 }
-``` 
+```
 
-#### `ObjectToBinaryString` 
-__Assign__: Serialize to a string using `BinaryFormatter`. 
+#### `ObjectToBinaryString`
+__Assign__: Serialize to a string using `BinaryFormatter`.
 
-__Settings__: 
+__Settings__:
 
-`o` Object 
+`o` Object
 
-__The result is__: String. 
+__The result is__: String.
 
-__Signature__: 
+__Signature__:
 
 ```csharp
 public static string ObjectToBinaryString(object o)
 {
     return ICSSoft.STORMNET.Tools.ToolBinarySerializer.ObjectToString(o);
 }
-``` 
+```
 
-#### `ObjectFromBinaryString` 
-__Assign__: Deserialize from a string with `BinaryFormatter `(if it does not, then try `SoapFormatter` - for compatibility with legacy data). 
+#### `ObjectFromBinaryString`
+__Assign__: Deserialize from a string with `BinaryFormatter `(if it does not, then try `SoapFormatter` - for compatibility with legacy data).
 
-__Settings__: 
+__Settings__:
 
-`s` - Serialized object 
+`s` - Serialized object
 
-__The result is__: the Restored object. 
+__The result is__: the Restored object.
 
-__Signature__: 
+__Signature__:
 
 ```csharp
 public static object ObjectFromBinaryString(string s)
@@ -97,26 +97,21 @@ public static object ObjectFromBinaryString(string s)
     }
     return retObj;
 }
-``` 
+```
 
 
-[Form constraint] while maintaining (recovery) [LimitFunction](fw_limitation-editform.html) are used `Utils.ObjectToBinaryString` (`Utils.ObjectFromBinaryString`), i.e. restrictions are serialized using binary serialization, and restored as a binary string, and SOAP, as in earlier versions of the technology have used the SOAP serialization.
+On [form constraint] while maintaining (recovery) [LimitFunction](fw_limitation-editform.html) are used `Utils.ObjectToBinaryString` (`Utils.ObjectFromBinaryString`), i.e. restrictions are serialized using binary serialization, and restored as a binary string, and SOAP, as in earlier versions of the technology have used the SOAP serialization.
 
-### an Example SOAP serialization LimitFunction 
+### An example SOAP serialization LimitFunction
 
-```csharp
-            SQLWhereLanguageDef ldef = SQLWhereLanguageDef.LanguageDef;
-            Function fn = ldef.GetFunction(
-                ldef.funcAND,
-                ldef.GetFunction(
-                ldef.funcEQ, new VariableDef(ldef.StringType,"Parampampam"), "who goes to visit in the morning"
-                ),
-                ldef.GetFunction(
-                ldef.funcOR,
-                ldef.GetFunction(ldef.funcEQ, new VariableDef(ldef.StringType, "Compositepicture"), Environment.UserName),
-                ldef.GetFunction(ldef.funcIsNull, new VariableDef(ldef.StringType, "Nationair"))
+```csharp            
+            Function fn = FunctionBuilder.BuildAnd(
+                FunctionBuilder.BuildEquals("Parampampam", "who goes to visit in the morning"),
+                FunctionBuilder.BuildOr(
+                    FunctionBuilder.BuildEquals("Compositepicture", Environment.UserName),
+                    FunctionBuilder.BuildIsNull("Nationair")
                 )
-                );
+            );             
 
             string serializedFn = Utils.ObjectToString((new ExternalLangDef()).FunctionToSimpleStruct(fn));
             Assert.IsNotNull(serializedFn);
@@ -125,10 +120,10 @@ public static object ObjectFromBinaryString(string s)
             Function восставшийИзНебытия = (
                                 new ExternalLangDef()).FunctionFromSimpleStruct(Utils.ObjectFromString(serializedFn));
             Assert.IsNotNull(восставшийИзНебытия);
-``` 
+```
 
-### Example binary serialization LimitFunction 
-This type of serialization is more productive and the rows get shorter. 
+### An example of binary serialization LimitFunction
+This type of serialization is more productive and the rows get shorter.
 
 ```csharp
     string fnStr = "";
@@ -144,10 +139,10 @@ This type of serialization is more productive and the rows get shorter.
     восставшийИзНебытия =
                 externalLangDef.FunctionFromSimpleStruct(Utils.ObjectFromBinaryString(serializedFn));        
     Assert.IsNotNull(восставшийИзНебытия);
-``` 
+```
 
-## Possible problem deserializing 
-In the above code is used to design `advlimit.FromSimpleValue`, which is based on the object of a special type builds directly [limit](fo_limit-function.html). In the structure of the transmitted object is a special type, among others, have [`AssemblyQualifiedName`](http://msdn.microsoft.com/ru-ru/library/system.type.assemblyqualifiedname.aspx) type, which can cause problems during deserialization: for example, if the constraint was created with an unsigned Assembly, you want to open already with the version that was signed (respectively, [`AssemblyQualifiedName`](http://msdn.microsoft.com/ru-ru/library/system.type.assemblyqualifiedname.aspx) the type of change and it is impossible to get through `Type.GetType(...)`), etc. For this case, added a delegate that allows you to define your own additional method to get type by its name. 
+## Possible problem deserializing
+In the above code is used to design `advlimit.FromSimpleValue`, which is based on the object of a special type builds directly [limit](fo_limit-function.html). In the structure of the transmitted object is a special type, among others, have [`AssemblyQualifiedName`](http://msdn.microsoft.com/ru-ru/library/system.type.assemblyqualifiedname.aspx) type, which can cause problems during deserialization: for example, if the constraint was created with an unsigned Assembly, you want to open already with the version that was signed (respectively, [`AssemblyQualifiedName`](http://msdn.microsoft.com/ru-ru/library/system.type.assemblyqualifiedname.aspx) the type of change and it is impossible to get through `Type.GetType(...)`), etc. For this case, added a delegate that allows you to define your own additional method to get type by its name.
 
 ```csharp
 namespace ICSSoft.STORMNET.Windows.Forms
@@ -167,9 +162,9 @@ namespace ICSSoft.STORMNET.Windows.Forms
 	/// <returns> Generated name of the type </returns> 
 	public delegate Type TypeResolveDelegate(string typeName);
 }
-``` 
+```
 
-Below is an example of using this delegate: 
+Below is an example of using this delegate:
 ```csharp
 	// ... 
 	var obj = ICSSoft.STORMNET.Windows.Forms.Utils.ObjectFromBinaryString(data);

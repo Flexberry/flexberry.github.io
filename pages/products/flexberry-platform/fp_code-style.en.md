@@ -6,7 +6,7 @@ toc: true
 permalink: en/fp_code-style.html
 lang: en
 autotranslated: true
-hash: c67ce17b70459765f46378384c42c1b68c7b8e43ac89fbab29fc86acf9e0c9b2
+hash: 160d4a9ca20c7a5711f9a4765d2016dae21b7f4a3cc2d95bd85cc8d27449bdbc
 summary: In the development of platform components Flexberry team must adhere to a single coding style.
 ---
 
@@ -35,21 +35,21 @@ StyleCop is a static analyzer C# code for compliance with the style.
 
 ![Code style](/images/pages/products/flexberry-platform/code-style1.png)
 
-[List of rules](https://github.com/Flexberry/NewPlatform.Flexberry.ORM/blob/develop/Flexberry.ruleset), which are used in the projects of the platform Flexberry can be found on GitHub-e.
+With [list of rules](https://github.com/Flexberry/NewPlatform.Flexberry.ORM/blob/develop/Flexberry.ruleset), which are used in the projects of the platform Flexberry can be found on GitHub-e.
 
-### JSLint
+### ESLint
 
-JSLint is a static code analyzer for programs written in JavaScript that checks their compliance to coding standards.
+ESLint is a static code analyzer for programs written in JavaScript that checks their compliance to coding standards.
 
-{% include note.html content="JSLint is used on projects with a version of Ember-a 3.X.X" %}
+{% include note.html content="ESLint is used on projects with a version of Ember-a 3.X.X" %}
 
 **Setting:**
 
 1. Install npm package [ember-cli-eslint](https://www.npmjs.com/package/ember-cli-eslint)
 2. At the root of the project create and configure file `.eslintrc.js`, an example implementation is contained in the draft [ember-flexberry](https://github.com/Flexberry/ember-flexberry/blob/feature-ember-update/.eslintrc.js).
-3. In project root create a file `.eslintignore` - need to add the files and the directory should not be checked JSLint-Ohm. An example implementation is contained in the draft [ember-flexberry](https://github.com/Flexberry/ember-flexberry/blob/feature-ember-update/.eslintignore).
+3. In project root create a file `.eslintignore` - need to add the files and the directory should not be checked ESLint-Ohm. An example implementation is contained in the draft [ember-flexberry](https://github.com/Flexberry/ember-flexberry/blob/feature-ember-update/.eslintignore).
 
-More information can be found [on the official website JSLint](https://eslint.org/docs/user-guide/configuring)
+More information can be found [on the official website ESLint](https://eslint.org/docs/user-guide/configuring)
 
 ### JSHint
 

@@ -66,6 +66,9 @@ topnav_dropdowns:
         - title: UI UX Guideline
           title_ru: Руководство по интерфейсам
           url: /uiuxg_landing-page.ru.html
+        - title: OKR Guideline
+          title_ru: Руководство по использованию OKR
+          url: /okrg_landing-page.html
     - title: Training courses
       title_ru: Учебные курсы
       folderitems:

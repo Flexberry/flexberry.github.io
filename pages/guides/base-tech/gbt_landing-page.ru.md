@@ -9,6 +9,7 @@ summary: Курс по базовым технологиям, применяем
 ---
 
 ## Описание
+
 Данный курс состоит из качественной подборки материалов по базовым технологиям, которые используюся в платформе Flexberry. Для успешного изучения платформы Flexberry предварительно рекомендуется ознакомится с данным курсом.
 
 ## Для начинающих разработчиков
@@ -21,55 +22,26 @@ summary: Курс по базовым технологиям, применяем
 ## Программа курса
 
 * [Проектирование ИС](gbt_information-system-design.html)
-  * [Объектно-ориентированное программирование](gbt_ood.html)
-  * [Unified Modeling Language](gbt_uml.html)
-  * [Паттерны проектирования](gbt_design-patterns.html)
 * [Клиентская разработка](gbt_frontend.html)
-  * [HTML](gbt_html.html)
-  * [CSS](gbt_css.html)
-  * [JavaScript](gbt_javascript.html)
-  * [jQuery](gbt_jquery.html)
-  * [Верстка](gbt_layout.html)
-  * [Ember.js](gbt_emberjs.html)
 * [Серверная разработка](gbt_backend.html)
-  * [Система управления базами данных](gbt_dbms.html)
-  * [SQL](gbt_sql.html)
-  * [Microsoft SQL Server](gbt_mssql.html)
-  * [PostgreSQL](gbt_postgresql.html)
-  * [Microsoft .NET Framework](gbt_dotnet.html)
-  * [ASP.NET](gbt_aspnet.html)
-  * [Язык программирования C#](gbt_csharp.html)
-  * [Mono](gbt_mono.html)
-  * [ORM](gbt_orm.html)
 * [Мобильная разработка](gbt_mobile.html)
-  * [Android](gbt_android.html)
-  * [iOS](gbt_ios.html)
-  * [Apache Cordova](gbt_cordova.html)
 * [Разработка ГИС-систем](gbt_gis.html)
 * [Разработка BPM-систем](gbt_bpm.html)
-  * [jBPM](gbt_jbpm.html)
 * [Тестирование, отладка, вопросы производительности приложений](gbt_testing.html)
 * [Командная разработка](gbt_team-management.html)
 * [Развёртывание и установка решений](gbt_deployment.html)
-  * [Развёртывание решений в Windows](gbt_deployment_windows.html)
-  * [Развёртывание решений в Linux](gbt_deployment_linux.html)
-  * [Развёртывание решений в контейнерах Docker](gbt_deployment_docker.html)
 * [Интеграция систем](gbt_integration.html)
-  * [Методы и подходы к интеграции систем](gbt_integration-methods.html)
 
 ## Формат курса
 
-Каждая тема содержит:
+Каждая тема содержит следующие разделы:
 
-* Ссылки на материалы для изучения: 
-  * Лекции, курсы, презентации, видео
-  * Рекомендованные книги
+* Краткое описание темы
+* Примеры использования
+* «Для тех, кто предпочитает один раз увидеть» 
+* Больше информации по теме
 * Программное обеспечение
-* Лабораторные работы и практические задания
-* Примеры
-* Возможности по сертификации
-* Контрольные вопросы
-* Что должен знать и уметь освоивший данный материал
+* Ресурсы
 
 ## Ресурсы с материалами, курсами, лекциями
 
@@ -79,6 +51,7 @@ summary: Курс по базовым технологиям, применяем
 * [Coursera](https://ru.coursera.org/)
 * [edX](https://www.edx.org/)
 * [Udemy](https://www.udemy.com/)
+* [egghead.io](https://egghead.io/)
 * [Microsoft Learn](https://docs.microsoft.com/ru-ru/learn/)
 * [Яндекс.Практикум](https://praktikum.yandex.ru/)
 * [GeekBrains](https://geekbrains.ru/)

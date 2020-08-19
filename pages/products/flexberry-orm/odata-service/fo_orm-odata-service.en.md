@@ -1,28 +1,44 @@
 ---
-title: Flexberry ORM ODataService
+title: ODataService
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM ODataService, OData
+keywords: OData
 summary: Features, limitations, recommendations for use the ODataService
 toc: true
 permalink: en/fo_orm-odata-service.html
 lang: en
 autotranslated: true
-hash: deb6dd6f7306f6c05d7f490de4e44ee948399624ed2957b08c33986c67419266
+hash: 6e25e3294f4584450d88dca20b22644c284c18b93d7d844843abb36937a57314
 ---
 
-## Product information
+`Flexberry ORM ODataService` allows a convenient way to create OData services on top of storage.
 
-`Flexberry ORM ODataService` is [product platform Flexberry](fp_landing_page.html). Product website: [http://flexberry.ru](http://flexberry.ru/FlexberryORM).
+{% include note.html content="`Flexberry ORM ODataService` is available for installation in the project via [NuGet package](https://www.nuget.org/packages/NewPlatform.Flexberry.ORM.ODataService)." %}
 
-`Flexberry ORM ODataService` allows you to easily create OData service.
-
-{% include note.html content="`Flexberry ORM ODataService` is available for installation in the project via [NuGet package](https://www.nuget.org)." %}
-
-## n The list of libraries `Flexberry ORM ODataService`
+## The list of libraries `Flexberry ORM ODataService`
 
 The composition NuGet package `Flexberry ORM ODataService` includes the following assemblies:
 
 * NewPlatform.Flexberry.ORM.ODataService.dll
+
+## Logic ODataService
+
+The ODataService is a WebApi controller that provides access to data in the database using the OData Protocol V4.
+A typical query to retrieve data works as follows:
+
+* HTTP GET request is formulated by the client in the form of a url indicating the type of data required, the desired attributes, filtering, sorting, etc.
+* Interpreterpath received the ODataService url in the terms .NET LINQ
+* LINQ is passed to [LinqProvider](fo_linq-provider.html) which translates LINQ [LCS](fo_loading-customization-struct.html).
+* LCS is passed to the ORM DataService that returns data as an array of data objects
+* Collected service data an array of data objects is serialized and sent to customer
+
+A typical query to update the data works as follows:
+
+* The HTTP request corresponding to the operation being performed is passed to the WebApi controller
+* Understand the data query to retrieve information about a specific mutable data object (its type and primary key)
+* According to the data loaded object data and the master of the first level have their own properties. Computable fields are ignored.
+* The obtained data objects the requested operation is executed changes to the data. If this detail, it loads in addition the aggregator and he added to this detail the collection is necessary for the operation of a business server platform if you change detail.
+* Changed the data object is sent to the data service.
+* After any operation on the repository is returned to the client serialized data object or response about the success of the operation.
 
 ## Limitations, features, recommendations for the design
 
@@ -31,9 +47,9 @@ There are a number of features in the design of objects that will be used throug
 * E-view (a view that has the name "<Classname>E") of detail should be added a link to the aggregator.
 * Connect `Flexberry ORM ODataService`. To connect in a web project (WebForms) to take advantage of the `Flexberry ORM ODataService`, you must do the following:
 
-* Connect the NuGet package `Flexberry ORM ODataService`.
-* In App_Start application to create a class "ODataConfig.cs."
-* Replace the contents of the class about the following:
+ * Connect the NuGet package `Flexberry ORM ODataService`.
+ * In App_Start application to create a class "ODataConfig.cs."
+ * Replace the contents of the class about the following:
 
 ```csharp
 namespace ODataServiceTemplate
@@ -54,11 +70,8 @@ namespace ODataServiceTemplate
 
     internal static class ODataConfig
     {
-        public static void Configure(HttpConfiguration config, IUnityContainer container)
+        public static void Configure(HttpConfiguration config, IUnityContainer container, HttpServer httpServer)
         {
-            Contract.Requires<ArgumentNullException>(config != null);
-            Contract.Requires<ArgumentNullException>(container != null);
-
             // Use Unity as the WebAPI dependency resolver 
             config.DependencyResolver = new UnityDependencyResolver(container);
 
@@ -67,7 +80,7 @@ namespace ODataServiceTemplate
             var builder = new DefaultDataObjectEdmModelBuilder(assemblies);
 
             // Map The OData Service 
-            var token = config.MapODataServiceDataObjectRoute(builder);
+            var token = config.MapODataServiceDataObjectRoute(builder, httpServer);
 
             // User functions 
             token.Functions.Register(new Func<QueryParameters, string>(Test));
@@ -84,7 +97,7 @@ namespace ODataServiceTemplate
 }
 ```
 
-* In The Global.asax, add:
+ * In The Global.asax, add:
 
 ```csharp
 namespace ODataServiceTemplate
@@ -103,15 +116,15 @@ namespace ODataServiceTemplate
             IUnityContainer container = new UnityContainer();
             container.LoadConfiguration();
 
-            GlobalConfiguration.Configure(configuration => ODataConfig.Configure(configuration, container));
+            GlobalConfiguration.Configure(configuration => ODataConfig.Configure(configuration, container, GlobalConfiguration.DefaultServer));
         }
     }
 }
 ```
 
-* In order for code to compile, you may need to install additional NuGet packages in the app: [Microsoft.AspNet.WebApi.Cors](https://www.nuget.org/packages/Microsoft.AspNet.WebApi.Cors) and [microsoft.aspnet.webapi.webhost](https://www.nuget.org/packages/microsoft.aspnet.webapi.webhost/).
+ * In order for code to compile, you may need to install additional NuGet packages in the app: [Microsoft.AspNet.WebApi.Cors](https://www.nuget.org/packages/Microsoft.AspNet.WebApi.Cors) and [microsoft.aspnet.webapi.webhost](https://www.nuget.org/packages/microsoft.aspnet.webapi.webhost/).
 
-* Add to web.config or to check the availability of the following records:
+ * Add to web.config or to check the availability of the following records:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -424,7 +437,7 @@ Example usage in a custom OData functions, structure LCS, which is created from 
 /// <summary> 
 /// Configures Web API. 
 /// </summary> 
-/// <param name="config">the Current configuration.</param> 
+/// <param name="config">Current configuration.</param> 
 /// <param name="container">DI container for WebAPI.</param> 
 /// <param name="activator">activator for WebAPI Controller.</param> 
 public static void Register(HttpConfiguration config, IUnityContainer container, IHttpControllerActivator activator)
@@ -493,7 +506,7 @@ Example of use in action structure LCS, which is created from OData query string
 /// <summary> 
 /// Configures Web API. 
 /// </summary> 
-/// <param name="config">the Current configuration.</param> 
+/// <param name="config">Current configuration.</param> 
 /// <param name="container">DI container for WebAPI.</param> 
 /// <param name="activator">activator for WebAPI Controller.</param> 
 public static void Register(HttpConfiguration config, IUnityContainer container, IHttpControllerActivator activator)
@@ -550,7 +563,7 @@ http://localhost/odata/FunctionExportExcel(entitySet='Strana')?exportExcel=true&
 /// <summary> 
 /// Configures Web API. 
 /// </summary> 
-/// <param name="config">the Current configuration.</param> 
+/// <param name="config">Current configuration.</param> 
 /// <param name="container">DI container for WebAPI.</param> 
 /// <param name="activator">activator for WebAPI Controller.</param> 
 public static void Register(HttpConfiguration config, IUnityContainer container, IHttpControllerActivator activator)
@@ -593,6 +606,31 @@ private static Страна[] FunctionExportExcel(QueryParameters queryParameter
 }
 ```
 
+## An example of a restriction on pseudometal in ODataService
+
+`Flexberry ORM` allows you to build [restrictions on "Association in the opposite direction" or "pseudometal"](fo_psedodetails-linq-provider.html). This option is available when working with data using ODataService.
+In order to have the opportunity to build the restriction of a similar kind, it is necessary to declare its validity at the level of metadata in the entity data model of OData.
+Consider this scheme as an example:
+![schema](/images/pages/products/flexberry-orm/query language/pseudo-details.png)
+Example of registration of pseudometal:
+
+```csharp
+public static void Configure(HttpConfiguration config, IUnityContainer container, HttpServer httpServer)
+{
+    //... 
+    var pseudoDetailDefinitions = new PseudoDetailDefinitions();
+
+    pseudoDetailDefinitions.Add(new DefaultPseudoDetailDefinition<Клиент, Кредит>(
+        Кредит.Views.PseudoDetailView,
+        Information.ExtractPropertyPath<Кредит>(x => x.Клиент),
+        "Loans"));
+
+    var builder = new DefaultDataObjectEdmModelBuilder(DataObjectsAssembliesNames, UseNamespaceInEntitySetName, pseudoDetailDefinitions);
+    //... 
+}
+```
+
+This action adds the ability to filter objects by pseudometal similar to [filtering on detalam](efd_query-language.html#querydetailpredicate). For data modification operations, this connection is not used, as there is no possibility to choose the data at this link.
 
 
 

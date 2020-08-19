@@ -12,7 +12,7 @@ lang: ru
 
 Скобки программиста представляют собой структуру вида
 
-``` csharp 
+``` csharp
 // *** Start programmer edit section *** ({0})
 
 // *** End programmer edit section *** ({0})
@@ -51,7 +51,7 @@ lang: ru
 
 ## Возникающие ошибки
 
-Если при генерации через [Flexberry Designer](fd_landing_page.html) в лог выводится информация следующего типа:
+Если при генерации через [Flexberry Designer](fd_flexberry-designer.html) в лог выводится информация следующего типа:
 
 * `Ошибка: Не найдено завершение скобки в файле "D:\Проекты\КредитыTestBuild\Кредиты\Objects\Клиент.cs"`, значит, где-то в указанном файле была удалена или добавлена лишняя скобка.
 
@@ -60,19 +60,19 @@ lang: ru
 
 ## Пример
 
-В классе ниже встречается 12 скобок программиста, позволяющих внести изменения в любую часть кода. У каждой скобки свое предназначение и свое место. К примеру, скобки 
+В классе ниже встречается 12 скобок программиста, позволяющих внести изменения в любую часть кода. У каждой скобки свое предназначение и свое место. К примеру, скобки
 
-``` csharp 
+``` csharp
 // *** Start programmer edit section *** (Клиент CustomMembers)
 
 // *** End programmer edit section *** (Клиент CustomMembers)
-``` 
+```
 
-отвечают за добавление собственных членов класса. К примеру, если необходимо добавить метод, возвращающий строку вида "ФИО (Прописка)", то добавлять этот метод нужно будет именно в скобки. 
+отвечают за добавление собственных членов класса. К примеру, если необходимо добавить метод, возвращающий строку вида "ФИО (Прописка)", то добавлять этот метод нужно будет именно в скобки.
 
 Например, что метод выглядит следующим образом:
 
-``` csharp 
+``` csharp
 public string GetFullClientString()
 {
     return string.Format("{0} ({1})", ФИО, Прописка);
@@ -104,7 +104,7 @@ namespace IIS.Product_20008
     using System;
     using System.Xml;
     using ICSSoft.STORMNET;
-    
+
     /// <summary>
     /// Клиент
     /// </summary>
@@ -113,16 +113,13 @@ namespace IIS.Product_20008
     // *** End programmer edit section *** (Клиент CustomAttributes)
     public class Клиент : ICSSoft.STORMNET.DataObject
     {
-        
         private string fФИО;
-        
         private string fПрописка;
-        
+
         // *** Start programmer edit section *** (Клиент CustomMembers)
 
         // *** End programmer edit section *** (Клиент CustomMembers)
 
-        
         /// <summary>
         /// Клиент
         /// </summary>
@@ -154,7 +151,7 @@ namespace IIS.Product_20008
                 // *** End programmer edit section *** (Клиент.ФИО Set end)
             }
         }
-        
+
         /// <summary>
         /// Клиент
         /// </summary>

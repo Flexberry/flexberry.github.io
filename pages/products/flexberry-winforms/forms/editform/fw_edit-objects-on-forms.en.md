@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_edit-objects-on-forms.html
 lang: en
 autotranslated: true
-hash: 8f2b02ef2b2741de9a94a1703f5d66e46309d8f648d2cc3d20467c62bffc4233
+hash: 96e5222bc0cc4ab8418573b18bd3b8a5f541540ad3f2486cb0687dcf4737419f
 ---
 
 Edit the data objects on the forms has a lot of nuances and possibilities. The most common outlined in this article.
@@ -123,9 +123,8 @@ private void GetNextOrPrevObj(bool next)
 
     LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Планета), "Planetae");
     lcs.ColumnsSort = new[] { new ColumnsSortDef("primaryKey", SortOrder.Asc) };
-    lcs.ReturnTop = 1;
-    SQLWhereLanguageDef lDef = SQLWhereLanguageDef.LanguageDef;
-    Function f = lDef.GetFunction(next ? lDef.funcG : lDef.funcL, new VariableDef(lDef.GuidType, "StormMainObjectKey"), pk);
+    lcs.ReturnTop = 1;    
+    Function f = next ? FunctionBuilder.BuildGreater(pk) : FunctionBuilder.BuildLess(pk);     
     lcs.LimitFunction = f;
     DataObject[] dataObjects = ds.LoadObjects(lcs);
     if (dataObjects.Length > 0)
@@ -166,7 +165,7 @@ The logic of preservation of objects from the "complex representation" depends o
 
 ## Performance interaction when editing features
 
-Basically, the interactions are by call the edit form from the form list (for example, when you open the object for editing), and Vice versa, with the edit form for the list form (for example, to select the associated object). Anyway, the point is that from one form to another is sent to object data and edit it in whole or in part. Accordingly, in a specific (relative) metforminom the interaction of the one form acts as a __initiator__ editing, and the second, — as _the_editor__.
+Basically, the interactions are by call the edit form from the form list (for example, when you open the object for editing), and Vice versa, with the edit form for the list form (for example, to select the associated object). Anyway, the point is that from one form to another is sent to object data and edit it in whole or in part. Accordingly, in a specific (relative) metforminom the interaction of the one form acts as a __initiator__ editing, and the second as __editor__.
 
 * If an object is opened from the list on the edit form of the list is the initiator, and the edit form editor. In this case, obviously the object is passed to the edit in the edit form.
 * If editor to select a related object (craftsman) opens the list form, the edit form is the initiator, and the form list editor.

@@ -46,7 +46,7 @@ lang: ru
 1. Приложение должно быть реализовано на JavaScript без использования клиентских JS-фреймвроков.
 2. Для получения списка накладных должны выполняться запросы к серверу на основе REST API.
 3. В качестве сервера для публикации REST API необходимо использовать [JSON Server](https://github.com/typicode/json-server).
-4. Данные, которые должны публиковаться сервером при старте находятся в файле [db.json](https://github.com/Flexberry/flexberry-developers-school/blob/master/Tasks/1.%20Introduction%20to%20web%20development/db.json).
+4. Данные, которые должны публиковаться сервером при старте находятся в файле [db.json](https://github.com/Flexberry/flexberry-developers-school/blob/master/%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F/%D0%9C%D0%BE%D0%B4%D1%83%D0%BB%D1%8C%201.%20%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%20%D0%B2%D0%B5%D0%B1-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D1%83/db.json).
 5. Сервер необходимо развернуть на [Heroku](https://www.heroku.com/) при помощи [этого](https://github.com/jesperorb/json-server-heroku) инструмента.
 6. Для выполнения запросов к серверу из приложения необходимо использовать AJAX (можно средствами jQuery)
 7. Приложение может быть как одностраничным, так и многостраничным (SPA или MPA).

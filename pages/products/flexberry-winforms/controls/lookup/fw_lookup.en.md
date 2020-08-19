@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_lookup.html
 lang: en
 autotranslated: true
-hash: a2e1d717908f369e4069e0604ed13fa8514daa2ee8f6ae22be4d9d95d261481e
+hash: fcceee7de27a210eafef7840b76316439b2e75ae3a6c139009f16e392c09ba09
 ---
 
 `LookUp` (action) - select a craftsman of the object (putting links to the workman the object).
@@ -141,9 +141,8 @@ To replace the processor on your `look_LookUpEvent`, you need to:
 private void look_LookUpEvent1(object sender, System.EventArgs e)
 {
     Посетитель oПосетитель = (Посетитель)this.EditManager.DataObject;
-
-    SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
-    Function lf = langdef.GetFunction(langdef.funcSQL,"1=1");
+    
+    Function lf = FunctionBuilder.BuildTrue();
 
     //create a container-runner 
     ICSSoft.АдресноеБюро.ЛичностьL FormЛичностьL = (ICSSoft.АдресноеБюро.ЛичностьL)      ICSSoft.STORMNET.UI.ContRunner.RunForm(typeof(ICSSoft.АдресноеБюро.ЛичностьL));
@@ -170,9 +169,9 @@ private void FormЛичностьL_CancelEvent(object sender, ICSSoft.STORMNET.U
 
 #### On the form
 
-If not triggered, the event handler `look_LookUpEvent` (dependent form).
+If not triggered, the event handler `look_LookUpEvent` (in the dependent form).
 
-* Correctly specify the path on the form before `Lookup` in the method `prv_TuneLookupInformations` (dependent form).
+* Correctly specify the path on the form before `Lookup` in the method `prv_TuneLookupInformations` (in the dependent form).
 * Specify the form of the call in the method `GetEditor` independent.
 * The button `LookUp` (for example, for Citizenship it will be ctrlГражданство) to hang the handler __events__ LookUp.
 
@@ -184,7 +183,7 @@ this.ctrlГражданство.LookUpEvent += look_LookUpEvent
 
 * Snap [GropEdit](fw_group-edit.html) to form EditManager
 * Presence of the handler `this.gr_SetupEditorEventHandler` type `OnSetupEditorEventHandler` for the event `SetupEditor`
-* Mention `GroupEdit` in the method `prv_TuneLookupInformations` (dependent form), naprimer:
+* Mention `GroupEdit` in the method `prv_TuneLookupInformations` (in the dependent form), naprimer:
 
 ```csharp
 m_arrGroupEditInformations.Add(
@@ -214,7 +213,7 @@ You need to check:
 
 * Object has the status _Altered_
 * The object has changed its properties from the moment of manual forms for Lookup. When picked up by the Lookup form is the initiator in the method `PrepareDataObjectForEdit` creates a copy of the data, and at the close compared this copy with the current on the close object. Conservation will only occur if there is a difference between an object and its copy.
-* Properly raised for Lookup:
+* Form properly raised in the Lookup:
 * passes the form object-initiator of the LookUp, not the one that should be edited
 * indicated the existing property or the empty string
 

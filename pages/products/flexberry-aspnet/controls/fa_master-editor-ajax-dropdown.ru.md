@@ -81,19 +81,14 @@ MasterEditorAjaxDropDown.ChangeDropDownSettings = ChangeMasterEditorAjaxDropDown
 /// </param>
 public static void ChangeMasterEditorAjaxDropDownSettings(MasterEditorAjaxDropDown dropdown)
 {
-    var langDef = SQLWhereLanguageDef.LanguageDef;
     var type = Type.GetType(dropdown.MasterTypeName);
     
     // Фильтровать все виды отделки только по актуальным значениям
     if (type != null && typeof(ВидОтделки).IsAssignableFrom(type))
     {
-        Function actualTypesLimitFunction = langDef.GetFunction(
-            langDef.funcEQ,
-            new VariableDef(langDef.BoolType, Information.ExtractPropertyName<ВидОтделки>(x => x.Актуально)),
-            true);
+        Function actualTypesLimitFunction = FunctionBuilder.BuildEquals<ВидОтделки>(x => x.Актуально, true);
         dropdown.LimitFunction = dropdown.LimitFunction != null 
-            ? langDef.GetFunction(
-                langDef.funcAND,
+            ? FunctionBuilder.BuildAnd(                
                 dropdown.LimitFunction,
                 actualTypesLimitFunction)
             : actualTypesLimitFunction;

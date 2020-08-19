@@ -145,7 +145,7 @@ httpd2---2*[httpd2---26*[{httpd2}]]
 * Поместить дерево сайта в отдельный каталог (например /var/www/vhosts/demo/) HOST-системы.
 Пусть это будет простая тестовая страница /var/www/vhosts/demo/index.html:
 
-```
+```html
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
   <head>
@@ -160,7 +160,7 @@ httpd2---2*[httpd2---26*[{httpd2}]]
 
 * Описать конфигурацию этого виртуального хоста в файле конфигурации vhosts.conf отдельного каталога. Например /etc/docker/apache2/conf/vhosts.conf:
 
-```
+```text
 NameVirtualHost *:80
 <VirtualHost *:80>
         DocumentRoot "/var/www/vhosts/demo/"
@@ -208,7 +208,6 @@ ip-адрес_сервера demo.local
 Для проверки работы виртуального сайта наберите в строке браузера URL: http://demo.local/.
 В окне браузера отобразится текст: **_Виртуальный хост demo.local контейнера kafnevod/altlinux.p8-apache2 работает!_**
 
-
 ### Образ сервера Mono/.NET-приложений flexberry/altlinux.p8-apache2-mono4.6.2.7 
 
 #### Установка образа и запуск контейнера 
@@ -241,7 +240,7 @@ b867bce38065: Pulling fs layer
 Проверьте статус контейнера:
 
 ```sh
-# docker ps -a -f name=apache2Mono
+docker ps -a -f name=apache2Mono
 CONTAINER_ID IMAGE                                    COMMAND CREATED     STATUS      PORTS                          NAMES
 38c7e2a7a8aa flexberry/altlinux.p8-apache2-mono4.6.2.7 httpd2 2minutes ago Up 2minutes 80/tcp, 0.0.0.0:880->880/tcp   apache2Mono
 ```
@@ -255,14 +254,13 @@ CONTAINER_ID IMAGE                                    COMMAND CREATED     STATUS
 * Поместите деревов сайта в отдельный каталог (например /var/www/vhosts/myMonoApp/) HOST-системы.
 * Скопируйте файл конфигурации виртуального хоста Mono-приложения из работающего контейнера:
 
-```
-# docker cp apache2Mono:/conf/vhosts.conf /etc/docker/apache2/conf/vhosts.conf
-
+```sh
+docker cp apache2Mono:/conf/vhosts.conf /etc/docker/apache2/conf/vhosts.conf
 ```
 
 * Допишите конфигурацию Вашего виртуального хоста в скопированный файл конфигурации /etc/docker/apache2/conf/vhosts.conf воспользовавшись шаблоном:
 
-```
+```text
 Listen 881
 NameVirtualHost *:881
 
@@ -351,7 +349,6 @@ docker run -d -p 80:80 --restart=unless-stopped --name=apache2 kafnevod/altlinux
 * контейнер Windows Server -  контейнер запускается в рамках HOST ОС и использует ядро и общие ресурсы HOST-системы.
 * Hyper-V контейнер - контейнер запускается в рамках отдельной виртуальной машины Hyper-V.
 
-
 ## Ссылки на материалы для изучения
 
 ### Лекции, курсы, презентации, видео
@@ -361,6 +358,7 @@ docker run -d -p 80:80 --restart=unless-stopped --name=apache2 kafnevod/altlinux
 
 
 #### Docker для Linux
+
 * [Docker Video Tutorials](https://www.docker.com/products/resources/video-tutorials)
 * [Docker YouTube Channel](https://www.youtube.com/user/dockerrun)
 * [5 must-watch Docker videos](https://opensource.com/business/15/5/must-watch-docker-videos)
@@ -381,13 +379,9 @@ docker run -d -p 80:80 --restart=unless-stopped --name=apache2 kafnevod/altlinux
 * [РАБОТА С КОНТЕЙНЕРАМИ В WINDOWS И DOCKER](https://dev-ops-notes.ru/docker/%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%D1%81-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B0%D0%BC%D0%B8-%D0%B2-windows-%D0%B8-docker/)
 * [Docker: Windows и Linux в контейнерах на одной машине](https://blog.amartynov.ru/docker-windows-%D0%B8-linux-%D0%B2-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B0%D1%85-%D0%BD%D0%B0-%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9-%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%B5/)
 
-
-
 ### Рекомендованные книги
 
 * [The Docker Book. "James Turnbull" November 26, 2016](https://www.dockerbook.com/TheDockerBook_sample.pdf)
-
-
 
 ## Программное обеспечение
 

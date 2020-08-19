@@ -25,40 +25,17 @@ lang: ru
 * **подсистему поддержки времени исполнения**, которая интерпретирует программы манипуляции данными, создающие пользовательский интерфейс с СУБД
 * **сервисные программы (внешние утилиты)**, обеспечивающие ряд дополнительных возможностей по обслуживанию информационной системы
 
-##  Ссылки на материалы для изучения
+##  Пример использования
 
-### Базовый курс
+### Пример правил проверки поля в конструкторе таблиц СУБД Access
 
-* [Система управления базами данных — Википедия](https://ru.wikipedia.org/wiki/%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F_%D0%B1%D0%B0%D0%B7%D0%B0%D0%BC%D0%B8_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85)
-* [Система управления базами данных - Лекции](http://www.bseu.by/it/tohod/lekcii5.htm)
-* [Системы управления базами данных](http://lecturesdb.readthedocs.io/databases/dbms.html)
-* [Базы данных. Вводный курс](http://citforum.ru/database/advanced_intro/)
+![Access Example](/images/pages/guides/base-technologies/storage/accessExample.png)
 
-### Самоучители
-
-* [Основы баз данных](http://www.site-do.ru/db/db1.php)
-* [Академия Microsoft: Базы данных](http://www.intuit.ru/studies/courses/508/364/info)
-
-### Видеокурсы
-
-* [Базы данных](https://www.youtube.com/playlist?list=PLrCZzMib1e9obOz5K695ugYuiOOCBciEi)
-* [Методы использования СУБД в интернет-приложениях](https://www.youtube.com/playlist?list=PLrCZzMib1e9r6c-j8aW1JuETSyCBp9iAg)
-* [Алгоритмы интеллектуальной обработки больших объемов данных»](https://www.youtube.com/playlist?list=PLrCZzMib1e9pyyrqknouMZbIPf4l3CwUP)
-* [Технопарк Mail.ru Group: Базы данных](http://www.intuit.ru/studies/courses/3499/741/info)
-* [Проектирование СУБД](https://www.youtube.com/playlist?list=PLrCZzMib1e9pq_sbw7ZEcEU3Yyz1AvE--)
-
-### Презентация
+## «Для тех, кто предпочитает один раз увидеть»
 
 <div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px">
-    <iframe src="//www.slideshare.net/slideshow/embed_code/key/H0XaCvxaawilxL" width="854" height="480" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/esperu/ss-10347032" title="Базы данных и СУБД" target="_blank">Базы данных и СУБД</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/esperu">Stanislav Katsko</a></strong> </div>
+    <iframe src="https://onedrive.live.com/embed?cid=2FB293CA43965F14&resid=2FB293CA43965F14%21119&authkey=ABwmyQ0j-OWjgPc&em=2" width="402" height="327" frameborder="0" scrolling="no"></iframe>
 </div>
-
-### Рекомендованные книги
-
-* [Введение в системы баз данных](http://www.ozon.ru/context/detail/id/136880774/)
-* [Разработка и эксплуатация удаленных баз данных. Учебник](http://www.ozon.ru/context/detail/id/24955082/)
-* [Базы данных. Учебник и практикум](http://www.ozon.ru/context/detail/id/138854275/)
-* [Основы использования и проектирования баз данных. Учебник](http://www.ozon.ru/context/detail/id/137816450/)
 
 ## Программное обеспечение
 
@@ -67,9 +44,108 @@ lang: ru
 * [Microsoft Access](https://products.office.com/ru-ru/access)
 * [Oracle Database Software](http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html)
 
-## Возможности по сертификации
+##  Ресурсы
 
-* [Видео-курс: основы баз данных](https://geekbrains.ru/courses/86)
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse1">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse1">
+                Базовый курс</a>
+            </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="http://www.bseu.by/it/tohod/lekcii5.htm">Система управления базами данных - Лекции</a><i> — bseu.by</i></li>
+                    <li><a href="http://citforum.ru/database/advanced_intro/">Базы данных. Вводный курс</a><i> — citforum.ru</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse2">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse2">
+                Самоучители</a>
+            </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="http://www.site-do.ru/db/db1.php">Основы баз данных</a><i> — site-do.ru</i></li>
+                    <li><a href="http://www.intuit.ru/studies/courses/508/364/info">Академия Microsoft: Базы данных</a><i> — ИНТУИТ</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse3">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse3">
+                Видеокурсы</a>
+            </h4>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="https://www.youtube.com/playlist?list=PLrCZzMib1e9r6c-j8aW1JuETSyCBp9iAg">Базы данных</a><i> — youtube-канал «Технострим Mail.Ru Group»</i></li>
+                    <li><a href="https://www.youtube.com/playlist?list=PLrCZzMib1e9pyyrqknouMZbIPf4l3CwUP">Алгоритмы интеллектуальной обработки больших объемов данных</a><i> — youtube-канал «Технострим Mail.Ru Group»</i></li>
+                    <li><a href="https://www.youtube.com/playlist?list=PLrCZzMib1e9pq_sbw7ZEcEU3Yyz1AvE--">Проектирование СУБД</a><i> — youtube-канал «Технострим Mail.Ru Group»</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse4">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse4">
+                Рекомендованные книги</a>
+            </h4>
+        </div>
+        <div id="collapse4" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="http://www.ozon.ru/context/detail/id/136880774/">Введение в системы баз данных</a><i> — ozon.ru</i></li>
+                    <li><a href="http://www.ozon.ru/context/detail/id/24955082/">Разработка и эксплуатация удаленных баз данных. Учебник</a><i> — ozon.ru</i></li>
+                    <li><a href="http://www.ozon.ru/context/detail/id/138854275/">Базы данных. Учебник и практикум</a><i> — ozon.ru</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse5">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse5">
+                Возможности по сертификации</a>
+            </h4>
+        </div>
+        <div id="collapse5" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div>
+                    <li><a href="https://geekbrains.ru/courses/86">Видеокурс: основы баз данных</a><i> — GeekBrains</i></li>
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
 
 ## Перейти
 

@@ -8,22 +8,22 @@ permalink: ru/fd_interfaces.html
 lang: ru
 ---
 
-[Flexberry Designer](fd_landing_page.html) позволяет пользователю описывать интерфейсы, для последующей генерации в исходный код на `CLR`-совместимом языке, в частности, `C#`.
+[Flexberry Designer](fd_flexberry-designer.html) позволяет пользователю описывать интерфейсы, для последующей генерации в исходный код на `CLR`-совместимом языке, в частности, `C#`.
 
 Для описания интерфейса, необходимо создать на диаграмме UML-класс со стереотипом `interface`.
 
-![](/images/pages/products/flexberry-designer/class-diagram/interface.png)
+![Пример](/images/pages/products/flexberry-designer/class-diagram/interface.png)
 
 ```csharp
-    public interface Интерфейс
+  public interface Интерфейс
+  {
+    int Свойство
     {
-        int Свойство
-        {
-			get;
-			set;
-        }
-        void Метод();
+      get;
+      set;
     }
+    void Метод();
+  }
 ```
 
 ## Свойства интерфейса
@@ -33,7 +33,7 @@ lang: ru
 
 ### Основные
 
-![](/images/pages/products/flexberry-designer/class-diagram/interfaceprop1.jpg)
+![Пример](/images/pages/products/flexberry-designer/class-diagram/interfaceprop1.jpg)
 
 Свойство | Описание | Генерация в .Net-язык
 :-------------------------|:----------------------------------|:---------------------------------------
@@ -45,7 +45,7 @@ lang: ru
 
 ### Свойства атрибутов
 
-![](/images/pages/products/flexberry-designer/class-diagram/interfaceprop2.jpg)
+![Пример](/images/pages/products/flexberry-designer/class-diagram/interfaceprop2.jpg)
 
 Свойство | Описание | Генерация в .Net-язык
 :----------------|:------------------------------|:-----------------------------------

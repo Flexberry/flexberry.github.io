@@ -7,14 +7,14 @@ toc: true
 permalink: en/fw_edit-form-validation.html
 lang: en
 autotranslated: true
-hash: a0ac2f5b47441f43880ec45fb1020dfc2b40df80ecd08b731ac2f4f624a11c27
+hash: 8d70be134a585f0e6d3fbfed930966d54e7b34a492a3fc67e38152ef57295796
 ---
 
 Data validation occurs in several stages.
 
 * Checks during editing on a form.
 * Checks during the save of the object.
-* Check in [business server](fo_bs-wrapper.html).
+* Check in [business server](fo_business-server.html).
 
 {% include note.html content="to generate code edit form (or list), it is necessary in properties of a class with the [stereotype EditForm](fd_editform.html) to select the `GenerateDependedForm`." %}
 

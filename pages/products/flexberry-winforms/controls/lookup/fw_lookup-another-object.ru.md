@@ -10,7 +10,7 @@ lang: ru
 
 Существует два способа добавить на форму редактирования [Lookup](fw_lookup.html) для выбора объекта, несвязанного с редактируемым на текущей форме:
 
-1. Добавить вычислимое поле в основной объект и перегенерировать форму с помощью [Flexberry Desinger](fd_landing_page.html).
+1. Добавить вычислимое поле в основной объект и перегенерировать форму с помощью [Flexberry Desinger](fd_flexberry-designer.html).
 2. В коде приложения добавить Lookup на форму.
 
 ### Алгоритм добавления LookUp в коде приложения
@@ -144,9 +144,7 @@ public override void OnEdit(string propertyname, ICSSoft.STORMNET.DataObject dat
             {
                 if (((ДежурнаяГруппаСмены)dataobject).ТипДежурнойГруппы != null)
                 {
-                    SQLWhereLanguageDef langdef = new SQLWhereLanguageDef();
-                    tag = langdef.GetFunction(langdef.funcEQ,
-                            new VariableDef(langdef.GuidType, "ТипДежурнойГруппы"), ((ДежурнаяГруппаСмены)dataobject).ТипДежурнойГруппы.__PrimaryKey);
+                    tag = FunctionBuilder.BuildEquals("ТипДежурнойГруппы", ((ДежурнаяГруппаСмены)dataobject).ТипДежурнойГруппы);
                 }
                 dataobject = new ЧленДежурнойГруппы();
                 propertyname = "ДежураяГруппа";

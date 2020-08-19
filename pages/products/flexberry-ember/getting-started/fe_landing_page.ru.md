@@ -38,13 +38,13 @@ lang: ru
 
 ### Программное обеспечение
 
-1. [Flexberry Desinger](https://flexberry.github.io/ru/fd_landing_page.html). [Установить](https://flexberry.github.io/ru/fd_install.html) Flexberry Desinger можно с сайта [flexberry.net](https://flexberry.net/). При первичной установке дается промо-лицензия на 14 дней. Затем ее можно [продлить](https://designer.flexberry.net/#/download-win-app) на срок от 6 до 12 месяцев. Для студентов колледжей и ВУЗов предоставляется бесплатная академическая лицензия на полгода.
+1. [Flexberry Desinger](https://flexberry.github.io/ru/fd_flexberry-designer.html). [Установить](https://flexberry.github.io/ru/fd_install.html) Flexberry Desinger можно с сайта [flexberry.net](https://flexberry.net/). При первичной установке дается промо-лицензия на 14 дней. Затем ее можно [продлить](https://designer.flexberry.net/#/download-win-app) на срок от 6 до 12 месяцев. Для студентов колледжей и ВУЗов предоставляется бесплатная академическая лицензия на полгода.
 2. Visual Studio 2017 или новее. В работе с приложениям на базе [Ember.js](https://emberjs.com/) и `ember-flexberry` также помогут [Visual Studio Code](https://code.visualstudio.com/), [Sublime Text](http://www.sublimetext.com/) или их [аналоги](https://jpnsoft.ru/visual-studio-code/).
-3. PostgreSQL. Для выполнения работ рекомендуется использовать бесплатный обачный сервис [https://www.elephantsql.com/](https://www.elephantsql.com/).
+3. PostgreSQL. Для выполнения работ рекомендуется использовать бесплатный облачный сервис [https://www.elephantsql.com/](https://www.elephantsql.com/).
 4. TFS. Для выполнения работ рекомендуется использовать бесплатный облачный сервис Visual Studio Online
-5. NodeJS версии 6.17.1: [https://nodejs.org/dist/latest-v6.x/](https://nodejs.org/dist/latest-v6.x/)
+5. NodeJS версии 8.16.x: [https://nodejs.org/dist/latest-v8.x/](https://nodejs.org/dist/latest-v8.x/)
 6. Последняя версия Yarn [https://yarnpkg.com/ru/docs/install#windows-stable](https://yarnpkg.com/ru/docs/install#windows-stable)
-7. EmberJS версии 3.1.4 (для установки после настройки Yarn выполнить `yarn global add ember-cli@3.1.4`)
+7. EmberJS версии 3.1.4 или 2.4.3, в зависимости от планируемой к использованию версии `ember-flexberry` (для установки после настройки Yarn выполнить `yarn global add ember-cli@3.1.4` или `yarn global add ember-cli@2.4.3`)
 8. Последняя версия Bower (для установки после настройки Yarn выполнить `yarn global add bower`)
 
 ### Настройка Yarn
@@ -53,7 +53,7 @@ lang: ru
 
 ### Настройка Flexberry Desinger
 
-Чтобы ember-генератор работал корректно требуется в файле конфигурации CASEBERRY.exe.config установить следующее значение параметра `EmberPluginAddonName`
+Чтобы ember-генератор работал корректно требуется в файле конфигурации CASEBERRY.exe.config установить следующее значение параметра `EmberPluginAddonName` (либо 2.1.0, если используется ember-cli@2.4.3).
 
 ```xml
 <appSettings>
@@ -68,7 +68,12 @@ lang: ru
 В файл `package.json` добавить
 
 ```javascript
+"devDependencies": {
+  ...
+  "resolve": "1.11.0",
+  ...
+},
 "resolutions": {
-"resolve": "1.11.0"
+  "resolve": "1.11.0"
 }
 ```

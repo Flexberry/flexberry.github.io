@@ -1,0 +1,15 @@
+entries:
+  - title: Sidebar
+    levels: one
+    folders:
+  
+    - title: Get started
+      title_ru: Введение
+      output: web
+      
+      folderitems:
+      - title: About OKR
+        title_ru: Что такое OKR
+        url: /okrg_landing-page.html
+        output: web
+  

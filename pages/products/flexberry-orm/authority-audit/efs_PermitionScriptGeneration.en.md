@@ -6,7 +6,7 @@ toc: true
 permalink: en/efs_permition-script-generation.html
 lang: en
 autotranslated: true
-hash: 411dea26a7e7e372903b82f295ed8bcaf5ba1ed772aa04515533eada54fc51b2
+hash: 454813e145b653382961680c1e426d9be4921fba77f93859fa1557460e61c6df
 ---
 
 (((
@@ -23,46 +23,47 @@ Generated script organizes the setting in the application database in SQL server
 
 ## An example script assigning authority
 
-For example, we have user `ICS_HOME\VPupkin`. [Management authority](efs_security-console.html) we have a user with login `VPupkin` playgroup `ICS_HOME`. The user `VPupkin` assigned access `Insert` class `Учебник` from the app `АбвгдApp` database `АбвгдDB`.
+For example, we have user `ICS_HOME\VPupkin`. In [management authority](efs_security-console.html) we have a user with login `VPupkin` playgroup `ICS_HOME`. The user `VPupkin` assigned access `Insert` class `Учебник` from the app `АбвгдApp` database `АбвгдDB`.
 
 Thus, if to simplify everything, the generated script needs to access the SQL server:
-# to create a login for a windows user `ICS_HOME\VPupkin` on the server if it was not created by ранее;
-# create a database user application `АбвгдDB` corresponding login `ICS_HOME\VPupkin` if it was not created by ранее;
-# to assign this user right to `Insert` in table `Учебник`, prohibit `Delete`, `Update` and `Select` in table `Учебник`;
-# determine user rights to the other tables if necessary.
+* create a login for a windows user `ICS_HOME\VPupkin` on the server if it was not created by ранее;
+* create user application database `АбвгдDB` corresponding login `ICS_HOME\VPupkin` if it was not created by ранее;
+* assign this user right to `Insert` in table `Учебник`, prohibit `Delete`, `Update` and `Select` in table `Учебник`;
+ *define user privileges on the other tables if necessary.
 
 ## Users, roles and groups
 
 Define the terminology used when generating the script to avoid any confusion:
-* If the domain `ICS_HOME` is, the user `VPupkin`, [management authority](efs_security-console.html) it will be set so the user `VPupkin` is in the group `ICS_HOME` (and `ics.perm.ru`, respectively).
+* If the domain `ICS_HOME` is, the user `VPupkin`, the [management authority](efs_security-console.html) it will be set so the user `VPupkin` is in the group `ICS_HOME` (and `ics.perm.ru`, respectively).
 * If the user `ICS_HOME\VPupkin` is in the group `ICS_HOME\Администраторы`, the management authority) is to be set so the user `VPupkin` is in the role `Администраторы`.
 
 The script organizes not only create logins in SQL server for users in the console is defined in the desired group exist in the domain, but also for groups that are in the console, specified roles exist in the domain.
 
 ## Features of the script assign privileges
-# "'The total resolution on the table."' It is believed that if the class [AccessType](fo_access-type.html) is set to none, then no validation on this class should not be done. Accordingly, all users must be granted access to the appropriate class tables.
+
+* "'Shared permission on the tables."' It is believed that if the class [AccessType](fo_access-type.html) is set to none, then no validation on this class should not be done. Accordingly, all users must be granted access to the appropriate class tables.
 Other authorization checks for the class|AccessType] are interpreted as `@this`.
-# "'The assignment of rights."' For classes that have [AccessType](fo_access-type.html) not `none` it is believed that the operation `Insert`, `Delete`, `Update` and `Select` prohibited, if the user has no special permissions.
-# "The'human filter."' At the moment, the restriction of access include the filter, is ignored.
-# "'(From MSDN)"' Ban (DENY) at the table level has a lower priority than granting permissions (GRANT) at the column level. This inconsistency in the permissions hierarchy has been preserved for backward compatibility.
-# "'The owner of the database."' If the users in the system of authority present owner of the relevant database, the script generated will not be because the owner of the database right should not change.
+* "'The assignment of rights."' For classes that have [AccessType](fo_access-type.html) not `none` it is believed that the operation `Insert`, `Delete`, `Update` and `Select` prohibited, if the user has no special permissions.
+* "'The right filter."' At the moment, the restriction of access include the filter, is ignored.
+* "'(From MSDN)"' Ban (DENY) at the table level has a lower priority than granting permissions (GRANT) at the column level. This inconsistency in the permissions hierarchy has been preserved for backward compatibility.
+* "'Owner of the database."' If the users in the system of authority present owner of the relevant database, the script generated will not be because the owner of the database right should not change.
 
 ## To set permissions for table columns
 
-In version after 15.10.2014 available [assignment of powers to individual properties of the object](efs_check-access-to-attribute.html). This functionality is also available to generate script to assign permissions in SQL server.
+In version after 15.10.2014 available [specify the authority to separate object properties](efs_check-access-to-attribute.html). This functionality is also available to generate script to assign permissions in SQL server.
 To assign permissions, you must specify the appropriate attributes for the purpose of operations on the properties of the object, then the user in the management console, the power to give rights to the appropriate operations.
 
 "'Features"'
-# If the property is, the operation and the user does not have any permission for this transaction, he receives a ban to SELECT from the column corresponding to property (limit is based only on a read operation).
-# Detaily not taken into account when assignments of authority to the columns.
-# Because the masters of the object due to the inheritance can be multiple columns-vaults, then the same powers will be imposed on all the columns.
-
-
+* If the property is, the operation and the user does not have any permission for this transaction, he receives a ban to SELECT from the column corresponding to property (limit is based only on a read operation).
+* Detayli not taken into account when assignments of authority to the columns.
+* As the masters of the object due to the inheritance can be multiple columns-vaults, then the same powers will be imposed on all the columns.
 
 ## A General algorithm generating the script for user
-Consider a generation algorithm of a script for one user in a specific example.
+
+Algorithm script generation for a single user in a specific example.
+
 * The user if it has not previously been added added to the server and corresponding database.
-* Suppose there is a class `FirstClass` and `SecondClass` (their table names match the class names).
+* Suppose there is a class `FirstClass` and `SecondClass` (the names of the relevant tables match the class names).
 * Let both classes have the same properties with the designated operations:
 ** "Property1" – «operationName1, operationName2».
 ** "Property2" operation not assigned.
@@ -81,7 +82,7 @@ Then the script will be generated in the following way:
 
 In our case, the class `SecondClass` exists, but that the user has permission to it is not a ban on all transactions above the table, the removal of the bans from the column read operations (other operations we do not consider).
 
-```cs
+```csharp
 SET @common_cmd = 'DENY SELECT, INSERT, UPDATE, DELETE  ON object::[SecondClass] TO ' + @user_name  
 EXEC (@common_cmd)  
 SET @common_cmd = 'REVOKE SELECT ([PropertyStorage1], [PropertyStorage2], [PropertyStorage3], [PropertyStorage4]) ON object::[SecondClass] TO ' + @user_name  
@@ -89,9 +90,9 @@ EXEC (@common_cmd)
 ```
 "'2."' Is determined, what rights do I have for the remaining classes, then define the set of operations that should be prohibited to the user.
 
-In our case, the class» «FirstClass we have a right `Read `и `Insert`, but there is no `Delete `и `Update`.
+In this case, the class» «FirstClass we have a right `Read `и `Insert`, but there is no `Delete `и `Update`.
 
-```cs
+```csharp
 SET @specific_cmd = 'DENY DELETE, UPDATE  ON object::[FirstClass] TO ' + @user_name  
 EXEC (@specific_cmd)  
 SET @specific_cmd = 'REVOKE SELECT, INSERT  ON object::[FirstClass] TO ' + @user_name  
@@ -100,27 +101,27 @@ EXEC (@specific_cmd)
 
 "'3."' The classes to which the user has permissions, define properties, which do not specify any operations. With such properties, reset all restrictions on available operations.
 
-In our case, this property Property2» qmo.
+In this case, this property Property2» qmo.
 
-```cs
+```csharp
 SET @common_cmd = 'REVOKE SELECT ([PropertyStorage2]) ON object::[FirstClass] TO ' + @user_name  
 EXEC (@common_cmd)
 ```
 
 "'4."' The classes to which the user has permissions, define properties, are imposed on transactions, but the user has no rights to any operation. On properties subject to restrictions in the available column operations.
 
-In our case, this property «Property3» (qmc «operationName3 the user has no rights).
+In this case, this property «Property3» (qmc «on operationName3 the user has no rights).
 
-```cs
+```csharp
 SET @common_cmd = 'DENY SELECT ([PropertyStorage3]) ON object::[FirstClass] TO ' + @user_name  
 EXEC (@common_cmd)
 ```
 
 "'5."' For the remaining table properties on the basis of existing operations permissions, calculated permissions and they are appointed.
 
-In our case, Property1» «has Full access, Property4 «and» has access to `Update `(enough to get the right reading.)
+In this case, Property1» «has Full access, Property4 «and» has access to `Update `(enough to get the right reading.)
 
-```cs
+```csharp
 SET @specific_cmd = 'REVOKE SELECT ([PropertyStorage1]) ON object::[FirstClass] TO ' + @user_name  
 EXEC (@specific_cmd)  
 SET @specific_cmd = 'REVOKE SELECT ([PropertyStorage4]) ON object::[FirstClass] TO ' + @user_name  
@@ -129,7 +130,8 @@ EXEC (@specific_cmd)
 
 
 "'The final script for the user:"'
-```cs
+
+```csharp
 SET @common_cmd = 'DENY SELECT, INSERT, UPDATE, DELETE  ON object::[SecondClass] TO ' + @user_name  
 EXEC (@common_cmd)  
 SET @common_cmd = 'REVOKE SELECT ([PropertyStorage1], [PropertyStorage2], [PropertyStorage3], [PropertyStorage4]) ON object::[SecondClass] TO ' + @user_name  
@@ -153,7 +155,7 @@ EXEC (@specific_cmd)
 <msg type=warning>In connection with the features of wiki markup in lines 31 and 68 of the code example below is deliberately wrong. To get the correct version of the code, you need to remove extra white space between repeating character @.</msg>
 
 (((
-```cs
+```csharp
 BEGIN TRY 
  BEGIN TRANSACTION ChangePermitions WITH MARK N'Changing permitions' 
 
@@ -184,7 +186,7 @@ BEGIN TRY
  
  FETCH NEXT FROM UserCursor INTO @user_name  
  
- IF @ @fetch_status = 0 
+ IF @@fetch_status = 0 
  BEGIN  
 
 SET @common_cmd = 'DENY SELECT, INSERT, UPDATE, DELETE  ON object::[SecondClass] TO ' + @user_name  
@@ -221,15 +223,15 @@ EXEC (@specific_cmd)
      @ErrorMessage = ERROR_MESSAGE(), 
      @ErrorSeverity = ERROR_SEVERITY(), 
      @ErrorState = ERROR_STATE(); 
-     IF @ @TRANCOUNT > 0 
+     IF @@TRANCOUNT > 0 
          ROLLBACK TRANSACTION ChangePermitions  
      RAISERROR(@ErrorMessage, @ErrorSeverity, @ErrorState) 
  END CATCH
 ```
 )))
 
-
 ## The generation settings
+
 When you select the menu item "align SQL server" window will appear with the settings for the generation
 
 ![](/images/pages/img/page/PermitionScriptGeneration/GenerationSettings.png)
@@ -237,10 +239,7 @@ When you select the menu item "align SQL server" window will appear with the set
 
 ### Removing the "extra" windows users
 
-This setting is useful in the following situations:
-
-let the script was created some users and assigned rights. Further, the user has been deleted on the management console credentials. When you select this setting, the script will check for these users and try to remove them.
-
+This setting is useful in the following situation: let the script was created some users and assigned rights. Further, the user has been deleted on the management console credentials. When you select this setting, the script will check for these users and try to remove them.
 
 ### The use of the script after generation
 

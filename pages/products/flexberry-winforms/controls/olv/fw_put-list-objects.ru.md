@@ -43,8 +43,7 @@ objectListView1.ViewName = "АдресL";
 Чтобы данные из базы не подгружались во время обновления (нажатия на кнопку `Refresh`), необходимо установить `LimitFunction` у `ObjectListView` так, чтобы условие никогда не выполнялось. Например, следующим образом:
 
 ```csharp
-SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
-objectListView1.LimitFunction = langdef.GetFunction(langdef.funcSQL, "1 = 2");
+objectListView1.LimitFunction = FunctionBuilder.BuildFalse();
 ```
 
 ### Добавление объектов в список

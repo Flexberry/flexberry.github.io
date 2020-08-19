@@ -20,6 +20,10 @@ lang: ru
 
 [ExternalLangDef](fo_external-lang-def.html) - расширение языка ограничений для задания ограничений на зависимые объекты (детейлы).
 
+[FunctionBuilder](fo_function-builder.html) - класс-обертка над ExternalLangDef с менее многословным синтаксисом для построения функций ограничений на вычитываемые объекты.
+
+[FunctionBuilder примеры](fo_function-builder-examples.html) - более детальные примеры по рефактору `LangDef.GetFunction`.
+
 Существует [возможность расширить реализованные языки ограничений](fo_using-languagedef.html).
 
 ## Применение функций ограничения
