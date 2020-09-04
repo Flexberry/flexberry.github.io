@@ -2,10 +2,11 @@
 title: Платформа Flexberry
 sidebar: flexberry-platform_sidebar
 keywords: flexberry
-summary:
+summary: null
 toc: false
 permalink: ru/fp_landing_page.html
 lang: ru
+published: true
 ---
 
 ![Архитектура платформы Flexberry](/images/pages/products/flexberry-platform/architecture/flexberry-platform-app-architecture.png)
@@ -38,7 +39,7 @@ lang: ru
 
 __В первую очередь необходимо следующее:__
 
-* [Node.js](http://nodejs.org). Позволяет работать с инструментами для фронтенда вне браузера. Также в состав node.js входит менеджер пакетов npm (node package manager), для работы с зависимостями во фронтенд-проектах, аналогично NuGet в Flexberry ASP.NET WebForms.
+* [Node.js](http://nodejs.org). Позволяет работать с инструментами для фронтенда вне браузера. Также в состав node.js входит менеджер пакетов npm (node package manager) для работы с зависимостями во фронтенд-проектах, аналогично NuGet в Flexberry ASP.NET WebForms.
 * [Bower](http://bower.io). Является аналогом npm, но они часто применяются на проекте вместе.
 * [Git](http://git-scm.com). Распределённая система управления версиями.
 * [Ember CLI](http://www.ember-cli.com).
@@ -51,7 +52,7 @@ __Далее потребуются:__
   * [chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector)
 * **Консоль** для работы с git, npm, bower, ember-cli и др.
-  * **linux**, возможно, пойдет любой терминал.
+  * **linux**, возможно, подойдет любой терминал.
   * **windows** стандартный cmd.exe не лучший выбор.
         Рекомендуются:
 
@@ -60,7 +61,7 @@ __Далее потребуются:__
           * Cmder.
 * **IDE и текстовый редактор**. IDE для js очень ресурсно затратна, поэтому рекомендуется использовать текстовые редакторы такие как:
   * Visual Studio Code
-  * Atom (к нему рекомендуется установить расширения, облегающие работу)
+  * Atom (к нему рекомендуется установить расширения, облегчающие работу)
   
         * [file-icons](https://atom.io/packages/file-icons)
         * [platformio-ide-terminal](https://atom.io/packages/platformio-ide-terminal)
@@ -68,11 +69,11 @@ __Далее потребуются:__
         * [markdown-preview-plus](https://atom.io/packages/markdown-preview-plus)
     * и другие.
 
-{% include note.html content="На сайте [ember-cli.com](http://www.ember-cli.com/user-guide/#editors) написаны некоторые рекомендации, при использовании некоторых редакторов." %}
+{% include note.html content="На сайте [ember-cli.com](http://www.ember-cli.com/user-guide/#editors) написаны некоторые рекомендации при использовании некоторых редакторов." %}
 
 #### Алгоритм установки и настройки Node.js
 
-{% include important.html content="Все команды в алгоритме нужно введить в cmd в режиме администратора" %}
+{% include important.html content="Все команды в алгоритме нужно вводить в cmd в режиме администратора" %}
 
 1. Нужно скачать и установить [Node.js](https://nodejs.org/en/) версию Recommended For Most Users
 2. После установки открыть cmd от администратора и ввести `npm -v`, если выдан номер версии - установка npm прошла успешно и можно переходить к следующему пункту.
@@ -85,7 +86,7 @@ __Далее потребуются:__
 {% include important.html content="Перед установкой Bower необходимо вначале установить Node.js" %}
 
 1. В cmd введите команду `npm install -g bower`, чтобы установить [Bower](https://bower.io/).
-2. Что бы, проверить установился ли Bower введите команду `bower -v` в cmd, если выдан номер версии - установка прошла успешно и можно переходить к следующему пункту.
+2. Чтобы проверить, установился ли Bower, введите команду `bower -v` в cmd, если выдан номер версии - установка прошла успешно и можно переходить к следующему пункту.
 
 #### Алгоритм установки и настройки Git-a
 
