@@ -2,7 +2,7 @@
 title: Платформа Flexberry
 sidebar: flexberry-platform_sidebar
 keywords: flexberry
-summary: null
+summary:
 toc: false
 permalink: ru/fp_landing_page.html
 lang: ru
