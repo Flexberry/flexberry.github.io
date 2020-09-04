@@ -6,7 +6,6 @@ summary: null
 toc: false
 permalink: ru/fp_landing_page.html
 lang: ru
-published: true
 ---
 
 ![Архитектура платформы Flexberry](/images/pages/products/flexberry-platform/architecture/flexberry-platform-app-architecture.png)
