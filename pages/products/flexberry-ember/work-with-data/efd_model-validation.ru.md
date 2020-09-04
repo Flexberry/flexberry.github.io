@@ -18,6 +18,7 @@ summary: Описаны основные шаги по настройке вал
 
 ### Описание
 
+Используется в проектах с версией `ember-flexberry` `2.*`.
 Клиентская валидация настраивается в приложении на базе аддона [Ember Validations](https://github.com/dockyard/ember-validations) (в документации к данному аддону указано больше возможностей по заданию правил).
 
 Валидация задаётся на уровне модели (остальные манипуляции с настройкой компонента зашиты в технологию Flexberry ASP.NET Ember):
@@ -99,6 +100,7 @@ var Model = BaseModel.extend({
 
 ### Описание
 
+Используется в проектах с версией `ember-flexberry` `3.*`.
 Клиентская валидация настраивается в приложении на базе аддона [ember-cp-validations](https://github.com/offirgolan/ember-cp-validations) (в документации к данному аддону указано больше возможностей по заданию правил).
 
 Валидация задаётся на уровне модели в объекте `ValidationRules` (часть валидаторов генерируется в автогенерируемый миксин модели).
@@ -128,17 +130,20 @@ var Model = BaseModel.extend({
 
 ```javascript
 export let ValidationRules = {
-  имяСвойства: {
-    descriptionKey: 'путь_локализации',
+  propName: {
+    descriptionKey: 'localization_path',
     validators: [
-      validator(валидатор),
-	  validator(валидатор2),
-	  ...
+      validator('presence', true),
+      validator('length', { is: 15 }),
+      ...
     ],
   },
   ...
 };
 ```
+
+Где `propName` - имя валидируемого свойста, `localization_path` - путь в locales до сообщения валидатора.
+Заданы валидаторы: `validator('presence', true)` - проверка, что значение свойства не пустое. `validator('length', { is: 15 })` - проверка что длина значения свойства равна 15.
 
 Автоматически генрируются валидаторы:
 Для всех типов полей: `validator('ds-error')` и `validator('presence', true)`.
