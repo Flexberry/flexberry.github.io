@@ -5,7 +5,6 @@ sidebar: guide-base-tech_sidebar
 toc: true
 permalink: ru/gbt_deployment_docker.html
 lang: ru
-published: true
 ---
 
 ## Описание
