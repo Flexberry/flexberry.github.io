@@ -48,7 +48,7 @@ lang: ru
 
 ### Настройка NPM
 
-При работе в ОС Windows Необходимо проверить, что в переменной окружения PATH для текущего пользователя содержится путь `%USERPROFILE%\AppData\Roaming\npm`.
+При работе в ОС Windows необходимо проверить, что в переменной окружения PATH для текущего пользователя содержится путь `%USERPROFILE%\AppData\Roaming\npm`.
 
 ### Настройка Flexberry Desinger
 
