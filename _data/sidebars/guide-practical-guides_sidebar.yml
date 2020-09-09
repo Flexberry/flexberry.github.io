@@ -168,7 +168,7 @@ entries:
     output: web 
     
     folderitems:
-    - title: Improvement of domain model
+    - title: Improving domain model
       title_ru: Добработка модели предметной области
       url: /gpg_setting-language-and-structure.html
       output: web  
@@ -178,28 +178,28 @@ entries:
       url: /gpg_create-and-configure-application-structure.html
       output: web  
       
-    - title: Customization of form views
+    - title: Customizing form views
       title_ru: Настройка представлений для форм
       url: /gpg_customize-forms.html
       output: web  
       
-    - title: Autocomplete and data types
+    - title: Customizing attribute properties and data types
       title_ru: Настройка свойств атрибутов класса и типов данных
       url: /gpg_autocomplete-and-data-types.html
       output: web   
       
-    - title: Ember-application generation
+    - title: Ember application generation
       title_ru: Генерация Ember-приложения
       url: /gpg_ember-application-generation.html
       output: web 
       
-    - title: Ember-application launch
+    - title: Ember application launch
       title_ru: Запуск Ember-приложения
       url: /gpg_launch-ember-applications.html
       output: web 
       
-    - title: Filling application primary data
-      title_ru: Заполнение первичных данных приложения
+    - title: Adding test data
+      title_ru: Добавление тестовых данных
       url: /gpg_filling-application-primary-data.html
       output: web 
       
