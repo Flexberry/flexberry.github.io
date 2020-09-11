@@ -27,7 +27,7 @@ _`Order → [правая кнопка мыши] → ORM: Редактирова
 
 ![Новое L-представление класса Order](/images/pages/guides/flexberry-ember/2-2-customize-forms/2-2-3.png)
 
-> Number ‒ Номер
+> Number ‒ Номер  
 > Status ‒ Статус  
 > CreateDate ‒ Дата оформления <sup>1</sup>  
 > Manager.LastName ‒ Менеджер <sup>2</sup>  
