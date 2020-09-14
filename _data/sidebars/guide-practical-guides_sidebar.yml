@@ -203,7 +203,7 @@ entries:
             output: web
 
           - title: Conditional display fields
-            title_ru: Условное отображение полей на форме
+            title_ru: Условное отображение данных на форме
             url: /gpg_conditional-display-fields.html
             output: web
 

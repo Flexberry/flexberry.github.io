@@ -1,5 +1,5 @@
 ---
-title: Условное отображение полей на форме
+title: Условное отображение данных на форме
 sidebar: guide-practical-guides_sidebar
 keywords: guide, ember, ember-cli, handlebars
 toc: true
