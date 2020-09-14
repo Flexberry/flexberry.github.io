@@ -219,7 +219,7 @@ export let ValidationRules = {
 {% endraw %}
 {% endhighlight %}
 
-В разделе ("[Добавление тестовых данных](gpg_filling-application-primary-data.html)") мы добавили на склады следующие товары:
+Ранее в разделе "[Добавление тестовых данных](gpg_filling-application-primary-data.html)" мы добавили на склады следующие товары:
 
 1. Монитор Samsung C24F390FHI - 4 + 1 = 5 (шт.)
 2. Системный блок Acer Aspire XC-330 DT.BD2ER.001 - 2 + 0 = 2 (шт.)
@@ -256,4 +256,4 @@ export let ValidationRules = {
 
 * [Практическое руководство «Делай как я»](gpg_landing-page.html) <i class="fa fa-arrow-up" aria-hidden="true"></i>
 * [Вычислимые свойства и проекции моделей](gpg_computable-properties-and-projections-of-models.html) <i class="fa fa-arrow-left" aria-hidden="true"></i>
-* [Автозаполнение элементов формы](gpg_autofill-form-elements.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+* [Автозаполнение полей формы](gpg_autofill-form-elements.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
