@@ -1,250 +1,248 @@
 entries:
-- title: Sidebar
-  levels: one
-  folders:
+  - title: Sidebar
+    levels: one
+    folders:
+      - title: Get started
+        title_ru: Введение
+        output: web
 
-  - title: Get started
-    title_ru: Введение
-    output: web
-    
-    folderitems:
-    - title: About
-      title_ru: Общие сведения
-      url: /gpg_landing-page.html
-      output: web
+        folderitems:
+          - title: About
+            title_ru: Общие сведения
+            url: /gpg_landing-page.html
+            output: web
 
-  - title: Practical guide by Flexberry Desinger
-    title_ru: Практическое руководство по Flexberry Desinger
-    output: web
-    
-    folderitems:
-    - title: Practical guide to creating UML-charts
-      title_ru: Практическое руководство по созданию UML-диаграмм
-      url: /gpg_practical-guides-uml.html
-      output: web   
+      - title: Practical guide by Flexberry Desinger
+        title_ru: Практическое руководство по Flexberry Desinger
+        output: web
 
-    - title: Formulation problem
-      title_ru: Постановка задачи
-      url: /gpg_formulation-problem.html
-      output: web 
+        folderitems:
+          - title: Practical guide to creating UML-charts
+            title_ru: Практическое руководство по созданию UML-диаграмм
+            url: /gpg_practical-guides-uml.html
+            output: web
 
-    - title: Use Case Diagram
-      title_ru: Построение диаграммы вариантов использования
-      url: /gpg_use-case-diagram.html
-      output: web 
+          - title: Formulation problem
+            title_ru: Постановка задачи
+            url: /gpg_formulation-problem.html
+            output: web
 
-    - title: Activity Diagram
-      title_ru: Построение диаграммы видов деятельности
-      url: /gpg_activity-diagram.html
-      output: web 
+          - title: Use Case Diagram
+            title_ru: Построение диаграммы вариантов использования
+            url: /gpg_use-case-diagram.html
+            output: web
 
-    - title: Class Diagram
-      title_ru: Построение диаграммы классов
-      url: /gpg_class-diagram.html
-      output: web 
+          - title: Activity Diagram
+            title_ru: Построение диаграммы видов деятельности
+            url: /gpg_activity-diagram.html
+            output: web
 
-    - title: Interaction diagram
-      title_ru:  Построение диаграмм взаимодействия
-      url: /gpg_interaction-diagram.html
-      output: web 
+          - title: Class Diagram
+            title_ru: Построение диаграммы классов
+            url: /gpg_class-diagram.html
+            output: web
 
-    - title: Statechart Diagram
-      title_ru: Построение диаграмм состояний
-      url: /gpg_statechart-diagram.html
-      output: web 
+          - title: Interaction diagram
+            title_ru: Построение диаграмм взаимодействия
+            url: /gpg_interaction-diagram.html
+            output: web
 
-    - title: Deployment diagram
-      title_ru: Диаграмма развёртывания
-      url: /gpg_deployment-diagram.html
-      output: web  
+          - title: Statechart Diagram
+            title_ru: Построение диаграмм состояний
+            url: /gpg_statechart-diagram.html
+            output: web
 
-  - title: Practical guide by Flexberry ASP.NET
-    title_ru: Практическое руководство по веб-разработке на Flexberry ASP.NET
-    output: web
-    
-    folderitems:
-    - title: Preparatory stage of web application development
-      title_ru: Подготовительный этап разработки веб-приложений
-      url: /gpg_preparatory-stage.html
-      output: web
+          - title: Deployment diagram
+            title_ru: Диаграмма развёртывания
+            url: /gpg_deployment-diagram.html
+            output: web
 
-    - title: Configuring the script generator for the database
-      title_ru: Настройка генератора скриптов для БД
-      url: /gpg_configuring-script-generator-db.html
-      output: web 
+      - title: Practical guide by Flexberry ASP.NET
+        title_ru: Практическое руководство по веб-разработке на Flexberry ASP.NET
+        output: web
 
-    - title: Prototyping
-      title_ru: Создание прототипа
-      url: /gpg_prototype-creating.html
-      output: web 
-    
-    - title: Configuring the application structure
-      title_ru: Настройка структуры приложения
-      url: /gpg_configuring-application-structure.html
-      output: web
+        folderitems:
+          - title: Preparatory stage of web application development
+            title_ru: Подготовительный этап разработки веб-приложений
+            url: /gpg_preparatory-stage.html
+            output: web
 
-    - title: Configuring code generation (CSharp)
-      title_ru: Настройка кодогенерации (CSharp)
-      url: /gpg_configuring-generation.html
-      output: web 
+          - title: Configuring the script generator for the database
+            title_ru: Настройка генератора скриптов для БД
+            url: /gpg_configuring-script-generator-db.html
+            output: web
 
-    - title: Generating a Web-application
-      title_ru: Генерация веб-приложения
-      url: /gpg_generation-application.html
-      output: web   
+          - title: Prototyping
+            title_ru: Создание прототипа
+            url: /gpg_prototype-creating.html
+            output: web
 
-    - title: Launching the Web-application
-      title_ru: Запуск веб-приложения
-      url: /gpg_start-application.html
-      output: web  
+          - title: Configuring the application structure
+            title_ru: Настройка структуры приложения
+            url: /gpg_configuring-application-structure.html
+            output: web
 
-    - title: Enabling the ASP.NET State Service
-      title_ru: Включение службы ASP.NET State Service
-      url: /gpg_asp-net-state-service.html
-      output: web
+          - title: Configuring code generation (CSharp)
+            title_ru: Настройка кодогенерации (CSharp)
+            url: /gpg_configuring-generation.html
+            output: web
 
-    - title: Identifying the roles of users and their functions
-      title_ru: Определение ролей пользователей и их функций
-      url: /gpg_identifying-roles.html
-      output: web 
+          - title: Generating a Web-application
+            title_ru: Генерация веб-приложения
+            url: /gpg_generation-application.html
+            output: web
 
-    - title: Adding user roles from an application
-      title_ru: Добавление ролей пользователей из приложения
-      url: /gpg_adding-user-roles.html
-      output: web
+          - title: Launching the Web-application
+            title_ru: Запуск веб-приложения
+            url: /gpg_start-application.html
+            output: web
 
-    - title: Configuring the paths for generating web application forms
-      title_ru: Настройка путей генерации форм веб-приложения
-      url: /gpg_configuring-paths-generating.html
-      output: web 
+          - title: Enabling the ASP.NET State Service
+            title_ru: Включение службы ASP.NET State Service
+            url: /gpg_asp-net-state-service.html
+            output: web
 
-    - title: Customize the application menu for different user roles
-      title_ru: Настройка меню приложения для разных ролей пользователей
-      url: /gpg_customize-application-menu.html
-      output: web 
+          - title: Identifying the roles of users and their functions
+            title_ru: Определение ролей пользователей и их функций
+            url: /gpg_identifying-roles.html
+            output: web
 
-    - title: Limitfunction for Lookup
-      title_ru: Наложение ограничения на LookUp
-      url: /gpg_limitfunction-for-lookup.html
-      output: web 
+          - title: Adding user roles from an application
+            title_ru: Добавление ролей пользователей из приложения
+            url: /gpg_adding-user-roles.html
+            output: web
 
-    - title: Specifying the current date
-      title_ru: Указание текущей даты
-      url: /gpg_date-time-now.html
-      output: web 
+          - title: Configuring the paths for generating web application forms
+            title_ru: Настройка путей генерации форм веб-приложения
+            url: /gpg_configuring-paths-generating.html
+            output: web
 
-    - title: Automatic calculation
-      title_ru: Автоматическое вычисление
-      url: /gpg_auto-calculation.html
-      output: web 
+          - title: Customize the application menu for different user roles
+            title_ru: Настройка меню приложения для разных ролей пользователей
+            url: /gpg_customize-application-menu.html
+            output: web
 
-    - title: Limitfunction for Lookup in AGE
-      title_ru: Наложение ограничения на LookUp в AGE, связывание лукапов.
-      url: /gpg_limit-function-for-lookup-in-age.html
-      output: web
+          - title: Limitfunction for Lookup
+            title_ru: Наложение ограничения на LookUp
+            url: /gpg_limitfunction-for-lookup.html
+            output: web
 
-    - title: Exception handling
-      title_ru: Обработка исключений
-      url: /gpg_set-exception.html
-      output: web 
-        
-    - title: Automatic retrieval of data from LookUp
-      title_ru: Автоматическое получение данных из LookUp
-      url: /gpg_auto-get-data-from-lookup.html
-      output: web
+          - title: Specifying the current date
+            title_ru: Указание текущей даты
+            url: /gpg_date-time-now.html
+            output: web
 
-    - title: Working with the business-server
-      title_ru: Работа с бизнес-сервером
-      url: /gpg_business-server.html
-      output: web
+          - title: Automatic calculation
+            title_ru: Автоматическое вычисление
+            url: /gpg_auto-calculation.html
+            output: web
 
-    - title: Lock an item on an editing form
-      title_ru: Блокировка элемента на форме редактирования
-      url: /gpg_set-ctrl-read-only.html
-      output: web      
+          - title: Limitfunction for Lookup in AGE
+            title_ru: Наложение ограничения на LookUp в AGE, связывание лукапов.
+            url: /gpg_limit-function-for-lookup-in-age.html
+            output: web
 
-  - title: Practical guide by Flexberry Ember
-    title_ru: Практическое руководство по Flexberry Ember
-    output: web 
-    
-    folderitems:
-    - title: Improving domain model
-      title_ru: Добработка модели предметной области
-      url: /gpg_setting-language-and-structure.html
-      output: web  
-      
-    - title: Creating views and classes of forms and application
-      title_ru: Создание представлений, классов форм и класса приложения
-      url: /gpg_create-and-configure-application-structure.html
-      output: web  
-      
-    - title: Customizing form views
-      title_ru: Настройка представлений для форм
-      url: /gpg_customize-forms.html
-      output: web  
-      
-    - title: Customizing attribute properties and data types
-      title_ru: Настройка свойств атрибутов класса и типов данных
-      url: /gpg_autocomplete-and-data-types.html
-      output: web   
-      
-    - title: Ember application generation
-      title_ru: Генерация Ember-приложения
-      url: /gpg_ember-application-generation.html
-      output: web 
-      
-    - title: Ember application launch
-      title_ru: Запуск Ember-приложения
-      url: /gpg_launch-ember-applications.html
-      output: web 
-      
-    - title: Adding test data
-      title_ru: Добавление тестовых данных
-      url: /gpg_filling-application-primary-data.html
-      output: web 
-      
-    - title: Conditional display fields
-      title_ru: Условное отображение полей
-      url: /gpg_conditional-display-fields.html
-      output: web 
-      
-    - title: Ember-flexberry Components
-      title_ru: Компоненты ember-flexberry
-      url: /gpg_ember-flexberry-components.html
-      output: web 
-      
-    - title: Computable properties and projections of models
-      title_ru: Вычислимые свойства и проекции моделей
-      url: /gpg_computable-properties-and-projections-of-models.html
-      output: web 
-      
-    - title: Custom validation
-      title_ru: Настройка кастомной валидации
-      url: /gpg_custom-validation.html
-      output: web 
-      
-    - title: Autofill form elements
-      title_ru: Автозаполнение элементов формы
-      url: /gpg_autofill-form-elements.html
-      output: web 
-      
-    - title: Lookup restrictions
-      title_ru: Наложение ограничений на лукапы
-      url: /gpg_lookup-restrictions.html
-      output: web 
-      
-    - title: Business-servers and debug mode
-      title_ru: Бизнес-серверы и режим отладки
-      url: /gpg_business-servers-and-debug-mode.html
-      output: web 
-      
-    - title: Server logic implementation
-      title_ru: Реализация серверной логики
-      url: /gpg_server-logic-implementation.html
-      output: web 
-      
-    - title: Implementation of presentation logic
-      title_ru: Реализация презентационной логики
-      url: /gpg_implementation-of-presentation-logic.html
-      output: web 
-      
+          - title: Exception handling
+            title_ru: Обработка исключений
+            url: /gpg_set-exception.html
+            output: web
+
+          - title: Automatic retrieval of data from LookUp
+            title_ru: Автоматическое получение данных из LookUp
+            url: /gpg_auto-get-data-from-lookup.html
+            output: web
+
+          - title: Working with the business-server
+            title_ru: Работа с бизнес-сервером
+            url: /gpg_business-server.html
+            output: web
+
+          - title: Lock an item on an editing form
+            title_ru: Блокировка элемента на форме редактирования
+            url: /gpg_set-ctrl-read-only.html
+            output: web
+
+      - title: Practical guide by Flexberry Ember
+        title_ru: Практическое руководство по Flexberry Ember
+        output: web
+
+        folderitems:
+          - title: Improving domain model
+            title_ru: Добработка модели предметной области
+            url: /gpg_setting-language-and-structure.html
+            output: web
+
+          - title: Creating views and classes of forms and application
+            title_ru: Создание представлений, классов форм и класса приложения
+            url: /gpg_create-and-configure-application-structure.html
+            output: web
+
+          - title: Customizing form views
+            title_ru: Настройка представлений для форм
+            url: /gpg_customize-forms.html
+            output: web
+
+          - title: Customizing attribute properties and data types
+            title_ru: Настройка свойств атрибутов класса и типов данных
+            url: /gpg_autocomplete-and-data-types.html
+            output: web
+
+          - title: Ember application generation
+            title_ru: Генерация Ember-приложения
+            url: /gpg_ember-application-generation.html
+            output: web
+
+          - title: Ember application launch
+            title_ru: Запуск Ember-приложения
+            url: /gpg_launch-ember-applications.html
+            output: web
+
+          - title: Adding test data
+            title_ru: Добавление тестовых данных
+            url: /gpg_filling-application-primary-data.html
+            output: web
+
+          - title: Conditional display fields
+            title_ru: Условное отображение полей на форме
+            url: /gpg_conditional-display-fields.html
+            output: web
+
+          - title: Ember-flexberry Components
+            title_ru: Компоненты ember-flexberry
+            url: /gpg_ember-flexberry-components.html
+            output: web
+
+          - title: Computable properties and projections of models
+            title_ru: Вычислимые свойства и проекции моделей
+            url: /gpg_computable-properties-and-projections-of-models.html
+            output: web
+
+          - title: Custom validation
+            title_ru: Настройка кастомной валидации
+            url: /gpg_custom-validation.html
+            output: web
+
+          - title: Autofill form elements
+            title_ru: Автозаполнение элементов формы
+            url: /gpg_autofill-form-elements.html
+            output: web
+
+          - title: Lookup restrictions
+            title_ru: Наложение ограничений на лукапы
+            url: /gpg_lookup-restrictions.html
+            output: web
+
+          - title: Business-servers and debug mode
+            title_ru: Бизнес-серверы и режим отладки
+            url: /gpg_business-servers-and-debug-mode.html
+            output: web
+
+          - title: Server logic implementation
+            title_ru: Реализация серверной логики
+            url: /gpg_server-logic-implementation.html
+            output: web
+
+          - title: Implementation of presentation logic
+            title_ru: Реализация презентационной логики
+            url: /gpg_implementation-of-presentation-logic.html
+            output: web
