@@ -29,7 +29,7 @@ lang: ru
 
 ![Разметка для поля "Табельный номер"](/images/pages/guides/flexberry-ember/5-1-conditional-display-fields/5-1-2.png)
 
-Для отображения данного поля используется компонент [flexberry-field](https://flexberry.github.io/ru/fe_edit-form-components.html#flexberry-field) из аддона **ember-flexberry**, значением которого является свойство **model.number**. 
+Для отображения данного поля используется компонент [flexberry-field](https://flexberry.github.io/ru/fe_edit-form-components.html#flexberry-field) из аддона **ember-flexberry**, при этом в качестве свойства, из которого берутся данные для отображения на форме, используется **model.number**. 
 
 Закомментируем соответствующую разметку (`выделяем разметку`, далее нажимаем `Ctrl+K` - `Ctrl+C` при работе в Visual Studio Code) и посмотрим, как изменилась форма редактирования сотрудника:
 
