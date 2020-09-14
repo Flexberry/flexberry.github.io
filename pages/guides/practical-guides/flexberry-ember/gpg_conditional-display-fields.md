@@ -29,7 +29,7 @@ lang: ru
 
 ![Разметка для поля "Табельный номер"](/images/pages/guides/flexberry-ember/5-1-conditional-display-fields/5-1-2.png)
 
-Для отображения данного поля используется компонент [flexberry-field](https://flexberry.github.io/ru/fe_edit-form-components.html#flexberry-field) из аддона **ember-flexberry**, значением которого является свойство **model.number**. 
+Для отображения данного поля используется компонент [flexberry-field](https://flexberry.github.io/ru/fe_edit-form-components.html#flexberry-field) из аддона **ember-flexberry**, при этом в качестве свойства, из которого берутся данные для отображения на форме, используется **model.number**. 
 
 Закомментируем соответствующую разметку (`выделяем разметку`, далее нажимаем `Ctrl+K` - `Ctrl+C` при работе в Visual Studio Code) и посмотрим, как изменилась форма редактирования сотрудника:
 
@@ -61,7 +61,7 @@ lang: ru
 
 ![Условное отображение кнопки "Удалить"](/images/pages/guides/flexberry-ember/5-1-conditional-display-fields/5-1-8.png)
 
-Добавим аналогичную конструкцию в заголовок:
+Добавим аналогичную конструкцию в заголовок (выводить табельный номер будем в том случае, когда соответствующая модель имеет состояние, отличное от "новой"):
 
 {% highlight handlebars%}
 {% raw %}
@@ -129,4 +129,4 @@ lang: ru
 * [Практическое руководство  «Делай как я»](gpg_landing-page.html) <i class="fa fa-arrow-up" aria-hidden="true"></i>
 
 * [Добавление тестовых данных](gpg_filling-application-primary-data.html) <i class="fa fa-arrow-left" aria-hidden="true"></i>
-* [Компоненты ember-flexberry](gpg_ember-flexberry-components.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+* [Настройка компонентов](gpg_ember-flexberry-components.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>

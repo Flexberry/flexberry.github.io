@@ -202,13 +202,13 @@ entries:
             url: /gpg_filling-application-primary-data.html
             output: web
 
-          - title: Conditional display fields
+          - title: Conditional displaying form data
             title_ru: Условное отображение данных на форме
             url: /gpg_conditional-display-fields.html
             output: web
 
-          - title: Ember-flexberry Components
-            title_ru: Компоненты ember-flexberry
+          - title: Customizing Components
+            title_ru: Настройка компонентов
             url: /gpg_ember-flexberry-components.html
             output: web
 

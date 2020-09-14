@@ -151,7 +151,7 @@ flexberry-simpledatetime - компонент для отображения да
 
 ![](/images/pages/products/flexberry-ember/components/flexberry-simpledatetime.png)
 
-Чтобы добавить flexberry-textarea на страницу, в шаблоне нужно указать:
+Чтобы добавить flexberry-simpledatetime на страницу, в шаблоне нужно указать:
 
 ```hbs
 {% raw %}{{flexberry-simpledatetime
