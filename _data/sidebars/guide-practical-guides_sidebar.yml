@@ -212,7 +212,7 @@ entries:
             url: /gpg_ember-flexberry-components.html
             output: web
 
-          - title: Computable properties and projections of models
+          - title: Computable properties and model projections
             title_ru: Вычислимые свойства и проекции моделей
             url: /gpg_computable-properties-and-projections-of-models.html
             output: web
@@ -222,8 +222,8 @@ entries:
             url: /gpg_custom-validation.html
             output: web
 
-          - title: Autofill form elements
-            title_ru: Автозаполнение элементов формы
+          - title: Form fields autofilling
+            title_ru: Автозаполнение полей формы
             url: /gpg_autofill-form-elements.html
             output: web
 
