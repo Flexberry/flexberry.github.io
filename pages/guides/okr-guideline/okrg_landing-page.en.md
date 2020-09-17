@@ -1,5 +1,5 @@
 ---
-title: & Objectives Key results
+title: Objectives Key results
 keywords: okr, guideline, guide, manual, table of contents, contents
 sidebar: guide-okr-guideline_sidebar
 toc: true
@@ -10,7 +10,7 @@ hash: 87de3fb52a9289d2ef000d0d38219ae8dabb0a6c9e3d7728de59d43402d6a72a
 summary: materials on the OKR methodology and recommendations for their application in the company
 ---
 
-## Materials on the OKR methodology and recommendations for their application in the company:
+## Materials on the OKR methodology and recommendations for their application in the company
 
 Hi!
 
@@ -23,7 +23,5 @@ This is the page with all the Goodies and the right words at the OKR. The sequen
 5. [Conference "OKR Russia 2020" - review of reports (table of contents) from Eugene Hubareva link to the video](https://docs.google.com/document/d/1iHdfC5YeHAqDFXSe_t41cmKLTQ4iNb3NMIVNXMohv-0/edit "20 VIDOS comments")
 6. [Questions and answers on the OKR team Skyori.com that is updated in real time](https://docs.google.com/document/d/1Ny9TL_79Q2MV79cllQu8llvuXG32ZHyRX5c1emZR-nY/edit?usp=sharing "I want to ask - first look table of contents")
 7. [Guide for implementation of the OKR from Eugene Hubareva](https://docs.google.com/document/d/1Is2iGIZQJAaqLtArdyezd3TwwPOb_aw4zyLJrqlKxwU/edit?usp=sharing)
-
-
 
 {% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

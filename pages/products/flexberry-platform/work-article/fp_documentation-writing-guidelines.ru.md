@@ -2,7 +2,7 @@
 title: Рекомендации по написанию документации
 sidebar: flexberry-platform_sidebar
 keywords: Flexberry Platform, оформление статей, документация, регламент
-summary:Структура, стилистика, правила оформления заметок, картинок, ссылок и примеров кода
+summary: Структура, стилистика, правила оформления заметок, картинок, ссылок и примеров кода
 toc: true
 permalink: ru/fp_documentation-writing-guidelines.html
 lang: ru

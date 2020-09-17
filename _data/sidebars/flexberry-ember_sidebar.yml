@@ -17,6 +17,11 @@ entries:
       url: /fe_landing_page.html
       output: web, pdf
 
+    - title: Technology review
+      title_ru: Обзор технологии Flexberry Ember
+      url: /fe_technology-review.html
+      output: web, pdf
+
     - title: Ember-CLI via Docker Image
       title_ru: Ember-CLI via Docker Image
       url: /fe_docker-for-ember-cli.html
