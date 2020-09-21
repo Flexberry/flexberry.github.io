@@ -23,8 +23,10 @@ site.data.sidebars.flexberry-winforms_sidebar.entries %} {% elsif page.sidebar =
 "flexberry-analytics_sidebar" %} {% assign sidebar =
 site.data.sidebars.flexberry-analytics_sidebar.entries %} {% elsif page.sidebar ==
 "flexberry-audit_sidebar" %} {% assign sidebar = site.data.sidebars.flexberry-audit_sidebar.entries
-%} {% elsif page.sidebar == "flexberry-ember_sidebar" %} {% assign sidebar =
-site.data.sidebars.flexberry-ember_sidebar.entries %} {% elsif page.sidebar ==
+%} {% elsif page.sidebar == "flexberry-ember-2_sidebar" %} {% assign sidebar =
+site.data.sidebars.flexberry-ember-2_sidebar.entries %} {% elsif page.sidebar ==
+"flexberry-ember-3_sidebar" %} {% assign sidebar =
+site.data.sidebars.flexberry-ember-3_sidebar.entries %} {% elsif page.sidebar ==
 "flexberry-aspnet_sidebar" %} {% assign sidebar =
 site.data.sidebars.flexberry-aspnet_sidebar.entries %} {% elsif page.sidebar ==
 "flexberry-bpm_sidebar" %} {% assign sidebar = site.data.sidebars.flexberry-bpm_sidebar.entries %}
@@ -73,4 +75,8 @@ if site.product == "product2" %} {% assign sidebar_pdf = site.data.sidebars.prod
 %} {% endif %} {% if site.product == "ember-flexberry-gis" %} {% assign sidebar_pdf =
 site.data.sidebars.ember-flexberry-gis_sidebar.entries %} {% endif %} {% if site.product ==
 "ember-flexberry-security" %} {% assign sidebar_pdf =
-site.data.sidebars.ember-flexberry-security_sidebar.entries %} {% endif %}
+site.data.sidebars.ember-flexberry-security_sidebar.entries %} {% endif %} {% comment %} sidebar
+configuration for version choosing {% endcomment %} {% if page.sidebar ==
+"flexberry-ember-2_sidebar" %} {% assign dropdown = site.data.dropdowns.flexberry-ember.versions %}
+{% elsif page.sidebar == "flexberry-ember-3_sidebar" %} {% assign dropdown =
+site.data.dropdowns.flexberry-ember.versions %} {% endif %}

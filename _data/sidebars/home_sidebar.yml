@@ -1,111 +1,109 @@
 # This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
 
 entries:
-- title: Sidebar
-  levels: one
-  folders:
-
-  - title: Home
-    title_ru: Домашняя страница
-    output: web
-    folderitems:
-    - title: Index
-      title_ru: Главная
-      url: /index.html
-      output: web
-    - title: Architecture
-      title_ru: Архитектура платформы
-      url: /fp_architecture.html
-      output: web
-  - title: Products
-    title_ru: Продукты
-    output: web
-    folderitems:
-    - title: Flexberry PLATFORM
-      title_ru: Платформа Flexberry
-      url: /fp_landing_page.html
-      output: web
-    - title: Flexberry Designer
-      url: /fd_landing_page.html
-      output: web
-    - title: Flexberry Ember
-      url: /fe_landing_page.html
-      output: web
-    - title: Flexberry ASP.NET
-      url: /fa_landing_page.html
-      output: web
-    - title: Flexberry Winforms
-      url: /fw_landing_page.html
-      output: web
-    - title: Flexberry Foundation
-      url: /ff_landing_page.html
-      output: web
-    - title: Flexberry GIS
-      url: /fg_landing_page.html
-      output: web
-    - title: Flexberry Service Bus
-      url: /fsb_landing_page.html
-      output: web
-    - title: Flexberry Analytics
-      url: /fan_landing_page.html
-      output: web
-    - title: Flexberry BPM
-      url: /fbpm_landing_page.html
-      output: web
-    - title: Flexberry Portal
-      url: /fprt_landing_page.html
-      output: web
-    - title: Flexberry ORM
-      url: /fo_landing_page.html
-      output: web
-    - title: Flexberry Security
-      url: /fs_landing_page.html
-      output: web
-    - title: Flexberry Audit
-      url: /fau_landing_page.html
-      output: web
-  - title: Guides
-    title_ru: Руководства
-    output: web
-    folderitems:
-    - title: Base tech
-      title_ru: Базовые технологии
-      url: /gbt_landing-page.html
-      output: web
-    - title: Create mobile app
-      title_ru: Создание мобильных приложений
-      url: /gma_landing-page.html
-      output: web
-    - title: Create BPM app
-      title_ru: Создание BPM приложений
-      url: /gbpm_landing-page.html
-      output: web
-    - title: Create BigData app
-      title_ru: Создание BigData приложений
-      url: /gbd_landing-page.html
-      output: web
-    - title: Tasks
-      title_ru: Практические задания
-      url: /gt_landing-page.html
-      output: web
-    - title: Practical guides
-      title_ru: Практические руководства
-      url: /gpg_landing-page.html
-      output: web
-    - title: UI UX Guideline
-      title_ru: Руководство по интерфейсам
-      url: /uiuxg_landing-page.ru.html
-      output: web
-    - title: OKR Guideline
-      title_ru: Руководство по использованию OKR
-      url: /okrg_landing-page.html
-      output: web
-  - title: Training courses
-    title_ru: Учебные курсы
-    output: web
-    folderitems:
-      - title: Developers school
-        title_ru: Школа разработчиков
-        url: /tds_landing-page.html
+  - title: Sidebar
+    levels: one
+    folders:
+      - title: Home
+        title_ru: Домашняя страница
         output: web
-
+        folderitems:
+          - title: Index
+            title_ru: Главная
+            url: /index.html
+            output: web
+          - title: Architecture
+            title_ru: Архитектура платформы
+            url: /fp_architecture.html
+            output: web
+      - title: Products
+        title_ru: Продукты
+        output: web
+        folderitems:
+          - title: Flexberry PLATFORM
+            title_ru: Платформа Flexberry
+            url: /fp_landing_page.html
+            output: web
+          - title: Flexberry Designer
+            url: /fd_landing_page.html
+            output: web
+          - title: Flexberry Ember
+            url: /ef3_landing_page.html
+            output: web
+          - title: Flexberry ASP.NET
+            url: /fa_landing_page.html
+            output: web
+          - title: Flexberry Winforms
+            url: /fw_landing_page.html
+            output: web
+          - title: Flexberry Foundation
+            url: /ff_landing_page.html
+            output: web
+          - title: Flexberry GIS
+            url: /fg_landing_page.html
+            output: web
+          - title: Flexberry Service Bus
+            url: /fsb_landing_page.html
+            output: web
+          - title: Flexberry Analytics
+            url: /fan_landing_page.html
+            output: web
+          - title: Flexberry BPM
+            url: /fbpm_landing_page.html
+            output: web
+          - title: Flexberry Portal
+            url: /fprt_landing_page.html
+            output: web
+          - title: Flexberry ORM
+            url: /fo_landing_page.html
+            output: web
+          - title: Flexberry Security
+            url: /fs_landing_page.html
+            output: web
+          - title: Flexberry Audit
+            url: /fau_landing_page.html
+            output: web
+      - title: Guides
+        title_ru: Руководства
+        output: web
+        folderitems:
+          - title: Base tech
+            title_ru: Базовые технологии
+            url: /gbt_landing-page.html
+            output: web
+          - title: Create mobile app
+            title_ru: Создание мобильных приложений
+            url: /gma_landing-page.html
+            output: web
+          - title: Create BPM app
+            title_ru: Создание BPM приложений
+            url: /gbpm_landing-page.html
+            output: web
+          - title: Create BigData app
+            title_ru: Создание BigData приложений
+            url: /gbd_landing-page.html
+            output: web
+          - title: Tasks
+            title_ru: Практические задания
+            url: /gt_landing-page.html
+            output: web
+          - title: Practical guides
+            title_ru: Практические руководства
+            url: /gpg_landing-page.html
+            output: web
+          - title: UI UX Guideline
+            title_ru: Руководство по интерфейсам
+            url: /uiuxg_landing-page.ru.html
+            output: web
+          - title: OKR Guideline
+            title_ru: Руководство по использованию OKR
+            url: /okrg_landing-page.html
+            output: web
+      - title: Training courses
+        title_ru: Учебные курсы
+        output: web
+        folderitems:
+          - title: Developers school
+            title_ru: Школа разработчиков
+            url: /tds_landing-page.html
+            output: web

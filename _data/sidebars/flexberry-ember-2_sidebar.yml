@@ -1,0 +1,326 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+  - title: Sidebar
+    product: Flexberry Ember
+    version: 2.x
+    folders:
+      - title: Getting started
+        title_ru: Начало работы
+        output: web, pdf
+
+        folderitems:
+          - title: About
+            title_ru: О модуле
+            url: /ef2_landing_page.html
+            output: web, pdf
+
+          - title: Ember-CLI via Docker Image
+            title_ru: Ember-CLI via Docker Image
+            url: /ef2_docker-for-ember-cli.html
+            output: web, pdf
+
+          - title: EmberJS build speedup
+            title_ru: Ускорение сборки EmberJS
+            url: /ef2_speedup-ember-build.html
+            output: web, pdf
+
+          - title: Ember-CLI update
+            title_ru: Обновление Ember-CLI
+            url: /ef2_update-ember-js.html
+            output: web, pdf
+
+      - title: Flexberry Ember Application
+        title_ru: Приложение Flexberry Ember
+        output: web, pdf
+
+        folderitems:
+          - title: Ember app performance
+            title_ru: Производительность ember-приложений
+            url: ef2_performance-tips.html
+            output: web, pdf
+
+          - title: Access to the Ember application from outside
+            title_ru: Доступ к Ember-приложению извне
+            url: ef2_access-ember-application-outside.html
+            output: web, pdf
+
+          - title: Internationalization
+            title_ru: Интернационализация приложения
+            url: ef2_i18n.html
+            output: web, pdf
+
+          - title: Apache Cordova usage
+            title_ru: Использование Apache Cordova
+            url: ef2_cordova.html
+            output: web, pdf
+
+          - title: Mobile templates
+            title_ru: Мобильные шаблоны
+            url: ef2_resolver.html
+            output: web, pdf
+
+          - title: Application generation
+            title_ru: Генератор приложения
+            url: ef2_generator.html
+            output: web, pdf
+
+          - title: Blueprints generation
+            title_ru: Blueprints кодогенерация
+            url: ef2_blueprints.html
+            output: web, pdf
+
+      - title: Forms
+        title_ru: Формы
+        output: web, pdf
+
+        folderitems:
+          - title: About forms
+            title_ru: О формах в приложении
+            url: ef2_forms.html
+            output: web, pdf
+
+          - title: Router
+            title_ru: Маршрутизатор
+            url: ef2_router.html
+            output: web, pdf
+
+          - title: Route
+            title_ru: Маршрут
+            url: ef2_route.html
+            output: web, pdf
+
+          - title: Controller
+            title_ru: Контроллер
+            url: ef2_controller.html
+            output: web, pdf
+
+          - title: Template
+            title_ru: Шаблон формы
+            url: ef2_template.html
+            output: web, pdf
+
+          - title: Edit form
+            title_ru: Форма редактирования
+            url: ef2_edit-form.html
+            output: web, pdf
+
+          - title: Default value
+            title_ru: Значения по умолчанию
+            url: ef2_default-value.html
+            output: web, pdf
+
+          - title: Read only form
+            title_ru: Режим "только чтение"
+            url: ef2_read-only-form.html
+            output: web, pdf
+
+          - title: Form in frame
+            title_ru: Форма без доп. элементов
+            url: ef2_show-ember-form-in-frame.html
+            output: web, pdf
+
+          - title: Отображение ошибок на формах
+            title_ru: Отображение ошибок на формах
+            url: ef2_displaying-errors-on-forms.html
+            output: web, pdf
+
+      - title: Work with data
+        title_ru: Работа с данными
+        output: web, pdf
+
+        folderitems:
+          - title: About
+            title_ru: О модуле
+            url: /efd2_landing_page.html
+            output: web, pdf
+
+          - title: Model
+            title_ru: Модель
+            url: /efd2_model.html
+            output: web, pdf
+
+          - title: Model projection
+            title_ru: Проекции в моделях
+            url: /efd2_model-projection.html
+            output: web, pdf
+
+          - title: Adapters
+            title_ru: Адаптеры
+            url: /efd2_adapters.html
+            output: web, pdf
+
+          - title: Serializer
+            title_ru: Сериализаторы
+            url: /efd2_serializer.html
+            output: web, pdf
+
+          - title: Enums
+            title_ru: Перечисления
+            url: /efd2_enum.html
+            output: web, pdf
+
+          - title: Model validation
+            title_ru: Валидация модели
+            url: /efd2_model-validation.html
+            output: web, pdf
+
+          - title: Date and time validation
+            title_ru: Валидация даты и времени
+            url: /efd2_date-time-validator.html
+            output: web, pdf
+
+          - title: Query language features
+            title_ru: Возможности языка запросов
+            url: /efd2_query-language.html
+            output: web, pdf
+
+          - title: Work with files support
+            title_ru: Поддержка работы с файлами
+            url: /efd2_work-files.html
+            output: web, pdf
+
+          - title: Offline support
+            title_ru: Поддержка офлайна
+            url: /efd2_offline.html
+            output: web, pdf
+
+          - title: OData support
+            title_ru: Поддержка OData
+            url: /efd2_odata.html
+            output: web, pdf
+
+      - title: Components
+        title_ru: Компоненты
+        output: web, pdf
+
+        folderitems:
+          - title: General description
+            title_ru: Общее описание
+            url: /ef2_base-component.html
+            output: web, pdf
+
+          - title: Flexberry Objectlistview
+            title_ru: Flexberry Objectlistview
+            url: /ef2_object-list-view.html
+            output: web, pdf
+
+          - title: List restriction tools
+            title_ru: Инструменты ограничения списка
+            url: /ef2_list-restriction-tools.html
+            output: web, pdf
+
+          - title: Setting up lists
+            title_ru: Настройка списков
+            url: /ef2_setting-lists.html
+            output: web, pdf
+
+          - title: Multi list settings
+            title_ru: Несколько списков на форме
+            url: /ef2_multi-list-form.html
+            output: web, pdf
+
+          - title: Flexberry Groupedit
+            title_ru: Flexberry Groupedit
+            url: /ef2_groupedit.html
+            output: web, pdf
+
+          - title: Flexberry LookUp
+            title_ru: Flexberry LookUp
+            url: /ef2_lookup-component.html
+            output: web, pdf
+
+          - title: Components for edit-forms
+            title_ru: Компоненты для работы с данными на форме редактирования
+            url: /ef2_edit-form-components.html
+            output: web, pdf
+
+          - title: File
+            title_ru: File
+            url: ef2_file.html
+            output: web, pdf
+
+          - title: Flexberry toggler
+            title_ru: Flexberry toggler
+            url: ef2_flexberry-toggler.html
+            output: web, pdf
+
+          - title: UI Message
+            title_ru: UI Message
+            url: ef2_ui-message.html
+            output: web, pdf
+
+          - title: Displaying errors in the application
+            title_ru: Отображение ошибок в приложении
+            url: ef2_error.html
+            output: web, pdf
+
+      - title: Services
+        title_ru: Сервисы
+        output: web, pdf
+
+        folderitems:
+          - title: About
+            title_ru: О модуле
+            url: ef2_service.html
+            output: web, pdf
+
+          - title: Log service
+            title_ru: Сервис логирования
+            url: ef2_log-service.html
+            output: web, pdf
+
+          - title: Lock service
+            title_ru: Сервис блокировок
+            url: ef2_lock-service.html
+            output: web, pdf
+
+          - title: User settings service
+            title_ru: Сервис пользовательских настроек
+            url: ef2_model-user-settings-service.html
+            output: web, pdf
+
+          - title: Boot status service
+            title_ru: Сервис состояния загрузки
+            url: ef2_boot-status-service.html
+            output: web, pdf
+
+      - title: Application themes
+        title_ru: Темы оформления
+        output: web, pdf
+
+        folderitems:
+          - title: Supported themes
+            title_ru: Поддерживаемые темы оформления
+            url: ef2_supported_themes.html
+            output: web, pdf
+
+          - title: Structure of themes
+            title_ru: Внутреннее устройство тем
+            url: ef2_themes_structure.html
+            output: web, pdf
+
+          - title: Migrating to the new themes
+            title_ru: Переход на новые темы оформления
+            url: ef2_themes_migrating.html
+            output: web, pdf
+
+          - title: Creating new themes
+            title_ru: Создание новых тем
+            url: ef2_themes_creating.html
+            output: web, pdf
+
+      - title: API references
+        title_ru: Справочники по API
+        output: web, pdf
+
+        folderitems:
+          - title: ember-flexberry
+            title_ru: ember-flexberry
+            url: ef2_ember-flexberry-api.html
+            output: web, pdf
+
+          - title: ember-flexberry-data
+            title_ru: ember-flexberry-data
+            url: ef2_ember-flexberry-data-api.html
+            output: web, pdf

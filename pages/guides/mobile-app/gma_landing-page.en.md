@@ -16,7 +16,7 @@ This guide shows you how to create a mobile app for Android and iOS platform `Fl
 Developing client web applications using platform `Flexberry` based on the use of JavaScript framework `Ember.js`. There are two scenarios of mobile application development: 
 
 1. To use a previously developed client-side web application. 
-2. Developing custom web application using Ember-addon [ember-flexberry](https://flexberry.github.io/ru/ef_landing_page.html). 
+2. Developing custom web application using Ember-addon [ember-flexberry](https://flexberry.github.io/ru/ef3_landing_page.html). 
 
 After creating the client web application, you can move on to creating a mobile app. 
 To create a mobile application platform `Flexberry` you must perform the following steps: 
