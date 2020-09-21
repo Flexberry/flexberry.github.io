@@ -37,6 +37,10 @@ entries:
         output: web, pdf
 
         folderitems:
+          - title: Model validation
+            title_ru: Валидация моделей
+            url: /efd3_model-validation.html
+            output: web, pdf
 
       - title: Components
         title_ru: Компоненты
