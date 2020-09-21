@@ -3,11 +3,11 @@ title: Flexberry PLATFORM Documentation
 email: mail@flexberry.net
 description: > # this means to ignore newlines until "baseurl:"
   Technical documentation for Flexberry PLATFORM Projects.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://flexberry.github.io" # the base hostname & protocol for your site
-repository: "Flexberry/flexberry.github.io"
+baseurl: '' # the subpath of your site, e.g. /blog
+url: 'https://flexberry.github.io' # the base hostname & protocol for your site
+repository: 'Flexberry/flexberry.github.io'
 twitter_username: flexberry
-github_username:  Flexberry
+github_username: Flexberry
 
 output: web
 # this property is useful for conditional filtering of content that is separate from the PDF.
@@ -58,10 +58,10 @@ feedback_email: mail@flexberry.net
 encoding: utf-8
 markdown: kramdown
 kramdown:
- input: GFM
- auto_ids: true
- hard_wrap: false
- syntax_highlighter: rouge
+  input: GFM
+  auto_ids: true
+  hard_wrap: false
+  syntax_highlighter: rouge
 
 redcarpet:
   extensions: ['tables']
@@ -72,31 +72,28 @@ collections:
 # collections are declared here. this renders the content in _tooltips and processes it, but doesn't output it as actual files in the output unless you change output to true
 
 defaults:
-  -
-    scope:
-      path: ""
-      type: "pages"
+  - scope:
+      path: ''
+      type: 'pages'
     values:
-      layout: "page"
+      layout: 'page'
       comments: true
       search: true
       sidebar: home_sidebar
-  -
-    scope:
-      path: ""
-      type: "tooltips"
+  - scope:
+      path: ''
+      type: 'tooltips'
     values:
-      layout: "page"
+      layout: 'page'
       comments: true
       search: true
       tooltip: true
 
-  -
-    scope:
-      path: ""
-      type: "posts"
+  - scope:
+      path: ''
+      type: 'posts'
     values:
-      layout: "post"
+      layout: 'post'
       comments: true
       search: true
       sidebar: home_sidebar
@@ -106,47 +103,47 @@ defaults:
 highlighter: rouge
 # library used for syntax highlighting
 
-
 sidebars:
-- home_sidebar
-- mydoc_sidebar
-- product1_sidebar
-- product2_sidebar
-- ember-flexberry-security_sidebar
-- ember-flexberry-gis_sidebar
-- ember-flexberry-geolocation_sidebar
-- ember-flexberry-gis-csw_sidebar
-- ember-flexberry-gis-esri_sidebar
-- ember-flexberry-gis-yandex_sidebar
-- flexberry-aspnet_sidebar
-- flexberry-designer_sidebar
-- flexberry-winforms_sidebar
-- flexberry-odataservice_sidebar
-- flexberry-orm_sidebar
-- flexberry-platform_sidebar
-- flexberry-analytics_sidebar
-- flexberry-audit_sidebar
-- flexberry-ember_sidebar
-- flexberry-security_sidebar
-- flexberry-servicebus_sidebar
-- flexberry-gis_sidebar
-- flexberry-bpm_sidebar
-- leaflet-editable-measures_sidebar
-- leaflet-export_sidebar
-- leaflet-history_sidebar
-- leaflet-switch-scale-control_sidebar
-- leaflet-wfst_sidebar
-- leaflet-wms_sidebar
-- leaflet-zoomslider_sidebar
-- guide-base-tech_sidebar
-- guide-tasks_sidebar
-- guide-practical-guides_sidebar
-- guide-okr-guideline_sidebar
-- other
-- guide-mobile-app_sidebar
-- guide-bpm-app_sidebar
-- ui-ux-guideline_sidebar
-- training-developers-school_sidebar
+  - home_sidebar
+  - mydoc_sidebar
+  - product1_sidebar
+  - product2_sidebar
+  - ember-flexberry-security_sidebar
+  - ember-flexberry-gis_sidebar
+  - ember-flexberry-geolocation_sidebar
+  - ember-flexberry-gis-csw_sidebar
+  - ember-flexberry-gis-esri_sidebar
+  - ember-flexberry-gis-yandex_sidebar
+  - flexberry-aspnet_sidebar
+  - flexberry-designer_sidebar
+  - flexberry-winforms_sidebar
+  - flexberry-odataservice_sidebar
+  - flexberry-orm_sidebar
+  - flexberry-platform_sidebar
+  - flexberry-analytics_sidebar
+  - flexberry-audit_sidebar
+  - flexberry-ember-2_sidebar
+  - flexberry-ember-3_sidebar
+  - flexberry-security_sidebar
+  - flexberry-servicebus_sidebar
+  - flexberry-gis_sidebar
+  - flexberry-bpm_sidebar
+  - leaflet-editable-measures_sidebar
+  - leaflet-export_sidebar
+  - leaflet-history_sidebar
+  - leaflet-switch-scale-control_sidebar
+  - leaflet-wfst_sidebar
+  - leaflet-wms_sidebar
+  - leaflet-zoomslider_sidebar
+  - guide-base-tech_sidebar
+  - guide-tasks_sidebar
+  - guide-practical-guides_sidebar
+  - guide-okr-guideline_sidebar
+  - other
+  - guide-mobile-app_sidebar
+  - guide-bpm-app_sidebar
+  - ui-ux-guideline_sidebar
+  - training-developers-school_sidebar
 
 plugins:
   - jekyll-seo-tag

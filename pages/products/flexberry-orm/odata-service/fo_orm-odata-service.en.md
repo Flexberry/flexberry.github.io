@@ -630,7 +630,7 @@ public static void Configure(HttpConfiguration config, IUnityContainer container
 }
 ```
 
-This action adds the ability to filter objects by pseudometal similar to [filtering on detalam](efd_query-language.html#querydetailpredicate). For data modification operations, this connection is not used, as there is no possibility to choose the data at this link.
+This action adds the ability to filter objects by pseudometal similar to [filtering on detalam](efd2_query-language.html#querydetailpredicate). For data modification operations, this connection is not used, as there is no possibility to choose the data at this link.
 
 
 

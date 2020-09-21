@@ -1,5 +1,18 @@
 {% include custom/sidebarconfigs.html %}
 
+{% if dropdown %}
+<div class="dropdown">
+    <button class="btn btn-default dropdown-toggle btn-block" type="button" id="dropdownVersion" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{sidebar[0].version}}
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownVersion">
+        {% for version in dropdown %}
+        <li><a href="{{version.url}}">{{version.title}}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
 <ul id="mysidebar" class="nav list-unstyled components">
     <li class="sidebarTitle">{{sidebar[0].product}} {{sidebar[0].version}}</li>
     {% for entry in sidebar %} {% for folder in entry.folders %} {% if folder.output contains "web" %}

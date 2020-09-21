@@ -53,7 +53,7 @@ Before using the modules, they should be connected to `Flexberry Designer`:
 
 * [Expansion module Flexberry ORM](fo_orm-case-plugin.html)
 * [Expansion module Flexberry ASP.NET](fa_asp-net-generator.html)
-* [Expansion module Flexberry Ember](ef_generator.html)
+* [Expansion module Flexberry Ember](ef2_generator.html)
 * [Expander WinForms Flexberry](fw_flexberry-winforms-case-plugin.html)
 
 ## How to implement your extension module Flexberry Designer

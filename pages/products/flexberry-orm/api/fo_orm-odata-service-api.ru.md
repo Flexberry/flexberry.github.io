@@ -3,7 +3,7 @@ title: Flexberry ORM ODataService API
 sidebar: flexberry-orm_sidebar
 keywords: API
 toc: true
-permalink: ru/ef_orm-odata-service-api.html
+permalink: ru/fo_orm-odata-service-api.html
 lang: ru
 ---
 

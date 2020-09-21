@@ -749,9 +749,9 @@ entries:
     folderitems:
     - title: Flexberry ORM
       title_ru: Flexberry ORM
-      url: /ef_flexberry-orm-api.html
+      url: /fo_flexberry-orm-api.html
       output: web, pdf
     - title: Flexberry ORM ODataService
       title_ru: Flexberry ORM ODataService
-      url: /ef_orm-odata-service-api.html
+      url: /fo_orm-odata-service-api.html
       output: web, pdf

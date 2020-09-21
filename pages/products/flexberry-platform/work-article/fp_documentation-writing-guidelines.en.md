@@ -30,7 +30,7 @@ The file with the texts of articles are placed in subdirectories, sootvetstvuyus
 
 * `product-prefix` prefix, the abbreviation of the product 
 * `article-name` the title of the article in English 
-* `lang` - language articles, valid values are **** and **en** 
+* `lang` - language articles, valid values are **ru** and **en** 
 
 For example, a file with the text of the article has the following name: _pages/products/flexberry-platform/work-article/fp_how-create-article.EN.md_. 
 
@@ -71,7 +71,7 @@ At the beginning of each file with the text of the article should be a block wit
 * `keywords` (keywords, fill in a comma - search) 
 * `toc` (to add a table of contents with links in the headers (under the main menu on the left), usually `true`) 
 * `permalink` is a unique link to the article in format _\[lang\]/\[product-prefix\]\_\[article-name\].HTML 
-* `lang` - language articles, valid values are **** and **en** 
+* `lang` - language articles, valid values are **ru** and **en** 
 
 For example, a block with metadata for the article, will link as follows: 
 
@@ -97,7 +97,7 @@ lang: en
 
 {% include note.html content="Text" %} 
 
-* [Code examples](https://flexberry.github.io/mydoc_code_samples.html) are separated by a blank line and three apostrophes (the letter E) before and after the code. You can also specify [language Primera](http://idratherbewriting.com/documentation-theme-jekyll/mydoc_syntax_highlighting.html#available-lexers). The language for the examples on the c# referred to as `csharp`. 
+* [Code examples](https://flexberry.github.io/mydoc_code_samples.html) are separated by a blank line and three apostrophes before and after the code. You can also specify [language Primera](http://idratherbewriting.com/documentation-theme-jekyll/mydoc_syntax_highlighting.html#available-lexers). The language for the examples on the c# referred to as `csharp`. 
 
 {% include note.html content="Before you proceed with the article should do a pull (sync version). **Before the commit of the article should also make pull!** Otherwise merge will be implemented that can remove the changes." %} 
 

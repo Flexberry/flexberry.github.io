@@ -1,107 +1,107 @@
 ## Topnav single links
 ## if you want to list an external url, use external_url instead of url. the theme will apply a different link base.
 topnav:
-- title: Topnav
-  items:
-    - title: flexberry.net
-      url: http://flexberry.net
+  - title: Topnav
+    items:
+      - title: flexberry.net
+        url: http://flexberry.net
 
 #Topnav dropdowns
 topnav_dropdowns:
-- title: Topnav dropdowns
-  folders:
-    - title: Products
-      title_ru: Продукты
-      folderitems:
-        - title: Flexberry PLATFORM
-          title_ru: Платформа Flexberry
-          url: /fp_landing_page.html
-        - title: Flexberry Designer
-          url: /fd_landing_page.html
-        - title: Flexberry Ember
-          url: /fe_landing_page.html
-        - title: Flexberry ASP.NET
-          url: /fa_landing_page.html
-        - title: Flexberry Winforms
-          url: /fw_landing_page.html
-        - title: Flexberry Foundation
-          url: /ff_landing_page.html
-        - title: Flexberry GIS
-          url: /fg_landing_page.html
-        - title: Flexberry Service Bus
-          url: /fsb_landing_page.html
-        - title: Flexberry Analytics
-          url: /fan_landing_page.html
-        - title: Flexberry BPM
-          url: /fbpm_landing_page.html
-        - title: Flexberry Portal
-          url: /fprt_landing_page.html
-        - title: Flexberry ORM
-          url: /fo_landing_page.html
-        - title: Flexberry Security
-          url: /fs_landing_page.html
-        - title: Flexberry Audit
-          url: /fau_landing_page.html
-    - title: Guides
-      title_ru: Руководства
-      folderitems:
-        - title: Base tech
-          title_ru: Базовые технологии
-          url: /gbt_landing-page.html
-        - title: Create mobile app
-          title_ru: Создание мобильных приложений
-          url: /gma_landing-page.html
-        - title: Create BPM app
-          title_ru: Создание BPM приложений
-          url: /gbpm_landing-page.html
-        - title: Create BigData app
-          title_ru: Создание BigData приложений
-          url: /gbd_landing-page.html
-        - title: Tasks
-          title_ru: Практические задания
-          url: /gt_landing-page.html
-        - title: Practical guides
-          title_ru: Практические руководства
-          url: /gpg_landing-page.html
-        - title: UI UX Guideline
-          title_ru: Руководство по интерфейсам
-          url: /uiuxg_landing-page.ru.html
-        - title: OKR Guideline
-          title_ru: Руководство по использованию OKR
-          url: /okrg_landing-page.html
-    - title: Training courses
-      title_ru: Учебные курсы
-      folderitems:
-        - title: Developers school
-          title_ru: Школа разработчиков
-          url: /tds_landing-page.html
-    - title: GitHub Repos
-      folderitems:
-        - title: All repositories
-          title_ru: Все репозитории        
-          external_url: https://github.com/flexberry/
-        - title: ember-flexberry
-          external_url: https://github.com/flexberry/ember-flexberry
-        - title: ember-flexberry-data
-          external_url: https://github.com/flexberry/ember-flexberry-data
-        - title: ember-flexberry-security
-          external_url: https://github.com/flexberry/ember-flexberry-security
-        - title: ember-flexberry-gis
-          external_url: https://github.com/flexberry/ember-flexberry-gis
-        - title: Leaflet-WFST
-          external_url: https://github.com/flexberry/Leaflet-WFST
-        - title: Leaflet.Editable.Measures
-          external_url: https://github.com/Flexberry/Leaflet.Editable.Measures
-        - title: NewPlatform.Flexberry.ORM
-          external_url: https://github.com/Flexberry/NewPlatform.Flexberry.ORM
-        - title: NewPlatform.Flexberry.ORM.ODataService
-          external_url: https://github.com/Flexberry/NewPlatform.Flexberry.ORM.ODataService
+  - title: Topnav dropdowns
+    folders:
+      - title: Products
+        title_ru: Продукты
+        folderitems:
+          - title: Flexberry PLATFORM
+            title_ru: Платформа Flexberry
+            url: /fp_landing_page.html
+          - title: Flexberry Designer
+            url: /fd_landing_page.html
+          - title: Flexberry Ember
+            url: /ef3_landing_page.html
+          - title: Flexberry ASP.NET
+            url: /fa_landing_page.html
+          - title: Flexberry Winforms
+            url: /fw_landing_page.html
+          - title: Flexberry Foundation
+            url: /ff_landing_page.html
+          - title: Flexberry GIS
+            url: /fg_landing_page.html
+          - title: Flexberry Service Bus
+            url: /fsb_landing_page.html
+          - title: Flexberry Analytics
+            url: /fan_landing_page.html
+          - title: Flexberry BPM
+            url: /fbpm_landing_page.html
+          - title: Flexberry Portal
+            url: /fprt_landing_page.html
+          - title: Flexberry ORM
+            url: /fo_landing_page.html
+          - title: Flexberry Security
+            url: /fs_landing_page.html
+          - title: Flexberry Audit
+            url: /fau_landing_page.html
+      - title: Guides
+        title_ru: Руководства
+        folderitems:
+          - title: Base tech
+            title_ru: Базовые технологии
+            url: /gbt_landing-page.html
+          - title: Create mobile app
+            title_ru: Создание мобильных приложений
+            url: /gma_landing-page.html
+          - title: Create BPM app
+            title_ru: Создание BPM приложений
+            url: /gbpm_landing-page.html
+          - title: Create BigData app
+            title_ru: Создание BigData приложений
+            url: /gbd_landing-page.html
+          - title: Tasks
+            title_ru: Практические задания
+            url: /gt_landing-page.html
+          - title: Practical guides
+            title_ru: Практические руководства
+            url: /gpg_landing-page.html
+          - title: UI UX Guideline
+            title_ru: Руководство по интерфейсам
+            url: /uiuxg_landing-page.ru.html
+          - title: OKR Guideline
+            title_ru: Руководство по использованию OKR
+            url: /okrg_landing-page.html
+      - title: Training courses
+        title_ru: Учебные курсы
+        folderitems:
+          - title: Developers school
+            title_ru: Школа разработчиков
+            url: /tds_landing-page.html
+      - title: GitHub Repos
+        folderitems:
+          - title: All repositories
+            title_ru: Все репозитории
+            external_url: https://github.com/flexberry/
+          - title: ember-flexberry
+            external_url: https://github.com/flexberry/ember-flexberry
+          - title: ember-flexberry-data
+            external_url: https://github.com/flexberry/ember-flexberry-data
+          - title: ember-flexberry-security
+            external_url: https://github.com/flexberry/ember-flexberry-security
+          - title: ember-flexberry-gis
+            external_url: https://github.com/flexberry/ember-flexberry-gis
+          - title: Leaflet-WFST
+            external_url: https://github.com/flexberry/Leaflet-WFST
+          - title: Leaflet.Editable.Measures
+            external_url: https://github.com/Flexberry/Leaflet.Editable.Measures
+          - title: NewPlatform.Flexberry.ORM
+            external_url: https://github.com/Flexberry/NewPlatform.Flexberry.ORM
+          - title: NewPlatform.Flexberry.ORM.ODataService
+            external_url: https://github.com/Flexberry/NewPlatform.Flexberry.ORM.ODataService
 
 topnav_langs:
-- title: Language
-  title_ru: Язык
-  items:
-        - title: English
-          url: /en
-        - title: Русский
-          url: /ru
+  - title: Language
+    title_ru: Язык
+    items:
+      - title: English
+        url: /en
+      - title: Русский
+        url: /ru

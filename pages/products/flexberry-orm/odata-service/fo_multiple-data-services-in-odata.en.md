@@ -122,7 +122,7 @@ An example configuration for this service:
 </configuration>
 ``` 
 
-{% include note.html content="When you use this solution, `ember` application will need tuning adapters](efd_adapters.html)." %} 
+{% include note.html content="When you use this solution, `ember` application will need tuning adapters](efd2_adapters.html)." %} 
 
 ### the definition of the type of the service data object type 
 

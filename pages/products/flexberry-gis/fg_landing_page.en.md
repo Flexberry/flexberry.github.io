@@ -47,7 +47,7 @@ A special thanks to the visualization the size and appearance of objects on the 
 
 ## Test bench 
 
-* [ember-flexberry-gis-test-stand](ef_service.html) 
+* [ember-flexberry-gis-test-stand](ef2_service.html) 
 
 
 

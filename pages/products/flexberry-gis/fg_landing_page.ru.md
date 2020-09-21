@@ -45,4 +45,4 @@ lang: ru
 
 ## Тестовый стенд
 
-* [ember-flexberry-gis-test-stand](ef_service.html)
+* [ember-flexberry-gis-test-stand](ef2_service.html)

@@ -10,7 +10,7 @@ autotranslated: true
 hash: 28ed4bde22dc6bc72c91e56a42f43d8fc52ecc25c527960c736e89c191edc9df 
 --- 
 
-Used on [list of forms](fd_listform.html) (property ViewName component [ObjectListView](fw_objectlistview.html), [WebObjectListView](fa_web-object-list-view.html) and [Flexberry ObjectListView](fe_object-list-view.html)). 
+Used on [list of forms](fd_listform.html) (property ViewName component [ObjectListView](fw_objectlistview.html), [WebObjectListView](fa_web-object-list-view.html) and [Flexberry ObjectListView](ef2_object-list-view.html)). 
 
 ## Setting 
 
