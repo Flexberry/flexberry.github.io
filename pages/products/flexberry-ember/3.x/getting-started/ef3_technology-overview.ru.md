@@ -10,21 +10,21 @@ lang: ru
 
 ## Назначение и основные возможности технологии Flexberry Ember
 
-**Назнечением** технологии Flexberry Ember является быстрое создание прототипа приложения, имеющего базовый функционал учетной системы "из коробки", с использованием фреймворка [Ember.js](https://emberjs.com/), а также предоставление разработчикам готовых компонент, сервисов и средств работы с данными для упрощения разработки сложных бизнес-приложений, включая веб- и мобильные приложения на базе фреймворка Ember.js.
+**Назнечением** технологии Flexberry Ember является быстрое создание прототипа приложения, имеющего базовый функционал учетной системы "из коробки", а также предоставление разработчикам готовых компонент, сервисов и средств работы с данными для упрощения разработки сложных бизнес-приложений, включая веб- и мобильные приложения на базе фреймворка [Ember.js](https://emberjs.com/).
 
-### Основные возможности технологии Flexberry Ember
+Основные возможности технологии Flexberry Ember:
 
-1. [Генерация Ember-приложения](https://flexberry.github.io/ru/ef2_generator.html) с функционалом учетной системы из меню Flexberry Designer
+1. [Генерация Ember-приложения](https://flexberry.github.io/ru/ef2_generator.html) с функционалом учетной системы из приложения [Flexberry Designer](https://flexberry.github.io/ru/fd_flexberry-designer.html)
 2. Поддержка [офлайн-режима](https://flexberry.github.io/ru/efd2_offline.html) работы Ember-приложения
 3. Поддержка [протокола OData](https://flexberry.github.io/ru/efd2_odata.html)
 4. Поддержка [работы с файлами](https://flexberry.github.io/ru/efd2_work-files.html)
-5. Предоставление возможностей для использования Ember-приложения в качестве [мобильного приложения](https://flexberry.github.io/ru/ef2_cordova.html) Apache Cordova на той же кодовой базе
+5. Предоставление возможностей для использования Ember-приложения в качестве [мобильного приложения Apache Cordova](https://flexberry.github.io/ru/ef2_cordova.html) на той же кодовой базе
 
 ## Архитектура приложений на Flexberry Ember
 
 ![Архитектура приложений](/images/pages/products/flexberry-ember/ember-flexberry/getting-started/application-architecture.png)
 
-Как следует из схемы, приложения на Flexberry Ember состоят из трех основных частей:
+Как следует из схемы, приложения, созданные с использованием фреймворка Flexberry Ember, состоят из трех основных частей:
 
 * базы данных
 * серверной бизнес-логики
@@ -67,7 +67,7 @@ lang: ru
 
 2. [ember-flexberry-data](https://github.com/Flexberry/ember-flexberry-data) (адаптеры, сериализаторы, сервисы для работы с OData и поддержки офлайн-режима работы)
 
-3. [ember-flexberry-themes](https://github.com/Flexberry/ember-flexberry-themes) ([темы оформления](https://flexberry.github.io/ru/ef2_supported_themes.html) приложения). В технологии Flexberry Ember  стилизация тем реализована с использованием  css-фреймворка [Semantic UI](https://semantic-ui.com/). Помимо представленных «из коробки» тем, технологи Flexberry Ember позволяет [создавать новые](https://flexberry.github.io/ru/ef2_themes_creating.html) в соответствии с требованиями проекта.
+3. [ember-flexberry-themes](https://github.com/Flexberry/ember-flexberry-themes) ([темы оформления](https://flexberry.github.io/ru/ef2_supported_themes.html) приложения). В технологии Flexberry Ember  стилизация тем реализована с использованием  CSS-фреймворка [Semantic UI](https://semantic-ui.com/). Помимо представленных «из коробки» тем, технологи Flexberry Ember позволяет [создавать новые](https://flexberry.github.io/ru/ef2_themes_creating.html) в соответствии с требованиями проекта.
 
 Дополнительно можно установить следующие аддоны:
 
