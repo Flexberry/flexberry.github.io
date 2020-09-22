@@ -51,7 +51,7 @@ lang: ru
 
 * [Модуль расширения Flexberry ORM](fo_orm-case-plugin.html)
 * [Модуль расширения Flexberry ASP.NET](fa_asp-net-generator.html)
-* [Модуль расширения Flexberry Ember](ef_generator.html)
+* [Модуль расширения Flexberry Ember](ef2_generator.html)
 * [Модуль расширения Flexberry WinForms](fw_flexberry-winforms-case-plugin.html)
 
 ## Как реализовать свой модуль расширения Flexberry Designer

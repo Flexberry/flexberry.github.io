@@ -12,7 +12,7 @@ summary: School developers Flexberry.
 
 ## About the school
 
-School developers [platform Flexberry](https://flexberry.net/) is an online school that allows you to obtain the knowledge and skills required to develop information systems and applications using technology [Flexberry Ember](/ru/fe_landing_page.html).
+School developers [platform Flexberry](https://flexberry.net/) is an online school that allows you to obtain the knowledge and skills required to develop information systems and applications using technology [Flexberry Ember](/ru/ef3_landing_page.html).
 
 The school provides practical knowledge in:
 * The principles of functioning of modern web applications

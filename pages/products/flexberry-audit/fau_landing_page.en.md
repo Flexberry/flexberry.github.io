@@ -28,7 +28,7 @@ Technology component **Flexberry Audit** implements a function of logging data c
 * Databases with data auditing (may be the main database of the application or separately, including in other DBMS)
 * Backend - NuGet package of the object model and API: [NewPlatform.Flexberry.Audit](https://www.nuget.org/packages/NewPlatform.Flexberry.Audit)
 * Interface viewing audit data
-* [The implementation of](https://github.com/flexberry/ember-flexberry-security) for [Flexberry Ember](fe_landing_page.html)
+* [The implementation of](https://github.com/flexberry/ember-flexberry-security) for [Flexberry Ember](ef3_landing_page.html)
 * Implementation for [Flexberry ASP.NET](fa_landing_page.html)
 * Implementation for [Flexberry Winforms](fw_landing_page.html)
 * Set up fixed operations on data objects are performed in the interface Flexberry Designer.

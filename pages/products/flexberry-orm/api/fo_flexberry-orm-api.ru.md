@@ -3,7 +3,7 @@ title: Flexberry ORM API
 sidebar: flexberry-orm_sidebar
 keywords: API
 toc: true
-permalink: ru/ef_flexberry-orm-api.html
+permalink: ru/fo_flexberry-orm-api.html
 lang: ru
 ---
 

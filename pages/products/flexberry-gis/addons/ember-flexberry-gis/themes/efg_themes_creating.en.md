@@ -13,7 +13,7 @@ summary: Description of create new themes
 
 ## the creation in the addon 
 
-[Ostrovna article](ef_themes_creating.html) 
+[Ostrovna article](ef2_themes_creating.html) 
 
 
 

@@ -15,7 +15,7 @@ lang: ru
 * Инструменты проектирования и редактирования:
   * [Flexberry Designer](fd_flexberry-designer.html). Установить можно, скачав с сайта [flexberry.net](https://designer.flexberry.net/#/download-win-app).
 * Фреймворки:
-  * [Flexberry Ember](fe_landing_page.html)
+  * [Flexberry Ember](ef3_landing_page.html)
   * [Flexberry ASP.NET](fa_landing_page.html)
   * [Flexberry Winforms](fw_landing_page.html)
 * Функциональные подсистемы:

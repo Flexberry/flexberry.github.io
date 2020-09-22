@@ -3,7 +3,7 @@ title: Flexberry ORM ODataService API
 sidebar: flexberry-orm_sidebar 
 keywords: API 
 toc: true 
-permalink: en/ef_orm-odata-service-api.html 
+permalink: en/fo_orm-odata-service-api.html 
 lang: en 
 autotranslated: true 
 hash: 7176a332bacfff60c557bc121076b5c661b7cb7c40530de9d13672c879a3c44a 
