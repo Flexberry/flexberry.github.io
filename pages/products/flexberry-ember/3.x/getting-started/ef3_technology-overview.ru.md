@@ -118,7 +118,7 @@ lang: ru
 
 1. [Документация](https://flexberry.github.io/ru/ef3_landing_page.html) по фреймворку Flexberry Ember
 2. [Практическое руководство](https://flexberry.github.io/ru/ef3_landing_page.html) по Flexberry Ember
-2. Плейлист ["Разработка приложений на Ember.js и ASP.NET Core"](https://www.youtube.com/playlist?list=PLlhqsC7hBaScz0kuH8ZbA8b5tnA2C3xzF) на YouTube-канале Flexberry Platform
+2. Плейлист ["Разработка приложений на Ember.js и ASP.NET Core"](https://www.youtube.com/playlist?list=PLlhqsC7hBaScz0kuH8ZbA8b5tnA2C3xzF) на [YouTube-канале Flexberry Platform](https://www.youtube.com/user/FlexberryPLATFORM)
 
 ## Для разработчиков
 
