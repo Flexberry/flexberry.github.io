@@ -17,7 +17,7 @@ lang: ru
 
 ![Выбор даты без времени в поле "Дата и время отгрузки"](/images/pages/guides/flexberry-ember/5-2-ember-flexberry-components/5-2-1.png)
 
-Как мы видим, используемый компонент календаря по умолчанию позволяет выбрать только дату, без времени. В нашем приложении необходимо помимо даты выбрать также и время. Перейдем к **шаблону** соответствующей формы редактирования и найдем в этом шаблоне разметку для создания компонента [flexberry-simpledatetime](https://flexberry.github.io/ru/fef2_edit-form-components.html#flexberry-simpledatetime), который используется для отображения атрибута **model.shipmentDateTime**:
+Как мы видим, используемый компонент календаря по умолчанию позволяет выбрать только дату, без времени. В нашем приложении необходимо помимо даты выбрать также и время. Перейдем к **шаблону** соответствующей формы редактирования и найдем в этом шаблоне разметку для создания компонента [flexberry-simpledatetime](https://flexberry.github.io/ru/ef2_edit-form-components.html#flexberry-simpledatetime), который используется для отображения атрибута **model.shipmentDateTime**:
 
 *`app → templates → i-i-s-shop-invoice-e.hbs`*
 
