@@ -24,21 +24,21 @@ summary: Обзор структуры сгенерированных клиен
 
 Детально структура сгенерированного клиентского `Flexberry Ember`-приложения рассмотрена в отдельных статьях:
 
-* [Адаптеры](efd3_adapter.html) (папка 'adapters')
-* [Компоненты](efd3_component.html) (папка 'components')
-* [Контроллеры](efd3_controller.html) (папка 'controllers')
-* [Перечисления](efd3_enum.html) (папка 'enums')
-* [Хэлперы](efd3_helper.html) (папка 'helpers')
-* [Локали](efd3_locale.html) (папка 'locales')
-* [Миксины](efd3_mixin.html) (папка 'mixins')
-* [Модели](efd3_model.html) (папка 'models')
-* [Роуты](efd3_route.html) (папка 'routes')
-* [Сериализаторы](efd3_serializer.html) (папка 'serializers')
-* [Сервисы](efd3_service.html) (папка 'services')
-* [Стили](efd3_style.html) (папка 'styles')
-* [Шаблоны](efd3_template.html) (папка 'templates')
-* [Преобразования](efd3_transform.html) (папка 'transforms')
-* [Роутер](efd3_router.html) (файл 'router.js')
+* [Адаптеры](efd3_generated-adapter.html) (папка 'adapters')
+* [Компоненты](efd3_generated-component.html) (папка 'components')
+* [Контроллеры](efd3_generated-controller.html) (папка 'controllers')
+* [Перечисления](efd3_generated-enum.html) (папка 'enums')
+* [Хэлперы](efd3_generated-helper.html) (папка 'helpers')
+* [Локали](efd3_generated-locale.html) (папка 'locales')
+* [Миксины](efd3_generated-mixin.html) (папка 'mixins')
+* [Модели](efd3_generated-model.html) (папка 'models')
+* [Роуты](efd3_generated-route.html) (папка 'routes')
+* [Сериализаторы](efd3_generated-serializer.html) (папка 'serializers')
+* [Сервисы](efd3_generated-service.html) (папка 'services')
+* [Стили](efd3_generated-style.html) (папка 'styles')
+* [Шаблоны](efd3_generated-template.html) (папка 'templates')
+* [Преобразования](efd3_generated-transform.html) (папка 'transforms')
+* [Роутер](efd3_generated-router.html) (файл 'router.js')
 
 ## Структура сгенерированного серверного приложения
 
