@@ -14,7 +14,7 @@ summary: Обзор структуры сгенерированных клиен
 
 ## Структура сгенерированного клиентского приложения
 
-Структура сгенерированного `Flexberry Ember`-приложения по сути является расширением [«чистого» Ember-приложения](https://guides.emberjs.com/v3.0.0/getting-started/core-concepts/). На скриншоте ниже слева представлена структура, полученная с помощью командной строки Ember, справа - с помощью генерации кода клиентского приложения из [Flexberry Designer](https://flexberry.github.io/ru/fd_flexberry-designer.html). Как можно заметить, в правой структуре уже установлены bower- и node-модули (из-за этой установки, помимо прочего, генерация из [Flexberry Designer](https://flexberry.github.io/ru/fd_flexberry-designer.html) может занимать существенное время), а также добавлен файл «theme.config» для осуществления настройки темы оформления конкретного приложения.
+Структура сгенерированного `Flexberry Ember`-приложения по сути является расширением [«чистого» Ember-приложения](https://guides.emberjs.com/v3.0.0/getting-started/core-concepts/). На скриншоте ниже слева представлена структура, полученная с помощью командной строки Ember, справа - с помощью генерации кода клиентского приложения из [Flexberry Designer](fd_flexberry-designer.html). Как можно заметить, в правой структуре уже установлены bower- и node-модули (из-за этой установки, помимо прочего, генерация из [Flexberry Designer](fd_flexberry-designer.html) может занимать существенное время), а также добавлен файл «theme.config» для осуществления настройки темы оформления конкретного приложения.
 
 ![Сравнение структуры «чистого» Ember-приложения и `Flexberry Ember`-приложения](/images/pages/products/flexberry-ember/ember-flexberry/generation/generated-ember-app-compare.png).
 
@@ -22,34 +22,74 @@ summary: Обзор структуры сгенерированных клиен
 
 ![Cравнение структуры папки APP «чистого» Ember-приложения и `Flexberry Ember`-приложения](/images/pages/products/flexberry-ember/ember-flexberry/generation/generated-ember-app-compare-detailed.png).
 
-Детально структура сгенерированного клиентского `Flexberry Ember`-приложения рассмотрена в отдельных статьях:
+### Сгенерированные модели 
+При генерации в клиентское приложение добавляются следующие [модели](efd3_model.html) (папка models)
 
-* [Адаптеры](efd3_generated-adapter.html) (папка 'adapters')
-* [Компоненты](efd3_generated-component.html) (папка 'components')
-* [Контроллеры](efd3_generated-controller.html) (папка 'controllers')
-* [Перечисления](efd3_generated-enum.html) (папка 'enums')
-* [Хэлперы](efd3_generated-helper.html) (папка 'helpers')
-* [Локали](efd3_generated-locale.html) (папка 'locales')
-* [Миксины](efd3_generated-mixin.html) (папка 'mixins')
-* [Модели](efd3_generated-model.html) (папка 'models')
-* [Роуты](efd3_generated-route.html) (папка 'routes')
-* [Сериализаторы](efd3_generated-serializer.html) (папка 'serializers')
-* [Сервисы](efd3_generated-service.html) (папка 'services')
-* [Стили](efd3_generated-style.html) (папка 'styles')
-* [Шаблоны](efd3_generated-template.html) (папка 'templates')
-* [Преобразования](efd3_generated-transform.html) (папка 'transforms')
-* [Роутер](efd3_generated-router.html) (файл 'router.js')
+![Модели в сгенерированном `Flexberry Ember`-приложении](/images/pages/products/flexberry-ember/ember-flexberry/generation/generated-models.png).
+
+Выделены модели, соответствующие классам данных, их структура описана в [отдельной статье](efd3_model.html).
+
+{% include note.html content="Модели создаются в папку `models` и именуются следующим образом: если соответствующий C#-класс называется `NewPlatform.Someproject.Somemodel`, то файл с моделью должен называться `new-platform-someproject-somemodel`. Если на OData-бакенде используется атрибут [PublishName](fo_metadata-for-client.html) для упрощения именования моделей, то наименование пространства имен в этом случае в клиентской модели может отсутствовать (имя клиентской модели будет соответствующим образом формироваться из имени в EDM-модели на OData-бакенде)" %}
+
+Также генерируется 'custom-inflector-rules.js', где посредством [Ember Inflector](https://github.com/emberjs/ember-inflector) задаётся соответствие имён в единственном и множественном числе (если присмотреться, то можно заметить, что там указаны последние слова в именах моделей, соответствующих классам данных).
+
+```javascript
+import Inflector from 'ember-inflector';
+
+const inflector = Inflector.inflector;
+
+inflector.irregular('agregator', 'Agregators');
+inflector.irregular('child1', 'Child1s');
+inflector.irregular('child2', 'Child2s');
+inflector.irregular('class', 'Classs');
+
+export default {};
+```
+
+### Сгенерированные сериализаторы
+При генерации в клиентское приложение добавляются следующие [сериализаторы](efd3_serializer.html) (папка serializers)
+
+![Cериализаторы в сгенерированном `Flexberry Ember`-приложении](/images/pages/products/flexberry-ember/ember-flexberry/generation/generated-serializers.png).
+
+Каждому классу данных соответствует свой сериализатор. Для [сериализаторов](efd3_serializer.html) сразу описаны структуры для работы в офлайн-режиме.
+
+### Сгенерированные миксины
+При генерации в клиентское приложение добавляются следующие [миксины](efd3_mixin.html) (папка mixins)
+
+![Миксины в сгенерированном `Flexberry Ember`-приложении](/images/pages/products/flexberry-ember/ember-flexberry/generation/generated-mixins.png).
+
+Миксины при генерации добавлены во вложенную папку 'regenerated', при каждом запуске перегенерации данные миксины будут обновлены, что нужно учитывать, чтобы новый программный код не был утерян. В миксины вынесены как части [моделей](efd3_model.html), так и [сериализаторов](efd3_serializer.html) (здесь также для [сериализаторов](efd3_serializer.html) сразу описаны структуры для работы в офлайн-режиме).
+
+### Сгенерированные перечисления и трансформации
+При генерации в клиентское приложение добавляются следующие [перечисления](efd3_enum.html) (папка enums)
+
+![Перечисления в сгенерированном `Flexberry Ember`-приложении](/images/pages/products/flexberry-ember/ember-flexberry/generation/generated-enums.png).
+
+Перечисления соответствуют заданным на диаграмме классов элементам со стереотипом 'enumeration'. Поскольку перечисления не являются нативными для 'Ember', то для каждого перечисления должна быть описана [трансформация](efd3_transform.html), которая также генерируется (папка transforms)
+
+![Трансформации в сгенерированном `Flexberry Ember`-приложении](/images/pages/products/flexberry-ember/ember-flexberry/generation/generated-transforms.png).
+
+### Сгенерированные контроллеры
+При генерации в клиентское приложение добавляются следующие [контроллеры](efd3_controller.html) (папка controllers)
+
+![Контроллеры в сгенерированном `Flexberry Ember`-приложении](/images/pages/products/flexberry-ember/ember-flexberry/generation/generated-controllers.png).
+
+Контроллеры генерируются для форм и приложений, заданных на диаграмме во [Flexberry Designer](fd_flexberry-designer.html). Также для форм создания отдельно генерируется контроллер 'new' в папку с именем соответствующей формы редактирования.
+
+![Диаграмма форм и приложений для рассмотрения сгенерированного `Flexberry Ember`-приложения](/images/pages/products/flexberry-ember/ember-flexberry/generation/app-and-forms-class-diagram.png).
+
+В контроллер 'application' сгенерирован код для работы с меню (в нем определяется структура меню, заданная во [Flexberry Designer](fd_flexberry-designer.html)), а также элементы для смены локализации.
 
 ## Структура сгенерированного серверного приложения
 
-Сгенерированное приложение состоит из двух основных частей. Первая - это классы объектов данных, соответствующих классам на диаграмме классов приложения [Flexberry Designer](https://flexberry.github.io/ru/fd_flexberry-designer.html). Вторая - это непосредственно OData-бакэнд, к которому будет обращаться клиентское приложение.
+Сгенерированное приложение состоит из двух основных частей. Первая - это классы объектов данных, соответствующих классам на диаграмме классов приложения [Flexberry Designer](fd_flexberry-designer.html). Вторая - это непосредственно OData-бакэнд, к которому будет обращаться клиентское приложение.
 
 ![Структура сгенерированного серверного приложения](/images/pages/products/flexberry-ember/ember-flexberry/generation/generated-backend-app.png).
 
 ## Правила написания кода
 К добавлению прикладного кода необходимо подходить ответственно, поскольку он может быть утерян при последующих перегенерациях.
 
-Код для объектов данных должен быть заключён в [скобки программиста](https://flexberry.github.io/ru/fo_programmer-brackets.html). Аналогичного механизма для остальных сгенерированных частей не предусмотрено, поэтому возможны следующие варианты решения проблемы:
+Код для объектов данных должен быть заключён в [скобки программиста](fo_programmer-brackets.html). Аналогичного механизма для остальных сгенерированных частей не предусмотрено, поэтому возможны следующие варианты решения проблемы:
 
 * Код может быть помещён под систему контроля версий, посредством которой возможно отслеживание изменений, произошедших при перегенерации, и корректное их разрешение.
 * Генерация кода может производиться в отдельное место, откуда изменения уже будут перенесены в основной проект, однако при использовании данного способа существует опасность, что не все требуемые изменения будут перенесены.
