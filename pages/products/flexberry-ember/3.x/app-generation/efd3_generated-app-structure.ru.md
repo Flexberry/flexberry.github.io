@@ -22,14 +22,14 @@ summary: Обзор структуры сгенерированных клиен
 
 ![Cравнение структуры папки APP «чистого» Ember-приложения и `Flexberry Ember`-приложения](/images/pages/products/flexberry-ember/ember-flexberry/generation/generated-ember-app-compare-detailed.png).
 
-Далее мы подробнее рассмотрим те элементы Ember-приложения, которые генерируются из [Flexberry Designer](fd_flexberry-designer.html).
+Далее мы подробнее рассмотрим те элементы `Ember`-приложения, которые генерируются из [Flexberry Designer](fd_flexberry-designer.html).
 
 ### Сгенерированные модели 
 При генерации приложения из [Flexberry Designer](fd_flexberry-designer.html) в клиентское приложение добавляются следующие [модели](efd3_model.html) (папка `models`):
 
 ![Модели в сгенерированном `Flexberry Ember`-приложении](/images/pages/products/flexberry-ember/ember-flexberry/generation/generated-models.png).
 
-На скриншоте выделены модели, соответствующие [классам данных](fo_data-object.html)(бизнес-объекты приложения), структура этих моделей описана в [отдельной статье](efd3_model.html).
+На скриншоте выделены модели, соответствующие [объектам данных](fo_data-object.html) (бизнес-объекты приложения), структура этих моделей описана в [отдельной статье](efd3_model.html).
 
 {% include note.html content="Модели генерируются в папку `models` и именуются следующим образом: если соответствующий C#-класс на [OData-бэкенде](fo_orm-odata-service.html) называется `NewPlatform.Someproject.Somemodel`, то файл с моделью в клиентском приложении должен называться `new-platform-someproject-somemodel`. Если на [OData-бэкенде](fo_orm-odata-service.html) используется атрибут [PublishName](fo_metadata-for-client.html) для упрощения именования моделей, то наименование пространства имен в этом случае в клиентской модели может отсутствовать (имя клиентской модели будет формироваться соответственно имени в EDM-модели на OData-бакенде)" %}
 
