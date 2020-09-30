@@ -210,12 +210,34 @@ OData-бакенд и клиентское Ember-приложение можно
 
 ![Запущенное клиентское приложение](/images/pages/products/flexberry-ember/ember-flexberry/generation/frontend-started.png)
 
-## Открытие приложений в браузере
-
-Открытие приложений в браузере
-
 ## Обзор функционала клиентского приложения
-Обзор функционала клиентского приложения
+Сгенерированное клиентское приложение предоставляет следующие возможности.
+
+* Меню клиентского приложения соответствует структуре, заданной во [Flexberry Designer](fd_flexberry-designer.html) в классе со стереотипом `application`.
+
+![Меню клиентского приложения](/images/pages/products/flexberry-ember/ember-flexberry/generation/frontend-menu.png)
+
+* Доступны списки объектов данных, куда есть возможность добавлять новые записи (во [Flexberry Designer](fd_flexberry-designer.html) спискам соответствуют классы со стереотипом `listform`).
+
+![Пустая списковая форма клиентского приложения](/images/pages/products/flexberry-ember/ember-flexberry/generation/frontend-empty-listform.png)
+
+* При добавлении или редактировании новой записи (это происходит на форме, соответствующей классу со стереотипом `editform` во [Flexberry Designer](fd_flexberry-designer.html)) для разных типов данных используются соответствующие контролы.
+
+![Форма создания с перечислением](/images/pages/products/flexberry-ember/ember-flexberry/generation/frontend-editform-with-enum.png)
+
+![Форма создания с перечислением](/images/pages/products/flexberry-ember/ember-flexberry/generation/frontend-editform-with-detail.png)
+
+* На формах создания и редактирования работают встроенные типичные правила валидации данных
+
+![Форма создания с перечислением](/images/pages/products/flexberry-ember/ember-flexberry/generation/frontend-validation.png)
+
+* При добавлении новой записи происходит переадресация с формы создания на форму редактирования
+
+![Форма редактирования](/images/pages/products/flexberry-ember/ember-flexberry/generation/frontend-saved-master.png)
+
+* Добавленные записи отображаются на соответствующей списковой форме
+
+![Списковая форма](/images/pages/products/flexberry-ember/ember-flexberry/generation/frontend-saved-masters.png)
 
 ## Обзор функционала OData API 
 
