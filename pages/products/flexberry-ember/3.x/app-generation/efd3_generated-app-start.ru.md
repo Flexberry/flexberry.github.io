@@ -93,7 +93,7 @@ config.EnableCors(new DynamicCorsPolicyProvider());
 ### Настройка клиентского приложения
 Открыть `фронтенд`-часть приложения можно в `Visual Studio Code`, для этого нужно открыть папку `ember-app` внутри папки со сгенерированным из `Flexberry Designer` приложением (можно это сделать, выбрав пункт меню `File` → `Open folder`).
 
-После генерации клиентское приложение содержит файл конфигурации `environment.js` (`targets.js` представляет меньший интерес, поскольку полностью идентичен генерируемому просто `Ember` файлу).
+После генерации клиентское приложение содержит файл конфигурации `environment.js`.
 
 ![Файлы конфигурации в сгенерированном клиентском `Flexberry Ember`-приложении](/images/pages/products/flexberry-ember/ember-flexberry/generation/generated-frontend-config.png)
 
@@ -185,8 +185,12 @@ module.exports = function(environment) {
 };
 ```
 
+ Файл конфигурации `targets.js` полностью идентичен генерируемому просто `Ember` файлу, в нём указаны настройки для [транспилятора Babel](https://babeljs.io/).
+
+ Настройку хоста и порта для запуска приложения можно осуществить, как прописав соответствующие опции в файл `.ember-cli`, так и указав их непосредственно в командной строке (доступные опции можно узнать, выполнив команду `ember s --help` в командной строке).
+
 ## Запуск приложений
-OData-бакенд и клиентское Ember-приложение можно запускать в произвольном порядке, однако предпочтительнее сначала запустить OData-бакенд, почле чего в браузере открывать клиентское приложение.
+OData-бакенд и клиентское Ember-приложение можно запускать в произвольном порядке, однако предпочтительнее сначала запустить OData-бакенд, после чего в браузере открывать клиентское приложение.
 
 ### Запуск OData-бакенда
 Для запуска настроенного OData-бакенда в `Visual studio` нужно нажать `Ctrl+F5` или выбрать пункт меню `Debug` → `Start Without Debugging`. При успешном запуске приложения в браузере, назначенном по умолчанию в `Visual Studio`, откроется страница с кодом 403.14 - Forbidden.
@@ -225,7 +229,7 @@ OData-бакенд и клиентское Ember-приложение можно
 
 ![Форма создания с перечислением](/images/pages/products/flexberry-ember/ember-flexberry/generation/frontend-editform-with-enum.png)
 
-![Форма создания с перечислением](/images/pages/products/flexberry-ember/ember-flexberry/generation/frontend-editform-with-detail.png)
+![Форма создания с детейлами](/images/pages/products/flexberry-ember/ember-flexberry/generation/frontend-editform-with-details.png)
 
 * На формах создания и редактирования работают встроенные типичные правила валидации данных
 
@@ -241,4 +245,165 @@ OData-бакенд и клиентское Ember-приложение можно
 
 ## Обзор функционала OData API 
 
-Обзор функционала OData API (отображение метаданных, примеры формирования запросов из браузера или Postman)
+После запуска OData-бакенда по адресу `http://localhost:6500/odata/` отображается доступный API (адрес может быть изменён в настройках).
+
+### Получение всех записей
+
+Для отображения всех записей, например, типа `IISGenTestMasterForAgregator`, можно в браузере ввести 
+`http://localhost:6500/odata/IISGenTestMasterForAgregators` (при этом в конце имени типа следует добавить символ `s`), тогда придёт ответ:
+
+```json
+{
+  "@odata.context":"http://localhost:6500/odata/$metadata#IISGenTestMasterForAgregators","value":[
+    {
+      "Enum2Field":"ValueSecond","__PrimaryKey":"6213c156-b061-4287-8275-b8533d9ecf7a"
+    },{
+      "Enum2Field":"ValueFirst","__PrimaryKey":"2ea43483-19db-4474-b523-426fec183aed"
+    },{
+      "Enum2Field":"ValueThird","__PrimaryKey":"fa621409-c381-41a1-b1ae-6767e404a99f"
+    }
+  ]
+}
+```
+
+### Получение данных списковой формы
+
+Для получения данных для списковой формы на OData-бакенд идёт запрос вида
+
+```
+http://localhost:6500/odata/IISGenTestChild2s?
+    $count=true
+    &$select=__PrimaryKey,DateTimeField,ParentField
+    &$skip=0
+    &$top=5
+```
+
+```json
+{
+  "@odata.context":"http://localhost:6500/odata/$metadata#IISGenTestChild2s(__PrimaryKey,DateTimeField,ParentField)","@odata.count":1,"value":[
+    {
+      "__PrimaryKey":"fe3325bf-c633-4661-ad6f-bba7eb24b46d","DateTimeField":"2020-09-30T19:30:55.112+05:00","ParentField":23
+    }
+  ]
+}
+```
+
+* `http://localhost:6500/odata/IISGenTestChild2s` - указание запрашиваемого типа,
+* `$count=true` - указание, что следует вернуть метаданные о количестве возвращённых записей (в ответе: `"@odata.count":1`),
+* `$select=__PrimaryKey,DateTimeField,ParentField` - указание, что требуется вернуть поля `__PrimaryKey`, `DateTimeField` и `ParentField` (в ответе: `"@odata.context":"http://localhost:6500/odata/$metadata#IISGenTestChild2s(__PrimaryKey,DateTimeField,ParentField)"`),
+* `$skip=0` - указание, что записи следует возвращать, начиная с нулевой (фактически, пропускаем 0 записей с начала),
+* `$top=5` - указание, что следует вернуть 5 записей.
+
+Если на списковой форме отображаются поля мастера, то запрос будет иметь вид
+
+```
+http://localhost:6500/odata/IISGenTestChild1s?
+    $count=true
+    &$expand=MyMaster($select=__PrimaryKey,IntField)
+    &$select=__PrimaryKey,DoubleField,StringField,ParentField,MyMaster
+    &$skip=0
+    &$top=5
+```
+
+```json
+{
+  "@odata.context":"http://localhost:6500/odata/$metadata#IISGenTestChild1s(__PrimaryKey,DoubleField,StringField,ParentField,MyMaster,MyMaster(__PrimaryKey,IntField))","@odata.count":1,"value":[
+    {
+      "__PrimaryKey":"aa447992-c783-41d3-80f0-c78ae200a881","DoubleField":1.0,"StringField":"\u0421\u0442\u0440\u043e\u043a\u0430","ParentField":33,"MyMaster":{
+        "__PrimaryKey":"3235b1d9-66a9-4ee2-9698-faaa7465b1d0","IntField":12
+      }
+    }
+  ]
+}
+```
+
+В отличие от предыдущего примера здесь через `$expand` запрашиваются поля `__PrimaryKey` и `IntField` связанной  по связи `MyMaster` сущности (`$expand=MyMaster($select=__PrimaryKey,IntField)`).
+
+### Получение данных формы редактирования
+
+Для получения данных для формы редактирования на OData-бакенд идёт запрос вида
+
+```
+http://localhost:6500/odata/IISGenTestChild2s?
+    $filter=__PrimaryKey%20eq%20fe3325bf-c633-4661-ad6f-bba7eb24b46d
+    &$select=__PrimaryKey,DateTimeField,ParentField
+```
+
+Для отображения только требуемой записи накладывается фильтр, что первичный ключ должен иметь заданное значение (`filter=__PrimaryKey%20eq%20fe3325bf-c633-4661-ad6f-bba7eb24b46d`).
+
+```json
+{
+  "@odata.context":"http://localhost:6500/odata/$metadata#IISGenTestChild2s(__PrimaryKey,DateTimeField,ParentField)","value":[
+    {
+      "__PrimaryKey":"fe3325bf-c633-4661-ad6f-bba7eb24b46d","DateTimeField":"2020-09-30T19:30:55.112+05:00","ParentField":23
+    }
+  ]
+}
+```
+
+Если у записи требуется получить как мастера, так и детейлы, то запрос будет иметь вид
+
+```
+http://localhost:6500/odata/IISGenTestChild1s?
+    $expand=MyMaster($select=__PrimaryKey,IntField),
+            Detail1ForChild1($select=__PrimaryKey,IntFieldWithValue1),
+            Detail2ForChild1($select=__PrimaryKey,IntFieldWithValue)
+    &$filter=__PrimaryKey%20eq%20aa447992-c783-41d3-80f0-c78ae200a881
+    &$select=__PrimaryKey,DoubleField,StringField,ParentField,MyMaster,Detail1ForChild1,Detail2ForChild1
+```
+
+Через `$expand` запрашиваются поля связанных по связям `MyMaster` (мастеровая связь), `Detail1ForChild1` (детейловая связь), `Detail2ForChild1` (детейловая связь) сущностей (`$expand=MyMaster($select=__PrimaryKey,IntField),Detail1ForChild1($select=__PrimaryKey,IntFieldWithValue1),Detail2ForChild1($select=__PrimaryKey,IntFieldWithValue)`). 
+
+```json
+{
+  "@odata.context":"http://localhost:6500/odata/$metadata#IISGenTestChild1s(__PrimaryKey,DoubleField,StringField,ParentField,MyMaster,Detail1ForChild1,Detail2ForChild1,MyMaster(__PrimaryKey,IntField),Detail1ForChild1(__PrimaryKey,IntFieldWithValue1),Detail2ForChild1(__PrimaryKey,IntFieldWithValue))","value":[
+    {
+      "__PrimaryKey":"aa447992-c783-41d3-80f0-c78ae200a881","DoubleField":1.0,"StringField":"\u0421\u0442\u0440\u043e\u043a\u0430","ParentField":33,"MyMaster":{
+        "__PrimaryKey":"3235b1d9-66a9-4ee2-9698-faaa7465b1d0","IntField":12
+      },"Detail1ForChild1":[
+        {
+          "__PrimaryKey":"7f6dc423-2e43-4d55-8b6f-0468eddc4ba2","IntFieldWithValue1":1
+        },{
+          "__PrimaryKey":"706dc254-ac6f-4321-8d17-b253a4435c11","IntFieldWithValue1":11
+        }
+      ],"Detail2ForChild1":[
+        {
+          "__PrimaryKey":"35436532-ace0-4723-b043-0e8c52d1cb84","IntFieldWithValue":2
+        }
+      ]
+    }
+  ]
+}
+```
+
+Если у записи два мастера (`Child2`, `MasterForAgregator`), а детейл (`DetailForAgregator`) также имеет мастеровую связь (`MasterForAgregator`), то запрос происходит полностью аналогично с увеличением уровня вложенности
+
+```
+http://localhost:6500/odata/IISGenTestAgregatorClasss?
+    $expand=Child2($select=__PrimaryKey,DateTimeField),
+            MasterForAgregator($select=__PrimaryKey,Enum2Field),
+            DetailForAgregator($select=__PrimaryKey,DetailIntField,MasterForAgregator;
+                                $expand=MasterForAgregator($select=__PrimaryKey,Enum2Field))
+    &$filter=__PrimaryKey%20eq%200ca7f760-2b1d-4be1-9659-be0bf6ab7faa
+    &$select=__PrimaryKey,Enum1Field,Child2,MasterForAgregator,DetailForAgregator
+```
+
+```json
+{
+  "@odata.context":"http://localhost:6500/odata/$metadata#IISGenTestAgregatorClasss(__PrimaryKey,Enum1Field,Child2,MasterForAgregator,DetailForAgregator,Child2(__PrimaryKey,DateTimeField),MasterForAgregator(__PrimaryKey,Enum2Field),DetailForAgregator(__PrimaryKey,DetailIntField,MasterForAgregator,MasterForAgregator(__PrimaryKey,Enum2Field)))","value":[
+    {
+      "__PrimaryKey":"0ca7f760-2b1d-4be1-9659-be0bf6ab7faa","Enum1Field":"FirstValue","Child2":{
+        "__PrimaryKey":"fe3325bf-c633-4661-ad6f-bba7eb24b46d","DateTimeField":"2020-09-30T19:30:55.112+05:00"
+      },"MasterForAgregator":{
+        "__PrimaryKey":"6213c156-b061-4287-8275-b8533d9ecf7a","Enum2Field":"ValueSecond"
+      },"DetailForAgregator":[
+        {
+          "__PrimaryKey":"22f03fc5-6e6c-4350-84aa-b0c97299956c","DetailIntField":2,"MasterForAgregator":{
+            "__PrimaryKey":"6213c156-b061-4287-8275-b8533d9ecf7a","Enum2Field":"ValueSecond"
+          }
+        }
+      ]
+    }
+  ]
+}
+```
