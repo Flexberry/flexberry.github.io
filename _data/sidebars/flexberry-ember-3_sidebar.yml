@@ -25,7 +25,7 @@ entries:
         output: web, pdf
 
         folderitems:
-          - title: Structure of Flexberry Ember Application 
+          - title: Structure of Flexberry Ember Application
             title_ru: Обзор структуры сгенерированных приложений
             url: /efd3_generated-app-structure.html
             output: web, pdf
@@ -41,6 +41,11 @@ entries:
         output: web, pdf
 
         folderitems:
+          - title: Client Query Language
+            title_ru: Клиентский язык запросов
+            url: /efd3_query-language.html
+            output: web, pdf
+
           - title: Model validation
             title_ru: Валидация моделей
             url: /efd3_model-validation.html
