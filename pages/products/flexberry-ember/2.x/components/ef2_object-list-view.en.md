@@ -99,6 +99,7 @@ The component name |description
 `editFormRoute`| Specifies the name of the route edit form, which will open the model.
 `singleColumnHeaderTitle`| Header for mobile view component, instead of column names. If not specified or equal to "" then the header of the table in the component is hidden.
 `colsConfigButton`| Flag (`true`/`false`) enable/disable the display of buttons in the user settings.
+`bottomPaginationn`| Flag that determines whether to display pagination bottom/up.  
 
 Default values:
 
@@ -113,7 +114,8 @@ showCheckBoxInRow: false,
 showDeleteButtonInRow: false,
 showDeleteMenuItemInRow: false,
 showEditMenuItemInRow: true
-colsConfigButton - true
+colsConfigButton: true
+bottomPaginationn: true
 ```
 
 ## Customize lists

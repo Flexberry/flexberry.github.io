@@ -97,6 +97,7 @@ action=customActionName
 `editFormRoute`| Задаёт имя роута формы редактирования, в котором будет открываться модель.  
 `singleColumnHeaderTitle`| Заголовок для мобильного представления компонента, вместо названий колонок. Если не задан или равен "", то шапка таблицы в компоненте скрывается.  
 `colsConfigButton`| Флаг (`true`/`false`) включающий/выключающий отображение кнопок пользовательских настроек.  
+`bottomPaginationn`| Флаг, определяющий положение пагинации верху/снизу.  
 
 Значения по умолчанию:
 
@@ -111,7 +112,8 @@ showCheckBoxInRow: false,
 showDeleteButtonInRow: false,
 showDeleteMenuItemInRow: false,
 showEditMenuItemInRow: true
-colsConfigButton - true
+colsConfigButton: true
+bottomPaginationn: true
 ```
 
 ## Настройка списков
