@@ -57,7 +57,7 @@ const CheckProductAmount = BaseValidator.extend({
 
 Подробнее о функции `inject` можно почитать [тут](https://guides.emberjs.com/v3.1.0/applications/dependency-injection/#toc_ad-hoc-injections).
 
-Далее нам требуется вычитать актуальные сведения о складах и хранящихся на них товарах из БД. Для этого воспользуемся [клиентским языком запросов](https://flexberry.github.io/ru/efd2_query-language.html), который предоставляется аддоном [ember-flexberry-data](https://github.com/Flexberry/ember-flexberry-data) (устанавливается автоматически вместе с аддоном `ember-flexberry`):
+Далее нам требуется вычитать актуальные сведения о складах и хранящихся на них товарах из БД. Для этого воспользуемся [клиентским языком запросов](efd3_query-language.html), который предоставляется аддоном [ember-flexberry-data](https://github.com/Flexberry/ember-flexberry-data) (устанавливается автоматически вместе с аддоном [ember-flexberry](https://github.com/Flexberry/ember-flexberry)):
 
 {% highlight javascript%}
 {% raw %}
