@@ -474,6 +474,38 @@ predicate.value
 predicate.timeless
 ```
 
+### GeographyPredicate и GeometryPredicate
+
+* `GeographyPredicate` - предикат для проверки пересечения атрибута с типом "Geography" с заданной геометрической фигурой.
+* `GeometryPredicate` - предикат для проверки пересечения атрибута с типом "Geometry" с заданной геометрической фигурой.
+
+#### Конструктор
+
+Конструктор принимает один параметр:
+* `attributePath` - атрибут (собственный или у связанных моделей).
+
+Также необходимо задать геометрическую фигуру, пересечение с которой будет проверяться. Для этого нужно воспользоваться методом `intersects` предиката.
+Геометрическую фигуру необходимо задавать строкой в формате [EWKT](http://postgis.refractions.net/docs/using_postgis_dbmanagement.html#EWKB_EWKT).
+
+```javascript
+let predicate = new GeographyPredicate('locationPolygon').intersects('SRID=4326;POLYGON((30 10, 40 40, 20 40, 10 20, 30 10))');
+let predicate = new GeometryPredicate('locationPolygon').intersects('SRID=4326;POLYGON((30 10, 40 40, 20 40, 10 20, 30 10))');
+```
+
+#### Свойства предиката
+
+Получить заданный в предикате атрибут ("путь атрибута") можно с использованием свойства `attributePath` предиката:
+
+```javascript
+predicate.attributePath
+```
+
+Получить заданную в предикате геометрическую фигуру можно с использованием свойства `intersectsValue` предиката:
+
+```javascript
+predicate.intersectsValue
+```
+
 ### NotPredicate
 
 `NotPredicate` – предикат для инверсии значения другого заданного предиката.
