@@ -35,6 +35,11 @@ entries:
             url: /efd3_generated-app-start.html
             output: web, pdf
 
+          - title: Regeneration of Flexberry Ember Application 
+            title_ru: Перегенерация приложений
+            url: /efd3_generated-app-regeneration.html
+            output: web, pdf
+
       - title: Forms and routing
         title_ru: Формы и роутинг
         output: web, pdf
