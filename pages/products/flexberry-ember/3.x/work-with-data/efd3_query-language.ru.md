@@ -30,7 +30,7 @@ summary: Описание клиентского языка запросов.
 * `BaseBuilder` - базовый класс для построителя запросов.
 * `Builder` - класс для построения запросов (построитель запросов).
 * `Condition` - перечисление с логическими операциями для `ComplexPredicate`.
-* `FilterOperator` - перечисление с операциями для `SimplePredicate`.
+* `FilterOperator` - перечисление с операциями для `SimplePredicate`, `StringPredicate` и `DatePredicate`.
 * `IndexedDbAdapter` - адаптер языка запросов для построения запросов к [IndexedDB](https://developers.google.com/web/ilt/pwa/working-with-indexeddb).
 * `JsAdapter` - адаптер языка запросов для построения функций фильтрации JavaScript-массивов.
 * `OdataAdapter` - адаптер языка запросов для построения запросов к бэкенду на основе протокола [OData](http://www.odata.org/).
@@ -474,6 +474,38 @@ predicate.value
 predicate.timeless
 ```
 
+### GeographyPredicate и GeometryPredicate
+
+* `GeographyPredicate` - предикат для проверки пересечения атрибута с типом "Geography" с заданной геометрической фигурой.
+* `GeometryPredicate` - предикат для проверки пересечения атрибута с типом "Geometry" с заданной геометрической фигурой.
+
+#### Конструктор
+
+Конструктор принимает один параметр:
+* `attributePath` - атрибут (собственный или у связанных моделей).
+
+Также необходимо задать геометрическую фигуру, пересечение с которой будет проверяться. Для этого нужно воспользоваться методом `intersects` предиката.
+Геометрическую фигуру необходимо задавать строкой в формате [EWKT](http://postgis.refractions.net/docs/using_postgis_dbmanagement.html#EWKB_EWKT).
+
+```javascript
+let predicate = new GeographyPredicate('locationPolygon').intersects('SRID=4326;POLYGON((30 10, 40 40, 20 40, 10 20, 30 10))');
+let predicate = new GeometryPredicate('locationPolygon').intersects('SRID=4326;POLYGON((30 10, 40 40, 20 40, 10 20, 30 10))');
+```
+
+#### Свойства предиката
+
+Получить заданный в предикате атрибут ("путь атрибута") можно с использованием свойства `attributePath` предиката:
+
+```javascript
+predicate.attributePath
+```
+
+Получить заданную в предикате геометрическую фигуру можно с использованием свойства `intersectsValue` предиката:
+
+```javascript
+predicate.intersectsValue
+```
+
 ### NotPredicate
 
 `NotPredicate` – предикат для инверсии значения другого заданного предиката.
@@ -537,11 +569,17 @@ let builder = new Builder(store, 'creator').where(predicate);
 let builder = new Builder(store, 'creator').isOf('man');
 ```
 
-## Операторы для фильтрации данных
+## Операторы (операции)
+
+В клиентском языке есть два класса, которые содержат свойства, являющиеся операторами (операциями) предикатов:
+* `Condition` - класс с логическими операциями для `ComplexPredicate`.
+* `FilterOperator` - класс с операциями для `SimplePredicate`, `StringPredicate` и `DatePredicate`.
+
+### Операторы для фильтрации данных
 
 Указанные ниже операторы (опрации) используются при создании таких предикатов как `SimplePredicate`, `StringPredicate` и `DatePredicate`. 
 
-### Равенство
+#### Равенство
 
 Для указания равенства в предикате используется оператор `FilterOperator.Eq`:
 
@@ -549,7 +587,7 @@ let builder = new Builder(store, 'creator').isOf('man');
 let sp1 = new SimplePredicate('name', FilterOperator.Eq, 'Tag1');
 ```
 
-### Неравенство
+#### Неравенство
 
 Для указания неравенства в предикате используется оператор `FilterOperator.Neq`:
 
@@ -557,7 +595,7 @@ let sp1 = new SimplePredicate('name', FilterOperator.Eq, 'Tag1');
 let sp1 = new SimplePredicate('name', FilterOperator.Neq, 'Tag1');
 ```
 
-### Больше
+#### Больше
 
 Для указания операции "больше" в предикате используется оператор `FilterOperator.Ge`:
 
@@ -565,7 +603,7 @@ let sp1 = new SimplePredicate('name', FilterOperator.Neq, 'Tag1');
 let builder = new Builder(store, modelName).where('age', FilterOperator.Ge, 10);
 ```
 
-### Больше или равно
+#### Больше или равно
 
 Для указания операции "больше или равно" в предикате используется оператор `FilterOperator.Geq`:
 
@@ -573,7 +611,7 @@ let builder = new Builder(store, modelName).where('age', FilterOperator.Ge, 10);
 let builder = new Builder(store, modelName).where('age', FilterOperator.Geq, 11);
 ```
 
-### Меньше
+#### Меньше
 
 Для указания операции "меньше" в предикате используется оператор `FilterOperator.Le`:
 
@@ -581,7 +619,7 @@ let builder = new Builder(store, modelName).where('age', FilterOperator.Geq, 11)
 let builder = new Builder(store, modelName).where('age', FilterOperator.Le, 12);
 ```
 
-### Меньше или равно
+#### Меньше или равно
 
 Для указания операции "меньше или равно" в предикате используется оператор `FilterOperator.Leq`:
 
@@ -589,9 +627,11 @@ let builder = new Builder(store, modelName).where('age', FilterOperator.Le, 12);
 let builder = new Builder(store, modelName).where('age', FilterOperator.Leq, 11);
 ```
 
-## Логические операторы для комплексных предикатов
+### Логические операторы для комплексных предикатов
 
-### Or
+Указанные ниже операторы (опрации) используются при комплексных предикатов. 
+
+#### Or
 
 Для указания логического значения "или" в предикате используется оператор `Condition.Or`:
 
@@ -599,7 +639,7 @@ let builder = new Builder(store, modelName).where('age', FilterOperator.Leq, 11)
 let cp1 = new ComplexPredicate(Condition.Or, sp1, sp2);
 ```
 
-### And
+#### And
 
 Для указания логического значения "и" в предикате используется оператор `Condition.And`
 
