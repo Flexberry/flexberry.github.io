@@ -20,6 +20,11 @@ entries:
             url: /ef3_technology-overview.html
             output: web, pdf
 
+          - title: Flexberry Ember Tutorial
+            title_ru: Практическое руководство по Flexberry Ember
+            url: /gpg_setting-language-and-structure.html
+            output: web, pdf
+
       - title: Application generation
         title_ru: Генерация приложения
         output: web, pdf
