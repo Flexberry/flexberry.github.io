@@ -12,7 +12,7 @@ entries:
             url: /gpg_landing-page.html
             output: web
 
-      - title: Practical guide by Flexberry Desinger
+      - title: Flexberry Desinger Tutoroal
         title_ru: Практическое руководство по Flexberry Desinger
         output: web
 
@@ -57,7 +57,7 @@ entries:
             url: /gpg_deployment-diagram.html
             output: web
 
-      - title: Practical guide by Flexberry ASP.NET
+      - title: Flexberry ASP.NET Tutoroal
         title_ru: Практическое руководство по веб-разработке на Flexberry ASP.NET
         output: web
 
@@ -162,7 +162,7 @@ entries:
             url: /gpg_set-ctrl-read-only.html
             output: web
 
-      - title: Practical guide by Flexberry Ember
+      - title: Flexberry Ember Tutoroal
         title_ru: Практическое руководство по Flexberry Ember
         output: web
 
