@@ -129,7 +129,7 @@ lang: ru
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module1/vs-code-full-course.jpg" | relative_url}}" class="products-img">
                             </div>
-                            <h4><span class="item-head">VS Code. Полный Курс для JavaScript-разработчиков</span></h4>
+                            <h4><span class="item-head">VS Code. Полный курс для JavaScript-разработчиков</span></h4>
                             <p>Мини-курс, посвященный использованию возможностей редактора Visual Studio Code для разработки JavaScript-приложений (Владилен Минин, JavaScript by Vladilen).</p>
                         </a>
                     </div>
