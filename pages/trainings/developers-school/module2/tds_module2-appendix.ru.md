@@ -22,15 +22,6 @@ lang: ru
             <div class="panel-body">
                 <div class="row items">
                     <div class="col-sm-6 col-md-4 portfolio-item">
-                        <a href="{{ 'https://www.youtube.com/watch?v=paA-leudslo' | relative_url }}" class="portfolio-link" target="_blank">
-                            <div class="img-wrapper">
-                                <img src="{{ "/images/pages/trainings/developers-school/module2/vs-code-overview.jpg" | relative_url}}" class="products-img">
-                            </div>
-                            <h4><span class="item-head">Обзор редактора Visual Studio Code</span></h4>
-                            <p>Скринкаст, посвященный вопросам установки, настройки и обзора базовых возможностей редактора Visual Studio Code (Артем Исламов, Glo Academy).</p>
-                        </a>
-                    </div>
-                    <div class="col-sm-6 col-md-4 portfolio-item">
                         <a href="{{ 'https://www.youtube.com/watch?v=rC6varfUhCo' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module2/git-flow-process.jpg" | relative_url}}" class="products-img">

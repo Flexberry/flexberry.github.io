@@ -97,6 +97,42 @@ lang: ru
                             <p>Вебинар, на котором рассмотрены основы работы с SoapUI на практическом примере (Эд Изотов, Компьютерная школа Hillel).</p>
                         </a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse2">&#9660;</a>
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse2">
+                Инструменты разработки веб-приложений</a>
+            </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <div class="row items">
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=paA-leudslo' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module1/vs-code-overview.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">Обзор редактора Visual Studio Code</span></h4>
+                            <p>Скринкаст, посвященный вопросам установки, настройки и обзора базовых возможностей редактора Visual Studio Code (Артем Исламов, Glo Academy).</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 portfolio-item">
+                        <a href="{{ 'https://www.youtube.com/watch?v=QeUp3CahkQw' | relative_url }}" class="portfolio-link" target="_blank">
+                            <div class="img-wrapper">
+                                <img src="{{ "/images/pages/trainings/developers-school/module1/vs-code-full-course.jpg" | relative_url}}" class="products-img">
+                            </div>
+                            <h4><span class="item-head">VS Code. Полный Курс для JavaScript-разработчиков</span></h4>
+                            <p>Мини-курс, посвященный использованию возможностей редактора Visual Studio Code для разработки JavaScript-приложений (Владилен Минин, JavaScript by Vladilen).</p>
+                        </a>
+                    </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
                         <a href="{{ 'https://www.youtube.com/playlist?list=PLvWwA9iDlhHA4kzfpRbu2cH-Z2ss6tB99' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
@@ -115,13 +151,13 @@ lang: ru
 <div class="panel-group">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse2">&#9660;</a>
+            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse3">&#9660;</a>
             <h4 class="panel-title">
-                <a data-toggle="collapse" href="#collapse2">
+                <a data-toggle="collapse" href="#collapse3">
                 Инфраструктура и архитектура веб-приложений</a>
             </h4>
         </div>
-        <div id="collapse2" class="panel-collapse collapse in">
+        <div id="collapse3" class="panel-collapse collapse in">
             <div class="panel-body">
                 <div class="row items">
                     <div class="col-sm-6 col-md-4 portfolio-item">
