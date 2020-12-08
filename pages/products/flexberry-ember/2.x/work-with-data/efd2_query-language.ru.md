@@ -38,6 +38,7 @@ import { Query } from 'ember-flexberry-data';
 * `TruePredicate` - класс для создания фильтра с заведомо выполняемым условием.
 * `FalsePredicate` - класс для создания фильтра с заведомо невыполняемым условием.
 * `IsOfPredicate` - класс для создания фильтра в запросе по типу объекта данных.
+* `InPredicate` - класс для создания фильтра в запросе по значению атрибута, входящего в заданный список значени.
 * `createPredicate` - метод для создания предиката по заданным параметрам.
 
 Пример использования классов из пространства имен:
@@ -542,6 +543,32 @@ let builder = new Query.QueryBuilder(store, modelName).where('age', Query.Filter
 
 ```javascript
 let builder = new Query.QueryBuilder(store, modelName).where('age', Query.FilterOperator.Leq, 11);
+```
+
+### Query.InPredicate
+
+`Query.InPredicate` - класс для создания фильтра в запросе по значению атрибута, входящего в заданный список значени.
+
+#### Конструктор
+
+Конструктор `Query.InPredicate` принимает 2 параметра: `attributePath` - путь атрибута, `valueArray` - массив значений, для проверки вхождения в него значения атрибута.
+
+```javascript
+let predicate = new Query.InPredicate('name', ['Vasya', 'Petia', 'Ivan']);
+```
+
+#### Получение свойств предиката
+
+Получение пути атрибута:
+
+```javascript
+predicate.attributePath
+```
+
+Получение массива значений:
+
+```javascript
+predicate.valueArray
 ```
 
 ### Создание запроса для фильтрации перечислений
