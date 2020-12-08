@@ -477,6 +477,18 @@ let builder = new Query.Builder(store, 'creator').where(predicate);
 let builder = new Query.Builder(store, 'creator').isOf('man');
 ```
 
+### Query.InPredicate
+
+`Query.InPredicate` - класс для создания фильтра в запросе по значению атрибута, входящего в заданный список значени.
+
+#### Конструктор
+
+Конструктор `Query.InPredicate` принимает 2 параметра: `attributePath` - путь атрибута, `valueArray` - массив значений, для проверки вхождения в него значения атрибута.
+
+```javascript
+let predicate = new Query.InPredicate('name', ['Vasya', 'Petia', 'Ivan']);
+```
+
 ## Логические операторы для сложных предикатов
 
 ### Or
@@ -543,18 +555,6 @@ let builder = new Query.QueryBuilder(store, modelName).where('age', Query.Filter
 
 ```javascript
 let builder = new Query.QueryBuilder(store, modelName).where('age', Query.FilterOperator.Leq, 11);
-```
-
-### Query.InPredicate
-
-`Query.InPredicate` - класс для создания фильтра в запросе по значению атрибута, входящего в заданный список значени.
-
-#### Конструктор
-
-Конструктор `Query.InPredicate` принимает 2 параметра: `attributePath` - путь атрибута, `valueArray` - массив значений, для проверки вхождения в него значения атрибута.
-
-```javascript
-let predicate = new Query.InPredicate('name', ['Vasya', 'Petia', 'Ivan']);
 ```
 
 #### Получение свойств предиката
