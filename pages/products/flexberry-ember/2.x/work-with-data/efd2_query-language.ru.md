@@ -489,6 +489,20 @@ let builder = new Query.Builder(store, 'creator').isOf('man');
 let predicate = new Query.InPredicate('name', ['Vasya', 'Petia', 'Ivan']);
 ```
 
+#### Получение свойств предиката
+
+Получение пути атрибута:
+
+```javascript
+predicate.attributePath
+```
+
+Получение массива значений:
+
+```javascript
+predicate.valueArray
+```
+
 ## Логические операторы для сложных предикатов
 
 ### Or
@@ -555,20 +569,6 @@ let builder = new Query.QueryBuilder(store, modelName).where('age', Query.Filter
 
 ```javascript
 let builder = new Query.QueryBuilder(store, modelName).where('age', Query.FilterOperator.Leq, 11);
-```
-
-#### Получение свойств предиката
-
-Получение пути атрибута:
-
-```javascript
-predicate.attributePath
-```
-
-Получение массива значений:
-
-```javascript
-predicate.valueArray
 ```
 
 ### Создание запроса для фильтрации перечислений
