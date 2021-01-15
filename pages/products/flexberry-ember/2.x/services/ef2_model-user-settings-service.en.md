@@ -219,7 +219,7 @@ If you change the column sort order is reloading the page with the specified col
 ## Levels of user settings
 
 The current mode is based on the following levels:
-
+* mode settings for current model (actual for object-list-view)
 * mode settings specified разработчиком;
 * mode settings set by the user in интерфейсе;
 * sort mode specified in parameters the URL of the page.
