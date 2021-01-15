@@ -46,6 +46,16 @@ entries:
         output: web, pdf
 
         folderitems:
+          - title: Model
+            title_ru: Модели
+            url: /efd3_model.html
+            output: web, pdf
+
+          - title: Serializer
+            title_ru: Сериализаторы
+            url: /efd3_serializer.html
+            output: web, pdf
+
           - title: Client Query Language
             title_ru: Клиентский язык запросов
             url: /efd3_query-language.html
@@ -56,6 +66,10 @@ entries:
             url: /efd3_model-validation.html
             output: web, pdf
 
+          - title: Helper class Information 
+            title_ru: Вспомогательный класс Information
+            url: /efd3_information.html
+            output: web, pdf
       - title: Components
         title_ru: Компоненты
         output: web, pdf
