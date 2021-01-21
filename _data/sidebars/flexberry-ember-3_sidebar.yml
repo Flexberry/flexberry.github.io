@@ -67,6 +67,15 @@ entries:
         output: web, pdf
 
         folderitems:
+          - title: Flexberry Ember Services
+            title_ru: Сервисы Flexberry Ember
+            url: /efd3_service.html
+            output: web, pdf
+
+          - title: Log Service
+            title_ru: Сервис логирования
+            url: /efd3_log-service.html
+            output: web, pdf
 
       - title: Application themes
         title_ru: Темы оформления
