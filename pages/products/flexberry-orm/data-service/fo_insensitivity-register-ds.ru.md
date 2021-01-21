@@ -1,7 +1,7 @@
 ---
 title: Нечувствительность к регистру в сервисе данных
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, база данных, сервис данных
+keywords: CaseInsensitive, upper, compare, like, ilike
 summary: Способ настройки нечуствительности к регистру
 toc: true
 permalink: ru/fo_insensitivity-register-ds.html
