@@ -9,115 +9,114 @@ summary: Описание сервиса логирования.
 ---
 
 ## Устройство системы логирования Flexberry Ember
-Сервис логирования представляет собой [один из доступных в ember-аддоне `ember-flexberry` сервисов](efd3_service.html) и обеспечивает запись сообщений различного уровня в базу данных.
+Сервис логирования представляет собой [один из доступных во фреймворке Flexberry Ember сервисов](efd3_service.html) и обеспечивает запись сообщений различного уровня в базу данных приложения.
 
-При инициализации приложения данный сервис автоматически внедряется под именем `logService` на уровни: 
+Сервис логирования Flexberry Ember расширяет возможности [стандартного логгера фреймворка Ember.js](https://api.emberjs.com/ember/3.1/classes/Ember.Logger).
 
-* [Компонент](efd3_component.html),
-* [Контроллер](efd3_controller.html),
-* [Роут](efd3_route.html).
+При инициализации приложения данный сервис автоматически внедряется с именем `logService` на уровни: 
+
+* [Роут](https://guides.emberjs.com/v3.1.0/routing/defining-your-routes/),
+* [Компонент](https://guides.emberjs.com/v3.1.0/components/defining-a-component/),
+* [Контроллер](https://guides.emberjs.com/v3.1.0/controllers/).
 
 По умолчанию сервис логирования выключен, существует возможность включить его как программно, так и в файле конфигурации.
 
 ## Возможности сервиса log
 
-Разработчик может динамически включать/отключать данный сервис оператором:
-
-```javascript
-logService.enabled = true;
-```
-
 ### Уровни логирования
 
-Сервис логирования поддерживает шесть уровней логирования:
+Сервис логирования поддерживает семь уровней логирования:
 
-* `storeErrorMessages` - уровень ошибок;
-* `storeWarnMessages` - уровень предупреждений;
-* `storeLogMessages`- уровень логов;
-* `storeInfoMessages`- уровень информационных сообщений;
-* `storeDebugMessages`- уровень отладочных сообщений;
-* `storeDeprecationMessages`- уровень сообщений о подозрительных и устаревших участках исходного кода.
+* `ERROR` - уровень ошибок;
+* `WARN` - уровень предупреждений;
+* `LOG`- уровень логов;
+* `INFO`- уровень информационных сообщений;
+* `DEBUG`- уровень отладочных сообщений;
+* `DEPRECATION`- уровень сообщений о подозрительных и устаревших участках исходного кода;
+* `PROMISE`- уровень ошибок промисов.
 
-Разработчик может самостоятельно сгенерировать сообщения данных уровней, используя функции `Ember.Logger`:
+Разработчик может самостоятельно сгенерировать сообщения данных уровней, используя соответствующие методы класса `Ember.Logger`:
 
 ```javascript
-Ember.Logger.error(«Текст сообщения об ошибке»); // `storeErrorMessages` - уровень ошибок
-Ember.Logger.warn(«Текст предупреждения»); // `storeWarnMessages` - уровень предупреждений;
-Ember.Logger.log(«Текст лога»); // `storeLogMessages`- уровень логов;
-Ember.Logger.info(«Информационный текст»); // `storeInfoMessages`- уровень информационных сообщений;
-Ember.Logger.debug(«Отладочный текст»); // `storeDebugMessages`- уровень отладочных сообщений;
-Ember.Logger.warn('DEPRECATION«Текст лога»'); // `storeDeprecationMessages`- уровень сообщений о подозрительных и устаревших участках исходного кода.
+Ember.Logger.error('Текст сообщения об ошибке'); // уровень ошибок
+Ember.Logger.warn('Текст предупреждения'); // уровень предупреждений;
+Ember.Logger.log('Текст лога'); // уровень логов;
+Ember.Logger.info('Информационный текст'); // уровень информационных сообщений;
+Ember.Logger.debug('Отладочный текст'); // уровень отладочных сообщений;
+Ember.Logger.warn('DEPRECATION "Текст лога"'); // уровень сообщений о подозрительных и устаревших участках исходного кода.
 ```
 
-{% include note.html content="В отличие от [стандартных методов Ember.Logger](https://api.emberjs.com/ember/3.24/classes/Ember.Logger) методы сервиса логирования возвращают `Promise`." %}
+{% include note.html content="В отличие от [стандартных методов класса Ember.Logger](https://api.emberjs.com/ember/3.1/classes/Ember.Logger) методы сервиса логирования возвращают `Promise`." %}
 
 Пользователь в случае необходимости может дождаться выполнения асинхронной операции записи сообщения в базу, используя оператор `then`. Например:
 
 ```javascript
- Ember.Logger.error(«Текст сообщения об ошибке»).then(result => {«действия после записи сообщения»});
+ Ember.Logger.error('Текст сообщения об ошибке').then(result => {«действия после записи сообщения в БД»});
 ```
 
-Для динамического включения/отключения логирования требуемого уровня используются операторы:
+Кроме того, по завершении промиса инициируется событие с именем уровня ошибки. Например, `ERROR`, `WARN` и т.п. Обработчики событий с этими именами можно создать с использованием методов класса [Evented](https://api.emberjs.com/ember/3.1/classes/Evented).
 
-```javascript
-logService.storeErrorMessages = true; // `storeErrorMessages` - уровень ошибок
-logService.storeWarnMessages = true; // `storeWarnMessages` - уровень предупреждений;
-logService.storeLogMessages = true; // `storeLogMessages`- уровень логов;
-logService.storeInfoMessages = true; // `storeInfoMessages`- уровень информационных сообщений;
-logService.storeDebugMessages = true; // `storeDebugMessages`- уровень отладочных сообщений;
-logService.storeDeprecationMessages = true; // `storeDeprecationMessages`- уровень сообщений о подозрительных и устаревших участках исходного кода.
-```
+**ERROR - уровень ошибок**
 
-**storeErrorMessages - уровень ошибок**
+На уровень `ERROR` выводятся следующие сообщения об ошибках: 
+* все ошибки времени выполнения приложения, обрабатываемые хуком [Ember.onerror](https://guides.emberjs.com/v3.1.0/configuring-ember/debugging/#toc_implement-an-emberonerror-hook-to-log-all-errors-in-production);
+* ошибки, формируемые методом [Ember.Logger.error](https://api.emberjs.com/ember/3.1/classes/Ember.Logger/methods/error?anchor=error);
+* ошибки, возникающие при обработке промисов при помощи [обработки события error класса RSVP.Promise](https://guides.emberjs.com/v3.1.0/configuring-ember/debugging/#toc_errors-within-an-rsvppromise).
 
-На уровень `storeErrorMessages` выводятся сообщения об ошибках в исходном коде, сообщения о невыполнении условий оператора [`Ember.assert()`](https://api.emberjs.com/ember/3.4/functions/@ember%2Fdebug/assert), формируемые методом `Ember.Logger.error()`сообщения или при обработке исключительных ситуаций в методе `new Error(...)`, ...
+**WARN - уровень предупреждений**
 
-**storeWarnMessages - уровень предупреждений**
+На уровень `WARN` выводятся предупреждения, формируемые методом [Ember.Logger.warn](https://api.emberjs.com/ember/3.1/classes/Ember.Logger/methods/warn?anchor=warn).
 
-На уровень `storeWarnMessages` выводятся предупреждения, формируемые методом `Ember.Logger.warn()`.
+**LOG - уровень логов** 
 
-**storeLogMessages - уровень логов** 
+На уровень `LOG` выводятся сообщения, формируемые методом [Ember.Logger.log](https://api.emberjs.com/ember/3.1/classes/Ember.Logger/methods/log?anchor=log).
 
-На уровень `storeLogMessages` выводятся предупреждения, формируемые методом `Ember.Logger.log()`.
+**INFO - уровень информационных сообщений** 
 
-**storeInfoMessages - уровень информационных сообщений** 
+На уровень `INFO` выводятся информационные сообщения, формируемые методом [Ember.Logger.info](https://api.emberjs.com/ember/3.1/classes/Ember.Logger/methods/info?anchor=info).
 
-На уровень `storeInfoMessages` выводятся информационные сообщения, формируемые методом `Ember.Logger.info()`.
+**DEBUG - уровень отладочных сообщений** 
+На уровень `DEBUG` выводятся отладочные сообщения, формируемые методом [Ember.Logger.debug](https://api.emberjs.com/ember/3.1/classes/Ember.Logger/methods/debug?anchor=debug).
 
-**storeDebugMessages- уровень отладочных сообщений** 
-На уровень `storeDebugMessages` выводятся отладочные сообщения, формируемые методом `Ember.Logger.debug()`.
-
-**storeDeprecationMessages - уровень сообщений о подозрительных и устаревших участках исходного кода** 
-На уровень `storeDeprecationMessages` выводятся предупреждения, формируемые методом `Ember.Logger.warn()`, начинающиеся с префикса 'DEPRECATION', о подозрительных и устаревших участках исходного кода.
+**DEPRECATION - уровень сообщений о подозрительных и устаревших участках исходного кода** 
+На уровень `DEPRECATION` выводятся предупреждения о подозрительных и устаревших участках исходного кода, формируемые методом [Ember.Logger.warn](https://api.emberjs.com/ember/3.1/classes/Ember.Logger/methods/warn?anchor=warn), и включающие подстроку 'DEPRECATION'.
 
 ### Просмотр сообщений
 
-`ember-flexberry` включает в себя [модель](efd3_model.html), [роут](efd3_route.html) и [шаблон](efd3_template.html) для отображения таблицы логов.
+Фреймворк Flexberry Ember включает в себя [модель](https://github.com/Flexberry/ember-flexberry/blob/feature-ember-update/addon/models/i-i-s-caseberry-logging-objects-application-log.js), а также роуты для отображени [списковой формы](https://github.com/Flexberry/ember-flexberry/blob/feature-ember-update/addon/routes/i-i-s-caseberry-logging-objects-application-log-l.js) и [формы редактирования](https://github.com/Flexberry/ember-flexberry/blob/feature-ember-update/addon/routes/i-i-s-caseberry-logging-objects-application-log-e.js) для логов.
+
+{% include warning.html content="Данная функциональность доступна при использоваии бэкенда Flexberry Ember!" %}
+
 Для подключения возможности просмотра записанных сообщений в приложение необходимо:
 
-* добавить строку роутинга в [роутер](efd3_router.html) `/app/router.js`.
+* добавить необходимый роут в [роутер](https://guides.emberjs.com/v3.1.0/getting-started/core-concepts/#toc_router-and-route-handlers), объявленный в файле `/app/router.js`:
 
 ```javascript
 this.route('i-i-s-caseberry-logging-objects-application-log-l');
 ```
 
-* добавить ссылку в `sitemap` файла `app/controllers/application.js`
+* добавить ссылку в свойство `sitemap`, объявленное в файле `app/controllers/application.js` для отображения соответствующего пункта меню:
 
 ```javascript
-link: 'i-i-s-caseberry-logging-objects-application-log-l',caption: ...,title: ... 
+{
+  link: 'i-i-s-caseberry-logging-objects-application-log-l',
+  caption: ...,
+  title: ...,
+  children: null
+} 
 ```
 
-По умолчанию на странице отображаются столбцы:
-* Время - время получения сообщения;
+По умолчанию на списке отображаются следующие столбцы:
+* Время - время создания сообщения;
 * Категория - ERROR, WARN, INFO, LOG, DEBUG, DEPRECATION;
-* Сервер - DNS Ember-сервера;
-* Браузер - информация по браузеру клиента;
-* URL - адрес страницы, при отображении которой пришло сообщение;
-* Сообщение - текст сообщения;
+* Сервер - DNS бэкенда;
+* Браузер - информация о браузере, в котором было запущено клиентское приложение;
+* URL - адрес страницы, с которой было инициировано логирование сообщения;
+* Сообщение - текст сообщения.
 
 ![Отображение списка сообщений из сервиса логирования](/images/pages/products/flexberry-ember/ember-flexberry/services/log1.png)
 
-В [роуте](efd3_route.html) формы просмотра сообщений лога заданы две предопределенные [настройки пользователя](efd3_user-settings-service.html), их [можно увидеть в меню соответствующей формы](http://flexberry.github.io/ember-flexberry/dummy/dummy-test-3/#/i-i-s-caseberry-logging-objects-application-log-l) (фактически эти настройки определяют отображаемые по умолчанию столбцы и сортировку):
+На списковой форме отображения логов имеются две предопределенные пользовательские настройки, их можно увидеть в меню соответствующей [формы](http://flexberry.github.io/ember-flexberry/dummy/dummy-test-3/#/i-i-s-caseberry-logging-objects-application-log-l) (эти настройки определяют отображаемые по умолчанию столбцы и сортировку):
 
 * `Message`
 * `FormattedMessage`
@@ -126,16 +125,17 @@ link: 'i-i-s-caseberry-logging-objects-application-log-l',caption: ...,title: ..
 
 По умолчанию используется предопределённая настройка `Message`.
 
-При необходимости можно использовать предопределённую настройку `FormattedMessage`, при которой отображается столбец "Форматированное сообщение", в котором для сообщений уровня `Error` может содержаться имя файла, строка, стек вызовов, место возникновения ошибки.
+При необходимости можно использовать предопределённую настройку `FormattedMessage` для отображения столбца `Форматированное сообщение`, в котором для сообщений уровня `ERROR` может содержаться имя файла, строка, стек вызовов, место возникновения ошибки.
 
 ![Отображение формы просмотра сообщений лога в режиме FormattedMessage](/images/pages/products/flexberry-ember/ember-flexberry/services/log3.png)
 
-{% include note.html content="Для того, чтобы донастроить требуемый режим отображения списка сообщений, можно воспользоваться [сервисом пользовательских настроек](efd3_user-settings-service.html)." %}
+{% include note.html content="Для того, чтобы донастроить требуемый режим отображения списка сообщений, можно воспользоваться возможномтями [пользовательских настроек спискового компонента]()." %}
 
 ## Настройки логирования в файле конфигурации
 
-Для того, чтобы включить/отключить сервис, необходимо в конфигурационном файле ember-приложения задать настройку: `config.APP.log.enabled`.
-Настройки сервиса логирования в сгенерированном приложении в файле конфигурации представлены ниже.
+Конфигурация сервиса логирования устанавливается в файле `environment.js`.
+
+Пример настроек сервиса логирования в приложении Flexberry Ember представлены ниже.
 
 ```javascript
 'use strict';
@@ -168,5 +168,32 @@ module.exports = function(environment) {
 };
 ```
 
-* `enabled` - флаг, определяющий, включён ли сервис логирования по умолчанию.
-* `storeErrorMessages`, `storeWarnMessages`, `storeLogMessages`, `storeInfoMessages`, `storeDebugMessages`, `storeDeprecationMessages`- флаги, определяющие, осуществлять ли запись сообщений соответствующего уровня в лог. 
+* `enabled` - флаг, определяющий, включён ли сервис логирования.
+* `storeErrorMessages`, `storeWarnMessages`, `storeLogMessages`, `storeInfoMessages`, `storeDebugMessages`, `storeDeprecationMessages`, `storePromiseErrors` - флаги, определяющие, осуществлять ли запись сообщений соответствующего уровня в базу данных приложения,
+* `showPromiseErrors` - флаг, определяющий, нужно ли вызывать исходный обработчик ошибок для промиса до записи соответствующего сообщения об ошибке в базу данных приложения,
+* `errorMessageFilterActive` - флаг, определяющий, нужно ли применть фильтры логов, заданные в свойстве `errorMessageFilters`. 
+
+## Настройки логирования в коде приложения
+
+Разработчик может динамически включать и отключать сервис логирования с испоьзованием оператора:
+
+```javascript
+this.get('logService').set('enabled', true);
+```
+Для динамического включения или отключения логирования на требуемом уровне используются операторы:
+
+```javascript
+this.get('logService').set('storeErrorMessages', true) // уровень ошибок
+this.get('logService').set('storeWarnMessages', true) // уровень предупреждений;
+this.get('logService').set('storeLogMessages', true) // уровень логов;
+this.get('logService').set('storeInfoMessages', true) // уровень информационных сообщений;
+this.get('logService').set('storeDebugMessages', true) // уровень отладочных сообщений;
+this.get('logService').set('storeDeprecationMessages', true) // уровень сообщений о подозрительных и устаревших участках исходного кода.
+this.get('logService').set('storePromiseErrors', true) // уровень сообщений об ошибках промисов.
+```
+Для фильтрации сообщений, которые записываются в логи, можно использовать свойство `errorMessageFilters`, которое представляет собой массив объектов следующего вида:
+
+```javascript
+{ category: 'PROMISE', message: 'TransitionAborted' }
+```
+В свойстве `catrgory` объекта указывается требуемый уровень логов, а в свойстве `message` - фраза, которая может встречаться в логируемом сообщении. При этом если логируемое сообщение содержит указанную фразу, а также имеет указанный уровень лога, то запись в базу данных приложения соответствующего сообщения выполняться не будет.
