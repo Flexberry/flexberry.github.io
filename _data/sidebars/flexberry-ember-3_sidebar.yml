@@ -40,6 +40,25 @@ entries:
         output: web, pdf
 
         folderitems:
+          - title: Routing
+            title_ru: Роутинг (маршрутизация)
+            url: /efd3_router.html
+            output: web, pdf
+
+          - title: Forms
+            title_ru: Формы
+            url: /efd3_form.html
+            output: web, pdf
+
+          - title: List form
+            title_ru: Списковая форма
+            url: /efd3_listform.html
+            output: web, pdf
+
+          - title: Edit form
+            title_ru: Форма редактирования
+            url: /efd3_editform.html
+            output: web, pdf
 
       - title: Work with data
         title_ru: Работа с данными
