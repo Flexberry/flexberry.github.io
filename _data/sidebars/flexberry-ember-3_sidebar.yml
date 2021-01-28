@@ -66,10 +66,6 @@ entries:
             url: /efd3_model-validation.html
             output: web, pdf
 
-          - title: Helper class Information 
-            title_ru: Вспомогательный класс Information
-            url: /efd3_information.html
-            output: web, pdf
       - title: Components
         title_ru: Компоненты
         output: web, pdf
