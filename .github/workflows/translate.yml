@@ -29,7 +29,7 @@ jobs:
 
       - name: Translate
         run: |
-          mono ./doc-util/NewPlatform.Flexberry.DocTranslate.1.0.0-alpha01/tools/DocTranslate.exe . $API_KEY
+          mono ./doc-util/NewPlatform.Flexberry.DocTranslate.1.0.0-alpha01/tools/DocTranslate.exe '${PWD}' $API_KEY
 
       - name: Tune ssh-keys
         env:
