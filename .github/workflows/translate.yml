@@ -1,0 +1,76 @@
+
+name: Translate
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on pull request events but only for the main and develop branch
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '0 0 * * *'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "Generate"
+  Translate:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2.3.1
+        with:
+          persist-credentials: false
+
+      - name: Install NewPlatform.Flexberry.DocTranslate
+        run: nuget install NewPlatform.Flexberry.DocTranslate -Version 1.0.0-alpha01 -OutputDirectory doc-util
+
+      - name: Translate
+        run: |
+          mono ./doc-util/NewPlatform.Flexberry.DocTranslate.1.0.0-alpha01/tools/flexberry.exe . $API_KEY
+
+      - name: Tune ssh-keys
+        env:
+            ENCRYPTION_KEY: ${{ secrets.ENCRYPTION_KEY }}      
+        run: |
+          set -x
+          export ENCRYPTION_KEY
+          #  Recover private key
+          openssl aes-256-cbc -in .github/workflows/secrets/id_rsa.enc -out .github/workflows/secrets/id_rsa -pass pass:$ENCRYPTION_KEY -d -md sha1
+          # Setup SSH agent
+          export SSH_AUTH_SOCK=/tmp/ssh_agent.sock
+          mkdir -p ~/.ssh
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          # Start ssh agent
+          ssh-agent -a $SSH_AUTH_SOCK #> /dev/null
+          chmod 0600 .github/workflows/secrets/id_rsa
+          ssh-add .github/workflows/secrets/id_rsa      
+
+      - name: Remove tool
+        run: |
+          rm -Rf doc-util
+
+      - name: Git commit
+        run: |
+          set -x
+          git config user.name "Flexberry-man"
+          git config user.email "mail@flexberry.net"
+
+          git add --all
+          git commit -m "Autotranslated"
+
+      - name: Git push
+        run: |
+          set -x
+          SSH_AUTH_SOCK=/tmp/ssh_agent.sock
+          export SSH_AUTH_SOCK;
+          # Redirect any output to /dev/null to hide any sensitive credential data that might otherwise be exposed.
+          # git push --force --quiet "git@github.com:${GITHUB_REPOSITORY}.git" > /dev/null 2>&1
+          echo "Done."
+
+      - name: Cleanup
+        if: always()
+        run: |
+          rm -Rf .ssh .github *
