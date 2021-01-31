@@ -4,9 +4,9 @@ name: Translate
 # Controls when the action will run. 
 on:
   # Triggers the workflow on pull request events but only for the main and develop branch
-  schedule:
+  #schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '0 0 * * *'
+    #- cron:  '0 0 * * *'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -28,8 +28,10 @@ jobs:
         run: nuget install NewPlatform.Flexberry.DocTranslate -Version 1.0.0-alpha01 -OutputDirectory doc-util
 
       - name: Translate
+        env:
+            API_KEY: ${{ secrets.API_KEY }}      
         run: |
-          mono ./doc-util/NewPlatform.Flexberry.DocTranslate.1.0.0-alpha01/tools/DocTranslate.exe '${PWD}' $API_KEY
+          mono ./doc-util/NewPlatform.Flexberry.DocTranslate.1.0.0-alpha01/tools/DocTranslate.exe . $API_KEY
 
       - name: Tune ssh-keys
         env:
