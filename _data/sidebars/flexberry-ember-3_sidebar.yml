@@ -61,6 +61,10 @@ entries:
         output: web, pdf
 
         folderitems:
+          - title: Lookup component
+            title_ru: Компонент лукапа
+            url: /efd3_lookup.html
+            output: web, pdf
 
       - title: Services
         title_ru: Сервисы
