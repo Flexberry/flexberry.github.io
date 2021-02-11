@@ -204,6 +204,24 @@ The first option is preferable if you manually set the properties `colsOrder`, `
 
 When you copy settings from "Show setup" string constants are enclosed in double quotation marks ("). Because the current standard requires JSCS with the description of object of framing of the string constants in single quotation marks ('), Copy/Paste more convenient the second option descriptions properties» «componentName as a string.
 
+## Set the initial values for particular model
+In addition to the ability to specify settings by component name, check for settings by model name was added.
+You can add settings using blueprint `ember g default-user-setting «model-name» [options]`.
+Following the results of the generation, a file `/app/default-user-settings/<model-name>.js` will be added
+```javascript
+export default class UserSetting { }
+
+UserSetting.DEFAULT = {};
+```
+in which you will need to specify the settings for column order, width, sorting, etc. similar to developerUserSettings, where «componentName» = DEFAULT.
+
+When you set the withIndexDefaultUserSetting parameter, the file `/app/default-user-settings/index.js` will be added, importing all default user settings, and which import will be added in app.js. By default withIndexDefaultUserSetting = false, when you generate settings in first time, you should set it to true. This will allow you to add the correct import of settings and at the same time avoid overwriting existing imports of settings during further generations.
+
+{% include note.html content="
+These settings have the lowest priority" %}
+
+{% include note.html content="Currently used only for displaying object-list-view tables. Therefore, it can be applied on flexberry-groupedit, flexberry-objectlistview and flexberry-lookup" %}
+
 ## Sort and specify the column widths displayed in the interface table
 
 The user has the option to set the sort order and column widths directly in the interface displayed in the table.
@@ -219,7 +237,7 @@ If you change the column sort order is reloading the page with the specified col
 ## Levels of user settings
 
 The current mode is based on the following levels:
-
+* mode settings for current model (actual for object-list-view)
 * mode settings specified разработчиком;
 * mode settings set by the user in интерфейсе;
 * sort mode specified in parameters the URL of the page.

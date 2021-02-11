@@ -452,7 +452,7 @@ They are specified in the property `componentName` when specifying the template.
   // ... 
 }}{% endraw %}
 ```
-
+Also list in a LookUp-e can be set by [default user settings for particular model](ef2_model-user-settings-service.html#set-the-initial-values-for-particular-model).
 
 
 {% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

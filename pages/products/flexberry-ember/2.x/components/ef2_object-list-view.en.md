@@ -203,6 +203,7 @@ It is possible to prevent resizing of individual columns using the [initial conf
 
 If [service user settings](ef2_model-user-settings-service.html) is enabled, when loading the list control to read the saved setting width of columns, and changing column width - the setting is saved.
 
+Table settings can be set by [default user settings for particular model](ef2_model-user-settings-service.html#set-the-initial-values-for-particular-model).
 
 
 {% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -450,3 +450,5 @@ export default EditFormController.extend({
   // ...
 }}{% endraw %}
 ```
+
+Также настройки таблицы можно задавать через [настройки](ef2_model-user-settings-service.html#установка-настроек-по-умолчанию-для-конкретных-моделей) для конкретной модели.
