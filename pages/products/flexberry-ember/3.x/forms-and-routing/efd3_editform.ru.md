@@ -369,3 +369,227 @@ onSaveActionRejected() {
 ```
 
 {% include note.html content="Возможно также переопределение самого метода сохранения [`save`](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/EditFormController.html#method_save), однако в общем случае этого лучше не делать." %}
+
+## Несколько списков на форме редактирования
+
+На форме редактирования можно расположить несколько [списков, представленных компонентом ObjectListViewComponent](), [пример такой формы есть на тестовом стенде](http://flexberry.github.io/ember-flexberry/dummy/dummy-test-3/#/ember-flexberry-dummy-multi-list-user-edit/new).
+
+Настройка формы редактирования аналогична [настройке, когда на списковой форме располагаются несколько списков](efd3_listform.html). Для этого нужно в [роуте](https://guides.emberjs.com/v3.1.0/routing/defining-your-routes/) соответствующей формы редактирования использовать специальные [миксины](https://api.emberjs.com/ember/3.1/classes/Mixin) [MultiListRouteMixin](https://github.com/Flexberry/ember-flexberry/blob/develop/addon/mixins/multi-list-route.js) и [MultiListModelEditMixin](https://github.com/Flexberry/ember-flexberry/blob/develop/addon/mixins/multi-list-model-edit.js), после чего корректно задать `multiListSettings` и `developerUserSettings`.
+
+```js
+import EditFormRoute from 'ember-flexberry/routes/edit-form';
+import ListParameters from 'ember-flexberry/objects/list-parameters';
+import MultiListRoute from 'ember-flexberry/mixins/multi-list-route';
+import MultiListModelEdit from 'ember-flexberry/mixins/multi-list-model-edit';
+
+export default EditFormRoute.extend(MultiListRoute, MultiListModelEdit, {
+  modelProjection: 'ApplicationUserE',
+  developerUserSettings: { MultiUserListOnEdit: {}, MultiUserList2OnEdit: {}, MultiSuggestionListOnEdit: {}, MultiHierarchyListOnEdit: {} },
+  modelName: 'ember-flexberry-dummy-application-user',
+
+  init() {
+    this._super(...arguments);
+
+    this.set('multiListSettings.MultiUserListOnEdit', new ListParameters({
+      objectlistviewEvents: this.get('objectlistviewEvents'),
+      componentName: 'MultiUserListOnEdit',
+      modelName: 'ember-flexberry-dummy-application-user',
+      projectionName: 'ApplicationUserL',
+      editFormRoute: 'ember-flexberry-dummy-application-user-edit'
+    }));
+
+    this.set('multiListSettings.MultiUserList2OnEdit', new ListParameters({
+      objectlistviewEvents: this.get('objectlistviewEvents'),
+      componentName: 'MultiUserList2OnEdit',
+      modelName: 'ember-flexberry-dummy-application-user',
+      projectionName: 'ApplicationUserL',
+      editFormRoute: 'ember-flexberry-dummy-application-user-edit'
+    }));
+
+    this.set('multiListSettings.MultiSuggestionListOnEdit', new ListParameters({
+      objectlistviewEvents: this.get('objectlistviewEvents'),
+      componentName: 'MultiSuggestionListOnEdit',
+      modelName: 'ember-flexberry-dummy-suggestion',
+      projectionName: 'SuggestionL',
+      editFormRoute: 'ember-flexberry-dummy-suggestion-edit',
+      exportExcelProjection: 'SuggestionL'
+    }));
+
+    this.set('multiListSettings.MultiHierarchyListOnEdit', new ListParameters({
+      objectlistviewEvents: this.get('objectlistviewEvents'),
+      componentName: 'MultiHierarchyListOnEdit',
+      modelName: 'ember-flexberry-dummy-suggestion-type',
+      projectionName: 'SuggestionTypeL',
+      editFormRoute: 'ember-flexberry-dummy-suggestion-type-edit',
+      inHierarchicalMode: true,
+      hierarchicalAttribute: 'parent'
+    }));
+  },
+});
+```
+
+В [контроллере](https://guides.emberjs.com/v3.1.0/controllers/) формы редактирования нужно использовать специальный [миксин](https://api.emberjs.com/ember/3.1/classes/Mixin) [MultiListControllerMixin](https://github.com/Flexberry/ember-flexberry/blob/develop/addon/mixins/multi-list-controller.js)
+
+```js
+import EditFormController from 'ember-flexberry/controllers/edit-form';
+import MultiListController from 'ember-flexberry/mixins/multi-list-controller';
+import EditFormControllerOperationsIndicationMixin from 'ember-flexberry/mixins/edit-form-controller-operations-indication';
+
+export default EditFormController.extend(EditFormControllerOperationsIndicationMixin, MultiListController, {
+  parentRoute: 'ember-flexberry-dummy-multi-list',
+  getCellComponent: null,
+});
+
+```
+
+[Шаблон](https://guides.emberjs.com/v3.1.0/templates/handlebars-basics/) такой формы редактирования также требуется оформить особым образом. Настройки списков берутся из соответствующих `settings`, также дополнительно нужно пробросить некоторые action'ы.
+
+{% raw %}
+```hbs
+{{flexberry-error error=error}}
+<h3 class="ui header">{{t "forms.ember-flexberry-dummy-application-user-edit.caption"}}</h3>
+<form class="ui form flexberry-vertical-form" role="form">
+  {{ui-message
+    type="success"
+    closeable=true
+    visible=showFormSuccessMessage
+    caption=formSuccessMessageCaption
+    message=formSuccessMessage
+    onShow=(action "onSuccessMessageShow")
+    onHide=(action "onSuccessMessageHide")
+  }}
+  {{ui-message
+    type="error"
+    closeable=true
+    visible=showFormErrorMessage
+    caption=formErrorMessageCaption
+    message=formErrorMessage
+    onShow=(action "onErrorMessageShow")
+    onHide=(action "onErrorMessageHide")
+  }}
+  
+  ...
+
+  <hr/>
+    <h3>{{t 'forms.ember-flexberry-dummy-multi-list.caption'}}</h3>
+    <div class="row">
+      {{#with multiListSettings.MultiUserListOnEdit as |settings|}}
+        {{flexberry-objectlistview
+          modelName=settings.modelName
+          modelProjection=settings.modelProjection
+          editFormRoute=settings.editFormRoute
+          content=settings.model
+          createNewButton=true
+          refreshButton=true
+          sorting=settings.computedSorting
+          orderable=true
+          sortByColumn=(action "sortByColumn")
+          addColumnToSorting=(action "addColumnToSorting")
+          beforeDeleteAllRecords=(action "beforeDeleteAllRecords")
+          pages=settings.pages
+          perPageValue=settings.perPageValue
+          perPageValues=settings.perPageValues
+          recordsTotalCount=settings.recordsTotalCount
+          hasPreviousPage=settings.hasPreviousPage
+          hasNextPage=settings.hasNextPage
+          previousPage=(action "previousPage")
+          gotoPage=(action "gotoPage")
+          nextPage=(action "nextPage")
+          componentName=settings.componentName
+        }}
+      {{/with}}
+      <h3>{{t "forms.ember-flexberry-dummy-multi-list.multi-edit-form"}}</h3>
+      {{#with multiListSettings.MultiUserList2OnEdit as |settings|}}
+        {{flexberry-objectlistview
+          modelName=settings.modelName
+          modelProjection=settings.modelProjection
+          editFormRoute=settings.editFormRoute
+          content=settings.model
+          createNewButton=true
+          refreshButton=true
+          sorting=settings.computedSorting
+          orderable=true
+          sortByColumn=(action "sortByColumn")
+          addColumnToSorting=(action "addColumnToSorting")
+          beforeDeleteAllRecords=(action "beforeDeleteAllRecords")
+          pages=settings.pages
+          perPageValue=settings.perPageValue
+          perPageValues=settings.perPageValues
+          recordsTotalCount=settings.recordsTotalCount
+          hasPreviousPage=settings.hasPreviousPage
+          hasNextPage=settings.hasNextPage
+          previousPage=(action "previousPage")
+          gotoPage=(action "gotoPage")
+          nextPage=(action "nextPage")
+          componentName=settings.componentName
+        }}
+      {{/with}}
+      <h3>{{t "forms.ember-flexberry-dummy-multi-list.multi-edit-form"}}</h3>
+      {{#with multiListSettings.MultiSuggestionListOnEdit as |settings|}}
+        {{flexberry-objectlistview
+          editFormRoute=settings.editFormRoute
+          showCheckBoxInRow=true
+          modelName=settings.modelName
+          modelProjection=settings.modelProjection
+          content=settings.model
+          createNewButton=true
+          enableFilters=true
+          filters=settings.filters
+          filterButton=true
+          filterByAnyMatch=(action 'filterByAnyMatch')
+          filterText=settings.filter
+          refreshButton=true
+          exportExcelButton=true
+          sorting=settings.computedSorting
+          orderable=true
+          sortByColumn=(action "sortByColumn")
+          addColumnToSorting=(action "addColumnToSorting")
+          beforeDeleteAllRecords=(action "beforeDeleteAllRecords")
+          applyFilters=(action "applyFilters")
+          resetFilters=(action "resetFilters")
+          pages=settings.pages
+          perPageValue=settings.perPageValue
+          perPageValues=settings.perPageValues
+          recordsTotalCount=settings.recordsTotalCount
+          hasPreviousPage=settings.hasPreviousPage
+          hasNextPage=settings.hasNextPage
+          previousPage=(action "previousPage")
+          gotoPage=(action "gotoPage")
+          nextPage=(action "nextPage")
+          componentName=settings.componentName
+          showDeleteMenuItemInRow=true
+          deleteButton=true
+        }}
+      {{/with}}
+      <h3>{{t "forms.ember-flexberry-dummy-multi-list.multi-edit-form"}}</h3>
+      {{#with multiListSettings.MultiHierarchyListOnEdit as |settings|}}
+        {{flexberry-objectlistview
+          content=settings.model
+          modelName=settings.modelName
+          modelProjection=settings.modelProjection
+          editFormRoute=settings.editFormRoute
+          orderable=false
+          componentName=settings.componentName
+          beforeDeleteAllRecords=(action "beforeDeleteAllRecords")
+          colsConfigButton=false
+          disableHierarchicalMode=false
+          showCheckBoxInRow=true
+          pages=settings.pages
+          perPageValue=settings.perPageValue
+          perPageValues=settings.perPageValues
+          recordsTotalCount=settings.recordsTotalCount
+          hasPreviousPage=settings.hasPreviousPage
+          hasNextPage=settings.hasNextPage
+          previousPage=(action "previousPage")
+          gotoPage=(action "gotoPage")
+          nextPage=(action "nextPage")
+          availableCollExpandMode=true
+          inHierarchicalMode=settings.inHierarchicalMode
+          hierarchicalAttribute=settings.hierarchicalAttribute
+          inExpandMode=settings.inExpandMode
+        }}
+      {{/with}}
+    </div>
+</form>
+```
+{% endraw %}
