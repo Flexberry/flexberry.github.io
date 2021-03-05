@@ -25,6 +25,11 @@ entries:
         output: web, pdf
 
         folderitems:
+          - title: Generation of Flexberry Ember Application
+            title_ru: Генерация приложений
+            url: /efd3_app-generation.html
+            output: web, pdf
+
           - title: Structure of Flexberry Ember Application
             title_ru: Обзор структуры сгенерированных приложений
             url: /efd3_generated-app-structure.html
