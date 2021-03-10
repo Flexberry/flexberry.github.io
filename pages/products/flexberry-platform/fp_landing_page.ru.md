@@ -129,7 +129,7 @@ __Алгоритм установки Docker:__
 __Обязательный набор:__
 
 * [Flexberry Designer](https://flexberry.net/ru/);
-* Microsoft Visual Studio 2017;
+* Microsoft Visual Studio 2019;
 * SQL Management Studio;
 * pgAdmin.
 
@@ -137,7 +137,6 @@ __Дополнительно рекомендуется:__
 
 * Resharper;
 * DotPeek;
-* StyleCop;
 * SQL Toolbelt;
 * LinqPad;
 * .NET Developer Bundle™;
