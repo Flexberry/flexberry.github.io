@@ -382,13 +382,16 @@ ember g flexberry-application app --metadata-dir=vendor\flexberry
 Доступные флаги:
 - `--dummy` - генерация [форм](efd3_form.html) и [моделей](efd3_model.html) в аддон (в дамми-приложение).
 - `--new-theme=true` - генерация приложения с [новой темой оформления (ghost)]() (доступно, начиная с ember-flexberry@3.4.0).
-- `--skip-confirmation` - пропуск запросов на подтверждение.
+- `--skip-confirmation` - пропуск запросов на подтверждение перезаписи файлов в случае, когда блюпринт пытается добавить уже существующий файл.
 
 Алгоритм генерации нового Flexberry Ember приложения из командной строки:
 1. Создать новую папку
 2. Выполнить в ней команду [`ember init`](https://cli.emberjs.com/release/advanced-use/cli-commands-reference/#emberinit).
-3. Сгенерировать в эту папку только метаданные из [Flexberry Designer](fd_flexberry-designer.html)
-4. Выполнить в этой папке команду:
+
+Если нужно сгенерировать приложение на версии ember, отличной от той, которая установлена глобально, то можно после создания новой папки для приложения сначала установить в нее ember нужной версии (`npm install ember-cli@версия` или `yarn add ember-cli@версия`), а потом уже вызывать [`ember init`](https://cli.emberjs.com/release/advanced-use/cli-commands-reference/#emberinit).
+
+4. Сгенерировать в эту папку только метаданные из [Flexberry Designer](fd_flexberry-designer.html)
+5. Выполнить в этой папке команду:
 
 ```
 ember g flexberry-application app --metadata-dir=<относительный путь к папке с метаданными> --skip-confirmation
