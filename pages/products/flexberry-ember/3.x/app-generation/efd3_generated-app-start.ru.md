@@ -90,6 +90,8 @@ config.EnableCors(new DynamicCorsPolicyProvider());
 </configuration>
 ```
 
+{% include important.html content="Более сложные варианты настройки OdataService указаны в [этой статье](fo_orm-odata-service.html)." %}
+
 ### Настройка клиентского приложения
 Открыть `фронтенд`-часть приложения можно в `Visual Studio Code`, для этого нужно открыть папку `ember-app` внутри папки со сгенерированным из `Flexberry Designer` приложением (можно это сделать, выбрав пункт меню `File` → `Open folder`).
 
