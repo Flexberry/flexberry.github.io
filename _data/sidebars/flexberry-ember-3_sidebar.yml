@@ -61,6 +61,11 @@ entries:
         output: web, pdf
 
         folderitems:
+          - title: Modal dialog
+            title_ru: Модальный диалог
+            url: /efd3_modal-dialog.html
+            output: web, pdf
+
           - title: Lookup component
             title_ru: Компонент лукапа
             url: /efd3_lookup.html
