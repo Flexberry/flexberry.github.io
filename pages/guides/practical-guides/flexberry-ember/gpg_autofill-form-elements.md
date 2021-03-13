@@ -162,77 +162,64 @@ let Model = EmberFlexberryDataModel.extend(OfflineModelMixin, OrderItemMixin, Va
 
 ## Автоматическое вычисление значений атрибутов агрегатора
 
-Автоматическое вычисление значений атрибутов агрегатора на основании атрибутов детейла рассмотрим на следующем примере: **при изменении** у Заказа в любой строке "Содержимого заказа" поля "**Сумма по позиции**" должна также пересчитываться и "**Стоимость заказа**".
+Ранее, [мы реализовали вычислимый атрибут `TotalSum`](gpg_autocomplete-and-data-types.html), но так как его вычисление происходит на сервере, в момент загрузки данных, при редактировании данных на форме, его значение обновляется только после сохранения изменений.
 
-Если в подобной ситуации создать обзервер в самой модели Заказа, то привязать его к модели для "Строки заказа" тогда будет проблематично. Будет проще реализовать функционал пересчета "Стоимости заказа" непосредственно при изменении поля "Сумма по позиции" в конкретной "Строке заказа".
+Чтобы пользователь мог видеть актуальные данные до сохранения, мы можем реализоваь аналогичные вычисления на стороне клиента.
+Для этого, реализуем в модели `Order`, вычислимое свойсвто `actualTotalSum`:
 
-Создадим **новый обзервер** в модели "**Строка заказа**", который зависит от поля **totalSum**:
+```js
+// app\models\i-i-s-shop-order.js
 
-{% highlight javascript%}
-{% raw %}
-let Model = EmberFlexberryDataModel.extend(OfflineModelMixin, OrderItemMixin, Validations, {
-  ...
+// ...
 
-  /*
-   * Стоимость заказа
-   */
-  _orderSumChanged: on('init', observer('totalSum', function() {
-    once(this, '_orderSumCompute');
-  })),
-  _orderSumCompute: function() {
-      
-  },
-}
-{% endraw %}
-{% endhighlight %}
+import { computed } from '@ember/object';
 
-{% include warning.html content="Внимательно следим за последовательностью срабатывания связанных обзерверов: priceWTaxes (product) → totalSum (priceWTaxes, amount) → order.totalSum (totalSum)." %}
+let Model = DocumentModel.extend(OrderMixin, Validations, {
+  // ...
 
-Чтобы получить Заказ (агрегатор для "Строки заказа"), достаточно обратиться к соответствующему свойству `order` в модели "Строки заказа", а для подсчета "Суммы заказа" можно перебрать все записи из свойства `orderItem` модели "Заказа", просуммировав соответствующие "Суммы по позиции": 
+  actualTotalSum: computed('orderItem.@each.{amount,priceWTaxes}', function() {
+    return this.get('orderItem').reduce((sum, item) => {
+      const priceWTaxes = Number(item.get('priceWTaxes') || 0);
+      const amount = Number(item.get('amount') || 0);
+      if (Number.isNaN(priceWTaxes) || Number.isNaN(amount)) {
+        throw new Error(`Invalid 'priceWTaxes' or 'amount' for order item: '${item}'.`);
+      }
 
-{% highlight javascript%}
-{% raw %}
-let Model = EmberFlexberryDataModel.extend(OfflineModelMixin, OrderItemMixin, Validations, {
-    
-  ...
+      return sum + priceWTaxes * amount;
+    }, 0);
+  }),
+});
 
-  /*
-   * Стоимость заказа
-   */
-  _orderSumChanged: on('init', observer('totalSum', function() {
-    once(this, '_orderSumCompute');
-  })),
-  _orderSumCompute: function() {
-    let order = this.get('order');
-    let items = order.get('orderItem');
-    let newSum = 0;
-    items.forEach(function (item) {
-      newSum += Number(item.get('totalSum'));
-    });
+// ...
 
-    if (!this.get('isDeleted')) {
-      order.set('totalSum', newSum);
-    }
-  },
-}
-{% endraw %}
-{% endhighlight %}
+export default Model;
+```
 
-Теперь проверим, срабатывает ли обзервер. Для этого изменим количество для существующего товара в Заказе №1 на 2 шт.:
+В шаблоне формы редактирования заказа, вместо свойства `totalSum`, значение которого вычисляется на сервере, будем использовать вычислимое свойство `actualTotalSum`:
 
-![Логика работы автозаполнения стоимости заказа](/images/pages/guides/flexberry-ember/6-1-autofill-form-elements/6-1-14.png)
+```hbs
+{% raw %}{{!-- app\templates\i-i-s-shop-order-e.hbs --}}
 
-Попробуйте сохранить заказ, изменить количество товара, товар, обновить страницу. Если все выполнено правильно, то "Стоимость заказа" должна корректно рассчитываться на основании всех позиций в "Содержимом заказа".
+{{!-- ... --}}
+
+<div class="field">
+  {{flexberry-field
+    readonly=true
+    value=model.actualTotalSum
+    label=(t "forms.i-i-s-shop-order-e.totalSum-caption")
+  }}
+</div>
+
+{{!-- ... --}}{% endraw %}
+```
 
 ---
 
-**_Самостоятельно_** реализуйте автозаполнение для следующих полей:
+**_Самостоятельно_** реализуйте аналогичным способом вычисления для следующих полей:
 
 **Накладная**
-> "Сумма заказа" (обзервер на "Заказ") <sup>1</sup>.
-> "Вес заказа" (обзервер на "Вес" из "Списка товаров к выдаче") <sup>1</sup>.
-
-<sup>1</sup> Поскольку "Список товаров к выдаче" в Накладной должен заполняеться автоматически, а поля "Сумма заказа" и "Вес заказа" должны в свою очередь также рассчитываться автоматически на основании записей из "Списка товаров к выдаче", то на данный момент расчет "Суммы заказа" и "Веса заказа" производиться не будет. Данные обзерверы будут срабатывать после того, как мы далее реализуем автозаполнение "Списка товаров к выдаче" на основе выбранного "Заказа" в Накладной.
+> "Сумма заказа"  
+> "Вес заказа"
 
 ---
 
