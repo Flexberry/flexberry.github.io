@@ -225,118 +225,101 @@ export default Model;
 
 ## Автозаполнение списка детейлов
 
-Автоматически можно вычислять не только значения собственных атрибутов модели, но также при необходимости и изменять перечень связанных записей.
+В качестве примера рассмотрим логику автозаполнения детейла **Список товаров к выдаче** в **Накладной** на основе выбранного **Заказа**.
+Для этого воспользуемся возможностью переопределения обработчика события изменения значения в компоненте `{% raw %}{{flexberry-lookup}}{% endraw %}`.
 
-В качестве примера рассмотрим логику автозаполнения детейла **Список товаров к выдаче** в **Накладной** на основе выбранного **Заказа**:
+Опишем в контроллере формы редактирования накладной соответствующий обработчик:
 
-*`app → models → i-i-s-shop-invoice.js`*
+```js
+// app\controllers\i-i-s-shop-invoice-e.js
 
-![Модель накладной с реализованной суммой заказа](/images/pages/guides/flexberry-ember/6-1-autofill-form-elements/6-1-15.png)
+// ...
 
-Создадим **новый обзервер**, добавив следующий код:
-
-{% highlight javascript%}
-{% raw %}
+import Builder from 'ember-flexberry-data/query/builder';
 import generateUniqueId from 'ember-flexberry-data/utils/generate-unique-id';
-import { buildValidations } from 'ember-cp-validations';
-{% endraw %}
-{% endhighlight %}
 
-{% highlight javascript%}
-{% raw %}
-/*
-   * Список товаров к выдаче
-   */
-  _invoiceItemChanged: on('init', observer('order', function() {
-      once(this, '_invoiceItemCompute');
-  })),
-  _invoiceItemCompute: function() {
-    var me = this;
+export default EditFormController.extend({
+  // ...
 
-    if (!this.get('isDeleted')) {
-      // Удаляем старые детейлы
-      let currentItems = me.get('invoiceItem');
-      currentItems.forEach(function (item) {
+  orderItemsLoading: false,
+
+  actions: {
+    orderChanged({ modelToLookup: invoice, newRelationValue: order }) {
+      invoice.set('order', order);
+      invoice.get('invoiceItem').toArray().forEach((item) => {
         item.deleteRecord();
       });
 
-      let order = me.get('order');
       if (order) {
-        let store = this.get('store');
-        let orderId = order.get('id');
+        this.set('orderItemsLoading', true);
 
-        let builder = new Builder(store, 'i-i-s-shop-order');
-        builder.selectByProjection('OrderE');
-        builder.byId(orderId);
+        const store = this.get('store');
+        const modelName = 'i-i-s-shop-order-item';
 
-        store.query('i-i-s-shop-order', builder.build())
-          .then(function (orders) {
-            orders.forEach(function(order) {
-              let items = order.get('orderItem');
-              items.forEach(function(item) {
-                let product = item.get('product');
-                let amount = Number(item.get('amount'));
+        const query = new Builder(store, modelName)
+          .selectByProjection('OrderItemE')
+          .where('order', 'eq', order.get('id'))
+          .build();
 
-                let weight = Number(product.get('weight'));
-                let totalWeight = Number((weight * amount).toFixed(3));
+        store.query(modelName, query).then((orderItems) => {
+          const invoiceItems = orderItems.map((orderItem) => {
+            const id = generateUniqueId();
+            const price = orderItem.get('priceWTaxes');
+            const totalSum = orderItem.get('totalSum');
+            const product = orderItem.get('product');
+            const amount = Number(orderItem.get('amount'));
+            const weight = Number(product.get('weight')) * amount;
 
-                // Создаем новый детейл
-                let invoiceItem = store.createRecord('i-i-s-shop-invoice-item', {
-                  id: generateUniqueId(),
-                  amount: amount,
-                  weight: totalWeight,
-                  price: item.get('priceWTaxes'),
-                  totalSum: item.get('totalSum'),
-                  product: product
-                });
+            return store.createRecord('i-i-s-shop-invoice-item', { id, amount, weight, price, totalSum, product, invoice });
+          });
 
-                // Добавляем детейл в список
-                me.get('invoiceItem').pushObject(invoiceItem);
-              });
-            });
+          invoice.get('invoiceItem').pushObjects(invoiceItems);
+        }).finally(() => {
+          this.set('orderItemsLoading', false);
         });
-      } else {
-        this.set('totalWeight', 0);
       }
     }
-  }
-{% endraw %}
-{% endhighlight %}
+  },
 
-Детейлы создаются путем вызова метода [createRecord](https://guides.emberjs.com/v3.1.0/models/creating-updating-and-deleting-records/#toc_creating-records), которая создает в store новую запись. Особо стоит отметить необходимость генерировать **id** для новых записей детейла, которые создаются программно: для этого используется утилита [generateUniqueId](https://github.com/Flexberry/ember-flexberry-data/blob/develop/addon/utils/generate-unique-id.js) аддона `ember-flexberry-data`.
+  // ...
+});
+```
 
-Связываются детейлы с агрегатором с использованием метода [pushObject](https://guides.emberjs.com/v3.1.0/models/relationships/#toc_creating-records) у соответствующего свойства агрегатора со связью `hasMany`, которое представляет собой массив записей.
+В шаблоне формы редактирования накладной, установим имя описанного обработчика в качестве значения свойства `updateLookupAction` для соответсвующего компонента `{% raw %}{{flexberry-lookup}}{% endraw %}`:
 
-Для того, чтобы список детейлов обновлялся в режиме реального времени, добавим свойство **searchForContentChange** в соответствующий компонент в шаблоне формы редактирования Накладной:
+```hbs
+{% raw %}{{!-- app\templates\i-i-s-shop-invoice-e.hbs --}}
 
-*`app → templates → i-i-s-shop-invoice-e.hbs`*
+{{!-- ... --}}
 
-{% highlight handlebars%}
-{% raw %}
 <div class="field">
-    <label>{{t "forms.i-i-s-shop-invoice-e.invoiceItem-caption"}}</label>
-    {{flexberry-groupedit
-      componentName="invoiceItemGroupEdit"
-      mainModelProjection=modelProjection
-      modelProjection=modelProjection.attributes.invoiceItem
-      content=model.invoiceItem
-      readonly=true
-      createNewButton=false
-      deleteButton=false
-      showCheckBoxInRow=false
-      showDeleteButtonInRow=false
-      defaultSortingButton=false
-      defaultSettingsButton=false
-      orderable=false
-      searchForContentChange=true
-      class=(if (v-get validationObject "invoiceItem" "isInvalid") "error")
-    }}
-    {{flexberry-validationmessage error=(v-get validationObject "invoiceItem" "messages")}}
+  <label>{{t "forms.i-i-s-shop-invoice-e.order-caption"}}</label>
+  {{flexberry-lookup
+    choose="showLookupDialog"
+    remove="removeLookupValue"
+    value=model.order
+    displayAttributeName="number"
+    autocomplete=true
+    relationName="order"
+    projection="OrderL"
+    title=(t "forms.i-i-s-shop-invoice-e.order-caption")
+    readonly=(or readonly orderItemsLoading)
+    componentName="orderLookup"
+    updateLookupAction="orderChanged"
+  }}
+  {{flexberry-validationmessage error=(v-get validationObject "order" "messages")}}
 </div>
-{% endraw %}
-{% endhighlight %}
 
-**Проверим** работоспособность созданного обзервера. Для этого создадим **новый заказ**:
+{{!-- ... --}}{% endraw %}
+```
+
+Детейлы создаются путем вызова метода [createRecord](https://guides.emberjs.com/v3.1.0/models/creating-updating-and-deleting-records/#toc_creating-records), который создает в `store` новую запись. Особо стоит отметить необходимость генерировать **id** для новых записей детейла, которые создаются программно: для этого используется утилита [generateUniqueId](https://github.com/Flexberry/ember-flexberry-data/blob/develop/addon/utils/generate-unique-id.js) аддона `ember-flexberry-data`.
+
+Связываются детейлы с агрегатором с использованием метода [pushObjects](https://guides.emberjs.com/v3.1.0/models/relationships/#toc_creating-records) у соответствующего свойства агрегатора со связью `hasMany`, которое представляет собой массив записей.
+
+Также в обработчике, на время пока выполняется запрос для загрузки строк выбранного заказа, устанавливается свойство `orderItemsLoading` в значение `true`, чтобы компонент был заблокирован, и пользователь не имел возможности изменить заказ, пока обработчик не отработает полностью.
+
+**Проверим** работоспособность реализованного обработчика. Для этого создадим **новый заказ**:
 
 **Заказ 2**
 > *<u>Менеджер</u>*: Евгеньева (Евгения Евгеньевна, таб. номер 4)  
@@ -352,7 +335,7 @@ import { buildValidations } from 'ember-cp-validations';
 
 ![Новая накладная с заказом №2](/images/pages/guides/flexberry-ember/6-1-autofill-form-elements/6-1-20.png)
 
-При выборе заказа у нас сразу добавилась сумма заказа, одновременно с этим отработал обзервер на добавление строк накладной, а после этого - ранее написанный скрипт на Вес заказа. При изменении заказа строки изменятся, т.к. в коде мы каждый раз удаляем все строки из списка товаров к выдаче и добавляем их заново.
+При выборе заказа у нас сразу добавилась сумма заказа, одновременно с этим отработал реализованный обработчик на добавление строк накладной, а после этого - ранее написанный скрипт на вес заказа. При изменении заказа строки изменятся, т.к. в коде мы каждый раз удаляем все строки из списка товаров к выдаче и добавляем их заново.
 
 {% include warning.html content="Начиная с версии ember-flexberry@3.0.0 существует проблема с удалением агрегаторов, у которых программным (не ручным) методом добавляются строки детейла. Также иногда наблюдается ошибка при добавлении новых записей.<br><br>
 Эти ошибки исправлены в версии ember-flexberry@3.4.0 и не требуют исправления в коде приложения." %}
