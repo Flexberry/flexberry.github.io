@@ -46,11 +46,11 @@ lang: ru
 
 ## Настройка версии ember-flexberry для генерации
 
-Для настройки Flexberry Designer требуется найти в папке, в которую он установлен, файл **CASEBERRY.exe.config**. Для этого откроем свойства приложения (через ярлык на панели задач):
+Для настройки Flexberry Designer требуется открыть файл конфигурации **CASEBERRY.exe.config**. Для этого в меню `Настройки` выберите пункт `Открыть файл конфигурации...`:
 
-![Поиск файла конфигурации Flexberry Designer](/images/pages/guides/flexberry-ember/3-ember-application-generation/3-2.png)
+![Открытие файла конфигурации из Flexberry Designer](/images/pages/guides/flexberry-ember/3-ember-application-generation/3-2.png)
 
-Скопируйте **расположение** файла, вставьте его в **адресную строку проводника** (если нужно ‒ исключите само имя exe-файла). В открывшейся папке найдите файл **CASEBERRY.exe.config**:
+Файл **CASEBERRY.exe.config** откроется в редакторе по умолчанию:
 
 ![Файл конфигурации Flexberry Designer](/images/pages/guides/flexberry-ember/3-ember-application-generation/3-3.png)
 
