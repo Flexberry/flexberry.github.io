@@ -36,8 +36,8 @@ entries:
           - title: Flexberry Winforms
             url: /fw_landing_page.html
             output: web
-          - title: Flexberry Foundation
-            url: /ff_landing_page.html
+          - title: Flexberry Base
+            url: /fb_landing_page.html
             output: web
           - title: Flexberry GIS
             url: /fg_landing_page.html

@@ -21,7 +21,7 @@ Products [platform Flexberry](http://flexberry.net):
  * [Flexberry ASP.NET](fa_landing_page.html)
  * [Flexberry Winforms](fw_landing_page.html)
 * Functional subsystems:
- * Flexberry Foundation
+ * Flexberry Base
  * [Flexberry GIS](fg_landing_page.html)
  * [Flexberry Service Bus](fsb_landing_page.html)
  * Flexberry Analytics

@@ -18,7 +18,7 @@ hash: ae5b54dd65fc20a33bc7a977f9ef85c79229824d3ee9ac7a2226a4c47d2f977f
 | [Flexberry Ember](ef3_landing_page.html) | Product platform Flexberry implemented on javascript-framework [EmberJS](http://emberjs.com/) |
 | [Flexberry ASP.NET](fa_landing_page.html) | Product platform Flexberry based on freeware ASP.NET and allows you to create WEB-apps |
 | [Flexberry Wimforms](fw_landing_page.html) | Product Flexberry platform that provides tools for developing applications that implements the win-interface (the"desktop" application) and contains a set of libraries required for the functioning of such applications|
-| `Flexberry Foundation` | Functional subsystem Flexberry platform to create applications of accounting or factual nature. This subsystem is implemented in the frameworks Flexberry Ember, Flexberry ASP.NET and Flexberry Winforms|
+| `Flexberry Base` | Functional subsystem Flexberry platform to create applications of accounting or factual nature. This subsystem is implemented in the frameworks Flexberry Ember, Flexberry ASP.NET and Flexberry Winforms|
 | [Flexberry GIS](fg_landing_page.html) | Product platform Flexberry, which is a component of the analytical system used to store, create, edit, analyze and display geographic information. The main purpose of the system is the authoring of interactive maps based on existing spatial data, such as the districts of the region and city, water, blocks, streets, buildings, facilities, roads, rail and tramways, etc.|
 | Service [Flexberry Service Bus](fsb_landing_page.html) | Universal means of integrating systems through messaging |
 | [Flexberry Analytics](fan_landing_page.html) | functional subsystem reporting and business intelligence |
