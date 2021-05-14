@@ -278,10 +278,11 @@ export default EditFormController.extend({
 * `autocompleteOrder` - порядок сортировки запрашиваемых элементов, может включать в том числе скрытые поля, содержит перечисление названий свойств и направлений сортировки. Например, `moderated asc, parent desc`. Если указан `autocompleteOrder`, то `sorting` не учитывается.
 * `autocompletePersistValue` - флаг, определяющий, следует ли удалять набранное значение из поля лукапа, если такого нет в результатах поиска (удаление производится, если данный флаг имеет значение `false`) (при включении данной настройки `displayValue` должно быть забиндено на поле, в которое нужно сохранять отображаемое в компоненте лукапа значение: `displayValue=model.lookupDisplayValue`).
 * `autocompleteProjection` - имя проекции, по которой производится запрос для получения значений для автодополнения.
+* `autocompleteDirection` - направление открытия выпадающего списка с подходящими значениями (возможные значения: `downward`, `upward`, `auto`; по умолчанию `downward`).
 
 {% include note.html content="Запрос записей для списка на модальном окне производится по проекции, указанной в настройке `projection`; запрос подходящих записей для выбора в режиме автодополнения производится по проекции, указанной в `autocompleteProjection`. Если `autocompleteProjection` не указано, то запрос производится по проекции, содержащей только поле `displayAttributeName`." %}
 
-Список автодополнения также реализован на базе [Semantic UI Dropdown](https://semantic-ui.com/modules/dropdown.html), поэтому к компоненту лукапа можно применять [некоторые настройки Semantic UI Dropdown](https://semantic-ui.com/modules/dropdown.html#/settings), указанные в предыдущем разделе.
+Список автодополнения реализован на базе [Semantic UI Search](https://semantic-ui.com/modules/search.html).
 
 [Пример компонента лукапа, настроенного на работу в режиме автодополнения](http://flexberry.github.io/ember-flexberry/dummy/dummy-test-3/#/components-examples/flexberry-lookup/autocomplete-order-example):
 
