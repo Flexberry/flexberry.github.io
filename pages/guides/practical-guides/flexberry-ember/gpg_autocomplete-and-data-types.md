@@ -123,11 +123,11 @@ public virtual double TotalSum
 
 Добавим отдельное представление в класс `OrderItem`, со свойствами `Amount` и `PriceWTaxes`:
 
-![Добавление представления для клсасса OrderItem](/images/pages/guides/flexberry-ember/2-3-autocomplete-and-data-types/2-3-6-1.png)
+![Добавление представления для класса OrderItem](/images/pages/guides/flexberry-ember/2-3-autocomplete-and-data-types/2-3-6-1.png)
 
 Добавим, только что созданное представление, в качестве детейла, в представлении `OrderL` класса `Order`:
 
-![Обновление представления в клсассе Order](/images/pages/guides/flexberry-ember/2-3-autocomplete-and-data-types/2-3-6-2.png)
+![Обновление представления в классе Order](/images/pages/guides/flexberry-ember/2-3-autocomplete-and-data-types/2-3-6-2.png)
 
 В обоих случаях, мы убирали признак видимости у атрибутов и представлений, потому что, эти данные нужны только в вычислениях, и их не требуется отображать в интерфейсе.
 
