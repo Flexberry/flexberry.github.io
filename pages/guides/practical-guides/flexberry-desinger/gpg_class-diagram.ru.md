@@ -63,6 +63,8 @@ __Виды связей:__
 
 Для построения UML-диаграмм следует использовать [Flexberry Designer](https://designer.flexberry.net) - удобный онлайн инструмент. После простого процесса регистрации достаточно создать проект, перейти на список диаграмм и создавать нужные диаграммы.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hCXqOwSuv2w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Перейти
 
 * <i class="fa fa-arrow-left" aria-hidden="true"></i> [Построение диаграммы видов деятельности](gpg_activity-diagram.html)
