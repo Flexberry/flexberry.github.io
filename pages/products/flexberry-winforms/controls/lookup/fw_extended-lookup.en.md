@@ -44,4 +44,3 @@ It should be noted that in the code property `Text` you can specify a value whos
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

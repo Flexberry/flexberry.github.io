@@ -35,4 +35,4 @@ Also in order to optimize not initialize the mechanics field. For masters only i
 If the object has [`Created` status](fo_object-status.html), then it does not have a copy of the data after the initialization copies the data (`InitDataCopy`), since the copy of the data object whose status `Created` is not necessary (while updating the object all goes into the database, and InitDataCopy skips such objects).
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}
+

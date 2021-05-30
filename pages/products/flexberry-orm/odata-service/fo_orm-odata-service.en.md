@@ -634,4 +634,3 @@ This action adds the ability to filter objects by pseudometal similar to [filter
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

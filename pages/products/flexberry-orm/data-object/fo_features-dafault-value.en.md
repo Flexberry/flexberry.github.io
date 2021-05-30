@@ -119,4 +119,3 @@ public class TestBS : ICSSoft.STORMNET.Business.BusinessServer
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

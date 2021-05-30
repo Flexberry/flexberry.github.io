@@ -46,4 +46,3 @@ To use your own method of connection resources, you must create a new class and 
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

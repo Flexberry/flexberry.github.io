@@ -56,4 +56,3 @@ The software was previously called just «PhoneGap», and «then Apache Cordova�
 * [Course home page](gbt_landing-page.html)
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -32,4 +32,3 @@ Having used the service data, you can add your [handlers of some events](fo_sql-
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

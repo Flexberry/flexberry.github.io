@@ -29,4 +29,3 @@ you specify only the layer type `osm`, the layer name, if required, else optiona
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

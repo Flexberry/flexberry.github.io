@@ -18,4 +18,3 @@ About signing assemblies, you can also read the [msdn](http://msdn.microsoft.com
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

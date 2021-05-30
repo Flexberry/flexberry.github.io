@@ -77,4 +77,3 @@ Quotes escaped in `web.config` if necessary, a standard XML tools.
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

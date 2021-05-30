@@ -36,4 +36,3 @@ Copy the files `tnsnames.ora`, `listener.ora`, `sqlnet.ora` and reboot the syste
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

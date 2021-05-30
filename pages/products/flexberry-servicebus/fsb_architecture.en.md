@@ -23,4 +23,3 @@ The bus architecture includes the following components:
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

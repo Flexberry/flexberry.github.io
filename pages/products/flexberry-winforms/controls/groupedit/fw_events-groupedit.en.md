@@ -44,4 +44,3 @@ To intercept events from the delete and add object and under certain conditions 
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -19,4 +19,3 @@ summary: Description of the platform architecture Flexberry.
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

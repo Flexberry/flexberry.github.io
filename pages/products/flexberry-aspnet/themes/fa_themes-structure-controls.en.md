@@ -256,4 +256,3 @@ After full adjustment lucapa, file `Lookup.less` (`Theme`) must be imported into
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

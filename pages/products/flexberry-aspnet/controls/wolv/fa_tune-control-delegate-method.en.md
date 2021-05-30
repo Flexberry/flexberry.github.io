@@ -115,4 +115,3 @@ In the filter control, the corresponding property will be available `DateTimePro
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

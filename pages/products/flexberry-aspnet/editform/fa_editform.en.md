@@ -87,4 +87,3 @@ Data validation occurs in several stages.
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

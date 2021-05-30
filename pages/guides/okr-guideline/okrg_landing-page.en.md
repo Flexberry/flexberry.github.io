@@ -24,4 +24,4 @@ This is the page with all the Goodies and the right words at the OKR. The sequen
 6. [Questions and answers on the OKR team Skyori.com that is updated in real time](https://docs.google.com/document/d/1Ny9TL_79Q2MV79cllQu8llvuXG32ZHyRX5c1emZR-nY/edit?usp=sharing "I want to ask - first look table of contents")
 7. [Guide for implementation of the OKR from Eugene Hubareva](https://docs.google.com/document/d/1Is2iGIZQJAaqLtArdyezd3TwwPOb_aw4zyLJrqlKxwU/edit?usp=sharing)
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}
+

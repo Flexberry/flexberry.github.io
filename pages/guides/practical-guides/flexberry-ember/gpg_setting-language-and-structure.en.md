@@ -246,4 +246,3 @@ The choice of naming scheme is set by the project Manager or lead developer and 
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

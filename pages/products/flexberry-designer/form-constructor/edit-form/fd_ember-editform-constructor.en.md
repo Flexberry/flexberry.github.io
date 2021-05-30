@@ -35,4 +35,3 @@ If you select the tab or group and click Remove» qmo, you will be removed as a 
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

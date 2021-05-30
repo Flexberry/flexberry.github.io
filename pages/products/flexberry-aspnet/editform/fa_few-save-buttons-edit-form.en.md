@@ -67,4 +67,3 @@ As ID you can use any ID that satisfies the selector "input[id$=\"SaveBtn\"]".
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -41,4 +41,3 @@ When the exception is generated, in the form of a message about the incorrect in
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

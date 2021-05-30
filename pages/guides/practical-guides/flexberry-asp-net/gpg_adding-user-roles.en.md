@@ -42,4 +42,3 @@ Then use a similar process to create at least one user for each role, opening th
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

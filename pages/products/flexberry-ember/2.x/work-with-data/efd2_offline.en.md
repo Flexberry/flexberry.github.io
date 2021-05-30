@@ -29,4 +29,3 @@ the <li>store - in scheme which is set to the offline database obtained from off
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

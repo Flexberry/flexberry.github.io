@@ -46,4 +46,3 @@ If the passed parameter has a value `withDetails` `true`, prototypical will be p
 * When you perform [decide object](fo_additional-loading.html) the data service will carry out the proofreading properties prototipazione object, using as [primary key](fo_primary-keys-objects.html) `PrototypeKey` (but when you run [UpdateObject](fo_data-service.html) in the database will create a new object).
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

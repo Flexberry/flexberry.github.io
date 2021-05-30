@@ -53,4 +53,3 @@ In the result of the execution of this step was made to configure the Ember appl
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

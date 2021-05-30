@@ -51,4 +51,3 @@ In this example, the only overridden two methods, one now performs the connectio
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -23,4 +23,3 @@ To work `UserSettingsService` requires a separate table in the database.
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

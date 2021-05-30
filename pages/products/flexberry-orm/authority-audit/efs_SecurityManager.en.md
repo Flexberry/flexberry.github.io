@@ -180,4 +180,3 @@ Configure the use `SecurityManager` in section `Unity` configuration file of the
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

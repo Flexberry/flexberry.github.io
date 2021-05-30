@@ -58,4 +58,3 @@ There are recommendations for drawing a class diagram:
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

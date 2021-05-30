@@ -46,4 +46,3 @@ The application must be implemented in a REST-based API using a JSON Server. Fai
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

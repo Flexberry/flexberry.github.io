@@ -72,4 +72,3 @@ Generated | Generation .Net language
 For easy editing of submission is [special form-editor](fd_view-edit-form.html).
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -69,4 +69,3 @@ __For IIS 6:__
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

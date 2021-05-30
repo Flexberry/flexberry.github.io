@@ -37,4 +37,3 @@ To run forms in modal mode, it is possible to connect the Assembly `IIS.WinUI` t
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

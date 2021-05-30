@@ -40,4 +40,3 @@ WHERE ( "abc" = 1 AND def = 2)
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

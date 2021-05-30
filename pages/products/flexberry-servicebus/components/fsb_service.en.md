@@ -125,4 +125,3 @@ For service configurations, you must specify the components which will run the s
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -43,4 +43,3 @@ For the work of datalow in the expanded constraint editor in the web](fa_advance
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

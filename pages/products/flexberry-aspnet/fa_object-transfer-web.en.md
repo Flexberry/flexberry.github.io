@@ -84,4 +84,3 @@ Depending on your application requirements, you may need alternative session sta
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

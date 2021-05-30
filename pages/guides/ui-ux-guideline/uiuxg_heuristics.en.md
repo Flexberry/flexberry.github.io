@@ -91,4 +91,3 @@ Of course, these heuristics can not be the solution to all problems when creatin
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

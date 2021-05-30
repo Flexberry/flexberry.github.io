@@ -32,4 +32,3 @@ To know which variables are available for editing from the source files semantic
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

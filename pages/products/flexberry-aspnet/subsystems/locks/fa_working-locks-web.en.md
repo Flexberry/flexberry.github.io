@@ -17,4 +17,3 @@ Logic lock:
 * In the folder `Security` attached form `Lock\LockL` with a list of the currently existing locks. Remove lock from list removes the corresponding entry from the database.
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

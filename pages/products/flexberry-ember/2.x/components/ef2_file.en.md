@@ -212,4 +212,3 @@ When the user has selected a file, the component looks like a button with drop-d
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

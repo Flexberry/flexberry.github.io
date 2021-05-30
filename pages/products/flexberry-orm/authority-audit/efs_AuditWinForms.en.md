@@ -34,4 +34,3 @@ To work forms may require the following:
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

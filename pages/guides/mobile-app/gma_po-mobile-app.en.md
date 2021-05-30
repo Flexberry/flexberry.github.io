@@ -45,4 +45,3 @@ The result of this step was made to install and configure the necessary software
 * [<- Back to previous step](gms_architecture-mobile-app.html)
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

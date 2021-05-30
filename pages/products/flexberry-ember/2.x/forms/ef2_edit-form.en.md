@@ -101,4 +101,3 @@ If you have to open up the editor to read, you can implement this similarly, by 
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -102,4 +102,3 @@ public interface ICanChangeByEnter
 If `LetReleaseEnterNow == true`, the transition will Enter выполнен; otherwise not.
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -83,4 +83,3 @@ internal static ICSSoft.STORMNET.Web.Tools.Resources.ResourceManager ResourceMan
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

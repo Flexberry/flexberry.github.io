@@ -85,4 +85,3 @@ The parameter type must match the type of operation in the constraint.
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

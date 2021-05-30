@@ -20,4 +20,3 @@ The flow limitation parameters:
 Ecosea implementation does not imply the existence of parameters in the restriction imposed by the programmer.
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

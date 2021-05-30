@@ -47,4 +47,3 @@ On templates [forms creating and editing](ef2_edit-form.html) - [controls for ed
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -91,4 +91,3 @@ If `IsAuditDatabaseLocal = true`, getting a name is the name of the connection s
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -26,4 +26,3 @@ Flexberry.exe path:Репозиторий\Проект\Конфигурация\
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

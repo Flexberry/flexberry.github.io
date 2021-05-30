@@ -38,4 +38,3 @@ If the Packet property is not specified, then the form files will be generated i
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -83,4 +83,3 @@ mono\mcs\tools\pdb2mdb\MdbConverter.csproj
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

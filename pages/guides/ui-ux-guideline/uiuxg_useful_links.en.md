@@ -56,4 +56,3 @@ summary: a collection of useful links.
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -83,4 +83,3 @@ to use. The selected theme is set for this particular user. The theme, the defau
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

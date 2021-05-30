@@ -27,4 +27,3 @@ The use of the class attribute with a [object data](fo_data-object.html) as the 
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

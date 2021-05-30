@@ -81,4 +81,3 @@ When the cursor is on an unsigned item, or the icon need to show the tooltip.
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -21,4 +21,3 @@ When you upgrade in the store data object, any data service account statuses the
 | Deleted| Removes data from the repository| the Object is deleted from the array of objects to process (null is returned in case of one object)|
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

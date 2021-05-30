@@ -69,4 +69,3 @@ In the code of this method is formed by special design `LimitFunction` which all
 * [Indication of current date](gpg_date-time-now.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

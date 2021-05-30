@@ -32,4 +32,3 @@ Specific parameter values in the application prompt the user before building the
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

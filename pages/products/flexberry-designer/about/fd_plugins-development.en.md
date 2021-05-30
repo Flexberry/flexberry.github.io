@@ -116,4 +116,3 @@ If the setting is, in some cases, output in a separate process you will see a me
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

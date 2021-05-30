@@ -20,4 +20,3 @@ When specifying ODBCMySqlDataService as a service data string is used `ICSSoft.S
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

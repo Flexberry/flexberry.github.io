@@ -49,4 +49,3 @@ Customization display `AjaxGroupEdit` using CSS. The internal structure and desc
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

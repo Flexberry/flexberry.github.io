@@ -142,4 +142,3 @@ However, in this case (in the case of different representations) will appear fea
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

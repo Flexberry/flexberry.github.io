@@ -284,4 +284,3 @@ To view the audit data through [label](fw_desktop-operations.html) on [desktop](
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

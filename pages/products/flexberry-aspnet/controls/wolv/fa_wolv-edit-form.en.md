@@ -61,4 +61,3 @@ Visual return will look different for different variants of open [web editor](fa
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

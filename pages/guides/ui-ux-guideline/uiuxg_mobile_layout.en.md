@@ -34,4 +34,3 @@ summary: Rules layout of basic elements on mobile devices. The location menus an
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

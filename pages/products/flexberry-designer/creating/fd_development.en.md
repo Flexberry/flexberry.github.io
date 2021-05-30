@@ -47,4 +47,3 @@ Import to database | If the application is a replacement for an existing system,
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

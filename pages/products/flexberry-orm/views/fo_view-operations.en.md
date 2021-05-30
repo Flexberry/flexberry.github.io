@@ -25,4 +25,3 @@ An example of working with operations on views is available at [https://github.c
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

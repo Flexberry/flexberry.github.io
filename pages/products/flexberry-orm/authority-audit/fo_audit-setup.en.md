@@ -109,4 +109,3 @@ If there is no desire or ability to regenerate your project, you can use the fol
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

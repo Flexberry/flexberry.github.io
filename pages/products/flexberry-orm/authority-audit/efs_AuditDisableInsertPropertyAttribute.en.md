@@ -14,4 +14,3 @@ Feature attribute [DisableInsertPropertyAttribute](fo_disable-insert-property-at
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

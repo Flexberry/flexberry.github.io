@@ -106,4 +106,3 @@ Console.WriteLine(data[0).Кличка); // Use the received data.
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

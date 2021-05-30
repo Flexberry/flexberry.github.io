@@ -25,4 +25,3 @@ And `web-форма`:
 As you can see, [the artisans Association](fd_master-association.html) identified lucapa (how to customize the appearance of lucapa, is described in the article [Arbitrary control as lucapa](fo_custom-lookup.html)), [dealova composition](fo_detail-associations-properties.html) - [GroupEdit](fw_group-edit.html)/ [AjaxGroupEdit](fa_ajax-group-edit.html).
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

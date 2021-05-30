@@ -107,4 +107,3 @@ If the database is a few queries, for example, if the submission involves detail
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

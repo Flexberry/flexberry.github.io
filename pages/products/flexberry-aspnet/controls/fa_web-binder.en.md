@@ -99,4 +99,3 @@ In the example described that in detale 'Meroprijatija' is control 'ctrlИспо
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -27,4 +27,3 @@ This operation should be registered with a name corresponding to __PublicateOper
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -223,4 +223,3 @@ Michael Cognevich, in his article «Test in the form of: interaction Design», c
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -29,4 +29,3 @@ If the error object has a property» «errors like array, the component loops th
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

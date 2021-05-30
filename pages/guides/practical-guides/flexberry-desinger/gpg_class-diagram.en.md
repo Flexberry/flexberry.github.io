@@ -72,4 +72,3 @@ For building UML diagrams, use [Flexberry Designer](https://designer.flexberry.n
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

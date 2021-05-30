@@ -68,4 +68,3 @@ However, periodically "kits to school" - when passing schools in this format, yo
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

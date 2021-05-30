@@ -108,4 +108,3 @@ As you can see, there is a possibility of imposing restrictions on detail Loan. 
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

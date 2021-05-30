@@ -88,4 +88,3 @@ If AuditService.Current.ShowPrimaryKey is set to true, the list of fields displa
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

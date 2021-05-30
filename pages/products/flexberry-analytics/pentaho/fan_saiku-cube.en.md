@@ -83,4 +83,3 @@ The second step to create the cube is the publication scheme, developed in Penta
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

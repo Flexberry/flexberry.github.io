@@ -38,4 +38,3 @@ The sample application source code is available at the following location: <http
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

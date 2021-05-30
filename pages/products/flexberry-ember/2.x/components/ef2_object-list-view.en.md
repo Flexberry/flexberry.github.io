@@ -205,4 +205,3 @@ If [service user settings](ef2_model-user-settings-service.html) is enabled, whe
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

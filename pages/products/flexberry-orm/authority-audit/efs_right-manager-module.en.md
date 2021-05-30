@@ -43,4 +43,3 @@ To configure the credentials can be used [Security Console](efs_security-console
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -22,4 +22,3 @@ The attribute headings are similar to headings in the T-representation.
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

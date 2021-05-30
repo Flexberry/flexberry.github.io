@@ -88,4 +88,3 @@ Information about multiple choice LookUp in AGE can be found in the article [Usi
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

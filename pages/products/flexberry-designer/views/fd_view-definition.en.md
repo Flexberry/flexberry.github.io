@@ -135,4 +135,3 @@ To check whether a certain [object](fo_data-object.html) view, you must call an 
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

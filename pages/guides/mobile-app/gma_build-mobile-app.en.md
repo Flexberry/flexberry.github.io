@@ -41,4 +41,3 @@ In the result of the execution of this step will create the installation files f
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

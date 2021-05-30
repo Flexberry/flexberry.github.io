@@ -63,4 +63,3 @@ Flashcards are a quick links to sections of the system. Cards can contain a titl
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -81,4 +81,3 @@ At workman communications used types you can specify for the masters of any nest
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

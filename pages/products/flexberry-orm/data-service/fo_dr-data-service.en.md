@@ -47,4 +47,3 @@ The connection string in this example is configured as described in the article 
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -23,4 +23,3 @@ If loading the form takes a long time, it is recommended to add custom template 
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

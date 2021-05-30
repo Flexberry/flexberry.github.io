@@ -82,4 +82,3 @@ The root folder (or `routes` `controllers`), in which:
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

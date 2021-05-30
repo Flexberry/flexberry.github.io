@@ -51,4 +51,3 @@ Thus, the resulting width is equal to the last applied width.
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

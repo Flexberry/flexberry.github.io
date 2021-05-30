@@ -56,4 +56,3 @@ The content is divided into `12` columns indented `32px` between them. The maxim
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

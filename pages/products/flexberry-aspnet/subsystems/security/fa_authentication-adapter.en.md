@@ -183,4 +183,3 @@ public static Agent CreateDbUser(string username, string friendlyUserName, bool 
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

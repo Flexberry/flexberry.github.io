@@ -56,4 +56,3 @@ So in the output script to avoid unnecessary queries, you can configure a filter
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

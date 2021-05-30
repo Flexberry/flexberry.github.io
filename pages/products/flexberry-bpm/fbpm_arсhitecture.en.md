@@ -188,4 +188,3 @@ As a result of the review of the methods of modification of business application
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

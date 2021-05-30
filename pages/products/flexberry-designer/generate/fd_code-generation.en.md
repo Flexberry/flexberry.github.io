@@ -30,4 +30,3 @@ Adding unique functionality to the generated application by appending executable
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

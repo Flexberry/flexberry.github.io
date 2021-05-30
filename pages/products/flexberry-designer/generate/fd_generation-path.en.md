@@ -32,4 +32,3 @@ Thus, if the application will run with a different configuration file, you will 
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -86,4 +86,3 @@ In other cases, use the base component as a "Parent" or not depends on the speci
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

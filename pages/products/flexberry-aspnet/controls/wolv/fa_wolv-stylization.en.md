@@ -142,4 +142,3 @@ The default is the new style with vertical Zebra, to change the coloring on clas
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

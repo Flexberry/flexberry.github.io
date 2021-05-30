@@ -71,4 +71,3 @@ By default, on the left there is a folder called the name of the application its
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

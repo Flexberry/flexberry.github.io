@@ -68,4 +68,3 @@ The name of the entity type in OData must be complete, i.e. with namespace. Acco
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

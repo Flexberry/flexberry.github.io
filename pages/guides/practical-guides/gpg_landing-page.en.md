@@ -19,4 +19,3 @@ The practical guides will help to familiarize yourself with the platform Flexber
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

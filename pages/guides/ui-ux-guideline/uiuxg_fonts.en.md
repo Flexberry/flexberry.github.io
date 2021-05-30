@@ -36,4 +36,3 @@ summary: Set the font combinations and font sizes for use on projects.
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

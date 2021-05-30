@@ -65,4 +65,3 @@ If you add [typedef](fd_typedef.html), the map may take the following form:
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

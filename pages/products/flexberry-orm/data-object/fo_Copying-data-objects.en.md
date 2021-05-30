@@ -44,4 +44,3 @@ Reproduction occurs with the use of the object cache data. This means that with 
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

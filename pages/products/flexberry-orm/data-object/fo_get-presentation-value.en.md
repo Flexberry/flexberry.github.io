@@ -20,4 +20,3 @@ Method `DataObject.GetPresentationValue()` used for the naming of the desktop sh
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

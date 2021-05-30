@@ -107,4 +107,3 @@ Now when you try to create a new `Кредита` will be checked, as described 
 [Business server](fo_business-server.html) can be created for each class and enter the required logic that will be executed when you save changes to the object, whether it is creating, deleting, or changing the state of the object.
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

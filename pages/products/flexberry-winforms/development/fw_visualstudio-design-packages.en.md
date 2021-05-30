@@ -34,4 +34,3 @@ If you do not open the window the debug packages or impossible to set properties
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

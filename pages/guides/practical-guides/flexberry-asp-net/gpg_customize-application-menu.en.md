@@ -56,4 +56,3 @@ After performing all the above steps, you must rebuild and run the app, then aut
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -189,4 +189,3 @@ The revised application must be seamicro in the appropriate repository. Addition
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

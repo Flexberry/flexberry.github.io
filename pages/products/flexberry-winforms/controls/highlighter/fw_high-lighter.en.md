@@ -124,4 +124,3 @@ Comparison of one and the same shape with the included `Highlighter` and without
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

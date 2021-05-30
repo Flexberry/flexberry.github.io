@@ -43,4 +43,3 @@ Example of adding a map tile layer Hybrid Yandex-maps, combining hand-drawn road
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

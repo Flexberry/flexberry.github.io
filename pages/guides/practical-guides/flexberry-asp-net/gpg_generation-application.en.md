@@ -39,4 +39,3 @@ In the process of generating the default user will be presented with a log of ac
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

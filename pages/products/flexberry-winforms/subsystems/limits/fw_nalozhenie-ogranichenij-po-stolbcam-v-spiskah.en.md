@@ -24,4 +24,3 @@ When imposing restrictions on the columns in the lists AdvLimitComponent you can
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

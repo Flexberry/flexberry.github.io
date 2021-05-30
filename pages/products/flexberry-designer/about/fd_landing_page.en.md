@@ -236,4 +236,3 @@ Classes for communication can be assigned to the role (ask the name of the forei
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

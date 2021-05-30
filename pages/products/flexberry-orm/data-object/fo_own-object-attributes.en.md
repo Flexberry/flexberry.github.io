@@ -38,4 +38,3 @@ var propertyName = Information.ExtractPropertyName<Пользователь>(x =
 All available methods: `ExtractPropertyName`, `ExtractPropertyPath`, `ExtractPropertyInfo` described in the article [retrieve metadata objects](fo_methods-class-information.html).
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

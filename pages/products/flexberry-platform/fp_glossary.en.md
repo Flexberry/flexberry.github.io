@@ -48,4 +48,3 @@ hash: ae5b54dd65fc20a33bc7a977f9ef85c79229824d3ee9ac7a2226a4c47d2f977f
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

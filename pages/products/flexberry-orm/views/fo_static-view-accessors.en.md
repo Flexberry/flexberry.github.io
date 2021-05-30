@@ -37,4 +37,3 @@ Example of specifying the static properties is available at [https://github.com/
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

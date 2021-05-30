@@ -46,4 +46,3 @@ This tab contains the audit settings for the model. For the functioning of the a
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

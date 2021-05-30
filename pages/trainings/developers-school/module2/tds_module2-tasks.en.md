@@ -123,4 +123,3 @@ According to the results of assignments the student must:
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

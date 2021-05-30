@@ -65,4 +65,3 @@ There are 2 types of forms: tapicerowane and object-oriented.
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

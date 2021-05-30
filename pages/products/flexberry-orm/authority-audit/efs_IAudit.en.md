@@ -20,4 +20,3 @@ In version after 28.01.2015 added class `ICSSoft.STORMNET.Business.Audit.EmptyAu
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -49,4 +49,3 @@ In this case, the database lock will not be sent.
 ```
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

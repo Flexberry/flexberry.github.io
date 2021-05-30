@@ -37,4 +37,3 @@ Figure 3 – settings app structure
 ![](/images/pages/guides/flexberry-bpm/b3-application-structure-configuration.png)
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

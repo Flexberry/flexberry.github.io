@@ -135,4 +135,3 @@ This is due to the fact that this build is really not in the folder with the bin
 To correct the situation you must have a reference to this Assembly (Reference) in the project to put the property `CopyLocal` = `true`.
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

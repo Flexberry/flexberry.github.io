@@ -133,4 +133,3 @@ Console.WriteLine(string.Format("'{0}' price is {1}", cdda.Name, cdda.Price));
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

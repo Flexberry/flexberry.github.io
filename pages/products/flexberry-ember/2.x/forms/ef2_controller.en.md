@@ -82,4 +82,3 @@ export default Ember.Controller.extend({
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

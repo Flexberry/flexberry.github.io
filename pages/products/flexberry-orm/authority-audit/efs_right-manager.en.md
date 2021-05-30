@@ -120,4 +120,3 @@ This method works only in a web application integrated with service of office (w
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -29,4 +29,3 @@ Here the designer takes `ColumnInfo` the third and fourth parameters of the sort
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

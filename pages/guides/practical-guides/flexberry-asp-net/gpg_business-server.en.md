@@ -171,4 +171,3 @@ public virtual ICSSoft.STORMNET.DataObject[] OnUpdateЗаказ(АСУ_Скла�
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

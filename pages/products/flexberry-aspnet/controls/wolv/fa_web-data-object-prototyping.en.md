@@ -37,4 +37,3 @@ Each line of the web control will have an additional icon, clicking on which wil
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

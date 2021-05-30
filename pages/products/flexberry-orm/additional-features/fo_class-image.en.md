@@ -26,4 +26,3 @@ Except that the picture is displayed in the user interface (e.g., controls to wo
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

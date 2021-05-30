@@ -154,4 +154,3 @@ You want to create odnostranichnik application (SPA) based on [open test tasks o
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -103,4 +103,3 @@ Another example is when the button is non-obvious action, which should warn the 
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

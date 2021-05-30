@@ -48,4 +48,3 @@ summary: Button, state, checkboxes, radio-buttons and toggle switches.
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

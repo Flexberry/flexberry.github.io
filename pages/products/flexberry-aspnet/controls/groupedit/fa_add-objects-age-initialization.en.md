@@ -42,4 +42,3 @@ If you want to add objects, but not to save the database, if the user has not ch
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}
