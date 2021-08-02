@@ -623,6 +623,11 @@ entries:
       url: /fo_metadata-for-client.html
       output: web
 
+    - title: OData-controllers debugging
+      title_ru: Отладка OData-контроллеров
+      url: /fo_orm-odata-debug.html
+      output: web
+
   - title: Монитор SQL-запросов
     output: web, pdf
     folderitems:
