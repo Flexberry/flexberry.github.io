@@ -61,6 +61,10 @@ entries:
         output: web, pdf
 
         folderitems:
+          - title: List component FlexberryObjectListView
+            title_ru: Списковый компонент FlexberryObjectListView
+            url: /efd3_folv.html
+            output: web, pdf
 
       - title: Services
         title_ru: Сервисы
