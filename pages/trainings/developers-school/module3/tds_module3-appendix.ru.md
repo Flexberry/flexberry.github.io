@@ -40,7 +40,7 @@ lang: ru
                         </a>
                     </div>
                     <div class="col-sm-6 col-md-4 portfolio-item">
-                        <a href="{{ 'https://www.youtube.com/playlist?list=PLRoXQfrhqdOpFYElYiB6DS8iYryEhxNNq' | relative_url }}" class="portfolio-link" target="_blank">
+                        <a href="{{ 'https://www.youtube.com/playlist?list=PLuY6eeDuleIO6ys8_OmKphvobZxabbGBz' | relative_url }}" class="portfolio-link" target="_blank">
                             <div class="img-wrapper">
                                 <img src="{{ "/images/pages/trainings/developers-school/module3/jquery.jpg" | relative_url}}" class="products-img">
                             </div>
