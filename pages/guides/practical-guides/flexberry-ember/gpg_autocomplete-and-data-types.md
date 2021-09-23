@@ -69,11 +69,67 @@ lang: ru
 
 ![Нехранимый атрибут TotalSum класса Order](/images/pages/guides/flexberry-ember/2-3-autocomplete-and-data-types/2-3-5.png)
 
-Данный атрибут не будет храниться в БД. Но в нашем примере нехранимые атрибуты мы использовать не будем, т.к. как минимум в "Накладной" мы будем обращаться к подобным свойствам из кода. Поэтому проще их сохранять, чем пересчитывать каждый раз.
+Для реализации такого атрибута, мы можем добавить ему [`DataServiceExpression`](fo_not-stored-attributes.html), но, так как `DataServiceExpression`-ы вычисляются не во всех запросах, нам также необходимо реализовать логику этого атрибута в коде.
 
-Сделаем свойство **TotalSum** у класса Order **хранимым**:
+Чтобы добавить `DataServiceExpression`, откройте окно редактирования свойств класса, на против нужного атрибута, в столбце `«DataService Expression»`, нажмите кнопку `«...»`, в открывшемся окне, можно задать несколько значений для разных типов сервисов данных.
+В столбце `«DataService»`, нужно указать тип сервиса данных, с которым, будет использоваться `SQL`-выражение, в столбце `«DataService Expression»`, само `SQL`-выражение.
 
-![Возвращение хранимости атрибута TotalSum класса Order](/images/pages/guides/flexberry-ember/2-3-autocomplete-and-data-types/2-3-6.png)
+![Добавление DataServiceExpression для атрибута TotalSum класса Order](/images/pages/guides/flexberry-ember/2-3-autocomplete-and-data-types/2-3-6.png)
+
+Для атрибута `TotalSum` мы можем написать универсальное `SQL`-выражение, которое будет работать с любым, `SQL`-совместимым, сервисом данных, поэтому, нам достаточно одного выражения, с указанием `SQLDataService` в качестве типа сервиса данных.
+
+Остаётся реализовать логику этого атрибута в коде, сами вычисления довольно просты, но если, необходимые для вычисления данные не будут загружены, результат вычислений будет не верный.
+Поэтому, стоит добавить проверку, что необходимые данные загруженны, и бросить исключение, в противном случае.
+
+```csharp
+/// <summary>
+/// TotalSum.
+/// </summary>
+// *** Start programmer edit section *** (Order.TotalSum CustomAttributes)
+
+// *** End programmer edit section *** (Order.TotalSum CustomAttributes)
+[ICSSoft.STORMNET.NotStored()]
+[DataServiceExpression(typeof(SQLDataService), "SELECT SUM(PriceWTaxes * Amount) FROM OrderItem WHERE OrderItem.Order_m0 = STORMM" +
+    "ainObjectKey")]
+public virtual double TotalSum
+{
+    get
+    {
+        // *** Start programmer edit section *** (Order.TotalSum Get)
+        if (!CheckLoadedProperty(nameof(OrderItem)))
+        {
+            throw new InvalidOperationException($"The '{nameof(OrderItem)}' property not loaded.");
+        }
+
+        double sum = 0;
+        foreach (OrderItem item in OrderItem)
+        {
+            sum += item.PriceWTaxes * item.Amount;
+        }
+
+        return sum;
+        // *** End programmer edit section *** (Order.TotalSum Get)
+    }
+    set
+    {
+        // *** Start programmer edit section *** (Order.TotalSum Set)
+
+        // *** End programmer edit section *** (Order.TotalSum Set)
+    }
+}
+```
+
+Чтобы обеспечить загрузку необходимых данных, нужно добавить свойства, которые используются в вычислениях, в те представления, в которых присутствует атрибут `TotalSum`.
+
+Добавим отдельное представление в класс `OrderItem`, со свойствами `Amount` и `PriceWTaxes`:
+
+![Добавление представления для класса OrderItem](/images/pages/guides/flexberry-ember/2-3-autocomplete-and-data-types/2-3-6-1.png)
+
+Добавим, только что созданное представление, в качестве детейла, в представлении `OrderL` класса `Order`:
+
+![Обновление представления в классе Order](/images/pages/guides/flexberry-ember/2-3-autocomplete-and-data-types/2-3-6-2.png)
+
+В обоих случаях, мы убирали признак видимости у атрибутов и представлений, потому что, эти данные нужны только в вычислениях, и их не требуется отображать в интерфейсе.
 
 ## Настройка типов данных
 
