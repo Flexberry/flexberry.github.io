@@ -47,6 +47,8 @@ summary: Описание клиентского языка запросов.
 * `GeometryPredicate` - класс для создания фильтра в запросе по геометрическим атрибутам.
 * `createPredicate` - функция для создания предиката по заданным параметрам.
 * `stringToPredicate` - функция для конвертации строки в предикат.
+* `AttributeParam` - класс для описания атрибута в `SimplePredicate` и `DatePredicate`.
+* `ConstParam`- класс для описания константы в `SimplePredicate` и `DatePredicate`.
 
 Для импорта и использования классов языка запросов необходимо использовать следующий код:
 
@@ -222,7 +224,7 @@ store.query(modelName, builder.build());
 let predicate = new SimplePredicate('name', FilterOperator.Eq, 'Vasya');
 ```
 
-### Свойства предиката
+#### Свойства предиката
 
 Получить заданный в предикате атрибут ("путь атрибута") можно с использованием свойства `attributePath` предиката:
 
@@ -240,6 +242,85 @@ predicate.operator
 
 ```javascript
 predicate.value
+```
+
+#### AttributeParam и ConstParam
+Для расширения возможностей `SimplePredicate` были добавлены сущности `AttributeParam` (указание, что передаётся атрибут) и `ConstParam` (указание, что передаётся значение).
+В качестве первого параметра конструктора класса `SimplePredicate` может передаваться атрибут, `AttributeParam` или `ConstParam`.
+В качестве третьего параметра конструктора класса `SimplePredicate` может передаваться значение атрибута, `AttributeParam` или `ConstParam`.
+
+Такое расширение позволяет делать запрос с указанием двух атрибутов.
+
+```javascript
+let predicate = new SimplePredicate(new AttributeParam('currentMark'), FilterOperator.Le, new AttributeParam('lastMark'));
+```
+
+Также становится возможным менять местами в конструкторе атрибут и значение атрибута
+
+```javascript
+let predicate = new SimplePredicate(new ConstParam(5), FilterOperator.Le, new AttributeParam('lastMark'));
+```
+
+Возможно указание и двух значений, однако в такой ситуации разумнее использовать `TruePredicate` или `FalsePredicate`.
+
+Существуют **ограничения**, связанные с использованием `AttributeParam` и `ConstParam` в конструкторе `SimplePredicate`.
+
+1 При применении двух `AttributeParam` в конструкторе `SimplePredicate` необходимо при использовании `IndexedDbAdapter` или `JsAdapter` мастера указывать с "id" (без этого указания некорректно могут обрабатываться ситуации, когда мастер не задан). Например, если у сущности есть мастера author и editor:
+
+```javascript
+let predicate = new SimplePredicate(new AttributeParam('author.id'), FilterOperator.Eq, new AttributeParam('editor.id'));
+```
+
+2 При указании двух `ConstParam` с датами в виде строковых констант в конструкторе `SimplePredicate` возможно некорректное поведение в связи с тем, что конструктор не распознает, что это даты.
+
+### DatePredicate
+
+`DatePredicate` - предикат для фильтрации записей по атрибуту с типом "дата".
+
+#### Конструктор
+
+Конструктор класса `DatePredicate` принимает 4 параметра:
+* `attributePath` - атрибут (собственный или у связанных моделей).
+* `operator` - оператор (операция).
+* `value` - значение атрибута.
+* `timeless` - флаг, указывающий нужно ли учитывать время при сравнении дат (если указано `true`, то время не учитывается).
+
+```javascript
+let predicate = new DatePredicate('birthday', FilterOperator.Eq, '2018-02-06T11:00:00.000Z');
+let predicate = new DatePredicate('birthday', FilterOperator.Eq, '2018-02-06', true);
+```
+
+#### Свойства предиката
+
+Получить заданный в предикате атрибут ("путь атрибута") можно с использованием свойства `attributePath` предиката:
+
+```javascript
+predicate.attributePath
+```
+
+Получить заданный в предикате оператор (операцию) можно с использованием свойства `operator` предиката:
+
+```javascript
+predicate.operator
+```
+
+Получить заданное в предикате значение для атрибута можно с использованием свойства `value` предиката:
+
+```javascript
+predicate.value
+```
+
+Получить заданный в предикате флаг для необходимости учета времени можно с использованием свойства `timeless` предиката:
+
+```javascript
+predicate.timeless
+```
+
+#### AttributeParam и ConstParam
+Для расширения возможностей `DatePredicate` были добавлены сущности `AttributeParam` (указание, что передаётся атрибут) и `ConstParam` (указание, что передаётся значение). Их использование аналогично применению в `SimplePredicate`, однако есть дополнительное ограничение: в `ODataAdapter` пока что **не поддерживаются** ограничения, формируемые `DatePredicate`, в конструктор которого переданы два `AttributeParam` и флаг отсутствия учёта времени (фильтрация в этом случае вернёт некорректное значение).
+
+```javascript
+let predicate = new DatePredicate(new AttributeParam('startDate'), FilterOperator.Le, new AttributeParam('endDate'), true);
 ```
 
 ### ComplexPredicate
@@ -429,49 +510,6 @@ let sp1 = new SimplePredicate('creator.name', FilterOperator.Eq, 'X');
 let sp2 = new SimplePredicate('creator.name', FilterOperator.Eq, 'Y');
 let cp1 = new ComplexPredicate(Condition.Or, sp1, sp2);
 let dp = new DetailPredicate('tags').any(cp1);
-```
-
-### DatePredicate
-
-`DatePredicate` - предикат для фильтрации записей по атрибуту с типом "дата".
-
-#### Конструктор
-
-Конструктор класса `DatePredicate` принимает 4 параметра:
-* `attributePath` - атрибут (собственный или у связанных моделей).
-* `operator` - оператор (операция).
-* `value` - значение атрибута.
-`timeless` - флаг, указывающий нужно ли учитывать время при сравнении дат (если указано `true`, то время не учитывается).
-
-```javascript
-let predicate = new DatePredicate('birthday', FilterOperator.Eq, '2018-02-06T11:00:00.000Z');
-let predicate = new DatePredicate('birthday', FilterOperator.Eq, '2018-02-06', true);
-```
-
-#### Свойства предиката
-
-Получить заданный в предикате атрибут ("путь атрибута") можно с использованием свойства `attributePath` предиката:
-
-```javascript
-predicate.attributePath
-```
-
-Получить заданный в предикате оператор (операцию) можно с использованием свойства `operator` предиката:
-
-```javascript
-predicate.operator
-```
-
-Получить заданное в предикате значение для атрибута можно с использованием свойства `value` предиката:
-
-```javascript
-predicate.value
-```
-
-Получить заданный в предикате флаг для необходимости учета времени можно с использованием свойства `timeless` предиката:
-
-```javascript
-predicate.timeless
 ```
 
 ### GeographyPredicate и GeometryPredicate
