@@ -17,10 +17,10 @@ hash: ae6e3eb9988d297614afee7e3a3ee2dd073145433e05bcca85bde1eb407c0105
 To register in Flexberry Designer and log into the portal, you must perform the following steps:
 
 1. First need to open the portal [flexberry.net](https://flexberry.net/).
-2. Next button `Войти`. Open login page and register. If the check is already there, you can log in.
-3. Note the checkbox `Я not работ`. To specify a real email address, you will receive an email with activation account. To specify the name and nagmati the register button.
-4. The system displays a notification that the email address is sent a letter. To open the mail to find a letter from `no-reply@flexberry.net` where is the link to confirm your entry, also comes an email with a password for authorization.
-5. Click on the link. Display a notice `Верификация successfully завершена`. Click `Ок`.
+2. Next button `Sign up`. Open login page and register. If the check is already there, you can log in.
+3. Note the checkbox `I am not Robot`. To specify a real email address, you will receive an email with activation account. To specify the name and nagmati the register button.
+4. The system displays a notification that the email address is sent a letter. Open the mail to find a letter from `no-reply@flexberry.net` where there is a link to confirm your entry, also comes an email with a password for authorization.
+5. Click on the link. Display a notice `Verfication successfully completed`. Click `Ок`.
 
 Open start page Flexberry Designer Online, where you can see parts of it.
 
