@@ -86,14 +86,43 @@ lang: ru
   </ItemGroup>
 ```
 
-## Условная компиляция
- При поставке некого пакета\сборки, который должен реализовывать функциональную возможность под несовместимые платформы, например, глобальная обработка исключений в веб платформе (передача клиенту сообщения сформированного по определенным правилам и с определенной структурой):
- * `.NET Framework` - реализация интерфейса `IExceptionHandler`
- * `.NET Core` - реализация middleware аналогичной [ExceptionHandlerMiddleware](https://github.com/dotnet/aspnetcore/blob/master/src/Middleware/Diagnostics/src/ExceptionHandler/ExceptionHandlerMiddleware.cs)
+### Миграция формата пакетных зависимостей
+По умолчанию проекты на старом формате csproj-файла используют `packages.config` для регистрации пакетных зависимостей, кроме того в сам csproj-файл прописываются относительные пути (от .sln-файла) до библиотек в подключенном пакете. Однако можно сделать финт и перевести пакетные зависимости на новый формат, поддерживается начиная с Visual Studio 2017, имеется автоматический [инструмент](https://docs.microsoft.com/en-us/nuget/consume-packages/migrate-packages-config-to-package-reference).
 
- Либо webapi-контроллер: 
- * `.NET Framework` - класс наследуется от `System.Web.Http.ApiController`, ответы - `System.Web.Http.IHttpActionResult`
- * `.NET Core` - класс наследуется от `Microsoft.AspNetCore.Mvc.ControllerBase`, ответы - `Microsoft.AspNetCore.Mvc.IActionResult`
+#### AspNet WebForms (.NET Framework)
+Обратите внимание на зависимость `Unity.AspNet.WebApi`, иной способ конфигурации пакета приводит к ошибке публикации проекта.
+```
+  <ItemGroup>
+    <PackageReference Include="Eais.Health.WebApi" Version="1.0.0-alpha02" />
+    <PackageReference Include="Microsoft.AspNet.WebApi" Version="5.2.7" />
+    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="5.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Owin.Host.SystemWeb" Version="4.1.0" />
+    <PackageReference Include="NewPlatform.Flexberry.AspNet.WebApi.Cors" Version="1.2.0" />
+    <PackageReference Include="NewPlatform.Flexberry.ORM" Version="6.0.1-beta06" />
+    <PackageReference Include="NewPlatform.Flexberry.ORM.PostgresDataService" Version="6.1.0-beta03" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Unity.AspNet.WebApi" Version="5.11.2">
+      <PrivateAssets>all</PrivateAssets>
+      <ExcludeAssets>contentFiles</ExcludeAssets>
+    </PackageReference>
+    <Reference Include="System" />
+  </ItemGroup>
+```
+
+## Условная компиляция
+При поставке некого пакета\сборки, который должен реализовывать функциональную возможность под несовместимые платформы, например, глобальная обработка исключений в веб платформе (передача клиенту сообщения сформированного по определенным правилам и с определенной структурой):
+* `.NET Framework` - реализация интерфейса `IExceptionHandler`
+* `.NET Core` - реализация middleware аналогичной [ExceptionHandlerMiddleware](https://github.com/dotnet/aspnetcore/blob/master/src/Middleware/Diagnostics/src/ExceptionHandler/ExceptionHandlerMiddleware.cs)
+
+Либо webapi-контроллер: 
+* `.NET Framework` - класс наследуется от `System.Web.Http.ApiController`, ответы - `System.Web.Http.IHttpActionResult`
+* `.NET Core` - класс наследуется от `Microsoft.AspNetCore.Mvc.ControllerBase`, ответы - `Microsoft.AspNetCore.Mvc.IActionResult`
 
 ### Разделение по блокам
 Самый распространенный способ, позволяет легко обходить незначительные отличия в api разных платформ.
