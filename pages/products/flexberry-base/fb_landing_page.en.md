@@ -3,8 +3,8 @@ title: Flexberry Base
 keywords: rms
 sidebar: flexberry-platform_sidebar
 toc: false
-permalink: ru/fb_landing_page.html
-lang: ru
+permalink: en/fb_landing_page.html
+lang: en
 ---
 
 ### Описание
