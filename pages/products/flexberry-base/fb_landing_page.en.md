@@ -9,7 +9,7 @@ lang: en
 
 ### Description
 
-**Flexberry Base** - This is a functional subsystem of flexberry platform to an create applications with database. This subsystem is implemented in the frameworks [Flexberry Ember](ef3_landing_page.html), [Flexberry ASP.NET](fa_landing_page.html) and [Flexberry Winforms](fw_landing_page.html).
+**Flexberry Base** - This is a functional subsystem of the flexberry platform to create applications with a database. This subsystem is implemented in the frameworks [Flexberry Ember](ef3_landing_page.html), [Flexberry ASP.NET](fa_landing_page.html) and [Flexberry Winforms](fw_landing_page.html).
 
 ### Possibilities
 
@@ -23,11 +23,11 @@ lang: en
 * Support for composite aggregation: The data object may include an array of other objects that will be edited and displayed with it.
 * Support for inheriting data objects in the Table Per Class (TPC) paradigm.
 * Support for pessimistic blocking while working with multiple users' data objects at the same time
-* Business logic support at data access level
+* Support business logic at the data access level
 
 ### Architecture
 
-The key concepts of the **Flexberry Base** architecture are:
+The main concepts of the **Flexberry Base** architecture are:
 
 * A data access layer with the ability to define business logic when accessing the database
 * A desktop form with navigation
@@ -35,9 +35,9 @@ The key concepts of the **Flexberry Base** architecture are:
 * Form with a list of data objects (list form)
 
 
-The hierarchical elements of the **Flexberry Base** architecture are used in the implemented application domain area
+The hierarchical elements of the **Flexberry Base** architecture are used in the implemented application domain 
 
 
 ### How to use
 
-To create an application based on **Flexberry Base** it is enough to design and generate the application in [Flexberry Designer](developers-flexberry-designer.html). You can choose the appropriate framework for the application:[Flexberry Ember](ef3_landing_page.html), [Flexberry ASP.NET](fa_landing_page.html) and [Flexberry Winforms](fw_landing_page.html) - They all support the functionality of the subsystem **Flexberry Base**.
+To create an application based on **Flexberry Base** is enough to design and generate the application in [Flexberry Designer](developers-flexberry-designer.html). You can choose the appropriate framework for the application:[Flexberry Ember](ef3_landing_page.html), [Flexberry ASP.NET](fa_landing_page.html) and [Flexberry Winforms](fw_landing_page.html) - They all support the functionality of the subsystem **Flexberry Base**.
