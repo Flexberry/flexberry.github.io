@@ -7,35 +7,37 @@ permalink: en/fb_landing_page.html
 lang: en
 ---
 
-### Описание
+### Description
 
-**Flexberry Base** - это функциональная подсистема платформы Flexberry для создания приложений учётного или фактографического характера. Эта подсистема реализована в фреймворках [Flexberry Ember](ef3_landing_page.html), [Flexberry ASP.NET](fa_landing_page.html) и [Flexberry Winforms](fw_landing_page.html).
+**Flexberry Base** - This is a functional subsystem of flexberry platform to an create applications with database. This subsystem is implemented in the frameworks [Flexberry Ember](ef3_landing_page.html), [Flexberry ASP.NET](fa_landing_page.html) and [Flexberry Winforms](fw_landing_page.html).
 
-### Возможности
+### Possibilities
 
-* Сохранение объекта данных в БД
-* Поиск и просмотр в списковом представлении объектов данных из БД
-* Редактирование и удаление объектов данных из БД
-* Настройка сложной выборки данных (набор полей, сортировка, фильтр) и сохранение этой настройки для дальнейшего переиспользования
-* Управление вычиткой данных на основе наборов свойств - представлений (проекций, view)
-* Поддержка перечислимых типов данных
-* Поддержка выбора из справочника (связь ассоциация)
-* Поддержка композитной агрегации: объект данных может включать в себя массив других объектов, который будет редактироваться и отображаться вместе с ним
-* Поддержка наследования объектов данных в парадигме Table Per Class (TPC).
-* Поддержка пессимистической блокировки при работе с объектами данных нескольких пользователей одновременно
-* Поддержка бизнес-логики на уровне слоя доступа к данным
+* Saving data objects in a database
+* Searching and viewing as a list of data objects from a database
+* Editing and deleting data objects from the database
+* Setting up a complex data selection (set of fields, sorting, filter) and saving this setting for later use
+* Managing data reading based on sets of properties - views (projections, views)
+* Support for enumerated data types
+* Catalogue selection support (association link)
+* Support for composite aggregation: The data object may include an array of other objects that will be edited and displayed with it.
+* Support for inheriting data objects in the Table Per Class (TPC) paradigm.
+* Support for pessimistic blocking while working with multiple users' data objects at the same time
+* Business logic support at data access level
 
-### Архитектура
+### Architecture
 
-Ключевыми понятиями архитектуры **Flexberry Base** являются:
+The key concepts of the **Flexberry Base** architecture are:
 
-* Слой доступа к данным c возможностью определения бизнес-логики при обращении к БД
-* Форма рабочего стола с навигацией
-* Форма редактирования объекта данных (editform) с элементами управления
-* Форма со списком объектов данных (списковая форма, listform)
+* A data access layer with the ability to define business logic when accessing the database
+* A desktop form with navigation
+* An edit form with controls for editing a data object
+* Form with a list of data objects (list form)
 
-Элементы архитектуры **Flexberry Base** выстраиваются в готовом приложении в иерархию, описывающую предметную область.
 
-### Как воспользоваться
+The hierarchical elements of the **Flexberry Base** architecture are used in the implemented application domain area
 
-Чтобы создавать приложения на основе **Flexberry Base** достаточно выполнить проектирование и генерацию приложения в [Flexberry Designer](developers-flexberry-designer.html). Можно выбрать любой целевой фреймворк приложения: [Flexberry Ember](ef3_landing_page.html), [Flexberry ASP.NET](fa_landing_page.html) и [Flexberry Winforms](fw_landing_page.html) - они все поддерживают возможности функциональной подсистемы **Flexberry Base**.
+
+### How to use
+
+To create an application based on **Flexberry Base** it is enough to design and generate the application in [Flexberry Designer](developers-flexberry-designer.html). You can choose the appropriate framework for the application:[Flexberry Ember](ef3_landing_page.html), [Flexberry ASP.NET](fa_landing_page.html) and [Flexberry Winforms](fw_landing_page.html) - They all support the functionality of the subsystem **Flexberry Base**.
