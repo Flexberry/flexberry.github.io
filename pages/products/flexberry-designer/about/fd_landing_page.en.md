@@ -18,71 +18,71 @@ To register in Flexberry Designer and log into the portal, you must perform the 
 
 1. First need to open the portal [flexberry.net](https://flexberry.net/).
 2. Next button `Sign up`. Open login page and register. If the check is already there, you can log in.
-3. Note the checkbox `I am not Robot`. To specify a real email address, you will receive an email with activation account. To specify the name and nagmati the register button.
-4. The system displays a notification that the email address is sent a letter. Open the mail to find a letter from `no-reply@flexberry.net` where there is a link to confirm your entry, also comes an email with a password for authorization.
+3. Note the checkbox `I am not Robot`. To specify a real email address, you will receive an email with activation account. To specify the name and press the register button.
+4. The system displays a notification that an email is sent. Open the mail to find a letter from `no-reply@flexberry.net` where there is a link to confirm your entry, also comes an email with a password for authorization.
 5. Click on the link. Display a notice `Verfication successfully completed`. Click `Ок`.
 
 Open start page Flexberry Designer Online, where you can see parts of it.
 
-* `Все проекты`. In this section there is a list of all created projects.
-* `Мои license and обращения`. This section is a list of licenses and appeals in support. License Flexberry Designer Desktop. The list of complaints is all the questions and answers from the support team of the designer.
-* `Flexberry Designer Desktop`. In this section you can download Flexberry Designer Desktop. This is the professional version of FD Online. Necessary for the development of offline and multi-structured or complex applications. Requires a special license. To create an application online a special license is not required.
-* `Профиль пользователя`
-* `Портал flexberry.net`. Translates into the portal Flexberry Platform where you can find variety of products developed using the platform.
-* `Исходный code платформы`. Click on the button translates to GitHab to the system Flexberry Platform. It is possible to participate in the finalization of platform products through a system of pull-requests.
-* `Документация`. The Documentation button opens the website with product documentation platform Flexberry. At the top is a link to the documentation for working with the designer.
-* `Чат`. Here located» «room where you can ask questions about working with a designer, his design and documentation. The questions are answered by competent specialists who are always ready to help and support.
+* `All Projects`. In this section there is a list of all created projects.
+* `My license and Request`. This section is a list of licenses and appeals in support. The License is for Flexberry Designer Desktop. The list of complaints is all the questions and answers from the support team of the designer.
+* `Flexberry Designer Desktop`. In this section you can download Flexberry Designer Desktop. This is the professional version of Flexberry Designer Online. Necessary for the development of offline and multi-structured or complex applications. Requires a special license. To create an application online a special license is not required.
+* `User Profile`
+* `flexberry.net Portal`. Translates into the portal Flexberry Platform where you can find variety of products developed using the platform.
+* `Platform source code`. Opening this button opens the GitHab page of the Flexberry Platform. It is possible to participate in the finalization of platform products through a system of pull-requests.
+* `Documentation`. The Documentation button opens the website with product documentation of flexberry platform. At the top is a link to the documentation for working with the designer.
+* `Chat`. Here is a room where you can ask questions about working with the designer, its development and documentation. The questions are answered by competent specialists who are always ready to help and support.
 
 ### Create a new project
 
-To create your first project click `Все проекты` on the main page. After pressing menu `Все проекты` page will be displayed with the proposal to create the first draft. Click `Новый проект`, it will open the creation form of the project.
+To create your first project click `All projects` on the main page. After pressing menu `All projects` page will be displayed with the proposal to create the first draft. Click `New project`, it will open the creation form of the project.
 
-`Название проекта`, it is advisable to call the project so that it is clear which application you want to create. It should be brief and succinct.
-`Кодовое name проекта` is how the project will be called in the team. Perhaps the abbreviation or the purpose of the project. If left blank, the field will be created automatically by the project name. Code name of the project should be in English or written in Latin.
-`Доступ` – who will be able to view and edit the project.
-`Описание` – brief description of the project.
+`Project name`, it is advisable to call the project so that it is clear which application you want to create. It should be brief and succinct.
+`Identifier name` is how the project will be called in the team. Perhaps the abbreviation or the purpose of the project. If left blank, the field will be created automatically by the project name. Identifier name of the project should be in English or written in Latin.
+`Access` – who will be able to view and edit the project.
+`Description` – brief description of the project.
 
 The project not only create, but also to import already existing one. For this field to Select a project based on saved file, select project button to Select a file. After all fields are filled in, the project can be sustained. Later this data can be edited. This will open the project page where will be displayed a list of all generated classes. Creating classes is one of the main functions Flexberry Designer Online.
 
 ### A brief overview of what Flexberry Designer Online
 
-When you create a project page opens `Модель приложения`, which is a list of the classes (essentially, a set of elements) that describe the domain of the application and its functionality. Flexberry Online Designer allows you to create different types of classes from simple entities (application objects) and forms to private types and business servers.
-Classes can also be created during creation of the chart. `Диаграммы` allow you to not only create classes, but also to establish links between them, which in the future will allow to associate different forms in the application. Also, some types of charts help to detail the subject area, describe the processes that must implement the application.
-`Навигация` allows you to create a menu of the application to distribute forms groups and/or roles.
-`Генерация` allows you to create a working prototype application, which is suitable for the initial demonstration to the customer. On this basis the application is easy to modify in accordance with the wishes of the customer as the main points of the subject area had been introduced.
-The app can `настроить` in accordance with the needs of your application, specify the path generation for client and server parts of the application, to Supplement the description. Also the settings menu option allows to delete the project.
+When you create a project, open the `Application model` page, which is a list of the classes (essentially, a set of elements) that describe the domain of the application and its functionality. Flexberry Online Designer allows you to create different types of classes from simple entities (application objects) and forms to private types and business servers.
+Classes can also be created during creation of the diagram. `Diagrams` allow you to not only create classes, but also to establish relationship between them, which in the future will allow to associate different forms in the application. Also, some types of diagrams help to detail the subject area, to describe the processes that must be implemented by the application.
+`Naviagtion` allows you to create a menu of the application to distribute forms groups and/or roles.
+`Generation` allows you to create a working prototype application, which is suitable for the initial demonstration to the customer. On this basis the application is easy to modify in accordance with the wishes of the customer as the main points of the subject area had been introduced.
+The app can be `configure` in accordance with the needs of your application, specify the path generation for client and server parts of the application, to Supplement the description. Also the settings menu option allows to delete the project.
 
 ### Project settings
 
-`Название проекта`, code project name and description transcribed above.
+`Project Name`, Project identifier name and description are explained above.
 
-`Доступ`:
+`Access`:
 
 * Open – access project of yours.
 * Open to entire Internet – the project will have open access.
 
 #### Settings generation
 
-Can be for klientskiy and servernoe part if you want to split. The server part is usually used for complex, «heavy» algorithms not to overload the user interface. The client part is needed for the processing of» «on the fly.
-Login, parol to the repository client part and Vetka to the client side as well as the same field for backend use, if you want to generate the application in an existing repository.
-If repository have not, in the first generation designer himself will create a new repository on [Githab](https://github.com/) on the project name (it will generate and bind [ssh keys](https://ru.wikipedia.org/wiki/SSH)), and generates code in the created repository.
+Can be for client and server part if you want to split. The server part is usually used for complex algorithms, not to overload the user interface. The client part is needed for the processing »on the fly«.
+The Login, password for the repository with client part and branch for the client part, as well as the same field for backend are use if you want to generate the application in an existing repository.
+If you do not have a repository yet, the designer will create a new repository on [Githab](https://github.com/) by the project name (it will generate and bind [ssh keys](https://ru.wikipedia.org/wiki/SSH)), and generates code in the created repository.
 In addition, the project may be published in `gh-pages`.
-It is also possible to change localizatio (the language used to display designer) and the theme designer.
-For export project need to open the page `Настройки` and under `Действия` with the project to choose `Я want to export проекта`.
-You can also make backup project button `Я want to make a backup проекта`.
+It is also possible to change localization (the language which the designer displays) and the theme designer.
+To export project need to open the `Settings` page and under `Project Action` with the project to choose `I want to export project`.
+You can also make backup project, click the button `I want to do Project backup`.
 
-## Creating basic types of charts. Basics of IC design
+## Creating basic types of diagrams. Basics of IC design
 
 ### Order IC design
 
-The first paragraph of algorithm design information systems is the formulation in which it is necessary to determine:
+The first point of the algorithm for the design of information systems is a problem statement, which should be defined:
 
 * characteristics of the automation object
-* define the main task, which will implement the application
+* define the main task to be implemented by the application
 * describe the business processes that will be implemented in the application
 
 Next, you need to create [a diagram of the use cases](https://flexberry.github.io/ru/fd_use-case-diagram.html), which is the most common representation of functional requirements to the system. It allows us to describe the main processes that need to be implemented.
-Then it is useful to make a chart [activities](https://flexberry.github.io/ru/fd_activity-diagram.html), which is a flowchart that shows the flow of control passes from one activity to another.
+Then it is useful to make a diagram [activities](https://flexberry.github.io/ru/fd_activity-diagram.html), which is a flowchart that shows the flow of control passes from one activity to another.
 Once defined the functional requirements for the system and its boundaries, should examine the subject area with the aim of building [class diagram](https://flexberry.github.io/ru/fd_class-diagram.html).
 Further, it is useful to describe scenarios that need to be implemented in the application using [sequence diagram](https://flexberry.github.io/ru/fd_sequence-diagram.html). Scenarios can be described using [chart cooperation](https://flexberry.github.io/ru/fd_collaboration-diagram.html), allowing to describe the interaction of objects and focuses primarily on the organization of the objects.
 [State diagram](https://flexberry.github.io/ru/fd_statechart-diagram.html) determines the sequence of States of an object caused a sequence of events. This diagram may help to clarify the subject area, supplemented, if necessary, a class diagram.
@@ -106,43 +106,43 @@ Described in the article [diagram](https://flexberry.github.io/ru/gpg_class-diag
 
 ### The Model menu of the application
 
-In order to create a new class open the project. The default open menu item `Модель приложения`, which is a list of all classes in the project. Then you press the button `Создать класс`.
+In order to create a new class open the project. The default open menu item `Application Model`, which is a list of all classes in the project. Then you press the button `Create class`.
 
 #### Stereotypes of classes
 
-`Сущность` (implementation) – the class representing the real-world object whose instances will be stored in the application database. Create a pair.
+`Entities` (implementation) – the class representing the real-world object whose instances will be stored in the application database. Create a pair.
 
-`Перечисление` (enumeration) data type, which is defined as a set of identifiers. Create a pair.
+`Enumeration` (enumeration) data type, which is defined as a set of identifiers. Create a pair.
 
-`Бизнес-класс` (businessserver) is a class whose code is invoked in the process of changing instances of related entities.
+`Business server` (businessserver) is a class whose code is invoked in the process of changing instances of related entities.
 
-`Тип` (type) – a complex data type or a real-world object whose instances will be stored in the application database. It is advisable to create, if necessary in code, secondary business objects that do not need to be stored in the database.
+`Type` (type) – a complex data type or a real-world object whose instances will be stored in the application database. It is advisable to create, if necessary in code, secondary business objects that do not need to be stored in the database.
 
 `Typedef` (typedef) is a type of data that can be mapped manually generated to the database or application data types. Need, if you do not have default types.
 
-`Интерфейс` (interface) contract in the form of a list of public properties and methods that must be implemented in the related entities or types.
+`Interface` (interface) contract in the form of a list of public properties and methods that must be implemented in the related entities or types.
 
-`Внешняя сущность` (external) – a class that is not explicitly declared in the model but will be available in the source code, including an entity from a different project. When generating code-level means that the Declaration of this class contains the external or system library. In private means that you can specify for an external class reference to the class from another project (stage) in Flexberry Designer. In this particular case means that the class code is declared in another solyushene (addon), which must be connected to the main developers to the project manually (e.g., via a NuGet package is created based on another солюшена; connection of "external" libraries on the level generation is not implied). When it is used: the reference to class from other projects (i.e., stages) is indicated when multiple projects have some shared libraries, and classes from it pericolosa in different projects. Another option is the external class is a class from the system library or any external libraries (add-on). Then at the model level it is possible to put a link to an external class and include it in the view base class, and the code after generating the data type for the corresponding property will be a class that is declared in the "external" library (it needs to connect manually by the developer in проект; if it's a class from the system Assembly, for example, it is already the first generation of the project can be automatically already connected as an option).
+`External entities` (external) – a class that is not explicitly declared in the model but will be available in the source code, including an entity from a different project. When generating code-level means that the Declaration of this class contains the external or system library. In private means that you can specify for an external class reference to the class from another project (stage) in Flexberry Designer. In this particular case means that the class code is declared in another solyushene (addon), which must be connected to the main developers to the project manually (e.g., via a NuGet package is created based on another солюшена; connection of "external" libraries on the level generation is not implied). When it is used: the reference to class from other projects (i.e., stages) is indicated when multiple projects have some shared libraries, and classes from it pericolosa in different projects. Another option is the external class is a class from the system library or any external libraries (add-on). Then at the model level it is possible to put a link to an external class and include it in the view base class, and the code after generating the data type for the corresponding property will be a class that is declared in the "external" library (it needs to connect manually by the developer in проект; if it's a class from the system Assembly, for example, it is already the first generation of the project can be automatically already connected as an option).
 
-`Приложение` (application) class that stores General information about the generated application.
+`Application` (application) class that stores General information about the generated application.
 
-`Пользовательская форма` (userform) – class representing» «blank form of application (all markup and logic for it to be done fully manually by the developer), which can also be added to the menu structure (in "container" class with the stereotype "application"). Can be used in the case when the level of the application model required special forms, which are neither list nor edit forms are not (i.e., to look at the model it was obvious what forms in the app).
+`User forms` (userform) – class representing» «blank form of application (all markup and logic for it to be done fully manually by the developer), which can also be added to the menu structure (in "container" class with the stereotype "application"). Can be used in the case when the level of the application model required special forms, which are neither list nor edit forms are not (i.e., to look at the model it was obvious what forms in the app).
 
-`Слой geo-сервера` (geolayer) class, which configures the layer GIS subsystem.
+`Geo-server layer` (geolayer) class, which configures the layer GIS subsystem.
 
-`Стиль layer of geo-сервера` (geolayerstyle) class, which configures the layer GIS subsystem.
+`Geo-server layer styles` (geolayerstyle) class, which configures the layer GIS subsystem.
 
-`Сущность стереотипом` with user-defined (custom) class with arbitrary semantics, which code is not generated to the application.
+`Entities with user stereotypes` with user-defined (custom) class with arbitrary semantics, which code is not generated to the application.
 
-In the list of charts automatically generated charts for each class.
-In the search field on the form `Модель приложения` enter the name (or part of) the class from the list. Mapped class (or several classes) that meet the specified condition.
-In the field `Все типы` to select any of the created types. Only displays classes for the selected type.
+In the list of diagrams, automatically created diagrams for each class. 
+In the search field on the `Application Model` form enter the name (or part of it) of the class from the list. Select the class (or several classes) that meets the specified condition displayed. 
+In the `All types` field, select any of the created types. Only classes of the selcted type are displayed.
 
 ### Filtering and searching charts
 
-In the menu `Диаграммы` are all created in the framework of the project chart. They differ in the type have unique names. If the list is large, it is convenient to use search or filtering.
-To search for diagrams in the field `Поиск` need to enter a name or part of the name of the chart. The list will be edited in accordance with the specified condition.
-You can also filter the chart by type. For this drop down list, select the desired chart type.
+The `diagram` menu contains all diagrams created within the project. They differ in types and have unique names. If the list is long, it is convenient to use search or filtering.
+To search for diagrams, enter the name part of the name of the diagram in the`search` field. The list will be edited in accordance with the specified condition.
+You can also filter the diagram by type. For this drop down list, select the desired diagram type.
 
 ## The basics of working with class diagrams
 
