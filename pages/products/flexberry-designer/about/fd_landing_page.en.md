@@ -171,7 +171,7 @@ Connections are established mainly between the classes of type Entity» «(imple
 
 #### The properties of an Association
 
-* `Описание связи` – explanation of communication (e.g. what it was or why exactly this).
+* `Description of relation ` – explanation of communication (e.g. what it was or why exactly this).
 * `Имя role мастера` – the name of the role from the master, duplicate role name in the diagram.
 * `Имя publication role мастера` is the title wizard properties in the OData interface (it's web-based API for data access and manipulation).
 * `Множественность have мастера` – can be 0..1 (then in the database for the primary class value of the master may be Null) or 1 (then in the database for the primary class value of the master can only be Not Null).
