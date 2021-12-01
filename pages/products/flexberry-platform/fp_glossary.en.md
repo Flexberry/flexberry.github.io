@@ -27,12 +27,12 @@ hash: ae5b54dd65fc20a33bc7a977f9ef85c79229824d3ee9ac7a2226a4c47d2f977f
 | `Flexberry ORM` | Technological component that implements data access layer. The main function of a component is an object - relational mapping (Object-Relational Mapping). |
 | `Flexberry Security` | Subsystem powers Flexberry platform that provides differentiation of access rights to data objects based on users and application roles |
 | `Flexberry Audit` | Technological component that implements the function of logging data changes by users |
-| `Репозиторий` | Repository — the place where they are stored and maintained in any data used within Flexberry Desinger and system simulation |
+| `Repository` | Repository — the place where they are stored and maintained in any data used within Flexberry Desinger and system simulation |
 | Component | |
-| `Контрол` (web control ASP.NET)| control in the application |
-| `Форма редактирования` | Shape providing a user interface for entering/editing the instance of the data object in one or multiple views, |
-| `Списковая форма` | Shape providing a user interface for displaying a list of application objects |
-| `Lookup` | Kak deystvie - the choice of the workman of the object (hereinafter reference to a master object); CAC control - control to select artisan object that returns a reference to it|
+| `Control` (web control ASP.NET)| control in the application |
+| `Edit form` | Shape providing a user interface for entering/editing the instance of the data object in one or multiple views, |
+| `List form` | Shape providing a user interface for displaying a list of application objects |
+| `Lookup` | As an action - the choice of the workman of the object (hereinafter reference to a master object); as a control - control to select artisan object that returns a reference to it|
 | Addon | Technological part, which can be priispolzovanii in the application |
 | Front-end | Client side user interface to the hardware and software part of the service, are employed in the Flexberry Ember |
 | Backend | Software-hardware part of servisnogo interface to the hardware and software part of the service |
