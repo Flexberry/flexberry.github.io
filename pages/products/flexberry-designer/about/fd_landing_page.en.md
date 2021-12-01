@@ -148,21 +148,21 @@ You can also filter the diagram by type. For this drop down list, select the des
 
 ### Class diagram from» «analyst and after object of design
 
-Analyst in communication with the customer creates with charts the idea of the subject area, which later refined and updated by the developer in accordance with architectural requirements and generate future project.
-The project charts the analyst usually contain the name of clarification «As it should be,», and the project developer – «Implementation of».
+When communicating with the customer, the analyst uses diagrams to create an idea of the subject area, which is subsequently refined and supplemented by the developer in accordance with the requirements of the architecture and generation of the future project.
+A project with diagrams from the analyst usually contains in the title a clarification of «How Should Be,», and the project developer - «Implementation».
 
 Developer details subject area in order to:
 
-* no contact with many-to-many (added intermediate classes),
-* no relationships of type aggregation (can be used only Association, composition and inheritance), as well as links with a plurality of one-to-one,
-* all attributes were rated necessary for storing and processing the data type,
-* no contradictions in the structure chart, which can lead to failures of generation,
+* there are no many-to-many relationships(added intermediate classes),
+* there are no aggregation-type links (only association, composition and inheritance can be used) and no one-to-one multiplicity links,
+* all attributes have been assigned the data type required for storage and processing,
+* there are no contradictions in the structure of the diagram that could lead to generation failures,
 * classes were divided by type (entity, enum, user type, etc. – details in explained in Module 3 in screencast Menu «Model application»,
-* charts were distributed through catalogs, clarifying the purpose of classes (reference, description of specific groups of classes, e.g., person, territory, etc.)
-* class methods have been prescribed, if they are necessary at the stage of design and prototype your application.
+* The diagrams were distributed to catalogues specifying the purpose of the classes (reference books, a description of a specific group of classes, such as identity, territory, etc.),
+* methods have been written for the class, if they are needed at the design and prototyping stage of the application.
 
 The developer also creates forms and views to generate a prototype of the future application.
-The following screencast we will talk about how to add and edit classes and relationships on the class diagram.
+The following screencast we will show about how to add and edit classes and relationships on the class diagram.
 
 ### Add and edit classes and relationships
 
@@ -172,65 +172,64 @@ Connections are established mainly between the classes of type Entity» «(imple
 #### The properties of an Association
 
 * `Description of relation` – explanation of communication (e.g. what it was or why exactly this).
-* `Имя role мастера` – the name of the role from the master, duplicate role name in the diagram.
-* `Имя publication role мастера` is the title wizard properties in the OData interface (it's web-based API for data access and manipulation).
-* `Множественность have мастера` – can be 0..1 (then in the database for the primary class value of the master may be Null) or 1 (then in the database for the primary class value of the master can only be Not Null).
-* `Модификатор access artisan свойства` is _protected_ (#), that is, access is limited to the containing class or types derived from the containing класса; _public_ ( ), that is, the property is общедоступным; _private_ (-), that is, the property access is restricted.
-Communication with the master is stored is a flag for generation of a field in DB with reference to the master
-* `Имя the role of the main класса` is the name that will appear in the main class in the table. For example, for the table Order it will be the Storekeeper.
-* `Имя publications the role of the main класса` is the name of the properties of the main class in the OData interface.
-* `Множественность the main класса` is `*` any value. For generation is only supported this option. If you need a specific value that is different from `*`, it is necessary to control in code.
-* `Автогенерируемый TypeUsage` – identifier for the attribute, limiting the list of types in the inheritance hierarchy.
+* `Master role name` – the name of the role from the master, duplicate role name in the diagram.
+* `Publish name role master` is the title wizard properties in the OData interface (it's web-based API for data access and manipulation).
+* `Plurality have masters` – can be 0..1 (then in the database for the primary class value of the master may be Null) or 1 (then in the database for the primary class value of the master can only be Not Null).
+* `Access artisan property modefier` is _protected_ (#), that is, access is limited to the containing class or types derived from the containing class; _public_ ( ), that is, the property is public domain; _private_ (-), that is, the property access is restricted.The connection with the master is stored - this is a flag for generating a field in the database with a link to the master
+* `Role name of the main class` is the name that will appear in the main class in the table. For example, for the table Order it will be the Storekeeper.
+* `Publication name role of the main class` is the name of the properties of the main class in the OData interface.
+* `Plurality of the main class` is `*` any value. For generation is only supported this option. If you need a specific value that is different from `*`, it is necessary to control in code.
+* `Autogenerated TypeUsage` – identifier for the attribute, limiting the list of types in the inheritance hierarchy.
 * `TypeUsage` - an attribute that limits the list of types in the inheritance hierarchy that is covered by this communication. When using inheritance, the problem arises of determining the right type to use for Association. In other words, if the master type is the type associated with inheritance, it is unclear what specific type of an inheritance hierarchy is a master. Class a is the master M, which has at least two successor: M1 and M2. To resolve the problem, you can use special metadata that allows you to specify that a property M (link to the artisan class) in the class data A, in this particular (practical) case, can take only values of type M, and also M1 and M2. This is done at the level of program code.
 Accordingly, if a data object a (an instance of class A) that his master could be an instance of any of the classes M, M1, M2.
 
 ![A typeusage](/images/pages/products/flexberry-designer/about/flexberry-designer-online005.png)
 
-* `Имя connection to database данных` is the name of the field in the database in which to store a reference to the master
+* `The name of connection in the database` is the name of the field in the database in which to store a reference to the master
 
 #### Properties of the composition
 
-* `Описание связи` - explanation of communication (e.g. what it was or why exactly this).
-* `Имя role агрегатора` – the name of the role from the beginning of the track that duplicates the role name in the diagram.
-* `Имя publication role агрегатора` is the name of the aggregator properties in the OData interface.
-* `Имя role детейла` - the name that will appear in the main class in the table. For example, for a table of Sostanziosa it will be Ordering.
-* `Имя publication role детейла` is the name of the aggregator properties in an OData interface
-* `Множественность have агрегатора` is always 1, as in the case of compositions in the database for the primary class value of the master can not be Null.
-* `Автогенерируемый a typeusage агрегатора` – similar to the same property of the Association.
-* `TypeUsage агрегатора` – similar to the same property of the Association.
-* `Имя connection to database данных` is the name of the field in the database in which to store a reference to the master
-* `Автогенерируемый a typeusage детейла` – similar to the same property of the Association.
-* `TypeUsage детейла` – similar to the same property of the Association.
+* `Relation description` - explanation of communication (e.g. what it was or why exactly this).
+* `Aggregator role name` – the name of the role from the beginning of the track that duplicates the role name in the diagram.
+* `Publucation role name of aggregator` is the name of the aggregator properties in the OData interface.
+* `The child role name` - the name that will be displayed for the main class in the table. For example, for the Order Status table, this will be an Order.
+* `The child publication role name` is the name of the aggregator properties in an OData interface
+* `Multiplicity in the aggregator` is always 1, as in the case of compositions in the database for the primary class value of the master can not be Null.
+* `Auto-generated TypeUsage of the aggregator` – similar to the same property of the Association.
+* `Aggregator TypeUsage` – similar to the same property of the Association.
+* `Name of connection in database` is the name of the field in the database in which to store a reference to the master
+* `Auto-generated TypeUsage of the child` – similar to the same property of the Association.
+* `Child TypeUsage` – similar to the same property of the Association.
 
 ### The attributes and attribute types data classes
 
 Class attributes can be edited from the list of classes in the application model (app Model-group Entities – class click – edit) and charts (Charts-corresponding class diagram-a class is selected-the button edit (icon) – opens the same edit form class).
-The attribute has `имя` (how it will be displayed in DB and code), `заголовок` (as the name will be displayed in the app), `описание` (for example, for which this attribute) and the type.
-The attribute can be `хранимым and нехранимым` (in this case, its value is calculated in application code and is used for operations in code, without storing in DB).
+The attribute has `name` (how it will be displayed in DB and code), `title` (as the name will be displayed in the app), `description` (for example, for which this attribute) and the type.
+The attribute can be `stored and unstored` (in this case, its value is calculated in application code and is used for operations in code, without storing in DB).
 The attribute type must be specified because it is necessary to store data in the database and operations in the program code. Flexberry Designer Online uses built-in data types (string string, int – integer, double point, bool – logical, etc., also there are types to store null values and the ability to create their own type).
 
 #### The types of relationships between classes and non-obvious restrictions of the object structure
 
-The class multiplicity is equal to 1 (rarely 0..1 Association) is the main, that is `мастером`. For example, the shelf and the goods on the shelf: one shelf can be a lot of goods, but one and the same product can lie on different shelves (it is the product, not the form, that is, a particular book, pen, Bank, etc.). Such a connection will `ассоциативной`, because if the shelf breaks, the goods can be easy to pass on to a friend.
-Completely different situation is with a house and apartment. In the same house can be a lot of apartments, but the apartment is always owned by one house, it cannot be moved to another. Accordingly, when the disappearance of houses, apartments also will not be. This is referred to as `Композицией`.
-Thus, a class, a plurality of which may vary from 0 to n will be subordinate, that is, detaila.
-Classes for communication can be assigned to the role (ask the name of the foreign key in the DB). In the example application, the Warehouse (an example of the construction of class Diagram) these roles have a connection from a class Employee (Manager, Storekeeper, Accountant). Named roles will be named column in the table of detail for the table wizard. Show the class diagram.
+The class whose multiplicity is equal to 1 (rarely 0..1 Association) is the main, that is `Master`.  For example, a shelf and a product on a shelf: there may be many products on one shelf, but the same product cannot lie on different shelves (it is the product, not the type, that is, a specific book, pen, jar, etc.) Such a connection will be `associative`, because if the shelf breaks, the product can be easily transfered to another.
+The situation will be different with the house and the apartment. One house may have many apartments, but a particular apartment always belongs to one house, it cannot be moved to another. Accordingly, when the house disappears, there will also be no apartment. Such connection is `Composition`.
+Correspondily, a class whose multiplicity can vary from 0 to n will be a subordinate, that is, a child.
+Classes in relations can be assigned a role (set a name for the foreign key of the database). In the example application, the Warehouse (an example of the construction of class Diagram) these roles have a connection from a class Employee (Manager, Storekeeper, Accountant). Named roles will be named column in the table of detail for the table master. Show the class diagram.
 
 #### Limitations when constructing class diagrams
 
-1.Detail any level cannot be the successor of the class-masters, as in this case, it turns out that the object of the heir should include himself
+1. A child of any level cannot be the heir of the master class, because in this case it turns out that the heir object must include itself
 
 ![Example of the limitations of charts 1](/images/pages/products/flexberry-designer/about/flexberry-designer-online001.png)
 
-2.The heir of detail may not be detalam heir class wizard.
+2.The heir from the child cannot be the child of the heir of the master class.
 
 ![Example restrictions chart 2](/images/pages/products/flexberry-designer/about/flexberry-designer-online002.png)
 
-3.Not to do cycles in the inheritance
+3.You cannot do loops in inherintance
 
 ![Example constraint diagrams 3](/images/pages/products/flexberry-designer/about/flexberry-designer-online003.png)
 
-4.You cannot inherit a class from multiple classes (the class MB many descendants but only one parent).
+4. You cannot inherit a class from more than one class (a class may have many heirs but only one parent).
 
 ![Example constraint diagrams 4](/images/pages/products/flexberry-designer/about/flexberry-designer-online004.png)
 
