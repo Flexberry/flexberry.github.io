@@ -17,12 +17,12 @@ GIS (geographic information system) is a system of collection, storage, analysis
 
 The GIS subsystem is a component of the analytical system used to store, create, edit, analyze and display geographic information. The main purpose of the system is the authoring of interactive maps based on existing spatial data, such as the districts of the region and city, water, blocks, streets, buildings, facilities, roads, rail and tramways, etc. 
 
-The main feature of the GIS subsystem in that it can display features on the map DataObject which works Flexberry ORM. 
+The main feature of the GIS subsystem is that it can display features on the map DataObject which works Flexberry ORM. 
 Moreover, through the GIS subsystem to implement special visualization of these objects: 
 
-* Quantitative анализ; 
-* Analysis категориям; 
-* Картодиаграммы; 
+* Quantitative analysis; 
+* Analysis by category; 
+* Cartogram; 
 * Spatial interpolation. 
 
 A special thanks to the visualization the size and appearance of objects on the map can be dynamically determined depending on the visualization type and values of any application attribute properties. 
