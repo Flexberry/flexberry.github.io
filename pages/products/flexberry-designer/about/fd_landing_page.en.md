@@ -63,8 +63,8 @@ The app can be `configure` in accordance with the needs of your application, spe
 
 #### Settings generation
 
-Can be for client and server part if you want to split. The server part is usually used for complex algorithms, not to overload the user interface. The client part is needed for the processing »on the fly«.
-The Login, password for the repository with client part and branch for the client part, as well as the same field for backend are use if you want to generate the application in an existing repository.
+They can be for the client and server parts, if you need to split them. The server part is usually used for "complex" algorithms, so as not to overload the user interface. The client part is needed for »on the fly« processing.
+Login, password for the client part repository and branch for the client part, as well as similar fields for the backend part are used if you need to generate an application in an existing repository.
 If you do not have a repository yet, the designer will create a new repository on [Githab](https://github.com/) by the project name (it will generate and bind [ssh keys](https://ru.wikipedia.org/wiki/SSH)), and generates code in the created repository.
 In addition, the project may be published in `gh-pages`.
 It is also possible to change localization (the language which the designer displays) and the theme designer.
@@ -134,40 +134,37 @@ In order to create a new class open the project. The default open menu item `App
 
 `Entities with user stereotypes` with user-defined (custom) class with arbitrary semantics, which code is not generated to the application.
 
-In the list of diagrams, automatically created diagrams for each class. 
-In the search field on the `Application Model` form enter the name (or part of it) of the class from the list. Select the class (or several classes) that meets the specified condition displayed. 
+The list of diagrams contains automatically created diagrams for each class. In the search field on the `Application Model` form enter the name (or part of it) of the class from the list. Select the class (or several classes) that meets the specified condition displayed. 
 In the `All types` field, select any of the created types. Only classes of the selcted type are displayed.
 
 ### Filtering and searching charts
 
-The `diagram` menu contains all diagrams created within the project. They differ in types and have unique names. If the list is long, it is convenient to use search or filtering.
-To search for diagrams, enter the name part of the name of the diagram in the`search` field. The list will be edited in accordance with the specified condition.
+The `diagram` menu contains all diagrams created within the project. They differ in types and have unique names. If the list is long, it is convenient to use search or filtering. To search for diagrams, enter the name part of the name of the diagram in the`search` field. The list will be edited in accordance with the specified condition.
 You can also filter the diagram by type. For this drop down list, select the desired diagram type.
 
 ## The basics of working with class diagrams
 
 ### Class diagram from» «analyst and after object of design
 
-Analyst in communication with the customer creates with charts the idea of the subject area, which later refined and updated by the developer in accordance with architectural requirements and generate future project.
-The project charts the analyst usually contain the name of clarification «As it should be,», and the project developer – «Implementation of».
+When communicating with the customer, the analyst uses diagrams to create an idea of the subject area, which is subsequently refined and supplemented by the developer in accordance with the requirements of the architecture and the generation of the future project. A project with diagrams from the analyst usually contains in the title the specification «As it should be,», and the developer's project - «Implementation».
 
-Developer details subject area in order to:
 
-* no contact with many-to-many (added intermediate classes),
-* no relationships of type aggregation (can be used only Association, composition and inheritance), as well as links with a plurality of one-to-one,
-* all attributes were rated necessary for storing and processing the data type,
-* no contradictions in the structure chart, which can lead to failures of generation,
-* classes were divided by type (entity, enum, user type, etc. – details in explained in Module 3 in screencast Menu «Model application»,
-* charts were distributed through catalogs, clarifying the purpose of classes (reference, description of specific groups of classes, e.g., person, territory, etc.)
-* class methods have been prescribed, if they are necessary at the stage of design and prototype your application.
+The developer details the subject area so that:
 
-The developer also creates forms and views to generate a prototype of the future application.
-The following screencast we will talk about how to add and edit classes and relationships on the class diagram.
+* there are no many-to-many links (intermediate classes are added),
+* there are no aggregation type relationships (only association, composition, and inheritance can be used), as well as one-to-one multiplicity relationships,
+* all attributes have been assigned the data type necessary for storage and processing,
+* there are no contradictions in the structure of the diagram, which can lead to generation failures,,
+* classes have been categorized by type (entity, enumeration, custom type, etc. - more in Module 3 in the «application model» Menu screencast. 
+* the diagrams were distributed in catalogs specifying the purpose of classes (reference books, description of a specific group of classes, for example, personalities, territories, etc.),
+* methods were written for the class, if they are needed at the design and prototyping stage of the application.
+
+The developer also creates forms and representations for the subsequent generation of a prototype of the future application. In the next screencast, we will show about adding and editing classes and relationships on a class diagram.
 
 ### Add and edit classes and relationships
 
-A class can have different sterotype: the nature, application, transfer etc. (Details in screencast Module 3. The application model).
-Connections are established mainly between the classes of type Entity» «(implementation). Also a link can be established between an entity and an interface or an external interface.
+A class can have different sterotypes: entity, application, enumeration, etc. (More details in the screencast Module 3: Application Model).
+Relationships are mainly established between »entity« classes (implementation). Also, a relationship can be established between an entity and an interface or an external interface.
 
 #### The properties of an Association
 
