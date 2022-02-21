@@ -624,7 +624,7 @@ a[data-toggle='collapse'] {
   top: 100px;
 }
 
-#webinar {
+.webinar {
   border: 1px black solid;
   width: 260px;
   height: 150px;
@@ -637,11 +637,11 @@ a[data-toggle='collapse'] {
   position: relative;
 }
 
-#webinar:hover::before {
+.webinar:hover::before {
   transform: scale(1.2);
 }
 
-#webinar::before {
+.webinar::before {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -655,7 +655,7 @@ a[data-toggle='collapse'] {
   transition: transform 0.5s;
 }
 
-#webinar::after {
+.webinar::after {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -665,6 +665,10 @@ a[data-toggle='collapse'] {
   background: #0e0e0e;
   z-index: -1;
   opacity: 0.3;
+}
+
+#courses.webinar::before {
+  background-image: url(/images/loftschool.png)
 }
 
 .btn-fill {
