@@ -116,6 +116,7 @@ sidebars:
   - ember-flexberry-gis-yandex_sidebar
   - flexberry-aspnet_sidebar
   - flexberry-designer_sidebar
+  - flexberry-designer-online_sidebar
   - flexberry-winforms_sidebar
   - flexberry-odataservice_sidebar
   - flexberry-orm_sidebar

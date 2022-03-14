@@ -1,6 +1,6 @@
 entries:
 - title: Sidebar
-  product: Flexberry Designer
+  product: Flexberry Designer Desktop
   folders:
 
   - title: Getting Started
@@ -8,11 +8,6 @@ entries:
     output: web, pdf
 
     folderitems:
-    - title: Flexberry Designer Online
-      title_ru: Flexberry Designer Online
-      url: /fd_landing_page.html
-      output: web
-
     - title: Flexberry Designer
       title_ru: Flexberry Designer
       url: /fd_flexberry-designer.html

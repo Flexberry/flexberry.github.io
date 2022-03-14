@@ -1,0 +1,24 @@
+entries:
+- title: Sidebar
+  product: Flexberry Designer Online
+  folders:
+
+  - title: Getting Started
+    title_ru: Начало работы
+    output: web, pdf
+
+    folderitems:
+    - title: Creating a new project
+      title_ru: Создание нового проекта
+      url: /fdo_landing_page.html
+      output: web
+
+    - title: Creating diagrams
+      title_ru: Создание диаграмм
+      url: /fdo_create_diagrams.html
+      output: web
+
+    - title: Class diagram basics
+      title_ru: Основы работы с диаграммами классов
+      url: /fdo_cd_basics.html
+      output: web
