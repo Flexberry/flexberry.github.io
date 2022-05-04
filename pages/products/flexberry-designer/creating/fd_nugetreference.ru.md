@@ -69,11 +69,19 @@ Flexberry Designer есть возможность добавить метада
 
 Допустим, у нас есть стадия в nuget-е `NewPlatform.Flexberry.SecurityModel` и мы хотим использовать ее у себя в проекте, потому что нам потребуются те же классы, но с дополнительными полями.
 Для этого надо в стадии с проектом создать класс `NewPlatform.Flexberry.SecurityModel` со стереотипом `«nugetreference»` и указать в нем версию пакета (если версию не указывать, то берется последняя версия) и сохранить диаграмму.
+
 ![Пример](/images/pages/products/flexberry-designer/creating/nugetreference.png)
+
 После этого, у стадии появится новая система с объектами из nuget-а (надо обновить узел дерева кнопкой обновить)
+
 ![Пример](/images/pages/products/flexberry-designer/creating/update-stage.png)
+
 Теперь проектируя систему можно, делать реализацию от классов из NewPlatform.Flexberry.SecurityModel
+
 ![Пример](/images/pages/products/flexberry-designer/creating/create-realization.png)
+
 Сгенерируя данную модель, класс `ICSSoftSTORMNETSecurity_Filter` со стереотипом `nugetimplementation`(из nuget-а) не сгенерируется, сгенерируется только класс `NewTest` с полями из класса `ICSSoftSTORMNETSecurity_Filter`
+
 ![Пример](/images/pages/products/flexberry-designer/creating/code-vs.png)
+
 Таким образом, можно использовать свойства класса `ICSSoftSTORMNETSecurity_Filter` в классе `NewTest` без наследования и необходимости наличия в системе `ICSSoftSTORMNETSecurity_Filter`
