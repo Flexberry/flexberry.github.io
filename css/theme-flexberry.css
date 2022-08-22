@@ -637,6 +637,13 @@ a[data-toggle='collapse'] {
   position: relative;
 }
 
+
+.webinar .title {
+  font-size: 11px;
+  font-weight: normal;
+  padding: 0 1em;
+}
+
 .webinar:hover::before {
   transform: scale(1.2);
 }
@@ -669,6 +676,14 @@ a[data-toggle='collapse'] {
 
 #courses.webinar::before {
   background-image: url(/images/stepik.png)
+}
+
+#html-academy.webinar::before {
+  background-image: url(/images/html-academy.png)
+}
+
+#html-academy.webinar .btn-fill {
+  margin-top: 10px;
 }
 
 .btn-fill {

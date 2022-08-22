@@ -68,9 +68,7 @@
           {% include sidebar.html %}
           {% unless page.toc == false %} {% include toc.html %} {% endunless %}
           {% if site.github_editme_path %}
-            <a target="_blank" href='https://github.com/{{site.github_editme_path}}{{page.path | uri_escape}}' class="btn btn-md btn-primary githubEditButton" role="button">
-                <i class="fa fa-github fa-lg"></i> {% if page.lang == "ru" %} Редактировать{% else %} Edit me{% endif %}
-            </a>
+
             <div id="sticky-panel">
                 {% if page.lang == "ru" %}
                 <div id="webinar" class="webinar">
@@ -80,8 +78,15 @@
                     </a>
                 </div>
                 <div id="courses" class="webinar">
-                    <div>Видеокурс  "Разработка веб-приложений на Ember.js"</div>
+                    <div>Видеокурс «Разработка веб-приложений на Ember.js»</div>
                     <a target="_blank" href="https://stepik.org/118590" class="btn btn-fill" role="button">
+                      Хочу участвовать!
+                    </a>
+                </div>
+                <div id="html-academy" class="webinar">
+                    <div>Профессия «Фронтенд-разработчик»</div>
+                    <div class="title">(100% те, кто после прохождения находят работу или стажировку)</div>
+                    <a target="_blank" href="https://htmlacademy.ru/profession/frontender?utm_source=flexberry&utm_medium=referral&utm_campaign=banner_front_19082022" class="btn btn-fill" role="button">
                       Хочу участвовать!
                     </a>
                 </div>
