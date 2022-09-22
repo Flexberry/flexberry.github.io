@@ -40,30 +40,21 @@ lang: ru
 Ниже представлен пример исполнения SQL-запросов через технологию ADO.Net:
 
 ``` csharp
-public virtual decimal СуммаОплаченныхПокупок
+var connection = (SqlConnection)((SQLDataService)DataServiceProvider.DataService).GetConnection(); // Получение подключения.
+var command = new SqlCommand("SELECT SUM(purchase.\"Сумма\") "+
+	" FROM \"Покупатель\" customer join \"Покупка\" purchase on customer.\"primaryKey\" = purchase.\"Покупатель\" "+
+	" WHERE purchase.\"Покупатель\"=@Customer AND  purchase.\"Статус\" = \'Оплачено\' ", connection); //формирование запроса
+var parameter = new SqlParameter("@Customer", SqlDbType.UniqueIdentifier);
+parameter.Value = ((KeyGuid)this.__PrimaryKey).Guid; // Определение значения параметра.
+command.Parameters.Add(parameter);
+
+try
 {
-	get
-	{
-		var connection = (SqlConnection)((SQLDataService)DataServiceProvider.DataService).GetConnection(); //получение подключения
-		var command = new SqlCommand("SELECT SUM(purchase.\"Сумма\") "+
-			" FROM \"Покупатель\" customer join \"Покупка\" purchase on customer.\"primaryKey\" = purchase.\"Покупатель\" "+
-			" WHERE purchase.\"Покупатель\"=@Customer AND  purchase.\"Статус\" = \'Оплачено\' ", connection); //формирование запроса
-		var parameter = new SqlParameter("@Customer", SqlDbType.UniqueIdentifier);
-		parameter.Value = ((KeyGuid)this.__PrimaryKey).Guid; //определение значения параметра
-		command.Parameters.Add(parameter);
-		
-		try
-		{
-			connection.Open();
-			var value = (decimal)command.ExecuteScalar(); //исполнение запроса
-		}
-		finally
-		{
-			connection.Close();
-		}
-		
-		return value;
-	}
-	//...
+	connection.Open();
+	var value = (decimal)command.ExecuteScalar(); // Исполнение запроса.
+}
+finally
+{
+	connection.Close();
 }
 ```
