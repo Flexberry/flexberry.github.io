@@ -22,6 +22,10 @@ entries:
       title_ru: Установка LegacySecurity
       url: /fs_legacy-security-install.html
       output: web
+    - title: Permissions structure
+      title_ru: Устройство системы полномочий
+      url: /fs_permissions_structure.html
+      output: web
     - title: Permissions database tables
       title_ru: Таблицы базы данных полномочий
       url: /fs_permissions_tables.html
