@@ -59,6 +59,7 @@ Presented below interactive courses include assignments to test the gained knowl
 * [Reference CSS htmlbook.ru](http://htmlbook.ru/css) 
 * [CSS Reference - W3Schools](http://www.w3schools.com/cssref/) 
 * [CSS reference - Mozilla Developer Network](https://developer.mozilla.org/ru/docs/Web/CSS/Reference) 
+* [Learn CSS in Detail - Scaler Topics](https://www.scaler.com/topics/css/)
 
 ### Video 
 * [Basics of developing websites and web applications - Microsoft Virtual Academy](https://mva.microsoft.com/ru/training-courses/--8723?l=zZGYOLS1_1904984382) 
