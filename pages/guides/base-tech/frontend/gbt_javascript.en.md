@@ -64,6 +64,7 @@ hash: 0322dde7f8ac0bb1b88eca6317ebd679bc44f9975dfc20a160d62f6d97c0d413
 * [Tutorial JavaScript javascript.ru](https://learn.javascript.ru/) 
 * [Textbooks and reference books JavaScript - Mozilla Developer Network](https://developer.mozilla.org/ru/docs/Web/JavaScript) 
 * [JavaScript and jQuery HTML5BOOK.ru](https://html5book.ru/javascript-jquery/) 
+* [JavaScript Tutorial](https://www.scaler.com/topics/javascript/)
 
 ### Interactive courses 
 
@@ -73,7 +74,7 @@ Presented below interactive courses include assignments to test the gained knowl
 
 ### Reference 
 * [JavaScript reference - javascript.ru](http://javascript.ru/manual) 
-* [JavaScript and HTML DOM Reference - W3Schools](http://www.w3schools.com/jsref/) 
+* [JavaScript and HTML DOM Reference - W3Schools](http://www.w3schools.com/jsref/)
 
 ### Video 
 * [Basics of developing websites and web applications - Microsoft Virtual Academy](https://mva.microsoft.com/ru/training-courses/--8723?l=zZGYOLS1_1904984382) 
