@@ -12,7 +12,7 @@ entries:
             url: /gpg_landing-page.html
             output: web
 
-      - title: Flexberry Desinger Tutoroal
+      - title: Flexberry Desinger Tutorial
         title_ru: Практическое руководство по Flexberry Desinger
         output: web
 
@@ -57,7 +57,27 @@ entries:
             url: /gpg_deployment-diagram.html
             output: web
 
-      - title: Flexberry ASP.NET Tutoroal
+      - title: Flexberry Desinger Enterprise Tutorial
+        title_ru: Практическое руководство по Flexberry Desinger Enterprise
+        output: web
+
+        folderitems:
+          - title: Diagram editor
+            title_ru: Редактор диаграмм
+            url: /gpg_editor-guide.html
+            output: web
+
+          - title: Practical guide to creating application with Flexberry Designer Enterprise
+            title_ru: Практическое руководство по созданию приложения с помощью Flexberry Designer Enterprise
+            url: /gpg_practical-guide.html
+            output: web
+
+          - title: Application generation with Flexberry CLI
+            title_ru: Генерация приложения с помощью Flexberry CLI
+            url: /gpg_flexberry-cli.html
+            output: web
+            
+      - title: Flexberry ASP.NET Tutorial
         title_ru: Практическое руководство по веб-разработке на Flexberry ASP.NET
         output: web
 
@@ -162,7 +182,7 @@ entries:
             url: /gpg_set-ctrl-read-only.html
             output: web
 
-      - title: Flexberry Ember Tutoroal
+      - title: Flexberry Ember Tutorial
         title_ru: Практическое руководство по Flexberry Ember
         output: web
 
