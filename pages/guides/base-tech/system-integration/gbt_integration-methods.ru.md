@@ -281,7 +281,8 @@ lang: ru
         <div id="collapse12" class="panel-collapse collapse">
             <div class="panel-body">
                 <div>                    
-                    <li><a href="http://www.kholodkov.ru/it/?p=630">Системная интеграция: технический аспект</a><i> — kholodkov.ru</i></li>            
+                  <li><a href="https://ai.flexberry.ru">Инструмент с искусственным интеллектом для ускорения проектирования информационных систем и интеграционных сервисов</a></li>            
+                  <li><a href="http://www.kholodkov.ru/it/?p=630">Системная интеграция: технический аспект</a><i> — kholodkov.ru</i></li>            
                 </div>   
             </div>
         </div>
