@@ -27,7 +27,7 @@ Open start page Flexberry Designer Online, where you can see parts of it.
 * `Flexberry Designer Desktop`. In this section you can download Flexberry Designer Desktop. This is the professional version of Flexberry Designer Online. Necessary for the development of offline and multi-structured or complex applications. Requires a special license. To create an application online a special license is not required.
 * `User Profile`
 * `flexberry.net Portal`. Translates into the portal Flexberry Platform where you can find variety of products developed using the platform.
-* `Platform source code`. Opening this button opens the GitHab page of the Flexberry Platform. It is possible to participate in the finalization of platform products through a system of pull-requests.
+* `Platform source code`. Opening this button opens the GitHub page of the Flexberry Platform. It is possible to participate in the finalization of platform products through a system of pull-requests.
 * `Documentation`. The Documentation button opens the website with product documentation of flexberry platform. At the top is a link to the documentation for working with the designer.
 * `Chat`. Here is a room where you can ask questions about working with the designer, its development and documentation. The questions are answered by competent specialists who are always ready to help and support.
 
@@ -63,7 +63,7 @@ The app can be `configure` in accordance with the needs of your application, spe
 
 They can be for the client and server parts, if you need to split them. The server part is usually used for "complex" algorithms, so as not to overload the user interface. The client part is needed for »on the fly« processing.
 Login, password for the client part repository and branch for the client part, as well as similar fields for the backend part are used if you need to generate an application in an existing repository.
-If you do not have a repository yet, the designer will create a new repository on [Githab](https://github.com/) by the project name (it will generate and bind [ssh keys](https://ru.wikipedia.org/wiki/SSH)), and generates code in the created repository.
+If you do not have a repository yet, the designer will create a new repository on [GitHub](https://github.com/) by the project name (it will generate and bind [ssh keys](https://ru.wikipedia.org/wiki/SSH)), and generates code in the created repository.
 In addition, the project may be published in `gh-pages`.
 It is also possible to change localization (the language which the designer displays) and the theme designer.
 To export project need to open the `Settings` page and under `Project Action` with the project to choose `I want to export project`.
