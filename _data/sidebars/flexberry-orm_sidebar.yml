@@ -687,6 +687,10 @@ entries:
       title_ru: Сериализация и десериализация объектов данных
       url: /fo_aggregating-function.html
       output: web
+    - title: Asynchronous requests in ORM
+      title_ru: Асинхронные запросы в ORM
+      url: /fo_asynchronous_requests_in_orm.html
+      output: web
     - title: Associating pictures with data classes
       title_ru: Ассоциирование картинок с классами данных
       url: /fo_class-image.html
