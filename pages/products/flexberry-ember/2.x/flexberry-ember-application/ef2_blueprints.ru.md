@@ -310,3 +310,38 @@ ember g flexberry-application app --metadata-dir=vendor/Flexberry
   ]
 }
 ```
+
+### Генерация форм, унаследованных от базового класса
+
+Если приложение требует генерации форм, унаследованных от их базовых классов, необходимо в папке `vendor/flexberry/` создать директорию с именем `custom-generator-options` и создать в ней файл `generator-options.json` следующего вида:
+
+```JSON
+{
+    "editForms": {
+        "defaultForm": {
+            "baseRoute": {
+                "name": "EditFormRoute",
+                "path": "ember-flexberry/routes/edit-form"
+            },
+            "baseController": {
+                "name": "EditFormController",
+                "path": "ember-flexberry/controllers/edit-form"
+            }
+        }       
+    },
+    "listForms": {
+        "defaultForm": {
+            "baseRoute": {
+                "name": "ListFormRoute",
+                "path": "ember-flexberry/routes/list-form"
+            },
+            "baseController": {
+                "name": "ListFormController",
+                "path": "ember-flexberry/controllers/list-form"
+            }
+        }
+    }
+}
+```
+
+Файл `generator-options.json` определяет имена и расположения файлов, от которых будут наследоваться списковые формы и формы редактирования.
