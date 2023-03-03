@@ -8,19 +8,19 @@ permalink: ru/fo_asynchronous_requests_in_orm.html
 lang: ru
 ---
 
-В [ORM](fo_flexberry-orm.html) существует возможность загружать данные в асинхронном режиме (async/await). `SQLDataService` реализует интерфейс `IAsyncDataService`, который описывает асинхронные методы загрузки.
+В [ORM](fo_flexberry-orm.html) существует возможность загружать данные в асинхронном режиме (async/await). [SQLDataService](fo_data-service.html) реализует интерфейс `IAsyncDataService`, который описывает асинхронные методы загрузки.
 
-#### Асинхронные методы
+### Асинхронные методы
 
 | Метод                | Описание                              | Параметры                                                                                   |
 | -------------------- | ------------------------------------- | ------------------------------------------------------------------------------------------- |
 | GetObjectsCountAsync | Загрузить количество объектов         | `LoadingCustomizationStruct` - запрос LCS                                                     |
-| LoadObjectAsync      | Загрузка одного объекта данных        | `DataObject` - объект, который нужно загрузить. `View` - представление для загрузки.            |
+| LoadObjectAsync      | Загрузка одного объекта данных        | [DataObject](fo_data-object.html) - объект, который нужно загрузить. `View` - представление для загрузки.            |
 | LoadObjectsAsync     | Загрузка нескольких объектов данных   | `DataObject[]` - массив объектов, которые нужно загрузить. `View` - представление для загрузки. |
 | UpdateObjectAsync    | Сохранение объекта данных             | `DataObject` - объект, который нужно сохранить.                                               |
 | UpdateObjectsAsync   | Сохранение нескольких объектов данных | `DataObject[]`` - массив объектов, который нужно сохранить.                                    |
 
-##### Дополнительные параметры
+__Дополнительные параметры__
 
 - `clearDataObject` (для загрузки) - очищать объект (`DataObject.Clear`) перед вычиткой (по умолчанию `true`);
 - `alwaysThrowException` (для обновления) - сразу же останавливать метод при возникновении ошибки (если `false` - будет произведена попытка выполнить часть запросов несмотря на ошибки; по умолчанию `false`);
@@ -40,7 +40,7 @@ var DS = DataServiceProvider.DataService as SQLDataService;
 
 // объект для загрузки
 var userToLoad = new Пользователь();
-userToLoad.SetExistObjectPrimaryKey(user1.\_\_PrimaryKey); //указываем ключ существующего объекта
+userToLoad.SetExistObjectPrimaryKey(user1.__PrimaryKey); //указываем ключ существующего объекта
 
 // поля для загрузки:
 var view = new View { DefineClassType = typeof(Пользователь) };
