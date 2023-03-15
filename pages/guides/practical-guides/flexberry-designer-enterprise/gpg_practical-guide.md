@@ -84,7 +84,7 @@ lang: ru
 
 ## Запуск приложения
 Перед запуском приложения требуется:
-- задать адрес базы данных - измените значение параметра `DefConnStr` в файлах `/src/MyApp/ODataBackend/appsettings.json` и `/src/MyApp/ODataBackend/launchSettings.json` на следующее: `SERVER=localhost;User ID=postgres;Password=postgres;Port=5432;database=my-app-db;`
+- задать адрес базы данных - измените значение параметра `DefConnStr` в файлах `/src/MyApp/ODataBackend/appsettings.json` и `/src/MyApp/ODataBackend/Properties/launchSettings.json` на следующее: `SERVER=localhost;User ID=postgres;Password=postgres;Port=5432;database=my-app-db;`
 - установите адрес бекенда - измените все значения параметра `backendUrl` в файле `/src/ember-app/config/environment.js` на `http://localhost:6500`;
 
 Чтобы запустить приложение:
