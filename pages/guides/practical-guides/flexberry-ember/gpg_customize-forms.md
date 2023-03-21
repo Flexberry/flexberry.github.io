@@ -153,7 +153,7 @@ _`Order → [ПКМ] → ORM: Редактировать свойства → П
 
 **Storehouse**
 
-> _<u>Детейл</u>_: Stock product → Список товаров  
+> _<u>Детейл</u>_: Store product → Список товаров  
 > _<u>Мастер</u>_: Storekeeper (Кладовщик) → LastName
 
 **InvoiceItem**
