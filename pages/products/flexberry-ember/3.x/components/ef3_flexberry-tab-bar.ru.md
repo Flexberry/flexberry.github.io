@@ -7,6 +7,7 @@ permalink: ru/ef3_flexberry-tab-bar.html
 lang: ru
 summary: Свойства flexberry-tab-bar, настройка flexberry-tab-bar
 ---
+Доступно с версии ember-flexberry 3.8.0.
 
 [flexberry-tab-bar](https://github.com/Flexberry/ember-flexberry/blob/master/addon/components/flexberry-tab-bar.js) - компонент, позволяющий организовать и осуществить навигацию между группами контента, которые связаны и находятся на одном уровне. В нем могут быть размещены поля формы, [список](ef2_object-list-view.html), [детейлы](ef2_groupedit.html) и другое.
 
@@ -33,6 +34,7 @@ summary: Свойства flexberry-tab-bar, настройка flexberry-tab-ba
 ```
 
 При загрузке страницы будет активна вкладка компонента, в которой указано свойство `active: true`.
+
 Массив вкладок `items`:
 ```javascript
 [
