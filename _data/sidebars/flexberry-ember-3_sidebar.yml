@@ -90,6 +90,10 @@ entries:
         output: web, pdf
 
         folderitems:
+          - title: Flexberry tab bar
+            title_ru: Flexberry tab bar
+            url: /ef3_flexberry-tab-bar.html
+            output: web, pdf
 
       - title: Services
         title_ru: Сервисы
