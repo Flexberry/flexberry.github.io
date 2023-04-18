@@ -76,7 +76,7 @@ h4[id],
 h5[id],
 h6[id],
 dt[id]{
-padding-top: 90px;
+padding-top: 100px;
 margin-top: -90px
 }
 
@@ -625,8 +625,8 @@ a.fa.fa-envelope-o.mailto {
     font-weight: 600;
 }
 
-h3 {color: #ED1951; font-weight:normal; font-size:130%;}
-h4 {color: #808080; font-weight:normal; font-size:120%;}
+h3 {color: #ED1951; font-weight:normal;}
+h4 {color: #333333; font-weight:normal; font-size:120%;}
 
 .alert, .callout {
     overflow: hidden;

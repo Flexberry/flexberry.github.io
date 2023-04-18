@@ -90,6 +90,10 @@ entries:
         output: web, pdf
 
         folderitems:
+          - title: Components for edit-forms
+            title_ru: Компоненты для работы с данными на форме редактирования
+            url: /ef3_edit-form-components.html
+            output: web, pdf
 
       - title: Services
         title_ru: Сервисы

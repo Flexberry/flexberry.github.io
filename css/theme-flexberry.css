@@ -56,11 +56,10 @@ h2 {
 }
 
 h4 {
-  color: #650f8b;
   font-size: 20px;
   /*line-height: 30px;*/
   margin-bottom: 20px;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .flexberry-logo {
@@ -224,6 +223,8 @@ li.sidebarTitle {
 
 /*Underline header*/
 .item-head {
+  color: #650f8b;
+  font-weight: 500;
   text-decoration: none;
   border-bottom: 1px solid rgba(101, 15, 139, 0.3);
 }
