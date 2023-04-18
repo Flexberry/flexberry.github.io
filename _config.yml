@@ -54,6 +54,8 @@ feedback_subject_line: Flexberry documentation
 feedback_email: mail@flexberry.net
 # used as a contact email for the Feedback link in the top navigation bar
 
+test_stand_3x_url: 'http://flexberry.github.io/ember-flexberry/dummy/dummy-test-2'
+
 # Build settings
 encoding: utf-8
 markdown: kramdown
