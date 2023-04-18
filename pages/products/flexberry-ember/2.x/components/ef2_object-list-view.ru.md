@@ -97,6 +97,7 @@ action=customActionName
 `editFormRoute`| Задаёт имя роута формы редактирования, в котором будет открываться модель.  
 `singleColumnHeaderTitle`| Заголовок для мобильного представления компонента, вместо названий колонок. Если не задан или равен "", то шапка таблицы в компоненте скрывается.  
 `colsConfigButton`| Флаг (`true`/`false`) включающий/выключающий отображение кнопок пользовательских настроек.  
+`editInModal`| Флаг, определяющий, открывать ли форму редактирования в модальном окне.  
 
 Значения по умолчанию:
 
@@ -110,7 +111,8 @@ rowClickable: true,
 showCheckBoxInRow: false,
 showDeleteButtonInRow: false,
 showDeleteMenuItemInRow: false,
-showEditMenuItemInRow: true
+showEditMenuItemInRow: true,
+editInModal: false
 colsConfigButton - true
 ```
 
