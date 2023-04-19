@@ -17,6 +17,8 @@ summary: Свойства flexberry-tab-bar, настройка flexberry-tab-ba
 
 ![](/images/pages/products/flexberry-ember/3.x/components/flexberry-tab-bar.png)
 
+Вы можете посмотреть [пример с реализацией](http://flexberry.github.io/ember-flexberry/dummy/develop/#//components-examples/flexberry-tab-bar/settings-example) на тестовом стенде.
+
 ### Логика работы
 
 Ширина вкладок зависит от длинны названия и меняется в соответствии с ним если выкладки не помещаются на экране, то появляется кнопка, которая предлагает пользователю выбрать любую вкладку из списка (если вкладки помещаются на экране, то кнопка скрыта). Также есть возможность прокручивать вкладки, если они не помещаются на экран.
