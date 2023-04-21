@@ -13,11 +13,11 @@ summary: Свойства flexberry-tab-bar, настройка flexberry-tab-ba
 
 [flexberry-tab-bar](https://github.com/Flexberry/ember-flexberry/blob/master/addon/components/flexberry-tab-bar.js) - компонент, позволяющий организовать и осуществить навигацию между группами контента, которые связаны и находятся на одном уровне. В нем могут быть размещены поля формы, [список](ef2_object-list-view.html), [детейлы](ef2_groupedit.html) и другое.
 
-Общий вид компонента, в случае, если текущая тема оформления “Ghost”:
+Общий вид компонента с отображением вкладок в формате с переполнение, в случае, если текущая тема оформления “Ghost”:
 
 ![](/images/pages/products/flexberry-ember/3.x/components/flexberry-tab-bar.png)
 
-Вы можете посмотреть [пример с реализацией](http://flexberry.github.io/ember-flexberry/dummy/develop/#//components-examples/flexberry-tab-bar/settings-example) на тестовом стенде.
+Вы можете посмотреть [пример с реализацией](http://flexberry.github.io/ember-flexberry/dummy/dummy-test-2/?#/components-examples/flexberry-tab-bar/settings-example) на тестовом стенде.
 
 ### Логика работы
 
@@ -27,7 +27,8 @@ summary: Свойства flexberry-tab-bar, настройка flexberry-tab-ba
 
 | Название свойства | Краткое описание |
 |:-------------------:|:------------------|
-| `items` | Определяет массив вкладок|
+| `items` | Определяет массив вкладок.|
+| `isOverflowedTabs` | Флаг, определяющий, отображать ли вкладки в формате с переполнением или в обычном режиме.|
 
 ### Пример использования
 
@@ -36,6 +37,7 @@ summary: Свойства flexberry-tab-bar, настройка flexberry-tab-ba
 ```hbs
 {% raw %}{{flexberry-tab-bar 
     items=items
+    isOverflowedTabs=false
 }}
 <div class="ui bottom attached tab active segment" data-tab="tab1">
     Content
