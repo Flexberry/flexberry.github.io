@@ -107,6 +107,9 @@ entries:
     - title: MongoDB
       url: /gbt_mongodb.html
       output: web
+    - title: Liquibase
+      url: /gbt_liquibase.html
+      output: web
   - title: Mobile development
     title_ru: Мобильная разработка
     output: web
