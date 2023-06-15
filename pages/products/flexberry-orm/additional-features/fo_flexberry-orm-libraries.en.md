@@ -12,14 +12,12 @@ hash: adf0d68f5a3ca4fe75ae118057437766060632e374f0a276044ac6897bf63ee2
 
 The list of libraries that contain the Runtime components [Flexberry ORM](fo_flexberry-orm.html):
 
-* **ChangesToSqlBTMonitor.dll** a library containing classes for working [service record SQL-scripts change data](fo_changes-sql-bt-monitor.html).
-* **ExternalLangDef.dll** - the library that contains [language extension restrictions](fo_external-lang-def.html) for [constraint](fo_limit-function.html) on the dependent objects.
+* **ICSSoft.STORMNET.Business.ExternalLangDef.dll** - the library that contains [language extension restrictions](fo_external-lang-def.html) for [constraint](fo_limit-function.html) on the dependent objects.
 * **ICSSoft.STORMNET.BF.dll**
-* **ICSSoft.STORMNET.Business.dll** a library containing base classes for organizations [see the structure of relational database tables to an object model](fo_data-service.html).
-* **ICSSoft.STORMNET.Business.DRDataService.dll** a library containing classes for working [DRDataService](fo_dr-data-service.html).
+* **ICSSoft.STORMNET.Business.dll** a library containing base classes for organizations [see the structure of relational database tables to an object model](fo_data-service.html), also classes for working [service record SQL-scripts change data](fo_changes-sql-bt-monitor.html).
 * **ICSSoft.STORMNET.Business.LINQProvider.dll** - the library that contains the classes for LINQ support in [Flexberry ORM](fo_flexberry-orm.html).
 * **ICSSoft.STORMNET.Business.LockService.dll** a library containing classes for working [service locks](fo_lock-service.html).
-* **ICSSoft.STORMNET.Business.MSSQLDataService.dll** a library containing classes for [the display of the structure of relational tables in MS SQL Server (version 2005 and above) the object model](fo_data-service.html).
+* **ICSSoft.STORMNET.Business.MSSQLDataService.dll** a library containing classes for [the display of the structure of relational tables in MS SQL Server (version 2005 and above) the object model](fo_data-service.html), and [DRDataService (Dirty Read)](fo_dr-data-service.html).
 * **ICSSoft.STORMNET.Business.OracleDataService.dll** a library containing classes for working [OracleDataService](fo_oracle-data-service.html).
 * **ICSSoft.STORMNET.Business.PostgresDataService.dll** a library containing classes for working [PostgresDataService](fo_postgres-data-service.html).
 * **ICSSoft.STORMNET.Collections.dll** a library containing auxiliary base structure for organizing collections of objects.

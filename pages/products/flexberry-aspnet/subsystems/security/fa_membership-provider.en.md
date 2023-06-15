@@ -1,21 +1,21 @@
---- 
-title: CaseberryMembershipProvider 
-sidebar: flexberry-aspnet_sidebar 
-keywords: Flexberry ASP-NET Flexberry Security 
-toc: true 
-permalink: en/fa_membership-provider.html 
-lang: en 
-autotranslated: true 
-hash: fa61a7df84814149abd6869726115f1fd4c77aefdecc9ee266fd6ba554220107 
---- 
+---
+title: CaseberryMembershipProvider
+sidebar: flexberry-aspnet_sidebar
+keywords: Flexberry ASP-NET Flexberry Security
+toc: true
+permalink: en/fa_membership-provider.html
+lang: en
+autotranslated: true
+hash: fa61a7df84814149abd6869726115f1fd4c77aefdecc9ee266fd6ba554220107
+---
 
-## the credentials for web applications 
+## the credentials for web applications
 
-For web applications developed a special `MembershipProvider` which you can check the [powers](efs_right-manager-module.html) in the database of office without the presence of AzManBridgeService. 
+For web applications developed a special `MembershipProvider` which you can check the [powers](efs_right-manager-module.html) in the database of office without the presence of AzManBridgeService.
 
-## Connection 
+## Connection
 
-Connect as follows: 
+Connect as follows:
 
 ``` xml
 <!-- ... -->
@@ -51,44 +51,44 @@ Connect as follows:
     </profile>
 
 <!-- ... -->
-``` 
+```
 
-`CaseberryMembershipProvider ` is in the Assembly `CheckingLibrary.dll` 
-To the authority were checked, the node requires the following assemblies: 
+`CaseberryMembershipProvider ` is in the Assembly `CheckingLibrary.dll`
+To the authority were checked, the node requires the following assemblies:
 
-* Security(Objects) 
-* Security(BusinessServers) 
-* Repository 
-* Microsoft.Practices.Unity 
-* LogService 
-* log4net 
-* IIS.Audit(Objects) 
-* IIS.Audit(BusinessServers) 
-* AppSettingsService 
-* CheckingLibrary 
-* ExternalLangDef 
-* ICSSoft.STORMNET.AzManBridge 
-* ICSSoft.STORMNET.Business 
-* ICSSoft.STORMNET.Business.MSSQLDataService 
-* ICSSoft.STORMNET.Business.OracleDataService 
-* ICSSoft.STORMNET.Collections 
-* ICSSoft.STORMNET.DataObject 
-* ICSSoft.STORMNET.FunctionalLanguage 
-* ICSSoft.STORMNET.RightManager 
-* ICSSoft.STORMNET.Tools 
-* ICSSoft.STORMNET.UserDataTypes 
-* ICSSoft.STORMNET.Web.Tools 
+* Security(Objects)
+* Security(BusinessServers)
+* Repository
+* Microsoft.Practices.Unity
+* LogService
+* log4net
+* IIS.Audit(Objects)
+* IIS.Audit(BusinessServers)
+* AppSettingsService
+* CheckingLibrary
+* ICSSoft.STORMNET.Business.ExternalLangDef
+* ICSSoft.STORMNET.AzManBridge
+* ICSSoft.STORMNET.Business
+* ICSSoft.STORMNET.Business.MSSQLDataService
+* ICSSoft.STORMNET.Business.OracleDataService
+* ICSSoft.STORMNET.Collections
+* ICSSoft.STORMNET.DataObject
+* ICSSoft.STORMNET.FunctionalLanguage
+* ICSSoft.STORMNET.RightManager
+* ICSSoft.STORMNET.Tools
+* ICSSoft.STORMNET.UserDataTypes
+* ICSSoft.STORMNET.Web.Tools
 
-### features of setting the connection string 
+### features of setting the connection string
 
-Work with the connection string to the database of the authority is as follows: 
+Work with the connection string to the database of the authority is as follows:
 
-* If the connection string is set with the name `CaseberrySecurity`, the connection string to the database authority is used. 
-* If the connection string `CaseberrySecurity` is not specified, it looks for a connection string named `CustomizationStrings_applicationname`; that is, if you specified that `applicationName="SLAuthSample"`, the name of the connection string must be in the form `CustomizationStrings_SLAuthsample`. 
+* If the connection string is set with the name `CaseberrySecurity`, the connection string to the database authority is used.
+* If the connection string `CaseberrySecurity` is not specified, it looks for a connection string named `CustomizationStrings_applicationname`; that is, if you specified that `applicationName="SLAuthSample"`, the name of the connection string must be in the form `CustomizationStrings_SLAuthsample`.
 
-## edit Form of authority in WEB 
+## edit Form of authority in WEB
 
-In Flexberry ASP.NET there are forms for editing permissions which are in the folder: /forms/Security 
+In Flexberry ASP.NET there are forms for editing permissions which are in the folder: /forms/Security
 
 
 

@@ -143,7 +143,7 @@ lang: ru
 
 Сборки, входящие в пакет:
 
-* ICSSoft.Services.CurrentUserService.dll
+* NewPlatform.Flexberry.ORM.CurrentUserService.dll
 
 ## Flexberry UserSettingsService
 
@@ -157,7 +157,7 @@ lang: ru
 
 Сборки, входящие в пакет:
 
-* ICSSoft.Services.UnityFactory.dll
+* NewPlatform.Flexberry.ORM.UnityFactory.dll
 
 ## Flexberry ServiceBus
 
