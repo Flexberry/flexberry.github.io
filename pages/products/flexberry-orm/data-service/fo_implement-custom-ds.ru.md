@@ -23,7 +23,7 @@ lang: ru
 
 ## Реализация сервиса данных для реляционного хранилища
 
-Если требуется реализовать [сервис данных](fo_data-service.html) для реляционного хранилища, рекомендуется унаследоваться от [готовых сервисов данных Flexberry Platform](fo_standard-data-services.html), в частности, от общего предка реляционных сервис данных [SQLDataService](fo_sql-data-service.html), либо [ODBCDataService](fo_odbc-data-service.html). Затем, согласно особенностей хранилища, которое планируется использовать, необходимо соответствующим образом перегрузить методы.
+Если требуется реализовать [сервис данных](fo_data-service.html) для реляционного хранилища, рекомендуется унаследоваться от [готовых сервисов данных Flexberry Platform](fo_standard-data-services.html), в частности, от общего предка реляционных сервисов данных [SQLDataService](fo_sql-data-service.html). Затем, согласно особенностей хранилища, которое планируется использовать, необходимо соответствующим образом перегрузить методы.
 
 Ниже приводится пример [сервиса данных](fo_data-service.html), выполняющего работу с Microsoft SQL Server напрямую, через SQLClient:
 
@@ -41,7 +41,7 @@ public class MSSQLDataService:ICSSoft.STORMNET.Business.SQLDataService
         for (int i= identifiers.Length-2;i>=0;i--)
         result = string.Concat("ISNULL(",identifiers[i],", ",result,")");
         return result;
-    } 
+    }
 }
 ```
 

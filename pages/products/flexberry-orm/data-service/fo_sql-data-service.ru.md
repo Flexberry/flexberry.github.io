@@ -10,10 +10,9 @@ lang: ru
 
 [Сервис данных](fo_data-service.html), работающий с реляционными хранилищами.
 
-Является абстрактным классом, от него наследуется 
+Является абстрактным классом, от него наследуется
 
 * [`MSSQLDataService`](fo_mssql-data-service.html),
-* [`ODBCDataService`](fo_odbc-data-service.html),
 * [`OracleDataService`](fo_oracle-data-service.html),
 * [`PostgresDataService`](fo_postgres-data-service.html).
 
@@ -31,13 +30,13 @@ __Назначение__: Загрузка без создания объект�
 
 __Параметры__:
 
-`customizationStruct` - Структура [LoadingCustomizationStruct](fo_loading-customization-struct.html), определяющая, что и как грузить. Должен быть указан параметр `Distinct`. 
+`customizationStruct` - Структура [LoadingCustomizationStruct](fo_loading-customization-struct.html), определяющая, что и как грузить. Должен быть указан параметр `Distinct`.
 
 __Сигнатура__:
 
 ```csharp
-    virtual public object[][] LoadRawValues(LoadingCustomizationStruct customizationStruct) 
-``` 
+    virtual public object[][] LoadRawValues(LoadingCustomizationStruct customizationStruct)
+```
 
 __Пример__:
 
@@ -71,27 +70,27 @@ __Параметры__:
 __Сигнатура__:
 
 ```csharp
-protected virtual void SecondLoadObject(View dataObjectView, DataObject dataObject, bool checkExistingObject, DataObjectCache dataObjectCache) 
+protected virtual void SecondLoadObject(View dataObjectView, DataObject dataObject, bool checkExistingObject, DataObjectCache dataObjectCache)
 ```
 
 ## Дополнительные способы обновления данных
 
 ### UpdateObjectsOrdered
 
-__Назначение__: Обновить объекты данных в указанном порядке. 
+__Назначение__: Обновить объекты данных в указанном порядке.
 
 `SQLDataService` умеет сам выстраивать порядок запросов на обновление объектов данных. Особенно это актуально, когда есть большое количество разнотипных объектов в одной транзакции. К сожалению, не всегда есть возможность автоматизированно вычислить правильный порядок запросов. В первую очередь, это относится к ситуациям, когда в графе типов есть циклы. Для решения этой проблемы предлагается использовать данный метод, который выполняет обновление объектов последовательно в том порядке, в котором они приходят в этот метод.
 
 __Параметры__:
 
-* `objects` - обновляемые объекты 
+* `objects` - обновляемые объекты
 * `alwaysThrowException` - Если произошла ошибка в базе данных, не пытаться выполнять других запросов, сразу взводить ошибку и откатывать транзакцию.
 
 __Сигнатура__:
 
  ```csharp
 virtual public void UpdateObjectsOrdered(ref DataObject[] objects, bool alwaysThrowException = true)
-``` 
+```
 
 __Пример__:
 
@@ -104,7 +103,7 @@ protected void UpdateButtonClick(object sender, EventArgs e)
 DataObject[] dObjs = new DataObject[] { ko };
     ds.UpdateObjectsOrdered(ref dObjs);
 }
-``` 
+```
 
 ### Выполнение операций в рамках указанных коннекции и транзакции
 
@@ -127,13 +126,13 @@ __Сигнатура__:
  ```csharp
 public virtual void LoadObjectByExtConn(
     View dataObjectView,
-    DataObject dobject, 
-    bool сlearDataObject, 
-    bool сheckExistingObject, 
-    DataObjectCache dataObjectCache, 
-    IDbConnection connection, 
-    IDbTransaction transaction) 
-``` 
+    DataObject dobject,
+    bool сlearDataObject,
+    bool сheckExistingObject,
+    DataObjectCache dataObjectCache,
+    IDbConnection connection,
+    IDbTransaction transaction)
+```
 
 ####  LoadObjectsByExtConn
 
@@ -152,7 +151,7 @@ __Сигнатура__:
 ```csharp
 public virtual DataObject[] LoadObjectsByExtConn(
     LoadingCustomizationStruct customizationStruct,
-    ref object state, 
+    ref object state,
     DataObjectCache dataObjectCache,
     IDbConnection connection,
     IDbTransaction transaction)
@@ -161,11 +160,11 @@ public virtual DataObject[] LoadObjectsByExtConn(
 #### ReadFirstByExtConn
 
 __Назначение__: Получение первой порции при [порционном чтении](fo_reading-portion.html) с использованием указанной коннекции и транзакции. Кроме порции объектов данных, сервис данных возвращает состояние чтения `state`. Это состояние передается сервису данных для получения очередных порций (см. следующий метод).
-Аналог предыдущего метода, но вместо настроечной структуры выборка определяется текстом запроса. 
+Аналог предыдущего метода, но вместо настроечной структуры выборка определяется текстом запроса.
 
 __Параметры__:
 
-* `Query` - Текст запроса для выборки данных 
+* `Query` - Текст запроса для выборки данных
 * `state` - Состояние вычитки(для последующей дочитки)
 * `LoadingBufferSize` - размер порции
 * `Connection` - Коннекция, через которую будут выполнена зачитка
@@ -179,7 +178,7 @@ public virtual object[][] ReadFirstByExtConn(string Query, ref object State, int
 
 #### ReadNextByExtConn
 
-__Назначение__: Получение  очередных порций при [порционном чтении](fo_reading-portion.html). Должен предшествовать вызов одного из двух вышеуказанных методов с получением состояния `state`. 
+__Назначение__: Получение  очередных порций при [порционном чтении](fo_reading-portion.html). Должен предшествовать вызов одного из двух вышеуказанных методов с получением состояния `state`.
 
 __Параметры__:
 
@@ -194,7 +193,7 @@ public virtual object[][] ReadNextByExtConn(ref object State, int LoadingBufferS
 
 #### UpdateObjectsByExtConn
 
-__Назначение__:  Обновить хранилище по объектам с использованием указанной коннекции и транзакции. 
+__Назначение__:  Обновить хранилище по объектам с использованием указанной коннекции и транзакции.
 
 {% include note.html content="Если параметр `alwaysThrowException`=`true`, всегда взводится ошибка. Иначе, выполнение продолжается. Однако, при этом есть опасность преждевременного окончания транзакции, с переходом для остальных запросов режима транзакционности в autocommit. Проявлением проблемы являются ошибки вроде: The COMMIT TRANSACTION request has no corresponding BEGIN TRANSACTION." %}
 
@@ -216,7 +215,7 @@ public virtual void UpdateObjectsByExtConn(ref DataObject[] objects, DataObjectC
 
 ### GenerateQueriesForUpdateObjects
 
-__Назначение__: Генерация запросов для изменения объектов 
+__Назначение__: Генерация запросов для изменения объектов
 
 __Параметры__:
 
@@ -250,8 +249,8 @@ public virtual void GenerateQueriesForUpdateObjects(
     System.Collections.ArrayList processingObjects,
     DataObjectCache dataObjectCache,
     params ICSSoft.STORMNET.DataObject[] dobjects)
-``` 
- 
+```
+
 В данной перегрузке дополнительно возвращается список объектов, для которых необходимо создание записей аудита:
 
 ```csharp
@@ -265,16 +264,16 @@ public virtual void GenerateQueriesForUpdateObjects(
     SortedList tableOperations,
     StringCollection queryOrder,
     bool checkLoadedProps,
-    ArrayList processingObjects, 
+    ArrayList processingObjects,
     DataObjectCache dataObjectCache,
     List<DataObject> auditObjects,
     params ICSSoft.STORMNET.DataObject[] dobjects)
-```   
+```
 
 ### GenerateSQLSelect
 
 __Назначение__: Получить запрос на вычитку данных
- 
+
 __Параметры__:
 
 * `customizationStruct` - настройка выборки
@@ -295,16 +294,16 @@ public virtual string GenerateSQLSelect(LoadingCustomizationStruct customization
 ### GetLeftJoinExpression
 
 __Назначение__: Получить LeftJoin выражение
- 
+
 __Параметры__:
 
 * `subTable` - имя таблицы
 * `subTableAlias` - псевдоним таблицы
-* `parentAliasWithKey` 
-* `subTableKey`  
-* `subJoins`  
-* `baseOutline`  
- 
+* `parentAliasWithKey`
+* `subTableKey`
+* `subJoins`
+* `baseOutline`
+
 __Сигнатура__:
 
 ```csharp
@@ -313,31 +312,31 @@ public virtual void GetLeftJoinExpression(string subTable, string subTableAlias,
 
 ### GetInnerJoinExpression
 
-__Назначение__: Получить InnerJoin выражение 
+__Назначение__: Получить InnerJoin выражение
 
 __Параметры__:
 
-* `subTable` - имя таблицы 
-* `subTableAlias` - псевдоним таблицы 
-* `parentAliasWithKey` 
-* `subTableKey`  
-* `subJoins`  
-* `baseOutline`  
-* `FromPart`  
-* `WherePart`  
+* `subTable` - имя таблицы
+* `subTableAlias` - псевдоним таблицы
+* `parentAliasWithKey`
+* `subTableKey`
+* `subJoins`
+* `baseOutline`
+* `FromPart`
+* `WherePart`
 
 __Сигнатура__:
 
 ```csharp
 public virtual void GetInnerJoinExpression(string subTable, string subTableAlias, string parentAliasWithKey, string subTableKey, string subJoins, string baseOutline, out string FromPart, out string WherePart)
-``` 
+```
 
 ### GetJoinTableModifierExpression
 
 __Назначение__: Вернуть модификатор для обращения к таблице (напр WITH (NOLOCK))
 
 Можно перегрузить этот метод в сервисе данных-наследнике для возврата соответствующего своего модификатора.
-Базовый `SQLDataService` возвращает пустую строку. 
+Базовый `SQLDataService` возвращает пустую строку.
 
 __Сигнатура__:
 
@@ -347,12 +346,12 @@ public virtual string GetJoinTableModifierExpression()
 
 ### GetINExpression
 
-__Назначение__: Вернуть in выражение для where 
+__Назначение__: Вернуть in выражение для where
 
 __Параметры__:
 
 `identifiers` - идентификаторы
- 
+
 __Сигнатура__:
 
 ```csharp
@@ -362,7 +361,7 @@ public virtual string GetINExpression(params string[] identifiers)
 ### GetIfNullExpression
 
 __Назначение__: Вернуть ifnull выражение
- 
+
 __Параметры__:
 
 `identifiers` - идентификаторы
@@ -375,14 +374,14 @@ public virtual string GetIfNullExpression(params string[] identifiers)
 
 ### PutIdentifierIntoBrackets
 
-__Назначение__: Оформить идентификатор 
+__Назначение__: Оформить идентификатор
 
 __Параметры__:
 
 `identifier` - идентификатор
 
 __Возвращаемый результат__: оформленный идентификатор(например в кавычках)
- 
+
 __Сигнатура__:
 
 ```csharp
@@ -392,7 +391,7 @@ public virtual string PutIdentifierIntoBrackets(string identifier)
 ### CreateJoins
 
 __Назначение__: Создать join соединения
- 
+
 __Параметры__:
 
 * `source` - источник с которого формируется соединение
@@ -414,7 +413,7 @@ public virtual void CreateJoins(STORMDO.Business.StorageStructForView.PropSource
 
 ### `CreateJoins`
 
-__Назначение__: Создать join соединения 
+__Назначение__: Создать join соединения
 
 __Параметры__:
 
@@ -424,7 +423,7 @@ __Параметры__:
 * `keysandtypes` - ключи и типы
 * `baseOutline` - смещение в запросе
 * `joinscount` - количество соединений
- 
+
 __Сигнатура__:
 
 ```csharp
@@ -445,16 +444,16 @@ SELECT
   Key1,Key2,... key3
 FROM
   fromjoins
-``` 
+```
 
 __Параметры__:
 
-* `storageStruct` - структура хранилища 
-* `AddingAdvansedField` - довленные дополнительные свойства 
+* `storageStruct` - структура хранилища
+* `AddingAdvansedField` - довленные дополнительные свойства
 * `AddingKeysCount` - добавленниые ключи
-* `addMasterFieldsCustomizer`  
-* `addNotMainKeys`  
-* `SelectTypesIds`  
+* `addMasterFieldsCustomizer`
+* `addNotMainKeys`
+* `SelectTypesIds`
 
 __Сигнатура__:
 
@@ -464,11 +463,11 @@ virtual public string GenerateSQLSelectByStorageStruct(STORMDO.Business.StorageS
 
 // 2.
 virtual public string GenerateSQLSelectByStorageStruct(STORMDO.Business.StorageStructForView storageStruct, bool addNotMainKeys, bool addMasterFieldsCustomizer, string AddingAdvansedField, int AddingKeysCount, bool SelectTypesIds, bool MustNewGenerate, bool MustDopSelect)
-``` 
+```
 
 ### ConvertSimpleValueToQueryValueString
 
-__Назначение__: Конвертация константных значений в строки запроса 
+__Назначение__: Конвертация константных значений в строки запроса
 
 __Параметры__:
 
@@ -482,7 +481,7 @@ public virtual string ConvertSimpleValueToQueryValueString(object value)
 
 ### ConvertValueToQueryValueString
 
-__Назначение__: Конвертация значений в строки запроса 
+__Назначение__: Конвертация значений в строки запроса
 
 __Параметры__:
 
@@ -496,13 +495,13 @@ public virtual string ConvertValueToQueryValueString(object value)
 
 ### ConvertValueToQueryValueString
 
-__Назначение__: Преобразование значение свойства в строку для запроса 
+__Назначение__: Преобразование значение свойства в строку для запроса
 
 __Параметры__:
 
-* `dataobject` - объект данных 
+* `dataobject` - объект данных
 * `propname` - имя свойства
- 
+
 __Сигнатура__:
 
 ```csharp
@@ -511,7 +510,7 @@ public virtual string ConvertValueToQueryValueString(DataObject dataobject, stri
 
 ### LimitFunction2SQLWhere
 
-__Назначение__: Преобразование функции 
+__Назначение__: Преобразование функции
 
 __Параметры__:`LimitFunction` - настроечная структура выборки
 
@@ -523,7 +522,7 @@ public virtual string LimitFunction2SQLWhere(STORMFunction LimitFunction, STORMD
 
 ### LimitFunction2SQLWhere
 
-__Назначение__: Преобразование функции 
+__Назначение__: Преобразование функции
 
 __Параметры__:
 
@@ -543,10 +542,10 @@ __Назначение__: Вычитка первой партии данных 
 
 __Параметры__:
 
-* `Query` - Текст запроса для выборки данных 
+* `Query` - Текст запроса для выборки данных
 * `state` - Состояние вычитки(для последующей дочитки)
 * `LoadingBufferSize` - размер порции
-   
+
 __Сигнатура__:
 
 ```csharp
@@ -561,23 +560,23 @@ __Параметры__:
 
 * `state` - Состояние вычитки(для последующей дочитки)
 * `LoadingBufferSize` - размер порции
-  
+
 __Сигнатура__:
 
 ```csharp
 public virtual object[][] ReadNext(ref object State, int LoadingBufferSize)
 ```
 
-### ExecuteNonQuery 
+### ExecuteNonQuery
 
 __Назначение__: Выполнить запрос
 
 __Параметры__:
 
-`Query` - текст SQL-запроса 
+`Query` - текст SQL-запроса
 
-__Возвращаемый результат__: количество задетых строк 
- 
+__Возвращаемый результат__: количество задетых строк
+
 __Сигнатура__:
 
 ```csharp

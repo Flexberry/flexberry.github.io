@@ -18,9 +18,8 @@ lang: ru
 * **ICSSoft.STORMNET.Business.LINQProvider.dll** - библиотека, содержащая классы для поддержки LINQ в [Flexberry ORM](fo_flexberry-orm.html).
 * **ICSSoft.STORMNET.Business.LockService.dll** - библиотека, содержащая классы для работы [сервиса блокировок](fo_lock-service.html).
 * **ICSSoft.STORMNET.Business.MSSQLDataService.dll** - библиотека, содержащая классы для [организации отображения структуры реляционных таблиц MS SQL Server (версии 2005 и выше) на объектную модель](fo_data-service.html).
-* **ICSSoft.STORMNET.Business.ODBCDataService.dll**  - библиотека, содержащая классы для работы [ODBCDataService](fo_odbc-data-service.html).
 * **ICSSoft.STORMNET.Business.OracleDataService.dll** - библиотека, содержащая классы для работы [OracleDataService](fo_oracle-data-service.html).
-* **ICSSoft.STORMNET.Business.PostgresDataService.dll** - библиотека, содержащая классы для работы [PostgresDataService](fo_postgres-data-service.html). 
+* **ICSSoft.STORMNET.Business.PostgresDataService.dll** - библиотека, содержащая классы для работы [PostgresDataService](fo_postgres-data-service.html).
 * **ICSSoft.STORMNET.Collections.dll** - библиотека, содержащая вспомогательные базовые структуры для организации коллекций объектов.
 * **ICSSoft.STORMNET.DataObject.dll** - библиотека, содержащая базовые классы для организации [объектной модели](fo_data-object.html), а также основные вспомогательные методы для работы с ними.
 * ICSSoft.STORMNET.Drawing.dll

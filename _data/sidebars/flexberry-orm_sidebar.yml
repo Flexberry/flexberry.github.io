@@ -218,10 +218,6 @@ entries:
       title_ru: Cервис данных для доступа к СУБД Access
       url: /fo_odbc-access-ds.html
       output: web
-    - title: ODBCDataService
-      title_ru: ODBCDataService
-      url: /fo_odbc-data-service.html
-      output: web
     - title: ODBCMySqlDataService
       title_ru: ODBCMySqlDataService
       url: /fo_odbc-mysql-data-service.html
