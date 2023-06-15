@@ -36,7 +36,7 @@ using ICSSoft.STORMNET.FunctionalLanguage.SQLWhere;
 Например:
 
 ![](/images/pages/products/flexberry-orm/query-language/Pol.PNG)
- 
+
 Чтобы наложить ограничение на пол клиента, необходимо составить следующую функцию:
 
 ```csharp
@@ -53,7 +53,7 @@ var onlyMenFunction = ld.GetFunction(ld.funcEQ, new VariableDef(ld.StringType, I
 ### Пример
 
 ```csharp
-//ICSSoft.STORMNET.Windows.Forms.ExternalLangDef (ExternalLangDef.dll)
+//ICSSoft.STORMNET.Windows.Forms.ExternalLangDef (ICSSoft.STORMNET.Business.ExternalLangDef.dll)
 //ICSSoft.STORMNET.Windows.Forms.ExternalLangDeflangdef = ExternalLangDef.LanguageDef;
 using ICSSoft.STORMNET.Windows.Forms;
 
@@ -71,9 +71,9 @@ lcs.LimitFunction = langdef.GetFunction(langdef.funcEQ,
 var onlyDecember = DataServiceProvider.DataService.LoadObjects(lcs);
 
 lcs.LimitFunction = langdef.GetFunction(langdef.funcAND,
-                langdef.GetFunction(langdef.funcEQ, 
+                langdef.GetFunction(langdef.funcEQ,
                     langdef.GetFunction("YearPart", new VariableDef(langdef.DateTimeType, "ДатаВыдачи")), "2012"),
-                langdef.GetFunction(langdef.funcEQ, 
+                langdef.GetFunction(langdef.funcEQ,
                     langdef.GetFunction("MonthPart", new VariableDef(langdef.DateTimeType, "ДатаВыдачи")), "12"));
 
 var onlyDecember2012 = DataServiceProvider.DataService.LoadObjects(lcs);

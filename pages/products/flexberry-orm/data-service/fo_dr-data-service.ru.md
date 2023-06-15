@@ -33,7 +33,7 @@ lang: ru
 
   <unity xmlns="http://schemas.microsoft.com/practices/2010/unity">
     <container>
-     <register name="DRDataService" type="ICSSoft.STORMNET.Business.IDataService, ICSSoft.STORMNET.Business" mapTo="ICSSoft.STORMNET.Business.DRDataService, ICSSoft.STORMNET.Business.DRDataService">
+     <register name="DRDataService" type="ICSSoft.STORMNET.Business.IDataService, ICSSoft.STORMNET.Business" mapTo="ICSSoft.STORMNET.Business.DRDataService, ICSSoft.STORMNET.Business.MSSQLDataService">
         <constructor/>
       </register>
     </container>

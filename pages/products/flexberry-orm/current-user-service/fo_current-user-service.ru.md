@@ -54,7 +54,7 @@ public interface IUser
   <unity xmlns="http://schemas.microsoft.com/practices/2010/unity">
 	  <alias alias="singleton" type="Microsoft.Practices.Unity.ContainerControlledLifetimeManager, Microsoft.Practices.Unity" />
 	  <container>
-		<register type="ICSSoft.Services.CurrentUserService+IUser, ICSSoft.Services.CurrentUserService" mapTo="<Полное имя типа>, <Имя сборки>">
+		<register type="ICSSoft.Services.CurrentUserService+IUser, NewPlatform.Flexberry.ORM.CurrentUserService" mapTo="<Полное имя типа>, <Имя сборки>">
 		  <lifetime type="singleton" />
 		</register>
 	  </container>
@@ -116,7 +116,7 @@ namespace IIS.TryAccessSystem
   <unity xmlns="http://schemas.microsoft.com/practices/2010/unity">
 	  <alias alias="singleton" type="Microsoft.Practices.Unity.ContainerControlledLifetimeManager, Microsoft.Practices.Unity" />
 	  <container>
-		<register type="ICSSoft.Services.CurrentUserService+IUser, ICSSoft.Services.CurrentUserService" mapTo="IIS.TryAccessSystem.ClassOtherUser, TryAccessSystem(Forms)">
+		<register type="ICSSoft.Services.CurrentUserService+IUser, NewPlatform.Flexberry.ORM.CurrentUserService" mapTo="IIS.TryAccessSystem.ClassOtherUser, TryAccessSystem(Forms)">
 		  <lifetime type="singleton" />
 		</register>
 	  </container>
