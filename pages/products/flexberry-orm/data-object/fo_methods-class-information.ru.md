@@ -492,6 +492,7 @@ static public string GetPropertyStorageName(System.Type type, string property, i
 ## Проверка прав на атрибуты объекта
 
 ### CheckAccessToAttribute
+> CheckAccessToAttribute отсутствует в ORM начиная с версии 8.0.
 
 __Назначение__: Проверка прав на атрибуты объекта. Метод является оберткой для метода CheckAccessToAttribute класса `ICSSoft.STORMNET.RightManager` и используется для проверки прав в Get'ерах вычислимых свойств DataObject. Обработка мастеров не проиводится.
 

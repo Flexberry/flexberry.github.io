@@ -495,6 +495,8 @@ A more detailed description of this method can be found in [Information.GetPrope
 
 ### CheckAccessToAttribute 
 
+> CheckAccessToAttribute is no more present in ORM v8.0.
+
 __Assign__: Checking rights to object attributes. The method is a wrapper for the method CheckAccessToAttribute class `ICSSoft.STORMNET.RightManager` and used to verify the rights in Get'erach computable properties of the DataObject. Processing of the masters is not subject to. 
 
 __Settings__: 
