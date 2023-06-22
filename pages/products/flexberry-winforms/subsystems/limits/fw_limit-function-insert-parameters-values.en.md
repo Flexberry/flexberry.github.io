@@ -17,7 +17,7 @@ There limitFunction](fo_limit-function.html) (class `ICSSoft.STORMNET.Functional
 ## Response 
 Let `limitFunction` set function with a parameter @date: 
 ```csharp 
-ExternalLangDef externalLangDef = ExternalLangDef.LanguageDef;
+ExternalLangDef externalLangDef = ExternalLangDef.LanguageDef; // Use of ExternalLangDef.LanguageDef is deprecated. Use constructor instead (new ExternalLangDef(dataService)).
  
  ICSSoft.STORMNET.FunctionalLanguage.Function limitFunction = externalLangDef.GetFunction(
    externalLangDef.funcEQ,

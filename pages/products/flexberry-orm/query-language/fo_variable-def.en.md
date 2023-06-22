@@ -124,7 +124,7 @@ It is obvious that from the point of view of storage of this object model in the
 If in the above example, it is necessary to select customers that have loans for more than 15 years, the code will look as follows:
 
 ``` csharp
-ExternalLangDef ldef = ExternalLangDef.LanguageDef;
+ExternalLangDef ldef = ExternalLangDef.LanguageDef; // Use of ExternalLangDef.LanguageDef is deprecated. Use constructor instead (new ExternalLangDef(dataService)).
 LoadingCustomizationStruct lcsДолгосрочныеКлиенты = LoadingCustomizationStruct.GetSimpleStruct(typeof(Клиент), "Client");
 lcsДолгосрочныеКлиенты.LoadingTypes = new[) { typeof(Клиент) };
 var view = Information.GetView("Loan", typeof(Кредит));

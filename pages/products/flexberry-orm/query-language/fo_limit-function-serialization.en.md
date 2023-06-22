@@ -38,7 +38,7 @@ private void Serialize(bool binary)
     DateTime start = DateTime.Now;
     string fnStr = "";
 
-    ExternalLangDef externalLangDef = ExternalLangDef.LanguageDef;
+    ExternalLangDef externalLangDef = ExternalLangDef.LanguageDef; // Use of ExternalLangDef.LanguageDef is deprecated. Use constructor instead (new ExternalLangDef(dataService)).
     SQLWhereLanguageDef ldef = SQLWhereLanguageDef.LanguageDef;
     Function fn = ldef.GetFunction(
                 ldef.funcAND,

@@ -61,7 +61,7 @@ using ICSSoft.STORMNET.Windows.Forms;
 
 IDataService dataService = DataServiceProvider.DataService; // DataServiceProvider is deprecated; inject IDataService instead
 
-var langdef = ExternalLangDef.LanguageDef;
+var langdef = ExternalLangDef.LanguageDef; // Use of ExternalLangDef.LanguageDef is deprecated. Use constructor instead (new ExternalLangDef(dataService)).
 var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof (Кредит), Кредит.Views.КредитE);
 
 lcs.LimitFunction = langdef.GetFunction(langdef.funcEQ,
@@ -90,7 +90,7 @@ Following are some examples of restrictions:
 ### the Imposition of constraints on the string variable
 
 ```csharp
-var langdef = ExternalLangDef.LanguageDef;
+var langdef = ExternalLangDef.LanguageDef; // Use of ExternalLangDef.LanguageDef is deprecated. Use constructor instead (new ExternalLangDef(dataService)).
 var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof (Личность), Личность.Views.ЛичностьE);
 lcs.LimitFunction = langdef.GetFunction(langdef.funcEQ,
 	            new VariableDef(langdef.StringType, Information.ExtractPropertyPath<Личность>(x => x.Фамилия)), Petrov);
@@ -100,7 +100,7 @@ var клиентыФамилияПетров = DataServiceProvider.DataService.L
 ### the Imposition of limitations on workman the object (the key)
 
 ```csharp
-var langdef = ExternalLangDef.LanguageDef;
+var langdef = ExternalLangDef.LanguageDef; // Use of ExternalLangDef.LanguageDef is deprecated. Use constructor instead (new ExternalLangDef(dataService)).
 var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof (Кредит), Кредит.Views.КредитE);
 lcs.LimitFunction = langdef.GetFunction(langdef.funcEQ,
 	            new VariableDef(langdef.GuidType, Information.ExtractPropertyPath<Кредит>(x => x.Личность)), "64F45BC3-339B-4FBA-A036-C5E9FE9EAE53");

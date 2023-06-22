@@ -11,16 +11,16 @@ lang: ru
 ### Особенности настройки OData-сервиса для ГИС-приложений
 
 ##### Перед использованием необходимо скачать проекты с github:
-[https://github.com/Flexberry/NewPlatform.Flexberry.ORM.GisPostgresDataService](https://github.com/Flexberry/NewPlatform.Flexberry.ORM.GisPostgresDataService) и 
-[https://github.com/Flexberry/NewPlatform.Flexberry.ORM.GisMSSQLDataService](https://github.com/Flexberry/NewPlatform.Flexberry.ORM.GisMSSQLDataService) или загрузить сборки с nuget.org [NewPlatform.Flexberry.ORM.GisPostgresDataService](https://www.nuget.org/packages/NewPlatform.Flexberry.ORM.GisPostgresDataService) и [NewPlatform.Flexberry.ORM.GisMSSQLDataService](https://www.nuget.org/packages/NewPlatform.Flexberry.ORM.GisMSSQLDataService). 
+[https://github.com/Flexberry/NewPlatform.Flexberry.ORM.GisPostgresDataService](https://github.com/Flexberry/NewPlatform.Flexberry.ORM.GisPostgresDataService) и
+[https://github.com/Flexberry/NewPlatform.Flexberry.ORM.GisMSSQLDataService](https://github.com/Flexberry/NewPlatform.Flexberry.ORM.GisMSSQLDataService) или загрузить сборки с nuget.org [NewPlatform.Flexberry.ORM.GisPostgresDataService](https://www.nuget.org/packages/NewPlatform.Flexberry.ORM.GisPostgresDataService) и [NewPlatform.Flexberry.ORM.GisMSSQLDataService](https://www.nuget.org/packages/NewPlatform.Flexberry.ORM.GisMSSQLDataService).
 
-##### После успешной компиляции подключить созданные сборки к проекту. Требуется также версия ODataService не ниже 2.0.1-alpha01. Её можно загрузить с nuget.org [NewPlatform.Flexberry.ORM.ODataService](https://www.nuget.org/packages/NewPlatform.Flexberry.ORM.ODataService/2.0.1-alpha01). 
+##### После успешной компиляции подключить созданные сборки к проекту. Требуется также версия ODataService не ниже 2.0.1-alpha01. Её можно загрузить с nuget.org [NewPlatform.Flexberry.ORM.ODataService](https://www.nuget.org/packages/NewPlatform.Flexberry.ORM.ODataService/2.0.1-alpha01).
 
 ##### Необходимо изменить файл `Web.config`, отредактировав соответствующую строку таким образом для MSSQL сервер:
 ```xml
 <appSettings>
 ...
-  <add key="DataServiceType" 
+  <add key="DataServiceType"
   value="NewPlatform.Flexberry.ORM.GisMSSQLDataService, NewPlatform.Flexberry.ORM.GisMSSQLDataService" />
 ...
 </appSettings>
@@ -29,7 +29,7 @@ lang: ru
 ```xml
 <appSettings>
 ...
-  <add key="DataServiceType" 
+  <add key="DataServiceType"
   value="NewPlatform.Flexberry.ORM.GisPostgresDataService, NewPlatform.Flexberry.ORM.GisPostgresDataService" />
 ...
 </appSettings>
@@ -46,7 +46,7 @@ lang: ru
 ##### В запросе к ODataService
 Фильтрация объектов данных в опции запроса $filter возможна с использованием пользовательской функции `geo.intersects(geography1=geo1, geography2=geo2)` в OData, где "geo1" и "geo2" могут быть как полями объектов данных типа Edm.Geography, так и географически привязанными геометриями заданными в формате EWKT, например так: `geo.intersects(geography1=boundingBox, geography2=geography'SRID=<Код используемой системы координат>;POLYGON(<Координаты полигона>)')`, где `geography` - метод для преобразования строки с координатами в формате EWKT в тип Edm.Geography.
 
-Пример запроса: 
+Пример запроса:
 `http://localhost/odata/КлассСМножествомТиповs?$filter=PropertyInt eq 5 and geo.intersects(geography1=PropertyGeography, geography2=geography'SRID=4326;POINT(3 3)')`.
 
 ##### В запросе к LINQProvider
@@ -67,7 +67,7 @@ lang: ru
 ```
 ##### В запросе с использованием LCS
 ```c#
-    var ldef = ExternalLangDef.LanguageDef;
+    var ldef = ExternalLangDef.LanguageDef; // Использование ExternalLangDef.LanguageDef является устаревшим. Вместо него используйте конструктор (new ExternalLangDef(dataService)).
     var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof (Map), new View(gisView, typeof (Map)));
     lcs.LimitFunction =
         ldef.GetFunction(ldef.funcGeoIntersects, new VariableDef(ldef.GeographyType, "BoundingBox"), geo);

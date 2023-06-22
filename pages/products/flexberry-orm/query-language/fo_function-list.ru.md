@@ -59,7 +59,7 @@ using ICSSoft.STORMNET.Windows.Forms;
 
 IDataService dataService = DataServiceProvider.DataService; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
 
-var langdef = ExternalLangDef.LanguageDef;
+var langdef = ExternalLangDef.LanguageDef; // Использование ExternalLangDef.LanguageDef является устаревшим. Вместо него используйте конструктор (new ExternalLangDef(dataService)).
 var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof (Кредит), Кредит.Views.КредитE);
 
 lcs.LimitFunction = langdef.GetFunction(langdef.funcEQ,
@@ -88,7 +88,7 @@ var onlyDecember2012 = dataService.LoadObjects(lcs);
 ### Наложение ограничений на строковую переменную
 
 ```csharp
-var langdef = ExternalLangDef.LanguageDef;
+var langdef = ExternalLangDef.LanguageDef; // Использование ExternalLangDef.LanguageDef является устаревшим. Вместо него используйте конструктор (new ExternalLangDef(dataService)).
 var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof (Личность), Личность.Views.ЛичностьE);
 lcs.LimitFunction = langdef.GetFunction(langdef.funcEQ,
 	            new VariableDef(langdef.StringType, Information.ExtractPropertyPath<Личность>(x => x.Фамилия)), "Петров");
@@ -98,7 +98,7 @@ var клиентыФамилияПетров = dataService.LoadObjects(lcs);
 ### Наложение ограничений на мастеровой объект (по ключу)
 
 ```csharp
-var langdef = ExternalLangDef.LanguageDef;
+var langdef = ExternalLangDef.LanguageDef; // Использование ExternalLangDef.LanguageDef является устаревшим. Вместо него используйте конструктор (new ExternalLangDef(dataService)).
 var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof (Кредит), Кредит.Views.КредитE);
 lcs.LimitFunction = langdef.GetFunction(langdef.funcEQ,
 	            new VariableDef(langdef.GuidType, Information.ExtractPropertyPath<Кредит>(x => x.Личность)), "64F45BC3-339B-4FBA-A036-C5E9FE9EAE53");
@@ -108,7 +108,7 @@ var кредиты = dataService.LoadObjects(lcs);
 ### Наложение ограничений на мастеровой объект (по полю мастера)
 
 ```csharp
-var langdef = ExternalLangDef.LanguageDef;
+var langdef = ExternalLangDef.LanguageDef; // Использование ExternalLangDef.LanguageDef является устаревшим. Вместо него используйте конструктор (new ExternalLangDef(dataService)).
 var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof (Кредит), Кредит.Views.КредитE);
 lcs.LimitFunction = langdef.GetFunction(langdef.funcEQ,
 	            new VariableDef(langdef.GuidType, Information.ExtractPropertyPath<Кредит>(x => x.Личность.Фамилия)), "Петров");

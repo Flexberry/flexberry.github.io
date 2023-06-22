@@ -31,7 +31,7 @@ The following code assumes that the view `"Servicedisplayname"` always present p
 Required to deduct the servers that belong to a particular Department (i.e., servers that belong to the specified Unit and some will also be proofread).
 
 ```csharp
-ExternalLangDef ldef = ExternalLangDef.LanguageDef;
+ExternalLangDef ldef = ExternalLangDef.LanguageDef; // Use of ExternalLangDef.LanguageDef is deprecated. Use constructor instead (new ExternalLangDef(dataService)).
 LoadingCustomizationStruct lcsСервер = LoadingCustomizationStruct.GetSimpleStruct(typeof (Репликации.Сервер), "Server");
 lcsСервер.LoadingTypes = new Type[] {typeof (Репликации.Сервер)};
 View view = Information.GetView("Servicedisplayname", typeof(Репликации.СерверПодразделения));
@@ -52,7 +52,7 @@ ICSSoft.STORMNET.DataObject[] dobjsСервер = ICSSoft.STORMNET.Business.Data
 You want to subtract only those servers that belong only to one particular Unit (i.e., servers that belong to the specified Division and some will not be proofread).
 
 ```csharp
-ExternalLangDef ldef = ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.LanguageDef;
+ExternalLangDef ldef = ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.LanguageDef; // Use of ExternalLangDef.LanguageDef is deprecated. Use constructor instead (new ExternalLangDef(dataService)).
 LoadingCustomizationStruct lcsСервер = LoadingCustomizationStruct.GetSimpleStruct(typeof (Сервер), "Server");
 lcsСервер.LoadingTypes = new[] {typeof (Сервер)};
 View view = Information.GetView("Servicedisplayname", typeof(Репликации.СерверПодразделения));
@@ -83,7 +83,7 @@ The order of properties in the comparison function applied to detali has a value
  view.AddDetailInView("Computer", view2, true);
  view.AddDetailInView("Computer", view3, true);
  var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Computer), view);
- ExternalLangDef langDef = ExternalLangDef.LanguageDef;
+ ExternalLangDef langDef = ExternalLangDef.LanguageDef; // Use of ExternalLangDef.LanguageDef is deprecated. Use constructor instead (new ExternalLangDef(dataService)).
  var detail1 = new DetailVariableDef(langDef.GetObjectType("Details"), "Hardware", view2, "Computer");
  var detail2 = new DetailVariableDef(langDef.GetObjectType("Details"), "Software", view3, "Computer");
  lcs.LimitFunction = langDef.GetFunction(langDef.funcExistDetails,

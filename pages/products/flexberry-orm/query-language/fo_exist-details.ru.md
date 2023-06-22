@@ -50,7 +50,7 @@ ICSSoft.STORMNET.DataObject[] dobjsСервер = ICSSoft.STORMNET.Business.Data
 Требуется вычитать только те сервера, которые принадлежат только одному конкретному Подразделению (т.е. сервера, которые принадлежат и указанному Подразделению и еще какому-то, не будут вычитаны).
 
 ```csharp
-ExternalLangDef ldef = ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.LanguageDef;
+ExternalLangDef ldef = ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.LanguageDef; // Использование ExternalLangDef.LanguageDef является устаревшим. Вместо него используйте конструктор (new ExternalLangDef(dataService)).
 LoadingCustomizationStruct lcsСервер = LoadingCustomizationStruct.GetSimpleStruct(typeof (Сервер), "СерверE");
 lcsСервер.LoadingTypes = new[] {typeof (Сервер)};
 View view = Information.GetView("СерверПодразделенияE", typeof(Репликации.СерверПодразделения));
@@ -81,7 +81,7 @@ DataObject[] dobjsСервер = DataServiceProvider.DataService.LoadObjects(lcs
  view.AddDetailInView("Computer", view2, true);
  view.AddDetailInView("Computer", view3, true);
  var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Computer), view);
- ExternalLangDef langDef = ExternalLangDef.LanguageDef;
+ ExternalLangDef langDef = ExternalLangDef.LanguageDef; // Использование ExternalLangDef.LanguageDef является устаревшим. Вместо него используйте конструктор (new ExternalLangDef(dataService)).
  var detail1 = new DetailVariableDef(langDef.GetObjectType("Details"), "Hardware", view2, "Computer");
  var detail2 = new DetailVariableDef(langDef.GetObjectType("Details"), "Software", view3, "Computer");
  lcs.LimitFunction = langDef.GetFunction(langDef.funcExistDetails,

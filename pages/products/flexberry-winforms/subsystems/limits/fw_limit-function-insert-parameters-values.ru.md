@@ -15,7 +15,7 @@ lang: ru
 ## Ответ
 Пусть задана функция `limitFunction` с параметром @Дата:
 ```csharp 
-ExternalLangDef externalLangDef = ExternalLangDef.LanguageDef;
+ExternalLangDef externalLangDef = ExternalLangDef.LanguageDef; // Использование ExternalLangDef.LanguageDef является устаревшим. Вместо него используйте конструктор (new ExternalLangDef(dataService)).
  
  ICSSoft.STORMNET.FunctionalLanguage.Function limitFunction = externalLangDef.GetFunction(
    externalLangDef.funcEQ,

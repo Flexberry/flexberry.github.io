@@ -26,7 +26,7 @@ lang: ru
  View view2 = Information.GetView("SoftwareL", typeof(Software));
  view.AddDetailInView("Software", view2, true);
  var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Company), view);
- ExternalLangDef langDef = ExternalLangDef.LanguageDef;
+ ExternalLangDef langDef = ExternalLangDef.LanguageDef; // Использование ExternalLangDef.LanguageDef является устаревшим. Вместо него используйте конструктор (new ExternalLangDef(dataService)).
  var detail = new DetailVariableDef(langDef.GetObjectType("Details"), "Software", view2, "Company");
  lcs.LimitFunction = langDef.GetFunction(langDef.funcExist, detail,
                                          langDef.GetFunction(langDef.funcL,

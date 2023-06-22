@@ -24,7 +24,7 @@ public static Function SubstituteParameters(Function function, IDictionary<strin
 ## Example 
 
 ```csharp
-ExternalLangDef externalLangDef = ExternalLangDef.LanguageDef;
+ExternalLangDef externalLangDef = ExternalLangDef.LanguageDef; // Use of ExternalLangDef.LanguageDef is deprecated. Use constructor instead (new ExternalLangDef(dataService)).
  
  // The bounding function. 
  ICSSoft.STORMNET.FunctionalLanguage.Function limitFunction = externalLangDef.GetFunction(

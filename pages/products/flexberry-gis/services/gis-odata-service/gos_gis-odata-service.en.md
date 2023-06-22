@@ -69,7 +69,7 @@ Example query:
 ``` 
 ##### In the query using LCS 
 ```c#
-    var ldef = ExternalLangDef.LanguageDef;
+    var ldef = ExternalLangDef.LanguageDef; // Use of ExternalLangDef.LanguageDef is deprecated. Use constructor instead (new ExternalLangDef(dataService)).
     var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof (Map), new View(gisView, typeof (Map)));
     lcs.LimitFunction =
         ldef.GetFunction(ldef.funcGeoIntersects, new VariableDef(ldef.GeographyType, "BoundingBox"), geo);
