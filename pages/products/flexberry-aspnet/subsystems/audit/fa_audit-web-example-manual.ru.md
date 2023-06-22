@@ -37,7 +37,7 @@ lang: ru
 <add key="IsAuditDatabaseLocal" value="True" />
 ```
 
-А также 
+А также
 
 ```xml
 <add key="AppNameForAudit" value="..." />
@@ -51,13 +51,14 @@ lang: ru
 В файле `Global.asax.cs` необходимо добавить:
 
 ```csharp
-using ICSSoft.STORMNET.Business.Audit; 
+using ICSSoft.STORMNET.Business.Audit;
 // ...
 
 protected void Application_Start(object sender, EventArgs e)
 {
     // Инициализация сервиса аудита
-    AuditSetter.InitAuditService(BridgeToDS.GetDataService());
+    IServiceProvider serviceProvider; // Используйте внедрение зависимостей чтобы получить IServiceProvider; вместо IServiceProvider можно использовать IUnityContainer
+    var IAuditService = serviceProvider.GetService<IAuditService>(BridgeToDS.GetDataService());
     // ...
 }
 ```

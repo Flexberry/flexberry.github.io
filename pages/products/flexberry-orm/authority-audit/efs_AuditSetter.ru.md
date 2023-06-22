@@ -8,6 +8,7 @@ lang: ru
 ---
 
 # AuditSetter
+> AuditSetter отсутствует в ORM v8.0. Необходимо самостоятельно регистрировать IAuditService через механизм внедрения зависимостей.
 
 `AuditSetter` осуществляет [инициализацию настроек аудита](efs_keep-and-use-audit-settings.html).
 
