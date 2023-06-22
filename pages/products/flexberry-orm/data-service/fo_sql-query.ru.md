@@ -1,7 +1,7 @@
 ---
 title: SQL-запросы в Flexberry
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, сервис данных, база данных, запросы, ограничения, ADO.NET 
+keywords: Flexberry ORM, сервис данных, база данных, запросы, ограничения, ADO.NET
 summary: Описание способов работы с БД и рекомендуемые способы доступа к БД
 toc: true
 permalink: ru/fo_sql-query.html
@@ -40,7 +40,7 @@ lang: ru
 Ниже представлен пример исполнения SQL-запросов через технологию ADO.Net:
 
 ``` csharp
-var connection = (SqlConnection)((SQLDataService)DataServiceProvider.DataService).GetConnection(); // Получение подключения.
+var connection = (SqlConnection)((SQLDataService)DataServiceProvider.DataService).GetConnection(); // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
 var command = new SqlCommand("SELECT SUM(purchase.\"Сумма\") "+
 	" FROM \"Покупатель\" customer join \"Покупка\" purchase on customer.\"primaryKey\" = purchase.\"Покупатель\" "+
 	" WHERE purchase.\"Покупатель\"=@Customer AND  purchase.\"Статус\" = \'Оплачено\' ", connection); //формирование запроса

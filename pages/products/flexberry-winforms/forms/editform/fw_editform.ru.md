@@ -1,5 +1,5 @@
 ---
-title: Формы редактирования (классы со стереотипом editform) 
+title: Формы редактирования (классы со стереотипом editform)
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms, формы, форма редактирования
 summary: Особенности генерации, свойства, атрибуты, методы, интерфейсы формы редактирования, универсальная форма редактирования, использование иерархического списка на форме редактирования, рекомендации
@@ -254,7 +254,7 @@ private void ContainerCloseHandler (object sender, StormNetUI.CloseEventArgs arg
 ```csharp
 Объект oОбъект = new Объект();
 oОбъект.__PrimaryKey = 'чего-то там';
-ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(oОбъект);
+ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(oОбъект); // DataServiceProvider устарел; вместо него используйте внедрение зависимостей
 ICSSoft.STORMNET.UI.BaseIndpdEdit cont = (ICSSoft.STORMNET.UI.BaseIndpdEdit)Activator.CreateInstance(typeof(ОбъектE));
 ICSSoft.STORMNET.UI.ContRunner.RunEditForm(cont);
 cont.Edit(oОбъект, "", "");
@@ -265,7 +265,7 @@ cont.Edit(oОбъект, "", "");
 ```csharp
 Объект oОбъект = new Объект();
 oОбъект.__PrimaryKey = 'чего-то там';
-ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(oОбъект);
+ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(oОбъект); // DataServiceProvider устарел; вместо него используйте внедрение зависимостей
 ICSSoft.STORMNET.UI.BaseIndpdEdit cont = (ICSSoft.STORMNET.UI.BaseIndpdEdit)Activator.CreateInstance(typeof(ОбъектE));
 ICSSoft.STORMNET.UI.ContRunner.RunEditForm(cont);
 cont.SaveEvent += (sr, ea) => { new BusinessService().UpdateObject(ea.dataobject); };

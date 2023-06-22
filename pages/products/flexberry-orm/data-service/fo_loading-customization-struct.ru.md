@@ -65,7 +65,7 @@ lcs.LimitFunction = <Объект типа ICSSoft.STORMNET.FunctionalLanguage.F
 6. Сделать запрос к серверу, используя метод [`LoadObjects` сервиса данных](fo_data-service.html)
 
 ``` csharp
-var credits = DataServiceProvider.DataService.LoadObjects(lcs).Cast<Кредит>();
+var credits = DataServiceProvider.DataService.LoadObjects(lcs).Cast<Кредит>(); // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
 ```
 
 ## Пример

@@ -26,7 +26,7 @@ You want to check the uniqueness of the entered credit card number.
 Code using [LinqProvider](fo_linq-provider.html):
 
 ```csharp
-var ds = (SQLDataService)DataServiceProvider.DataService;
+var ds = (SQLDataService)DataServiceProvider.DataService; // DataServiceProvider is deprecated; inject IDataService instead
 var кредитныеКарты = ds.Query<КредитнаяКарта>(КредитнаяКарта.Views.КредитнаяКартаE)
                      .Count(k => k.Клиент.__PrimaryKey == UpdatedObject.Клиент.__PrimaryKey 
                               && k.Номер == UpdatedObject.Номер);
@@ -37,7 +37,7 @@ Thus, in the variable `кредитныеКарты` is the amount of the desire
 We should Refine the condition by adding a comparison with the current map, using `LinqProvider`:
 
 ```csharp
-var ds = (SQLDataService)DataServiceProvider.DataService;
+var ds = (SQLDataService)DataServiceProvider.DataService; // DataServiceProvider is deprecated; inject IDataService instead
 var кредитныеКарты = ds.Query<КредитнаяКарта>(КредитнаяКарта.Views.КредитнаяКартаE)
                      .Count(k => k.Клиент.__PrimaryKey == UpdatedObject.Клиент.__PrimaryKey 
                               && k.Номер == UpdatedObject.Номер

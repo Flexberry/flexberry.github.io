@@ -24,9 +24,9 @@ lang: ru
 Код с применением [LinqProvider](fo_linq-provider.html):
 
 ```csharp
-var ds = (SQLDataService)DataServiceProvider.DataService;
+var ds = (SQLDataService)DataServiceProvider.DataService; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
 var кредитныеКарты = ds.Query<КредитнаяКарта>(КредитнаяКарта.Views.КредитнаяКартаE)
-                     .Count(k => k.Клиент.__PrimaryKey == UpdatedObject.Клиент.__PrimaryKey 
+                     .Count(k => k.Клиент.__PrimaryKey == UpdatedObject.Клиент.__PrimaryKey
                               && k.Номер == UpdatedObject.Номер);
 ```
 
@@ -35,9 +35,9 @@ var кредитныеКарты = ds.Query<КредитнаяКарта>(Кре
 Следует доработать условие, добавив сравнение с текущей картой, используя `LinqProvider`:
 
 ```csharp
-var ds = (SQLDataService)DataServiceProvider.DataService;
+var ds = (SQLDataService)DataServiceProvider.DataService; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
 var кредитныеКарты = ds.Query<КредитнаяКарта>(КредитнаяКарта.Views.КредитнаяКартаE)
-                     .Count(k => k.Клиент.__PrimaryKey == UpdatedObject.Клиент.__PrimaryKey 
+                     .Count(k => k.Клиент.__PrimaryKey == UpdatedObject.Клиент.__PrimaryKey
                               && k.Номер == UpdatedObject.Номер
                               && k.__primaryKey != UpdatedObject.__PrimaryKey);
 ```

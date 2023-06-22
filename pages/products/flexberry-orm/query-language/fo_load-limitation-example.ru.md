@@ -28,7 +28,7 @@ LoadingCustomizationStruct lcs = new LoadingCustomizationStruct(null);
 lcs.View = CD.Views.CD_E;
 lcs.LoadingTypes = new[] { typeof(CDDA), typeof(CDDD), typeof(DVD) };
 
-// Ограничение, использующие свойства классов, на которые ссылается класс CS. Могут быть использованы те свойства, 
+// Ограничение, использующие свойства классов, на которые ссылается класс CS. Могут быть использованы те свойства,
 // которые указаны в представлении, по которому производится загрузка объектов.
 lcs.LimitFunction = ld.GetFunction(ld.funcEQ,
     new VariableDef(ld.StringType, Information.ExtractPropertyPath<CD>(c => c.Publisher.Country.Name)), "USA");
@@ -45,12 +45,14 @@ stopwatch.Start();
 // 1. Загрузить из БД записи и для каждой из них создать экземпляр объекта данных.
 ICSSoft.STORMNET.DataObject[] objs = DataServiceProvider.DataService.LoadObjects(lcs);
 
-// 2. Загрузить без создания экземпляров (каждый объект представлен в виде строки из значений свойств с разделителями). 
+// 2. Загрузить без создания экземпляров (каждый объект представлен в виде строки из значений свойств с разделителями).
 // Используется, когда не требуется редактирование объектов. Он намного быстрее!
 ObjectStringDataView[] stringedview = DataServiceProvider.DataService.LoadStringedObjectView(';', lcs);
 
 // 3. Получить количество объектов, без загрузки данных.
 int iObjsCount = DataServiceProvider.DataService.GetObjectsCount(lcs);
+
+// P.S. С версии ORM 8.0 DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
 
 stopwatch.Stop();
 Console.WriteLine("Time taken for all loadings: {0} ms.", stopwatch.ElapsedMilliseconds);

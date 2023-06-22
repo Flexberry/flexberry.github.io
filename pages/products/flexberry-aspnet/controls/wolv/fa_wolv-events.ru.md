@@ -30,7 +30,7 @@ public class WolvEventArgs : CancelEventArgs
 
 * Есть возможность настроить своё сообщение для пользователей после удаления объекта. Для формирования сообщения можно использовать список удаленных объектов и
   список объектов, которые не удалось удалить.
-* Также есть возможность передавать статус удаления меду событиями начала удаления и окончания удаления. 
+* Также есть возможность передавать статус удаления меду событиями начала удаления и окончания удаления.
 
 ## Аргументы событий
 
@@ -101,18 +101,18 @@ private List<object> _deletingObjectsCollection = new List<object>();
 
 // Данный обработчик будет последовательно вызван для каждого объекта, выбранного на удаление.
 protected void WebObjectListView1_ObjectDeleting(WebObjectListView sender, WolvObjectDeletingEventArgs args)
-{   
+{
     // Помечаем пришедший объект на удаление (в данном примере это будет адрес медицинского учреждения).
     args.DataObj.SetStatus(ICSSoft.STORMNET.ObjectStatus.Deleted);
     try
     {   // Пытаемся удалить (дальнейшая обработка происходит в Бизнес-сервере АдресБС.cs).
         // Если во время удаления произойдет ошибка, мы сможем ее обработать в блоке catch.
         // Если АдресБС.cs найдет учреждения, ссылающиеся на удаляемый адрес, он кинет ConfirmAdresDeletingException.
-        ICSSoft.STORMNET.Business.DataServiceProvider.DataService.UpdateObject(args.DataObj);
+        ICSSoft.STORMNET.Business.DataServiceProvider.DataService.UpdateObject(args.DataObj); // DataServiceProvider устарел; вместо него используйте внедрение зависимостей
     }
     // Обрабатываем исключение бизнес-сервера
     catch (ConfirmAdresDeletingException ex)
-    {   
+    {
         // Если мы попали в этот участок кода, значит были обнаружены объекты ссылающиеся на удаляемый адрес.
         // Требуется подтверждение каскадного удаления.
         // Запоминаем информацию о ссылках на удаляемый адрес. После перезагрузки страницы, её заберёт клиентский код.
@@ -150,7 +150,7 @@ public virtual ICSSoft.STORMNET.DataObject[] OnUpdateАдрес(IIS.MedicalInsti
     if (UpdatedObject.GetStatus() == ObjectStatus.Deleted)
     {
         //Получим список учреждений ссылающихся на удаляемый адрес
-        var ds = (SQLDataService)DataServiceProvider.DataService;
+        var ds = (SQLDataService)DataServiceProvider.DataService; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей
         МедицинскоеУчреждение[] mil = ds.Query<МедицинскоеУчреждение>(МедицинскоеУчреждение.Views.MIG_МедицинскоеУчреждениеE)
             .Where(o => o.Адрес.__PrimaryKey == UpdatedObject.__PrimaryKey)
             .ToArray();
@@ -176,7 +176,7 @@ public virtual ICSSoft.STORMNET.DataObject[] OnUpdateАдрес(IIS.MedicalInsti
                 string referencedObjects = String.Join(", ", mil.Select(o => String.Format("'{0}'", o.Название)));
                 //Прерываем удаление, отправив в обработчик удаления, сообщения о ссылающихся объектах
                 //Метод UpdatedObject.ToString(true) просто возвращает строку с адресом, например "Россия, Пермский край, Пермь, Братьев Игнатовых, 2"
-                throw new MIG_ConfirmAdresDeletingException(String.Format("Вы уверены, что хотите удалить адрес: '{0}'? На него ссылаются следующие медицинские учреждения: {1}. 
+                throw new MIG_ConfirmAdresDeletingException(String.Format("Вы уверены, что хотите удалить адрес: '{0}'? На него ссылаются следующие медицинские учреждения: {1}.
                     Они так же будут удалены вместе с информацией об их телефонах и расходах.",
                     UpdatedObject.ToString(true),
                     referencedObjects));
@@ -199,8 +199,8 @@ public virtual ICSSoft.STORMNET.DataObject[] OnUpdateАдрес(IIS.MedicalInsti
     <_script type="text/javascript">
         //Клиенская обработка каскадного удаления адресов и ссылающихся, на них, объектов
         $(document).ready(function () {
-            //Забираем с сервера (через публичное свойство DeletingObjects)сериализованную строку JSON формата вида 
-            //"[{"objectPK": "Строковое представление первичного ключа удаляемого адреса", 
+            //Забираем с сервера (через публичное свойство DeletingObjects)сериализованную строку JSON формата вида
+            //"[{"objectPK": "Строковое представление первичного ключа удаляемого адреса",
             // "confirmMessage": "Текст сообщения о ссылающихся, на адрес, объектах"}, ...]" и десериализуем её
             var deletingObjects = $.parseJSON("<%=DeletingObjects%>");
             //Выполняем обработку, только если хотя бы для одного адреса требуется каскадное удаление
@@ -228,7 +228,7 @@ public virtual ICSSoft.STORMNET.DataObject[] OnUpdateАдрес(IIS.MedicalInsti
                     callback: function (res) {
                         if (res) {
                             //При нажатии OK.
-                            //Инициируем PostBack, передав, в качестве аргумента, 
+                            //Инициируем PostBack, передав, в качестве аргумента,
                             //строку JSON формата с первичными ключами удалямых адресов.
                             //'confirmDeletingOkBtn' - имя кнопки на окне подтверждения, которая инициирует PostBack.
                             __doPostBack('confirmDeletingOkBtn', deletingObjectsPK);
@@ -257,7 +257,7 @@ protected override void Preload()
     // *** Start programmer edit section *** (PostBack handling)
     if (Page.IsPostBack)
     {
-        //Обрабатываем случай, когда PostBack произошел при подтверждении, пользователем, 
+        //Обрабатываем случай, когда PostBack произошел при подтверждении, пользователем,
         //каскадного удаления выбранных адресов и ссылающихся, на них, объектов.
 
         //Получаем имя объекта вызвавшего PostBack
@@ -287,7 +287,7 @@ protected override void Preload()
                     return deletingAdres;
                 }).ToArray<Адрес>();
                 //Удаляем. (Дальнейшая обработка происходит в АдресБС)
-                DataServiceProvider.DataService.UpdateObjects(ref deletingAdreses);
+                DataServiceProvider.DataService.UpdateObjects(ref deletingAdreses); // DataServiceProvider устарел; вместо него используйте внедрение зависимостей
             }
         }
     }

@@ -19,7 +19,7 @@ lang: ru
 ```csharp
 Console.WriteLine("2. How to load dataobject in specific view, change it\'s property, then persist. Object status and loading state.");
 
-IDataService dataService = DataServiceProvider.DataService;
+IDataService dataService = DataServiceProvider.DataService; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
 
 // Инициализация вспомогательного объекта, с помощью которого мы получим первичный ключ произвольного объекта
 // заданного типа.
@@ -45,7 +45,7 @@ stopwatch.Start();
 
 // Сохранение объекта. Обновляются только загруженные свойства.
 dataService.UpdateObject(cdda);
-            
+
 stopwatch.Stop();
 Console.WriteLine("Time taken for persistence: {0} ms.", stopwatch.ElapsedMilliseconds);
 ```

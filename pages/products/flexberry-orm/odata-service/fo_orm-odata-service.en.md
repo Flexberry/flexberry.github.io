@@ -227,7 +227,7 @@ public static void Register(HttpConfiguration config)
     config.DependencyResolver = new UnityDependencyResolver(container);
 
     // The most important thing for the ODataService to know what data service is used. You can register here or on the web.config in the section Unity. 
-    container.RegisterInstance(DataServiceProvider.DataService);
+    container.RegisterInstance(DataServiceProvider.DataService); // DataServiceProvider is deprecated; inject IDataService instead
 
     try
     {
@@ -263,7 +263,7 @@ public static void Register(HttpConfiguration config)
 /// <returns></returns> 
 private static object GetLastRoundIdForTopic(ODataFunctions.QueryParameters queryParameters, Dictionary<string, object> parameters)
 {
-    ApplicationLogicBS bs = new ApplicationLogicBS { DataService = DataServiceProvider.DataService };
+    ApplicationLogicBS bs = new ApplicationLogicBS { DataService = DataServiceProvider.DataService }; // DataServiceProvider is deprecated; inject IDataService instead
     return bs.GetLastRoundIdForTopic((string)parameters["topicId"]);
 }
 ```
@@ -473,7 +473,7 @@ public static void Register(HttpConfiguration config, IUnityContainer container,
 /// <returns></returns> 
 private static IEnumerable<DataObject> FunctionWithLcs1(QueryParameters queryParameters, string entitySet)
 {
-    SQLDataService dataService = DataServiceProvider.DataService as SQLDataService;
+    SQLDataService dataService = DataServiceProvider.DataService as SQLDataService; // DataServiceProvider is deprecated; inject IDataService instead
     var type = queryParameters.GetDataObjectType(entitySet);
     var lcs = queryParameters.CreateLcs(type);
     var dobjs = dataService.LoadObjects(lcs);
@@ -489,7 +489,7 @@ private static IEnumerable<DataObject> FunctionWithLcs1(QueryParameters queryPar
 /// <returns></returns> 
 private static int FunctionWithLcs2(QueryParameters queryParameters, string entitySet, string query)
 {
-    SQLDataService dataService = DataServiceProvider.DataService as SQLDataService;
+    SQLDataService dataService = DataServiceProvider.DataService as SQLDataService; // DataServiceProvider is deprecated; inject IDataService instead
     var type = queryParameters.GetDataObjectType(entitySet);
     var uri = $"http://a/b/c?{query}";
     var lcs = queryParameters.CreateLcs(type, uri);
@@ -542,7 +542,7 @@ public static void Register(HttpConfiguration config, IUnityContainer container,
 /// <returns></returns> 
 private static IEnumerable<DataObject> ActionWithLcs(QueryParameters queryParameters, string entitySet, string query)
 {
-    SQLDataService dataService = DataServiceProvider.DataService as SQLDataService;
+    SQLDataService dataService = DataServiceProvider.DataService as SQLDataService; // DataServiceProvider is deprecated; inject IDataService instead
     var type = queryParameters.GetDataObjectType(entitySet);
     var uri = $"http://a/b/c?{query}";
     var lcs = queryParameters.CreateLcs(type, uri);
@@ -598,7 +598,7 @@ public static void Register(HttpConfiguration config, IUnityContainer container,
 /// <returns></returns> 
 private static Страна[] FunctionExportExcel(QueryParameters queryParameters, string entitySet)
 {
-    SQLDataService dataService = DataServiceProvider.DataService as SQLDataService;
+    SQLDataService dataService = DataServiceProvider.DataService as SQLDataService; // DataServiceProvider is deprecated; inject IDataService instead
     Type type = queryParameters.GetDataObjectType(entitySet);
     LoadingCustomizationStruct lcs = queryParameters.CreateLcs(type);
     Страна[] dobjs = dataService.LoadObjects(lcs).Cast<Страна>().ToArray();

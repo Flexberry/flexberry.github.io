@@ -35,7 +35,7 @@ private System.Nullable<System.DateTime> fRelease = System.DateTime.Now;
 
 ### Синонимы типов
 
-Для [синонимов типов](fd_typedef.html) задание значения по умолчанию на диаграмме классов происходит аналогично тому, как это происходит у типов, синонимами которых они являются. 
+Для [синонимов типов](fd_typedef.html) задание значения по умолчанию на диаграмме классов происходит аналогично тому, как это происходит у типов, синонимами которых они являются.
 
 ## Задание значения по умолчанию в программном коде
 
@@ -65,13 +65,13 @@ public class WinformC__ПациентE : ICSSoft.STORMNET.UI.BaseWinEdit, IIS.BS
 public class Пациент : ICSSoft.STORMNET.DataObject
 {
 	private fФИО = "ФИОПациента"; //установка значения по умолчанию
-	public string ФИО 
+	public string ФИО
 	{
 		get
 		{
 			return fФИО;
 		}
-		
+
 		set
 		{
 			fФИО = value;
@@ -90,8 +90,8 @@ public class WinformC__ЗаписьНаПриёмE : ICSSoft.STORMNET.UI.BaseWin
 	private void WinformC__ЗаписьНаПриёмE_DataObjectOnFormLoaded(object sender, EventArgs e)
 	{
 		//определяем, какие бизнес-сервера определены для объекта типа "ЗаписьНаПриём"
-		BusinessServer[] businessServers = BusinessServerProvider.GetBusinessServer(typeof(ЗаписьНаПриём), DataServiceObjectEvents.OnAllEvents, DataServiceProvider.DataService);
-		if (businessServers.Length>0) 
+		BusinessServer[] businessServers = BusinessServerProvider.GetBusinessServer(typeof(ЗаписьНаПриём), DataServiceObjectEvents.OnAllEvents, DataServiceProvider.DataService); // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
+		if (businessServers.Length>0)
 		{
 			TestBS curBS = (TestBS) businessServers[0]; //берём первый и единственный (в данном случае единственный)
 			curBS.InitializeRecord(this.DataObject as ЗаписьНаПриём); //задаём значения по умолчанию

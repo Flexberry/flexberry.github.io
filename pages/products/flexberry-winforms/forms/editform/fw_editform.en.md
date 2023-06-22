@@ -149,12 +149,12 @@ However, by default generates a separate form to display a hierarchy (in this ca
 * Add to the form in Designer `Form Fields`:
 
 ```csharp
-// *** Start programmer edit section *** (Form Designer Fields) 
+// *** Start programmer edit section *** (Form Designer Fields)
 
-  //... 
+  //...
   private ICSSoft.STORMNET.Windows.Forms.ObjectHierarchicalView objectHierarchicalView1;
 
-// *** End programmer edit section *** (Form Designer Fields) 
+// *** End programmer edit section *** (Form Designer Fields)
 ```
 
 * Next, you should amend `InitializeComponent`.
@@ -167,12 +167,12 @@ For correct display `ObjectHierarchicalView` need to set all the properties of t
  private void InitializeComponent()
 {
   System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WinformTestHierarchicalForm));
-  //... 
+  //...
   this.objectHierarchicalView1 = new ICSSoft.STORMNET.Windows.Forms.ObjectHierarchicalView();
 
-  // 
-  // objectHierarchicalView1 
-  // 
+  //
+  // objectHierarchicalView1
+  //
   this.objectHierarchicalView1.AdvansedColumns = null;
   this.objectHierarchicalView1.AdvansedMarks = false;
   this.objectHierarchicalView1.AllowSorting = true;
@@ -187,7 +187,7 @@ For correct display `ObjectHierarchicalView` need to set all the properties of t
   this.objectHierarchicalView1.FillDataOnLoadUserAllowed = true;
   this.objectHierarchicalView1.GrayedOnLoad = true;
   this.objectHierarchicalView1.HideToolBar = false;
-  this.objectHierarchicalView1.HierarchicalMasterName = Hierarchy; //The name of the workman of the object specified in the HierarchicalMaster list form*. 
+  this.objectHierarchicalView1.HierarchicalMasterName = Hierarchy; //The name of the workman of the object specified in the HierarchicalMaster list form*.
   this.objectHierarchicalView1.Limit = null;
   this.objectHierarchicalView1.LoadingPackageSize = 500;
   this.objectHierarchicalView1.Location = new System.Drawing.Point(10, 100);
@@ -213,7 +213,7 @@ For correct display `ObjectHierarchicalView` need to set all the properties of t
   this.objectHierarchicalView1.UseHotkeyForEdit = true;
   this.objectHierarchicalView1.UseLimitFunctionExtension = false;
   this.objectHierarchicalView1.UseToolBar = null;
-  this.objectHierarchicalView1.ViewName = "ТерриторияL";//The view name that is used in a hierarchical list. 
+  this.objectHierarchicalView1.ViewName = "ТерриторияL";//The view name that is used in a hierarchical list.
 ```
 
 ## Recommendations for improvement of forms edit
@@ -256,7 +256,7 @@ Call edit form
 ```csharp
 Объект oОбъект = new Объект();
 oОбъект.__PrimaryKey = 'чего-то там';
-ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(oОбъект);
+ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(oОбъект); // DataServiceProvider is deprecated; inject IDataService instead
 ICSSoft.STORMNET.UI.BaseIndpdEdit cont = (ICSSoft.STORMNET.UI.BaseIndpdEdit)Activator.CreateInstance(typeof(ОбъектE));
 ICSSoft.STORMNET.UI.ContRunner.RunEditForm(cont);
 cont.Edit(oОбъект, "", "");
@@ -267,7 +267,7 @@ If you want the functionality to preserve object when pressing on the button "Sa
 ```csharp
 Объект oОбъект = new Объект();
 oОбъект.__PrimaryKey = 'чего-то там';
-ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(oОбъект);
+ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(oОбъект); // DataServiceProvider is deprecated; inject IDataService instead
 ICSSoft.STORMNET.UI.BaseIndpdEdit cont = (ICSSoft.STORMNET.UI.BaseIndpdEdit)Activator.CreateInstance(typeof(ОбъектE));
 ICSSoft.STORMNET.UI.ContRunner.RunEditForm(cont);
 cont.SaveEvent += (sr, ea) => { new BusinessService().UpdateObject(ea.dataobject); };
@@ -289,28 +289,28 @@ arr.Add(new ICSSoft.STORMNET.UI.ContRunner(typeof(IIS.LimitsTesting_Blog.LTB_Б�
 Parameter in list form gets in the method `Activate(object tag)`. You should pay attention to the number of parameters in the overloaded method `OnNewEvent()`. You should overload a method with two parameters but call it method three. Default object creation occurs without the transfer of the tag.
 
 ```csharp
-// *** Start programmer edit section *** (LTB_БлогL CustomMembers) 
+// *** Start programmer edit section *** (LTB_БлогL CustomMembers)
 private object _tagFromRunner;
 
 public override void Activate(object tag)
 {
     _tagFromRunner = tag;
-    // MessageBox.Show("Activate" (tag??"<empty>")); 
+    // MessageBox.Show("Activate" (tag??"<empty>"));
     base.Activate(tag);
 }
 
 protected override void OnNewEvent(Type dataobjecttype, string contpath)
 {
-    // MessageBox.Show("OnNewEvent"); 
+    // MessageBox.Show("OnNewEvent");
     base.OnNewEvent(dataobjecttype, contpath, _tagFromRunner);
 }
 
 protected override void OnEditEvent(string propertyname, ICSSoft.STORMNET.DataObject dataobject, string contpath, object tag)
 {
-    // MessageBox.Show("OnEditEvent" (tag ?? "<empty>")); 
+    // MessageBox.Show("OnEditEvent" (tag ?? "<empty>"));
     base.OnEditEvent(propertyname, dataobject, contpath, _tagFromRunner);
 }
-// *** End programmer edit section *** (LTB_БлогL CustomMembers) 
+// *** End programmer edit section *** (LTB_БлогL CustomMembers)
 ```
 
 ### Receiving option on the edit form
@@ -318,13 +318,13 @@ protected override void OnEditEvent(string propertyname, ICSSoft.STORMNET.DataOb
 In the method `Edit` with the largest number of options comes the same tag.
 
 ```csharp
-// *** Start programmer edit section *** (WinformLTB_БлогE CustomMembers) 
+// *** Start programmer edit section *** (WinformLTB_БлогE CustomMembers)
 public override void Edit(ICSSoft.STORMNET.DataObject dataobject, string contpath, string propertyname, object tag)
 {
-    // MessageBox.Show("Blog tag:" (tag??"<empty>")); 
+    // MessageBox.Show("Blog tag:" (tag??"<empty>"));
     base.Edit(dataobject, contpath, propertyname, tag);
 }
-// *** End programmer edit section *** (WinformLTB_БлогE CustomMembers) 
+// *** End programmer edit section *** (WinformLTB_БлогE CustomMembers)
 ```
 
 ## Related articles

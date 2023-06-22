@@ -67,7 +67,7 @@ lcs.LimitFunction = <Объект типа ICSSoft.STORMNET.FunctionalLanguage.F
 6. To make a request to the server, using the method of [`LoadObjects` data service](fo_data-service.html) 
 
 ``` csharp
-var credits = DataServiceProvider.DataService.LoadObjects(lcs).Cast<Кредит>();
+var credits = DataServiceProvider.DataService.LoadObjects(lcs).Cast<Кредит>(); // DataServiceProvider is deprecated; inject IDataService instead
 ``` 
 
 ## Example 

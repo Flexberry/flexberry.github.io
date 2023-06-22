@@ -66,7 +66,7 @@ The method returns `IQueryable` that you can pass the query by using the methods
 using ICSSoft.STORMNET.Business;
 using ICSSoft.STORMNET.Business.LINQProvider;
 //... 
-var ds = (SQLDataService)DataServiceProvider.DataService; // The data service. 
+var ds = (SQLDataService)DataServiceProvider.DataService; // DataServiceProvider is deprecated; inject IDataService instead
 Кошка cat = ds.Query<Кошка>(Кошка.Views.КошкаE).First(o => o.Кличка.Contains("Osh")); // Get the object. 
 Console.WriteLine(cat.Кличка); //Use. 
 ``` 
@@ -77,7 +77,7 @@ Console.WriteLine(cat.Кличка); //Use.
 using ICSSoft.STORMNET.Business;
 using ICSSoft.STORMNET.Business.LINQProvider;
 //... 
-var ds = (SQLDataService)DataServiceProvider.DataService; // The data service. 
+var ds = (SQLDataService)DataServiceProvider.DataService; // DataServiceProvider is deprecated; inject IDataService instead
 Кошка cat = ds.Query<Кошка>(Кошка.Views.КошкаE).Where(o => o.Кличка.Contains("Osh")).Take(1).FirstOrDefault(); // Get the object. 
 Console.WriteLine(cat.Кличка); //Use. 
 ``` 
@@ -88,7 +88,7 @@ Console.WriteLine(cat.Кличка); //Use.
 using ICSSoft.STORMNET.Business;
 using ICSSoft.STORMNET.Business.LINQProvider;
 //... 
-var ds = (SQLDataService)DataServiceProvider.DataService; // The data service. 
+var ds = (SQLDataService)DataServiceProvider.DataService; // DataServiceProvider is deprecated; inject IDataService instead
 IQueryable<Кошка> objs = ds.Query<Кошка>(Кошка.Views.КошкаE); 
 IQueryable<Кошка> query = from o in objs where o.PrimaryKey == "6211E0DE-3E7A-4A68-866A-AB206A005B1C" select o; // Get the cats on a given key value. 
 List<Кошка> data = query.ToList(); // Subtract data to the collection. 
@@ -98,7 +98,7 @@ Console.WriteLine(data[0).Кличка); // Use the received data.
 #### the Following code is equivalent to the previous 
 
 ``` csharp
-var ds = (SQLDataService)DataServiceProvider.DataService; // The data service. 
+var ds = (SQLDataService)DataServiceProvider.DataService; // DataServiceProvider is deprecated; inject IDataService instead
 IQueryable<Кошка> objs = ds.Query<Кошка>(Кошка.Views.КошкаE).Where(o => o.PrimaryKey == "6211E0DE-3E7A-4A68-866A-AB206A005B1C"); // Get the cats on a given key value. 
 List<Кошка> data = objs.ToList(); // Subtract data to the collection. 
 Console.WriteLine(data[0).Кличка); // Use the received data. 

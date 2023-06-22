@@ -19,7 +19,7 @@ To perform batch reading should:
 * Perform follow-up pochityvaya as. 
 
 ``` csharp
-IDataService ds = DataServiceProvider.DataService;
+IDataService ds = DataServiceProvider.DataService; // DataServiceProvider is deprecated; inject IDataService instead
 LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Автор), Автор.Views.Главное);					
 lcs.LoadingBufferSize = 1; // The batch size. 
 object state = null; // Return state of data service. 

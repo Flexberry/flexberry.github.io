@@ -165,7 +165,7 @@ public override void Edited(ICSSoft.STORMNET.DataObject dataobject, string contp
             {
                 ДежурнаяГруппаСмены ДежГрСмены = (ДежурнаяГруппаСмены)ДежурныеГруппыСмены.EditManager.DataObject;
                 ДежурнаяГруппа ДежГр = ((ЧленДежурнойГруппы)dataobject).ДежураяГруппа;
-                ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject("ДежурнаяГруппаE", ДежГр);
+                ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject("ДежурнаяГруппаE", ДежГр); // DataServiceProvider устарел; вместо него используйте внедрение зависимостей
                 ДежГрСмены.НомерГруппы = ДежГр.НомерГруппы;
                 ДежГрСмены.ТипДежурнойГруппы = ДежГр.ТипДежурнойГруппы;
                 ДежГрСмены.Руководитель = ДежГр.Руководитель;

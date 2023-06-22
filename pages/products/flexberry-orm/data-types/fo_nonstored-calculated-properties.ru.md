@@ -32,7 +32,7 @@ public virtual string FullName
 Эквивалентный этому выражению код на C# написан в геттере свойства.
 
 ```csharp
-IDataService dataService = DataServiceProvider.DataService;
+IDataService dataService = DataServiceProvider.DataService; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
 LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Person), Person.Views.Person_E);
 
 // Загрузить все объекты данных. Нехранимое свойство будет вычислено с помощью выражения в геттере.

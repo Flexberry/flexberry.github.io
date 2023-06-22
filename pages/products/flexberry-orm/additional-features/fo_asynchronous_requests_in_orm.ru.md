@@ -36,7 +36,7 @@ __Дополнительные параметры__
 
 ```csharp
 using ICSSoft.STORMNET.Business;
-var DS = DataServiceProvider.DataService as SQLDataService;
+var DS = DataServiceProvider.DataService as SQLDataService; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей
 
 // объект для загрузки
 var userToLoad = new Пользователь();

@@ -19,7 +19,7 @@ Instance DRDataService can be obtained through [UnityFactory](fo_unity-factory.h
 ```csharp
  IUnityContainer container = UnityFactory.CreateContainer();
  IDataService dataService = container.Resolve<IDataService>("DRDataService");
- dataService.CustomizationString = DataServiceProvider.DataService.CustomizationString;
+ dataService.CustomizationString = DataServiceProvider.DataService.CustomizationString; // DataServiceProvider is deprecated; inject IDataService instead
 ```
 
 ## Configure DataService

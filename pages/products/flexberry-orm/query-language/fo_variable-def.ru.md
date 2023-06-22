@@ -136,5 +136,5 @@ var dvd = new DetailVariableDef
 lcsДолгосрочныеКлиенты.LimitFunction = ldef.GetFunction(ldef.funcExist, dvd,
                                                         ldef.GetFunction(ldef.funcGEQ,
                                                         new VariableDef(ldef.GuidType, "СрокКредита"), 15));
-ICSSoft.STORMNET.DataObject[) dobjsДолгосрочныеКлиенты = DataServiceProvider.DataService.LoadObjects(lcsДолгосрочныеКлиенты);
+ICSSoft.STORMNET.DataObject[) dobjsДолгосрочныеКлиенты = DataServiceProvider.DataService.LoadObjects(lcsДолгосрочныеКлиенты); // DataServiceProvider устарел; вместо него используйте внедрение зависимостей
 ```

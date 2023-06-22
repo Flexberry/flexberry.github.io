@@ -33,7 +33,7 @@ Expression is Empty/is nonempty can be applied to:
 If you have a class with a property `Кредит` `СуммаКредита` real type, the translation in [LINQProvider|LinqProvider) it will be presented as follows:
 
 ``` csharp
-var ds = (SQLDataService)DataServiceProvider.DataService;
+var ds = (SQLDataService)DataServiceProvider.DataService; // DataServiceProvider is deprecated; inject IDataService instead
 IQueryable<Кредит> limit = ds.Query<Кредит>(Кредит.Views.C__КредитE).Where(x => (x.СуммаКредита as object) == null);
 ```
 

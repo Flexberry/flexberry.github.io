@@ -23,7 +23,7 @@ lang: ru
 ```csharp
 Console.WriteLine("5. Create a dataobject with multiple details.");
 
-// Создаем объект данных, у которого несколько детейловых свойств. 
+// Создаем объект данных, у которого несколько детейловых свойств.
 D0 aggregator = new D0();
 
 // Вызываем метод генерации детейловых объектов. Код метода приведен ниже.
@@ -36,7 +36,7 @@ Stopwatch stopwatch = new Stopwatch();
 stopwatch.Start();
 
 // Объекты будут сохранены в порядке, соответствующем связям между ними (от корня до кончиков).
-DataServiceProvider.DataService.UpdateObject(aggregator);
+DataServiceProvider.DataService.UpdateObject(aggregator); // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
 
 stopwatch.Stop();
 Console.WriteLine("Time taken for persistence: {0} ms.", stopwatch.ElapsedMilliseconds);

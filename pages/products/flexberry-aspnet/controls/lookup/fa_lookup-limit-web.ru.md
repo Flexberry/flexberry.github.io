@@ -22,7 +22,7 @@ lang: ru
 Построить ограничение, используя [LINQProvider](fo_linq-provider.html):
 
 ```csharp
-var ds = (SQLDataService) DataServiceProvider.DataService;
+var ds = (SQLDataService) DataServiceProvider.DataService;// DataServiceProvider устарел; вместо него используйте внедрение зависимостей
 IQueryable<Клиент> limit = ds.Query<Клиент>(Клиент.Views.КлиентL).Where(klient => klient.Прописка.Contains("Пермь"));
 ```
 
@@ -48,10 +48,10 @@ ctrlКлиент.LimitFunction = onlyPermKlients;
 
 Дополнительно, необходимо отображать только работающих `КредитныхИнспекторов`.
 
-1.Построить ограничения, испльзуя LINQ-провайдер: 
+1.Построить ограничения, испльзуя LINQ-провайдер:
 
 ```csharp
-var ds = (SQLDataService) DataServiceProvider.DataService;
+var ds = (SQLDataService) DataServiceProvider.DataService; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей
 IQueryable<Клиент> limit1 = ds.Query<Клиент>(Клиент.Views.КлиентL).Where(klient => klient.Прописка.Город == "Пермь");
 IQueryable<КредитныйИнспектор> limit2 = ds.Query<КредитныйИнспектор>(КредитныйИнспектор.Views.КредитныйИнспекторL).Where(insp => insp.Работает);
 ```

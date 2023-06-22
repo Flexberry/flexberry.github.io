@@ -15,7 +15,7 @@ Below are the main opportunities provided by [LINQProvider](fo_linq-provider.htm
 In the examples `ds` is the service data obtained in the following way: 
 
 ``` csharp
-var ds = (SQLDataService)DataServiceProvider.DataService; 
+var ds = (SQLDataService)DataServiceProvider.DataService; // DataServiceProvider is deprecated; inject IDataService instead
 ``` 
 
 ## Supported 

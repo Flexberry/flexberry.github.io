@@ -41,7 +41,7 @@ __Сигнатура__:
 __Пример__:
 
 ```csharp
-SQLDataService ds = (SQLDataService)DataServiceProvider.DataService;
+SQLDataService ds = (SQLDataService)DataServiceProvider.DataService; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
 View v = new View();
 v.DefineClassType = typeof (Door);
 v.AddProperty("Street.Name");
@@ -97,7 +97,7 @@ __Пример__:
  ```csharp
 protected void UpdateButtonClick(object sender, EventArgs e)
 {
-    SQLDataService ds = (SQLDataService)DataServiceProvider.DataService;
+    SQLDataService ds = (SQLDataService)DataServiceProvider.DataService; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
     var ko = ds.Query<КритерийОценки>(КритерийОценки.Views.КритерийОценкиE).First(o => o.Описание.StartsWith("kirlim"));
     ko.Описание = "kirlim-birlim";
 DataObject[] dObjs = new DataObject[] { ko };
@@ -623,7 +623,7 @@ public delegate void AfterUpdateObjectsEventHandler(object sender, DataObjectsEv
 либо присвоить значение явно:
 
 ```csharp
-SQLDataService ds = (SQLDataService)DataServiceProvider.DataService;
+SQLDataService ds = (SQLDataService)DataServiceProvider.DataService; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
 ds.UseCommandTimeout = true;
 ds.CommandTimeout = 60;
 ```

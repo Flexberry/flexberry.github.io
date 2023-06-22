@@ -31,7 +31,7 @@ lockService.ClearLock(автор);//Cleanup the lock
 Console.ReadLine();
 ``` 
 
-Service lock accesses the data store via [service data](fo_data-service.html) specified in the [service provider data](fo_ds-provider.html) (`ICSSoft.STORMNET.Business.DataServiceProvider.DataService`). 
+Service lock accesses the data store via [service data](fo_data-service.html) dependency, registered through Unity.
 
 Vault locks must be a corresponding source. 
 

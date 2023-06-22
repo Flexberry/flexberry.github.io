@@ -167,7 +167,7 @@ public override void Edited(ICSSoft.STORMNET.DataObject dataobject, string contp
             {
                 ДежурнаяГруппаСмены ДежГрСмены = (ДежурнаяГруппаСмены)ДежурныеГруппыСмены.EditManager.DataObject;
                 ДежурнаяГруппа ДежГр = ((ЧленДежурнойГруппы)dataobject).ДежураяГруппа;
-                ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject("Diurnale", ДежГр);
+                ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject("Diurnale", ДежГр); // DataServiceProvider is deprecated; inject IDataService instead
                 ДежГрСмены.НомерГруппы = ДежГр.НомерГруппы;
                 ДежГрСмены.ТипДежурнойГруппы = ДежГр.ТипДежурнойГруппы;
                 ДежГрСмены.Руководитель = ДежГр.Руководитель;

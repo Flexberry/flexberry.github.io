@@ -59,26 +59,28 @@ To impose a restriction on the date part (year, month, or day), you can use the 
 //ICSSoft.STORMNET.Windows.Forms.ExternalLangDeflangdef = ExternalLangDef.LanguageDef;
 using ICSSoft.STORMNET.Windows.Forms;
 
+IDataService dataService = DataServiceProvider.DataService; // DataServiceProvider is deprecated; inject IDataService instead
+
 var langdef = ExternalLangDef.LanguageDef;
 var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof (Кредит), Кредит.Views.КредитE);
 
 lcs.LimitFunction = langdef.GetFunction(langdef.funcEQ,
-                                         langdef.GetFunction("YearPart", new VariableDef(langdef.DateTimeType, "Datavideo")), "2013");
+                                         langdef.GetFunction("YearPart", new VariableDef(langdef.DateTimeType, "ДатаВыдачи")), "2013");
 
-var only2013year = DataServiceProvider.DataService.LoadObjects(lcs);
+var only2013year = dataService.LoadObjects(lcs);
 
 lcs.LimitFunction = langdef.GetFunction(langdef.funcEQ,
-                                         langdef.GetFunction("MonthPart", new VariableDef(langdef.DateTimeType, "Datavideo")), "12");
+                                         langdef.GetFunction("MonthPart", new VariableDef(langdef.DateTimeType, "ДатаВыдачи")), "12");
 
-var onlyDecember = DataServiceProvider.DataService.LoadObjects(lcs);
+var onlyDecember = dataService.LoadObjects(lcs);
 
 lcs.LimitFunction = langdef.GetFunction(langdef.funcAND,
                 langdef.GetFunction(langdef.funcEQ,
-                    langdef.GetFunction("YearPart", new VariableDef(langdef.DateTimeType, "Datavideo")), "2012"),
+                    langdef.GetFunction("YearPart", new VariableDef(langdef.DateTimeType, "ДатаВыдачи")), "2012"),
                 langdef.GetFunction(langdef.funcEQ,
-                    langdef.GetFunction("MonthPart", new VariableDef(langdef.DateTimeType, "Datavideo")), "12"));
+                    langdef.GetFunction("MonthPart", new VariableDef(langdef.DateTimeType, "ДатаВыдачи")), "12"));
 
-var onlyDecember2012 = DataServiceProvider.DataService.LoadObjects(lcs);
+var onlyDecember2012 = dataService.LoadObjects(lcs);
 ```
 
 ## Examples of usage
@@ -92,7 +94,7 @@ var langdef = ExternalLangDef.LanguageDef;
 var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof (Личность), Личность.Views.ЛичностьE);
 lcs.LimitFunction = langdef.GetFunction(langdef.funcEQ,
 	            new VariableDef(langdef.StringType, Information.ExtractPropertyPath<Личность>(x => x.Фамилия)), Petrov);
-var клиентыФамилияПетров = DataServiceProvider.DataService.LoadObjects(lcs);
+var клиентыФамилияПетров = DataServiceProvider.DataService.LoadObjects(lcs); // DataServiceProvider is deprecated; inject IDataService instead
 ```
 
 ### the Imposition of limitations on workman the object (the key)
@@ -102,7 +104,7 @@ var langdef = ExternalLangDef.LanguageDef;
 var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof (Кредит), Кредит.Views.КредитE);
 lcs.LimitFunction = langdef.GetFunction(langdef.funcEQ,
 	            new VariableDef(langdef.GuidType, Information.ExtractPropertyPath<Кредит>(x => x.Личность)), "64F45BC3-339B-4FBA-A036-C5E9FE9EAE53");
-var кредиты = DataServiceProvider.DataService.LoadObjects(lcs);
+var кредиты = DataServiceProvider.DataService.LoadObjects(lcs); // DataServiceProvider is deprecated; inject IDataService instead
 ```
 
 ### the Imposition of limitations on workman the object (field master)
@@ -112,7 +114,7 @@ var langdef = ExternalLangDef.LanguageDef;
 var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof (Кредит), Кредит.Views.КредитE);
 lcs.LimitFunction = langdef.GetFunction(langdef.funcEQ,
 	            new VariableDef(langdef.GuidType, Information.ExtractPropertyPath<Кредит>(x => x.Личность.Фамилия)), Petrov);
-var кредиты = DataServiceProvider.DataService.LoadObjects(lcs);
+var кредиты = DataServiceProvider.DataService.LoadObjects(lcs); // DataServiceProvider is deprecated; inject IDataService instead
 ```
 
 {% include important.html content="you Must ensure that the submission is `КредитE` master `Личность` and field `Фамилия`, or an error occurs during query execution." %}

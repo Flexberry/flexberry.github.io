@@ -44,7 +44,7 @@ For the above-described conditions: to add validation to a business class server
 if (UpdatedObject.GetStatus() == ObjectStatus.Deleted)
 {
     // Find the number of clients that reference the deleted address. 
-    var ds = (MSSQLDataService)DataServiceProvider.DataService;
+    var ds = (MSSQLDataService)DataServiceProvider.DataService; // DataServiceProvider is deprecated; inject IDataService instead
     var clientsCount = ds.Query<Клиент>(Клиент.Views.КлиентE).Where(k => k.Прописка.__PrimaryKey == UpdatedObject.__PrimaryKey).Count();
 
     // If the customer is not 0, throw an exception. 

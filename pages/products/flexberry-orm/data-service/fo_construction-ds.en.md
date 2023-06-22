@@ -24,7 +24,7 @@ ds.CustomizationString="Host=localhost;Port=5432;User ID=postgres;Password=postg
 3.[Get it from service provider data](fo_ds-provider.html).
 
 ```csharp
-IDataService ds = DataServiceProvider.DataService;
+IDataService ds = DataServiceProvider.DataService; // DataServiceProvider is deprecated; inject IDataService instead
 ```
 
 

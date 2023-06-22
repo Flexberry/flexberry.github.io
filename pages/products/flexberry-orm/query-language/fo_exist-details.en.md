@@ -46,7 +46,7 @@ lcsСервер.LimitFunction = ldef.GetFunction(ldef.funcExist,
                                                             new VariableDef(ldef.GuidType, Division),
                                                             UpdatedObject.НаправленоИз.__PrimaryKey));
 lcsСервер.ReturnTop = 1;
-ICSSoft.STORMNET.DataObject[] dobjsСервер = ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObjects(lcsСервер);
+ICSSoft.STORMNET.DataObject[] dobjsСервер = ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObjects(lcsСервер); // DataServiceProvider is deprecated; inject IDataService instead
 ```
 
 You want to subtract only those servers that belong only to one particular Unit (i.e., servers that belong to the specified Division and some will not be proofread).
@@ -68,7 +68,7 @@ lcsСервер.LimitFunction = ldef.GetFunction(ldef.funcExistExact,
                                             ldef.GetFunction(ldef.funcEQ,
                                                             new VariableDef(ldef.GuidType, Division),
                                                             new Guid("6D7DC426-F5E9-4F63-B7B5-20C9E237DF2D")));
-DataObject[] dobjsСервер = DataServiceProvider.DataService.LoadObjects(lcsСервер);
+DataObject[] dobjsСервер = DataServiceProvider.DataService.LoadObjects(lcsСервер); // DataServiceProvider is deprecated; inject IDataService instead
 ```
 
 ## Comparison of properties of two different datalow (not above ground level) with a common aggregator
@@ -90,7 +90,7 @@ The order of properties in the comparison function applied to detali has a value
                         detail1, detail2, langDef.GetFunction(langDef.funcG,
                         new VariableDef(langDef.DateTimeType, "DeliveryDate"),
                         new VariableDef(langDef.DateTimeType, "DeliveryDate")));
- var dos = DataServiceProvider.DataService.LoadObjects(lcs);
+ var dos = DataServiceProvider.DataService.LoadObjects(lcs); // DataServiceProvider is deprecated; inject IDataService instead
 ```
 
 

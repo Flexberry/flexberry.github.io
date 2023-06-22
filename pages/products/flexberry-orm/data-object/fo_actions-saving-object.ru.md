@@ -14,21 +14,21 @@ lang: ru
 ```csharp
 Console.WriteLine("4. How to do something at persistence moment.");
 
-IDataService dataService = DataServiceProvider.DataService;
+IDataService dataService = DataServiceProvider.DataService; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
 OrmSample ormSample = new OrmSample(dataService);
 object primaryKey = ormSample.GetSomeObjectPrimaryKey(typeof(CDDA));
 
 // Как сделать что-то в момент сохранения:
 // 1. Задать для сущности клас бизнес-сервера в Flexberry или с помощью .Net-атрибута BusinessServer (см. класс CDDA в проекте CDLIB(Objects)).
-// 2. Сгенерируйте из Flexberry или создайте самостоятельно класс бизнес-сервера с методом, обрабатывающим сохранение объектов, и реализуйте его 
+// 2. Сгенерируйте из Flexberry или создайте самостоятельно класс бизнес-сервера с методом, обрабатывающим сохранение объектов, и реализуйте его
 //    (см. класс CDLibBS в проекте CDLIB(BusinessServers))
 // 3. Произведите какие-либо действия с объектом и сохраните его.
 CDDA cdda = new CDDA();
 cdda.SetExistObjectPrimaryKey(primaryKey);
-            
+
 Stopwatch stopwatch = new Stopwatch();
 stopwatch.Start();
-            
+
 dataService.LoadObject(CDDA.Views.CDDA_E, cdda);
 cdda.Name = "Huh! " + DateTime.Now;
 dataService.UpdateObject(cdda);

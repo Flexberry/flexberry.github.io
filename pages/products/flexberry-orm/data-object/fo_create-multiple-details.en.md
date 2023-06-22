@@ -38,7 +38,7 @@ Stopwatch stopwatch = new Stopwatch();
 stopwatch.Start();
 
 // The objects are stored in order corresponding to the relations between them (from the root to the tips). 
-DataServiceProvider.DataService.UpdateObject(aggregator);
+DataServiceProvider.DataService.UpdateObject(aggregator); // DataServiceProvider is deprecated; inject IDataService instead
 
 stopwatch.Stop();
 Console.WriteLine("Time taken for persistence: {0} ms.", stopwatch.ElapsedMilliseconds);

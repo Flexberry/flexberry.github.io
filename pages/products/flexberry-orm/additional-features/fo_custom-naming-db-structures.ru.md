@@ -40,7 +40,7 @@ cdbm.CustomMasterAttribute = new RandomStringGenerator().Generate(200);
 cdbo.CustomDBMasterClass = cdbm;
 cdbo.CustomOwnAttribute = new RandomStringGenerator().Generate(200);
 
-IDataService dataService = DataServiceProvider.DataService;
+IDataService dataService = DataServiceProvider.DataService; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей
 ICSSoft.STORMNET.DataObject[] objstoupd = new ICSSoft.STORMNET.DataObject[] { cdbo, cdbm };
 dataService.UpdateObjects(ref objstoupd);
 

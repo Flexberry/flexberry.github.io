@@ -54,6 +54,8 @@ ObjectStringDataView[] stringedview = DataServiceProvider.DataService.LoadString
 // 3. To obtain the number of objects without loading data. 
 int iObjsCount = DataServiceProvider.DataService.GetObjectsCount(lcs);
 
+// P.S. Starting from ORM v8.0 DataServiceProvider is deprecated; inject IDataService instead
+
 stopwatch.Stop();
 Console.WriteLine("Time taken for all loadings: {0} ms.", stopwatch.ElapsedMilliseconds);
 ``` 

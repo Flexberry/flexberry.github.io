@@ -21,7 +21,7 @@ When loading is applied [view](fd_view-definition.html).
 ```csharp
 Console.WriteLine("2. How to load a dataobject in specific view, change it\'s property, then persist. Object loading status and state.");
 
-IDataService dataService = DataServiceProvider.DataService;
+IDataService dataService = DataServiceProvider.DataService; // DataServiceProvider is deprecated; inject IDataService instead
 
 // Initialize the helper object through which we get the primary key of an arbitrary object 
 // of the specified type. 

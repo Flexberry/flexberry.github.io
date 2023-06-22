@@ -138,7 +138,7 @@ var dvd = new DetailVariableDef
 lcsДолгосрочныеКлиенты.LimitFunction = ldef.GetFunction(ldef.funcExist, dvd,
                                                         ldef.GetFunction(ldef.funcGEQ,
                                                         new VariableDef(ldef.GuidType, "Loanyears"), 15));
-ICSSoft.STORMNET.DataObject[) dobjsДолгосрочныеКлиенты = DataServiceProvider.DataService.LoadObjects(lcsДолгосрочныеКлиенты);
+ICSSoft.STORMNET.DataObject[) dobjsДолгосрочныеКлиенты = DataServiceProvider.DataService.LoadObjects(lcsДолгосрочныеКлиенты); // DataServiceProvider is deprecated; inject IDataService instead
 ```
 
 

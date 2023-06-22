@@ -47,7 +47,7 @@ public override void Edited(ICSSoft.STORMNET.DataObject dataobject, string contp
             Э.ФИОСотрудника = Э.Сотрудник.ОпрПолноеФИО();
             if (р.Должность != null)
             {
-                DataServiceProvider.DataService.LoadObject(р.Должность);
+                DataServiceProvider.DataService.LoadObject(р.Должность); // DataServiceProvider is deprecated; inject IDataService instead
                 Э.Должность = р.Должность.Наименование;
             }
             else Э.Должность = "";
@@ -88,7 +88,7 @@ public void ПоказатьСписок()
         LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Лицо), "ЛицоL");
         lcs.LimitFunction = lf;
 
-        ICSSoft.STORMNET.DataObject[] objs = DataServiceProvider.DataService.LoadObjects(lcs);
+        ICSSoft.STORMNET.DataObject[] objs = DataServiceProvider.DataService.LoadObjects(lcs); // DataServiceProvider is deprecated; inject IDataService instead
 
         if (objs.Length == 0)
         {

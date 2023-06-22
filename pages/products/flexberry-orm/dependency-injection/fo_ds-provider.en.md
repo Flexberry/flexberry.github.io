@@ -10,6 +10,8 @@ autotranslated: true
 hash: 44521544d5e3234f0d31b8a66b6803ed7b139f8e127dbe772d433632ea2ae457 
 --- 
 
+> Starting from ORM v8.0 DataServiceProvider is deprecated, use `IDataService` instead.
+
 `DataServiceProvider.DataService` is [service data](fo_data-service.html), which is initialized based on the settings specified in the configuration file (`App.cobfig` or `Web.config`). Thus, `DataServiceProvider.DataService` is [service data](fo_data-service.html) by default. 
 
 ### Algorithm initialization DataServiceProvider.DataService 

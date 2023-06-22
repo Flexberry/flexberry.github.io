@@ -35,10 +35,10 @@ protected override void PreApplyToControls()
 	{
 		var заказ = ctrlЗаказ.SelectedMasterPK;
 		ctrlЗаказ.MasterViewName = Заказ.Views.ЗаказL.Name;
-		
+
 		var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(СтрокаЗаказа), СтрокаЗаказа.Views.СтрокаЗаказаE);
 		lcs.LimitFunction = FunctionBuilder.BuildEquals<СтрокаЗаказа>(x => x.Заказ, заказ);
-		var строкиЗаказа = DataServiceProvider.DataService.LoadObjects(lcs);
+		var строкиЗаказа = DataServiceProvider.DataService.LoadObjects(lcs); // DataServiceProvider is deprecated; inject IDataService instead
 
 		foreach (var s in строкиЗаказа)
 		{

@@ -16,7 +16,7 @@ Full list of code examples [Flexberry ORM](fo_flexberry-orm.html) is in ["code E
 
 ```csharp
 Console.WriteLine("7. Prototyping.");
-IDataService dataService = DataServiceProvider.DataService;
+IDataService dataService = DataServiceProvider.DataService; // DataServiceProvider is deprecated; inject IDataService instead
 OrmSample ormSample = new OrmSample(dataService);
 object primaryKey = ormSample.GetSomeObjectPrimaryKey(typeof(D0));
 

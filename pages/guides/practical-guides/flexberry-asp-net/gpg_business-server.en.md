@@ -32,14 +32,14 @@ Such as, in order to check the availability of goods in stock at the time the or
 5.Then register in parentheses programmer the following lines (to select the options use a combination of `Ctrl` Space):
 
 ```csharp
-// *** Start programmer edit section *** (Using statements) 
+// *** Start programmer edit section *** (Using statements)
 using System.Collections;
 
 using ICSSoft.STORMNET;
 using ICSSoft.STORMNET.FunctionalLanguage;
 using ICSSoft.STORMNET.FunctionalLanguage.SQLWhere;
 
-// *** End programmer edit section *** (Using statements) 
+// *** End programmer edit section *** (Using statements)
 ```
 
 6.Later in the code business servers to handle all of the following:
@@ -47,17 +47,17 @@ using ICSSoft.STORMNET.FunctionalLanguage.SQLWhere;
 ```csharp
 public virtual ICSSoft.STORMNET.DataObject[] OnUpdateЗаказ(АСУ_Склад.Заказ UpdatedObject)
 {
-	// *** Start programmer edit section *** (OnUpdateЗаказ) 
+	// *** Start programmer edit section *** (OnUpdateЗаказ)
 
-	// Define the array that will return for updates. 
+	// Define the array that will return for updates.
 	DataObject[] ret = new DataObject[0];
 
-	// Check that the received object is exactly what we need (created or modified and the status is set to Paid). 
-	if ((UpdatedObject.GetStatus() == ICSSoft.STORMNET.ObjectStatus.Created || UpdatedObject.GetStatus() == ICSSoft.STORMNET.ObjectStatus.Altered) && Array.IndexOf(UpdatedObject.GetAlteredPropertyNames(), Status) >= 0 && UpdatedObject.Статус == СостояниеЗаказа.Оплаченный)			
-	{   
-		// Build the restriction and subtract all the objects in Tavarnelle that suit us. 
-		Заказ заказ = UpdatedObject;		
-		ICSSoft.STORMNET.FunctionalLanguage.Function lf = null; 
+	// Check that the received object is exactly what we need (created or modified and the status is set to Paid).
+	if ((UpdatedObject.GetStatus() == ICSSoft.STORMNET.ObjectStatus.Created || UpdatedObject.GetStatus() == ICSSoft.STORMNET.ObjectStatus.Altered) && Array.IndexOf(UpdatedObject.GetAlteredPropertyNames(), Status) >= 0 && UpdatedObject.Статус == СостояниеЗаказа.Оплаченный)
+	{
+		// Build the restriction and subtract all the objects in Tavarnelle that suit us.
+		Заказ заказ = UpdatedObject;
+		ICSSoft.STORMNET.FunctionalLanguage.Function lf = null;
 
 		for (int i = 0; i < заказ.СтрокаЗаказа.Count; i++)
 		{
@@ -78,9 +78,9 @@ public virtual ICSSoft.STORMNET.DataObject[] OnUpdateЗаказ(АСУ_Скла�
 
 		ICSSoft.STORMNET.Business.LoadingCustomizationStruct lcs = ICSSoft.STORMNET.Business.LoadingCustomizationStruct.GetSimpleStruct(typeof(ТоварНаСкладе),"Tavernacle");
 		lcs.LimitFunction = lf;
-		ICSSoft.STORMNET.DataObject[] objs = ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObjects(lcs);
+		ICSSoft.STORMNET.DataObject[] objs = ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObjects(lcs); // DataServiceProvider is deprecated; inject IDataService instead
 
-		// Place the read objects in a sorted list for easy access later on. 
+		// Place the read objects in a sorted list for easy access later on.
 		System.Collections.SortedList sl = new System.Collections.SortedList();
 
 		for (int i = 0; i < objs.Length; i++)
@@ -97,11 +97,11 @@ public virtual ICSSoft.STORMNET.DataObject[] OnUpdateЗаказ(АСУ_Скла�
 			}
 		}
 
-		// Define the string for the error message. 
+		// Define the string for the error message.
 		string errStr = string.Empty;
 		ArrayList retObjs = new ArrayList();
 
-		// Check the availability of goods in warehouses, if not enough, then give error message if missing, then subtract the number. 
+		// Check the availability of goods in warehouses, if not enough, then give error message if missing, then subtract the number.
 		for (int i = 0; i < заказ.СтрокаЗаказа.Count; i++)
 		{
 			if (sl.ContainsKey(заказ.СтрокаЗаказа[i].Товар.__PrimaryKey))
@@ -149,18 +149,18 @@ public virtual ICSSoft.STORMNET.DataObject[] OnUpdateЗаказ(АСУ_Скла�
 			}
 		}
 
-		// In case something is not enough, we inform the user. 
+		// In case something is not enough, we inform the user.
 		if (errStr != string.Empty)
 		{
 			throw new Exception(errStr);
 		}
 
-		// If everything is fine, then return an array of objects that need to be updated. 
+		// If everything is fine, then return an array of objects that need to be updated.
 		ret = new DataObject[retObjs.Count]; retObjs.CopyTo(ret, 0);
 	}
 	return ret;
 
-	// *** End programmer edit section *** (OnUpdateЗаказ) 
+	// *** End programmer edit section *** (OnUpdateЗаказ)
 }
 ```
 

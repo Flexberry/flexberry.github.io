@@ -81,7 +81,7 @@ private void CustomToolbarButtonClickHandler(object sender, ToolBarBtnEventArgs 
     {
         var objects = eventArgs.PrimaryKeys.Select(x => new Город { __PrimaryKey = Guid.Parse(x) })
                             .Cast<DataObject>().ToArray();
-        DataServiceProvider.DataService.LoadObjects(objects, Город.Views.ГородL, true);
+        DataServiceProvider.DataService.LoadObjects(objects, Город.Views.ГородL, true); // DataServiceProvider устарел; вместо него используйте внедрение зависимостей
 
         SelectedCitiesLabel.Visible = SelectedCitiesList.Visible = true;
         foreach (var obj in objects)
@@ -144,7 +144,7 @@ protected override void Preload()
 /// Добавление кнопки на тулбар.
 /// </summary>
 /// <param name="lb">Кнопка для добавления.</param>
-public void AddImageButton(LinkButton lb) 
+public void AddImageButton(LinkButton lb)
 ```
 
 При использовании этого метода важно понимать следующее:

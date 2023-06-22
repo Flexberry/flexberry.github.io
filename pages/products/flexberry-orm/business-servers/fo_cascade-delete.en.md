@@ -79,7 +79,7 @@ if (UpdatedObject.GetStatus() == ObjectStatus.Deleted)
 	UpdatedObject.Актуально = false;
 
 	// Find all objects, referencing "delete" and remove them. 
-	var ds = (SQLDataService)DataServiceProvider.DataService;
+	var ds = (SQLDataService)DataServiceProvider.DataService; // DataServiceProvider is deprecated; inject IDataService instead
 	var klients =
 		ds.Query<Клиент>(Клиент.Views.КлиентE)
 		  .Where(k => k.Прописка.__PrimaryKey == UpdatedObject.__PrimaryKey);
@@ -97,7 +97,7 @@ if (UpdatedObject.GetStatus() == ObjectStatus.Deleted)
 Next to the user being shown the "deleted" data when viewing the list of objects required for the appropriate control limit types:
 
 ``` csharp
-var ds = (MSSQLDataService)DataServiceProvider.DataService;
+var ds = (MSSQLDataService)DataServiceProvider.DataService; // DataServiceProvider is deprecated; inject IDataService instead
 IQueryable<Клиент> limit1 = ds.Query<Адрес>(Адрес.Views.АдресL).Where(Address => Address.Актуально);
 Function onlyActual = LinqToLcs.GetLcs(limit1.Expression, Адрес.Views.АдресL).LimitFunction;
 ```

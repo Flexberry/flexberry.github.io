@@ -86,10 +86,10 @@ try
     stopwatch.Start();
 
     // DataServiceProvider.DataService создает сервис данных, тип которого задан в конфигурационном файле (ключи DataServiceType, CustomizationStrings в секции appSettings).
-    // Flexberry ORM сохраняет объекты данных в соответствии с их состоянием. Зависимости между объектами обрабатываются автоматически. Все запросы выполняются в одной транзакции. 
+    // Flexberry ORM сохраняет объекты данных в соответствии с их состоянием. Зависимости между объектами обрабатываются автоматически. Все запросы выполняются в одной транзакции.
     // Таким образом, один вызов UpdateObjects соответствует одной транзакции БД.
     // Кроме этого, существует метод UpdateObject для обновления одиночного объекта (и графа объектов данных, на которые он ссылается).
-    DataServiceProvider.DataService.UpdateObjects(ref objectsToUpdateArray);
+    DataServiceProvider.DataService.UpdateObjects(ref objectsToUpdateArray); // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
 
     stopwatch.Stop();
     Console.WriteLine("Time taken for persistence: {0} ms.", stopwatch.ElapsedMilliseconds);

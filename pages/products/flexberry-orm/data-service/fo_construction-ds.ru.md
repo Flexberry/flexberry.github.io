@@ -22,5 +22,5 @@ ds.CustomizationString="Host=localhost;Port=5432;User ID=postgres;Password=postg
 3.[Получить его у провайдера сервиса данных](fo_ds-provider.html).
 
 ```csharp
-IDataService ds = DataServiceProvider.DataService;
+IDataService ds = DataServiceProvider.DataService; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
 ```

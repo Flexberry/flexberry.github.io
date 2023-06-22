@@ -17,7 +17,7 @@ lang: ru
 ```csharp
  IUnityContainer container = UnityFactory.CreateContainer();
  IDataService dataService = container.Resolve<IDataService>("DRDataService");
- dataService.CustomizationString = DataServiceProvider.DataService.CustomizationString;
+ dataService.CustomizationString = DataServiceProvider.DataService.CustomizationString; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
 ```
 
 ## Настройка DataService

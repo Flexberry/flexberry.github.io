@@ -46,7 +46,7 @@ public virtual decimal СуммаОплаченныхПокупок
 {
 	get
 	{
-		var connection = (SqlConnection)((SQLDataService)DataServiceProvider.DataService).GetConnection(); //get connection 
+		var connection = (SqlConnection)((SQLDataService)DataServiceProvider.DataService).GetConnection(); // DataServiceProvider is deprecated; inject IDataService instead
 		var command = new SqlCommand("SELECT SUM(purchase.\"Amount\") "+
 			"FROM \"Customer\" customer join \"Purchase\" purchase on customer.\"primaryKey\" = purchase.\"Buyer\" "+
 			"WHERE purchase.\"Buyer\"=@Customer AND purchase.\"Status\" = \'Paid\' ", connection); //make a request 

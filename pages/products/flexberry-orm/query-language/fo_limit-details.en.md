@@ -34,7 +34,7 @@ To identify erroneously entered data in the database: find all companies that ha
                                          langDef.GetFunction(langDef.funcL,
                                          new VariableDef(langDef.DateTimeType, Information.ExtractPropertyPath<Software>(x => x.DateCreation)),
                                          new VariableDef(langDef.DateTimeType, Information.ExtractPropertyPath<Software>(x => x.Company.DateCreation))));
- var dos = DataServiceProvider.DataService.LoadObjects(lcs);
+ var dos = DataServiceProvider.DataService.LoadObjects(lcs); // DataServiceProvider is deprecated; inject IDataService instead
 ``` 
 
 

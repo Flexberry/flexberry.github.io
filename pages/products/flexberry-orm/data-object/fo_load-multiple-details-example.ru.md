@@ -12,8 +12,8 @@ lang: ru
 
 ```csharp
 Console.WriteLine("6. Loading a dataobject with multiple details.");
-            
-IDataService dataService = DataServiceProvider.DataService;
+
+IDataService dataService = DataServiceProvider.DataService; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
 OrmSample ormSample = new OrmSample(dataService);
 object primaryKey = ormSample.GetSomeObjectPrimaryKey(typeof(D0));
 
@@ -43,7 +43,7 @@ internal void CheckDetailsQty(D dobj, int qtyInEach)
     for (int i = 0; i < detprops.Length; i++)
     {
         DetailArray detarr = (DetailArray)Information.GetPropValueByName(dobj, detprops[i]);
-        if (detarr.Count != qtyInEach) 
+        if (detarr.Count != qtyInEach)
             throw new Exception(string.Format("Missing reading of {0}!", detprops[i]));
 
         for (int j = 0; j < detarr.Count; j++)

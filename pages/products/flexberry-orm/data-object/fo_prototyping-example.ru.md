@@ -14,7 +14,7 @@ lang: ru
 
 ```csharp
 Console.WriteLine("7. Prototyping.");
-IDataService dataService = DataServiceProvider.DataService;
+IDataService dataService = DataServiceProvider.DataService; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
 OrmSample ormSample = new OrmSample(dataService);
 object primaryKey = ormSample.GetSomeObjectPrimaryKey(typeof(D0));
 
