@@ -153,7 +153,7 @@ Assemblies included in this package:
 
 * UserSettingsService.dll
 
-## Flexberry UnityFactor
+## Flexberry UnityFactory
 
 The package contains the components [UnityFactory](fo_unity-factory.html).
 

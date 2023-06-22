@@ -17,7 +17,7 @@ hash: 648bed382e981fa818916b5925393b835f05996a3f34a6c7d94cb6dd1010ad95
 Instance DRDataService can be obtained through [UnityFactory](fo_unity-factory.html) using the following code:
 
 ```csharp
- IUnityContainer container = UnityFactory.CreateContainer();
+ IUnityContainer container = UnityFactory.CreateContainer(); //UnityFactory is deprecated. Inject IUnityContainer (or IServiceProvider) instead.
  IDataService dataService = container.Resolve<IDataService>("DRDataService");
  dataService.CustomizationString = DataServiceProvider.DataService.CustomizationString; // DataServiceProvider is deprecated; inject IDataService instead
 ```

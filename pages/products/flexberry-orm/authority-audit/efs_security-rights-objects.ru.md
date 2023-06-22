@@ -19,7 +19,7 @@ lang: ru
 
 Как это реализовать:
 
-1. Обновить пакет Flexberry ORM до версии не ниже 2.1.0-alpha01. 
+1. Обновить пакет Flexberry ORM до версии не ниже 2.1.0-alpha01.
 
 Обновить пакет Flexberry Security до версии не ниже 1.5.0-alpha01.
 
@@ -33,12 +33,12 @@ lang: ru
   <appSettings>
     <add key="DataServiceType" value="ICSSoft.STORMNET.Business.MSSQLDataService, ICSSoft.STORMNET.Business.MSSQLDataService" />
   </appSettings>
-  
+
   <connectionStrings>
     <add name="DefConnStr" connectionString="SERVER=rtc-storm.ics.perm.ru;Trusted_connection=yes;DATABASE=SecurityControlTest" />
     <add name="CaseberrySecurity" connectionString="SERVER=rtc-storm.ics.perm.ru;Trusted_connection=yes;DATABASE=SecurityControlTestS" providerName="ICSSoft.STORMNET.Business.MSSQLDataService, ICSSoft.STORMNET.Business.MSSQLDataService, Version=1.0.0.1, Culture=neutral, PublicKeyToken=49b42003269a4a66" />
   </connectionStrings>
-  
+
   <unity xmlns="http://schemas.microsoft.com/practices/2010/unity">
     <alias alias="CheckingInSessionMode" type="ICSSoft.STORMNET.Security.CheckingInSessionMode, CheckingLibrary" />
     <alias alias="singleton" type="Microsoft.Practices.Unity.ContainerControlledLifetimeManager, Microsoft.Practices.Unity" />
@@ -58,9 +58,9 @@ lang: ru
           <param name="useRightsOnAttribute" type="System.Boolean" value="true" />
         </constructor>
       </register>
-      
-	  <!-- 
-		SecurityManagerDataService - сервис данных, через который будет идти запрос к полномочиям. 
+
+	  <!--
+		SecurityManagerDataService - сервис данных, через который будет идти запрос к полномочиям.
 		Здесь дублируется тип сервиса данных и его строка соединения. Связано с совместным использованием SecurityManager и CheckingLibrary.
 	  -->
       <register name="SecurityManagerDataService"
@@ -74,7 +74,7 @@ lang: ru
 		<!-- Задаём строку соединения к БД полномочий. -->
         <property name="CustomizationString" value="SERVER=rtc-storm.ics.perm.ru;Trusted_connection=yes;DATABASE=SecurityControlTestS;"/>
       </register>
-	  
+
 	  <!-- securityManagerWithoutRightsCheck - менеджер полномочий с выключенной проверкой полномочий. -->
       <register name="securityManagerWithoutRightsCheck" type="ICSSoft.STORMNET.Security.ISecurityManager, ICSSoft.STORMNET.DataObject" mapTo="ICSSoft.STORMNET.Security.DefaultSecurityManager, ICSSoft.STORMNET.RightManager">
         <lifetime type="singleton" />
@@ -82,7 +82,7 @@ lang: ru
           <param name="enabled" type="System.Boolean" value="false" />
         </constructor>
       </register>
-      
+
     </container>
   </unity>
   ...
@@ -119,7 +119,7 @@ private static IDataService SecurityDataService
 	{
 		if (_securityDataService == null)
 		{
-			IUnityContainer container = UnityFactory.GetContainer();
+			IUnityContainer container = UnityFactory.GetContainer(); // UnityFactory устарел. Вместо него используйте внедрение зависимостей (инжектите IUnityContainer/IServiceProvider или напрямую нужные зависимости).
 			_securityDataService = container.Resolve<IDataService>("SecurityManagerDataService");
 		}
 
@@ -188,7 +188,7 @@ bool hasAccess = securityManager.AccessObjectCheck(objectTocheck, tTypeAccess.In
 Сначала в примере происходит получение текущей инстанции `ISecurityManager`, установленной в текущий [DataService|сервис данных) (требуется, чтобы при этом менеджер полномочий был настроен на проверку полномочий на объекты (например, с помощью конфига, как показано выше); если это не так, то необходимую инстанцию менеджера полномочий можно создать с помощью программного кода).
 
 Далее в метод менеджера полномочий передаётс:
-* объект, полномочия на который проверяются (может быть передан любой объект, в этом случае происходит проверка доступа на тип объекта, но если передан [DataObject|объект данных), то проверка происходит и на сам объект с учётом заданных ограничений), 
+* объект, полномочия на который проверяются (может быть передан любой объект, в этом случае происходит проверка доступа на тип объекта, но если передан [DataObject|объект данных), то проверка происходит и на сам объект с учётом заданных ограничений),
 * тип операции, полномочия на которую требуется проверять,
 * флаг, определяющий, требуется ли кидать исключение, если отсутствуют полномочия на объект.
 
