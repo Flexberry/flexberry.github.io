@@ -18,14 +18,14 @@ lang: ru
 
 ```csharp
 Автор автор = new Автор();
-LockService ls = new LockService();
-ls.SetLock(автор); //Блокирование
-string sLockID = ls.SetLock(автор); //Попытка повторного блокирования того же объекта
+LockService lockService = container.Resolve<LockService>();
+lockService.SetLock(автор); //Blocking 
+string sLockID = lockService.SetLock(автор); //Attempt to lock the same object 
 if (sLockID!=string.Empty)
 {
-	Console.WriteLine(string.Format("Заблокировано пользователем: {0}", sLockID));
+	Console.WriteLine(string.Format("Locked by: {0}", sLockID));
 }
-ls.ClearLock(автор);//Очистка блокировки
+lockService.ClearLock(автор);//Cleanup the lock 
 Console.ReadLine();
 ```
 
