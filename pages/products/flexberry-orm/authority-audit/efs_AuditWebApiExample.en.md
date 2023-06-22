@@ -53,8 +53,8 @@ Since we don't know the result of the operation of forming the report, we expose
 
 You can now write data to the database audit: 
 
-```
- Guid? auditOperationId = AuditService.Current.WriteCustomAuditOperation(auditParams, true); 
+```csharp
+ Guid? auditOperationId = AuditService.Current.WriteCustomAuditOperation(auditParams, true); //AuditService.Current is removed in ORM v8.0. Use dependency injection instead to inject IAuditService
 ``` 
 
 Use the simplest overload `WriteCustomAuditOperation`, DataService are defined as standard for the application. 
@@ -84,7 +84,7 @@ finally
     AuditService.Current.RatifyAuditOperation(
                     correct ? tExecutionVariant.Executed : tExecutionVariant.Failed,
                     new List<Guid> { auditOperationId.Value },
-                    false);
+                    false); //AuditService.Current is removed in ORM v8.0. Use dependency injection instead to inject IAuditService
 }
 ``` 
 
@@ -107,7 +107,7 @@ Now when I try to create the report in the audit database will be created corres
                 };
 
             // Writable surgery audit database and remember the ID of the created record 
-            Guid? auditOperationId = AuditService.Current.WriteCustomAuditOperation(auditParams, true);
+            Guid? auditOperationId = AuditService.Current.WriteCustomAuditOperation(auditParams, true); //AuditService.Current is removed in ORM v8.0. Use dependency injection instead to inject IAuditService
 
             var report = new Отчет();
             bool correct = true;
@@ -129,7 +129,7 @@ Now when I try to create the report in the audit database will be created corres
                 AuditService.Current.RatifyAuditOperation(
                     correct ? tExecutionVariant.Executed : tExecutionVariant.Failed,
                     new List<Guid> { auditOperationId.Value },
-                    false);
+                    false); //AuditService.Current is removed in ORM v8.0. Use dependency injection instead to inject IAuditService
             }
 
             return report;

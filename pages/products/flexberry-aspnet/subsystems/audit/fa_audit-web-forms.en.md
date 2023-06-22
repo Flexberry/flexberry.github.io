@@ -27,7 +27,7 @@ For example, the address may be as follows: http://some:1111/Forms/Audit/AuditEn
 A separate line is the change [primary key object](fo_primary-keys-objects.html) (this string is generated when you change detail or wizard). There are two modes of display these lines: they do not appear or they are hiding in a tree structure (the second option was implemented in [older versions of audit](efs_audit.html)). By default, implements the first option, but you can change the following initialization: 
 
 ```csharp
-AuditService.Current.ShowPrimaryKey = true;
+AuditService.Current.ShowPrimaryKey = true; // AuditService.Current is removed in ORM v8.0. Use dependency injection instead to inject IAuditService.
 ``` 
 
 ## object-oriented forms of audit 
@@ -73,7 +73,7 @@ The list of fields to audit is sorted by the time of the operation (top new).
 To disable the display of records containing [primary keys](fo_primary-keys-objects.html) [masters](fd_master-association.html) and [datalow](fo_detail-associations-properties.html), you can perform the following settings: 
 
 ```csharp
-AuditService.Current.ShowPrimaryKey = false;
+AuditService.Current.ShowPrimaryKey = false; // AuditService.Current is removed in ORM v8.0. Use dependency injection instead to inject IAuditService
 ``` 
 
 If AuditService.Current.ShowPrimaryKey is set to true, the list of fields displayed changes [in hierarchy](fa_wolv-hierarhy.html) same as in tapicerowane forms of audit. 
