@@ -127,6 +127,7 @@
                     {{content}}
                 </div>
             </div>
+            <div id="facetAttributeLang" style="visibility: hidden;">{% if page.lang == "ru"%}ru{% else %}en{% endif %}</div>
         </div>
     </div>
 
@@ -138,7 +139,7 @@
             indexName: 'flexberry',
             container: '#search-input',
             searchParameters: {
-                facetFilters: [] 
+                facetFilters: ["language:{{ page.lang }}"]
             },
             debug: false // Set debug to true if you want to inspect the dropdown
         });
