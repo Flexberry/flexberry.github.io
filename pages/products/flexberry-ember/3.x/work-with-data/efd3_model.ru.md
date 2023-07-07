@@ -351,3 +351,39 @@ export default EditFormNewRoute.extend({
 * [`i-i-s-caseberry-logging-objects-application-log`](https://github.com/Flexberry/ember-flexberry/blob/develop/addon/models/i-i-s-caseberry-logging-objects-application-log.js) - модель для [сервиса логирования](efd3_log-service.html).
 * [`new-platform-flexberry-flexberry-user-setting`](https://github.com/Flexberry/ember-flexberry/blob/develop/addon/models/new-platform-flexberry-flexberry-user-setting.js) - модель для [сервиса пользовательских настроек]().
 * [`new-platform-flexberry-services-lock`](https://github.com/Flexberry/ember-flexberry/blob/develop/addon/models/new-platform-flexberry-services-lock.js) - модель для [сервиса пессимистических блокировок]().
+
+## Создание динамических моделей
+
+Если на форме документа атрибуты модели должны менять свой тип, в зависимости от некоторых условий и правил, то этого можно добиться, меняя значение по умолчанию. Нужно учесть, что когда значением по умолчанию является объект, в роуте/компоненте/контроллере должна производиться динамическая регистрация и создание модели со ссылкой на объект заданного типа. Создание производится следующим образом:
+
+```js
+        createDynamicModel() {
+          return new Ember.RSVP.Promise((resolve, reject) => {
+            let modelName = this.get('modelName');
+
+            let modelRegistered = Ember.getOwner(this)._lookupFactory(`model:${modelName}`);
+
+            if (Ember.isNone(modelRegistered)) {
+              modelRegistered = Ember.getOwner(this)._lookupFactory(`model:${modelName}`);
+
+              if (Ember.isNone(modelRegistered)) {
+                Ember.getOwner(this).register(`model:${modelName}`, model);
+              }
+
+              resolve('Create dynamic model: ' + modelName);
+            } else {
+              resolve('Model already registered: ' + modelName);
+            }
+          });
+        },
+```
+
+После этого можно создавать модели заданного типа с помощью:
+
+```js
+        let defaultProperties = Ember.$.extend({ id: generateUniqueId() }, Ember.get(options, 'properties'));
+        let modelName = 'new-platform-flexberry-g-i-s-map-layer';
+
+        let store = this.get('store');
+        store.createRecord(modelName, defaultProperties);
+```
