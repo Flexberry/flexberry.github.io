@@ -354,36 +354,36 @@ export default EditFormNewRoute.extend({
 
 ## Создание динамических моделей
 
-Если на форме документа атрибуты модели должны менять свой тип, в зависимости от некоторых условий и правил, то этого можно добиться, меняя значение по умолчанию. Нужно учесть, что когда значением по умолчанию является объект, в роуте/компоненте/контроллере должна производиться динамическая регистрация и создание модели со ссылкой на объект заданного типа. Создание производится следующим образом:
+Если на форме документа атрибуты модели должны менять свой тип в зависимости от некоторых условий и правил, то этого можно добиться, меняя значение по умолчанию. Нужно учесть, что когда значением по умолчанию является объект, в роуте/компоненте/контроллере должна производиться динамическая регистрация и создание модели со ссылкой на объект заданного типа. Создание производится следующим образом:
 
 ```js
-        createDynamicModel() {
-          return new Ember.RSVP.Promise((resolve, reject) => {
-            let modelName = this.get('modelName');
+createDynamicModel() {
+  return new RSVP.Promise((resolve, reject) => {
+    const modelName = this.get('modelName');
 
-            let modelRegistered = Ember.getOwner(this)._lookupFactory(`model:${modelName}`);
+    const modelRegistered = getOwner(this)._lookupFactory(`model:${modelName}`);
 
-            if (Ember.isNone(modelRegistered)) {
-              modelRegistered = Ember.getOwner(this)._lookupFactory(`model:${modelName}`);
+    if (isNone(modelRegistered)) {
+      modelRegistered = getOwner(this)._lookupFactory(`model:${modelName}`);
 
-              if (Ember.isNone(modelRegistered)) {
-                Ember.getOwner(this).register(`model:${modelName}`, model);
-              }
+      if (isNone(modelRegistered)) {
+        getOwner(this).register(`model:${modelName}`, model);
+      }
 
-              resolve('Create dynamic model: ' + modelName);
-            } else {
-              resolve('Model already registered: ' + modelName);
-            }
-          });
-        },
+      resolve('Create dynamic model: ' + modelName);
+    } else {
+      resolve('Model already registered: ' + modelName);
+    }
+  });
+},
 ```
 
 После этого можно создавать модели заданного типа с помощью:
 
 ```js
-        let defaultProperties = Ember.$.extend({ id: generateUniqueId() }, Ember.get(options, 'properties'));
-        let modelName = 'new-platform-flexberry-g-i-s-map-layer';
+const defaultProperties = $.extend({ id: generateUniqueId() }, get(options, 'properties'));
+const modelName = 'new-platform-flexberry-g-i-s-map-layer';
 
-        let store = this.get('store');
-        store.createRecord(modelName, defaultProperties);
+const store = this.get('store');
+store.createRecord(modelName, defaultProperties);
 ```
