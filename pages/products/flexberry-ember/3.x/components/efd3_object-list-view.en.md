@@ -74,7 +74,7 @@ The component name |description
 `modelName`| Name of the current model (a list of which objects are displayed).
 `modelProjection`| Current used view.
 `content`| Displayed in the control data.
-`createNewButton`| Flag that determines whether to display the button to create on [control panel](efd32_setting-lists.html).
+`createNewButton`| Flag that determines whether to display the button to create on [control panel](efd3_setting-lists.html).
 `refreshButton`| Flag that determines whether to display the refresh button on the control panel.
 `defaultSortingButton`| Flag that determines whether to display button for setting the default sort.
 `deleteButton`| Flag that determines whether to display the delete button on the control panel.
