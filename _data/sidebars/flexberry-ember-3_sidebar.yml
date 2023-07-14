@@ -95,6 +95,11 @@ entries:
             url: /ef3_groupedit_with_multiselect.html
             output: web, pdf
 
+          - title: Setting up lists
+            title_ru: Настройка списков
+            url: /ef3_setting-lists.html
+            output: web, pdf
+
       - title: Services
         title_ru: Сервисы
         output: web, pdf
