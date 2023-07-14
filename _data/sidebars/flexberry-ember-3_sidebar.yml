@@ -90,6 +90,10 @@ entries:
         output: web, pdf
 
         folderitems:
+          - title: Groupedit with multiselect
+            title_ru: Groupedit с функцией multiselect
+            url: /ef3_groupedit_with_multiselect.html
+            output: web, pdf
 
       - title: Services
         title_ru: Сервисы
