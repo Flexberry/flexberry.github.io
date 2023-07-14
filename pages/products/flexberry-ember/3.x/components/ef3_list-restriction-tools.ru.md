@@ -1,6 +1,6 @@
 ---
 title: Инструменты ограничения списка
-sidebar: flexberry-ember-2_sidebar
+sidebar: flexberry-ember-3_sidebar
 keywords: Flexberry Ember, фильтрация, OLV, список, поиск, ограничение
 toc: true
 permalink: ru/ef3_list-restriction-tools.html
