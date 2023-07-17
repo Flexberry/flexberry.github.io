@@ -76,11 +76,11 @@ var onlyDecember = dataService.LoadObjects(lcs);
 
 lcs.LimitFunction = langdef.GetFunction(langdef.funcAND,
                 langdef.GetFunction(langdef.funcEQ,
-                    langdef.GetFunction("YearPart", new VariableDef(langdef.DateTimeType, "ДатаВыдачи")), "2012"),
+                    langdef.GetFunction("YearPart", new VariableDef(langdef.DateTimeType, "Datavideo")), "2012"),
                 langdef.GetFunction(langdef.funcEQ,
-                    langdef.GetFunction("MonthPart", new VariableDef(langdef.DateTimeType, "ДатаВыдачи")), "12"));
+                    langdef.GetFunction("MonthPart", new VariableDef(langdef.DateTimeType, "Datavideo")), "12"));
 
-var onlyDecember2012 = dataService.LoadObjects(lcs);
+var onlyDecember2012 = DataServiceProvider.DataService.LoadObjects(lcs); // DataServiceProvider is deprecated; inject IDataService instead
 ```
 
 ## Examples of usage

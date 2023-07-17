@@ -124,17 +124,17 @@ Cтоит отметить, что свойство `OwnerConnectProp` опре�
 ``` csharp
 ExternalLangDef ldef = ExternalLangDef.LanguageDef; // Использование ExternalLangDef.LanguageDef является устаревшим. Вместо него используйте конструктор (new ExternalLangDef(dataService)).
 LoadingCustomizationStruct lcsДолгосрочныеКлиенты = LoadingCustomizationStruct.GetSimpleStruct(typeof(Клиент), "КлиентE");
-lcsДолгосрочныеКлиенты.LoadingTypes = new[) { typeof(Клиент) };
+lcsДолгосрочныеКлиенты.LoadingTypes = new[] { typeof(Клиент) };
 var view = Information.GetView("КредитE", typeof(Кредит));
 var dvd = new DetailVariableDef
 {
     ConnectMasterPorp = "Клиент",
-    OwnerConnectProp = new[) { SQLWhereLanguageDef.StormMainObjectKey },
+    OwnerConnectProp = new[] { SQLWhereLanguageDef.StormMainObjectKey },
     View = view,
     Type = ldef.GetObjectType("Details")
 };
 lcsДолгосрочныеКлиенты.LimitFunction = ldef.GetFunction(ldef.funcExist, dvd,
                                                         ldef.GetFunction(ldef.funcGEQ,
                                                         new VariableDef(ldef.GuidType, "СрокКредита"), 15));
-ICSSoft.STORMNET.DataObject[) dobjsДолгосрочныеКлиенты = DataServiceProvider.DataService.LoadObjects(lcsДолгосрочныеКлиенты); // DataServiceProvider устарел; вместо него используйте внедрение зависимостей
+ICSSoft.STORMNET.DataObject[] dobjsДолгосрочныеКлиенты = DataServiceProvider.DataService.LoadObjects(lcsДолгосрочныеКлиенты); // DataServiceProvider устарел; вместо него используйте внедрение зависимостей
 ```

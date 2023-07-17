@@ -126,19 +126,19 @@ If in the above example, it is necessary to select customers that have loans for
 ``` csharp
 ExternalLangDef ldef = ExternalLangDef.LanguageDef; // Use of ExternalLangDef.LanguageDef is deprecated. Use constructor instead (new ExternalLangDef(dataService)).
 LoadingCustomizationStruct lcsДолгосрочныеКлиенты = LoadingCustomizationStruct.GetSimpleStruct(typeof(Клиент), "Client");
-lcsДолгосрочныеКлиенты.LoadingTypes = new[) { typeof(Клиент) };
+lcsДолгосрочныеКлиенты.LoadingTypes = new[] { typeof(Клиент) };
 var view = Information.GetView("Loan", typeof(Кредит));
 var dvd = new DetailVariableDef
 {
     ConnectMasterPorp = "Client",
-    OwnerConnectProp = new[) { SQLWhereLanguageDef.StormMainObjectKey },
+    OwnerConnectProp = new[] { SQLWhereLanguageDef.StormMainObjectKey },
     View = view,
     Type = ldef.GetObjectType("Details")
 };
 lcsДолгосрочныеКлиенты.LimitFunction = ldef.GetFunction(ldef.funcExist, dvd,
                                                         ldef.GetFunction(ldef.funcGEQ,
                                                         new VariableDef(ldef.GuidType, "Loanyears"), 15));
-ICSSoft.STORMNET.DataObject[) dobjsДолгосрочныеКлиенты = DataServiceProvider.DataService.LoadObjects(lcsДолгосрочныеКлиенты); // DataServiceProvider is deprecated; inject IDataService instead
+ICSSoft.STORMNET.DataObject[] dobjsДолгосрочныеКлиенты = DataServiceProvider.DataService.LoadObjects(lcsДолгосрочныеКлиенты); // DataServiceProvider is deprecated; inject IDataService instead
 ```
 
 
