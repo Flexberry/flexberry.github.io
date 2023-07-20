@@ -16,7 +16,9 @@ lang: ru
 В примерах ниже будем использовать следующий код:
 
 ```csharp
-var langdef = ExternalLangDef.LanguageDef;
+IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+IDataService ds = mainUnityContainer.Resolve<IDataService>();
+ExternalLangDef languageDef = new ExternalLangDef(ds);
 var order = LoadingCustomizationStruct.GetSimpleStruct(typeof (Заказ), Заказ.Views.ЗаказL);
 ```
 

@@ -29,7 +29,9 @@ lang: ru
 Требуется вычитать те сервера, которые принадлежат определённому Подразделению (т.е. сервера, которые принадлежат и указанному Подразделению и еще какому-то, также будут вычитаны).
 
 ```csharp
-ExternalLangDef ldef = ExternalLangDef.LanguageDef;
+IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+IDataService ds = mainUnityContainer.Resolve<IDataService>();
+ExternalLangDef languageDef = new ExternalLangDef(ds);
 LoadingCustomizationStruct lcsСервер = LoadingCustomizationStruct.GetSimpleStruct(typeof (Репликации.Сервер), "СерверE");
 lcsСервер.LoadingTypes = new Type[] {typeof (Репликации.Сервер)};
 View view = Information.GetView("СерверПодразделенияE", typeof(Репликации.СерверПодразделения));
@@ -37,11 +39,11 @@ ICSSoft.STORMNET.Windows.Forms.DetailVariableDef dvd = new ICSSoft.STORMNET.Wind
 dvd.ConnectMasterPorp = "Сервер";
 dvd.OwnerConnectProp = new string[] { SQLWhereLanguageDef.StormMainObjectKey };
 dvd.View = view;
-dvd.Type = ldef.GetObjectType("Details");
-lcsСервер.LimitFunction = ldef.GetFunction(ldef.funcExist,
+dvd.Type = languageDef.GetObjectType("Details");
+lcsСервер.LimitFunction = languageDef.GetFunction(languageDef.funcExist,
                                             dvd,
-                                            ldef.GetFunction(ldef.funcEQ,
-                                                            new VariableDef(ldef.GuidType, "Подразделение"),
+                                            languageDef.GetFunction(languageDef.funcEQ,
+                                                            new VariableDef(languageDef.GuidType, "Подразделение"),
                                                             UpdatedObject.НаправленоИз.__PrimaryKey));
 lcsСервер.ReturnTop = 1;
 ICSSoft.STORMNET.DataObject[] dobjsСервер = ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObjects(lcsСервер);
@@ -50,7 +52,9 @@ ICSSoft.STORMNET.DataObject[] dobjsСервер = ICSSoft.STORMNET.Business.Data
 Требуется вычитать только те сервера, которые принадлежат только одному конкретному Подразделению (т.е. сервера, которые принадлежат и указанному Подразделению и еще какому-то, не будут вычитаны).
 
 ```csharp
-ExternalLangDef ldef = ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.LanguageDef;
+IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+IDataService ds = mainUnityContainer.Resolve<IDataService>();
+ExternalLangDef languageDef = new ExternalLangDef(ds);
 LoadingCustomizationStruct lcsСервер = LoadingCustomizationStruct.GetSimpleStruct(typeof (Сервер), "СерверE");
 lcsСервер.LoadingTypes = new[] {typeof (Сервер)};
 View view = Information.GetView("СерверПодразделенияE", typeof(Репликации.СерверПодразделения));
@@ -59,12 +63,12 @@ var dvd = new ICSSoft.STORMNET.Windows.Forms.DetailVariableDef
                     ConnectMasterPorp = "Сервер",
                     OwnerConnectProp = new[] { SQLWhereLanguageDef.StormMainObjectKey },
                     View = view,
-                    Type = ldef.GetObjectType("Details")
+                    Type = languageDef.GetObjectType("Details")
                 };
-lcsСервер.LimitFunction = ldef.GetFunction(ldef.funcExistExact,
+lcsСервер.LimitFunction = languageDef.GetFunction(languageDef.funcExistExact,
                                             dvd,
-                                            ldef.GetFunction(ldef.funcEQ,
-                                                            new VariableDef(ldef.GuidType, "Подразделение"),
+                                            languageDef.GetFunction(languageDef.funcEQ,
+                                                            new VariableDef(languageDef.GuidType, "Подразделение"),
                                                             new Guid("6D7DC426-F5E9-4F63-B7B5-20C9E237DF2D")));
 DataObject[] dobjsСервер = DataServiceProvider.DataService.LoadObjects(lcsСервер);
 ```
@@ -81,12 +85,14 @@ DataObject[] dobjsСервер = DataServiceProvider.DataService.LoadObjects(lcs
  view.AddDetailInView("Computer", view2, true);
  view.AddDetailInView("Computer", view3, true);
  var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Computer), view);
- ExternalLangDef langDef = ExternalLangDef.LanguageDef;
- var detail1 = new DetailVariableDef(langDef.GetObjectType("Details"), "Hardware", view2, "Computer");
- var detail2 = new DetailVariableDef(langDef.GetObjectType("Details"), "Software", view3, "Computer");
- lcs.LimitFunction = langDef.GetFunction(langDef.funcExistDetails,
-                        detail1, detail2, langDef.GetFunction(langDef.funcG,
-                        new VariableDef(langDef.DateTimeType, "DeliveryDate"),
-                        new VariableDef(langDef.DateTimeType, "DeliveryDate")));
+IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+IDataService ds = mainUnityContainer.Resolve<IDataService>();
+ExternalLangDef languageDef = new ExternalLangDef(ds);
+ var detail1 = new DetailVariableDef(languageDef.GetObjectType("Details"), "Hardware", view2, "Computer");
+ var detail2 = new DetailVariableDef(languageDef.GetObjectType("Details"), "Software", view3, "Computer");
+ lcs.LimitFunction = languageDef.GetFunction(languageDef.funcExistDetails,
+                        detail1, detail2, languageDef.GetFunction(languageDef.funcG,
+                        new VariableDef(languageDef.DateTimeType, "DeliveryDate"),
+                        new VariableDef(languageDef.DateTimeType, "DeliveryDate")));
  var dos = DataServiceProvider.DataService.LoadObjects(lcs);
 ```

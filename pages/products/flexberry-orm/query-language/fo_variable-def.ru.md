@@ -122,7 +122,9 @@ Cтоит отметить, что свойство `OwnerConnectProp` опре�
 Если в описанном примере надо выбрать клиентов, у которых есть кредиты на срок более 15 лет, код будет выглядеть следующим образом:
 
 ``` csharp
-ExternalLangDef ldef = ExternalLangDef.LanguageDef;
+IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+IDataService ds = mainUnityContainer.Resolve<IDataService>();
+ExternalLangDef languageDef = new ExternalLangDef(ds);
 LoadingCustomizationStruct lcsДолгосрочныеКлиенты = LoadingCustomizationStruct.GetSimpleStruct(typeof(Клиент), "КлиентE");
 lcsДолгосрочныеКлиенты.LoadingTypes = new[) { typeof(Клиент) };
 var view = Information.GetView("КредитE", typeof(Кредит));
@@ -131,10 +133,10 @@ var dvd = new DetailVariableDef
     ConnectMasterPorp = "Клиент",
     OwnerConnectProp = new[) { SQLWhereLanguageDef.StormMainObjectKey },
     View = view,
-    Type = ldef.GetObjectType("Details")
+    Type = languageDef.GetObjectType("Details")
 };
-lcsДолгосрочныеКлиенты.LimitFunction = ldef.GetFunction(ldef.funcExist, dvd,
-                                                        ldef.GetFunction(ldef.funcGEQ, 
-                                                        new VariableDef(ldef.GuidType, "СрокКредита"), 15));
+lcsДолгосрочныеКлиенты.LimitFunction = languageDef.GetFunction(languageDef.funcExist, dvd,
+                                                        languageDef.GetFunction(languageDef.funcGEQ, 
+                                                        new VariableDef(languageDef.GuidType, "СрокКредита"), 15));
 ICSSoft.STORMNET.DataObject[) dobjsДолгосрочныеКлиенты = DataServiceProvider.DataService.LoadObjects(lcsДолгосрочныеКлиенты);
 ```

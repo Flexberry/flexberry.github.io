@@ -127,19 +127,22 @@ public static object ObjectFromBinaryString(string s)
     string fnStr = "";
     string serializedFn;
     AdvansedLimit advlimit = new AdvansedLimit();
-    ExternalLangDef externalLangDef = ExternalLangDef.LanguageDef;
-    advlimit.FromSimpleValue(Utils.ObjectFromString(_serializedFunc), externalLangDef);
+    IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+    IDataService ds = mainUnityContainer.Resolve<IDataService>();
+    ExternalLangDef languageDef = new ExternalLangDef(ds);
+    advlimit.FromSimpleValue(Utils.ObjectFromString(_serializedFunc), languageDef);
     Function fn = advlimit.Function;
 
-    serializedFn = Utils.ObjectToBinaryString(externalLangDef.FunctionToSimpleStruct(fn));
+    serializedFn = Utils.ObjectToBinaryString(languageDef.FunctionToSimpleStruct(fn));
     Assert.IsNotNull(serializedFn);
     
     восставшийИзНебытия =
-                externalLangDef.FunctionFromSimpleStruct(Utils.ObjectFromBinaryString(serializedFn));        
+                languageDef.FunctionFromSimpleStruct(Utils.ObjectFromBinaryString(serializedFn));        
     Assert.IsNotNull(восставшийИзНебытия);
 ```
 
 ## Возможная проблема десериализации
+
 В коде выше используется конструкция `advlimit.FromSimpleValue`, которая на основании объекта особого вида строит непосредственно [ограничение](fo_limit-function.html). В структуре передаваемого объекта особого вида, среди прочих, есть [`AssemblyQualifiedName`](http://msdn.microsoft.com/ru-ru/library/system.type.assemblyqualifiedname.aspx) типа, из-за чего могут возникнуть проблемы при десериализации: например, если ограничение было создано с неподписанной сборкой, а требуется открыть уже с версией, что была подписана (соответственно, [`AssemblyQualifiedName`](http://msdn.microsoft.com/ru-ru/library/system.type.assemblyqualifiedname.aspx) типа изменилось и его нельзя получить через `Type.GetType(...)`), и др. Для этого случая добавлен делегат, который позволяет определить собственный дополнительный метод для получения типа по его имени.
 
 ```csharp

@@ -26,11 +26,13 @@ lang: ru
  View view2 = Information.GetView("SoftwareL", typeof(Software));
  view.AddDetailInView("Software", view2, true);
  var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Company), view);
- ExternalLangDef langDef = ExternalLangDef.LanguageDef;
- var detail = new DetailVariableDef(langDef.GetObjectType("Details"), "Software", view2, "Company");
- lcs.LimitFunction = langDef.GetFunction(langDef.funcExist, detail,
-                                         langDef.GetFunction(langDef.funcL,
-                                         new VariableDef(langDef.DateTimeType, Information.ExtractPropertyPath<Software>(x => x.DateCreation)),
-                                         new VariableDef(langDef.DateTimeType, Information.ExtractPropertyPath<Software>(x => x.Company.DateCreation))));
+ IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+ IDataService ds = mainUnityContainer.Resolve<IDataService>();
+ ExternalLangDef languageDef = new ExternalLangDef(ds);
+ var detail = new DetailVariableDef(languageDef.GetObjectType("Details"), "Software", view2, "Company");
+ lcs.LimitFunction = languageDef.GetFunction(languageDef.funcExist, detail,
+                                         languageDef.GetFunction(languageDef.funcL,
+                                         new VariableDef(languageDef.DateTimeType, Information.ExtractPropertyPath<Software>(x => x.DateCreation)),
+                                         new VariableDef(languageDef.DateTimeType, Information.ExtractPropertyPath<Software>(x => x.Company.DateCreation))));
  var dos = DataServiceProvider.DataService.LoadObjects(lcs);
 ```

@@ -36,7 +36,9 @@ private void Serialize(bool binary)
     DateTime start = DateTime.Now;
     string fnStr = "";
 
-    ExternalLangDef externalLangDef = ExternalLangDef.LanguageDef;
+    IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+    IDataService ds = mainUnityContainer.Resolve<IDataService>();
+    ExternalLangDef languageDef = new ExternalLangDef(ds);
     SQLWhereLanguageDef ldef = SQLWhereLanguageDef.LanguageDef;
     Function fn = ldef.GetFunction(
                 ldef.funcAND,
@@ -56,22 +58,22 @@ private void Serialize(bool binary)
         string serializedFn;
         if (binary)
         {
-            serializedFn = ToolBinarySerializer.ObjectToString(externalLangDef.FunctionToSimpleStruct(fn));
+            serializedFn = ToolBinarySerializer.ObjectToString(languageDef.FunctionToSimpleStruct(fn));
         }
         else
         {
-            serializedFn = ToolXML.ObjectToString(externalLangDef.FunctionToSimpleStruct(fn));
+            serializedFn = ToolXML.ObjectToString(languageDef.FunctionToSimpleStruct(fn));
         }
         Assert.IsNotNull(serializedFn);
         Function восставшийИзНебытия;
         if (binary)
         {
             восставшийИзНебытия =
-                externalLangDef.FunctionFromSimpleStruct(ToolBinarySerializer.ObjectFromString(serializedFn));
+                languageDef.FunctionFromSimpleStruct(ToolBinarySerializer.ObjectFromString(serializedFn));
         }
         else
         {
-            восставшийИзНебытия = externalLangDef.FunctionFromSimpleStruct(ToolXML.ObjectFromString(serializedFn));
+            восставшийИзНебытия = languageDef.FunctionFromSimpleStruct(ToolXML.ObjectFromString(serializedFn));
         }
         Assert.IsNotNull(восставшийИзНебытия);
         fnStr = "Длина сериализованной строки: " + serializedFn.Length + Environment.NewLine
