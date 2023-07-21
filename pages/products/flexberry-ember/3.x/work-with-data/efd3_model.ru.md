@@ -1,4 +1,4 @@
----
+RSVP.---
 title: Модели в сгенерированных приложениях
 sidebar: flexberry-ember-3_sidebar
 keywords: Flexberry Ember
@@ -360,19 +360,46 @@ export default EditFormNewRoute.extend({
 createDynamicModel() {
   return new RSVP.Promise((resolve, reject) => {
     const modelName = this.get('modelName');
+    const projectionName = this.get('projectionName');
+    const metadataUrl = this.get('metadataUrl');
 
-    const modelRegistered = getOwner(this)._lookupFactory(`model:${modelName}`);
+    const modelRegistered = getOwner(this).factoryFor(`model:${modelName}`);
+    const mixinRegistered = getOwner(this).factoryFor(`mixin:${modelName}`);
+    const serializerRegistered = getOwner(this).factoryFor(`serializer:${modelName}`);
+    const adapterRegistered = getOwner(this).factoryFor(`adapter:${modelName}`);
 
-    if (isNone(modelRegistered)) {
-      modelRegistered = getOwner(this)._lookupFactory(`model:${modelName}`);
+    if (isNone(serializerRegistered)) {
+      const modelSerializer = this.createSerializer();
+      getOwner(this).register(`serializer:${modelName}`, modelSerializer);
+    }
 
-      if (isNone(modelRegistered)) {
-        getOwner(this).register(`model:${modelName}`, model);
-      }
+    if (isNone(adapterRegistered)) {
+      const modelAdapter = this.createAdapterForModel();
+      getOwner(this).register(`adapter:${modelName}`, modelAdapter);
+    }
 
-      resolve('Create dynamic model: ' + modelName);
+    if (isNone(modelRegistered) || isNone(mixinRegistered)) {
+      this.сreateModelHierarchy(metadataUrl, modelName).then(({ model, dataModel, modelMixin, }) => {
+        model.defineProjection(projectionName, modelName, this.createProjection(dataModel));
+
+        // Необходимо еще раз проверить регистрацию, т.к. могут быть слои с одной моделью, а код - асинхронный
+        modelRegistered = getOwner(this).factoryFor(`model:${modelName}`);
+        mixinRegistered = getOwner(this).factoryFor(`mixin:${modelName}`);
+
+        if (isNone(modelRegistered)) {
+          getOwner(this).register(`model:${modelName}`, model);
+        }
+
+        if (isNone(mixinRegistered)) {
+          getOwner(this).register(`mixin:${modelName}`, modelMixin);
+        }
+
+        resolve(`Create dynamic model: ${modelName}`);
+      }).catch((e) => {
+        reject(new Error(`Can't create dynamic model: ${modelName}. Error: ${e}`));
+      });
     } else {
-      resolve('Model already registered: ' + modelName);
+      resolve(`Model already registered: ${modelName}`);
     }
   });
 },
