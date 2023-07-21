@@ -90,9 +90,19 @@ entries:
         output: web, pdf
 
         folderitems:
+          - title: Groupedit with multiselect
+            title_ru: Groupedit с функцией multiselect
+            url: /ef3_groupedit_with_multiselect.html
+            output: web, pdf
+
           - title: Setting up lists
             title_ru: Настройка списков
             url: /ef3_setting-lists.html
+            output: web, pdf
+
+          - title: Flexberry tab bar
+            title_ru: Flexberry tab bar
+            url: /ef3_flexberry-tab-bar.html
             output: web, pdf
 
           - title: List restriction tools
