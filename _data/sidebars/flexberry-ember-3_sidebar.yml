@@ -95,6 +95,11 @@ entries:
             url: /ef3_setting-lists.html
             output: web, pdf
 
+          - title: Flexberry tab bar
+            title_ru: Flexberry tab bar
+            url: /ef3_flexberry-tab-bar.html
+            output: web, pdf
+
       - title: Services
         title_ru: Сервисы
         output: web, pdf
