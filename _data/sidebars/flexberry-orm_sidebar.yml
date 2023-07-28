@@ -628,8 +628,8 @@ entries:
       url: /fo_orm-odata-debug.html
       output: web
 
-    - title: Instructions for debugging odatabackend at runtime
-      title_ru: Инструкция по отладке odatabackend в runtime
+    - title: Instructions for debugging project code with ORM.ODataService at runtime
+      title_ru: Инструкция по отладке кода проекта с ORM.ODataService во время выполнения
       url: /fo_debugging-odatabackend-runtime.html
       output: web
 
