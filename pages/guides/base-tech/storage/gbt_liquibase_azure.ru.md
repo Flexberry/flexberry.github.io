@@ -109,4 +109,4 @@ variables:
 - для запуска через собственный скрипт: `cd $(WorkingDirectory) && ./liquibase.sh`.
 
 ## Ресурсы
-* [Практическое руководство  «Делай как я»](./gbt_liquibase.ru.md) <i class="fa fa-arrow-left" aria-hidden="true"></i>
+* [Liquibase](./gbt_liquibase.ru.md) <i class="fa fa-arrow-left" aria-hidden="true"></i>
