@@ -11,7 +11,7 @@ lang: ru
 
 Liquibase - это библиотека с открытым исходным кодом для отслеживания, управления и применения изменений схемы базы данных. Является аналогом Git для баз данных. Вместо "коммитов" - changesets, представляющие наборы SQL команд на изменение БД.
 
-Использование Liquibase в вашем проекте позволяет отслеживать изменения схем БД, откатывать (rollback) базу до нужного состояния, облегчает развертывание скриптов на разных серверах.
+Использование Liquibase в вашем проекте позволяет отслеживать изменения схем БД, откатывать (rollback) базы до нужного состояния, облегчает развертывание скриптов на разных серверах.
 
 > [Flexberry Designer](fd_flexberry-designer.html) поддерживает генерацию скриптов Liquibase для СУБД `PostgreSQL` и `Microsoft SQL Server`.
 
@@ -60,9 +60,9 @@ CREATE SCHEMA liquibase AUTHORIZATION postgres;
 
 ### Создание скриптов
 
-Скрипты могут быть оформлены в 4х форматах (json/sql/xml/yaml), но рекомендуется использовать [liquibase formatted sql](https://docs.liquibase.com/concepts/changelogs/sql-format.html), т.к. именно его генерирует Flexberry Designer.
+Для описания изменений в Liquibase используются текстовые файлы [changelog](https://docs.liquibase.com/concepts/changelogs/home.html). Файл содержит SQL-изменения базы данных в специальном liquibase-формате (xml, yaml, json, sql - на выбор). Рекомендуется использовать [liquibase formatted sql](https://docs.liquibase.com/concepts/changelogs/sql-format.html), т.к. именно его генерирует Flexberry Designer.
 
-Оформленные скрипты можно генерировать, используя `Flexberry Designer`:
+Скрипты для Liquibase можно генерировать, используя `Flexberry Designer`:
 1. [Desktop версия](https://flexberry.github.io/ru/fd_flexberry-designer.html)
   - Выбрать стадию -> Кликнуть правой кнопкой мыши -> `ORM` -> `SQL` -> `PostgreSQL` -> `Сгенерировать SQL для liquibase`
 
@@ -82,13 +82,13 @@ CREATE SCHEMA liquibase AUTHORIZATION postgres;
 
   > Подробнее в [практическом руководстве по созданию приложения с помощью Flexberry Designer Enterprise](../../practical-guides/flexberry-designer-enterprise/gpg_practical-guide.md)
 
-Есть возможность написать скрипт самостоятельно. Для этого необходимо в начало вашего `.sql` скрипта добавить следующие строчки:
+Есть возможность написать скрипт самостоятельно. Для этого необходимо в начало вашего обычного `.sql` скрипта добавить следующие строчки:
 - `--liquibase formatted sql`
 - `--changeset author:id` - где `author` - автор изменений, `id` - уникальный идентификатор набора изменений _(рекомендуется использовать текущую дату и время)_.
 
 ### Запуск команд Liquibase
 
-После того, как конфигурация проекта Liquibase завершена, можно использовать Liquibase CLI.
+После того, как конфигурация проекта Liquibase завершена, можно запускать команды. Команды запускаются с помощью CLI, который устанавливается вместе с Liquibase.
 
 Команды можно запускать следующим образом:
 
