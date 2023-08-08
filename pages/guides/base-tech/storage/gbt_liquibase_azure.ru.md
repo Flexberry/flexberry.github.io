@@ -76,7 +76,7 @@ steps:
   inputs:
     sshEndpoint: 'My server'
     runOptions: 'commands'
-    commands: '$(liquibase) validate --contexts $(liquibaseContext)' # --contexts $(liquibaseContext) необходимо удалить, если вы не используете контексты
+    commands: '$(liquibase) validate --contexts $(liquibaseContext)' # --contexts $(liquibaseContext) необходимо удалить, если не используются контексты
     readyTimeout: '20000'
     failOnStdErr: false
 
