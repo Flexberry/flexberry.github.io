@@ -8,7 +8,7 @@ lang: ru
 ---
 
 ### Использование Liquibase в Azure Pipelines
-Чтобы запускать команды Liquibase в Azure Pipelines, необходимо иметь агента сборки с установленным Liquibase CLI. Если такого агента у вас нет, есть альтернативное решение. В момент сборки скрипты необходимо копировать на удалённый сервер по ssh, затем через ssh запускать необходимые команды Liquibase (Liquibase должен быть предварительно установлен на удалённом сервере, либо используйте вариант с Docker). YAML конвеер для запуска Liquibase команд может выглядеть так:
+Чтобы запускать команды Liquibase в Azure Pipelines, необходимо иметь агента сборки с установленным Liquibase CLI. Если такого агента нет, есть альтернативное решение. В момент сборки скрипты необходимо копировать на удалённый сервер по ssh, затем через ssh запускать необходимые команды Liquibase (Liquibase должен быть предварительно установлен на удалённом сервере, либо можно использовать вариант с Docker). YAML конвеер для запуска Liquibase команд может выглядеть так:
 ```yaml
 # Пайплайн позволяет запускать команды liquibase на удалённом сервере через ssh.
 
@@ -23,7 +23,7 @@ steps:
 - task: CopyFiles@2
   displayName: 'Подготовка скриптов'
   inputs:
-    # отбираем только файлы скриптов:
+    # отобрать только файлы скриптов:
     Contents: |
       **/.gitkeep
       **/*.*sql
@@ -33,7 +33,8 @@ steps:
       liquibase.sh
     TargetFolder: '$(Build.BinariesDirectory)/$(Build.BuildId)/code'
     CleanTargetFolder: true
-# Архивируем скрипты, т.к. архивы отправляются значительно быстрее:
+
+# Архивировать скрипты, т.к. архивы отправляются значительно быстрее:
 - task: ArchiveFiles@2
   displayName: 'Архивирование скриптов'
   inputs:
@@ -43,7 +44,7 @@ steps:
     archiveFile: '$(Build.BinariesDirectory)/$(Build.BuildId)/archive.tar.gz'
     replaceExistingArchive: true
 
-# Этап 2. Отправляем архив со скриптами на удалённый сервер:
+# Этап 2. Отправить архив со скриптами на удалённый сервер:
 - task: CopyFilesOverSSH@0
   displayName: 'Отправка архива на сервер'
   inputs:
@@ -68,14 +69,7 @@ steps:
     commands: 'rm $(WorkingDirectory)/archive.tar.gz'
     readyTimeout: '20000'
 
-# Этап 3. Запускаем liquibase на удалённом сервере:
-- task: SSH@0
-  displayName: 'Делаем скрипт liquibase.sh запускаемым'
-  inputs:
-    sshEndpoint: 'My server'
-    runOptions: 'commands'
-    commands: 'chmod +x $(WorkingDirectory)/liquibase.sh'
-    readyTimeout: '20000'
+# Этап 3. Запустить liquibase на удалённом сервере:
 - task: SSH@0
   displayName: 'Запуск команды liquibase'
   inputs:
@@ -100,15 +94,31 @@ variables:
 - name: liquibase
   value: 'cd $(WorkingDirectory) && ./liquibase.sh' # команда для запуска liquibase
 ```
+> Внимание! В данном скрипте переменная `WorkingDirectory` обязательно должна иметь значение (необходимо скопировать variables!). В противном случае на шаге "Очистка папок" будет запущена команда `rm -rf /`.
 
-> Будьте осторожны! В данном скрипте переменная `WorkingDirectory` обязательно должна иметь значение (не забудьте скопировать variables!). В противном случае на шаге "Очистка папок" будет запущена команда `rm -rf /`.
+Для работы представленного пайплайна, необходимо:
+- добавить `sshEndpoint` в настройках проекта (задать данные для подключения к удалённому серверу, на котором будет запускаться liquibase)
+- задать переменную `liquibaseContext` для конвеера если конвеер будет запущен на каком-либо контексте
 
-Для работы представленного пайплайна, не забудьте добавить `sshEndpoint` в настройках проекта (задать данные для подключения к удалённому серверу, на котором будет запускаться liquibase), а также задать переменную `liquibaseContext` если вы хотите запустить конвеер на каком-либо контексте.
+Liquibase записывает часть действий в stderr (лог ошибок). Для того, чтобы успешный запуск Liquibase не возвращал ошибку в Azure Pipelines, необходимо добавить опцию `failOnStdErr: false` (см. шаг "Запуск команды liquibase" в примере).
 
-В `variables` вы можете изменить команду запуска liquibase на следующие:
-- для обычного режима: `liquibase` (liquibase должен быть предварительно установлен);
-- для docker режима: `docker run --rm -v ${PWD}/:/liquibase/changelog/ liquibase/liquibase --defaultsFile=/liquibase/changelog/liquibase.properties --changelog-file=liquibase.json --search-path=/liquibase/changelog/`;
+
+В `variables` можно изменить команду запуска liquibase на следующие:
+- для обычного режима: `cd $(WorkingDirectory) && liquibase` (liquibase должен быть предварительно установлен);
+- для docker режима: `cd $(WorkingDirectory) && docker run --rm -v ${PWD}/:/liquibase/changelog/ liquibase/liquibase --defaultsFile=/liquibase/changelog/liquibase.properties --changelog-file=liquibase.json --search-path=/liquibase/changelog/`;
 - для запуска через собственный скрипт: `cd $(WorkingDirectory) && ./liquibase.sh`.
+
+Если для запуска Liquibase используется скрипт (например, [этот](https://gist.github.com/turbcool/969c545421cc0d8b43fa8b8c391e6571)), то необходимо перед запуском отметить его запускаемым:
+
+```yaml
+- task: SSH@0
+  displayName: 'Делаем скрипт liquibase.sh запускаемым'
+  inputs:
+    sshEndpoint: 'My server'
+    runOptions: 'commands'
+    commands: 'chmod +x $(WorkingDirectory)/liquibase.sh'
+    readyTimeout: '20000'
+```
 
 ## Ресурсы
 * [Liquibase](./gbt_liquibase.ru.md) <i class="fa fa-arrow-left" aria-hidden="true"></i>
