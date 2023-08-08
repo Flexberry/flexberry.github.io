@@ -103,7 +103,6 @@ variables:
 
 Liquibase записывает часть действий в stderr (лог ошибок). Для того, чтобы успешный запуск Liquibase не возвращал ошибку в Azure Pipelines, необходимо добавить опцию `failOnStdErr: false` (см. шаг "Запуск команды liquibase" в примере).
 
-
 В `variables` можно изменить команду запуска liquibase на следующие:
 - для обычного режима: `cd $(WorkingDirectory) && liquibase` (liquibase должен быть предварительно установлен);
 - для docker режима: `cd $(WorkingDirectory) && docker run --rm -v ${PWD}/:/liquibase/changelog/ liquibase/liquibase --defaultsFile=/liquibase/changelog/liquibase.properties --changelog-file=liquibase.json --search-path=/liquibase/changelog/`;
