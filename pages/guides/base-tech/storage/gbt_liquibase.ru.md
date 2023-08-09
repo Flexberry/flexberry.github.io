@@ -131,8 +131,7 @@ docker run --rm -v ${PWD}/:/liquibase/changelog/ liquibase/liquibase --defaultsF
 - `--changelog-file=liquibase.json` - путь до корневого changelog
 - `--search-path=/liquibase/changelog/` - путь, в котором будет производиться поиск changelogs
 
-> Если в контейнере папка `/liquibase/changelog/` становится пустой, возможно команда запущена из Windows через Git Bash. В таком случае, перед запуском необходимо задать ENV переменную
-**MSYS_NO_PATHCONV=1**
+> Если в контейнере папка `/liquibase/changelog/` становится пустой, возможно команда запущена из Windows через Git Bash. В таком случае, перед запуском необходимо задать ENV переменную **MSYS_NO_PATHCONV=1**. Переменную можно записать в `system path` чтобы она не сбрасывалась.
 
 Подробнее см. [Использование Liquibase в Docker.](https://docs.liquibase.com/workflows/liquibase-community/using-liquibase-and-docker.html)
 
