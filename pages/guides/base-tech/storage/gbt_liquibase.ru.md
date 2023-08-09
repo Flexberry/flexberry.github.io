@@ -143,7 +143,7 @@ Liquibase позволяет откатывать изменения. Это м�
 - `rollback-count`
 > (см. [rollback](https://docs.liquibase.com/commands/home.html#database-rollback-commands)).
 
-**Важно!** "Из коробки" откат изменений работать не будет. Для каждого скрипта необходимо указывать команды для отката (см. [rollback actions](https://docs.liquibase.com/concepts/changelogs/sql-format.html#rollback-actions)). Flexberry Designer не генерирует таких команд.
+{% include important.html content="'Из коробки' откат изменений работать не будет. Для каждого скрипта необходимо указывать команды для отката (см. [rollback actions](https://docs.liquibase.com/concepts/changelogs/sql-format.html#rollback-actions)). Flexberry Designer не генерирует таких команд." %}
 
 ### Использование скриптов в нескольких БД
 
