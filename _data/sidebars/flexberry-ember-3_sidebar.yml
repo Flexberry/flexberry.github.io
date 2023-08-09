@@ -104,6 +104,11 @@ entries:
             title_ru: Flexberry tab bar
             url: /ef3_flexberry-tab-bar.html
             output: web, pdf
+          
+          - title: Flexberry lookup
+            title_ru: Flexberry lookup
+            url: /ef3_flexberry-lookup.html
+            output: web, pdf
 
       - title: Services
         title_ru: Сервисы
