@@ -115,7 +115,7 @@ Liquibase записывает часть действий в stderr (лог о�
 - для docker режима: `cd $(WorkingDirectory) && docker run --rm -v ${PWD}/:/liquibase/changelog/ liquibase/liquibase --defaultsFile=/liquibase/changelog/liquibase.properties --changelog-file=liquibase.json --search-path=/liquibase/changelog/`;
 - для запуска через собственный скрипт: `cd $(WorkingDirectory) && ./liquibase.sh`.
 
-Если для запуска Liquibase используется скрипт (например, [этот](https://gist.github.com/turbcool/969c545421cc0d8b43fa8b8c391e6571)), то необходимо перед запуском отметить его запускаемым:
+Если для запуска Liquibase используется скрипт (см. пример в конце [этой статьи](./gbt_liquibase.ru.md)), то необходимо перед запуском отметить его запускаемым:
 
 ```yaml
 - task: SSH@0
