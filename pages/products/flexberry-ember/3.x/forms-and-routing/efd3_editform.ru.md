@@ -162,13 +162,6 @@ export default EditFormController.extend({
           text=(t "forms.edit-form.saveAndClose-button-text")
           icon="icon icon-save-close"
           action="saveAndClose"
-        )
-        (hash
-          type="submit"
-          class="save-del-button"
-          disabled=(readonly)
-          text=(t "forms.edit-form.delete-button-text")
-          action="delete"
         ))
     }}
   </div>
