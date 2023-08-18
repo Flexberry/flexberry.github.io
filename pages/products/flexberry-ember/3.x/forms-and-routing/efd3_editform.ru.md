@@ -141,21 +141,36 @@ export default EditFormController.extend({
 <form class="ui form flexberry-vertical-form" role="form">
   {{flexberry-error error=error}}
   <div class="field">
-    <div class="flexberry-edit-panel">
-      {{#unless readonly}} <!-- Кнопки выводятся, если форма не находится в режиме "readonly" -->
-        <button class="ui button save-button" {{action "save"}}> <!-- Кнопка "сохранение" -->
-          {{t "forms.edit-form.save-button-text"}}
-        </button>
-        {{#unless model.isNew}} <!-- Кнопка "удаление" не доступна на форме создания -->
-          <button class="ui button save-del-button" {{action "delete"}}> <!-- Кнопка "удаление" -->
-            {{t "forms.edit-form.delete-button-text"}}
-          </button>
-        {{/unless}}
-      {{/unless}}
-      <button class="ui button close-button" {{action "close"}}> <!-- Кнопка "закрытие" -->
-        {{t "forms.edit-form.close-button-text"}}
-      </button>
-    </div>
+    <!-- showCloseButton - показ кнопки закрытия -->
+    <!-- readonly - не показывать кнопки, когда форма в режиме readonly -->
+    {{flexberry-edit-panel
+      showCloseButton=true
+      deepMount=true
+      readonly=readonly
+      buttons=(array
+        (hash
+          type="submit"
+          class="save-button"
+          disabled=(readonly)
+          text=(t "forms.edit-form.save-button-text")
+          icon="icon icon-save"
+          action="save")
+        (hash
+          type="submit"
+          class="save-close-button"
+          disabled=(readonly)
+          text=(t "forms.edit-form.saveAndClose-button-text")
+          icon="icon icon-save-close"
+          action="saveAndClose"
+        )
+        (hash
+          type="submit"
+          class="save-del-button"
+          disabled=(readonly)
+          text=(t "forms.edit-form.delete-button-text")
+          action="delete"
+        ))
+    }}
   </div>
   <div class="field flexberry-validationsummary-container"> <!-- Вывод ошибок валидации -->
     <div class="sixteen wide">
