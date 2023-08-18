@@ -40,9 +40,9 @@ summary: Руковдство по применению компонента fle
 
 Единственное свойство, которое необходимо передать компоненту, это объект с деревом-сайтмапа.
 
-```javascript
-{{flexberry-sitemap-searchbar
-treeContent=model.nodes}}
+```
+{% raw %}{{flexberry-sitemap-searchbar
+treeContent=model.nodes}}{% endraw %}
 ```
 
 **treeContent** - массив объектов, по которым ведётся поиск. Данный массив имеет древовидный вид (N-Array tree), где неизвестно, какой глубины/ ширины этот объект.
