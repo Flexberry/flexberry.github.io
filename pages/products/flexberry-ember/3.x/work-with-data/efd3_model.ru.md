@@ -454,3 +454,5 @@ export {
   dynamicModelRegistration
 };
 ```
+
+[Пример с реализацией](http://flexberry.github.io/ember-flexberry/dummy/dummy-test-2/#/components-examples/flexberry-textbox/settings-example) на тестовом стенде.
