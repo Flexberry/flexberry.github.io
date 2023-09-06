@@ -351,3 +351,108 @@ export default EditFormNewRoute.extend({
 * [`i-i-s-caseberry-logging-objects-application-log`](https://github.com/Flexberry/ember-flexberry/blob/develop/addon/models/i-i-s-caseberry-logging-objects-application-log.js) - модель для [сервиса логирования](efd3_log-service.html).
 * [`new-platform-flexberry-flexberry-user-setting`](https://github.com/Flexberry/ember-flexberry/blob/develop/addon/models/new-platform-flexberry-flexberry-user-setting.js) - модель для [сервиса пользовательских настроек]().
 * [`new-platform-flexberry-services-lock`](https://github.com/Flexberry/ember-flexberry/blob/develop/addon/models/new-platform-flexberry-services-lock.js) - модель для [сервиса пессимистических блокировок]().
+
+
+## Создание динамических моделей
+
+Если необходимо зарегистрировать и использовать новую модель во время выполнения программы, то это можно сделать динамически. Изначально нужно иметь описание самой модели. Например:
+
+```js
+    let dynamicModel = {
+      "modelName": "dynamic-model",
+      "attrs": [
+        {
+          "name": "text",
+          "type": "string",
+          "notNull": false,
+          "defaultValue": "",
+          "stored": true
+        }
+      ],
+      "projections": [
+        {
+          "name": "BaseE",
+          "attrs": [
+            {
+              "name": "text",
+              "caption": "Text",
+              "hidden": false,
+              "index": 0,
+            }
+          ]
+        }
+      ]
+    };
+```
+
+Тогда вызов можно определить следующим образом:
+
+```js
+  import { getOwner } from '@ember/application';
+  import { dynamicModelRegistration } from 'dummy/utils/create-dynamic-models';
+
+  /* ... */
+
+  dynamicModelRegistration(dynamicModel, getOwner(this));
+  var base = store.createRecord('dynamic-model', { text: 'dynamic-model-text'});
+
+  /* ... */
+```
+
+Далее необходимо реализовать функцию регистрации новой модели по заданному описанию. Например:
+
+```js
+import { isNone } from '@ember/utils';
+import DS from 'ember-data';
+import { attr } from 'ember-flexberry-data/utils/attributes';
+import Model from 'ember-flexberry-data/models/model';
+
+  // Устанавливаем дефолтные значения для атрибутов модели и возвращаем модель.
+  function createModel(attrs) {
+    if (isNone(attrs)) {
+      return;
+    }
+
+    let model = {};
+    attrs.forEach((attribute) => {
+      model[attribute.name] = DS.attr(attribute.type, { required: attribute.notNull });
+    });
+
+    let modelResult = Model.extend(model);
+    return modelResult;
+  }
+
+  // Устанавливаем дефолтьные значения для атрибутов в представлении
+  function createProjection(projectionObj) {
+    let modelProjection = { };
+
+    projectionObj.attrs.forEach((attribute) => {
+      modelProjection[attribute.name] = attr('');
+    });
+
+    return modelProjection;
+  }
+
+ let dynamicModelRegistration = function(dynamicModelObj, owner) {
+    let modelRegistered = owner.hasRegistration(`model:${dynamicModelObj.modelName}`);
+
+    // Проверяем, что модель еще не была зарегистрирована
+    if (!modelRegistered) {
+      let model = createModel(dynamicModelObj.attrs);
+    
+    // Создание представлений для модели
+      dynamicModelObj.projections.forEach((projection) => {
+        model.defineProjection(projection.name, dynamicModelObj.modelName, createProjection(projection));
+      });
+
+    // Регистрируем модель
+      owner.register(`model:${dynamicModelObj.modelName}`, model);
+    }
+  }
+
+export {
+  dynamicModelRegistration
+};
+```
+
+[Пример с реализацией](http://flexberry.github.io/ember-flexberry/dummy/dummy-test-2/#/components-examples/flexberry-textbox/settings-example) на тестовом стенде.
