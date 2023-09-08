@@ -51,7 +51,7 @@ lang: ru
 <!-- ... -->
 ```
 
-`CaseberryMembershipProvider ` располагается в сборке `CheckingLibrary.dll`
+`CaseberryMembershipProvider` располагается в сборке `CheckingLibrary.dll`
 Чтобы полномочия проверялись, узлу требуется наличие следующих сборок:
 
 * Security(Objects)

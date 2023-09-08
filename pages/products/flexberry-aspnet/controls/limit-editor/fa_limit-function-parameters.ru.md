@@ -9,7 +9,7 @@ lang: ru
 
 Для подстановки параметров в функцию в классе `ICSSoft.STORMNET.Web.Tools.AdvLimitUtils` есть метод:
 
-```csharp 
+```csharp
 /// <summary>
 /// Подставить конкретные значения вместо параметров функции.
 /// </summary>
@@ -17,7 +17,7 @@ lang: ru
 /// <param name="paramValues">Справочник значений параметров (название параметра - значение).</param>  
 /// <returns>Функция, в которой все параметры заменены на соответствующие значения.</returns>
 public static Function SubstituteParameters(Function function, IDictionary<string, object> paramValues)
-``` 
+```
 
 ## Пример
 
