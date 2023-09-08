@@ -77,7 +77,7 @@ if (UpdatedObject.GetStatus() == ObjectStatus.Deleted)
 	UpdatedObject.Актуально = false;
 
 	// Найдем все объекты, ссылающиеся на "удаляемый" и удалим их.
-	var ds = (SQLDataService)DataServiceProvider.DataService;
+	var ds = (SQLDataService)DataServiceProvider.DataService; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
 	var klients =
 		ds.Query<Клиент>(Клиент.Views.КлиентE)
 		  .Where(k => k.Прописка.__PrimaryKey == UpdatedObject.__PrimaryKey);
@@ -95,7 +95,7 @@ if (UpdatedObject.GetStatus() == ObjectStatus.Deleted)
 Далее, чтобы пользователю не выводились "удаленные" данные при просмотре списка объектов, требуется на соответствующий контрол наложить ограничение вида:
 
 ``` csharp
-var ds = (MSSQLDataService)DataServiceProvider.DataService;
+var ds = (MSSQLDataService)DataServiceProvider.DataService; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
 IQueryable<Клиент> limit1 = ds.Query<Адрес>(Адрес.Views.АдресL).Where(Address => Address.Актуально);
 Function onlyActual = LinqToLcs.GetLcs(limit1.Expression, Адрес.Views.АдресL).LimitFunction;
 ```

@@ -112,7 +112,7 @@ public class C__ПокупкаE : ICSSoft.STORMNET.UI.BaseIndpdEdit
         if ((dobject.GetStatus(false) != ICSSoft.STORMNET.ObjectStatus.Created)
                     || dobject.Prototyped)
         {
-            ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(m_objView, dobject, false, false);
+            ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(m_objView, dobject, false, false); // DataServiceProvider is deprecated; inject IDataService instead
             dobject.InitDataCopy();
         }
         // *** Start programmer edit section *** (PrepareDataObjectForEdit (DataObject) end) 
@@ -134,7 +134,7 @@ ICSSoft.STORMNET.View дочитать_View = m_objView - ge_View;
 //if it has been opened before 
 foreach (string altprop in dobject.GetAlteredPropertyNames())
     дочитать_View.RemoveProperty(altprop);
-ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(дочитать_View, dobject, false, false);
+ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(дочитать_View, dobject, false, false); // DataServiceProvider is deprecated; inject IDataService instead
 return;
 ``` 
 

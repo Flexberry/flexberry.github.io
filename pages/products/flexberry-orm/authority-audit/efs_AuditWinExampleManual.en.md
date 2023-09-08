@@ -41,12 +41,11 @@ And
 you need to add the initialization call using [Initial audit](efs_audit-setter.html). 
 ```
 
-// *** Start programmer edit section *** (TestFS Main()) 
+// *** Start programmer edit section *** (TestFS Main())
 ICSSoft.STORMNET.Windows.Forms.WinApplication.SetUICultureAsRussian();
-
-// Initialize audit service 
-AuditSetter.InitAuditService(DataServiceProvider.DataService); 
-// *** End programmer edit section *** (TestFS Main()) 
+IUnityContainer container; // use dependency injection to get IUnityContainer;
+var IAuditService = container.Resolve<IAuditService>();
+// *** End programmer edit section *** (TestFS Main())
 ``` 
 
 # Connection assemblies 

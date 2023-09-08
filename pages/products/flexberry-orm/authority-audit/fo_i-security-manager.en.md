@@ -17,7 +17,7 @@ Services run-time subsystem powers Flexberry available through the interface `IC
 This interface allowed real authority [Flexberry UnityFactory](fo_unity-factory.html) as follows: 
 
 ```csharp
-IUnityContainer container = UnityFactory.CreateContainer();
+IUnityContainer container = UnityFactory.CreateContainer(); //UnityFactory is deprecated. Inject IUnityContainer (or IServiceProvider) instead.
 ISecurityManager securityManager = container.Resolve<ISecurityManager>();
 ``` 
 

@@ -42,7 +42,7 @@ lang: ru
 if (UpdatedObject.GetStatus() == ObjectStatus.Deleted)
 {
     // Найдем количество клиентов, ссылающихся на удаляемый адрес.
-    var ds = (MSSQLDataService)DataServiceProvider.DataService;
+    var ds = (MSSQLDataService)DataServiceProvider.DataService; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
     var clientsCount = ds.Query<Клиент>(Клиент.Views.КлиентE).Where(k => k.Прописка.__PrimaryKey == UpdatedObject.__PrimaryKey).Count();
 
     // Если клиентов не 0, выкинем исключение.

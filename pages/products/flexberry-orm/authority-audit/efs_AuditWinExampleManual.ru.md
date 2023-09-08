@@ -1,5 +1,5 @@
 ---
-title: Пример подключения аудита к существующему Win-приложению без использования перегенерации проекта. 
+title: Пример подключения аудита к существующему Win-приложению без использования перегенерации проекта.
 sidebar: ember-flexberry-security_sidebar
 keywords: Flexberry Audit
 toc: true
@@ -28,7 +28,7 @@ lang: ru
     <add key="DefaultWriteMode" value="Synchronous" />
     <add key="IsAuditDatabaseLocal" value="True" />
 ```
-А также 
+А также
 ```xml
     <add key="AppNameForAudit" value="..." />
     <add key="AuditConnectionStringName" value="..." />
@@ -37,13 +37,11 @@ lang: ru
 
 # Подключение аудита в main
 необходимо добавить вызов инициализации с помощью [Инициализация аудита](efs_audit-setter.html).
-```
-
+```csharp
 // *** Start programmer edit section *** (TestFS Main())
 ICSSoft.STORMNET.Windows.Forms.WinApplication.SetUICultureAsRussian();
-
-// Инициализация сервиса аудита
-AuditSetter.InitAuditService(DataServiceProvider.DataService); 
+IUnityContainer container; // контейнер необходимо получить через внедрение зависимостей; вместо IUnityContainer можно использовать IServiceProvider
+var IAuditService = container.Resolve<IAuditService>();
 // *** End programmer edit section *** (TestFS Main())
 ```
 

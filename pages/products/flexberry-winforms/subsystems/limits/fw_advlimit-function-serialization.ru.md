@@ -1,5 +1,5 @@
 ---
-title: Сохранение ограничений на форме задания ограничения 
+title: Сохранение ограничений на форме задания ограничения
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms, Windows UI (формы), Ограничения, Черновик статьи
 summary: Перечислены методы класса `ICSSoft.STORMNET.Windows.Forms.Utils` для сериализации-десериализации; указано какие из них применяются для функции ограничения, приведены примеры; описана проблема десериализации ограничений при использовании  подписанных и неподписанных сборок, указан подход к решению
@@ -9,14 +9,14 @@ folder: products/flexberry-winforms/
 lang: ru
 ---
 
-## Средства сериализации-десериализации в `ICSSoft.STORMNET.Windows.Forms.Utils` 
-В сборке `ICSSoft.STORMNET.Windows.Forms` реализован класс `ICSSoft.STORMNET.Windows.Forms.Utils`, предоставляющий, в частности, методы для сериализации-десериализации, которые применимы в т.ч. для [функции ограничения](fo_limit-function.html). Данные методы представляют собой обертку над соответствующими методами сборки [`ICSSoft.STORMNET.Tools`](fo_ics-soft-stormnet-tools.html), и выполняют обращение к ней. 
+## Средства сериализации-десериализации в `ICSSoft.STORMNET.Windows.Forms.Utils`
+В сборке `ICSSoft.STORMNET.Windows.Forms` реализован класс `ICSSoft.STORMNET.Windows.Forms.Utils`, предоставляющий, в частности, методы для сериализации-десериализации, которые применимы в т.ч. для [функции ограничения](fo_limit-function.html). Данные методы представляют собой обертку над соответствующими методами сборки [`ICSSoft.STORMNET.Tools`](fo_ics-soft-stormnet-tools.html), и выполняют обращение к ней.
 
 ### Методы сериализации класса `ICSSoft.STORMNET.Windows.Forms.Utils`:
 
 #### `ObjectToString`
 
- __Назначение__:  Сериализация в строку при помощи `SoapFormatter`. 
+ __Назначение__:  Сериализация в строку при помощи `SoapFormatter`.
 
 __Параметры__:
 
@@ -32,9 +32,9 @@ public static string ObjectToString(object o)
 	return ICSSoft.STORMNET.Tools.ToolXML.ObjectToString(o);
 }
 ```
- 
+
 #### `ObjectFromString`
- 
+
  __Назначение__: Десериализация из строки при помощи `SoapFormatter`.
 
 __Параметры__:
@@ -102,14 +102,14 @@ public static object ObjectFromBinaryString(string s)
 
 ### Пример SOAP-сериализации LimitFunction
 
-```csharp            
+```csharp
             Function fn = FunctionBuilder.BuildAnd(
                 FunctionBuilder.BuildEquals("ПарамПамПам", "кто ходит в гости по утрам"),
                 FunctionBuilder.BuildOr(
                     FunctionBuilder.BuildEquals("ТотПоступаетМудро", Environment.UserName),
                     FunctionBuilder.BuildIsNull("НаТоОноИУтро")
                 )
-            );             
+            );
 
             string serializedFn = Utils.ObjectToString((new ExternalLangDef()).FunctionToSimpleStruct(fn));
             Assert.IsNotNull(serializedFn);
@@ -127,15 +127,15 @@ public static object ObjectFromBinaryString(string s)
     string fnStr = "";
     string serializedFn;
     AdvansedLimit advlimit = new AdvansedLimit();
-    ExternalLangDef externalLangDef = ExternalLangDef.LanguageDef;
+    ExternalLangDef externalLangDef = ExternalLangDef.LanguageDef; // Использование ExternalLangDef.LanguageDef является устаревшим. Вместо него используйте конструктор (new ExternalLangDef(dataService)).
     advlimit.FromSimpleValue(Utils.ObjectFromString(_serializedFunc), externalLangDef);
     Function fn = advlimit.Function;
 
     serializedFn = Utils.ObjectToBinaryString(externalLangDef.FunctionToSimpleStruct(fn));
     Assert.IsNotNull(serializedFn);
-    
+
     восставшийИзНебытия =
-                externalLangDef.FunctionFromSimpleStruct(Utils.ObjectFromBinaryString(serializedFn));        
+                externalLangDef.FunctionFromSimpleStruct(Utils.ObjectFromBinaryString(serializedFn));
     Assert.IsNotNull(восставшийИзНебытия);
 ```
 
@@ -149,10 +149,10 @@ namespace ICSSoft.STORMNET.Windows.Forms
     {
         /// <summary> Делегат для получения типа по его имени в методе SimpleValueToDataObject </summary>
         public static TypeResolveDelegate ExtraTypeResolver = null;
-		
+
 		//...
 	}
-	
+
 	/// <summary>
 	/// Делегат для получения типа по его имени (используется в особых случаях, когда стандартные методы почему-то не помогают)
 	/// </summary>

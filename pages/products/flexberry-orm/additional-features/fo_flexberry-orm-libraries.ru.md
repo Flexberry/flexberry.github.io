@@ -10,17 +10,15 @@ lang: ru
 
 Список библиотек, содержащих Runtime-компоненты [Flexberry ORM](fo_flexberry-orm.html):
 
-* **ChangesToSqlBTMonitor.dll** - библиотека, содержащая классы для работы [сервиса записи SQL-скриптов изменения данных](fo_changes-sql-bt-monitor.html).
-* **ExternalLangDef.dll** - библиотека, содержащая [расширение языка ограничений](fo_external-lang-def.html) для [задания ограничений](fo_limit-function.html) на зависимые объекты.
+* **ChangesToSqlBTMonitor.dll** - библиотека, содержащая
+* **ICSSoft.STORMNET.Business.ExternalLangDef.dll** - библиотека, содержащая [расширение языка ограничений](fo_external-lang-def.html) для [задания ограничений](fo_limit-function.html) на зависимые объекты.
 * **ICSSoft.STORMNET.BF.dll**
-* **ICSSoft.STORMNET.Business.dll** - библиотека, содержащая базовые классы для организации [отображения структуры реляционных таблиц БД на объектную модель](fo_data-service.html).
-* **ICSSoft.STORMNET.Business.DRDataService.dll** - библиотека, содержащая классы для работы [DRDataService](fo_dr-data-service.html).
+* **ICSSoft.STORMNET.Business.dll** - библиотека, содержащая базовые классы для организации [отображения структуры реляционных таблиц БД на объектную модель](fo_data-service.html), и классы для работы [сервиса записи SQL-скриптов изменения данных](fo_changes-sql-bt-monitor.html).
 * **ICSSoft.STORMNET.Business.LINQProvider.dll** - библиотека, содержащая классы для поддержки LINQ в [Flexberry ORM](fo_flexberry-orm.html).
 * **ICSSoft.STORMNET.Business.LockService.dll** - библиотека, содержащая классы для работы [сервиса блокировок](fo_lock-service.html).
-* **ICSSoft.STORMNET.Business.MSSQLDataService.dll** - библиотека, содержащая классы для [организации отображения структуры реляционных таблиц MS SQL Server (версии 2005 и выше) на объектную модель](fo_data-service.html).
-* **ICSSoft.STORMNET.Business.ODBCDataService.dll**  - библиотека, содержащая классы для работы [ODBCDataService](fo_odbc-data-service.html).
+* **ICSSoft.STORMNET.Business.MSSQLDataService.dll** - библиотека, содержащая классы для [организации отображения структуры реляционных таблиц MS SQL Server (версии 2005 и выше) на объектную модель](fo_data-service.html) и [DRDataService (Dirty Read - грязное чтение)](fo_dr-data-service.html).
 * **ICSSoft.STORMNET.Business.OracleDataService.dll** - библиотека, содержащая классы для работы [OracleDataService](fo_oracle-data-service.html).
-* **ICSSoft.STORMNET.Business.PostgresDataService.dll** - библиотека, содержащая классы для работы [PostgresDataService](fo_postgres-data-service.html). 
+* **ICSSoft.STORMNET.Business.PostgresDataService.dll** - библиотека, содержащая классы для работы [PostgresDataService](fo_postgres-data-service.html).
 * **ICSSoft.STORMNET.Collections.dll** - библиотека, содержащая вспомогательные базовые структуры для организации коллекций объектов.
 * **ICSSoft.STORMNET.DataObject.dll** - библиотека, содержащая базовые классы для организации [объектной модели](fo_data-object.html), а также основные вспомогательные методы для работы с ними.
 * ICSSoft.STORMNET.Drawing.dll

@@ -8,7 +8,7 @@ permalink: ru/fo_limit-details.html
 lang: ru
 ---
 
-Если необходимо задать условие на существование [детейлов](fd_key-concepts.html) по условию, в котором должно участвовать свойство [агрегатора](fd_key-concepts.html), необходимо использовать функцию [Exist](fo_exist-details.html). При указании свойств в условии для функции `Exist` необходимо явно указывать, что это свойство агрегатора: 
+Если необходимо задать условие на существование [детейлов](fd_key-concepts.html) по условию, в котором должно участвовать свойство [агрегатора](fd_key-concepts.html), необходимо использовать функцию [Exist](fo_exist-details.html). При указании свойств в условии для функции `Exist` необходимо явно указывать, что это свойство агрегатора:
 
 ```
 <Имя агрегирующего свойства у детейла>.<Свойство агрегатора>.
@@ -26,11 +26,11 @@ lang: ru
  View view2 = Information.GetView("SoftwareL", typeof(Software));
  view.AddDetailInView("Software", view2, true);
  var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Company), view);
- ExternalLangDef langDef = ExternalLangDef.LanguageDef;
+ ExternalLangDef langDef = ExternalLangDef.LanguageDef; // Использование ExternalLangDef.LanguageDef является устаревшим. Вместо него используйте конструктор (new ExternalLangDef(dataService)).
  var detail = new DetailVariableDef(langDef.GetObjectType("Details"), "Software", view2, "Company");
  lcs.LimitFunction = langDef.GetFunction(langDef.funcExist, detail,
                                          langDef.GetFunction(langDef.funcL,
                                          new VariableDef(langDef.DateTimeType, Information.ExtractPropertyPath<Software>(x => x.DateCreation)),
                                          new VariableDef(langDef.DateTimeType, Information.ExtractPropertyPath<Software>(x => x.Company.DateCreation))));
- var dos = DataServiceProvider.DataService.LoadObjects(lcs);
+ var dos = DataServiceProvider.DataService.LoadObjects(lcs); // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
 ```

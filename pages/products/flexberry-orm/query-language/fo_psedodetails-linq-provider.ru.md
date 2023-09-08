@@ -21,7 +21,7 @@ lang: ru
 Пусть:
 
 ```csharp
-var ds = (SQLDataService)DataServiceProvider.DataService;
+var ds = (SQLDataService)DataServiceProvider.DataService; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей
 ```
 
 Задание ограничение на псевдодетейлы чуть менее интуитивно, чем использование [других возможностей LinqProvider](fo_linq-provider-faetures.html).
@@ -169,7 +169,7 @@ ds.Query<Порода>(Порода.Views.ПородаE).Where(
 // Все породы, для которых определены кошки, у которых кличка не "Барсик"
 ds.Query<Порода>(Порода.Views.ПородаE)
 	.Where(
-		y => 
+		y =>
 			new PseudoDetail<Порода, Кошка>(
 				Information.GetView("КошкаE", typeof(Кошка)),
 				Information.ExtractPropertyPath<Кошка>(x => x.Порода))
@@ -183,7 +183,7 @@ ds.Query<Порода>(Порода.Views.ПородаE)
 // Все породы, где кошки не носят кличку "Барсик"
 ds.Query<Порода>(Порода.Views.ПородаE)
 	.Where(
-		y => 
+		y =>
 			new PseudoDetail<Порода, Кошка>(
 				Information.GetView("КошкаE", typeof(Кошка)),
 				Information.ExtractPropertyPath<Кошка>(x => x.Порода))

@@ -13,8 +13,8 @@ lang: ru
 1.Сконструировать [сервис данных](fo_data-service.html)
 
 ```csharp
-IDataService ds = new ODBCDataService();			
-ds.CustomizationString="DSN=LibNetSample";
+IDataService ds = new PostgresDataService();
+ds.CustomizationString="Host=localhost;Port=5432;User ID=postgres;Password=postgres;";
 ```
 
 2.В WinForms-приложениях можно «бросить» [сервис данных](fo_data-service.html) на форму как контрол, затем настроить его через стандартное окно редактирования свойств в среде Visual Studio.
@@ -22,5 +22,5 @@ ds.CustomizationString="DSN=LibNetSample";
 3.[Получить его у провайдера сервиса данных](fo_ds-provider.html).
 
 ```csharp
-IDataService ds = DataServiceProvider.DataService;
+IDataService ds = DataServiceProvider.DataService; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
 ```

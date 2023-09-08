@@ -117,12 +117,12 @@ void form1_NextEvent(object sender, EventArgs e)
 private void GetNextOrPrevObj(bool next)
 {
     KeyGuid pk = (KeyGuid)((BaseWinEdit)Editor).DataObject.__PrimaryKey;
-    IDataService ds = DataServiceProvider.DataService;
+    IDataService ds = DataServiceProvider.DataService; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей
 
     LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Планета), "ПланетаE");
     lcs.ColumnsSort = new[] { new ColumnsSortDef("primaryKey", SortOrder.Asc) };
-    lcs.ReturnTop = 1;    
-    Function f = next ? FunctionBuilder.BuildGreater(pk) : FunctionBuilder.BuildLess(pk);     
+    lcs.ReturnTop = 1;
+    Function f = next ? FunctionBuilder.BuildGreater(pk) : FunctionBuilder.BuildLess(pk);
     lcs.LimitFunction = f;
     DataObject[] dataObjects = ds.LoadObjects(lcs);
     if (dataObjects.Length > 0)

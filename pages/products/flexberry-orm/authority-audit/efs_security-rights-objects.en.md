@@ -121,7 +121,7 @@ private static IDataService SecurityDataService
 	{
 		if (_securityDataService == null)
 		{
-			IUnityContainer container = UnityFactory.GetContainer();
+			IUnityContainer container = UnityFactory.GetContainer(); //UnityFactory is deprecated. Inject IUnityContainer (or IServiceProvider) instead.
 			_securityDataService = container.Resolve<IDataService>("SecurityManagerDataService");
 		}
 
@@ -183,7 +183,7 @@ Now when you set some user specific rights you will be able to view only the rel
 To check whether the object satisfies specified filters powers, you can use the following functionality: 
 
 ``` csharp
-ISecurityManager securityManager = DataServiceProvider.DataService.SecurityManager;
+ISecurityManager securityManager = DataServiceProvider.DataService.SecurityManager; // DataServiceProvider is deprecated; inject IDataService instead
 bool hasAccess = securityManager.AccessObjectCheck(objectTocheck, tTypeAccess.Insert, true);
 ``` 
 

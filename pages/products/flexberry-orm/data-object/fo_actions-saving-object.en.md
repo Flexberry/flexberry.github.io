@@ -16,7 +16,7 @@ In [Flexberry ORM](fo_flexberry-orm.html) this feature is implemented by using c
 ```csharp
 Console.WriteLine("4. How to do something persistence at the moment.");
 
-IDataService dataService = DataServiceProvider.DataService;
+IDataService dataService = DataServiceProvider.DataService; // DataServiceProvider is deprecated; inject IDataService instead
 OrmSample ormSample = new OrmSample(dataService);
 object primaryKey = ormSample.GetSomeObjectPrimaryKey(typeof(CDDA));
 

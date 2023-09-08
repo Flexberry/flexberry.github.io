@@ -44,13 +44,13 @@ lcsСервер.LimitFunction = ldef.GetFunction(ldef.funcExist,
                                                             new VariableDef(ldef.GuidType, "Подразделение"),
                                                             UpdatedObject.НаправленоИз.__PrimaryKey));
 lcsСервер.ReturnTop = 1;
-ICSSoft.STORMNET.DataObject[] dobjsСервер = ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObjects(lcsСервер);
+ICSSoft.STORMNET.DataObject[] dobjsСервер = ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObjects(lcsСервер); // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
 ```
 
 Требуется вычитать только те сервера, которые принадлежат только одному конкретному Подразделению (т.е. сервера, которые принадлежат и указанному Подразделению и еще какому-то, не будут вычитаны).
 
 ```csharp
-ExternalLangDef ldef = ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.LanguageDef;
+ExternalLangDef ldef = ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.LanguageDef; // Использование ExternalLangDef.LanguageDef является устаревшим. Вместо него используйте конструктор (new ExternalLangDef(dataService)).
 LoadingCustomizationStruct lcsСервер = LoadingCustomizationStruct.GetSimpleStruct(typeof (Сервер), "СерверE");
 lcsСервер.LoadingTypes = new[] {typeof (Сервер)};
 View view = Information.GetView("СерверПодразделенияE", typeof(Репликации.СерверПодразделения));
@@ -66,7 +66,7 @@ lcsСервер.LimitFunction = ldef.GetFunction(ldef.funcExistExact,
                                             ldef.GetFunction(ldef.funcEQ,
                                                             new VariableDef(ldef.GuidType, "Подразделение"),
                                                             new Guid("6D7DC426-F5E9-4F63-B7B5-20C9E237DF2D")));
-DataObject[] dobjsСервер = DataServiceProvider.DataService.LoadObjects(lcsСервер);
+DataObject[] dobjsСервер = DataServiceProvider.DataService.LoadObjects(lcsСервер); // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
 ```
 
 ## Сравнения свойств двух различных детейлов (не выше первого уровня) имеющих общий агрегатор
@@ -81,12 +81,12 @@ DataObject[] dobjsСервер = DataServiceProvider.DataService.LoadObjects(lcs
  view.AddDetailInView("Computer", view2, true);
  view.AddDetailInView("Computer", view3, true);
  var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Computer), view);
- ExternalLangDef langDef = ExternalLangDef.LanguageDef;
+ ExternalLangDef langDef = ExternalLangDef.LanguageDef; // Использование ExternalLangDef.LanguageDef является устаревшим. Вместо него используйте конструктор (new ExternalLangDef(dataService)).
  var detail1 = new DetailVariableDef(langDef.GetObjectType("Details"), "Hardware", view2, "Computer");
  var detail2 = new DetailVariableDef(langDef.GetObjectType("Details"), "Software", view3, "Computer");
  lcs.LimitFunction = langDef.GetFunction(langDef.funcExistDetails,
                         detail1, detail2, langDef.GetFunction(langDef.funcG,
                         new VariableDef(langDef.DateTimeType, "DeliveryDate"),
                         new VariableDef(langDef.DateTimeType, "DeliveryDate")));
- var dos = DataServiceProvider.DataService.LoadObjects(lcs);
+ var dos = DataServiceProvider.DataService.LoadObjects(lcs); // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
 ```

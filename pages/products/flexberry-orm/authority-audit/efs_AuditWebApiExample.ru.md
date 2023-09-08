@@ -51,8 +51,8 @@ var auditParams = new CustomAuditParameters
 
 Теперь можно записать данные в базу аудита:
 
-```
- Guid? auditOperationId = AuditService.Current.WriteCustomAuditOperation(auditParams, true); 
+```csharp
+ Guid? auditOperationId = AuditService.Current.WriteCustomAuditOperation(auditParams, true); // AuditService.Current удалён в ORM версии 8.0. Используйте внедрение зависимостей для инжекта IAuditService.
 ```
 
 Используем самую простую перегрузку метода `WriteCustomAuditOperation`, DataService определится как стандартный для приложения.
@@ -82,7 +82,7 @@ finally
     AuditService.Current.RatifyAuditOperation(
                     correct ? tExecutionVariant.Executed : tExecutionVariant.Failed,
                     new List<Guid> { auditOperationId.Value },
-                    false);
+                    false); // AuditService.Current удалён в ORM версии 8.0. Используйте внедрение зависимостей для инжекта IAuditService.
 }
 ```
 
@@ -105,7 +105,7 @@ finally
                 };
 
             // Записываем операцию аудита в базу и запоминаем ID созданной записи
-            Guid? auditOperationId = AuditService.Current.WriteCustomAuditOperation(auditParams, true);
+            Guid? auditOperationId = AuditService.Current.WriteCustomAuditOperation(auditParams, true); // AuditService.Current удалён в ORM версии 8.0. Используйте внедрение зависимостей для инжекта IAuditService.
 
             var report = new Отчет();
             bool correct = true;
@@ -127,7 +127,7 @@ finally
                 AuditService.Current.RatifyAuditOperation(
                     correct ? tExecutionVariant.Executed : tExecutionVariant.Failed,
                     new List<Guid> { auditOperationId.Value },
-                    false);
+                    false); // AuditService.Current удалён в ORM версии 8.0. Используйте внедрение зависимостей для инжекта IAuditService.
             }
 
             return report;

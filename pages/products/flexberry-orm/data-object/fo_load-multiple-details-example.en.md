@@ -15,7 +15,7 @@ Here is the download of all objects created in the [example](fo_actions-saving-o
 ```csharp
 Console.WriteLine("6. Loading a dataobject with multiple details.");
             
-IDataService dataService = DataServiceProvider.DataService;
+IDataService dataService = DataServiceProvider.DataService; // DataServiceProvider is deprecated; inject IDataService instead
 OrmSample ormSample = new OrmSample(dataService);
 object primaryKey = ormSample.GetSomeObjectPrimaryKey(typeof(D0));
 

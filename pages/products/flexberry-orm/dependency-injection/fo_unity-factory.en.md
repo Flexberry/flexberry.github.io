@@ -10,6 +10,8 @@ autotranslated: true
 hash: 0d858097730c3894e0cabc212b9c2f0ca2f4fdfaeffbac720f1898b4a6d5ff3f
 ---
 
+> UnityFactory is deprecated. Inject IUnityContainer (or IServiceProvider) instead.
+
 `Flexberry UnityFactory` is [product platform Flexberry](fp_landing_page.html) and allows a standard way to work with a resolution of containers [Unity Container](https://msdn.microsoft.com/en-us/library/ff647202.aspx). Use the version of [Unity 2.1](https://msdn.microsoft.com/en-us/library/hh237493.aspx).
 
 {% include note.html content="Flexberry UnityFactory is available for installation in the project via the NuGet package Flexberry ORM." %}
@@ -17,7 +19,7 @@ hash: 0d858097730c3894e0cabc212b9c2f0ca2f4fdfaeffbac720f1898b4a6d5ff3f
 Method `CreateContainer()` creates a default container to resolve the interface in real authority:
 
 ```csharp
-IUnityContainer container = ICSSoft.Services.UnityFactory.CreateContainer();
+IUnityContainer container = ICSSoft.Services.UnityFactory.CreateContainer(); //UnityFactory is deprecated. Inject IUnityContainer (or IServiceProvider) instead.
 IService serviceInstance = container.Resolve<IService>();
 ```
 
@@ -28,7 +30,7 @@ IService serviceInstance = container.Resolve<IService>();
 Method `GetContainer()`, returns a single (application domain) of the container instance that allows to work correctly with objects of type `ContainerControlledLifetimemanager`.
 
 ``` csharp
-IUnityContainer container = ICSSoft.Services.UnityFactory.GetContainer();
+IUnityContainer container = ICSSoft.Services.UnityFactory.GetContainer(); //UnityFactory is deprecated. Inject IUnityContainer (or IServiceProvider) instead.
 IService serviceInstance = container.Resolve<IService>();
 ```
 

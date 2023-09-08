@@ -129,7 +129,7 @@ This type of serialization is more productive and the rows get shorter.
     string fnStr = "";
     string serializedFn;
     AdvansedLimit advlimit = new AdvansedLimit();
-    ExternalLangDef externalLangDef = ExternalLangDef.LanguageDef;
+    ExternalLangDef externalLangDef = ExternalLangDef.LanguageDef; // Use of ExternalLangDef.LanguageDef is deprecated. Use constructor instead (new ExternalLangDef(dataService)).
     advlimit.FromSimpleValue(Utils.ObjectFromString(_serializedFunc), externalLangDef);
     Function fn = advlimit.Function;
 

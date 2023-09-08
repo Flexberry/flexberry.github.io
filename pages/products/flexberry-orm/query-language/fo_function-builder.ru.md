@@ -24,8 +24,8 @@ lang: ru
 Предположим, нам необходимо вычитать из БД все объекты DocumentLink с определенным наименованием типа связи, связывающие два документа, и при этом не учитывать порядок, в котором фигурируют заданные документы в объекте СвязьДокументов. Таким образом мы должны получить ограничение, примерно соответствующее следующему sql-запросу:
 
 ``` sql
-SELECT * 
-FROM DocumentLink 
+SELECT *
+FROM DocumentLink
 JOIN DocumentLinkType ON DocumentLinkType.PrimaryKey = DocumentLink.DocumentLinkType
 WHERE DocumentLinkType.Name = @typeName
 AND ((Document = @document1 AND LinkedDocument = @document2) OR (Document = @document2 AND LinkedDocument = @document1))
@@ -37,10 +37,10 @@ var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(DocumentLink), Docum
 lcs.LimitFunction = langdef.GetFunction(langdef.funcAND,
 	langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.StringType, "DocumentLinkType.Name"), typeName),
 	langdef.GetFunction(langdef.funcOR,
-		langdef.GetFunction(langdef.funcAND, 
+		langdef.GetFunction(langdef.funcAND,
 			langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.GuidType, "Document"), document1.__PrimaryKey),
 			langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.GuidType, "LinkedDocument"), document2.__PrimaryKey)),
-		langdef.GetFunction(langdef.funcAND, 
+		langdef.GetFunction(langdef.funcAND,
 			langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.GuidType, "Document"), document2.__PrimaryKey),
 			langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.GuidType, "LinkedDocument"), document1.__PrimaryKey))));
 ```
@@ -66,7 +66,7 @@ lcs.LimitFunction = FunctionBuilder.BuildAnd(
 Как можно видеть из примера, код построения функции с использованием FunctionBuilder очень похож, но становится читаемее за счет меньшего количества аргументов у методов, а также отсутствия необходимости создавать VariableDef вручную в большинстве случаев. Кроме того, в примере с `FunctionBuilder-ом` нельзя допустить ошибку в пути свойства, поскольку используется generic-метод, контролирующий имеющиеся в объекте свойства. Аналогичный по возможностям код можно реализовать и в случае использования `GetFunction` с использованием метода `Information.ExtractPropertyPath<T>()`, однако это сделает код еще многословнее.
 
 ## Исходный код
-С исходным кодом `FunctionBuilder` и вспомогательных классов можно ознакомиться в [репозитории ORM](https://github.com/Flexberry/NewPlatform.Flexberry.ORM/tree/develop/ExternalLangDef/FunctionBuilder). Все методы покрыты тестовыми сценариями, с кодом которых также можно ознакомиться в [репозитории ORM](https://github.com/Flexberry/NewPlatform.Flexberry.ORM/tree/develop/NewPlatform.Flexberry.ORM.Tests/ICSSoft.STORMNET.FunctionalLanguage).
+С исходным кодом `FunctionBuilder` и вспомогательных классов можно ознакомиться в [репозитории ORM](https://github.com/Flexberry/NewPlatform.Flexberry.ORM/tree/develop/ICSSoft.STORMNET.Business.ExternalLangDef/FunctionBuilder). Все методы покрыты тестовыми сценариями, с кодом которых также можно ознакомиться в [репозитории ORM](https://github.com/Flexberry/NewPlatform.Flexberry.ORM/tree/develop/NewPlatform.Flexberry.ORM.Tests/ICSSoft.STORMNET.FunctionalLanguage).
 
 ## Методы, доступные в FunctionBuilder
 

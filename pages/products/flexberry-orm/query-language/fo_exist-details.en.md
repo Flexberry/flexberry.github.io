@@ -31,7 +31,7 @@ The following code assumes that the view `"Servicedisplayname"` always present p
 Required to deduct the servers that belong to a particular Department (i.e., servers that belong to the specified Unit and some will also be proofread).
 
 ```csharp
-ExternalLangDef ldef = ExternalLangDef.LanguageDef;
+ExternalLangDef ldef = ExternalLangDef.LanguageDef; // Use of ExternalLangDef.LanguageDef is deprecated. Use constructor instead (new ExternalLangDef(dataService)).
 LoadingCustomizationStruct lcsСервер = LoadingCustomizationStruct.GetSimpleStruct(typeof (Репликации.Сервер), "Server");
 lcsСервер.LoadingTypes = new Type[] {typeof (Репликации.Сервер)};
 View view = Information.GetView("Servicedisplayname", typeof(Репликации.СерверПодразделения));
@@ -46,13 +46,13 @@ lcsСервер.LimitFunction = ldef.GetFunction(ldef.funcExist,
                                                             new VariableDef(ldef.GuidType, Division),
                                                             UpdatedObject.НаправленоИз.__PrimaryKey));
 lcsСервер.ReturnTop = 1;
-ICSSoft.STORMNET.DataObject[] dobjsСервер = ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObjects(lcsСервер);
+ICSSoft.STORMNET.DataObject[] dobjsСервер = ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObjects(lcsСервер); // DataServiceProvider is deprecated; inject IDataService instead
 ```
 
 You want to subtract only those servers that belong only to one particular Unit (i.e., servers that belong to the specified Division and some will not be proofread).
 
 ```csharp
-ExternalLangDef ldef = ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.LanguageDef;
+ExternalLangDef ldef = ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.LanguageDef; // Use of ExternalLangDef.LanguageDef is deprecated. Use constructor instead (new ExternalLangDef(dataService)).
 LoadingCustomizationStruct lcsСервер = LoadingCustomizationStruct.GetSimpleStruct(typeof (Сервер), "Server");
 lcsСервер.LoadingTypes = new[] {typeof (Сервер)};
 View view = Information.GetView("Servicedisplayname", typeof(Репликации.СерверПодразделения));
@@ -68,7 +68,7 @@ lcsСервер.LimitFunction = ldef.GetFunction(ldef.funcExistExact,
                                             ldef.GetFunction(ldef.funcEQ,
                                                             new VariableDef(ldef.GuidType, Division),
                                                             new Guid("6D7DC426-F5E9-4F63-B7B5-20C9E237DF2D")));
-DataObject[] dobjsСервер = DataServiceProvider.DataService.LoadObjects(lcsСервер);
+DataObject[] dobjsСервер = DataServiceProvider.DataService.LoadObjects(lcsСервер); // DataServiceProvider is deprecated; inject IDataService instead
 ```
 
 ## Comparison of properties of two different datalow (not above ground level) with a common aggregator
@@ -83,14 +83,14 @@ The order of properties in the comparison function applied to detali has a value
  view.AddDetailInView("Computer", view2, true);
  view.AddDetailInView("Computer", view3, true);
  var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Computer), view);
- ExternalLangDef langDef = ExternalLangDef.LanguageDef;
+ ExternalLangDef langDef = ExternalLangDef.LanguageDef; // Use of ExternalLangDef.LanguageDef is deprecated. Use constructor instead (new ExternalLangDef(dataService)).
  var detail1 = new DetailVariableDef(langDef.GetObjectType("Details"), "Hardware", view2, "Computer");
  var detail2 = new DetailVariableDef(langDef.GetObjectType("Details"), "Software", view3, "Computer");
  lcs.LimitFunction = langDef.GetFunction(langDef.funcExistDetails,
                         detail1, detail2, langDef.GetFunction(langDef.funcG,
                         new VariableDef(langDef.DateTimeType, "DeliveryDate"),
                         new VariableDef(langDef.DateTimeType, "DeliveryDate")));
- var dos = DataServiceProvider.DataService.LoadObjects(lcs);
+ var dos = DataServiceProvider.DataService.LoadObjects(lcs); // DataServiceProvider is deprecated; inject IDataService instead
 ```
 
 

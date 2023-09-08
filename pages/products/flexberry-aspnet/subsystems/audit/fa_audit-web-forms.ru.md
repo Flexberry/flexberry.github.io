@@ -25,7 +25,7 @@ lang: ru
 Отдельной строкой идёт изменение [первичного ключа объекта](fo_primary-keys-objects.html) (такая строка формируется при изменении детейла или мастера). Доступно два режима отображения этих строчек: они совсем не отображаются или они скрываются в древовидную структуру (второй вариант был реализован в [старой версии аудита](efs_audit.html)). По умолчанию реализуется первый вариант, но это можно изменить следующей инициализацией:
 
 ```csharp
-AuditService.Current.ShowPrimaryKey = true;
+AuditService.Current.ShowPrimaryKey = true; // AuditService.Current удалён в ORM версии 8.0. Используйте внедрение зависимостей для инжекта IAuditService.
 ```
 
 ## Объектноориентированные формы аудита
@@ -71,7 +71,7 @@ AuditService.Current.ShowPrimaryKey = true;
 Чтобы отключить отображение записей, содержащих [первичные ключи](fo_primary-keys-objects.html) [мастеров](fd_master-association.html) и [детейлов](fo_detail-associations-properties.html), можно выполнить следующую настройку:
 
 ```csharp
-AuditService.Current.ShowPrimaryKey = false;
+AuditService.Current.ShowPrimaryKey = false; // AuditService.Current удалён в ORM версии 8.0. Используйте внедрение зависимостей для инжекта IAuditService.
 ```
 
 Если AuditService.Current.ShowPrimaryKey имеет значение true, то список изменений полей отображается [в виде иерархии](fa_wolv-hierarhy.html) аналогично тому, как это сделано в записеориентированных формах аудита.

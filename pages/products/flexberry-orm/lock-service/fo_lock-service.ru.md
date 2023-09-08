@@ -18,18 +18,18 @@ lang: ru
 
 ```csharp
 Автор автор = new Автор();
-LockService ls = new LockService();
-ls.SetLock(автор); //Блокирование
-string sLockID = ls.SetLock(автор); //Попытка повторного блокирования того же объекта
+LockService lockService = container.Resolve<LockService>();
+lockService.SetLock(автор); //Blocking
+string sLockID = lockService.SetLock(автор); //Attempt to lock the same object
 if (sLockID!=string.Empty)
 {
-	Console.WriteLine(string.Format("Заблокировано пользователем: {0}", sLockID));
+	Console.WriteLine(string.Format("Locked by: {0}", sLockID));
 }
-ls.ClearLock(автор);//Очистка блокировки
+lockService.ClearLock(автор);//Cleanup the lock
 Console.ReadLine();
 ```
 
-Сервис блокировок обращается к хранилищу данных через [сервис данных](fo_data-service.html), указанный в [провайдере сервиса данных](fo_ds-provider.html) (`ICSSoft.STORMNET.Business.DataServiceProvider.DataService`).
+Сервис блокировок обращается к хранилищу данных через [сервис данных](fo_data-service.html), зарегистрированный в файле конфигурации с помощью Unity.
 
 В хранилище для блокировок должен существовать соответствующий источник.
 
@@ -39,6 +39,6 @@ Console.ReadLine();
 SQL
 CREATE TABLE STORMNETLOCKDATA (
 	LockKey char (300) NOT NULL ,
-	UserName char (300) NOT NULL 
+	UserName char (300) NOT NULL
 )
 ```

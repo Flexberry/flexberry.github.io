@@ -15,7 +15,7 @@ lang: ru
 Метод `CreateContainer()` создает контейнер по умолчанию, через который можно выполнить разрешение интерфейса в реальную инстанцию:
 
 ```csharp
-IUnityContainer container = ICSSoft.Services.UnityFactory.CreateContainer();
+IUnityContainer container = ICSSoft.Services.UnityFactory.CreateContainer(); // UnityFactory устарел. Вместо него используйте внедрение зависимостей (инжектите IUnityContainer/IServiceProvider или напрямую нужные зависимости).
 IService serviceInstance = container.Resolve<IService>();
 ```
 
@@ -26,7 +26,7 @@ IService serviceInstance = container.Resolve<IService>();
 Метод `GetContainer()`, возвращает единственный (на уровне домена приложения) экземпляр контейнера, что позволяет корректно работать с объектами типа `ContainerControlledLifetimeManager`.
 
 ``` csharp
-IUnityContainer container = ICSSoft.Services.UnityFactory.GetContainer();
+IUnityContainer container = ICSSoft.Services.UnityFactory.GetContainer(); // UnityFactory устарел. Вместо него используйте внедрение зависимостей (инжектите IUnityContainer/IServiceProvider или напрямую нужные зависимости).
 IService serviceInstance = container.Resolve<IService>();
 ```
 

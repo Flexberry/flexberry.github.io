@@ -145,7 +145,7 @@ The package contains the components [of the service of the current user](fo_curr
 
 Assemblies included in this package:
 
-* ICSSoft.Services.CurrentUserService.dll
+* NewPlatform.Flexberry.ORM.CurrentUserService.dll
 
 ## Flexberry UserSettingsService
 
@@ -153,13 +153,13 @@ Assemblies included in this package:
 
 * UserSettingsService.dll
 
-## Flexberry UnityFactor
+## Flexberry UnityFactory
 
 The package contains the components [UnityFactory](fo_unity-factory.html).
 
 Assemblies included in this package:
 
-* ICSSoft.Services.UnityFactory.dll
+* NewPlatform.Flexberry.ORM.UnityFactory.dll
 
 ## Flexberry ServiceBus
 

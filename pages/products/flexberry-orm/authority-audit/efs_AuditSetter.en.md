@@ -11,6 +11,8 @@ hash: 4ca7c90ae5588bd49e22948ce037f8035f7cb8ccba998bb0cfed18a48194422b
 
 # AuditSetter 
 
+> AuditSetter is no more present in ORM v8.0. Use dependency injection to register IAuditService.
+
 `AuditSetter` carries [initialization settings audit](efs_keep-and-use-audit-settings.html). 
 
 The initialization is not necessarily performed by this class, it just contains the most successful initialization with default values. 

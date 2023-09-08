@@ -42,7 +42,7 @@ The logical architecture of the system can be physically implemented as:
 Data services can serve as local sources (files) and the DBMS, so the physical architecture can be implemented like this:
 
 * Stand-alone server, the data service is a local source (eg. XMLDataService).
-* Independent business server, the service data DBMS source (eg. ODBCDataService).
+* Independent business server, the service data DBMS source (eg. PostgresDataService).
 * Business server that COM , the service data DBMS source.
 * Business server for a Web Service, the data service DBMS source.
 

@@ -8,7 +8,7 @@ lang: ru
 ---
 
 # AuditService
-У приложения есть класс `AuditService`. Через класс `AuditService` реализуются API для обращения: 
+У приложения есть класс `AuditService`. Через класс `AuditService` реализуются API для обращения:
 * к классу, наследующему от интерфейса [IAudit](i-audit.html), если аудит не выделен в отдельный сервис.
 * к сервису аудита `AuditWinService`.
 
@@ -31,10 +31,6 @@ lang: ru
 # AsyncAuditController
 
 `AsyncAuditController` – класс, организующий асинхронный доступ к `IAudit`, что позволяет отложить на некоторое время запись данных об аудите ('''в настоящее время не используется''').
-
-# RemoteAuditController (ServiceAuditController)
-
-`RemoteAuditController (ServiceAuditController)` – класс, отвечающий за взаимодействие через wcf с win-сервисом аудита `AuditWinService`, связанному с wcf-сервисом, реализующим интерфейс `IAuditWcfServiceLibrary`.
 
 # Схема взаимодействия
 

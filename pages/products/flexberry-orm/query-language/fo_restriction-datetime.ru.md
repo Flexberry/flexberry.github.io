@@ -16,7 +16,7 @@ lang: ru
 В примерах ниже будем использовать следующий код:
 
 ```csharp
-var langdef = ExternalLangDef.LanguageDef;
+var langdef = ExternalLangDef.LanguageDef; // Использование ExternalLangDef.LanguageDef является устаревшим. Вместо него используйте конструктор (new ExternalLangDef(dataService)).
 var order = LoadingCustomizationStruct.GetSimpleStruct(typeof (Заказ), Заказ.Views.ЗаказL);
 ```
 
@@ -33,7 +33,7 @@ SELECT * FROM [dbo].[Заказ] WHERE YEAR([ДатаВыдачи]) = 2014
 Через [ExternalLangDef](fo_external-lang-def.html)
 
 ```csharp
-order.LimitFunction = langdef.GetFunction(langdef.funcEQ, 
+order.LimitFunction = langdef.GetFunction(langdef.funcEQ,
                                           langdef.GetFunction(langdef.funcYearPart, new VariableDef(langdef.DateTimeType, Information.ExtractPropertyPath<Заказ>(x => x.ДатаВыдачи))),
                                           "2014");
 ```
@@ -116,16 +116,16 @@ order.LimitFunction = langdef.GetFunction(langdef.funcEQ,
 order.LimitFunction = langdef.GetFunction(
 						  langdef.funcAND,
 						  langdef.GetFunction(
-								langdef.funcEQ, 
+								langdef.funcEQ,
 								langdef.GetFunction(
-									langdef.funcHHPart, 
-									new VariableDef(langdef.DateTimeType, Information.ExtractPropertyPath<Заказ>(x => x.ДатаВыдачи))), 
+									langdef.funcHHPart,
+									new VariableDef(langdef.DateTimeType, Information.ExtractPropertyPath<Заказ>(x => x.ДатаВыдачи))),
 								10),
 						  langdef.GetFunction(
-								langdef.funcEQ, 
+								langdef.funcEQ,
 								langdef.GetFunction(
-									langdef.funcMIPart, 
-									new VariableDef(langdef.DateTimeType, Information.ExtractPropertyPath<Заказ>(x => x.ДатаВыдачи))), 
+									langdef.funcMIPart,
+									new VariableDef(langdef.DateTimeType, Information.ExtractPropertyPath<Заказ>(x => x.ДатаВыдачи))),
 								20));
 ```
 
@@ -163,8 +163,8 @@ Function function = langDef.GetFunction(langDef.funcEQ,
 
 ```csharp
 // Создаем ограничение на объект.
- lcs.LimitFunction = 
-           // Ограничение, что функция возвращает объекты.  
+ lcs.LimitFunction =
+           // Ограничение, что функция возвращает объекты.
            ldef.GetFunction(
                     // В которых значения параметра 1 (=) значению параметра 2.
                     ldef.funcEQ,
@@ -187,7 +187,7 @@ Function function = langDef.GetFunction(langDef.funcEQ,
 ```csharp
 // Создаем ограничение на объект.
 LimitFunction =
-        // Ограничение, что функция возвращает объекты.  
+        // Ограничение, что функция возвращает объекты.
         ldef.GetFunction(
                    // В которых значения параметра 1 (=) значению параметра 2.
                    ldef.funcEQ,
@@ -213,7 +213,7 @@ LimitFunction =
 ```csharp
 // Создаем ограничение на объект.
 LimitFunction  =
-         // Ограничение, что функция возвращает объекты.  
+         // Ограничение, что функция возвращает объекты.
          ldef.GetFunction(
                 // В которых значения параметра 1 (<) значению параметра 2.
                 ldef.funcL,
@@ -236,10 +236,10 @@ LimitFunction  =
 ```csharp
 // Создаем ограничение на объект ("Дата"<=paramTODAY).
 LimitFunction =
-      // Ограничение, что функция возвращает объекты. 
-      ldef.GetFunction(   
+      // Ограничение, что функция возвращает объекты.
+      ldef.GetFunction(
                    // В которых значения параметра 1 (<=) значению параметра 2.
-                   ldef.funcLEQ, 
+                   ldef.funcLEQ,
                    // Параметр 1: Ограничение, что из поля "Дата", возвращаются только значения месяца.
                    ldef.GetFunction(ldef.funcMonthPart, new VariableDef(ldef.DateTimeType, "Дата")),
                    // Параметр 2: Ограничение, что из сегодняшней даты, возвращаются только значения месяца.
@@ -252,8 +252,8 @@ LimitFunction =
 
 ```csharp
 // Создаем ограничение на объект.
-lcs.LimitFunction = 
-              // Ограничение, что функция возвращает объекты.  
+lcs.LimitFunction =
+              // Ограничение, что функция возвращает объекты.
               ldef.GetFunction(
                     // В которых значения параметра 1 (<) значению параметра 2.
                     ldef.funcL,
@@ -273,8 +273,8 @@ lcs.LimitFunction =
 
 ```csharp
 // Создаем ограничение на объект.
-lcs.LimitFunction = 
-           // Ограничение, что функция возвращает объекты.  
+lcs.LimitFunction =
+           // Ограничение, что функция возвращает объекты.
            ldef.GetFunction(
                     // В которых значения параметра 1 (<) значению параметра 2.
                     ldef.funcL,
@@ -294,8 +294,8 @@ lcs.LimitFunction =
 
 ```csharp
 // Создаем ограничение на объект.
-lcs.LimitFunction = 
-             // Ограничение, что функция возвращает объекты.  
+lcs.LimitFunction =
+             // Ограничение, что функция возвращает объекты.
              ldef.GetFunction(
                     // В которых значения параметра 1 (<) значению параметра 2.
                     ldef.funcL,
@@ -315,8 +315,8 @@ lcs.LimitFunction =
 
 ```csharp
 // Создаем ограничение на объект.
-lcs.LimitFunction = 
-             // Ограничение, что функция возвращает объекты.   
+lcs.LimitFunction =
+             // Ограничение, что функция возвращает объекты.
              ldef.GetFunction(
                     // В которых значения параметра 1 (<) значению параметра 2.
                     ldef.funcL,
@@ -337,7 +337,7 @@ lcs.LimitFunction =
 ```csharp
 // Создаем ограничение на объект.
 LimitFunction  =
-         // Ограничение, что функция возвращает объекты.  
+         // Ограничение, что функция возвращает объекты.
          ldef.GetFunction(
                 // В которых значения параметра 1 (<) значению параметра 2.
                 ldef.funcL,
@@ -348,5 +348,5 @@ LimitFunction  =
                     3,
                     new VariableDef(ldef.DateTimeType, Information.ExtractPropertyPath<FullTypesMainAgregator>(x => x.PoleDateTime))),
                 // Параметр 2: Ограничение, что из сегодняшней даты, возвращаются только дату(без времени).
-                ldef.GetFunction(ldef.funcOnlyDate, DateTime.Now));             
+                ldef.GetFunction(ldef.funcOnlyDate, DateTime.Now));
 ```

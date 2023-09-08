@@ -17,7 +17,7 @@ lang: ru
 Чтобы подключить данный сервис, нужно в конфигурационном файле написать:
 
 ```xml
-    <add key="BusinessTaskMonitorType" value="ICSSoft.Services.ChangesToSqlBTMonitor, ChangesToSqlBTMonitor, Version=1.0.0.1, Culture=neutral, PublicKeyToken=e5ad39f116a43e0b"/>
+    <add key="BusinessTaskMonitorType" value="ICSSoft.Services.ChangesToSqlBTMonitor, ICSSoft.STORMNET.Business, Version=1.0.0.1, Culture=neutral, PublicKeyToken=e5ad39f116a43e0b"/>
 ```
 
 ## Использование сервиса

@@ -91,7 +91,7 @@ try
     // Flexberry ORM saves the data objects according to their condition. Dependencies between objects are handled automatically. All queries executed in one transaction. 
     // Thus, a single call UpdateObjects corresponds to a single transaction database. 
     // Besides, there is a method UpdateObject to update a single object (and the object graph data to which it refers). 
-    DataServiceProvider.DataService.UpdateObjects(ref objectsToUpdateArray);
+    DataServiceProvider.DataService.UpdateObjects(ref objectsToUpdateArray); // DataServiceProvider is deprecated; inject IDataService instead
 
     stopwatch.Stop();
     Console.WriteLine("Time taken for persistence: {0} ms.", stopwatch.ElapsedMilliseconds);

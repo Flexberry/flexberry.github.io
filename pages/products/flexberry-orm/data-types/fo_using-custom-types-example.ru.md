@@ -24,7 +24,7 @@ public class Dollar
 {
     private int fDollars;
     private int fCents;
-    
+
     public Dollar(int Dollars, int Cents)
     {
         fDollars = 0;
@@ -33,13 +33,13 @@ public class Dollar
         this.Cents = Cents;
     }
 
-    public int Dollars 
+    public int Dollars
     {
         get{return fDollars;}
-        set 
+        set
         {
-            if (value >= 0) 
-                fDollars = value; 
+            if (value >= 0)
+                fDollars = value;
         }
     }
 
@@ -110,7 +110,7 @@ public virtual IIS.CDLIB.Dollar Price
 ### Пример загрузки и сохранения объекта с собственными типами
 
 ```csharp
-IDataService dataService = DataServiceProvider.DataService;
+IDataService dataService = DataServiceProvider.DataService; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
 OrmSample ormSample = new OrmSample(dataService);
 object primaryKey = ormSample.GetSomeObjectPrimaryKey(typeof(CDDA));
 

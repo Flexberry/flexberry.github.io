@@ -21,22 +21,22 @@ static void Main(string[) args)
 	Страна странакоторуюпишем = new Страна();
 	странакоторуюпишем.Наименование="Россия";
 	UpdateObject(странакоторуюпишем);
-	Console.WriteLine("Конец сохранения");			
+	Console.WriteLine("Конец сохранения");
 	//чтение одного объекта
 	Страна странакоторуючитаем = new Страна();
 	странакоторуючитаем.SetExistObjectPrimaryKey(странакоторуюпишем.__PrimaryKey);
 	LoadObject(странакоторуючитаем);
-	Console.WriteLine("Конец чтения, страна {0}", странакоторуючитаем.Наименование);			
+	Console.WriteLine("Конец чтения, страна {0}", странакоторуючитаем.Наименование);
 	Console.Read();
 }
 private static void UpdateObject(DataObject dparam)
 {
-	IDataService ds = DataServiceProvider.DataService;			
+	IDataService ds = DataServiceProvider.DataService; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
 	ds.UpdateObject(ref dparam);
 }
 private static void LoadObject(DataObject dparam)
 {
-	IDataService ds = DataServiceProvider.DataService;			
+	IDataService ds = DataServiceProvider.DataService;
 	ds.LoadObject(dparam);
 }
 ```

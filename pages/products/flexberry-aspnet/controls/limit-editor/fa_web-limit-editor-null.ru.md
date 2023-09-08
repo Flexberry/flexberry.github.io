@@ -13,7 +13,7 @@ lang: ru
 
 ![](/images/pages/products/flexberry-aspnet/controls/limit-editor/web-limit-editor-null.png)
 
-`Пусто` соответствует функции [funcIsNull](fo_func-is-null.html) из [SQLWhereLanguageDef](fo_function-list.html). 
+`Пусто` соответствует функции [funcIsNull](fo_func-is-null.html) из [SQLWhereLanguageDef](fo_function-list.html).
 
 `Непусто` соответствует функции funcNotIsNull из [ExternalLangDef](fo_external-lang-def.html).
 
@@ -31,7 +31,7 @@ lang: ru
 Если имеется класс `Кредит` со свойством `СуммаКредита` вещественного типа, то при переводе в [LINQProvider|LinqProvider) оно будет представляться следующим образом:
 
 ``` csharp
-var ds = (SQLDataService)DataServiceProvider.DataService;
+var ds = (SQLDataService)DataServiceProvider.DataService; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей
 IQueryable<Кредит> limit = ds.Query<Кредит>(Кредит.Views.C__КредитE).Where(x => (x.СуммаКредита as object) == null);
 ```
 

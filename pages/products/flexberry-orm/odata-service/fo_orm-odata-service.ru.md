@@ -20,7 +20,7 @@ lang: ru
 
 ## Логика работы ODataService
 
-ODataService представляет собой WebApi-контроллер, который предоставляет доступ к данным в БД по протоколу OData V4.  
+ODataService представляет собой WebApi-контроллер, который предоставляет доступ к данным в БД по протоколу OData V4.
 Типичный запрос на выборку данных работает следующим образом:
 
 * HTTP GET запрос формулируется клиентом в виде url с указанием типа требуемых данных, нужных атрибутов, фильтрации, сортировки и т.д.
@@ -133,7 +133,7 @@ namespace ODataServiceTemplate
     <remove name="TRACEVerbHandler" />
     <remove name="ExtensionlessUrlHandler-Integrated-4.0" />
     <add name="ExtensionlessUrlHandler-Integrated-4.0" path="*." verb="*" type="System.Web.Handlers.TransferRequestHandler" preCondition="integratedMode,runtimeVersionv4.0" />
-    </handlers> 
+    </handlers>
 </system.webServer>
 </configuration>
 ```
@@ -225,7 +225,7 @@ public static void Register(HttpConfiguration config)
     config.DependencyResolver = new UnityDependencyResolver(container);
 
     // Самое главное для ODataService - знать какой сервис данных используется. Можно зарегистрировать тут или в web.config в секции Unity.
-    container.RegisterInstance(DataServiceProvider.DataService);
+    container.RegisterInstance(DataServiceProvider.DataService); // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
 
     try
     {
@@ -261,7 +261,7 @@ public static void Register(HttpConfiguration config)
 /// <returns></returns>
 private static object GetLastRoundIdForTopic(ODataFunctions.QueryParameters queryParameters, Dictionary<string, object> parameters)
 {
-    ApplicationLogicBS bs = new ApplicationLogicBS { DataService = DataServiceProvider.DataService };
+    ApplicationLogicBS bs = new ApplicationLogicBS { DataService = DataServiceProvider.DataService }; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
     return bs.GetLastRoundIdForTopic((string)parameters["topicId"]);
 }
 ```
@@ -365,7 +365,7 @@ public static void Register(HttpConfiguration config)
 public static bool BeforeGet(ref LoadingCustomizationStruct lcs)
 {
     return true;
-} 
+}
 
 /// <summary>
 /// Метод вызываемый после вычитывания объектов. В нем производится дополнительная обработка возвращаемого результата.
@@ -459,7 +459,7 @@ public static void Register(HttpConfiguration config, IUnityContainer container,
     ManagementToken odataServiceManagementToken = config.MapODataServiceDataObjectRoute(builder);
     config.MapODataServiceFileRoute("File", "api/File", HttpContext.Current.Server.MapPath("~/Uploads"), container.Resolve<IDataService>());
     odataServiceManagementToken.Functions.Register(new Func<QueryParameters, string, IEnumerable<DataObject>>(FunctionWithLcs1));
-    odataServiceManagementToken.Functions.Register(new Func<QueryParameters, string, string, int>(FunctionWithLcs2));    
+    odataServiceManagementToken.Functions.Register(new Func<QueryParameters, string, string, int>(FunctionWithLcs2));
 }
 
 /// <summary>
@@ -471,7 +471,7 @@ public static void Register(HttpConfiguration config, IUnityContainer container,
 /// <returns></returns>
 private static IEnumerable<DataObject> FunctionWithLcs1(QueryParameters queryParameters, string entitySet)
 {
-    SQLDataService dataService = DataServiceProvider.DataService as SQLDataService;
+    SQLDataService dataService = DataServiceProvider.DataService as SQLDataService; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
     var type = queryParameters.GetDataObjectType(entitySet);
     var lcs = queryParameters.CreateLcs(type);
     var dobjs = dataService.LoadObjects(lcs);
@@ -487,7 +487,7 @@ private static IEnumerable<DataObject> FunctionWithLcs1(QueryParameters queryPar
 /// <returns></returns>
 private static int FunctionWithLcs2(QueryParameters queryParameters, string entitySet, string query)
 {
-    SQLDataService dataService = DataServiceProvider.DataService as SQLDataService;
+    SQLDataService dataService = DataServiceProvider.DataService as SQLDataService; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
     var type = queryParameters.GetDataObjectType(entitySet);
     var uri = $"http://a/b/c?{query}";
     var lcs = queryParameters.CreateLcs(type, uri);
@@ -540,7 +540,7 @@ public static void Register(HttpConfiguration config, IUnityContainer container,
 /// <returns></returns>
 private static IEnumerable<DataObject> ActionWithLcs(QueryParameters queryParameters, string entitySet, string query)
 {
-    SQLDataService dataService = DataServiceProvider.DataService as SQLDataService;
+    SQLDataService dataService = DataServiceProvider.DataService as SQLDataService; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
     var type = queryParameters.GetDataObjectType(entitySet);
     var uri = $"http://a/b/c?{query}";
     var lcs = queryParameters.CreateLcs(type, uri);
@@ -596,7 +596,7 @@ public static void Register(HttpConfiguration config, IUnityContainer container,
 /// <returns></returns>
 private static Страна[] FunctionExportExcel(QueryParameters queryParameters, string entitySet)
 {
-    SQLDataService dataService = DataServiceProvider.DataService as SQLDataService;
+    SQLDataService dataService = DataServiceProvider.DataService as SQLDataService; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
     Type type = queryParameters.GetDataObjectType(entitySet);
     LoadingCustomizationStruct lcs = queryParameters.CreateLcs(type);
     Страна[] dobjs = dataService.LoadObjects(lcs).Cast<Страна>().ToArray();
@@ -606,10 +606,10 @@ private static Страна[] FunctionExportExcel(QueryParameters queryParameter
 
 ## Пример ограничений на псевдодетейлы в ODataService
 
-`Flexberry ORM` позволяет строить [ограничения на "ассоциацию в обратную сторону" или "псевдодетейлы"](fo_psedodetails-linq-provider.html). Данная возможность предоставляется и при работе с данными через ODataService.  
-Для того, чтобы появилась возможность построить ограничение подобного вида, надо объявить её допустимость на уровне метаданных в EDM-модели OData.  
-Рассмотрим данную схему в качестве примера:  
-![schema](/images/pages/products/flexberry-orm/query-language/pseudo-details.png)  
+`Flexberry ORM` позволяет строить [ограничения на "ассоциацию в обратную сторону" или "псевдодетейлы"](fo_psedodetails-linq-provider.html). Данная возможность предоставляется и при работе с данными через ODataService.
+Для того, чтобы появилась возможность построить ограничение подобного вида, надо объявить её допустимость на уровне метаданных в EDM-модели OData.
+Рассмотрим данную схему в качестве примера:
+![schema](/images/pages/products/flexberry-orm/query-language/pseudo-details.png)
 Пример регистрации псевдодетейла:
 
 ```csharp

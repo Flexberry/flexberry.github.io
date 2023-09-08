@@ -8,6 +8,8 @@ permalink: ru/fo_ds-provider.html
 lang: ru
 ---
 
+> С версии ORM 8.0 DataServiceProvider устарел, вместо него используйте внедрение зависимостей для получения `IDataService`.
+
 `DataServiceProvider.DataService` - это [сервис данных](fo_data-service.html), который инициализируется на основании параметров, заданных в файле конфигурации (`App.cobfig` или `Web.config`). Таким образом, `DataServiceProvider.DataService` является [сервисом данных](fo_data-service.html) по умолчанию.
 
 ### Алгоритм инициализации DataServiceProvider.DataService

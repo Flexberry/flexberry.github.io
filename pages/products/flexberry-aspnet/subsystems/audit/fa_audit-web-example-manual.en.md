@@ -59,7 +59,8 @@ using ICSSoft.STORMNET.Business.Audit;
 protected void Application_Start(object sender, EventArgs e)
 {
     // Initialize audit service 
-    AuditSetter.InitAuditService(BridgeToDS.GetDataService());
+    IServiceProvider serviceProvider; // use dependency injection to get IServiceProvider; one could use IUnityContainer instead
+    var IAuditService = serviceProvider.GetService<IAuditService>(BridgeToDS.GetDataService());
     // ... 
 }
 ``` 

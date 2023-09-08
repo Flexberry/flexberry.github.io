@@ -45,7 +45,7 @@ public override void Edited(ICSSoft.STORMNET.DataObject dataobject, string contp
             Э.ФИОСотрудника = Э.Сотрудник.ОпрПолноеФИО();
             if (р.Должность != null)
             {
-                DataServiceProvider.DataService.LoadObject(р.Должность);
+                DataServiceProvider.DataService.LoadObject(р.Должность); // DataServiceProvider устарел; вместо него используйте внедрение зависимостей
                 Э.Должность = р.Должность.Наименование;
             }
             else Э.Должность = "";
@@ -86,7 +86,7 @@ public void ПоказатьСписок()
         LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Лицо), "ЛицоL");
         lcs.LimitFunction = lf;
 
-        ICSSoft.STORMNET.DataObject[] objs = DataServiceProvider.DataService.LoadObjects(lcs);
+        ICSSoft.STORMNET.DataObject[] objs = DataServiceProvider.DataService.LoadObjects(lcs); // DataServiceProvider устарел; вместо него используйте внедрение зависимостей
 
         if (objs.Length == 0)
         {
@@ -139,7 +139,7 @@ LookUp.UserImageList.Images.Add("Edit", Properties.Resources.EditImage);
 private void look_LookUpEvent1(object sender, System.EventArgs e)
 {
     Посетитель oПосетитель = (Посетитель)this.EditManager.DataObject;
-    
+
     Function lf = FunctionBuilder.BuildTrue();
 
     //создадим контейнер-раннер

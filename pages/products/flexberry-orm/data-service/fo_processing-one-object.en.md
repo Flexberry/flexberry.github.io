@@ -33,12 +33,12 @@ static void Main(string[) args)
 }
 private static void UpdateObject(DataObject dparam)
 {
-	IDataService ds = DataServiceProvider.DataService;			
+	IDataService ds = DataServiceProvider.DataService; // DataServiceProvider is deprecated; inject IDataService instead
 	ds.UpdateObject(ref dparam);
 }
 private static void LoadObject(DataObject dparam)
 {
-	IDataService ds = DataServiceProvider.DataService;			
+	IDataService ds = DataServiceProvider.DataService; // DataServiceProvider is deprecated; inject IDataService instead
 	ds.LoadObject(dparam);
 }
 ``` 

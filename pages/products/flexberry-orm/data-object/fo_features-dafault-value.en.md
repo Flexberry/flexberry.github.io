@@ -92,7 +92,7 @@ public class WinformC__ЗаписьНаПриёмE : ICSSoft.STORMNET.UI.BaseWin
 	private void WinformC__ЗаписьНаПриёмE_DataObjectOnFormLoaded(object sender, EventArgs e)
 	{
 		//define which business servers defined for the object type "Zapolarie" 
-		BusinessServer[] businessServers = BusinessServerProvider.GetBusinessServer(typeof(ЗаписьНаПриём), DataServiceObjectEvents.OnAllEvents, DataServiceProvider.DataService);
+		BusinessServer[] businessServers = BusinessServerProvider.GetBusinessServer(typeof(ЗаписьНаПриём), DataServiceObjectEvents.OnAllEvents, DataServiceProvider.DataService); // DataServiceProvider is deprecated; inject IDataService instead
 		if (businessServers.Length>0) 
 		{
 			TestBS curBS = (TestBS) businessServers[0]; //get first and only (in this case only) 

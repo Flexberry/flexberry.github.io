@@ -112,7 +112,7 @@ Read more about how to work check for changes in the data objects written in [th
 ### Example of loading and saving object with its own types
 
 ```csharp
-IDataService dataService = DataServiceProvider.DataService;
+IDataService dataService = DataServiceProvider.DataService; // DataServiceProvider is deprecated; inject IDataService instead
 OrmSample ormSample = new OrmSample(dataService);
 object primaryKey = ormSample.GetSomeObjectPrimaryKey(typeof(CDDA));
 

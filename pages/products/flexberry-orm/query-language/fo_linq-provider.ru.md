@@ -64,7 +64,7 @@ public static IQueryable<T> Query<T>(this SQLDataService ds) where T : DataObjec
 using ICSSoft.STORMNET.Business;
 using ICSSoft.STORMNET.Business.LINQProvider;
 //...
-var ds = (SQLDataService)DataServiceProvider.DataService; // Cервис данных.
+var ds = (SQLDataService)DataServiceProvider.DataService; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
 Кошка cat = ds.Query<Кошка>(Кошка.Views.КошкаE).First(o => o.Кличка.Contains("ош")); // Получение объекта.
 Console.WriteLine(cat.Кличка); //Использование.
 ```
@@ -75,7 +75,7 @@ Console.WriteLine(cat.Кличка); //Использование.
 using ICSSoft.STORMNET.Business;
 using ICSSoft.STORMNET.Business.LINQProvider;
 //...
-var ds = (SQLDataService)DataServiceProvider.DataService; // Cервис данных.
+var ds = (SQLDataService)DataServiceProvider.DataService; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
 Кошка cat = ds.Query<Кошка>(Кошка.Views.КошкаE).Where(o => o.Кличка.Contains("ош")).Take(1).FirstOrDefault(); // Получение объекта.
 Console.WriteLine(cat.Кличка); //Использование.
 ```
@@ -86,8 +86,8 @@ Console.WriteLine(cat.Кличка); //Использование.
 using ICSSoft.STORMNET.Business;
 using ICSSoft.STORMNET.Business.LINQProvider;
 //...
-var ds = (SQLDataService)DataServiceProvider.DataService; // Сервис данных.
-IQueryable<Кошка> objs = ds.Query<Кошка>(Кошка.Views.КошкаE); 
+var ds = (SQLDataService)DataServiceProvider.DataService; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
+IQueryable<Кошка> objs = ds.Query<Кошка>(Кошка.Views.КошкаE);
 IQueryable<Кошка> query = from o in objs where o.PrimaryKey == "6211E0DE-3E7A-4A68-866A-AB206A005B1C" select o; // Получить кошек по заданному значению ключа.
 List<Кошка> data = query.ToList(); // Вычитать данные в коллекцию.
 Console.WriteLine(data[0).Кличка); // Пользуемся полученными данными.
@@ -96,7 +96,7 @@ Console.WriteLine(data[0).Кличка); // Пользуемся получен�
 #### Следующий код эквивалентен предыдущему
 
 ``` csharp
-var ds = (SQLDataService)DataServiceProvider.DataService; // Сервис данных.
+var ds = (SQLDataService)DataServiceProvider.DataService; // DataServiceProvider устарел; вместо него используйте внедрение зависимостей.
 IQueryable<Кошка> objs = ds.Query<Кошка>(Кошка.Views.КошкаE).Where(o => o.PrimaryKey == "6211E0DE-3E7A-4A68-866A-AB206A005B1C"); // Получить кошек по заданному значению ключа.
 List<Кошка> data = objs.ToList(); // Вычитать данные в коллекцию.
 Console.WriteLine(data[0).Кличка); // Пользуемся полученными данными.

@@ -9,6 +9,8 @@ autotranslated: true
 hash: 1018e40e20836295016b5538417f8a1947e94bf8d0956a07990d8a919063f53d 
 --- 
 
+> CheckAccessToAttribute is no more present in ORM v8.0.
+
 # Rights attributes 
 Flexberry Platform supports setting the properties of the data objects (attribute). Setting this right is made through specifying a custom expression in the attribute DataServiceExpression. The expression looks like the following: 
 
@@ -32,7 +34,7 @@ The value DeniedAccessValue should be recorded as it bolino to be recorded in th
 
 ```cs
 object deniedAccessValue;
-if (!Information.CheckAccessToAttribute(this.GetType(), "Name", out deniedAccessValue))
+if (!Information.CheckAccessToAttribute(this.GetType(), "Name", out deniedAccessValue)) // CheckAccesToAttribute is no more present in ORM v8.0.
 return (string)deniedAccessValue;
 ``` 
 

@@ -23,7 +23,7 @@ You need to restrict clients by setting the limit to reference them loans. The s
 Let:
 
 ```csharp
-var ds = (SQLDataService)DataServiceProvider.DataService;
+var ds = (SQLDataService)DataServiceProvider.DataService; // DataServiceProvider is deprecated; inject IDataService instead
 ```
 
 Job restriction pseudometal a little less intuitive than the use of [other features LinqProvider](fo_linq-provider-faetures.html).

@@ -34,7 +34,7 @@ In the attribute `DataServiceExpression` defined the expression that will be use
 Is equivalent to this expression on the C# code is written in the getter of the properties. 
 
 ```csharp
-IDataService dataService = DataServiceProvider.DataService;
+IDataService dataService = DataServiceProvider.DataService; // DataServiceProvider is deprecated; inject IDataService instead
 LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Person), Person.Views.Person_E);
 
 // Load all the data objects. Nechranice property will be computed using the expressions in the getter. 

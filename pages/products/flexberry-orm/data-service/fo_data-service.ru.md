@@ -9,7 +9,7 @@ lang: ru
 ---
 
 **Сервис данных** - компонент Flexberry ORM, обеспечивающий запись и чтение объектов данных в хранилище. В объектной модели Flexberry ORM сервис данных представлен классом, реализующим интерфейс `ICSSoft.STORMNET.Business.IDataService`.
-Поддерживается несколько [стандартных сервисов данных](fo_standard-data-services.html), и при необходимости пользователями могут быть [разработаны](fo_implement-custom-ds.html) новые, удовлетворяющие специфическим требованиям (например, наследуя классы `ICSSoft.STORMNET.Business.ODBCDataService.ODBCDataService` или `ICSSoft.STORMNET.Business.`[`SQLDataService`](fo_sql-data-service.html)).
+Поддерживается несколько [стандартных сервисов данных](fo_standard-data-services.html), и при необходимости пользователями могут быть [разработаны](fo_implement-custom-ds.html) новые, удовлетворяющие специфическим требованиям (например, наследуя класс `ICSSoft.STORMNET.Business.`[`SQLDataService`](fo_sql-data-service.html)).
 
 {% include important.html content="При обращении к сервису данных в программном коде рекомендуется производить через интерфейс `ICSSoft.STORMNET.Business.IDataService`, т.к. это гарантирует  независимость кода от типа хранилища данных." %}
 
@@ -17,7 +17,7 @@ lang: ru
 
 Следует __обратить внимание__ на следующие моменты:
 
-* Существует возможность настроить сервис данных таким образом, чтобы на регистрозависимом источнике данных приложение вело себя как при работе с [регистронезависимым источником](fo_insensitivity-register-ds.html). 
+* Существует возможность настроить сервис данных таким образом, чтобы на регистрозависимом источнике данных приложение вело себя как при работе с [регистронезависимым источником](fo_insensitivity-register-ds.html).
 * Сервис данных [особым образом работает с логическим типом](fo_interpretation-boolean-null.html).
 
 ## Основные возможности сервиса данных
@@ -65,15 +65,15 @@ ICSSoft.STORMNET.DataObject[] LoadObjects(ICSSoft.STORMNET.View[] dataObjectView
 
 ### Загрузка объектов данных по настроечной структуре для выборки LoadingCustomizationStruct (массиву структур)
 
-* Данная перегрузка метода позволяет тонко настроить выборку загружаемых объектов за счёт использования структуры [LoadingCustomizationStruct](fo_loading-customization-struct.html): 
+* Данная перегрузка метода позволяет тонко настроить выборку загружаемых объектов за счёт использования структуры [LoadingCustomizationStruct](fo_loading-customization-struct.html):
 
-    * указать представление (вертикальное ограничение выборки: загрузка только определенных свойств), 
-    * количество возвращаемых строк (для реляционных хранилищ ограничение `<nowiki>TOP</nowiki>` в `SELECT`), 
+    * указать представление (вертикальное ограничение выборки: загрузка только определенных свойств),
+    * количество возвращаемых строк (для реляционных хранилищ ограничение `<nowiki>TOP</nowiki>` в `SELECT`),
     * параметры сортировки возвращаемых результатов (`ORDER BY`),
-    * ограничения на вычитываемые объекты данных (`WHERE`) 
+    * ограничения на вычитываемые объекты данных (`WHERE`)
     * и т.д.. Подробнее см. описание [LoadingCustomizationStruct](fo_loading-customization-struct.html).
- 
- [Пример использования](fo_load-limitation-example.html). 
+
+ [Пример использования](fo_load-limitation-example.html).
 
 _Замечание_: Данная перегрузка позволяет реализовать [чтение принадлежащих различным классам объектов в одном представлении](fo_reading-several-types-objects.html).
 
@@ -97,7 +97,7 @@ ICSSoft.STORMNET.DataObject[] LoadObjects(LoadingCustomizationStruct[] customiza
 
 ### Загрузка объектов с использованием состояния вычитки (для реализации порционного чтения)
 
-* Получение первой порции при [порционном чтении](fo_reading-portion.html). Кроме порции объектов данных, сервис данных возвращает некоторое состояние чтения. Это состояние передается  сервису данных для получения очередных порций при последующих вызовах (см. Загрузка одного объекта данных). 
+* Получение первой порции при [порционном чтении](fo_reading-portion.html). Кроме порции объектов данных, сервис данных возвращает некоторое состояние чтения. Это состояние передается  сервису данных для получения очередных порций при последующих вызовах (см. Загрузка одного объекта данных).
 
 ```csharp
 // 1.
@@ -115,7 +115,7 @@ ICSSoft.STORMNET.DataObject[] LoadObjects(ref object State);
 
 // 2.
 ICSSoft.STORMNET.DataObject[] LoadObjects(ref object State, DataObjectCache DataObjectCache);
-``` 
+```
 
 *Параметры*
 
@@ -126,7 +126,7 @@ _Примечание_: Размер порции может быть задан
 
 ## Загрузка одного объекта данных
 
-Для загрузки одного объекта данных служат перегрузки метода `LoadObject`. 
+Для загрузки одного объекта данных служат перегрузки метода `LoadObject`.
 Вычитка свойств из хранилища осуществляется по заданному в объекте данных [первичному ключу](fo_primary-keys-objects.html).
 
 *Примеры использования:*
@@ -187,7 +187,7 @@ void LoadObject(string dataObjectViewName, ICSSoft.STORMNET.DataObject dobject, 
 void LoadObject(ICSSoft.STORMNET.View dataObjectView, ICSSoft.STORMNET.DataObject dobject, bool ClearDataObject, bool CheckExistingObject)
 
 // 4.
-void LoadObject(ICSSoft.STORMNET.DataObject dobject, bool ClearDataObject, bool CheckExistingObject, DataObjectCache DataObjectCache) 
+void LoadObject(ICSSoft.STORMNET.DataObject dobject, bool ClearDataObject, bool CheckExistingObject, DataObjectCache DataObjectCache)
 
 // 5.
 void LoadObject(string dataObjectViewName, ICSSoft.STORMNET.DataObject dobject, bool ClearDataObject, bool CheckExistingObject, DataObjectCache DataObjectCache)
@@ -218,39 +218,39 @@ void LoadObject(ICSSoft.STORMNET.View dataObjectView, ICSSoft.STORMNET.DataObjec
 
 ```csharp
 // 1.
-void UpdateObject(ICSSoft.STORMNET.DataObject dobject) 
+void UpdateObject(ICSSoft.STORMNET.DataObject dobject)
 
 // 2.
-void UpdateObject(ref ICSSoft.STORMNET.DataObject dobject) 
+void UpdateObject(ref ICSSoft.STORMNET.DataObject dobject)
 
 // 3.
-void UpdateObject(ICSSoft.STORMNET.DataObject dobject, DataObjectCache DataObjectCache) 
+void UpdateObject(ICSSoft.STORMNET.DataObject dobject, DataObjectCache DataObjectCache)
 
 // 4.
-void UpdateObject(ref ICSSoft.STORMNET.DataObject dobject, DataObjectCache DataObjectCache) 
+void UpdateObject(ref ICSSoft.STORMNET.DataObject dobject, DataObjectCache DataObjectCache)
 
 // 5.
-void UpdateObject(ICSSoft.STORMNET.DataObject dobject, bool AlwaysThrowException) 
+void UpdateObject(ICSSoft.STORMNET.DataObject dobject, bool AlwaysThrowException)
 
 // 6.
-void UpdateObject(ref ICSSoft.STORMNET.DataObject dobject, bool AlwaysThrowException) 
+void UpdateObject(ref ICSSoft.STORMNET.DataObject dobject, bool AlwaysThrowException)
 
 // 7.
-void UpdateObject(ref ICSSoft.STORMNET.DataObject dobject, DataObjectCache DataObjectCache, bool AlwaysThrowException) 
+void UpdateObject(ref ICSSoft.STORMNET.DataObject dobject, DataObjectCache DataObjectCache, bool AlwaysThrowException)
 ```
 
 *Параметры*
 
-* `dobject`  - объект данных, который требуется обновить 
+* `dobject`  - объект данных, который требуется обновить
 * `DataObjectCache` - кеш объектов
-* `AlwaysThrowException` - Если произошла ошибка в базе данных, не пытаться выполнять других запросов, сразу взводить ошибку и откатывать транзакцию 
+* `AlwaysThrowException` - Если произошла ошибка в базе данных, не пытаться выполнять других запросов, сразу взводить ошибку и откатывать транзакцию
 
 ## Обновление нескольких объектов данных
 
 Для обновления нескольких объектов данных служат перегрузки метода `UpdateObjects`.
 Запросы для всех обновляемых объектов выполняются в единой транзакции.
 
-Обновляемые объекты данных могут быть как однотипными, так и разнотипными. В метод они передаются параметром — одномерным массивом типа [DataObject](fo_data-object.html)[]. 
+Обновляемые объекты данных могут быть как однотипными, так и разнотипными. В метод они передаются параметром — одномерным массивом типа [DataObject](fo_data-object.html)[].
 В общем случае сервис данных умеет сам выстраивать порядок запросов на обновление объектов данных. Но возможны ситуации, когда для связанных объектов важен порядок следования объектов в массиве, подробная информация о порядке сохранения объектов приведена в статье [Обработка множества объектов](fo_processing-multiple-objects.html).
 
 Следует иметь в виду, что для каждого элемента массива его сохранение может вызвать [сохранение связанных с ним объектов](fo_update-related-objects.html).
@@ -293,7 +293,7 @@ ObjectStringDataView[] LoadStringedObjectView(char separator, LoadingCustomizati
 
 *Параметры*
 
-* `separator` -  разделитель в строках 
+* `separator` -  разделитель в строках
 * `customizationStruct` -  настроичная структура для выборки [LoadingCustomizationStruct](fo_loading-customization-struct.html)
 
 __Примечание__: порядок следования свойств объекта данных в результирующей строке с разделителями задаётся парметром `ColumnsOrder` структуры `customizationStruct`.
@@ -331,7 +331,7 @@ __Примечание__: Размер порции может быть зада
 
 ## Получение количества объектов, удовлетворяющих запросу
 
-[Пример использования](fo_load-limitation-example.html). 
+[Пример использования](fo_load-limitation-example.html).
 
 Возвращает количество объектов удовлетворяющих условиям выборки,не выполняя загрузку данных.
 
@@ -343,7 +343,7 @@ int GetObjectsCount(LoadingCustomizationStruct customizationStruct)
 
 *Параметры*
 
-`customizationStruct` - настроечная структура для выборки [LoadingCustomizationStruct](fo_loading-customization-struct.html)  
+`customizationStruct` - настроечная структура для выборки [LoadingCustomizationStruct](fo_loading-customization-struct.html)
 
 ## Использование SQL при работе с сервисом данных
 

@@ -56,7 +56,7 @@ Thus it is necessary to temporarily disable the re-initialization of the copy of
 
 ``` csharp
 dobj.DisableInitDataCopy(); // disallow copy initialization data 
-ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(view, dobj, false, false); // dochitcu data object 
+ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(view, dobj, false, false); // DataServiceProvider is deprecated; inject IDataService instead
 dobj.EnableInitDataCopy();// return the initialized copy of the data 
 dobj.GetStatus();//To the object status was calculated by modified properties relative to copies of the data. 
 ``` 
@@ -67,7 +67,7 @@ This option applies only to the case when pogruzheny object is read-only and wil
 
 ``` csharp
 dobj.DisableInitDataCopy(); // disallow copy initialization data 
-ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(view, dobj, false, false); // dochitcu data object 
+ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(view, dobj, false, false); // DataServiceProvider is deprecated; inject IDataService instead
 
 // manually updated the internal copy of the data 
 ТипОбъекта внутренКопия = dobj.GetDataCopy();
@@ -87,7 +87,7 @@ Alternatively, the reload data is create a separate instance of the same type wi
 	ТипОбъекта dobj_forLoading = new ТипОбъекта();
 	dobj_forLoading.SetExistingPrimaryKey(dobj.__PrimaryKey);
 	// view is required view. Its composition depends on the task. 
-	ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(view, dobj_forLoading);
+	ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(view, dobj_forLoading); // DataServiceProvider is deprecated; inject IDataService instead
 ``` 
 
 {% include note.html content="If you call a method `LoadObject` not explicitly specify a [view](fd_view-definition.html), will be deducted all private object fields and references to the wizard without their own field masters. Detaily object to be deducted **will**." %} 
@@ -95,7 +95,7 @@ Alternatively, the reload data is create a separate instance of the same type wi
 To read the object thus, it is necessary to use a method overload without a parameter `LoadObject` type `View`. For example, suitable for the simplest overload: 
 
 ```csharp
-ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(dobj_forLoading);
+ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(dobj_forLoading); // DataServiceProvider is deprecated; inject IDataService instead
 ``` 
 
 In this case, the object `dobj_forLoading` also do not persist in the database. It should be understood that if the contact object has changed properties (status `Altered`), in `dobj_forLoading` they will not get, as yet not saved to the database. In practice, the logic should not depend on this factor, as gecitkoy dynamically determines the composition of the properties that you want to reload, and the altered properties (with proper verification) shall not be taken into account: 

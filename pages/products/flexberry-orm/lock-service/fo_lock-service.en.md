@@ -20,18 +20,18 @@ To open blockages, you must use the method `ClearLock`.
 
 ```csharp
 Автор автор = new Автор();
-LockService ls = new LockService();
-ls.SetLock(автор); //Blocking 
-string sLockID = ls.SetLock(автор); //Attempt to lock the same object 
+LockService lockService = container.Resolve<LockService>();
+lockService.SetLock(автор); //Blocking 
+string sLockID = lockService.SetLock(автор); //Attempt to lock the same object 
 if (sLockID!=string.Empty)
 {
 	Console.WriteLine(string.Format("Locked by: {0}", sLockID));
 }
-ls.ClearLock(автор);//Cleanup the lock 
+lockService.ClearLock(автор);//Cleanup the lock 
 Console.ReadLine();
 ``` 
 
-Service lock accesses the data store via [service data](fo_data-service.html) specified in the [service provider data](fo_ds-provider.html) (`ICSSoft.STORMNET.Business.DataServiceProvider.DataService`). 
+Service lock accesses the data store via [service data](fo_data-service.html) dependency, registered through Unity.
 
 Vault locks must be a corresponding source. 
 

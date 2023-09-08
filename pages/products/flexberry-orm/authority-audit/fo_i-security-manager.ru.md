@@ -8,6 +8,8 @@ permalink: ru/fo_i-security-manager.html
 lang: ru
 ---
 
+> UnityFactory устарел. Вместо него используйте внедрение зависимостей (инжектите IUnityContainer/IServiceProvider или напрямую нужные зависимости).
+
 Сервисы времени выполнения подсистемы полномочий Flexberry доступны через интерфейс `ICSSoft.STORMNET.Security.ISecurityManager, ICSSoft.STORMNET.DataObject`. 
 
 ## Получение доступа к инстанции ISecurityManager
@@ -15,7 +17,7 @@ lang: ru
 Данный интерфес разрешается в реальную инстанцию через [Flexberry UnityFactory](fo_unity-factory.html) следующим образом:
 
 ```csharp
-IUnityContainer container = UnityFactory.CreateContainer();
+IUnityContainer container = UnityFactory.CreateContainer(); // UnityFactory устарел. Вместо него используйте внедрение зависимостей (инжектите IUnityContainer/IServiceProvider или напрямую нужные зависимости).
 ISecurityManager securityManager = container.Resolve<ISecurityManager>();
 ```
 

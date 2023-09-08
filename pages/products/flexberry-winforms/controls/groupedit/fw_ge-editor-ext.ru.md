@@ -132,7 +132,7 @@ ICSSoft.STORMNET.View дочитать_View = m_objView - ge_View;
 //если она открывалась ранее
 foreach (string altprop in dobject.GetAlteredPropertyNames())
     дочитать_View.RemoveProperty(altprop);
-ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(дочитать_View, dobject, false, false);
+ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(дочитать_View, dobject, false, false); // DataServiceProvider устарел; вместо него используйте внедрение зависимостей
 return;
 ```
 

@@ -18,7 +18,7 @@ The function to retrieve parts of dates are available in [ExternalLangDef](fo_ex
 In the examples below we will use the following code: 
 
 ```csharp
-var langdef = ExternalLangDef.LanguageDef;
+var langdef = ExternalLangDef.LanguageDef; // Use of ExternalLangDef.LanguageDef is deprecated. Use constructor instead (new ExternalLangDef(dataService)).
 var order = LoadingCustomizationStruct.GetSimpleStruct(typeof (Заказ), Заказ.Views.ЗаказL);
 ``` 
 
