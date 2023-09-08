@@ -95,8 +95,8 @@ export default ApplicationSerializer.extend({
 
 Свойство | Описание | Дефолтное значение
 :---------------------|:------------------------------------------------------------|:----------------
-`choose` | Определяет имя action'а, которое будет происходит по клику на кнопку 'choose'.|
-`remove` | Определяет имя action'а, которое будет происходит по клику на кнопку 'remove'.|
+`choose` | Определяет имя action'а, которое будет происходить по клику на кнопку 'choose'.|
+`remove` | Определяет имя action'а, которое будет происходить по клику на кнопку 'remove'.|
 `chooseText` | Определяет текст/html внутри кнопки 'choose'.|
 `removeText` | Определяет текст/html внутри кнопки 'remove'.|
 `chooseButtonClass` | Определяет css-class на кнопку 'choose'.|
@@ -109,7 +109,7 @@ export default ApplicationSerializer.extend({
 `sizeClass` | Определяет css-class размера окна, возможные варианты: small, large, fullscreen | small
 `title` | Заголовок модального окна |
 `lookupLimitPredicate` | Определяет функцию ограничения |
-`lookupAdditionalLimitFunction` | Дополнительная функция ограниченяи для использования в GroupEdit относительно полей строки |
+`lookupAdditionalLimitFunction` | Дополнительная функция ограничения для использования в GroupEdit относительно полей строки |
 `autocomplete` | Режим автокомплита, в режиме "Только для чтения" не работает | false
 `dropdown` | Режим выпадающего списка, в режиме "Только для чтения" не работает | false
 `dropdownIsSearch` | Режим поиска (автокомплита) для LookUp-а в режиме выпадающего списка | false
