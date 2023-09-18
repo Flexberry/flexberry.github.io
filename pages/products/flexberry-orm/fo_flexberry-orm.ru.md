@@ -9,7 +9,16 @@ permalink: ru/fo_flexberry-orm.html
 
 `Flexberry ORM` является [продуктом платформы Flexberry](fp_landing_page.html). Сайт продукта `Flexberry ORM`: [http://flexberry.ru/FlexberryORM](http://flexberry.ru/FlexberryORM).
 
-Для `Flexberry ORM` доступна сборка под .NET от х версии выше.
+Для `Flexberry ORM` доступна сборка под:
+
+* .NETCoreApp 3.1
+* .NETFramework 4.5
+* .NETFramework 4.6.1
+* .NETStandard 2.0
+* net6.0
+* net7.0
+
+{% include note.html content="Для Flexberry ORM .NET6 и выше в проекте необходимо установить флаг "<EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>"}
 
 {% include note.html content="Flexberry ORM доступно для установки в проект через [NuGet package](https://www.nuget.org/packages/NewPlatform.Flexberry.ORM)." %}
 
@@ -34,8 +43,6 @@ permalink: ru/fo_flexberry-orm.html
 Список библиотек, содержащих Runtime-компоненты Flexberry ORM представлен [здесь](fo_flexberry-orm-libraries.html).
 
 Поддерживаемая типизация описана в [отдельной статье](fo_flexberry-orm-types.html).
-
-{% include note.html content="Для Flexberry ORM / NET6 и выше в проекте ставитсянеобходимо установить флаг "<EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>"}
 
 ## Демонстрационное приложение
 
