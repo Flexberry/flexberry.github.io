@@ -11,14 +11,14 @@ permalink: ru/fo_flexberry-orm.html
 
 Для `Flexberry ORM` доступна сборка под:
 
-* .NETCoreApp 3.1
 * .NETFramework 4.5
 * .NETFramework 4.6.1
 * .NETStandard 2.0
+* .NETCoreApp 3.1
 * net6.0
 * net7.0
 
-{% include note.html content="Для Flexberry ORM .NET6 и выше в проекте необходимо установить флаг "<EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>"}
+{% include note.html content="Для Flexberry ORM .NET6 и выше в проекте может потребоваться установить флаг "<EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>, если из пакета Flexberry ORM используется функциональность с _BinaryFormatter_, который [устарел](https://learn.microsoft.com/ru-ru/dotnet/core/compatibility/serialization/5.0/binaryformatter-serialization-obsolete)."}
 
 {% include note.html content="Flexberry ORM доступно для установки в проект через [NuGet package](https://www.nuget.org/packages/NewPlatform.Flexberry.ORM)." %}
 
@@ -26,15 +26,15 @@ permalink: ru/fo_flexberry-orm.html
 
 `Flexberry ORM` состоит из следующих модулей:
 
-* [Компоненты для работы с объектной моделью (объекты данных).](fo_data-object.html)
-* [Компоненты доступа к источнику данных (сервисы данных).](fo_data-service.html)
+* [Компоненты для работы с объектной моделью (объекты данных)](fo_data-object.html)
+* [Компоненты доступа к источнику данных (сервисы данных)](fo_data-service.html)
 * [Представления](fd_view-definition.html)
 * [Компоненты для фильтрации получаемых данных (ограничения).](fo_limitation.html)
-* [Компоненты пессимистической блокировки, обеспечивающие возможность блокировать объекты данных во время выполнения операций над ними.](fo_lock-service.html) 
+* [Компоненты пессимистической блокировки, обеспечивающие возможность блокировать объекты данных во время выполнения операций над ними](fo_lock-service.html) 
 * [Бизнес-серверы](fo_business-logic.html).
 * [Монитор задач](fo_business-task-monitor.html)
-* [Модуль расширения Flexberry Designer для генерации кода по uml-моделям.](fo_orm-case-plugin.html)
-* [Вспомогательные инструменты ICSSoft.STORMNET.Tools.](fo_ics-soft-stormnet-tools.html)
+* [Модуль расширения Flexberry Designer для генерации кода по uml-моделям](fo_orm-case-plugin.html)
+* [Вспомогательные инструменты ICSSoft.STORMNET.Tools](fo_ics-soft-stormnet-tools.html)
 
 ## Описание продукта
 
