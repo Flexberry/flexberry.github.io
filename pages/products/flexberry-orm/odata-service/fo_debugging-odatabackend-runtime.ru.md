@@ -2,7 +2,7 @@
 title: Инструкция по отладке кода проекта с ORM.ODataService во время выполнения
 sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, отладка, пример
-summary: Пошаговая инструкция по удобному способу отладки
+summary: Инструкция по отладке кода проекта с ORM.ODataService во время выполнения
 toc: true
 permalink: ru/fo_debugging-odatabackend-runtime.html
 lang: ru
