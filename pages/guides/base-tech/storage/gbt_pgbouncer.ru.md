@@ -8,7 +8,7 @@ lang: ru
 ---
 
 ## Описание
-PgBouncer - это сервис, обеспечивающий `connection pooling` к экземпляру PostgreSQL. PgBouncer работает как посредник между приложением и базой данных, "транслируя" запросы к нужной БД в экземпляре и используя соединения из пула. Прикладное приложение подключается к `PgBouncer` (порт `6432` по умолчанию).
+[PgBouncer](https://www.pgbouncer.org) - это сервис, обеспечивающий `connection pooling` к экземпляру PostgreSQL. PgBouncer работает как посредник между приложением и базой данных, "транслируя" запросы к нужной БД в экземпляре и используя соединения из пула. В данной статье рассматривается процесс настройки PgBouncer для работы с несколькими базами данных.
 
 ## Установка PgBouncer
 
@@ -22,7 +22,7 @@ PgBouncer - это сервис, обеспечивающий `connection poolin
 - [Установка из исходников](https://www.pgbouncer.org/install.html)
 
 ### Docker
-Рекомендуется использовать образ [edoburu/pgbouncer](https://hub.docker.com/r/edoburu/pgbouncer). Для работы образа, необходимо поместить в образ файлы `/etc/pgbouncer/pgbouncer.ini` и `/etc/pgbouncer/userlist.txt`. Это можно сделать с помощью docker volumes или создав собственный Dockerfile.
+Рекомендуется использовать образ [edoburu/pgbouncer](https://hub.docker.com/r/edoburu/pgbouncer). Для работы образа, необходимо поместить в образ файлы `/etc/pgbouncer/pgbouncer.ini` и `/etc/pgbouncer/userlist.txt`. Это можно сделать с помощью [docker volumes](https://docs.docker.com/storage/volumes) или создав собственный [Dockerfile](https://docs.docker.com/engine/reference/builder) (пример [PgBouncer Dockerfile](https://github.com/Flexberry/Flexberry.PgBouncer.Sample/blob/main/src/Docker/dockerfiles/Dockerfile.PgBouncer)).
 
 ### Конфигурация PgBouncer
 Настройка PgBouncer осуществляется с помощью файла конфигурации `pgbouncer.ini`. Пример конфигурации.
@@ -50,10 +50,10 @@ logfile = pgbouncer.log
 ```
 Файл `userlist.txt` описывает учётные данные для подключения к PgBouncer. Для подключения к БД PgBouncer использует логин/пароль из файла конфигурации.
 
-> Есть возможность синхронизировать пользователей PgBouncer с пользователями БД - см. параметры `auth_file`, `auth_user`, `auth_query` в [документации](https://www.pgbouncer.org/config.html#authentication-settings) и [пример auth_query](https://www.pgbouncer.org/config.html#authentication-settings).
+> Есть возможность синхронизировать пользователей PgBouncer с пользователями БД - см. параметры `auth_file`, `auth_user`, `auth_query` в [документации](https://www.pgbouncer.org/config.html#authentication-settings) и [пример auth_query](https://www.pgbouncer.org/config.html#authentication-settings). Альтернативный способ синхронизации - записать пользователей БД в `userlist.txt` - таким образом пользователи PgBouncer будут совпадать с ними.
 
 #### Раздел databases
-Раздел `[databases]` описывает базы данных, к которым PgBouncer подключает клиентов. В данном примере две базы: `appdb` и `securitydb`. При подключении к PgBouncer, клиент должен указать БД: `SERVER=localhost;Port=6432;User ID=pgbounceruser;Password=12345;Database=appdb`. PgBouncer предоставит подключение из своего пула для соответствующей БД. _Для каждого пользователя в БД используется собственный пул соединений._
+Раздел `[databases]` описывает базы данных, к которым PgBouncer подключает клиентов. В данном примере две базы: `appdb` и `securitydb` (БД приложения и БД полномочий `Flexberry`). Клиент должен указать нужную ему БД в строке подключения к PgBouncer (параметр `Database=appdb`). PgBouncer предоставит подключение из своего пула для соответствующей БД. _Для каждого пользователя в БД используется собственный пул соединений._
 
 Для баз данных можно задавать дополнительные настройки, такие как размер пула (`pool_size`), количество резервных соединений (`reserve_pool`), максимальное число соединений для всех пулов БД (`max_db_connections`) и [прочие](https://www.pgbouncer.org/config.html#section-databases).
 
@@ -72,6 +72,9 @@ logfile = pgbouncer.log
 Прочие полезные настройки:
 - `server_lifetime` - время до автоматического закрытия соединений к БД (активных/неактивных). По умолчанию `1 час`. Позволяет закрывать старые соединения из пула, очищая кеш (вычислимых процедур, подготовленных операторов, и т.д.). Не нарушает работу активных соединений клиентов.
 - `server_idle_timeout` - время до автоматического закрытия неактивных соединений к БД (в состоянии `idle`). По умолчанию `10 минут`.
+
+#### Подключение приложения Flexberry к PgBouncer
+Чтобы подключить приложение к PgBouncer, необходимо изменить строки подключения сервисов данных. Строки подключения по умолчанию задаются в файле `App.config` в проекте `ODataBackend` вашего бекенда. Параметр `DefConnStr` задаёт строку подключения к БД приложения. Необходимо изменить строку для подключения к PgBouncer: `SERVER=localhost;Port=6432;User ID=pgbounceruser;Password=12345;Database=appdb` (PgBouncer по умолчанию работает на порте 6432).
 
 ### Полезные ссылки
 - [Пример использования PgBouncer в приложении Flexberry](https://github.com/Flexberry/Flexberry.PgBouncer.Sample)
