@@ -1,6 +1,6 @@
 ---
-title: Liquibase
-keywords: pgbouncer, sql, postgres, postgresql, pooling, connection, пул соединений
+title: PgBouncer
+keywords: pgbouncer, sql, postgres, postgresql, pool, pooling, connection, connection pooling, пул соединений
 sidebar: guide-base-tech_sidebar
 toc: true
 permalink: ru/gbt_pgbouncer.html
