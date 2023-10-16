@@ -18,7 +18,11 @@ permalink: ru/fo_flexberry-orm.html
 * net6.0
 * net7.0
 
-{% include note.html content="Для Flexberry ORM .NET6 и выше в проекте может потребоваться установить флаг <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>, если из пакета Flexberry ORM используется функциональность с _BinaryFormatter_, который [устарел](https://learn.microsoft.com/ru-ru/dotnet/core/compatibility/serialization/5.0/binaryformatter-serialization-obsolete)." }
+{% capture net6_note %}
+Для Flexberry ORM .NET6 и выше в проекте может потребоваться установить флаг `<EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>`, если из пакета Flexberry ORM используется функциональность с _BinaryFormatter_, который [устарел](https://learn.microsoft.com/ru-ru/dotnet/core/compatibility/serialization/5.0/binaryformatter-serialization-obsolete).
+{% endcapture %}
+
+{% include note.html content=net6_note %}
 
 {% include note.html content="Flexberry ORM доступно для установки в проект через [NuGet package](https://www.nuget.org/packages/NewPlatform.Flexberry.ORM)." %}
 
