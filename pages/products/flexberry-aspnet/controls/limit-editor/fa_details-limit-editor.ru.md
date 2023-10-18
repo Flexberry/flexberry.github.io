@@ -33,9 +33,7 @@ lang: ru
 
 ```xml
 <unity xmlns="http://schemas.microsoft.com/practices/2010/unity">
-...
   <container>
-...
     <register type="ICSSoft.STORMNET.Windows.Forms.IViewGenerator, ExternalLangDef" mapTo="NewPlatform.Flexberry.Web.Page.LimitEditorViewGenerator, NewPlatform.Flexberry.Web.LimitEditor" />
   </container>
 </unity>
