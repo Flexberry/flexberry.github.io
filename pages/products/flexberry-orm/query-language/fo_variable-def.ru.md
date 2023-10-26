@@ -131,12 +131,12 @@ var view = Information.GetView("КредитE", typeof(Кредит));
 var dvd = new DetailVariableDef
 {
     ConnectMasterPorp = "Клиент",
-    OwnerConnectProp = new[) { SQLWhereLanguageDef.StormMainObjectKey },
+    OwnerConnectProp = new[] { SQLWhereLanguageDef.StormMainObjectKey },
     View = view,
     Type = languageDef.GetObjectType("Details")
 };
 lcsДолгосрочныеКлиенты.LimitFunction = languageDef.GetFunction(languageDef.funcExist, dvd,
                                                         languageDef.GetFunction(languageDef.funcGEQ, 
                                                         new VariableDef(languageDef.GuidType, "СрокКредита"), 15));
-ICSSoft.STORMNET.DataObject[) dobjsДолгосрочныеКлиенты = ds.LoadObjects(lcsДолгосрочныеКлиенты);
+ICSSoft.STORMNET.DataObject[] dobjsДолгосрочныеКлиенты = ds.LoadObjects(lcsДолгосрочныеКлиенты);
 ```
