@@ -45,9 +45,9 @@ ODataService представляет собой WebApi-контроллер, к
 * В E-представление (представление, имеющее название "<ИмяКласса>E") детейла должна быть добавлена ссылка на агрегатор.
 * Подключение `Flexberry ORM ODataService`. Для подключения в web-проект (WebForms) воспользоваться возможностями `Flexberry ORM ODataService`, необходимо сделать следующее:
 
-    * Подключить NuGet-пакет `Flexberry ORM ODataService`.
-    * В App_Start приложения создать класс "ODataConfig.cs".
-    * Заменить содержимое класса примерно на следующее:
+  * Подключить NuGet-пакет `Flexberry ORM ODataService`.
+  * В App_Start приложения создать класс "ODataConfig.cs".
+  * Заменить содержимое класса примерно на следующее:
 
 ```csharp
 namespace ODataServiceTemplate
@@ -95,7 +95,7 @@ namespace ODataServiceTemplate
 }
 ```
 
-   * В Global.asax добавить:
+* В Global.asax добавить:
 
 ```csharp
 namespace ODataServiceTemplate
@@ -120,9 +120,9 @@ namespace ODataServiceTemplate
 }
 ```
 
-   * Для того, чтобы код компилировался, может потребоваться установить дополнительно NuGet-пакеты в приложение: [Microsoft.AspNet.WebApi.Cors](https://www.nuget.org/packages/Microsoft.AspNet.WebApi.Cors) и [microsoft.aspnet.webapi.webhost](https://www.nuget.org/packages/microsoft.aspnet.webapi.webhost/).
+* Для того, чтобы код компилировался, может потребоваться установить дополнительно NuGet-пакеты в приложение: [Microsoft.AspNet.WebApi.Cors](https://www.nuget.org/packages/Microsoft.AspNet.WebApi.Cors) и [microsoft.aspnet.webapi.webhost](https://www.nuget.org/packages/microsoft.aspnet.webapi.webhost/).
 
-   * Добавить в web.config или проверить наличие следующих записей:
+* Добавить в web.config или проверить наличие следующих записей:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -225,7 +225,9 @@ public static void Register(HttpConfiguration config)
     config.DependencyResolver = new UnityDependencyResolver(container);
 
     // Самое главное для ODataService - знать какой сервис данных используется. Можно зарегистрировать тут или в web.config в секции Unity.
-    container.RegisterInstance(DataServiceProvider.DataService);
+    IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+    IDataService ds = mainUnityContainer.Resolve<IDataService>();
+    container.RegisterInstance(ds);
 
     try
     {
@@ -261,7 +263,9 @@ public static void Register(HttpConfiguration config)
 /// <returns></returns>
 private static object GetLastRoundIdForTopic(ODataFunctions.QueryParameters queryParameters, Dictionary<string, object> parameters)
 {
-    ApplicationLogicBS bs = new ApplicationLogicBS { DataService = DataServiceProvider.DataService };
+    IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+    IDataService ds = mainUnityContainer.Resolve<IDataService>();
+    ApplicationLogicBS bs = new ApplicationLogicBS { DataService = ds };
     return bs.GetLastRoundIdForTopic((string)parameters["topicId"]);
 }
 ```
@@ -471,7 +475,9 @@ public static void Register(HttpConfiguration config, IUnityContainer container,
 /// <returns></returns>
 private static IEnumerable<DataObject> FunctionWithLcs1(QueryParameters queryParameters, string entitySet)
 {
-    SQLDataService dataService = DataServiceProvider.DataService as SQLDataService;
+    IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+    IDataService ds = mainUnityContainer.Resolve<IDataService>();
+    SQLDataService dataService = ds as SQLDataService;
     var type = queryParameters.GetDataObjectType(entitySet);
     var lcs = queryParameters.CreateLcs(type);
     var dobjs = dataService.LoadObjects(lcs);
@@ -487,7 +493,9 @@ private static IEnumerable<DataObject> FunctionWithLcs1(QueryParameters queryPar
 /// <returns></returns>
 private static int FunctionWithLcs2(QueryParameters queryParameters, string entitySet, string query)
 {
-    SQLDataService dataService = DataServiceProvider.DataService as SQLDataService;
+    IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+    IDataService ds = mainUnityContainer.Resolve<IDataService>();
+    SQLDataService dataService = ds as SQLDataService;
     var type = queryParameters.GetDataObjectType(entitySet);
     var uri = $"http://a/b/c?{query}";
     var lcs = queryParameters.CreateLcs(type, uri);
@@ -540,7 +548,9 @@ public static void Register(HttpConfiguration config, IUnityContainer container,
 /// <returns></returns>
 private static IEnumerable<DataObject> ActionWithLcs(QueryParameters queryParameters, string entitySet, string query)
 {
-    SQLDataService dataService = DataServiceProvider.DataService as SQLDataService;
+    IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+    IDataService ds = mainUnityContainer.Resolve<IDataService>();
+    SQLDataService dataService = ds as SQLDataService;
     var type = queryParameters.GetDataObjectType(entitySet);
     var uri = $"http://a/b/c?{query}";
     var lcs = queryParameters.CreateLcs(type, uri);
@@ -554,8 +564,10 @@ private static IEnumerable<DataObject> ActionWithLcs(QueryParameters queryParame
 
 Пример использования пользовательских функций для экспорта в Excel.
 Пример запроса:
+
+```html
 http://localhost/odata/FunctionExportExcel(entitySet='Странаs')?exportExcel=true&colsOrder=Название/Название&detSeparateCols=false&detSeparateRows=false&$filter=contains(Название,'1')
-.
+```
 
 ```csharp
 /// <summary>
@@ -596,7 +608,9 @@ public static void Register(HttpConfiguration config, IUnityContainer container,
 /// <returns></returns>
 private static Страна[] FunctionExportExcel(QueryParameters queryParameters, string entitySet)
 {
-    SQLDataService dataService = DataServiceProvider.DataService as SQLDataService;
+    IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+    IDataService ds = mainUnityContainer.Resolve<IDataService>();
+    SQLDataService dataService = ds as SQLDataService;
     Type type = queryParameters.GetDataObjectType(entitySet);
     LoadingCustomizationStruct lcs = queryParameters.CreateLcs(type);
     Страна[] dobjs = dataService.LoadObjects(lcs).Cast<Страна>().ToArray();

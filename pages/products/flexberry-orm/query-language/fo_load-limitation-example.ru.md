@@ -43,14 +43,16 @@ stopwatch.Start();
 // lcs.RowNumber = new RowNumberDef(2, 5);
 // Есть три основных метода для загрузки объектов:
 // 1. Загрузить из БД записи и для каждой из них создать экземпляр объекта данных.
-ICSSoft.STORMNET.DataObject[] objs = DataServiceProvider.DataService.LoadObjects(lcs);
+IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+IDataService ds = mainUnityContainer.Resolve<IDataService>();
+ICSSoft.STORMNET.DataObject[] objs = ds.LoadObjects(lcs);
 
 // 2. Загрузить без создания экземпляров (каждый объект представлен в виде строки из значений свойств с разделителями). 
 // Используется, когда не требуется редактирование объектов. Он намного быстрее!
-ObjectStringDataView[] stringedview = DataServiceProvider.DataService.LoadStringedObjectView(';', lcs);
+ObjectStringDataView[] stringedview =ds.LoadStringedObjectView(';', lcs);
 
 // 3. Получить количество объектов, без загрузки данных.
-int iObjsCount = DataServiceProvider.DataService.GetObjectsCount(lcs);
+int iObjsCount = ds.GetObjectsCount(lcs);
 
 stopwatch.Stop();
 Console.WriteLine("Time taken for all loadings: {0} ms.", stopwatch.ElapsedMilliseconds);

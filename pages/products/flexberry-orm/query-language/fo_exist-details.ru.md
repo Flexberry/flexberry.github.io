@@ -22,7 +22,7 @@ lang: ru
 
 ## Пример использования
 
-![](/images/pages/products/flexberry-orm/query-language/exist-detals-example-2.jpg)
+![exist-detals-example-2](/images/pages/products/flexberry-orm/query-language/exist-detals-example-2.jpg)
 
 В следующем коде подразумевается, что в представлении `"СерверПодразделенияE"` обязательно присутствуют свойства `"Подразделение"` (так как оно есть в условии) и `"Сервер"` (свойство, по которому идет соединение).
 
@@ -46,7 +46,7 @@ lcsСервер.LimitFunction = languageDef.GetFunction(languageDef.funcExist,
                                                             new VariableDef(languageDef.GuidType, "Подразделение"),
                                                             UpdatedObject.НаправленоИз.__PrimaryKey));
 lcsСервер.ReturnTop = 1;
-ICSSoft.STORMNET.DataObject[] dobjsСервер = ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObjects(lcsСервер);
+ICSSoft.STORMNET.DataObject[] dobjsСервер = ICSSoft.STORMNET.Business.ds.LoadObjects(lcsСервер);
 ```
 
 Требуется вычитать только те сервера, которые принадлежат только одному конкретному Подразделению (т.е. сервера, которые принадлежат и указанному Подразделению и еще какому-то, не будут вычитаны).
@@ -70,7 +70,7 @@ lcsСервер.LimitFunction = languageDef.GetFunction(languageDef.funcExistExa
                                             languageDef.GetFunction(languageDef.funcEQ,
                                                             new VariableDef(languageDef.GuidType, "Подразделение"),
                                                             new Guid("6D7DC426-F5E9-4F63-B7B5-20C9E237DF2D")));
-DataObject[] dobjsСервер = DataServiceProvider.DataService.LoadObjects(lcsСервер);
+DataObject[] dobjsСервер = ds.LoadObjects(lcsСервер);
 ```
 
 ## Сравнения свойств двух различных детейлов (не выше первого уровня) имеющих общий агрегатор
@@ -94,5 +94,5 @@ ExternalLangDef languageDef = new ExternalLangDef(ds);
                         detail1, detail2, languageDef.GetFunction(languageDef.funcG,
                         new VariableDef(languageDef.DateTimeType, "DeliveryDate"),
                         new VariableDef(languageDef.DateTimeType, "DeliveryDate")));
- var dos = DataServiceProvider.DataService.LoadObjects(lcs);
+ var dos = ds.LoadObjects(lcs);
 ```

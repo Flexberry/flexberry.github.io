@@ -19,7 +19,8 @@ lang: ru
 ```csharp
 Console.WriteLine("2. How to load dataobject in specific view, change it\'s property, then persist. Object status and loading state.");
 
-IDataService dataService = DataServiceProvider.DataService;
+IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+IDataService ds = mainUnityContainer.Resolve<IDataService>();
 
 // Инициализация вспомогательного объекта, с помощью которого мы получим первичный ключ произвольного объекта
 // заданного типа.

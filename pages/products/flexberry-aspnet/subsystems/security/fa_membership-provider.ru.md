@@ -64,7 +64,7 @@ lang: ru
 * IIS.Аудит(BusinessServers)
 * AppSettingsService
 * CheckingLibrary
-* ExternalLangDef
+* ICSSoft.STORMNET.Business.ExternalLangDef
 * ICSSoft.STORMNET.AzManBridge
 * ICSSoft.STORMNET.Business
 * ICSSoft.STORMNET.Business.MSSQLDataService

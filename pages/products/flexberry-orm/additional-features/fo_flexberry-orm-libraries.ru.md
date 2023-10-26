@@ -11,7 +11,7 @@ lang: ru
 Список библиотек, содержащих Runtime-компоненты [Flexberry ORM](fo_flexberry-orm.html):
 
 * **ChangesToSqlBTMonitor.dll** - библиотека, содержащая классы для работы [сервиса записи SQL-скриптов изменения данных](fo_changes-sql-bt-monitor.html).
-* **ExternalLangDef.dll** - библиотека, содержащая [расширение языка ограничений](fo_external-lang-def.html) для [задания ограничений](fo_limit-function.html) на зависимые объекты.
+* **ICSSoft.STORMNET.Business.ExternalLangDef.dll** - библиотека, содержащая [расширение языка ограничений](fo_external-lang-def.html) для [задания ограничений](fo_limit-function.html) на зависимые объекты.
 * **ICSSoft.STORMNET.BF.dll**
 * **ICSSoft.STORMNET.Business.dll** - библиотека, содержащая базовые классы для организации [отображения структуры реляционных таблиц БД на объектную модель](fo_data-service.html).
 * **ICSSoft.STORMNET.Business.DRDataService.dll** - библиотека, содержащая классы для работы [DRDataService](fo_dr-data-service.html).

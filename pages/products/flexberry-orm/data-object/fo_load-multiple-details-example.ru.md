@@ -12,8 +12,9 @@ lang: ru
 
 ```csharp
 Console.WriteLine("6. Loading a dataobject with multiple details.");
-            
-IDataService dataService = DataServiceProvider.DataService;
+
+IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+IDataService ds = mainUnityContainer.Resolve<IDataService>();            
 OrmSample ormSample = new OrmSample(dataService);
 object primaryKey = ormSample.GetSomeObjectPrimaryKey(typeof(D0));
 

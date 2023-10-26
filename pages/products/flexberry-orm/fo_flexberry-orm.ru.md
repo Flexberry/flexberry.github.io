@@ -34,4 +34,5 @@ permalink: ru/fo_flexberry-orm.html
 Поддерживаемая типизация описана в [отдельной статье](fo_flexberry-orm-types.html).
 
 ## Демонстрационное приложение
+
 Исходный код демонстрационного приложения доступен по следующему расположению: <https://github.com/Flexberry/FlexberryORM-DemoApp>.

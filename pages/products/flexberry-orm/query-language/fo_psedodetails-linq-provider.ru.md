@@ -12,7 +12,7 @@ lang: ru
 
 Пусть сущности "Клиент" и "Кредит" связаны представленным на изображении образом.
 
-![](/images/pages/products/flexberry-orm/query-language/pseudo-details.png)
+![pseudo-details](/images/pages/products/flexberry-orm/query-language/pseudo-details.png)
 
 Нужно ограничить клиентов, задав при этом ограничение на ссылающихся на них кредиты. Специфика данной задачи состоит в том, что согласно модели клиент не знает, какие кредиты на него ссылаются.
 
@@ -21,7 +21,9 @@ lang: ru
 Пусть:
 
 ```csharp
-var ds = (SQLDataService)DataServiceProvider.DataService;
+IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+IDataService ds = mainUnityContainer.Resolve<IDataService>();
+SQLDataService sqldataservice = (SQLDataService)ds;
 ```
 
 Задание ограничение на псевдодетейлы чуть менее интуитивно, чем использование [других возможностей LinqProvider](fo_linq-provider-faetures.html).
@@ -39,8 +41,8 @@ var ds = (SQLDataService)DataServiceProvider.DataService;
 /// <param name="view"> Представление псевдодетейла. </param>
 /// <param name="masterLinkName"> Имя связи от псевдодетейла к мастеру. </param>
 public PseudoDetail(
-	ICSSoft.STORMNET.View view,
-	string masterLinkName)
+  ICSSoft.STORMNET.View view,
+  string masterLinkName)
 ```
 
 ```csharp
@@ -50,8 +52,8 @@ public PseudoDetail(
 /// <param name="view"> Представление псевдодетейла. </param>
 /// <param name="masterLink"> Метод, определяющий имя связи от псевдодетейла к мастеру (определение идёт через "Information.ExtractPropertyPath(masterLink)"). </param>
 public PseudoDetail(
-	ICSSoft.STORMNET.View view,
-	Expression<Func<TP, object>> masterLink)
+  ICSSoft.STORMNET.View view,
+  Expression<Func<TP, object>> masterLink)
 ```
 
 ```csharp
@@ -60,7 +62,7 @@ public PseudoDetail(
 /// </summary>
 /// <param name="view"> Представление детейла. </param>
 public PseudoDetail(
-	ICSSoft.STORMNET.View view)
+  ICSSoft.STORMNET.View view)
 ```
 
 ```csharp
@@ -71,9 +73,9 @@ public PseudoDetail(
 /// <param name="masterLink"> Метод, определяющий имя связи от псевдодетейла к мастеру (определение идёт через "Information.ExtractPropertyPath(masterLink)"). </param>
 /// <param name="masterToDetailPseudoProperty"> Имя связи от мастера к псевдодетейлу (псевдосвойство). </param>
 public PseudoDetail(
-	ICSSoft.STORMNET.View view,
-	Expression<Func<TP, object>> masterLink,
-	string masterToDetailPseudoProperty)
+  ICSSoft.STORMNET.View view,
+  Expression<Func<TP, object>> masterLink,
+  string masterToDetailPseudoProperty)
 ```
 
 ```csharp
@@ -85,10 +87,10 @@ public PseudoDetail(
 /// <param name="masterToDetailPseudoProperty"> Имя связи от мастера к псевдодетейлу (псевдосвойство). </param>
 /// <param name="masterConnectProperties"> Свойства мастера, по которым можно произвести соединение. Аналог OwnerConnectProp для <see cref="DetailVariableDef"/> в lcs. </param>
 public PseudoDetail(
-	ICSSoft.STORMNET.View view,
-	Expression<Func<TP, object>> masterLink,
-	string masterToDetailPseudoProperty,
-	string[] masterConnectProperties)
+  ICSSoft.STORMNET.View view,
+  Expression<Func<TP, object>> masterLink,
+  string masterToDetailPseudoProperty,
+  string[] masterConnectProperties)
 ```
 
 ```csharp
@@ -99,9 +101,9 @@ public PseudoDetail(
 /// <param name="masterLinkName"> Имя связи от псевдодетейла к мастеру. </param>
 /// <param name="masterToDetailPseudoProperty"> Имя связи от мастера к псевдодетейлу (псевдосвойство). </param>
 public PseudoDetail(
-	ICSSoft.STORMNET.View view,
-	string masterLinkName,
-	string masterToDetailPseudoProperty)
+  ICSSoft.STORMNET.View view,
+  string masterLinkName,
+  string masterToDetailPseudoProperty)
 ```
 
 ```csharp
@@ -113,10 +115,10 @@ public PseudoDetail(
 /// <param name="masterToDetailPseudoProperty"> Имя связи от мастера к псевдодетейлу (псевдосвойство). </param>
 /// <param name="masterConnectProperties"> Свойства мастера, по которым можно произвести соединение. Аналог OwnerConnectProp для <see cref="DetailVariableDef"/> в lcs. </param>
 public PseudoDetail(
-	ICSSoft.STORMNET.View view,
-	string masterLinkName,
-	string masterToDetailPseudoProperty,
-	string[] masterConnectProperties)
+  ICSSoft.STORMNET.View view,
+  string masterLinkName,
+  string masterToDetailPseudoProperty,
+  string[] masterConnectProperties)
 ```
 
 ### Методы `PseudoDetail`
@@ -155,40 +157,36 @@ public bool All(Expression<Func<TP, bool>> predicate)
 
 ```csharp
 var pseudoDetail = new PseudoDetail<Порода, Кошка>(
-	Information.GetView("КошкаE", typeof(Кошка)),
-	Information.ExtractPropertyPath<Кошка>(x => x.Порода));
+  Information.GetView("КошкаE", typeof(Кошка)),
+  Information.ExtractPropertyPath<Кошка>(x => x.Порода));
 
 // Все породы, для которых определены кошки
-ds.Query<Порода>(Порода.Views.ПородаE).Where(
-	y => pseudoDetail.Any()).ToList();
+sqldataservice.Query<Порода>(Порода.Views.ПородаE).Where(
+  y => pseudoDetail.Any()).ToList();
 ```
 
 **Объект типа `PseudoDetail` определяется внутри linq-выражения:**
 
 ```csharp
 // Все породы, для которых определены кошки, у которых кличка не "Барсик"
-ds.Query<Порода>(Порода.Views.ПородаE)
-	.Where(
-		y => 
-			new PseudoDetail<Порода, Кошка>(
-				Information.GetView("КошкаE", typeof(Кошка)),
-				Information.ExtractPropertyPath<Кошка>(x => x.Порода))
-			.Any(x.Кличка != "Барсик"))
-	.ToList();
+sqldataservice.Query<Порода>(Порода.Views.ПородаE).Where(
+  y => 
+    new PseudoDetail<Порода, Кошка>(
+      Information.GetView("КошкаE", typeof(Кошка)),
+      Information.ExtractPropertyPath<Кошка>(x => x.Порода))
+      .Any(x.Кличка != "Барсик")).ToList();
 ```
 
 #### Ограничение всеобщности на псевдодетейлы
 
 ```csharp
 // Все породы, где кошки не носят кличку "Барсик"
-ds.Query<Порода>(Порода.Views.ПородаE)
-	.Where(
-		y => 
-			new PseudoDetail<Порода, Кошка>(
-				Information.GetView("КошкаE", typeof(Кошка)),
-				Information.ExtractPropertyPath<Кошка>(x => x.Порода))
-			.All(x.Кличка != "Барсик"))
-	.ToList();
+sqldataservice.Query<Порода>(Порода.Views.ПородаE).Where(
+  y => 
+    new PseudoDetail<Порода, Кошка>(
+      Information.GetView("КошкаE", typeof(Кошка)),
+      Information.ExtractPropertyPath<Кошка>(x => x.Порода))
+      .All(x.Кличка != "Барсик")).ToList();
 ```
 
 ## PseudoDetail и DetailVariableDef
@@ -202,15 +200,15 @@ const string masterToDetailPropertyName = "SomePropertyName";
 var masterConnectProperties = new string[] { "Property1", "Property2" };
 
 ComparePseudoDetailWithDetailVariableDef(
-	new PseudoDetail<Порода, Кошка>(
-		Information.GetView("КошкаE", typeof(Кошка)),
-		Information.ExtractPropertyPath<Кошка>(x => x.Порода),
-		masterToDetailPropertyName,
-		masterConnectProperties),
-	new DetailVariableDef(
-		this.ldef.GetObjectType("Details"),
-		masterToDetailPropertyName,
-		Information.GetView("КошкаE", typeof(Кошка)),
-		"Порода",
-		masterConnectProperties));
+  new PseudoDetail<Порода, Кошка>(
+    Information.GetView("КошкаE", typeof(Кошка)),
+    Information.ExtractPropertyPath<Кошка>(x => x.Порода),
+    masterToDetailPropertyName,
+    masterConnectProperties),
+  new DetailVariableDef(
+    this.ldef.GetObjectType("Details"),
+      masterToDetailPropertyName,
+      Information.GetView("КошкаE", typeof(Кошка)),
+      "Порода",
+  masterConnectProperties));
 ```

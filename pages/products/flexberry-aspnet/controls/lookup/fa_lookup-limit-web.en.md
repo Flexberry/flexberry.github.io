@@ -24,9 +24,10 @@ When you create a new object of type `Кредит` need to choose `Клиент
 To build a restriction using [LINQProvider](fo_linq-provider.html): 
 
 ```csharp
-var ds = (SQLDataService) DataServiceProvider.DataService;
+IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+IDataService ds = mainUnityContainer.Resolve<IDataService>();
 IQueryable<Клиент> limit = ds.Query<Клиент>(Клиент.Views.КлиентL).Where(klient => klient.Прописка.Contains("Perm"));
-``` 
+```
 
 Then get a restraining function using the class `LinqToLcs`: 
 

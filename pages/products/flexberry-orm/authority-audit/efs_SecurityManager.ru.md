@@ -97,7 +97,7 @@ lang: ru
         </constructor>
       </register>
       
-      <!-- Менеджер полномочий, который будет использоваться сервисом данных DataServiceProvider.DataService. -->
+      <!-- Менеджер полномочий, который будет использоваться сервисом данных IDataService. -->
       <register type="ICSSoft.STORMNET.Security.ISecurityManager, ICSSoft.STORMNET.DataObject"
         mapTo="NewPlatform.Flexberry.Security.SecurityManager, NewPlatform.Flexberry.Security">
         <constructor>

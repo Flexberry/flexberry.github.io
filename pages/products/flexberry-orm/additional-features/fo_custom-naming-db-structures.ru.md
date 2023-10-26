@@ -40,9 +40,10 @@ cdbm.CustomMasterAttribute = new RandomStringGenerator().Generate(200);
 cdbo.CustomDBMasterClass = cdbm;
 cdbo.CustomOwnAttribute = new RandomStringGenerator().Generate(200);
 
-IDataService dataService = DataServiceProvider.DataService;
+IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+IDataService ds = mainUnityContainer.Resolve<IDataService>();
 ICSSoft.STORMNET.DataObject[] objstoupd = new ICSSoft.STORMNET.DataObject[] { cdbo, cdbm };
-dataService.UpdateObjects(ref objstoupd);
+ds.UpdateObjects(ref objstoupd);
 
 Console.WriteLine("OK!");
 ```

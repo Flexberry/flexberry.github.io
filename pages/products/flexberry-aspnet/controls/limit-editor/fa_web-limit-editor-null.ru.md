@@ -31,7 +31,8 @@ lang: ru
 Если имеется класс `Кредит` со свойством `СуммаКредита` вещественного типа, то при переводе в [LinqProvider](https://flexberry.github.io/ru/fo_linq-provider.html) оно будет представляться следующим образом:
 
 ``` csharp
-var ds = (SQLDataService)DataServiceProvider.DataService;
+IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+IDataService ds = mainUnityContainer.Resolve<IDataService>();
 IQueryable<Кредит> limit = ds.Query<Кредит>(Кредит.Views.C__КредитE).Where(x => (x.СуммаКредита as object) == null);
 ```
 

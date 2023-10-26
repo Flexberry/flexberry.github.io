@@ -8,18 +8,23 @@ folder: products/ember-flexberry-security/backend/
 lang: ru
 ---
 
-# Подключение подсистемы аудита без полной перегенерации проекта
-Алгоритм подключения:
-# Перегенерировать объекты
-# Внести изменения в app.config
-# Добавить инициализацию аудита в main
-# Подключить недостающие сборки
+## Подключение подсистемы аудита без полной перегенерации проекта
 
-# Перегенерация объектов
+Алгоритм подключения:
+
+1. Перегенерировать объекты
+2. Внести изменения в app.config
+3. Добавить инициализацию аудита в main
+4. Подключить недостающие сборки
+
+## Перегенерация объектов
+
 Без перегенерации объектов все равно не обойтись, так как настройки аудита хранятся в классах (подробнее см. [здесь](fa_audit-web.html) в разделе "Настройка класса").
 
-# Внесение изменений в app.config
+## Внесение изменений в app.config
+
 В блок `Configuration` - `appSettings` необходимо добавить следующие строчки:
+
 ```xml
     <add key="AuditEnabled" value="True" />
     <add key="WriteSessions" value="False" />
@@ -28,28 +33,39 @@ lang: ru
     <add key="DefaultWriteMode" value="Synchronous" />
     <add key="IsAuditDatabaseLocal" value="True" />
 ```
-А также 
+
+А также
+
 ```xml
     <add key="AppNameForAudit" value="..." />
     <add key="AuditConnectionStringName" value="..." />
 ```
+
 указав заместо ... необходимые значения наименования Win-сервиса и строки подключения к базе аудита.
 
-# Подключение аудита в main
-необходимо добавить вызов инициализации с помощью [Инициализация аудита](efs_audit-setter.html).
-```
+## Подключение аудита в main
 
-// *** Start programmer edit section *** (TestFS Main())
+необходимо добавить вызов инициализации с помощью [Инициализация аудита](efs_audit-setter.html).
+
+```csharp
+// \*** Start programmer edit section *** (TestFS Main())
 ICSSoft.STORMNET.Windows.Forms.WinApplication.SetUICultureAsRussian();
 
 // Инициализация сервиса аудита
-AuditSetter.InitAuditService(DataServiceProvider.DataService); 
-// *** End programmer edit section *** (TestFS Main())
+IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+IDataService ds = mainUnityContainer.Resolve<IDataService>();
+AuditSetter.InitAuditService(ds); 
+// \*** End programmer edit section *** (TestFS Main())
 ```
 
-# Подключение сборок
-# Подключить к приложению и `DesktopCustomizer` ICSSoft.STORMNET.Business.Audit.dll.
-# К приложению подключить сборки Security.
+## Подключение сборок
 
-# См. также
+## Подключить к приложению DesktopCustomizer ICSSoft.STORMNET.Business.Audit.dll
+
+ICSSoft.STORMNET.Business.Audit.dll
+
+## К приложению подключить сборки Security
+
+## См. также
+
 [Пример подключения аудита к существующему Web-приложению без использования перегенерации проекта.](fa_audit-web-example-manual.html)

@@ -14,8 +14,9 @@ lang: ru
 ```csharp
 Console.WriteLine("4. How to do something at persistence moment.");
 
-IDataService dataService = DataServiceProvider.DataService;
-OrmSample ormSample = new OrmSample(dataService);
+IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+IDataService ds = mainUnityContainer.Resolve<IDataService>();
+OrmSample ormSample = new OrmSample(ds);
 object primaryKey = ormSample.GetSomeObjectPrimaryKey(typeof(CDDA));
 
 // Как сделать что-то в момент сохранения:
@@ -28,10 +29,10 @@ cdda.SetExistObjectPrimaryKey(primaryKey);
             
 Stopwatch stopwatch = new Stopwatch();
 stopwatch.Start();
-            
-dataService.LoadObject(CDDA.Views.CDDA_E, cdda);
+         
+ds.LoadObject(CDDA.Views.CDDA_E, cdda);
 cdda.Name = "Huh! " + DateTime.Now;
-dataService.UpdateObject(cdda);
+ds.UpdateObject(cdda);
 stopwatch.Stop();
 Console.WriteLine("Time taken for loading and persistence: {0} ms.", stopwatch.ElapsedMilliseconds);
 ```

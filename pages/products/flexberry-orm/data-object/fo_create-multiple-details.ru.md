@@ -15,7 +15,7 @@ lang: ru
 Данный тест осуществляет генерацию большого графа объектов с [детейловыми связями](fo_detail-associations-properties.html) и его сохранение в БД.
 Используемая [диаграмма классов](fd_class-diagram.html) имеет вид:
 
-![](/images/pages/products/flexberry-orm/data-object/details.png)
+![details](/images/pages/products/flexberry-orm/data-object/details.png)
 
 При этом все классы [наследуются](fd_inheritance.html) от нехранимого абстрактного класса `D`.
 Для каждого массива детейлов каждого объекта генерируется по 10 детейлов, затем все это сохраняется в БД путем передачи [сервису данных](fo_data-service.html) корневого объекта графа.
@@ -36,7 +36,9 @@ Stopwatch stopwatch = new Stopwatch();
 stopwatch.Start();
 
 // Объекты будут сохранены в порядке, соответствующем связям между ними (от корня до кончиков).
-DataServiceProvider.DataService.UpdateObject(aggregator);
+IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+IDataService ds = mainUnityContainer.Resolve<IDataService>();
+ds.UpdateObject(aggregator);
 
 stopwatch.Stop();
 Console.WriteLine("Time taken for persistence: {0} ms.", stopwatch.ElapsedMilliseconds);

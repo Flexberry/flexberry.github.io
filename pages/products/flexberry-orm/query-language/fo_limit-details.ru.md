@@ -8,15 +8,15 @@ permalink: ru/fo_limit-details.html
 lang: ru
 ---
 
-Если необходимо задать условие на существование [детейлов](fd_key-concepts.html) по условию, в котором должно участвовать свойство [агрегатора](fd_key-concepts.html), необходимо использовать функцию [Exist](fo_exist-details.html). При указании свойств в условии для функции `Exist` необходимо явно указывать, что это свойство агрегатора: 
+Если необходимо задать условие на существование [детейлов](fd_key-concepts.html) по условию, в котором должно участвовать свойство [агрегатора](fd_key-concepts.html), необходимо использовать функцию [Exist](fo_exist-details.html). При указании свойств в условии для функции `Exist` необходимо явно указывать, что это свойство агрегатора:
 
-```
+```h
 <Имя агрегирующего свойства у детейла>.<Свойство агрегатора>.
 ```
 
 ## Пример наложения ограничения на детейлы с использованием свойства агрегатора
 
-![](/images/pages/products/flexberry-orm/query-language/exist-example.png)
+![exist-example](/images/pages/products/flexberry-orm/query-language/exist-example.png)
 
 Выявить ошибочно занесенные данные в базе: найти все компании, у которых существует программный продукт созданный раньше создания самой компании.
 
@@ -34,5 +34,5 @@ lang: ru
                                          languageDef.GetFunction(languageDef.funcL,
                                          new VariableDef(languageDef.DateTimeType, Information.ExtractPropertyPath<Software>(x => x.DateCreation)),
                                          new VariableDef(languageDef.DateTimeType, Information.ExtractPropertyPath<Software>(x => x.Company.DateCreation))));
- var dos = DataServiceProvider.DataService.LoadObjects(lcs);
+ var dos = ds.LoadObjects(lcs);
 ```
