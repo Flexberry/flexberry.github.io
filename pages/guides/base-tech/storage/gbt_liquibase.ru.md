@@ -1,148 +1,297 @@
 ---
 title: Liquibase
-keywords: Programming, liquibase
+keywords: liquibase, cli, docker, sql, postgres, postgresql, mssql, flexberry enterprise
 sidebar: guide-base-tech_sidebar
 toc: true
 permalink: ru/gbt_liquibase.html
 lang: ru
 ---
 
-## Краткое описание
+## Описание
 
-Большинство приложений разрабатывается командой из нескольких человек и имеет несколько стендов. Например, стенд разработки, пре-прод и прод. В связи с этим встаёт вопрос о безопасной и бесконфликтной синхронизации схем БД. С этим успешно справляется библиотека `Liquibase`, которую поддерживает технология [Flexberry](https://flexberry.net/).
+Liquibase - это библиотека с открытым исходным кодом для отслеживания, управления и применения изменений схемы базы данных. Является аналогом Git для баз данных. Вместо "коммитов" - changesets, представляющие наборы SQL команд на изменение БД.
 
-* [Liquibase](https://www.liquibase.org/) - независимая от базы данных библиотека с открытым исходным кодом для отслеживания, управления и применения изменений схемы базы данных.
+Использование Liquibase в проекте позволяет отслеживать изменения схем БД, откатывать (rollback) базы до нужного состояния, облегчает развертывание скриптов на разных серверах.
 
-## Пример использования
+> [Flexberry Designer](fd_flexberry-designer.html) поддерживает генерацию скриптов Liquibase для СУБД `PostgreSQL` и `Microsoft SQL Server`.
 
-При обновлении диаграмм в дизайнере (добавление новых, изменение сущствующих классов) необходимо также изменить и структуру существующей базы данных. Для этого в технологии есть возможность сгенерировать как полноценные SQL-скрипты для всей БД, так и SQL-скрипты для обновления схемы с помощью `liquibase`.
+### Установка Liquibase
 
-В данный момент поддерживается генерация SQL-скриптов под работу с liquibase для СУБД `PostgreSQL` и `Microsoft SQL Server`. В качестве примера ниже рассматривается генерация для `PostgreSQL`.
+Liquibase позволяет запускать команды через собственный CLI. В качестве альтернативы, можно запускать CLI в виде Docker контейнера.
+- [Скачать Liquibase CLI](https://www.liquibase.com/download).
+- [Использовать Liquibase в Docker](https://docs.liquibase.com/workflows/liquibase-community/using-liquibase-and-docker.html)
 
-### Генерация из flexberry-designer
+### Конфигурация Liquibase на проекте
 
-1) [Десктопная версия](https://flexberry.github.io/ru/fd_flexberry-designer.html)
+1. Инициализировать Liquibase в папке `SQL` проекта: `liquibase init project` (следовать инструкциям на экране). При создании проекта требуется указать адрес БД в формате JDBC URL (например, `jdbc:postgresql://localhost:5432/my-app-db`) и данные для подключения (логин и пароль).
+> Настройки сохраняются в файл `liquibase.properties` - настройки в этом файле применяются по умолчанию. Этот файл может быть использован, чтобы задать подключение или схему, на которой будут запускаться скрипты. Более детально см. [официальную документацию.](https://docs.liquibase.com/concepts/connections/creating-config-properties.html)
+2. Добавить ссылки на папки со скриптами, которые необходимо отслеживать Liquibase:
+    1. В файле `liquibase.properties` указать название корневого changelog: `changeLogFile=liquibase.json`
+    2. В корневой changelog `liquibase.json` добавить ссылки на отслеживаемые папки:
 
-Для генерации файла с SQL-скриптами в десктопной версии дизайнера, необходимо нажать правой кнопкой мыши на стадию и перейти по следующему пути:
-- `ORM -> SQL -> PostgreSQL -> Сгенерировать SQL для liquibase`
-
-2) [Веб версия](https://flexberry.github.io/ru/fdo_landing_page.html)
-
-В разделе `Генерация` главного меню можно указать настройки для генерации приложения, в том числе и настройки генерации для хранилищ данных.
-
-- Для генерации файла с SQL-скриптами в веб версии дизайнера, необходимо для нужного типа хранилища выбрать пункт `"Сгенерировать SQL для liquibase"`
-
-![Настройка через интерфейс](/images/pages/guides/base-technologies/storage/liquibaseExample.jpg)
-
-- Затем нажать `"Скачать fdg файл"` (Обычно размещается в корневой папке проекта). Данный файл будет иметь название `GenConfig.fdg`, в нём должно быть прописано `"LiquibaseSQL": true` в разделе, который соответствует выбранной СУБД (в данном примере - `PostgreSQL`). Если эта настройка в файле отсутствует, то необходимо прописать её вручную:
-
-```
-"Storage": {
-    "PostgreSql": {
-        "LiquibaseSql": true,
-        ...
+    ```json
+    {
+        "databaseChangeLog": [
+            {
+                "includeAll": {
+                    "path": "относительный/путь/к/папкам/со/скриптами"
+                }
+            },
+            {
+                "includeAll": //...
+            }
+        ]
     }
+    ```
+
+3. Если Liquibase устанавливается в существующее приложение и имеет скрипты, примененные вручную, необходимо отметить эти скрипты как выполненные:
+   - `liquibase changelog-sync` отметит существующие скрипты в папках как "применённые", сохранив информацию о них в таблицу `databasechangelog`; после этого командой `update` будут применяться только новые скрипты
+
+#### Рекомендации
+
+Рекомендуется для liquibase указывать отдельную схему для хранения таблиц `databasechangelog` и `databasechangeloglock`:
+1. Указать название схемы `liquibase` для хранения внутренних таблиц Liquibase. В файл `liquibase.properties` добавить строчку:
+`liquibase.liquibaseSchemaName=liquibase`
+2. Создать схему `liquibase` в БД (если скрипты будут применяться на разных БД, необходимо создать схему в каждой БД):
+
+```sql
+CREATE SCHEMA liquibase AUTHORIZATION postgres;
+```
+
+### Создание скриптов
+
+Для описания изменений в Liquibase используются текстовые файлы [changelog](https://docs.liquibase.com/concepts/changelogs/home.html). Файл содержит SQL-изменения базы данных в специальном liquibase-формате (xml, yaml, json, sql - на выбор). Рекомендуется использовать [liquibase formatted sql](https://docs.liquibase.com/concepts/changelogs/sql-format.html), т.к. именно его генерирует Flexberry Designer.
+
+Скрипты для Liquibase можно генерировать, используя `Flexberry Designer`:
+1. [Desktop версия](https://flexberry.github.io/ru/fd_flexberry-designer.html)
+  - Выбрать стадию -> Кликнуть правой кнопкой мыши -> `ORM` -> `SQL` -> `PostgreSQL` -> `Сгенерировать SQL для liquibase`
+
+2. [Flexberry Designer Enterprise](https://flexberry.github.io/ru/gpg_practical-guide.html)
+  - Перейти в раздел `Генерация` -> для нужного типа хранилища отметить `"Сгенерировать SQL для liquibase"`:
+![Настройка через интерфейс](/images/pages/guides/base-technologies/storage/liquibaseExample.jpg)
+  - Нажать `"Скачать fdg файл"`. Данный файл будет иметь название `GenConfig.fdg`, в нём появится опция `"LiquibaseSQL": true` в разделе, который соответствует выбранной СУБД (в данном примере - `PostgreSQL`). Если эта настройка в файле отсутствует, необходимо добавить её вручную:
+
+  ```json
+  "Storage": {
+      "PostgreSql": {
+          "LiquibaseSql": true,
+          ...
+      }
+  }
+  ```
+
+  > Подробнее в [практическом руководстве](../../practical-guides/flexberry-designer-enterprise/gpg_practical-guide.md)
+
+Есть возможность написать скрипт самостоятельно. Для этого необходимо в начало обычного `.sql` скрипта добавить следующие строчки:
+- `--liquibase formatted sql`
+- `--changeset author:id` - где `author` - автор изменений, `id` - уникальный идентификатор набора изменений _(рекомендуется использовать текущую дату и время)_.
+
+Пример:
+```sql
+--liquibase formatted sql
+--changeset aivanov:2023-01-24-11:30
+CREATE TABLE example...
+
+--changeset aivanov:2023-01-24-11:45
+INSERT INTO example VALUES ...
+```
+
+### Запуск команд Liquibase
+
+После того, как конфигурация проекта Liquibase завершена, можно запускать команды. Команды запускаются с помощью CLI, который устанавливается вместе с Liquibase.
+
+Команды можно запускать следующим образом:
+
+```sh
+liquibase update --log-level INFO
+```
+
+> Команды необходимо запускать из папки, в которой был инициализирован liquibase (папка `SQL`).
+
+Команда `liquibase update` применит изменения, на которые есть ссылка в корневом changelog. Список полезных команд:
+- `update` - применить все скрипты
+- `update-sql` - предпросмотр SQL для команды `update` _(не применяет скрипты)_
+- `status` - отобразить количество ещё не запущенных скриптов
+- `validate` - проверить корректность скриптов
+> [Полный список команд](https://docs.liquibase.com/commands/home.html)
+
+### Запуск команд Liquibase через Docker
+
+Есть возможность запускать команды Liquibase через Docker - т.е. без установки Liquibase CLI. Для этого необходимо использовать следующую команду:
+
+```sh
+docker run --rm -v ${PWD}/:/liquibase/changelog/ liquibase/liquibase --defaultsFile=/liquibase/changelog/liquibase.properties --changelog-file=liquibase.json --search-path=/liquibase/changelog/
+```
+
+Описание команды:
+- `--rm` - удалить контейнер при завершении
+- `-v ${PWD}/:/liquibase/changelog/` - монтировать текущую директорию в папку `/liquibase/changelog/` внутри образа
+- `liquibase/liquibase` - использовать официальный образ Liquibase CLI
+- `--defaultsFile=/liquibase/changelog/liquibase.properties` - путь до файла конфигурации `liquibase.properties`
+- `--changelog-file=liquibase.json` - путь до корневого changelog
+- `--search-path=/liquibase/changelog/` - путь, в котором будет производиться поиск changelogs
+
+> Если в контейнере папка `/liquibase/changelog/` становится пустой, возможно команда запущена из Windows через Git Bash. В таком случае, перед запуском необходимо задать ENV переменную **MSYS_NO_PATHCONV=1**. Переменную можно записать в `system path` чтобы она не сбрасывалась.
+
+Подробнее см. [Использование Liquibase в Docker.](https://docs.liquibase.com/workflows/liquibase-community/using-liquibase-and-docker.html)
+
+### Откат изменений
+
+Liquibase позволяет откатывать изменения. Это можно сделать с помощью команд:
+- `rollback`
+- `rollback-to-date`
+- `rollback-count`
+> (см. [rollback](https://docs.liquibase.com/commands/home.html#database-rollback-commands)).
+
+{% include important.html content="'Из коробки' откат изменений работать не будет. Для каждого скрипта необходимо указывать команды для отката (см. [rollback actions](https://docs.liquibase.com/concepts/changelogs/sql-format.html#rollback-actions)). Flexberry Designer не генерирует таких команд." %}
+
+### Использование скриптов в нескольких БД
+
+В приложении может потребоваться использовать несколько баз данных или развёртывать скрипты на разных БД (или разных схемах одной БД). Для этого можно воспользоваться контекстами в Liquibase.
+
+*Контекст* - это группа, в которую помещаются changelogs для того, чтобы фильтровать скрипты по контексту и применять только нужные изменения ([подробнее](https://docs.liquibase.com/concepts/changelogs/attributes/contexts.html)). Можно применить скрипты из контекста на определённой БД.
+
+- Каждый скрипт из проекта может быть отнесен к своему контексту.
+
+Чтобы отнести файл/папку к контексту, необходимо добавить параметр `contextFilter` в changelog:
+
+```json
+"includeAll": {
+    "path": "путь/к/папке/со/скриптами",
+    "contextFilter": "название_контекста"
 }
 ```
 
-### Описание изменений
+Параметр задаёт, к какому контексту отнести нужный файл/папку.
 
-Для описания изменений предназначен текстовый файл [changelog](https://docs.liquibase.com/concepts/changelogs/home.html). Разработчик записывает все SQL-изменения базы данных в данном файле в специальном liquibase-формате(xml, yaml, json, sql - на выбор). Один набор изменений называется `changeset`. В нём содержится информация о входящих в конкретную транзакцию обновлениях. Помимо описания наборов изменений файл содержит метаданные, а именно:
-- `id` - идентификатор для конкретного набора изменений
-- `author` - автор изменений
+- Скрипты из контекста можно применить на другой БД и другой схеме.
 
-Существует несколько вариантов использования данного файла:
+Следующие параметры могут быть использованы, чтобы применить скрипты на нужной БД:
+  - `--contexts контекст` - запустить команду `liquibase` только по скриптам из указанного контекста;
+  - `--url=jdbc:postgresql://адрес:порт/название_бд` - применить скрипты на указанной БД;
+  - `--default-schema-name схема` - применить скрипты на указанной схеме БД.
 
-1) Если изменений немного, то SQL-скрипт можно поместить прямо внутри данного файла:
+> **Пример.** Приложение имеет 2 БД - `core` (основную) и `storm` (для хранения полномочий и настроек). Чтобы применять скрипты на двух базах, необходимо:
+> 1. создать 2 папки:
+>  - `/SQL/app` - для скриптов основного приложения;
+>  - `/SQL/storm` - для скриптов полномочий.
+>2. отнести папки к своему контексту (см. раздел *использование нескольких БД*):
+>  - `/SQL/app` - к контексту `core`,
+>  - `/SQL/storm` - к контексту `storm`.
+>3. запустить команду `liquibase update --contexts storm --url=jdbc:postgresql://localhost:5432/storm` - это применит скрипты полномочий на БД `storm`
+>4. запустить команду `liquibase update --contexts >core --url=jdbc:postgresql://localhost:5432/app` - это применит скрипты приложения на БД `core`.
 
-```xml
-<changeSet id="add-rating-1" author="flexberry-user">
- <sql>alter table users add (rating int)</sql>
-</changeSet>
+Чтобы облегчить процесс обновления, можно написать `cmd` или `sh` скрипт, который будет подставлять нужный url БД в зависимости от переданного контекста. Вызывать его, например, так: `./liquibase.sh update storm` - без необходимости прописывать url вручную. Пример такого скрипта:
+
+```sh
+#!/bin/bash
+
+# Вспомогательный скрипт для запуска команд liquibase.
+# Автоматически подставляет url нужной базы в зависимости от контекста.
+#
+# Использование:
+# ./liquibase.sh <команда_liquibase> <название контекста (базы)>, например: ./liquibase.sh status storm
+# Запуск в режиме Docker: добавьте опцию --docker
+# P.S. Если <название контекста> не передано - скрипт будет применён на всех контекстах (базах) по очереди.
+
+script_dir="$(cd "$(dirname "$0")" && pwd)"
+env_file="$script_dir/liquibase.env"
+
+# Загрузим ENV переменные из файла, которые ещё не были установлены:
+source liquibase.env
+
+contexts=(core storm) # доступные контексты
+contextArgs=()
+
+# Проверка, является ли переданное значение одним из доступных контекстов
+isContext() {
+  if [[ " ${contexts[@]} " =~ " ${1} " ]]; then
+    return 1
+  else
+    return 0
+  fi;
+}
+
+# Проверка наличия опции в списке аргументов
+check_option() {
+  local option=$1
+  shift
+
+  for arg in "$@"; do
+    if [[ "$arg" == "$option" ]]; then
+      return 1  # Опция найдена
+    fi
+  done
+
+  return 0
+}
+
+# Проверяем наличие опции --docker
+check_option "--docker" "$@"
+dockerMode=$?
+
+filtered_arguments=()
+
+# Обрабатываем переданные контексты
+for arg in "$@"; do
+  isContext "$arg"
+  if [ $? = 1 ]; then
+    contextArgs+=("$arg")
+    elif [ $arg != '--docker' ]; then
+    filtered_arguments+=("$arg")
+  fi
+done
+
+# Если контексты не переданы, используем все доступные
+if [ ${#contextArgs[@]} -eq 0 ]; then
+  contextArgs=("${contexts[@]}")
+fi
+
+for context in "${contextArgs[@]}"; do
+
+  # Переключаем в режим docker если передан параметр --docker:
+  if [ "$dockerMode" = 1 ]; then
+    export MSYS_NO_PATHCONV=1 # нужен чтобы пофиксить запуск через Git Bash на Windows
+    liquibaseCmd="docker run --rm -v ${PWD}/:/liquibase/changelog/ liquibase/liquibase --defaultsFile=/liquibase/changelog/liquibase.properties --changelog-file=liquibase.json --search-path=/liquibase/changelog/"
+  else
+    liquibaseCmd="liquibase"
+  fi
+
+  # Задаём БД в зависимости от контекста:
+  if [ "$context" = "storm" ]; then
+    database=$STORM_JDBC_URL
+    elif [ "$context" = "core" ]; then
+    database=$CORE_JDBC_URL
+  fi;
+
+  echo -e "Запускаем $1 на БД $context... \n"
+
+  # Запускаем команду:
+  echo "$liquibaseCmd $1 --contexts $context --url=$database ${filtered_arguments[@]:1}"
+  $liquibaseCmd $1 --contexts $context --url=$database ${filtered_arguments[@]:1}
+
+  # Завершаем выполнение на первом исключении:
+  if [ $? = 1 ]; then
+    exit 1
+  fi
+
+  echo ""
+done
+
+exit 0
 ```
 
-2) Если SQL-скрипт имеет значительный объём, то выгоднее вынести его в отдельный файл, зафиксировав путь до него:
+Для работы скрипта необходим файл liquibase.env:
 
-```xml
-<changeSet id="add-rating-2" author="flexberry-user">
- <sqlFile path="sql/add_rating.sql" />
-</changeSet>
+```env
+CORE_JDBC_URL=jdbc:postgresql://localhost:5432/app
+STORM_JDBC_URL=jdbc:postgresql://localhost:25432/storm
 ```
 
-3) Альтернативный вариант - указать директорию, в которой будут храниться все SQL-скрипты:
+## Дополнительно
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<databaseChangeLog
-    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
-        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
-    <includeAll path="changes/stage"/>
-</databaseChangeLog>
-```
-
-В этом случае в директории `changes/stage` должны располагаться файлы `.sql`, первые две строки внутри каждого из которых представляют собой форматированные комментарии:
-
-```sql
---liquibase formatted sql
---changeset author:id
-alter table users add (rating int);
-create table workers ...
-```
-
-- `author` и `id` - те же метаданные, уникальные для каждого SQL-файла
-
-### Обновление БД
-
-Для обновления схемы базы данных нужно убедиться, что установлен сам [liquibase](https://docs.liquibase.com/start/install/home.html), а затем воспользоваться командой, выполнив её в терминале:
-
-```
-liquibase --defaultsFile=changelog/liquibase.properties --log-level=INFO update
-```
-
-Здесь `liquibase.properties` - файл с основными настройками:
-
-```
-classpath: /liquibase/changelog
-url: jdbc:postgresql://example-database:5432/example
-changelog-file: changelog.xml
-username: postgres
-password: password
-liquibase.liquibaseSchemaName: liquibase
-liquibase.hub.mode=off
-```
-
-Более детально о создании и конфигурациях данного файла - в [официальной документации.](https://docs.liquibase.com/concepts/connections/creating-config-properties.html)
-
-- Если необходимо обновить несколько схем сразу, то для каждой из них необходимо выполнить аналогичную команду. Можно объединить команды для разных схем в единый .sh файл. Например, синтаксис для выполнения в терминале PowerShell с помощью docker:
-
-```
-docker run --rm -it -e TZ=Asia/Yekaterinburg --network=dev -v ${PWD}:/liquibase/changelog liquibase/liquibase:4.9 sh /liquibase/changelog/database.sh
-```
-
-- `database.sh` - рассматриваемый файл с командами для обновления
+* [Использование Liquibase в Azure Pipelines](./gbt_liquibase_azure.ru) <i class="fa fa-arrow-up" aria-hidden="true"></i>
 
 ## Ресурсы
 
-<div class="panel-group">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <a class="pull-right spoiler-push" data-toggle="collapse" href="#collapse2">&#9660;</a>
-            <h4 class="panel-title">
-                <a data-toggle="collapse" href="#collapse2">
-                Документация</a>
-            </h4>
-        </div>
-        <div id="collapse2" class="panel-collapse collapse">
-            <div class="panel-body">
-                <div>
-                    <li><a href="https://docs.liquibase.com/home.html">Liquibase documentation</a></li>
-                </div>   
-                <div>
-                    <li><a href="https://www.liquibase.org/">Official site</a></li>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+* [Официальная документация Liquibase](https://docs.liquibase.com/start/home.html)

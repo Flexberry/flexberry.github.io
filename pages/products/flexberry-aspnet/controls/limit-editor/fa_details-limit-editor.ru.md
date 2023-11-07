@@ -18,10 +18,10 @@ lang: ru
 
 Для работы с псевдодетейлами в [расширенном редакторе ограничений](fa_advanced-limit-editor.html) необходимо сделать следующее:
 
-* При [задании порядка отображения свойств в расширенном редакторе ограничений](fa_prop-order-limit-editor.html) добавить интересующие псевдодетейлы (постановка задачи задания ограничений на псевдодетейлы описана [здесь](fo_linq-provider.html)).
+* При [задании порядка отображения свойств в расширенном редакторе ограничений](fa_prop-order-limit-editor.html) добавить интересующие псевдодетейлы (постановка задачи задания ограничений на псевдодетейлы описана [здесь](fo_linq-provider.html))
 * В редакторе ограничений можно открывать сохранённые в виде lcs ограничения, либо конструировать новые.
 
-![Пвседо детейл](/images/pages/products/flexberry-aspnet/ogranicheniye/le-pseudo-detail.png)
+![le-pseudo-detail](/images/pages/products/flexberry-aspnet/ogranicheniye/le-pseudo-detail.png)
 
 ## Динамические представления для детейлов
 
@@ -29,14 +29,14 @@ lang: ru
 
 * [Задать детейлы в представление](fa_prop-order-limit-editor.html), если их ещё там нет.
 * Задать [свойство AutoAddUsedInLimitationProperties](fa_prop-order-limit-editor.html), чтобы представление формировалось динамически.
-* Определить механизм формирования динамического представления для детейлов через интерфейс ICSSoft.STORMNET.Windows.Forms.IViewGenerator (расположен в сборке ICSSoft.STORMNET.Business.ExternalLangDef). Например, в версии после 14.01.2015 можно в конфиг добавить следующую строчку:
+* Определить механизм формирования динамического представления для детейлов через интерфейс ICSSoft.STORMNET.Windows.Forms.IViewGenerator (расположен в сборке ExternalLangDef). Например, в версии после 14.01.2015 можно в конфиг добавить следующую строчку:
 
 ```xml
 <unity xmlns="http://schemas.microsoft.com/practices/2010/unity">
 ...
-<container>
-...
-<register type="ICSSoft.STORMNET.Windows.Forms.IViewGenerator, ICSSoft.STORMNET.Business.ExternalLangDef" mapTo="NewPlatform.Flexberry.Web.Page.LimitEditorViewGenerator, NewPlatform.Flexberry.Web.LimitEditor" />
-</container>
+  <container>
+ ...
+    <register type="ICSSoft.STORMNET.Windows.Forms.IViewGenerator, ExternalLangDef" mapTo="NewPlatform.Flexberry.Web.Page.LimitEditorViewGenerator, NewPlatform.Flexberry.Web.LimitEditor" />
+  </container>
 </unity>
 ```
