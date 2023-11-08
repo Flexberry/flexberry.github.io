@@ -137,9 +137,9 @@ export default {};
 ## Места где Ember Data обращается к Ember Inflector
 Версия 2.8.0:
 * [relationship-meta](https://github.com/emberjs/data/blob/534577f0db5ac88a797c5635c44cb409b901f798/addon/-private/system/relationship-meta.js#L9) - получение имени типа для отношения hasMany (детейл).
-* [json-api](https://github.com/emberjs/data/blob/v2.8.0/addon/serializers/json-api.js) - формирование JSON запросе к источнику данных.
+* [json-api](https://github.com/emberjs/data/blob/v2.8.0/addon/serializers/json-api.js) - формирование JSON запроса к источнику данных.
 
 Версия 3.1.1:
 * [build-url-mixin](https://github.com/emberjs/data/blob/9466a512c28d1cdf1802a05bce42fa7beb005bdd/addon/-private/adapters/build-url-mixin.js#L441) - построение URL для запроса к источнику данных.
 * [relationship-meta](https://github.com/emberjs/data/blob/9466a512c28d1cdf1802a05bce42fa7beb005bdd/addon/-private/system/relationship-meta.js#L9) - получение имени типа для отношения hasMany (детейл).
-* [json-api](https://github.com/emberjs/data/blob/v3.1.1/addon/serializers/json-api.js) - формирование JSON запросе к источнику данных.
+* [json-api](https://github.com/emberjs/data/blob/v3.1.1/addon/serializers/json-api.js) - формирование JSON запроса к источнику данных.
