@@ -190,6 +190,11 @@ entries:
             url: /efd2_odata.html
             output: web, pdf
 
+          - title: Ember inflector
+            title_ru: Использование Ember Inflector
+            url: /efd2_ember-inflector.html
+            output: web, pdf
+
       - title: Components
         title_ru: Компоненты
         output: web, pdf
