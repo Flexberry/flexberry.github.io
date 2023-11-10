@@ -129,4 +129,4 @@ Liquibase записывает часть действий в stderr (лог о�
 
 ## Ресурсы
 
-* [Liquibase](./gbt_liquibase.ru.md) <i class="fa fa-arrow-left" aria-hidden="true"></i>
+* [Liquibase](gbt_liquibase.html) <i class="fa fa-arrow-left" aria-hidden="true"></i>
