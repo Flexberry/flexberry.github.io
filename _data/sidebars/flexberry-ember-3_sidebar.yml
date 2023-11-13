@@ -130,6 +130,20 @@ entries:
         output: web, pdf
 
         folderitems:
+          - title: Supported themes
+            title_ru: Поддерживаемые темы оформления
+            url: ef3_supported_themes.html
+            output: web, pdf
+
+          - title: Structure of themes
+            title_ru: Внутреннее устройство тем
+            url: /ef3_themes_structure.html
+            output: web, pdf
+
+          - title: Change color scheme
+            title_ru: Динамическая смена цветовой схемы
+            url: /ef3_color_scheme_сhanging.html
+            output: web, pdf
 
       - title: Mobile development
         title_ru: Мобильная разработка
