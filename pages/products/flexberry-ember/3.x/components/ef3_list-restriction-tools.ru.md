@@ -10,13 +10,11 @@ summary: Фильтрация списка, ограничение списка,
 
 ## Выпадающий список как компонент фильтрации
 
-Доступно начиная с версии ember-flexberry 3.9.0.
-
 Общий вид компонента Flexberry Objectlistview с использованием выпадающего списка как компонента фильтрации, если текущая тема оформления “Ghost”:
 
-![](/images/pages/products/flexberry-ember/3.x/components/dropdown-filter-for-directories.png)
+![dropdown-filter-for-directories](/images/pages/products/flexberry-ember/3.x/components/dropdown-filter-for-directories.png)
 
-Вы можете посмотреть [пример с реализацией](http://flexberry.github.io/ember-flexberry/dummy/dummy-test-2/?#/components-examples/flexberry-objectlistview/custom-filter) на тестовом стенде.
+[Пример с реализацией](http://flexberry.github.io/ember-flexberry/dummy/dummy-test-2/?#/components-examples/flexberry-objectlistview/custom-filter) доступен для ознакомления на тестовом стенде.
 
 ### Настройка шаблона формы
 
@@ -33,7 +31,7 @@ summary: Фильтрация списка, ограничение списка,
 
 ### Настройка контроллера формы
 
-Чтобы настроить выпадающий список как компонент фильтрации, необходимо определить массив объектов. Каждый объект должен содержать следующие свойства:
+Для настройки выпадающего списка как компонента фильтрации, необходимо определить массив объектов. Каждый объект должен содержать следующие свойства:
 
 ```javascript
 [
