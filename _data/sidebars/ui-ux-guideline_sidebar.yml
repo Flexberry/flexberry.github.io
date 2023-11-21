@@ -157,6 +157,10 @@ entries:
       title_ru: Flexberry menu
       url: /uiuxg_flexberry_menu.html
       output: web
+    - title: Flexberry sitemap searchbar
+      title_ru: Flexberry sitemap searchbar
+      url: /uiuxg_sitemap_searchbar.html
+      output: web
     - title: Group Editing
       title_ru: Групповое редактирование
       url: /uiuxg_group_edit.html

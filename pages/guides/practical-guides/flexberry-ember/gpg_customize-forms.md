@@ -149,7 +149,7 @@ _`Order → [ПКМ] → ORM: Редактировать свойства → П
 > _<u>Детейл</u>_: Invoice item → Список товаров к выдаче  
 > _<u>Мастера</u>_:  
 >  Order (Заказ) → Number  
->  ResponsiblePerson (Материально ответственное лицо) → LastName
+>  ResponsiblePerson (Товар выдал) → LastName
 
 **Storehouse**
 

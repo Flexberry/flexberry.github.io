@@ -242,6 +242,16 @@ entries:
             url: /gpg_custom-validation.html
             output: web
 
+          - title: Unique attributes validation
+            title_ru: Валидатор уникальности по нескольким атрибутам
+            url: /gpg_unique-attributes-validator.html
+            output: web
+
+          - title: User attribute data types
+            title_ru: Использование пользовательских типов данных
+            url: /gpg_custom-attribute-type.html
+            output: web
+
           - title: Form fields autofilling
             title_ru: Автозаполнение полей формы
             url: /gpg_autofill-form-elements.html

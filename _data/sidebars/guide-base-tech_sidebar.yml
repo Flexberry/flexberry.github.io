@@ -12,7 +12,7 @@ entries:
     - title: Base technologies
       title_ru: Базовые технологии
       url: /gbt_landing-page.html
-      output: web    
+      output: web
   - title: System design
     title_ru: Проектирование
     output: web
@@ -37,26 +37,26 @@ entries:
     - title: Frontend fundamentals
       title_ru: Введение в клиентскую разработку
       url: /gbt_frontend.html
-      output: web    
+      output: web
     - title: HTML
       url: /gbt_html.html
-      output: web    
+      output: web
     - title: CSS
       url: /gbt_css.html
-      output: web    
+      output: web
     - title: JavaScript
       url: /gbt_javascript.html
-      output: web    
+      output: web
     - title: JQuery
       url: /gbt_jquery.html
-      output: web    
+      output: web
     - title: Layout
       title_ru: Верстка
       url: /gbt_layout.html
-      output: web    
+      output: web
     - title: Ember.js
       url: /gbt_emberjs.html
-      output: web    
+      output: web
   - title: Backend
     title_ru: Серверная разработка
     output: web
@@ -106,6 +106,12 @@ entries:
       output: web
     - title: MongoDB
       url: /gbt_mongodb.html
+      output: web
+    - title: Liquibase
+      url: /gbt_liquibase.html
+      output: web
+    - title: PgBouncer
+      url: /gbt_pgbouncer.html
       output: web
   - title: Mobile development
     title_ru: Мобильная разработка
