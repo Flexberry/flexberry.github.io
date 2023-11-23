@@ -90,6 +90,11 @@ entries:
         output: web, pdf
 
         folderitems:
+          - title: Flexberry Objectlistview
+            title_ru: Flexberry Objectlistview
+            url: /efd3_object-list-view.html
+            output: web, pdf
+
           - title: Groupedit with multiselect
             title_ru: Groupedit с функцией multiselect
             url: /ef3_groupedit_with_multiselect.html
