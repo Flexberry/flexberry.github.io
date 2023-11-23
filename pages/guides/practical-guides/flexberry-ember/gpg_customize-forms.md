@@ -148,6 +148,7 @@ _`Order → [ПКМ] → ORM: Редактировать свойства → П
 Класс **Invoice**
 
 > _<u>Детейл</u>_: Invoice item → Список товаров к выдаче  
+
 > _<u>Мастера</u>_<br>
 > Order (Заказ) → Number  
 > ResponsiblePerson (Материально ответственное лицо) → LastName

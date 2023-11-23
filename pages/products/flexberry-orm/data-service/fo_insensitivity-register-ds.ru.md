@@ -13,5 +13,5 @@ lang: ru
 Для того чтобы это настроить, необходимо в конфигурационном файле указать следующий параметр:
 
 ```xml
-<add key="CaseInsensitive" value="true">
+<add key="CaseInsensitive" value="true" />
 ```
