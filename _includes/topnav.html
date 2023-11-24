@@ -52,7 +52,7 @@
                 <!-- entries with language drop-downs appear here -->
                 <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
                 
-                {% assign url_string = page.permalink | replace_first: 'ru/', '/' | replace_first: 'en/', '/' %}
+                {% assign url_string = page.permalink | replace_first: 'ru/', '/' | replace_first: 'en/', '/' | replace_first: '//', '/' %}
 
                 {% for entry in site.data.topnav.topnav_langs %}
                 <li class="dropdown">
@@ -73,7 +73,7 @@
                 <li>
                     <!--start search-->
                     <div id="search-demo-container">
-                      <input type="text" id="search-input" placeholder="{{site.data.strings.search_placeholder_text}}">
+                      <div id="search-input" placeholder="{{site.data.strings.search_placeholder_text}}"></div>
                       <ul id="results-container"></ul>
                     </div>
                     <!--end search-->

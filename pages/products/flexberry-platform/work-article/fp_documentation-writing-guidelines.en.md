@@ -12,7 +12,7 @@ hash: c1277accf704be8ea95c004304e42cdb1d3aaa9011ca1c49c6bcdf5c25bbca39
 
 Documentation is an integral part of any successful product, so you need to approach the documentation of developed products with the utmost responsibility and to promptly update the information. 
 
-The following are guidelines for writing documentation for platform products [Flexberry](https://flexberry.github.io/ru//fp_landing_page.html). 
+The following are guidelines for writing documentation for platform products [Flexberry](https://flexberry.github.io/ru/fp_landing_page.html). 
 
 Documentation is generated using the generator of static sites [Jekyll](https://jekyllrb.com/) and therefore needs to have an idea about [Markdown syntax](https://daringfireball.net/projects/markdown/syntax) to create articles. 
 
@@ -112,7 +112,7 @@ lang: en
 
 ## It's interesting 
 
-* [7 of the rules of writing technical documentation world-class](https://habr.com/ru/post/303760/) - interesting article, but it is necessary to consider specificity of audience for which written or another article. That will be favorably perceived by beginners (section [Practical guide](https://flexberry.github.io/ru//gpg_landing-page.html)) with high probability will lead to confusion for the professional (article about platform products Flexberry). 
+* [7 of the rules of writing technical documentation world-class](https://habr.com/ru/post/303760/) - interesting article, but it is necessary to consider specificity of audience for which written or another article. That will be favorably perceived by beginners (section [Practical guide](https://flexberry.github.io/ru/gpg_landing-page.html)) with high probability will lead to confusion for the professional (article about platform products Flexberry). 
 * [Writing technical documentation: a guide for the layman](https://habr.com/ru/post/421549/) - have described the process of creating the documentation, this valuable tips on creating an "enabling environment", not while slipping to journalism. 
 
 
