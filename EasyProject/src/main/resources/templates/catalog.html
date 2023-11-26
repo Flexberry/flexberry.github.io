@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<style>
+        img {
+            height: 100px;
+       }
+    </style>
+<h1>Каталог доступної техніки</h1>
+<table border="1">
+    <tr><th>Назва</th><th>Ціна аренди (грн.)</th><th>Зображення</th></tr>
+    <tr th:each="boat: ${boats}">
+        <td th:text="|${boat.title}|"></td>
+        <td th:text="${boat.rentalPrice}|"></td>
+        <td><img th:src="@{${boat.imageURL}}"></td>
+        <td><a th:href="@{details/{id}(id=${boat.id})}"> Детальніше</a></td>
+    </tr>
+</table>
+</body>
+</html>
