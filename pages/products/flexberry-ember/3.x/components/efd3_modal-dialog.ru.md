@@ -10,21 +10,21 @@ summary: Обзор возможностей, настроек и особенн
 
 ## Назначение компонента
 
-Компонент модального диалога в технологии Flexberry Ember предназначен для отображения данных внутри модального окна.
+Компонент модального диалога в технологии [Flexberry Ember](https://flexberry.github.io/ru/ef3_landing_page.html) предназначен для отображения данных внутри модального окна.
 
 Модальный диалог используется в таких компонентах технологии Flexberry Ember как:
 
-* [Компонент лукапа](efd3_lookup.html) (выбор значения и просмотр выбранного значения в некоторых случаях производится на модальном диалоге).
-* [Файловый компонент]() (просмотр файла происходит в модальном окне).
-* [Списковый компонент]() и [компонент групэдита]() (некоторые настройки, такие как, например, настройка фильтров, производятся в модальном окне).
+* [Компонент лукапа](efd3_lookup.html): выбор значения и просмотр выбранного значения в некоторых случаях производится на модальном диалоге.
+* Файловый компонент: просмотр файла происходит в модальном окне.
+* [Списковый компонент](https://flexberry.github.io/ru/efd3_object-list-view.html) и [компонент групэдита](https://flexberry.github.io/ru/ef3_groupedit_with_multiselect.html): некоторые настройки, такие как, например, настройка фильтров, производятся в модальном окне.
 
 ## Обзор возможностей и API компонента
 
 [Компонент модального диалога](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/ModalDialog.html) реализован на базе компонента [Semantic UI Modal](https://semantic-ui.com/modules/modal.html), поэтому часть настроек аналогичны:
 
-* `title` - заголовок модального окна (рекомендуется задавать [локализованное значение]()).
+* `title` - заголовок модального окна (рекомендуется задавать локализованное значение).
 * `sizeClass` - css-класс размера модального окна, возможные варианты: 'small', 'large', 'fullscreen'. Если ничего не указано, то используется 'small'.
-* `viewImageContent` - флаг, определяющий, что в модальном диалоге будет отображаться изображение, что изменит используемые css-классы разметки (используется, в частности, в окне просмотра файла в [файловом контроле]()).
+* `viewImageContent` - флаг, определяющий, что в модальном диалоге будет отображаться изображение, что изменит используемые css-классы разметки (используется, в частности, в окне просмотра файла в файловом контроле).
 * `useOkButton` - флаг, определяющий, следует ли на модальном окне отображать кнопку "Ок". Если ничего не указано, то используется 'true'.
 * `useCloseButton` - флаг, определяющий, следует ли на модальном окне отображать кнопку закрытия. Если ничего не указано, то используется 'true'.
 * `settings` - [настройки](https://semantic-ui.com/modules/modal.html#/settings), которые передаются внутреннему компоненту [Semantic UI Modal](https://semantic-ui.com/modules/modal.html).
@@ -69,6 +69,6 @@ summary: Обзор возможностей, настроек и особенн
 * При скрытии модального окна (в результате любой из причины) срабатывает [`onHidden`](https://semantic-ui.com/modules/modal.html#/settings) и наружу прокидывается [Action](https://guides.emberjs.com/v3.1.0/components/triggering-changes-with-actions/) определённый для `close`, здесь это `removeModalDialog`. Обработчик `removeModalDialog` находится в [миксине](https://api.emberjs.com/ember/3.1/classes/Mixin) [роута](https://guides.emberjs.com/v3.1.0/routing/defining-your-routes/) всего приложения [ModalApplicationRoute](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/ModalApplicationRoute.html) и скрывает отрендеренный шаблон, содержащий модальный диалог.
 
 Таким образом, при использовании модального диалога типичным является то, что:
+
 * Отрисовка шаблона ([render](https://api.emberjs.com/ember/3.1/classes/Route/methods/render?anchor=render)) компонента для отображения модального диалога и его скрытие ([disconnectOutlet](https://api.emberjs.com/ember/3.1/classes/Route/methods/disconnectOutlet?anchor=disconnectOutlet)) происходят на базе [роута](https://guides.emberjs.com/v3.1.0/routing/defining-your-routes/) всего приложения `application` (соответствующие методы добавляются из [миксина](https://api.emberjs.com/ember/3.1/classes/Mixin) [ModalApplicationRoute](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/ModalApplicationRoute.html)).
 * Компонент для отображения модального диалога является не [компонентом в типичном варианте](https://api.emberjs.com/ember/3.1/classes/Component), а парой из [контроллера](https://guides.emberjs.com/v3.1.0/controllers/) и [шаблона](https://guides.emberjs.com/v3.1.0/templates/handlebars-basics/), которым соответствующим образом передаётся управление.
-
