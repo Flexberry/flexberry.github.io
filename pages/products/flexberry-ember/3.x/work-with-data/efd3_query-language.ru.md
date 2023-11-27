@@ -58,7 +58,7 @@ import Builder from 'ember-flexberry-data/query/builder';
 let builder = new Builder(store);
 ```
 
-{% include note.html content="В версиях Flexberry Ember 2.x содержалось пространство имен Query, содержащее перечисленные выше классы. Поскольку в Ember 3.x пространства имен более не используются в связи с [использованием ES6-модулей](https://github.com/emberjs/rfcs/blob/master/text/0176-javascript-module-api.md), все классы, содержавшиеся в пространстве имен Query, во Flexberry Ember 3.x теперь необходимо импортировать напрямую из [папки query](https://github.com/Flexberry/ember-flexberry-data/tree/feature-ember-update/addon/query) аддона [ember-flexberry-data](https://github.com/Flexberry/ember-flexberry-data)." %}
+> В версиях Flexberry Ember 2.x содержалось пространство имен Query, содержащее перечисленные выше классы. Поскольку в Ember 3.x пространства имен более не используются в связи с [использованием ES6-модулей](https://github.com/emberjs/rfcs/blob/master/text/0176-javascript-module-api.md), все классы, содержавшиеся в пространстве имен Query, во Flexberry Ember 3.x теперь необходимо импортировать напрямую из [папки query](https://github.com/Flexberry/ember-flexberry-data/tree/feature-ember-update/addon/query) аддона [ember-flexberry-data](https://github.com/Flexberry/ember-flexberry-data).
 
 ## Builder
 
@@ -102,13 +102,13 @@ builder.from('employee');
 
 Для указания того, какой предикат будет использоваться в запросе, используется метод `where` построителя запросов. При этом можно использовать различные варианты передачи параметров в данный метод.
 
-1. Передача предиката любого типа в качестве параметра:
+1.Передача предиката любого типа в качестве параметра:
 
 ```javascript
 builder.where(SomePredicate);
 ```
 
-2. Передача имени атрибута, операции и значения атрибута (аналог использования `SimplePredicate`)в качестве параметров:
+2.Передача имени атрибута, операции и значения атрибута (аналог использования `SimplePredicate`)в качестве параметров:
 
 ```javascript
 let builder = new Builder(store, 'customer').where('firstName', FilterOperator.Eq, 'Vasya');
@@ -126,10 +126,10 @@ let builder = new Builder(store, 'customer').where('manager', FilterOperator.Eq,
 let builder = new Builder(store, 'customer').where('manager.firstName', FilterOperator.Eq, 'Vasya');
 ```
 
-{% include note.html content="Пожалуйста, не используйте в значениях ограничений функцию `cast` и другие OData-специфичные функции!<br/><br/>
+> Пожалуйста, не используйте в значениях ограничений функцию `cast` и другие OData-специфичные функции!<br/><br/>
 Поступая так, вы привязываетесь в запросах к бэкенду конкретного типа.<br/>
 Язык запросов создан для того, чтобы абстрагироваться от какого-либо типа бэкенда.<br/>
-При несоблюдении этого правила ожидайте проблемы при работе в офлайне или смене типа бэкенда.<br/>" %}
+При несоблюдении этого правила ожидайте проблемы при работе в офлайне или смене типа бэкенда.
 
 ### Сортировка
 
@@ -179,7 +179,7 @@ builder.count();
 builder.select('id,age,name');
 ```
 
-{% include note.html content="Если используется данный способ указания вычитываемых атрибутов в запросе, то нельзя одновременно использовать в запросе метод selectByProjection!" %}
+> Если используется данный способ указания вычитываемых атрибутов в запросе, то нельзя одновременно использовать в запросе метод selectByProjection!
 
 ## Указание проекции
 
@@ -189,11 +189,11 @@ builder.select('id,age,name');
 builder.selectByProjection('EmployeeTestProjection');
 ```
 
-{% include note.html content="Если используется данный способ указания вычитываемых атрибутов в запросе, то нельзя одновременно использовать в запросе метод select!" %}
+> Если используется данный способ указания вычитываемых атрибутов в запросе, то нельзя одновременно использовать в запросе метод select!
 
 ## Создание объекта запроса
 
-Для того, чтобы создать объект запроса с указанными ранее опциями, используется метод `build` построителя запросов:
+Для создания объекта запроса с указанными ранее опциями используется метод `build` построителя запросов:
 
 ```javascript
 builder.build();
@@ -201,7 +201,7 @@ builder.build();
 
 ## Использование объекта запроса
 
-Созданный объект запроса должен быть передан в качестве второго параметра в метод [query](https://api.emberjs.com/ember-data/3.1/classes/DS.Store/methods/query?anchor=query) сервиса [store](https://api.emberjs.com/ember-data/3.1/classes/DS.Store) библиотеки [Ember Data](https://api.emberjs.com/ember-data/3.1). 
+Созданный объект запроса должен быть передан в качестве второго параметра в метод [query](https://api.emberjs.com/ember-data/3.1/classes/DS.Store/methods/query?anchor=query) сервиса [store](https://api.emberjs.com/ember-data/3.1/classes/DS.Store) библиотеки [Ember Data](https://api.emberjs.com/ember-data/3.1).
 
 ```javascript
 store.query(modelName, builder.build());
@@ -215,7 +215,8 @@ store.query(modelName, builder.build());
 
 #### Конструктор
 
-Конструктор класса `SimplePredicate` принимает 3 параметра: 
+Конструктор класса `SimplePredicate` принимает 3 параметра:
+
 * `attributePath` - атрибут (собственный или у связанных моделей).
 * `operator` - оператор (операция).
 * `value` - значение атрибута.
@@ -245,6 +246,7 @@ predicate.value
 ```
 
 #### AttributeParam и ConstParam
+
 Для расширения возможностей `SimplePredicate` были добавлены сущности `AttributeParam` (указание, что передаётся атрибут) и `ConstParam` (указание, что передаётся значение).
 В качестве первого параметра конструктора класса `SimplePredicate` может передаваться атрибут, `AttributeParam` или `ConstParam`.
 В качестве третьего параметра конструктора класса `SimplePredicate` может передаваться значение атрибута, `AttributeParam` или `ConstParam`.
@@ -265,13 +267,13 @@ let predicate = new SimplePredicate(new ConstParam(5), FilterOperator.Le, new At
 
 Существуют **ограничения**, связанные с использованием `AttributeParam` и `ConstParam` в конструкторе `SimplePredicate`.
 
-1 При применении двух `AttributeParam` в конструкторе `SimplePredicate` необходимо при использовании `IndexedDbAdapter` или `JsAdapter` мастера указывать с "id" (без этого указания некорректно могут обрабатываться ситуации, когда мастер не задан). Например, если у сущности есть мастера author и editor:
+1.При применении двух `AttributeParam` в конструкторе `SimplePredicate` необходимо при использовании `IndexedDbAdapter` или `JsAdapter` мастера указывать с "id" (без этого указания некорректно могут обрабатываться ситуации, когда мастер не задан). Например, если у сущности есть мастера author и editor:
 
 ```javascript
 let predicate = new SimplePredicate(new AttributeParam('author.id'), FilterOperator.Eq, new AttributeParam('editor.id'));
 ```
 
-2 При указании двух `ConstParam` с датами в виде строковых констант в конструкторе `SimplePredicate` возможно некорректное поведение в связи с тем, что конструктор не распознает, что это даты.
+2.При указании двух `ConstParam` с датами в виде строковых констант в конструкторе `SimplePredicate` возможно некорректное поведение в связи с тем, что конструктор не распознает, что это даты.
 
 ### DatePredicate
 
@@ -280,6 +282,7 @@ let predicate = new SimplePredicate(new AttributeParam('author.id'), FilterOpera
 #### Конструктор
 
 Конструктор класса `DatePredicate` принимает 4 параметра:
+
 * `attributePath` - атрибут (собственный или у связанных моделей).
 * `operator` - оператор (операция).
 * `value` - значение атрибута.
@@ -317,6 +320,7 @@ predicate.timeless
 ```
 
 #### AttributeParam и ConstParam
+
 Для расширения возможностей `DatePredicate` были добавлены сущности `AttributeParam` (указание, что передаётся атрибут) и `ConstParam` (указание, что передаётся значение). Их использование аналогично применению в `SimplePredicate`, однако есть дополнительное ограничение: в `ODataAdapter` пока что **не поддерживаются** ограничения, формируемые `DatePredicate`, в конструктор которого переданы два `AttributeParam` и флаг отсутствия учёта времени (фильтрация в этом случае вернёт некорректное значение).
 
 ```javascript
@@ -329,7 +333,8 @@ let predicate = new DatePredicate(new AttributeParam('startDate'), FilterOperato
 
 #### Конструктор
 
-Конструктор класса `ComplexPredicate` принимает 2 параметра: 
+Конструктор класса `ComplexPredicate` принимает 2 параметра:
+
 * `condition` - логическое условие (операция) для объединения предикатов.
 * `...predicates` - список предикатов для объединения.
 
@@ -425,7 +430,8 @@ predicate.containsValue
 
 #### Конструктор
 
-Конструктор класса `DetailPredicate` принимает единственный параметр: 
+Конструктор класса `DetailPredicate` принимает единственный параметр:
+
 * `detailPath` - имя связанной детейловой модели.
 
 ```javascript
@@ -520,6 +526,7 @@ let dp = new DetailPredicate('tags').any(cp1);
 #### Конструктор
 
 Конструктор принимает один параметр:
+
 * `attributePath` - атрибут (собственный или у связанных моделей).
 
 Также необходимо задать геометрическую фигуру, пересечение с которой будет проверяться. Для этого нужно воспользоваться методом `intersects` предиката.
@@ -551,6 +558,7 @@ predicate.intersectsValue
 #### Конструктор
 
 Конструктор класса `NotPredicate` принимает единственный параметр:
+
 * `predicate` - предикат, значение которого нужно инвертировать.
 
 ```javascript
@@ -580,7 +588,8 @@ let predicateToInvert = np.predicate;
 let predicate = new IsOFPredicate('customer');
 ```
 
-Конструктор класса `IsOfPredicate` может также принимать два параметра: 
+Конструктор класса `IsOfPredicate` может также принимать два параметра:
+
 * `expression` - атрибут (собственный или у связанных моделей).
 * `typeName` - имя модели.
 
@@ -610,6 +619,7 @@ let builder = new Builder(store, 'creator').isOf('man');
 ## Операторы (операции)
 
 В клиентском языке есть два класса, которые содержат свойства, являющиеся операторами (операциями) предикатов:
+
 * `Condition` - класс с логическими операциями для `ComplexPredicate`.
 * `FilterOperator` - класс с операциями для `SimplePredicate`, `StringPredicate` и `DatePredicate`.
 
