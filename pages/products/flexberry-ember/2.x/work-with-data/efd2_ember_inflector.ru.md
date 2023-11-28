@@ -8,29 +8,29 @@ lang: ru
 summary: Ember Inflector - библиотека для преобразования слов между формами множественного и единственного числа
 ---
 
-# Использование Ember Inflector
+## Использование Ember Inflector
 
 [`Ember Inflector`](https://github.com/emberjs/ember-inflector) — это библиотека для преобразования слов между формами множественного и единственного числа.
 
-## Зачем это нужно
+### Зачем это нужно
 
 Это необходимо для правильной работы библиотеки [`Ember Data`](https://github.com/emberjs/data/tree/v2.8.0).
 
 `Ember Data` — это библиотека для надежного управления данными модели. Она независима от базового механизма сохранения, поэтому он работает как с API-интерфейсами JSON через HTTP, так и с потоковой передачей WebSockets или локальным хранилищем IndexedDB.
 
-До того, как будет отправлено сообщение в OData-backend, происходит преобразование имени типа сущности из единственного числа во множественное и обратно. Например: ***cat -> cats***.
+До отправки сообщения в OData-backend, происходит преобразование имени типа сущности из единственного числа во множественное и обратно. Например: ***cat -> cats***.
 
-Таким образом вместо http://localhost:6500/odata/Cat запрос пойдет на http://localhost:6500/odata/Cats.
+Таким образом вместо <http://localhost:6500/odata/Cat> запрос пойдет на <http://localhost:6500/odata/Cats>.
 
 Такое преобразование происходит внутри *Ember Data*, где идет обращение к библиотеке *Ember Inflector*.
 
-## Установка
+### Установка
 
 ```cmd
 ember install ember-inflector
 ```
 
-## Использование
+### Использование
 
 Для установки дополнительных правил добавляется инициализатор:
 
@@ -67,7 +67,7 @@ export default {};
 import './models/custom-inflector-rules';
 ```
 
-## Основные методы Ember Inflector
+### Основные методы Ember Inflector
 
 Есть два основных метода `singularize`, `pluralize` и несколько дополнительных для настройки преобразования.
 
@@ -77,8 +77,7 @@ import './models/custom-inflector-rules';
 Inflector.inflector.singularize("cats"); // cat
 ```
 
-* [`pluralize`](https://github.com/emberjs/ember-inflector/blob/efc43cababbab05d55f275529455f85c46b9b492/addon/lib/system/inflector.js#L215C8-L215C8) - преобразование из единственного числа во 
-множественное.
+* [`pluralize`](https://github.com/emberjs/ember-inflector/blob/efc43cababbab05d55f275529455f85c46b9b492/addon/lib/system/inflector.js#L215C8-L215C8) - преобразование из единственного числа во множественное.
 
 ```javascript
 Inflector.inflector.pluralize("cat"); // cats
@@ -105,7 +104,7 @@ Inflector.inflector.irregular("cat", "dog");
 Inflector.inflector.pluralize("ember-flexberry-cat"); // ember-flexberry-dog
 ```
 
-## Пример файла custom-inflector-rules
+### Пример файла custom-inflector-rules
 
 ```javascript
 import Inflector from 'ember-inflector';
@@ -134,13 +133,15 @@ export default {};
 
 ```
 
-## Места где Ember Data обращается к Ember Inflector
+### Места где Ember Data обращается к Ember Inflector
 
-Версия 2.8.0:
+Версия 2*:
+
 * [relationship-meta](https://github.com/emberjs/data/blob/534577f0db5ac88a797c5635c44cb409b901f798/addon/-private/system/relationship-meta.js#L9) - получение имени типа для отношения hasMany (детейл).
 * [json-api](https://github.com/emberjs/data/blob/v2.8.0/addon/serializers/json-api.js) - формирование JSON запроса к источнику данных.
 
-Версия 3.1.1:
+Версия 3*:
+
 * [build-url-mixin](https://github.com/emberjs/data/blob/9466a512c28d1cdf1802a05bce42fa7beb005bdd/addon/-private/adapters/build-url-mixin.js#L441) - построение URL для запроса к источнику данных.
 * [relationship-meta](https://github.com/emberjs/data/blob/9466a512c28d1cdf1802a05bce42fa7beb005bdd/addon/-private/system/relationship-meta.js#L9) - получение имени типа для отношения hasMany (детейл).
 * [json-api](https://github.com/emberjs/data/blob/v3.1.1/addon/serializers/json-api.js) - формирование JSON запроса к источнику данных.
