@@ -85,6 +85,11 @@ entries:
             url: /efd3_model-validation.html
             output: web, pdf
 
+          - title: Support for transactional work with data
+            title_ru: Поддержка транзакционной работы с данными
+            url: /efd3_batch.html
+            output: web, pdf
+
       - title: Components
         title_ru: Компоненты
         output: web, pdf
