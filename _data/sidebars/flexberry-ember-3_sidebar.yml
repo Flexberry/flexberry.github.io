@@ -90,6 +90,11 @@ entries:
         output: web, pdf
 
         folderitems:
+          - title: Flexberry Objectlistview
+            title_ru: Flexberry Objectlistview
+            url: /efd3_object-list-view.html
+            output: web, pdf
+
           - title: Groupedit with multiselect
             title_ru: Groupedit с функцией multiselect
             url: /ef3_groupedit_with_multiselect.html
@@ -108,6 +113,11 @@ entries:
           - title: Flexberry lookup
             title_ru: Flexberry lookup
             url: /ef3_flexberry-lookup.html
+            output: web, pdf
+
+          - title: List restriction tools
+            title_ru: Инструменты ограничения списка
+            url: /ef3_list-restriction-tools.html
             output: web, pdf
 
       - title: Services
