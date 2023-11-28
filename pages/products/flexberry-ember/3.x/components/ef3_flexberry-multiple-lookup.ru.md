@@ -10,20 +10,18 @@ summary: Свойства flexberry-multiple-lookup, настройка flexberr
 
 ## Назначение компонента
 
-Flexberry multiple lookup представляет собой элемент управления (компонент), позволяющий выбрать несколько значений мастера. Данный компонент является дополнением к компоненту [Flexberry lookup]().
-Общий вид компонента, в случае, если текущая тема оформления “Ghost”:
+`Flexberry multiple lookup` представляет собой элемент управления (компонент), позволяющий выбрать несколько значений мастера. Данный компонент является дополнением к компоненту [Flexberry lookup](https://flexberry.github.io/ru/ef3_flexberry-lookup.html).
+Общий вид компонента в случае, если текущая тема оформления “Ghost”:
 
-![](/images/pages/products/flexberry-ember/3.x/components/flexberry-multiply-lookup.png)
+![flexberry-multiply-lookup](/images/pages/products/flexberry-ember/3.x/components/flexberry-multiply-lookup.png)
 
 ## Кастомизация тегов
 
-Доступно с версии ember-flexberry 3.10.0.
+Общий вид компонента `Flexberry multiple lookup` с использованием кастомизации, если текущая тема оформления “Ghost”:
 
-Общий вид компонента Flexberry multiple lookup с использованием кастомизации, если текущая тема оформления “Ghost”:
+![flexberry-multiply-lookup-tag-customization-example](/images/pages/products/flexberry-ember/3.x/components/flexberry-multiply-lookup-tag-customization-example.png)
 
-![](/images/pages/products/flexberry-ember/3.x/components/flexberry-multiply-lookup-tag-customization-example.png)
-
-Вы можете посмотреть [пример с реализацией](http://flexberry.github.io/ember-flexberry/dummy/dummy-test-2/?#/components-examples/flexberry-multiple-lookup/configurate-tags) на тестовом стенде.
+[Пример реализации](http://flexberry.github.io/ember-flexberry/dummy/dummy-test-2/?#/components-examples/flexberry-multiple-lookup/configurate-tags) компонента можно посмотреть на тестовом стенде Ember Flexberry.
 
 ### Настройка шаблона формы
 
@@ -59,7 +57,7 @@ export default ListFormController.extend({
 });
 ```
 
-Чтобы кастомизировать теги, необходимо в объект `tagConfig` указать параметры настройки для нужной записи. Возможные настройки:
+Для кастомизации тегов необходимо в объекте `tagConfig` указать параметры настройки для нужной записи. Возможные настройки:
 
 | Название свойства | Тип свойства | Описание |
 |-|-|-|
