@@ -290,7 +290,7 @@ STORM_JDBC_URL=jdbc:postgresql://localhost:25432/storm
 
 ## Дополнительно
 
-* [Использование Liquibase в Azure Pipelines](./gbt_liquibase_azure.ru) <i class="fa fa-arrow-up" aria-hidden="true"></i>
+* [Использование Liquibase в Azure Pipelines](gbt_liquibase_azure.html) <i class="fa fa-arrow-up" aria-hidden="true"></i>
 
 ## Ресурсы
 
