@@ -23,7 +23,7 @@ summary:
 
 Адаптеры и сериализаторы генерируются для каждой модели, полученной из метаданных.
 
-Перед генерацией следует убедиться, что в репозитории свежие метаданные. В противном случае может возникнуть ошибка парсинга модели. Свежие метаданные нужно сгенерировать через flexberry-designer и положить в папку `vendor/flexberry`.
+Перед генерацией следует убедиться, что в репозитории свежие метаданные. В противном случае может возникнуть ошибка парсинга модели. Свежие метаданные нужно сгенерировать через [Flexberry Designer](https://flexberry.github.io/ru/fdo_landing_page.html) и положить в папку `vendor/flexberry`.
 
 Команда запуска генерации:
 
@@ -37,7 +37,7 @@ summary:
 
 Для включения offline-режима нужно:
 
-* выключить флаг `setOnlineAvailable`; для этого переопределим offline-globals в tests/dummy/app/services/offline-globals.js следующим образом:
+* выключить флаг `setOnlineAvailable`; для этого требуется переопределить offline-globals в tests/dummy/app/services/offline-globals.js следующим образом:
 
 ```javascript
       import OfflineGlobals from 'ember-flexberry-gis/services/offline-globals';
