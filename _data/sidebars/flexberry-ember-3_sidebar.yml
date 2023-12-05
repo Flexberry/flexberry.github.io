@@ -125,6 +125,11 @@ entries:
             url: /ef3_list-restriction-tools.html
             output: web, pdf
 
+          - title: Flexberry multiple lookup 
+            title_ru: Flexberry multiple lookup 
+            url: /ef3_flexberry-multiple-lookup.html
+            output: web, pdf
+
       - title: Services
         title_ru: Сервисы
         output: web, pdf
