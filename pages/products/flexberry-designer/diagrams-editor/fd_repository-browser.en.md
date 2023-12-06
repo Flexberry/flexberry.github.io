@@ -54,4 +54,3 @@ Pressing the keys, when the selected line will cause the following action:
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

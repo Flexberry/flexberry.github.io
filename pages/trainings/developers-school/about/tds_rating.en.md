@@ -49,4 +49,3 @@ Thus, the student will get the maximum number of points for the job under the co
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -316,4 +316,3 @@ When saving objects using the method `[SQLDataService#UpdateObjectsOrdered|Updat
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

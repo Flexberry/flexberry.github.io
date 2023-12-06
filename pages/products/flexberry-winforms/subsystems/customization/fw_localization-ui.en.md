@@ -29,4 +29,3 @@ So, in order to arrange in your app localization, you must:
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

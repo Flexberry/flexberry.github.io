@@ -172,4 +172,3 @@ If you plan to use lots of numbers, keep in mind that there are several differen
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

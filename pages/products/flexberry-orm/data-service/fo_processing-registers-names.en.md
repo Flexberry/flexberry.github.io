@@ -62,4 +62,3 @@ You can use, but an identifier such as when the object is created, and when used
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

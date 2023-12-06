@@ -13,7 +13,7 @@ lang: ru
 
 {% include important.html content="При обращении к сервису данных в программном коде рекомендуется производить через интерфейс `ICSSoft.STORMNET.Business.IDataService`, т.к. это гарантирует  независимость кода от типа хранилища данных." %}
 
-Перед использование сервиса данных в программном коде его необходимо [настроить тем или иным способом](fo_construction-ds.html).
+Перед использованием сервиса данных в программном коде его необходимо [настроить тем или иным способом](fo_construction-ds.html).
 
 Следует __обратить внимание__ на следующие моменты:
 
@@ -59,7 +59,7 @@ ICSSoft.STORMNET.DataObject[] LoadObjects(ICSSoft.STORMNET.View dataObjectView);
 ICSSoft.STORMNET.DataObject[] LoadObjects(ICSSoft.STORMNET.View[] dataObjectViews);
 ```
 
-#### Параметры
+*Параметры*
 
 `dataObjectView(s)` - представление или массив представлений
 
@@ -91,7 +91,7 @@ ICSSoft.STORMNET.DataObject[] LoadObjects(LoadingCustomizationStruct customizati
 ICSSoft.STORMNET.DataObject[] LoadObjects(LoadingCustomizationStruct[] customizationStructs);
 ```
 
-#### Параметры
+*Параметры*
 
 `customizationStruct(s)` - [настроечная структура для выборки](fo_loading-customization-struct.html) (массив структур)
 
@@ -117,7 +117,7 @@ ICSSoft.STORMNET.DataObject[] LoadObjects(ref object State);
 ICSSoft.STORMNET.DataObject[] LoadObjects(ref object State, DataObjectCache DataObjectCache);
 ``` 
 
-#### Параметры
+*Параметры*
 
 * `State` - Состояние вычитки(для последующей дочитки)
 * `customizationStruct` - [настроечная структура для выборки](fo_loading-customization-struct.html)
@@ -129,7 +129,7 @@ _Примечание_: Размер порции может быть задан
 Для загрузки одного объекта данных служат перегрузки метода `LoadObject`. 
 Вычитка свойств из хранилища осуществляется по заданному в объекте данных [первичному ключу](fo_primary-keys-objects.html).
 
-Примеры использования:
+*Примеры использования:*
 
 * [Обработка одного объекта](fo_processing-one-object.html),
 * [Пример загрузки и изменения объекта](fo_load-alter-objects.html).
@@ -146,7 +146,7 @@ void LoadObject(ICSSoft.STORMNET.DataObject dobject)
 void LoadObject(ICSSoft.STORMNET.DataObject dobject, DataObjectCache DataObjectCache)
 ```
 
-#### Параметры
+*Параметры*
 
 `dobject` - Объект данных, который требуется загрузить
 
@@ -168,7 +168,7 @@ void LoadObject(string dataObjectViewName, ICSSoft.STORMNET.DataObject dobject, 
 void LoadObject(ICSSoft.STORMNET.View dataObjectView, ICSSoft.STORMNET.DataObject dobject, DataObjectCache DataObjectCache)
 ```
 
-#### Параметры
+*Параметры*
 
 `dataObjectView(dataObjectViewName)` - [представление](fd_view-definition.html) (имя представления)
 
@@ -196,7 +196,7 @@ void LoadObject(string dataObjectViewName, ICSSoft.STORMNET.DataObject dobject, 
 void LoadObject(ICSSoft.STORMNET.View dataObjectView, ICSSoft.STORMNET.DataObject dobject, bool ClearDataObject, bool CheckExistingObject, DataObjectCache DataObjectCache)
 ```
 
-#### Параметры
+*Параметры*
 
 * `ClearDataObject` - очищать ли объект
 * `CheckExistingObject` - проверять ли существование объекта в хранилище (если указать `true`, при отсутствии объекта в базе будет выдано исключение типа `CantFindDataObjectException`)
@@ -239,7 +239,7 @@ void UpdateObject(ref ICSSoft.STORMNET.DataObject dobject, bool AlwaysThrowExcep
 void UpdateObject(ref ICSSoft.STORMNET.DataObject dobject, DataObjectCache DataObjectCache, bool AlwaysThrowException) 
 ```
 
-#### Параметры
+*Параметры*
 
 * `dobject`  - объект данных, который требуется обновить 
 * `DataObjectCache` - кеш объектов
@@ -273,7 +273,7 @@ void UpdateObjects(ref ICSSoft.STORMNET.DataObject[] objects, DataObjectCache Da
 void UpdateObjects(ref ICSSoft.STORMNET.DataObject[] objects, DataObjectCache DataObjectCache, bool AlwaysThrowException)
 ```
 
-#### Параметры
+*Параметры*
 
 * `objects` - объекты для обновления
 * `DataObjectCache` - кеш объектов
@@ -285,15 +285,13 @@ void UpdateObjects(ref ICSSoft.STORMNET.DataObject[] objects, DataObjectCache Da
 
 [Пример использования](fo_load-limitation-example.html).
 
-### Загрузка без создания объектов
-
 __Возвращаемый результат__: массив структур `ObjectStringDataView`
 
 ```csharp
 ObjectStringDataView[] LoadStringedObjectView(char separator, LoadingCustomizationStruct customizationStruct)
 ```
 
-#### Параметры
+*Параметры*
 
 * `separator` -  разделитель в строках 
 * `customizationStruct` -  настроичная структура для выборки [LoadingCustomizationStruct](fo_loading-customization-struct.html)
@@ -324,7 +322,7 @@ ObjectStringDataView[] LoadStringedObjectView(ref object state)
 void CompleteLoadStringedObjectView(ref object state)
 ```
 
-#### Параметры
+*Параметры*
 
 * `State` - Состояние вычитки(для последующей дочитки)
 * `customizationStruct` - [настроечная структура для выборки](fo_loading-customization-struct.html)
@@ -343,10 +341,16 @@ __Примечание__: Размер порции может быть зада
 int GetObjectsCount(LoadingCustomizationStruct customizationStruct)
 ```
 
-#### Параметры
+*Параметры*
 
 `customizationStruct` - настроечная структура для выборки [LoadingCustomizationStruct](fo_loading-customization-struct.html)  
 
 ## Использование SQL при работе с сервисом данных
 
 В некоторых ситуациях возможностей сервиса данных недостаточно для решения специфических задач, в таких случаях есть возможность [непосредственного выполнения SQL-запроса](fo_sql-query.html) и [изменение автоматически построенного запроса](fo_intercept-formation-sql-query.html).
+
+## Асинхронные запросы в ORM
+
+В [ORM](fo_flexberry-orm.html) существует возможность загружать данные в асинхронном режиме (async/await). `SQLDataService` реализует интерфейс `IAsyncDataService`, который описывает асинхронные методы загрузки.
+
+Подробнее в статье [Асинхронные запросы в ORM](fo_asynchronous_requests_in_orm.html).

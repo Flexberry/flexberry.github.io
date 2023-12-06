@@ -53,4 +53,3 @@ Pseudo-classes define the dynamic state of the elements that varies over time or
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

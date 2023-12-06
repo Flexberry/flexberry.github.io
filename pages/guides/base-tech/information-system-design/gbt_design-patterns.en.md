@@ -59,4 +59,3 @@ Algorithms inherently are templates, not design, and calculations, so as to solv
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

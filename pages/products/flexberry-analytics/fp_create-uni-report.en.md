@@ -64,4 +64,3 @@ ICSSoft.STORMNET.Windows.Forms.AdditionalControls.dll (there is in the standard 
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

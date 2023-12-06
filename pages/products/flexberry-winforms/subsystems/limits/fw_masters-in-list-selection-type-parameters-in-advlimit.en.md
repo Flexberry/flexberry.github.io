@@ -23,4 +23,3 @@ To the master was available in the parameter list:
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

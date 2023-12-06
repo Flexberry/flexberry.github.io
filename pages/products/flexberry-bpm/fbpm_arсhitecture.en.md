@@ -14,7 +14,7 @@ hash: b36a0e10edbb81186000811a2a3c6da1fbbfd14345813db50b4d99af06fdd7a9
 Flexberry BPMS includes the following subsystems: 
 * **An administrative interface** providing: 
 * synchronization of models and versions in the business processes of a standard management server business processes database process models Flexberry BPMS; 
-* on-screen interface for management and monitoring of standard сервера; 
+* on-screen interface for management and monitoring of standard server; 
 * **Web API** provides: 
 * receive requests from business приложения; 
 * transfer of requests to perform simultaneous actions business приложениям; 
@@ -188,4 +188,3 @@ As a result of the review of the methods of modification of business application
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

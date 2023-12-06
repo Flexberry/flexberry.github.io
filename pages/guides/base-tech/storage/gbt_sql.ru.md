@@ -67,6 +67,7 @@ SELECT FAM FROM STUDENT WHERE BALL BETWEEN 81 AND 91 ORDER BY BALL DESC;
                 <div>
                     <li><a href="http://www.w3schools.com/sql/default.asp">SQL Tutorial</a><i> — W3Schools</i></li>
                     <li><a href="https://sql-language.ru/">Язык запросов SQL</a><i> — sql-language.ru</i></li>
+                    <li><a href="https://www.scaler.com/topics/sql/">SQL Basics</a><i> — Scaler Topics</i></li>
                 </div>   
             </div>
         </div>

@@ -134,4 +134,3 @@ the resulting file in Excel you will see the following warning:
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

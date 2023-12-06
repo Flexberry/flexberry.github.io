@@ -192,4 +192,3 @@ Read more about AjaxGroupEdit can be read in this [article AjaxGroupEdit](fa_aja
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

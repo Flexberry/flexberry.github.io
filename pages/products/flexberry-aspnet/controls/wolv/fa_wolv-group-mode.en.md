@@ -101,4 +101,3 @@ After you download the list it will look like the following:
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

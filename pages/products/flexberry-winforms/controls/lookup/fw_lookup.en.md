@@ -228,4 +228,3 @@ Change the name of the list for Lookup at different forms of editing, you can de
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

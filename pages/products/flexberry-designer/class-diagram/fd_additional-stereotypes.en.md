@@ -21,4 +21,3 @@ The following stereotypes **not supported** the basic version [Flexberry Designe
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

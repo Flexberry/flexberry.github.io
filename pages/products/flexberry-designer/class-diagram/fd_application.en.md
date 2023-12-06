@@ -70,4 +70,3 @@ Properties methods similar to those described [in the class Attributes data](fo_
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

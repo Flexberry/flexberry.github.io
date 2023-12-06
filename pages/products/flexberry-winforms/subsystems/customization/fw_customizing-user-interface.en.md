@@ -94,4 +94,3 @@ There is a need to add in-app hotkeys and also adjust the order of items by pres
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

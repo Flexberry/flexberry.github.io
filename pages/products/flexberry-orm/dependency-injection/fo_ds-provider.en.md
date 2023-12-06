@@ -83,4 +83,3 @@ About the connection strings in General can be found in [msdn](https://msdn.micr
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

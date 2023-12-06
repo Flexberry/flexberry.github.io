@@ -158,4 +158,3 @@ Attaching the attribute to a method `WebMethod` `Public` means that this method 
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

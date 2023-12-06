@@ -48,4 +48,3 @@ To give the user feedback when interacting with the interface, you can use color
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

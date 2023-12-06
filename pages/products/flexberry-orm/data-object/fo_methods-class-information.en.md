@@ -548,4 +548,3 @@ public static string GetClassImageProperty(System.Type dataobjectType)
 ```
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

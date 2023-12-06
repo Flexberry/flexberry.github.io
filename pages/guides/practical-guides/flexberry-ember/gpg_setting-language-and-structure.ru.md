@@ -192,7 +192,7 @@ _`OrderStatus → [ПКМ] → ORM: Редактировать свойства 
 
 **InvoiceStatus**
 
-> Новая → New
+> Новая → New  
 > Выписанная → Issued  
 > Приостановленная → Paused  
 > Готовая → Ready  

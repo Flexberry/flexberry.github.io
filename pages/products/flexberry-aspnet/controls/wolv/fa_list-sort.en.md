@@ -38,4 +38,3 @@ To access the aggregated current sorting settings through a protected virtual pr
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

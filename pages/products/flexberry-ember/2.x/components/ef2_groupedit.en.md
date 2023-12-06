@@ -315,4 +315,3 @@ When you add in the view, groupedit-ordered-properties there will be some featur
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

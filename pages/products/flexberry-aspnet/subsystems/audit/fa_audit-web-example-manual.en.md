@@ -76,4 +76,3 @@ protected void Application_Start(object sender, EventArgs e)
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

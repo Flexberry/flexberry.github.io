@@ -30,4 +30,3 @@ If you are copying system is placed in the target stage, this copies all charts 
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

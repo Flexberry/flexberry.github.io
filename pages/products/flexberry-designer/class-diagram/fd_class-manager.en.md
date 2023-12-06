@@ -28,4 +28,3 @@ The Manager classes have an opportunity to see what [the graphs](fd_class-diagra
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

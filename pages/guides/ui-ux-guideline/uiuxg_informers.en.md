@@ -30,4 +30,3 @@ summary: tool Tips and error messages.
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

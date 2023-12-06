@@ -75,4 +75,3 @@ But for this method you need an instance of the class `ICSSoft.STORMNET.Windows.
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

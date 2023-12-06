@@ -39,4 +39,3 @@ If [as MembershipProvider] used class `CaseberryDomainMembershipProvider`, the w
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

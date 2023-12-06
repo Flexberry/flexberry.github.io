@@ -123,4 +123,3 @@ After the prototype application was created from scratch, it begins the main wor
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

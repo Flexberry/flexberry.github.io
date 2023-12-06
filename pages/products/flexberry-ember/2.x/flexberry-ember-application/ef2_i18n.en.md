@@ -32,4 +32,3 @@ If you want to implement the change specific labels, it can be done using the me
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

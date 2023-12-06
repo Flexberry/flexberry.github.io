@@ -143,4 +143,3 @@ All ErrorBox will record errors to a csv file in the folder with the application
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

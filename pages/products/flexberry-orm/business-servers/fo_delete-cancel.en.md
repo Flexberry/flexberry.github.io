@@ -63,4 +63,3 @@ The message has changed to be more meaningful.
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -49,4 +49,3 @@ Connection applications that need to integrate through a service bus is done by 
 `Flexberry Service Bus` developed [on GitHub in public repositories](fsb_development.html) as the team of platform Flexberry, and the community. Anyone can take part in the finalization of the tire.
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

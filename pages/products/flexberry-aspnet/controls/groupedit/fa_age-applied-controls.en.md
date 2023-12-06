@@ -131,4 +131,3 @@ Read more about [WebControlProvider and embedding controls](fa_web-control-provi
 If the application control interface scripts (on page load), then all the scripts need to connect via [ContextHelper](fa_context-helper.html) and the scripts will automatically be added. If control is necessary connection of external scripts, you need to use a property `ExternalScriptPaths` interface `IAjaxGroupEditCompatible`.
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

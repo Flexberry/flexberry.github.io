@@ -55,4 +55,3 @@ For authorization objects `AuditClassConnectionStringName` takes the value from 
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

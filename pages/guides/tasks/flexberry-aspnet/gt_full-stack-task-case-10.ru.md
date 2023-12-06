@@ -31,13 +31,13 @@ lang: ru
 Технические требования:
 
 *	Приложение реализуется в виде ASP.NET WebForms-приложения.
-*	Данные хранятся в БД MSSQL Server.
+*	Данные хранятся в БД Postgres.
 
 ## Практическое задание №1 - Серверная разработка (C#, .NET, ASP.NET)
 
 Для реализации потребуется:
 
-* Microsoft Visual Studio 2015
+* Microsoft Visual Studio 2017 или новее
 * Git for Windows
 
 ### Задание. Часть 1.
@@ -102,8 +102,8 @@ lang: ru
 
 Для реализации потребуется:
 
-*	Microsoft SQL Server
-*	Microsoft SQL Server Management Studio
+*	СУБД PostgreSQL
+*	Приложение pgAdmin 4.x для администрирования БД PostgreSQL
 *	Git for Windows
 
 ### Задание
@@ -126,7 +126,7 @@ lang: ru
 
 Для реализации потребуется:
 
-*	Flexberry Designer
+*	Flexberry Designer (вин-версия)
 
 ### Задание
 
@@ -140,9 +140,9 @@ lang: ru
 
 Для реализации потребуется:
 
-*	Flexberry Designer
-*	Microsoft Visual Studio 2015
-*	Microsoft SQL Server
+*	Flexberry Designer (вин-версия)
+*	Microsoft Visual Studio 2017 или новее
+*	СУБД PostgreSQL
 *	Git for Windows
 
 ### Задание
@@ -158,8 +158,8 @@ lang: ru
 Для реализации потребуется:
 
 * Flexberry Designer
-* Microsoft Visual Studio 2015
-* Microsoft SQL Server
+* Microsoft Visual Studio 2017 или новее
+* СУБД PostgreSQL
 * Git for Windows
 
 ### Задание
@@ -180,8 +180,8 @@ lang: ru
 
 Для реализации потребуется:
 
-*	Microsoft Visual Studio 2015
-*	Microsoft SQL Server
+*	Microsoft Visual Studio 2017 или новее
+*	СУБД PostgreSQL
 *	Редактор кода для клиентской разработки: Visual Studio Code, Atom, Sublime Text и т.п.
 *	Git for Windows
 
@@ -204,8 +204,8 @@ lang: ru
 Для реализации потребуется:
 
 *	Flexberry Designer
-*	Microsoft Visual Studio 2015
-*	Microsoft SQL Server
+*	Microsoft Visual Studio 2017 или новее
+*	СУБД PostgreSQL
 *	Git for Windows
 
 ### Задание

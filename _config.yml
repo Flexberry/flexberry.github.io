@@ -24,7 +24,7 @@ company_name: New Platform Ltd
 github_editme_path: Flexberry/flexberry.github.io/edit/master/
 # if you're using Github, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
 
-disqus: true
+disqus: false
 
 disqus_shortname: flexberry-doc
 # if you're using disqus for comments, add the shortname here. if not, leave this value blank.
@@ -116,6 +116,7 @@ sidebars:
   - ember-flexberry-gis-yandex_sidebar
   - flexberry-aspnet_sidebar
   - flexberry-designer_sidebar
+  - flexberry-designer-online_sidebar
   - flexberry-winforms_sidebar
   - flexberry-odataservice_sidebar
   - flexberry-orm_sidebar

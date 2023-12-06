@@ -28,328 +28,316 @@ lang: ru
 
 ![Связи между полями накладной](/images/pages/guides/flexberry-ember/6-1-autofill-form-elements/6-1-2.png)
 
-## Автоматическое вычисление значений атрибутов внутри одной модели
-
-Рассмотрим настройку варианта логики автоматического вычисления атрибутов внутри одной модели на примере поля "**Цена с налогом**" формы редактирования **Заказа**. Так как это поле находится не среди полей самого Заказа, а в детейле "Содержимое заказа", то нам необходимо открыть исходный код соответствующей модели **Строка заказа**:
-
-*`app → models → i-i-s-shop-order-item.js`*
-
-![Модель заказа](/images/pages/guides/flexberry-ember/6-1-autofill-form-elements/6-1-3.png)
-
-Далее все модификации исходного кода будем производить **в данной модели**. 
-
-Поле "**Цена с налогом**" зависит от **ставки налога**. Добавим соответствующее значение ставки в модель в виде свойства с фиксированным значением:
-
-{% highlight javascript%}
-{% raw %}
-let Model = EmberFlexberryDataModel.extend(OfflineModelMixin, OrderItemMixin, Validations, {
-  taxes: 10,
-}
-{% endraw %}
-{% endhighlight %}
-
-Эта величина будет соответствовать налогу в 10%.
-
-Кроме ставки налога, "Цена с налогом" также зависит от выбранного значения в поле "**Товар**" (а конкретно - от цены товара). Если выбранный товар меняется, то должна измениться и "Цена с налогом". Следовательно, нам нужно необходимо реализовать логику, которая бы отслеживала бы изменения в поле "Товар" как при загрузке формы редактирования заказа, так и при изменении значения в поле "Товар". Для реализации данной логики будем использовать [обзервер](https://guides.emberjs.com/v3.1.0/object-model/observers/):
-
-{% highlight javascript%}
-{% raw %}
-let Model = EmberFlexberryDataModel.extend(OfflineModelMixin, OrderItemMixin, Validations, {
-  taxes: 10,
-
-  /*
-   * Цена с налогом
-   */
-  _priceWTaxesChanged: on('init', observer('product', function() {
-    once(this, '_priceWTaxesCompute');
-  })),
-  _priceWTaxesCompute: function() {
-
-  },
-}
-{% endraw %}
-{% endhighlight %}
-
-**Обзервер** - специальная функция фреймворка Ember.js, которая позволяет выполнять произвольную логику при изменении свойств Ember-объекта, в нашем случае - свойств модели. В обзервере перед функцией-колбэком указывается свойство, за которым мы будем "следить" - свойство **product**. 
-
-{% include warning.html content="Внутри обзервера мы используем специальную функцию [once](https://api.emberjs.com/ember/3.1/functions/@ember%2Frunloop/once), которая позволяет [исключить повторные вызовы колбэк-функции обзервера](https://guides.emberjs.com/v3.1.0/object-model/observers/#toc_observers-and-asynchrony) в случае, если обзервер сработает несколько раз подряд. Это обязательное условие при использовании обзервера в нашем примере, так как он может срабатывать по нескольку раз подряд и вызывать &#34;перегрузку&#34; приложения. Обратите также внимание на то, что при большом количестве активных обзерверов Ember-приложение может перестать работать стабильно из-за большого количества производимых вычислений!" %}
-
-Поскольку мы начали использовать в коде сразу три новых функции - **on**, **once** и **observer**, нужно их импортировать в рассматриваемую модель:
-
-{% highlight javascript%}
-{% raw %}
-import { observer } from '@ember/object';
-import { once } from '@ember/runloop';
-import { on } from '@ember/object/evented';
-{% endraw %}
-{% endhighlight %}
-
-Далее реализуем **логику** внутри метода `_priceWTaxesCompute`, которая на основании "**Цены товара**" будет непосредственно вычислять "**Цену товара с налогом**":
-
-{% highlight javascript%}
-{% raw %}
-let Model = EmberFlexberryDataModel.extend(OfflineModelMixin, OrderItemMixin, Validations, {
-  taxes: 10,
-
-  /*
-   * Цена с налогом
-   */
-  _priceWTaxesChanged: on('init', observer('product', function() {
-    once(this, '_priceWTaxesCompute');
-  })),
-  _priceWTaxesCompute: function() {
-    let product = this.get('product');
-
-    let result = 0; // При добавлении строки, когда товара еще нет
-    if (product) {
-      let price = Number(product.get('price'));
-      let taxes = this.get('taxes') / 100 + 1;
-      result = Number((price * taxes).toFixed(2)); // округление до 2 знаков
-    }
-
-    if (!this.get('isDeleted')) { // проверяем, что текущая модель не была удалена
-      this.set('priceWTaxes', result);
-    }
-  },
-}
-{% endraw %}
-{% endhighlight %}
-
-{% include important.html content="В конце метода обязательно нужно присвоить новое значение соответствующему свойству текущей модели. Это действие выполняется с использованием метода `object.set(property, value)`." %}
-
-Так как в рассмотренном коде мы обращаемся к свойству `price` товара, необходимо **добавить** это свойство в **проекцию OrderE** модели `order` для связи **product**, которая в свою очередь является вложенной в связь **orderItem** (подробнее см. раздел "[Вычислимые свойства и проекции моделей](gpg_computable-properties-and-projections-of-models.html)").
-
-**Проверим** результат на примере добавления нового **Заказа** (или изменения **Заказа** с номером **1**, если ранее он был сохранен - *в этом случае список товаров в нем должен был быть пуст*). На данный момент список товаров в "Содержимом заказа" должен быть пустым. При добавлении новой строки в "Содержимое заказа" "Цена с налогом" имеет значение 0, как и ожидалось:
-
-![Новая строка содержимого заказа](/images/pages/guides/flexberry-ember/6-1-autofill-form-elements/6-1-8.png)
-
-Далее **выберем товар**:
-
-![Вычисление цены с налогом при выборе товара](/images/pages/guides/flexberry-ember/4-2-filling-application-primary-data/4-2-10.png)
-
-После выбор товара мы можем увидеть, что в поле "Цена с налогом" появилась автоматически рассчитанная цена. Проверим расчеты для "Цены с налогом": товар стоил 8990 + 899 (налог) = 9889. Таким образом, "Цена с налогом" была расчитана действительно верно:
-
-![Автоматический расчет цены с налогом](/images/pages/guides/flexberry-ember/6-1-autofill-form-elements/6-1-10.png)
-
-Изменим цену у выбранного нами товара (Монитор Samsung C24F390FHI) на 9000:
-
-![Выбранный товар с измененной ценой](/images/pages/guides/flexberry-ember/6-1-autofill-form-elements/6-1-9.png)
-
-Далее снова откроем **Заказ №1** и обновим страницу:
-
-![Изменившаяся цена с налогом при изменении цены товара](/images/pages/guides/flexberry-ember/6-1-autofill-form-elements/6-1-11.png)
-
-Несмотря на то, что в БД хранится до сих пор значение 9889 (если мы не сохраняли Заказ после изменения цены выбранного товара), обзервер её актуализировал на уровне клиентского приложения.
-
----
-
-**_Самостоятельно_** реализуйте автозаполнение для следующих полей:
-
-**Заказ**  
-**_Содержимое заказа_**
-> "Сумма по позиции" (обзервер на "Цену с налогом" и "Количество")
-
-{% include important.html content="Не забудьте проверить, находится ли модель в состоянии &#34;удаленная&#34; (isDeleted)!" %}
-
-{% include important.html content="Всегда проверяйте, срабатывает ли обзервер при перезагрузке страницы. Если необходимо - расширяйте проекции необходимыми свойствами." %}
-
----
-
-{% include warning.html content="Для того, чтобы обзерверы срабатывали корректно, они должны по &#34;отслеживаемым&#34; свойствам либо быть независимыми друг от друга, либо действовать строго по цепочке.<br><br>
-Например, если добавить для &#34;Строки заказа&#34; два обзервера - на &#34;Цену с налогом&#34; и на &#34;Сумму по позиции&#34;, - и привязать их к изменению Товара или &#34;Товар + Количество&#34; (ведь при изменении Товара или его количества должна изменяться и сумма по позиции) соответственно, то при изменении Товара они будут срабатывать &#34;одновременно&#34;, что будет приводить к некорректному поведению приложения.<br><br>
-В этом случае нужно понимать, что &#34;Сумма по позиции&#34; зависит не от Товара напрямую, а от &#34;Цены с налогом&#34;. Следовательно, вначале должен отработать обзервер на &#34;Цену с налогом&#34;, а уже после его выполнения должен выполняться второй, на &#34;Сумму по позиции&#34;.<br><br>
-Если фактически обзервер зависит от результата выполнения другого обзервера, то в &#34;отслеживаемых&#34; свойствах такого обзервера следует указывать именно свойство с результатом предыдущего обзервера, а не то свойство, которое пользователь будет непосредственно изменять на форме и которое по факту будет являться &#34;начальным триггером&#34; для цепочки изменений." %}
-
 ## Автоматическое вычисление значений атрибутов агрегатора
 
-Автоматическое вычисление значений атрибутов агрегатора на основании атрибутов детейла рассмотрим на следующем примере: **при изменении** у Заказа в любой строке "Содержимого заказа" поля "**Сумма по позиции**" должна также пересчитываться и "**Стоимость заказа**".
+Ранее, [мы реализовали вычислимый атрибут `TotalSum`](gpg_autocomplete-and-data-types.html), но так как его вычисление происходит на сервере, в момент загрузки данных, при редактировании данных на форме, его значение обновляется только после сохранения изменений.
 
-Если в подобной ситуации создать обзервер в самой модели Заказа, то привязать его к модели для "Строки заказа" тогда будет проблематично. Будет проще реализовать функционал пересчета "Стоимости заказа" непосредственно при изменении поля "Сумма по позиции" в конкретной "Строке заказа".
+Чтобы пользователь мог видеть актуальные данные до сохранения, мы можем реализовать аналогичные вычисления на стороне клиента.
+Для этого, реализуем в модели `Order`, вычислимое свойсвто `actualTotalSum`:
 
-Создадим **новый обзервер** в модели "**Строка заказа**", который зависит от поля **totalSum**:
+```js
+// app\models\i-i-s-shop-order.js
 
-{% highlight javascript%}
-{% raw %}
-let Model = EmberFlexberryDataModel.extend(OfflineModelMixin, OrderItemMixin, Validations, {
-  ...
+// ...
 
-  /*
-   * Стоимость заказа
-   */
-  _orderSumChanged: on('init', observer('totalSum', function() {
-    once(this, '_orderSumCompute');
-  })),
-  _orderSumCompute: function() {
-      
-  },
-}
-{% endraw %}
-{% endhighlight %}
+import { computed } from '@ember/object';
 
-{% include warning.html content="Внимательно следим за последовательностью срабатывания связанных обзерверов: priceWTaxes (product) → totalSum (priceWTaxes, amount) → order.totalSum (totalSum)." %}
+let Model = DocumentModel.extend(OrderMixin, Validations, {
+  // ...
 
-Чтобы получить Заказ (агрегатор для "Строки заказа"), достаточно обратиться к соответствующему свойству `order` в модели "Строки заказа", а для подсчета "Суммы заказа" можно перебрать все записи из свойства `orderItem` модели "Заказа", просуммировав соответствующие "Суммы по позиции": 
+  actualTotalSum: computed('orderItem.@each.{amount,priceWTaxes}', function() {
+    return this.get('orderItem').reduce((sum, item) => {
+      const priceWTaxes = Number(item.get('priceWTaxes') || 0);
+      const amount = Number(item.get('amount') || 0);
+      if (Number.isNaN(priceWTaxes) || Number.isNaN(amount)) {
+        throw new Error(`Invalid 'priceWTaxes' or 'amount' for order item: '${item}'.`);
+      }
 
-{% highlight javascript%}
-{% raw %}
-let Model = EmberFlexberryDataModel.extend(OfflineModelMixin, OrderItemMixin, Validations, {
-    
-  ...
+      return sum + priceWTaxes * amount;
+    }, 0);
+  }),
+});
 
-  /*
-   * Стоимость заказа
-   */
-  _orderSumChanged: on('init', observer('totalSum', function() {
-    once(this, '_orderSumCompute');
-  })),
-  _orderSumCompute: function() {
-    let order = this.get('order');
-    let items = order.get('orderItem');
-    let newSum = 0;
-    items.forEach(function (item) {
-      newSum += Number(item.get('totalSum'));
-    });
+// ...
 
-    if (!this.get('isDeleted')) {
-      order.set('totalSum', newSum);
-    }
-  },
-}
-{% endraw %}
-{% endhighlight %}
+export default Model;
+```
 
-Теперь проверим, срабатывает ли обзервер. Для этого изменим количество для существующего товара в Заказе №1 на 2 шт.:
+В шаблоне формы редактирования заказа, вместо свойства `totalSum`, значение которого вычисляется на сервере, будем использовать вычислимое свойство `actualTotalSum`:
 
-![Логика работы автозаполнения стоимости заказа](/images/pages/guides/flexberry-ember/6-1-autofill-form-elements/6-1-14.png)
+```hbs
+{% raw %}{{!-- app\templates\i-i-s-shop-order-e.hbs --}}
 
-Попробуйте сохранить заказ, изменить количество товара, товар, обновить страницу. Если все выполнено правильно, то "Стоимость заказа" должна корректно рассчитываться на основании всех позиций в "Содержимом заказа".
+{{!-- ... --}}
+
+<div class="field">
+  {{flexberry-field
+    readonly=true
+    value=model.actualTotalSum
+    label=(t "forms.i-i-s-shop-order-e.totalSum-caption")
+  }}
+</div>
+
+{{!-- ... --}}{% endraw %}
+```
 
 ---
 
-**_Самостоятельно_** реализуйте автозаполнение для следующих полей:
+**_Самостоятельно_** реализуйте аналогичным способом вычисления для следующих полей:
 
 **Накладная**
-> "Сумма заказа" (обзервер на "Заказ") <sup>1</sup>.
-> "Вес заказа" (обзервер на "Вес" из "Списка товаров к выдаче") <sup>1</sup>.
-
-<sup>1</sup> Поскольку "Список товаров к выдаче" в Накладной должен заполняеться автоматически, а поля "Сумма заказа" и "Вес заказа" должны в свою очередь также рассчитываться автоматически на основании записей из "Списка товаров к выдаче", то на данный момент расчет "Суммы заказа" и "Веса заказа" производиться не будет. Данные обзерверы будут срабатывать после того, как мы далее реализуем автозаполнение "Списка товаров к выдаче" на основе выбранного "Заказа" в Накладной.
+> "Сумма заказа"  
+> "Вес заказа"
 
 ---
+
+## Автоматическое вычисление значений атрибутов внутри одной модели
+
+В [предыдущем параграфе](#автоматическое-вычисление-значений-атрибутов-агрегатора), мы реализовали автоматическое вычисление свойства `TotalSum` модели `Order`.
+Модель `OrderItem` также имеет свойство `TotalSum`, которое по своей логике схоже со свойством `TotalSum` модели `Order`, поэтому, его стоит реализовать схожим образом.
+
+Отметьте свойство `TotalSum` модели `OrderItem` как не хранимое, и реализуйте его, в объектах сервера, так же как [мы сделали это для свойства `TotalSum` модели `Order`](gpg_autocomplete-and-data-types.html#настройка-вычислимых-атрибутов).
+
+Чтобы реализовать отображение актуальной суммы до сохранения изменений, так же реализуем вычислимое свойство `actualTotalSum` в модели `OrderItem` клиентского приложения.
+
+```js
+// app\models\i-i-s-shop-order-item.js
+
+// ...
+
+import { computed } from '@ember/object';
+
+let Model = EmberFlexberryDataModel.extend(OfflineModelMixin, OrderItemMixin, Validations, {
+  // ...
+
+  actualTotalSum: computed('priceWTaxes', 'amount', function() {
+    const price = Number(this.get('priceWTaxes') || 0);
+    const amount = Number(this.get('amount') || 0);
+
+    return (price * amount).toFixed(2);
+  }),
+});
+
+// ...
+
+export default Model;
+```
+
+Разница в этом случае заключается в том что, нам необходимо вывести своство `actualTotalSum` не в форме непосредственно, а в компоненте `{% raw %}{{flexberry-groupedit}}{% endraw %}`.
+Этот компонент не позволяет выводить в столбцах вычислимые свойства, описанные в модели клиентского приложения, однако он позволяет использовать любые компоненты, для отображения свойств модели в ячейках таблицы, этой возможностью мы и воспользуемся.
+
+Сгенерируйте компонент, выполнив следующую команду в консоли:
+
+```cmd
+ember generate component order-item/total-sum
+```
+
+Мы использовали имя модели в названии компонента, чтобы упорядочить эти компоненты, при увеличении их количества, сам компонент не имеет дополнительной логики, поэтому у компонента можно оставить только шаблон.
+
+Компонент, отображаемый в ячейках таблицы компонента `{% raw %}{{flexberry-groupedit}}{% endraw %}`, получает экземпляр модели в качестве параметра `relatedModel`, с его помощью выведем, описанное нами ранее, вычислимое свойство `actualTotalSum`, в шаблоне.
+
+```hbs
+{% raw %}{{!-- app\templates\components\order-item\total-sum.hbs --}}
+
+{{relatedModel.actualTotalSum}}{% endraw %}
+```
+
+Для того чтобы компонент `{% raw %}{{flexberry-groupedit}}{% endraw %}` использовал компонент `{% raw %}{{order-item/total-sum}}{% endraw %}`, для отображения нужного нам свойства в ячейках таблицы, будем использовать метод `getCellComponent` соответствующего контроллера.
+Метод `getCellComponent` вызывается для каждого свойства, отображаемого в таблице, компонентом `{% raw %}{{flexberry-groupedit}}{% endraw %}`, и должен вернуть объект с описанием настроек компонента, который будет использован для отображения соответствующего свойства в каждой строке таблицы.
+
+```js
+// app\controllers\i-i-s-shop-order-e.js
+
+// ...
+
+export default EditFormController.extend({
+  // ...
+
+  getCellComponent(attr, bindingPath, model) {
+    let cellComponent = this._super(...arguments);
+
+    // ...
+
+    if (bindingPath === 'totalSum') {
+      cellComponent.componentName = 'order-item/total-sum';
+    }
+
+    return cellComponent;
+  },
+
+  // ...
+});
+```
+
+После этого, компонент `{% raw %}{{flexberry-groupedit}}{% endraw %}` для отображения свойства `totalSum` в ячейке таблицы, будет использовать компонент `{% raw %}{{order-item/total-sum}}{% endraw %}`.
+
+В модели `OrderItem` есть ещё одно свойство, схожее со свойством `TotalSum`, свойство `PriceWTaxes` - это цена продукта умноженная на ставку налога.
+Однако, в данном случае, использование вычислимого свойства, не совсем то что нам нужно, по скольку цена должна быть зафиксирована на момент оформления заказа, и не должна изменяться при изменении ставки налога.
+Также, в данном случае, вычисления желательно выполнть на сервере, или как минимум валидировать их при сохранении, для этого создадим бизнес-сервер для модели `OrderItem`.
+
+Чтобы создать бизнес-сервер, добавьте новый класс на диаграмме классов, и установите ему стереотип `«businessserver»`. Классы бизнес-серверов принято именовать добавляя окончание `BS` к имени класса модели, которую он будет обрабатывать, поэтому, дадим нашему классу имя `OrderItemBS`.
+
+![Добавление класса бизнесс-сервера](/images/pages/guides/flexberry-ember/6-1-autofill-form-elements/6-1-3.png)
+
+После добавления класса бизнес-сервера, его необходимо связать с моделью, которую он будет обрабатывать, для этого откройте окно редактирования свойств класса модели `OrderItem`, и выберете нужный класс в поле `BSClass`. После выбора класса бизнес-сервера, под полем `BSClass` появиться ещё один список элементов, в нём оставьте значение `OnAllEvents`.
+
+![Связь модели и бизнесс-сервера](/images/pages/guides/flexberry-ember/6-1-autofill-form-elements/6-1-4.png)
+
+Теперь нам нужно сгенерировать добавленный класс и изменения в классе модели, для этого нажмите правой кнопкой мыши на стадии `Стадия (ember)`, в меню выберите `ORM`, затем `C#`, и нажмите `Генерировать`. В диалоговом окне со списком проектов для генерации выберете `Все` и нажмите `ОК`.
+
+![Генерация измменений](/images/pages/guides/flexberry-ember/6-1-autofill-form-elements/6-1-5.png)
+
+Более подробно с бизнес-серверами можно познакомиться в статье [Бизнес-серверы и режим отладки](gpg_business-servers-and-debug-mode.html).
+
+После генерации в проекте был добавлен класс `OrderItemBS` с методом `OnUpdateOrderItem`, в котором нам необходимо описать логику работы бизнес-сервера.
+Напомню, что бизнес-сервер должен вычислить цену продукта с налогом, и записать её в свойство модели `PriceWTaxes`.
+
+Для получения ставки налога, скорее всего, необходимо реализовать отдельный класс, предоставляющий эту функцию, но в данной статье мы не будем рассамтривать этот пример.
+Вместо этого, сохраним ставку налога в свойстве `TAXES` класса `OrderItemBS`.
+Метод `OnUpdateOrderItem` получает в качестве первого и единственого параметра, экземпляр класса `OrderItem` над которым выполняется операция.
+Для создаваемых или изменяемых объектов, будем загружать продукт, на который ссылается этот объект и вычислять для него цену с налогом.
+
+```csharp
+// Shop\BusinessServers\OrderItemBS.cs
+
+// ...
+
+public class OrderItemBS : ICSSoft.STORMNET.Business.BusinessServer
+{
+
+    // *** Start programmer edit section *** (OrderItemBS CustomMembers)
+    public const int TAXES = 10;
+    // *** End programmer edit section *** (OrderItemBS CustomMembers)
+
+
+    // *** Start programmer edit section *** (OnUpdateOrderItem CustomAttributes)
+
+    // *** End programmer edit section *** (OnUpdateOrderItem CustomAttributes)
+    public virtual ICSSoft.STORMNET.DataObject[] OnUpdateOrderItem(IIS.Shop.OrderItem UpdatedObject)
+    {
+        // *** Start programmer edit section *** (OnUpdateOrderItem)
+        ICSSoft.STORMNET.ObjectStatus objectStatus = UpdatedObject.GetStatus();
+        if (objectStatus == ICSSoft.STORMNET.ObjectStatus.Created || objectStatus == ICSSoft.STORMNET.ObjectStatus.Altered)
+        {
+            var product = new IIS.Shop.Product();
+
+            product.SetExistObjectPrimaryKey(UpdatedObject.Product.__PrimaryKey);
+            DataService.LoadObject(IIS.Shop.Product.Views.ProductL, product);
+
+            double coefficient = TAXES / 100d + 1d;
+
+            UpdatedObject.PriceWTaxes = product.Price * coefficient;
+        }
+
+        return new ICSSoft.STORMNET.DataObject[0];
+        // *** End programmer edit section *** (OnUpdateOrderItem)
+    }
+}
+```
+
+После реализации биснес-сервера, цена с налогом будет вычисляться и сохраняться при добавлении или изменении содержимого заказа.
+
+---
+
+**_Самостоятельно_** реализуйте отображение актуальной цены с налогом при редактировании содержимого заказа, так же как мы сделали это для свойства `TotalSum`.
 
 ## Автозаполнение списка детейлов
 
-Автоматически можно вычислять не только значения собственных атрибутов модели, но также при необходимости и изменять перечень связанных записей.
+В качестве примера рассмотрим логику автозаполнения детейла **Список товаров к выдаче** в **Накладной** на основе выбранного **Заказа**.
+Для этого воспользуемся возможностью переопределения обработчика события изменения значения в компоненте `{% raw %}{{flexberry-lookup}}{% endraw %}`.
 
-В качестве примера рассмотрим логику автозаполнения детейла **Список товаров к выдаче** в **Накладной** на основе выбранного **Заказа**:
+Опишем в контроллере формы редактирования накладной соответствующий обработчик:
 
-*`app → models → i-i-s-shop-invoice.js`*
+```js
+// app\controllers\i-i-s-shop-invoice-e.js
 
-![Модель накладной с реализованной суммой заказа](/images/pages/guides/flexberry-ember/6-1-autofill-form-elements/6-1-15.png)
+// ...
 
-Создадим **новый обзервер**, добавив следующий код:
-
-{% highlight javascript%}
-{% raw %}
+import Builder from 'ember-flexberry-data/query/builder';
 import generateUniqueId from 'ember-flexberry-data/utils/generate-unique-id';
-import { buildValidations } from 'ember-cp-validations';
-{% endraw %}
-{% endhighlight %}
 
-{% highlight javascript%}
-{% raw %}
-/*
-   * Список товаров к выдаче
-   */
-  _invoiceItemChanged: on('init', observer('order', function() {
-      once(this, '_invoiceItemCompute');
-  })),
-  _invoiceItemCompute: function() {
-    var me = this;
+export default EditFormController.extend({
+  // ...
 
-    if (!this.get('isDeleted')) {
-      // Удаляем старые детейлы
-      let currentItems = me.get('invoiceItem');
-      currentItems.forEach(function (item) {
+  orderItemsLoading: false,
+
+  actions: {
+    orderChanged({ modelToLookup: invoice, newRelationValue: order }) {
+      invoice.set('order', order);
+      invoice.get('invoiceItem').toArray().forEach((item) => {
         item.deleteRecord();
       });
 
-      let order = me.get('order');
       if (order) {
-        let store = this.get('store');
-        let orderId = order.get('id');
+        this.set('orderItemsLoading', true);
 
-        let builder = new Builder(store, 'i-i-s-shop-order');
-        builder.selectByProjection('OrderE');
-        builder.byId(orderId);
+        const store = this.get('store');
+        const modelName = 'i-i-s-shop-order-item';
 
-        store.query('i-i-s-shop-order', builder.build())
-          .then(function (orders) {
-            orders.forEach(function(order) {
-              let items = order.get('orderItem');
-              items.forEach(function(item) {
-                let product = item.get('product');
-                let amount = Number(item.get('amount'));
+        const query = new Builder(store, modelName)
+          .selectByProjection('OrderItemE')
+          .where('order', 'eq', order.get('id'))
+          .build();
 
-                let weight = Number(product.get('weight'));
-                let totalWeight = Number((weight * amount).toFixed(3));
+        store.query(modelName, query).then((orderItems) => {
+          const invoiceItems = orderItems.map((orderItem) => {
+            const id = generateUniqueId();
+            const price = orderItem.get('priceWTaxes');
+            const totalSum = orderItem.get('totalSum');
+            const product = orderItem.get('product');
+            const amount = Number(orderItem.get('amount'));
+            const weight = Number(product.get('weight')) * amount;
 
-                // Создаем новый детейл
-                let invoiceItem = store.createRecord('i-i-s-shop-invoice-item', {
-                  id: generateUniqueId(),
-                  amount: amount,
-                  weight: totalWeight,
-                  price: item.get('priceWTaxes'),
-                  totalSum: item.get('totalSum'),
-                  product: product
-                });
+            return store.createRecord('i-i-s-shop-invoice-item', { id, amount, weight, price, totalSum, product, invoice });
+          });
 
-                // Добавляем детейл в список
-                me.get('invoiceItem').pushObject(invoiceItem);
-              });
-            });
+          invoice.get('invoiceItem').pushObjects(invoiceItems);
+        }).finally(() => {
+          this.set('orderItemsLoading', false);
         });
-      } else {
-        this.set('totalWeight', 0);
       }
     }
-  }
-{% endraw %}
-{% endhighlight %}
+  },
 
-Детейлы создаются путем вызова метода [createRecord](https://guides.emberjs.com/v3.1.0/models/creating-updating-and-deleting-records/#toc_creating-records), которая создает в store новую запись. Особо стоит отметить необходимость генерировать **id** для новых записей детейла, которые создаются программно: для этого используется утилита [generateUniqueId](https://github.com/Flexberry/ember-flexberry-data/blob/develop/addon/utils/generate-unique-id.js) аддона `ember-flexberry-data`.
+  // ...
+});
+```
 
-Связываются детейлы с агрегатором с использованием метода [pushObject](https://guides.emberjs.com/v3.1.0/models/relationships/#toc_creating-records) у соответствующего свойства агрегатора со связью `hasMany`, которое представляет собой массив записей.
+В шаблоне формы редактирования накладной, установим имя описанного обработчика в качестве значения свойства `updateLookupAction` для соответсвующего компонента `{% raw %}{{flexberry-lookup}}{% endraw %}`:
 
-Для того, чтобы список детейлов обновлялся в режиме реального времени, добавим свойство **searchForContentChange** в соответствующий компонент в шаблоне формы редактирования Накладной:
+```hbs
+{% raw %}{{!-- app\templates\i-i-s-shop-invoice-e.hbs --}}
 
-*`app → templates → i-i-s-shop-invoice-e.hbs`*
+{{!-- ... --}}
 
-{% highlight handlebars%}
-{% raw %}
 <div class="field">
-    <label>{{t "forms.i-i-s-shop-invoice-e.invoiceItem-caption"}}</label>
-    {{flexberry-groupedit
-      componentName="invoiceItemGroupEdit"
-      mainModelProjection=modelProjection
-      modelProjection=modelProjection.attributes.invoiceItem
-      content=model.invoiceItem
-      readonly=true
-      createNewButton=false
-      deleteButton=false
-      showCheckBoxInRow=false
-      showDeleteButtonInRow=false
-      defaultSortingButton=false
-      defaultSettingsButton=false
-      orderable=false
-      searchForContentChange=true
-      class=(if (v-get validationObject "invoiceItem" "isInvalid") "error")
-    }}
-    {{flexberry-validationmessage error=(v-get validationObject "invoiceItem" "messages")}}
+  <label>{{t "forms.i-i-s-shop-invoice-e.order-caption"}}</label>
+  {{flexberry-lookup
+    choose="showLookupDialog"
+    remove="removeLookupValue"
+    value=model.order
+    displayAttributeName="number"
+    autocomplete=true
+    relationName="order"
+    projection="OrderL"
+    title=(t "forms.i-i-s-shop-invoice-e.order-caption")
+    readonly=(or readonly orderItemsLoading)
+    componentName="orderLookup"
+    updateLookupAction="orderChanged"
+  }}
+  {{flexberry-validationmessage error=(v-get validationObject "order" "messages")}}
 </div>
-{% endraw %}
-{% endhighlight %}
 
-**Проверим** работоспособность созданного обзервера. Для этого создадим **новый заказ**:
+{{!-- ... --}}{% endraw %}
+```
+
+Детейлы создаются путем вызова метода [createRecord](https://guides.emberjs.com/v3.1.0/models/creating-updating-and-deleting-records/#toc_creating-records), который создает в `store` новую запись. Особо стоит отметить необходимость генерировать **id** для новых записей детейла, которые создаются программно: для этого используется утилита [generateUniqueId](https://github.com/Flexberry/ember-flexberry-data/blob/develop/addon/utils/generate-unique-id.js) аддона `ember-flexberry-data`.
+
+Связываются детейлы с агрегатором с использованием метода [pushObjects](https://guides.emberjs.com/v3.1.0/models/relationships/#toc_creating-records) у соответствующего свойства агрегатора со связью `hasMany`, которое представляет собой массив записей.
+
+Также в обработчике, на время пока выполняется запрос для загрузки строк выбранного заказа, устанавливается свойство `orderItemsLoading` в значение `true`, чтобы компонент был заблокирован, и пользователь не имел возможности изменить заказ, пока обработчик не отработает полностью.
+
+**Проверим** работоспособность реализованного обработчика. Для этого создадим **новый заказ**:
 
 **Заказ 2**
 > *<u>Менеджер</u>*: Евгеньева (Евгения Евгеньевна, таб. номер 4)  
@@ -365,7 +353,7 @@ import { buildValidations } from 'ember-cp-validations';
 
 ![Новая накладная с заказом №2](/images/pages/guides/flexberry-ember/6-1-autofill-form-elements/6-1-20.png)
 
-При выборе заказа у нас сразу добавилась сумма заказа, одновременно с этим отработал обзервер на добавление строк накладной, а после этого - ранее написанный скрипт на Вес заказа. При изменении заказа строки изменятся, т.к. в коде мы каждый раз удаляем все строки из списка товаров к выдаче и добавляем их заново.
+При выборе заказа у нас сразу добавилась сумма заказа, одновременно с этим отработал реализованный обработчик на добавление строк накладной, а после этого - ранее написанный скрипт на вес заказа. При изменении заказа строки изменятся, т.к. в коде мы каждый раз удаляем все строки из списка товаров к выдаче и добавляем их заново.
 
 {% include warning.html content="Начиная с версии ember-flexberry@3.0.0 существует проблема с удалением агрегаторов, у которых программным (не ручным) методом добавляются строки детейла. Также иногда наблюдается ошибка при добавлении новых записей.<br><br>
 Эти ошибки исправлены в версии ember-flexberry@3.4.0 и не требуют исправления в коде приложения." %}

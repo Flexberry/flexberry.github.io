@@ -120,4 +120,3 @@ After you export your collections to start a prepared collection of tests on the
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

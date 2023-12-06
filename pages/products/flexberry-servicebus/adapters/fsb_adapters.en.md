@@ -45,4 +45,3 @@ The type and format of the request depends on the [transfer method](fsb_thesauru
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

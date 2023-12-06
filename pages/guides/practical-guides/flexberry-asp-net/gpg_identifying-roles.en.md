@@ -38,4 +38,3 @@ Thus, the listed user roles must be available the following functions (the permi
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

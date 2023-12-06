@@ -97,4 +97,3 @@ Examples of the CRUD and aggregation operations specified in the previous sectio
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -50,4 +50,3 @@ After switching it on, you need to restart `ember serve` to configuration change
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

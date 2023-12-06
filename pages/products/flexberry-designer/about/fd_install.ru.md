@@ -14,44 +14,43 @@ lang: ru
 
 * SQL Server 2012 Express LocalDB (и выше)
 * Windows Installer 4.5
-* Microsoft .NET Framework 4 (x86 and x64)
-* .NET Framework 3.5 SP1
+* Microsoft .NET Framework 4.5.2 (x86 and x64)
 
 ## Алгоритм установки Flexberry Designer
 
 *При установке система может запрашивать разрешения на установку, во всех случаях необходимо их дать.*
 
-1.Зарегистрироваться на сайте [Flexberry.net](https://flexberry.net), если это не было сделано ранее.
+1. Зарегистрироваться на сайте [Flexberry.net](https://flexberry.net), если это не было сделано ранее.
 
-2.Нажать на кнопку [Попробовать](https://designer.flexberry.net/#/fd-try) в разделе `Разработчикам`, далее перейти по ссылке `Скачать Flexberry Designer`, после чего нажать на кнопку `Установить` в открывшемся разделе [Лицензии](https://designer.flexberry.net/#/download-win-app).
+2. Нажать на кнопку [Попробовать](https://designer.flexberry.net/#/fd-try) в разделе `Разработчикам`, далее перейти по ссылке `Скачать Flexberry Designer`, после чего нажать на кнопку `Установить` в открывшемся разделе [Лицензии](https://designer.flexberry.net/#/download-win-app).
 
-3.При скачивании приложения в `Google Chrome` браузер может заблокировать загрузку. Требуется дополнительно разрешить данную загрузку.
+3. При скачивании приложения в `Google Chrome` браузер может заблокировать загрузку. Требуется дополнительно разрешить данную загрузку.
 
 ![Пример](/images/pages/products/flexberry-designer/about/save-chrome.png)
 
-5.Запустить загруженный установщик.
+4. Запустить загруженный установщик.
 
-6.Если при установке возникнет диалоговое окно, изображённое ниже, то необходимо в этом окне нажать "Подробнее" и дать приложению необходимые разрешения.
+5. Если при установке возникнет диалоговое окно, изображённое ниже, то необходимо в этом окне нажать "Подробнее" и дать приложению необходимые разрешения.
 
 ![Пример](/images/pages/products/flexberry-designer/about/let-setup0.png)
 
 ![Пример](/images/pages/products/flexberry-designer/about/let-setup.png)
 
-7.Подтвердить установку приложения.
+6. Подтвердить установку приложения.
 
 ![Пример](/images/pages/products/flexberry-designer/about/let-setup2.png)
 
-8.Если всё необходимое ПО установлено, то установка будет выполнена достаточно быстро (либо дополнительно будет выполнена установка необходимого ПО).
+7. Если всё необходимое ПО установлено, то установка будет выполнена достаточно быстро (либо дополнительно будет выполнена установка необходимого ПО).
 
 ![Пример](/images/pages/products/flexberry-designer/about/install-designer.png)
 
 ![Пример](/images/pages/products/flexberry-designer/about/let-setup3.png)
 
-9.Ввести логин (E-mail) и пароль, указанные при [регистрации на сайте Flexberry.net](https://designer.flexberry.net/#/fd-try) для получения лицензий.
+8. Ввести логин (E-mail) и пароль, указанные при [регистрации на сайте Flexberry.net](https://designer.flexberry.net/#/fd-try) для получения лицензий.
 
 ![Пример](/images/pages/products/flexberry-designer/about/login-flexberry2.png)
 
-10.Выбрать путь, куда будут генерироваться приложения, спроектированные при помощи Flexberry Designer.
+9. Выбрать путь, куда будут генерироваться приложения, спроектированные при помощи Flexberry Designer.
 
 ![Пример](/images/pages/products/flexberry-designer/about/set-generation-path.png)
 
@@ -71,15 +70,15 @@ lang: ru
 
 Для того чтобы установить обновления для Flexberry Desinger, необходимо выполнить следующие шаги:
 
-1.Открыть раздел [Лицензии](https://designer.flexberry.net/#/download-win-app) и нажать кнопку `Установить`.
+1. Открыть раздел [Лицензии](https://designer.flexberry.net/#/download-win-app) и нажать кнопку `Установить`.
 
 *Может потребоваться залогиниться на сайт, если это не было сделано ранее. При скачивании приложения в Google Chrome браузер может заблокировать загрузку. Требуется дополнительно разрешить данную загрузку.*
 
-2.Запустить загруженный установщик.
+2. Запустить загруженный установщик.
 
-3.Ввести логин/пароль от сайта [Flexberry.net](https://designer.flexberry.net/#/fd-try) для получения лицензий.
+3. Ввести логин/пароль от сайта [Flexberry.net](https://designer.flexberry.net/#/fd-try) для получения лицензий.
 
-4.Определить путь, куда приложение будет генерироваться.
+4. Определить путь, куда приложение будет генерироваться.
 
 Подключить используемую ранее базу данных можно при помощи пункта меню `Настройки/Сменить БД` с последующим введением строки соединения c базой данных.
 
@@ -89,7 +88,7 @@ lang: ru
 
 При обновлении `Flexberry Designer` с использованием `LocalDB` алгоритм обновления несколько иной:
 
-1.Необходимо сделать backup FlexberryDesigner.mdf:
+1. Необходимо сделать backup FlexberryDesigner.mdf:
 
 * Использовать панель задач:
 
@@ -106,9 +105,9 @@ lang: ru
   * Запустить диспетчер задач, найти в списке запущенных приложений `Flexberry Designer`.
   * Кликнуть по нему правой кнопкой и выбрать пункт "Открыть расположение файла" - открыт каталог, в котором требуется найти и скопировать в другую папку файл `FlexberryDesigner.mdf`.
 
-2.Обновить `Flexberry Designer`.
+2. Обновить `Flexberry Designer`.
 
-3.Далее по указаному в п.1 данного раздела алгоритму подменить файл `FlexberryDesigner.mdf` на сохраненный ранее.
+3. Далее по указаному в п.1 данного раздела алгоритму подменить файл `FlexberryDesigner.mdf` на сохраненный ранее.
 
 ## Возможные проблемы при установке Flexberry Designer
 
@@ -116,15 +115,15 @@ lang: ru
 
 На данный момент в ClickOnce-установщиках Microsoft есть проблемы с автоматической установкой некоторых компонентов, поэтому перед установкой Flexberry Designer требуется:
 
-1.Вручную установить Microsoft SQL Server 2012 Express вместе с LocalDB:
+1. Вручную установить Microsoft SQL Server 2012 Express вместе с LocalDB:
 
 <https://www.microsoft.com/ru-ru/download/details.aspx?id=29062>
 
-2.Вручную установить Microsoft SQL Server® 2012 Native Client:
+2. Вручную установить Microsoft SQL Server® 2012 Native Client:
 
 <https://www.microsoft.com/ru-ru/download/details.aspx?id=50402>
 
-3.Вручную установить Microsoft SQL Server® 2012 Command Line Tools:
+3. Вручную установить Microsoft SQL Server® 2012 Command Line Tools:
 
 <https://www.microsoft.com/ru-ru/download/details.aspx?id=35580>
 

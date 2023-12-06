@@ -33,4 +33,3 @@ Sample name field detail - `DetailName (n)(LinkedPrimaryKey)` where DetailName -
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

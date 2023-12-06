@@ -36,4 +36,3 @@ on the controls page. At the time of calling this method, all controls on the pa
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

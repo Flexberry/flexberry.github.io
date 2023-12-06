@@ -55,4 +55,3 @@ Inside a single method you can not do sub-contexts, except in the case when a ne
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

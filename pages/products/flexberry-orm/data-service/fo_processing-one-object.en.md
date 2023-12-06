@@ -47,4 +47,3 @@ It is important to consider `.Net`-attribute [AutoAltered](fo_object-status.html
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

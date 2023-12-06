@@ -192,4 +192,3 @@ public override void Edited(ICSSoft.STORMNET.DataObject dataobject, string contp
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -316,4 +316,3 @@ To display multiple cubes in one schema function create the virtual cubes. This 
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

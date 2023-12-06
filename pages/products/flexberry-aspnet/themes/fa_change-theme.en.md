@@ -65,4 +65,3 @@ By default, the as many as five pieces (recommended theme-BaseTheme immediately 
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

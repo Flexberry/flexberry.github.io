@@ -42,4 +42,3 @@ The registration form needs to be interactive – if the correctness of sending 
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

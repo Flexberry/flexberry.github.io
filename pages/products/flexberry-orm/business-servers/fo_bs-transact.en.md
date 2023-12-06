@@ -45,4 +45,3 @@ Now when you create an object type And will automatically generate the copy - an
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

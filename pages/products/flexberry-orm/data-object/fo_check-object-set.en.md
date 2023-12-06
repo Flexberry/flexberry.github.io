@@ -39,4 +39,3 @@ Other methods of data validation on the form described in the article [data Vali
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

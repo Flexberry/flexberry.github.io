@@ -69,4 +69,4 @@ It is believed that platform .NET Framework has been the response of Microsoft o
 * [ASP.NET](gbt_aspnet.html)
 * [Course home page](gbt_landing-page.html)
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}
+

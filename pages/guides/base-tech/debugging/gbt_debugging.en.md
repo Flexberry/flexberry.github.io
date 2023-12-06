@@ -100,4 +100,3 @@ Now you can debug from Monodevelop under Windows environment. Open debug in the 
 * [Course home page](gbt_landing-page.html)
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

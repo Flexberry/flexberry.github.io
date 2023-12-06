@@ -32,4 +32,3 @@ The ability to customize the display [WOLV](fa_web-object-list-view.html) via CS
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -52,4 +52,3 @@ On bekende therefore need to publish using the ODataService Assembly audit and A
 "%}
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -69,4 +69,3 @@ This can be solved, for example, a row lock in the [AGE](fa_ajax-group-edit.html
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

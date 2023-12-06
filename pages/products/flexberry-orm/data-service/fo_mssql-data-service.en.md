@@ -23,4 +23,3 @@ When specifying MSSQLDataService as a service data string is used `ICSSoft.STORM
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -4,7 +4,7 @@
 entries:
 - title: Sidebar
   product: Flexberry ORM
-  version: 5.0.2
+  version: 6.0.0
   folders:
 
   - title: О Flexberry ORM
@@ -623,6 +623,16 @@ entries:
       url: /fo_metadata-for-client.html
       output: web
 
+    - title: OData-controllers debugging
+      title_ru: Отладка OData-контроллеров
+      url: /fo_orm-odata-debug.html
+      output: web
+
+    - title: Instructions for debugging project code with ORM.ODataService at runtime
+      title_ru: Инструкция по отладке кода проекта с ORM.ODataService во время выполнения
+      url: /fo_debugging-odatabackend-runtime.html
+      output: web
+
   - title: Монитор SQL-запросов
     output: web, pdf
     folderitems:
@@ -681,6 +691,10 @@ entries:
     - title: Serializing and Deserializing Data Objects
       title_ru: Сериализация и десериализация объектов данных
       url: /fo_aggregating-function.html
+      output: web
+    - title: Asynchronous requests in ORM
+      title_ru: Асинхронные запросы в ORM
+      url: /fo_asynchronous_requests_in_orm.html
       output: web
     - title: Associating pictures with data classes
       title_ru: Ассоциирование картинок с классами данных

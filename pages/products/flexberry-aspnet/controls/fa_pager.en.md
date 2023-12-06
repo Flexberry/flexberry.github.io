@@ -103,4 +103,3 @@ You should pay attention to the fact that when you specify a nonexistent page nu
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

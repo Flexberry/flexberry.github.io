@@ -55,4 +55,3 @@ To create an implementation of «precedent invoiced» is to build a diagram of c
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

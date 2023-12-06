@@ -170,4 +170,3 @@ Also have the ability to programmatically set the name of the application using 
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

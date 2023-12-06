@@ -46,4 +46,3 @@ The radio button is responsible for choosing the format and method of formation 
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

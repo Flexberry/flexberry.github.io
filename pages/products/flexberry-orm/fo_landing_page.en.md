@@ -52,4 +52,3 @@ Storage types and the corresponding [data services](fo_standard-data-services.ht
 The sample application source code is available at the following location: <https://github.com/Flexberry/FlexberryORM-DemoApp>.
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -22,4 +22,3 @@ In ember-addon [ember-flexberry](ef2_landing_page.html) the following services a
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

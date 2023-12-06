@@ -65,4 +65,3 @@ Sets the representation of the underlying object.
 Similarly `MasterViewName` relevant to cases of succession, but this time involved in the inheritance base object and not the master. Set in a pair of `ObjectTypeName`.
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -25,4 +25,3 @@ Then you will be asked a standard print setup that allows you to send a document
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

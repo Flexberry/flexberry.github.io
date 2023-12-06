@@ -20,4 +20,3 @@ Some recommendations when to choose a representation of themselves [masters](fd_
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

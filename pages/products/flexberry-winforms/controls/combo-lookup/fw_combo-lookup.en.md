@@ -38,4 +38,3 @@ So the changes into effect you need to manually remove all the code associated w
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

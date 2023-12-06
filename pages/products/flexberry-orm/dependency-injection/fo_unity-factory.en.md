@@ -42,4 +42,3 @@ IService serviceInstance = container.Resolve<IService>();
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

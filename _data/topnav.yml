@@ -16,16 +16,18 @@ topnav_dropdowns:
           - title: Flexberry PLATFORM
             title_ru: Платформа Flexberry
             url: /fp_landing_page.html
-          - title: Flexberry Designer
-            url: /fd_landing_page.html
+          - title: Flexberry Designer Desktop
+            url: /fd_flexberry-designer.html
+          - title: Flexberry Designer Online
+            url: /fdo_landing_page.html
           - title: Flexberry Ember
             url: /ef3_landing_page.html
           - title: Flexberry ASP.NET
             url: /fa_landing_page.html
           - title: Flexberry Winforms
             url: /fw_landing_page.html
-          - title: Flexberry Foundation
-            url: /ff_landing_page.html
+          - title: Flexberry Base
+            url: /fb_landing_page.html
           - title: Flexberry GIS
             url: /fg_landing_page.html
           - title: Flexberry Service Bus

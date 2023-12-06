@@ -84,4 +84,3 @@ In December 2011 frame web apps, SproutCore 2.0 was renamed to Ember.js in order
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

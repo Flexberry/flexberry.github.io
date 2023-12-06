@@ -206,4 +206,3 @@ Check interfaces `ISecurityManager` and `IUserSettingsService` in section `unity
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

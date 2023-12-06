@@ -73,4 +73,3 @@ For details, see [Restriction of operations with date and time](fo_restriction-d
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

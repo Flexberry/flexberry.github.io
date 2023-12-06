@@ -87,4 +87,3 @@ Full list this item opens the [idpage](uiuxg_sidepage.EN.md).
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

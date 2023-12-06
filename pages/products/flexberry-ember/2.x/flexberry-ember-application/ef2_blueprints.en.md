@@ -314,4 +314,3 @@ When developing the Blueprint generator is used TypeScript. As a code editor for
 ```
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

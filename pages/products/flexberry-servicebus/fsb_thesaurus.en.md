@@ -35,4 +35,3 @@ summary: Key terms and definitions related to Flexberry Service Bus.
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

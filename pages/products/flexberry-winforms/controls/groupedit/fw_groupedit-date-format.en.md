@@ -49,4 +49,3 @@ In this example, `this.ДвижениеОтказа` type is `GroupEdit`.
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -64,4 +64,3 @@ JSHint is a static code analysis tool used in software development to check comp
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -98,4 +98,3 @@ When working with a map it is sometimes necessary to control some of its functio
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

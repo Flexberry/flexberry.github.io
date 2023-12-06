@@ -27,4 +27,3 @@ When specifying ODBCAccessDataService as a service data string is used
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

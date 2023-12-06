@@ -113,4 +113,3 @@ It is necessary to allocate property is added to the view and click one of the c
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

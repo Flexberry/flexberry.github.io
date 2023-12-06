@@ -121,4 +121,3 @@ Predictive Web applications described in [Predictive Web applications](fa_predic
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

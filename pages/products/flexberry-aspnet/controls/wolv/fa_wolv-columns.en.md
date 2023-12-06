@@ -24,4 +24,3 @@ The current setting for the list is stored for each user separately in the table
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

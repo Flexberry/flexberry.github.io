@@ -78,4 +78,3 @@ Currently, both projects share a common code base. Activiti is more focused on d
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

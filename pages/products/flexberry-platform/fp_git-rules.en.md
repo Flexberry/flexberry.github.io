@@ -85,4 +85,3 @@ Send zafiksirovany changes from your local repository to the remote - `git push 
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

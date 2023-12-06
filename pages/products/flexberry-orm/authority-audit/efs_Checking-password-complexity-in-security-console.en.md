@@ -49,4 +49,3 @@ Configuring password authentication is stored in the "'configuration file"'.
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

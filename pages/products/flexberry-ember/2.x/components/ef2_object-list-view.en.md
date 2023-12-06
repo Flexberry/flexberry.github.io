@@ -99,6 +99,7 @@ The component name |description
 `editFormRoute`| Specifies the name of the route edit form, which will open the model.
 `singleColumnHeaderTitle`| Header for mobile view component, instead of column names. If not specified or equal to "" then the header of the table in the component is hidden.
 `colsConfigButton`| Flag (`true`/`false`) enable/disable the display of buttons in the user settings.
+`editInModal`| Flag that determines whether to open the edit form in a modal window.
 
 Default values:
 
@@ -112,7 +113,8 @@ rowClickable: true,
 showCheckBoxInRow: false,
 showDeleteButtonInRow: false,
 showDeleteMenuItemInRow: false,
-showEditMenuItemInRow: true
+showEditMenuItemInRow: true,
+editInModal: false
 colsConfigButton - true
 ```
 
@@ -205,4 +207,3 @@ If [service user settings](ef2_model-user-settings-service.html) is enabled, whe
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

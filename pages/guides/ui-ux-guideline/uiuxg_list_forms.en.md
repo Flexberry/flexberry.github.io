@@ -82,4 +82,3 @@ On the form in the header row there is a button mass selection. When clicked, a 
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

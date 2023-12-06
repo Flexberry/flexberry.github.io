@@ -54,4 +54,3 @@ The result of this step was created a Cordova app and made the initial setup of 
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

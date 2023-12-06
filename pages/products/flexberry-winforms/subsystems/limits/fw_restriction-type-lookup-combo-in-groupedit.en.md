@@ -16,4 +16,3 @@ Initially it was assumed that this field records the serialized instance of the 
 Now the «setting up sample» we can write the expression for _funcSQL_.
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

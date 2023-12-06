@@ -162,4 +162,3 @@ There is the possibility of configuration operations and reporting, which be an 
 ```
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

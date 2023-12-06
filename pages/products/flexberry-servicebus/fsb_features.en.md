@@ -75,4 +75,3 @@ One of the possible variants of interaction with the bus is to run queries on [H
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -21,4 +21,3 @@ It is necessary for the correct operation of the restrictions.
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

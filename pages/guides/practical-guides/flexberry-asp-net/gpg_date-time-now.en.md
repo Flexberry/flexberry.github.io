@@ -35,4 +35,3 @@ __Note:__ According to `C#` initializers are equivalent to the class constructor
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

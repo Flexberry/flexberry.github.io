@@ -146,4 +146,3 @@ Under Windows 8 and 10 such problems at the moment were recorded.
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

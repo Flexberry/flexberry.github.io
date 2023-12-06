@@ -59,4 +59,3 @@ If the database specified in the connection string does not exist it will be cre
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -55,4 +55,3 @@ In this article you can find a description of the basic principles of revision o
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -41,4 +41,3 @@ If an error occurs, a feedback form needs to be interactive. It is necessary to 
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

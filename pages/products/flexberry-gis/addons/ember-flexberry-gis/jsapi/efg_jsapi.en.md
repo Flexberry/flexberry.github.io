@@ -106,4 +106,3 @@ And if you need to get rid of the previously created instance of any team, then 
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

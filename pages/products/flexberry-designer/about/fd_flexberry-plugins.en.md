@@ -62,4 +62,3 @@ Before using the modules, they should be connected to `Flexberry Designer`:
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

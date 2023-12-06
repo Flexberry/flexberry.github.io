@@ -170,4 +170,3 @@ For a quick cleanup of the folder can not delete folder `node_modules`, and move
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

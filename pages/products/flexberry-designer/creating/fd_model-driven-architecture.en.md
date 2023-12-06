@@ -39,4 +39,3 @@ Flexberry uses based on the above approach, however, implementation has its own 
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

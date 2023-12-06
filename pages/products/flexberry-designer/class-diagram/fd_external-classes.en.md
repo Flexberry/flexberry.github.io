@@ -35,4 +35,3 @@ Priority is given to external class, because most often it is obepechenie compon
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

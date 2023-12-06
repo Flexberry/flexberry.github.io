@@ -51,4 +51,3 @@ Cm. article [Processing registers object names to DBMS](fo_processing-registers-
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

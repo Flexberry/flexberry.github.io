@@ -80,4 +80,3 @@ The second step to create the cube is creating the directory and giving permissi
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

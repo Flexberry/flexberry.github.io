@@ -39,4 +39,3 @@ To identify erroneously entered data in the database: find all companies that ha
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -138,4 +138,3 @@ The same method callAction. To maintain compatibility, can be called with the si
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

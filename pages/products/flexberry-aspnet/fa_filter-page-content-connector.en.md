@@ -39,4 +39,3 @@ To connect resources, based on the filters you want to configure unity (web.conf
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

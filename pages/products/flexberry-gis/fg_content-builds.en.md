@@ -97,4 +97,3 @@ In script-e specify my project in the lines [7](https://github.com/Flexberry/emb
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

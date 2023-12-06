@@ -54,4 +54,3 @@ For customization of design elements you need to create or change CSS classes fo
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

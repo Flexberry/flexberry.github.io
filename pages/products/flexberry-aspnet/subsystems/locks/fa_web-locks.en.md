@@ -18,4 +18,3 @@ WebLockHelper described in the corresponding [article](fa_web-lock-helper.html).
 Work with blockings in the web system are described in the corresponding [article](fa_working-locks-web.html).
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -44,4 +44,3 @@ The naming can be changed, what are the attributes of storage:
 * [PropertyStorage](fo_attributes-class-data.html) — the same for all properties (private, artisans), attributed to the appropriate property.
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

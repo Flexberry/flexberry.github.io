@@ -152,4 +152,3 @@ To work control the necessary library connected `jQuery`. The other properties a
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

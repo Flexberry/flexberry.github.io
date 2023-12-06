@@ -46,4 +46,3 @@ For light boxes better to use a fixed width for consistency. For example, the sh
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -40,12 +40,41 @@ entries:
         output: web, pdf
 
         folderitems:
+          - title: Routing
+            title_ru: Роутинг (маршрутизация)
+            url: /efd3_router.html
+            output: web, pdf
+
+          - title: Forms
+            title_ru: Формы
+            url: /efd3_form.html
+            output: web, pdf
+
+          - title: List form
+            title_ru: Списковая форма
+            url: /efd3_listform.html
+            output: web, pdf
+
+          - title: Edit form
+            title_ru: Форма редактирования
+            url: /efd3_editform.html
+            output: web, pdf
 
       - title: Work with data
         title_ru: Работа с данными
         output: web, pdf
 
         folderitems:
+          - title: Model
+            title_ru: Модели
+            url: /efd3_model.html
+            output: web, pdf
+
+          - title: Serializer
+            title_ru: Сериализаторы
+            url: /efd3_serializer.html
+            output: web, pdf
+
           - title: Client Query Language
             title_ru: Клиентский язык запросов
             url: /efd3_query-language.html
@@ -54,6 +83,11 @@ entries:
           - title: Model validation
             title_ru: Валидация моделей
             url: /efd3_model-validation.html
+            output: web, pdf
+
+          - title: Support for transactional work with data
+            title_ru: Поддержка транзакционной работы с данными
+            url: /efd3_batch.html
             output: web, pdf
 
       - title: Components
@@ -66,9 +100,39 @@ entries:
             url: /efd3_modal-dialog.html
             output: web, pdf
 
-          - title: Lookup component
-            title_ru: Компонент лукапа
-            url: /efd3_lookup.html
+          - title: Flexberry Objectlistview
+            title_ru: Flexberry Objectlistview
+            url: /efd3_object-list-view.html
+            output: web, pdf
+
+          - title: Groupedit with multiselect
+            title_ru: Groupedit с функцией multiselect
+            url: /ef3_groupedit_with_multiselect.html
+            output: web, pdf
+
+          - title: Setting up lists
+            title_ru: Настройка списков
+            url: /ef3_setting-lists.html
+            output: web, pdf
+
+          - title: Flexberry tab bar
+            title_ru: Flexberry tab bar
+            url: /ef3_flexberry-tab-bar.html
+            output: web, pdf
+          
+          - title: Flexberry lookup
+            title_ru: Flexberry lookup
+            url: /ef3_flexberry-lookup.html
+            output: web, pdf
+
+          - title: List restriction tools
+            title_ru: Инструменты ограничения списка
+            url: /ef3_list-restriction-tools.html
+            output: web, pdf
+
+          - title: Flexberry multiple lookup 
+            title_ru: Flexberry multiple lookup 
+            url: /ef3_flexberry-multiple-lookup.html
             output: web, pdf
 
       - title: Services
@@ -91,6 +155,20 @@ entries:
         output: web, pdf
 
         folderitems:
+          - title: Supported themes
+            title_ru: Поддерживаемые темы оформления
+            url: ef3_supported_themes.html
+            output: web, pdf
+
+          - title: Structure of themes
+            title_ru: Внутреннее устройство тем
+            url: /ef3_themes_structure.html
+            output: web, pdf
+
+          - title: Change color scheme
+            title_ru: Динамическая смена цветовой схемы
+            url: /ef3_color_scheme_сhanging.html
+            output: web, pdf
 
       - title: Mobile development
         title_ru: Мобильная разработка

@@ -58,4 +58,3 @@ The result of the rendering (when referring to `ClientID`):
 ```
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

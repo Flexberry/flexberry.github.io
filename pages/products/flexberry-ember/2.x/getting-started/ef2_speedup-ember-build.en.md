@@ -39,4 +39,3 @@ If a project build takes more than 1-3 minutes, then try to use the following re
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

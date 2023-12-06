@@ -42,4 +42,3 @@ Save || Save navigation structure
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

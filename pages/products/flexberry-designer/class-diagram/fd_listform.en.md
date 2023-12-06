@@ -111,4 +111,3 @@ Properties methods similar to those described in the article [class Methods and 
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

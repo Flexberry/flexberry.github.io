@@ -35,4 +35,3 @@ On the tabs to the right you can edit the properties of the form and its element
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

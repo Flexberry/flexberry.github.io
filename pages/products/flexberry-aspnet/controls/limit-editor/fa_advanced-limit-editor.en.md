@@ -143,4 +143,3 @@ External classes in the advanced editor of the limitations described in [article
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -27,4 +27,3 @@ Will continue to add new topics.
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

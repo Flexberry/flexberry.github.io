@@ -45,4 +45,3 @@ In the end, was considered the architecture of a Cordova application and Flexber
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -26,4 +26,3 @@ If you selected [function date](fw_date-time-funtions-in-limits.html) and its ar
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

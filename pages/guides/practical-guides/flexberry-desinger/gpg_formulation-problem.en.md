@@ -33,4 +33,3 @@ After receiving the invoice the customer arrives at the warehouse for their good
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -87,4 +87,3 @@ If the property `AutoAddUsedInLimitationProperties` matters `true`, will be used
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

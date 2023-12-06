@@ -23,4 +23,3 @@ You can not use `WebFileControl` directly in `AiaxGroupEdit`. You must create a 
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

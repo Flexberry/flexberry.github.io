@@ -60,4 +60,3 @@ summary: a description of the list form and the location of key elements on it.
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -83,4 +83,3 @@ Check-list for CodeReview - a wonderful tool, allowing to check that reviewer do
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

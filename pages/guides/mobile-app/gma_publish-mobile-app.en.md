@@ -29,4 +29,3 @@ At this step you can see a list of articles on how to publish the mobile applica
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

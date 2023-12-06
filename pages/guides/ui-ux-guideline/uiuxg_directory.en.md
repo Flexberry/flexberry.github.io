@@ -28,4 +28,3 @@ This approach saves space in the navigation pane, and no need to scroll down the
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

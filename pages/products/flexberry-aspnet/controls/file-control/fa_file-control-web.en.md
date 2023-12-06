@@ -136,4 +136,3 @@ Using FileControl on the edit forms described in the corresponding [article](fa_
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

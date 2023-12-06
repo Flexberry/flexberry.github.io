@@ -102,4 +102,3 @@ private static void InitExcelFormat(ExcelCellFormatEventArgs args)
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

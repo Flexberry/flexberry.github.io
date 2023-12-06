@@ -38,4 +38,3 @@ For silpada better to use a fixed width. For example, sigpac size **S** can be w
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

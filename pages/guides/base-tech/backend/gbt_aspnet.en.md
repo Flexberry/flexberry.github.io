@@ -111,4 +111,3 @@ The concept of a pattern (template) MVC (model - view - controller) involves spl
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

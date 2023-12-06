@@ -27,4 +27,3 @@ After setting the right limits to select the required items from the list.
 The form will rise to select elements, it depends on the settings of the filter (FilterSettings).
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

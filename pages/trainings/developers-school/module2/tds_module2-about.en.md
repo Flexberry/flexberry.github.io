@@ -58,4 +58,3 @@ The results of the study of module student must:
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

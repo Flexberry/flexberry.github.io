@@ -205,4 +205,3 @@ Source code for this example can be found in the repository [FlexberryOrmMongoDb
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

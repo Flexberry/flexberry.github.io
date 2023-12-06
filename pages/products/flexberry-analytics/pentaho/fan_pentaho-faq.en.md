@@ -188,4 +188,3 @@ If there is no need to change the parameter value in the query, it is necessary 
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

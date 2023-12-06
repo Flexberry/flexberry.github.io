@@ -62,4 +62,3 @@ Below are some features of the relationship between status and status of the dow
 | Deleted | Deleted | Deleted | Deleted | Deleted|
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -455,4 +455,3 @@ They are specified in the property `componentName` when specifying the template.
 
 
 
-{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}
