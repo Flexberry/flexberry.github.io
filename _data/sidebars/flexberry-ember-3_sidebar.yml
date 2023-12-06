@@ -101,7 +101,7 @@ entries:
             output: web, pdf
 
           - title: Flexberry Objectlistview
-            title_ru: Flexberry Objectlistview
+            title_ru: Компонент настройки списка
             url: /efd3_object-list-view.html
             output: web, pdf
 
@@ -121,7 +121,7 @@ entries:
             output: web, pdf
           
           - title: Flexberry lookup
-            title_ru: Flexberry lookup
+            title_ru: Компонент лукапа
             url: /ef3_flexberry-lookup.html
             output: web, pdf
 
@@ -133,6 +133,7 @@ entries:
           - title: Flexberry multiple lookup 
             title_ru: Flexberry multiple lookup 
             url: /ef3_flexberry-multiple-lookup.html
+>>>>>>> master
             output: web, pdf
 
       - title: Services

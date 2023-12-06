@@ -1,73 +1,16 @@
 ---
-title: LookUp-ы в ember-flexberry-приложении
-keywords: ember, lookup, flexberry-lookup
+title: Компонент лукапа
 sidebar: flexberry-ember-3_sidebar
-toc: false
+keywords: Flexberry Ember, Lookup, Flexberry Ember Component
+toc: true
 permalink: ru/ef3_flexberry-lookup.html
 lang: ru
-summary: Представлены основные особенности LookUp-ов
+summary: Обзор возможностей и настроек для компонента лукапа в технологии Flexberry Ember
 ---
 
 ## Назначение компонента
 
-LookUp представляет собой элемент управления (компонент), позволяющий выбрать значение мастера.
-Общий вид компонента, в случае, если текущая тема оформления “BlueSky”:
-
-![](/images/pages/products/flexberry-ember/flexberry-lookup/flexberry-lookup.png)
-
-Для добавления компонента в ember-приложении требуется удостовериться в корректности настройки [модели](efd3_model.html), сериализатора и шаблона.
-
-Пусть у сущности `Подготовка` есть мастер `Редактор` типа `Пользователь`. Требуется настроить LookUp по свойству `ExtendedName` мастера.
-
-### Настройка модели
-
-[Модель](efd3_model.html) `Подготовка` должна содержать ссылку на мастера. [Представление]() для отображения формы, где будет расположен LookUp, также должно включать описание мастера.
-
-```javascript
-var Model = BaseModel.extend({
-  редактор: DS.belongsTo('пользователь', { inverse: null, async: false })
-});
-
-Model.defineProjection('ПодготовкаE', 'подготовка', {
-  редактор: Proj.belongsTo('пользователь', 'Редактор', {
-      extendedName: Proj.attr()
-  })
-});
-```
-
-В [модели](efd3_model.html), соответствующей мастеру типа `Пользователь`, необходимо задать [представление](TODO), по которому будет происходить отображение.
-
-```javascript
-var Model = BaseModel.extend({
-  extendedName: DS.attr('string')
-});
-
-Model.defineProjection('ПользовательE', 'пользователь', {
-  extendedName: Proj.attr('Полное имя')
-});
-```
-
-### Настройка сериализаторов
-
-В [сериализаторе](efd3_serializer.html) `Подготовка` описать ссылку на мастера:
-
-```javascript
-export default ApplicationSerializer.extend({
-  attrs: {
-      редактор: { serialize: 'odata-id', deserialize: 'records' }
-  },
-  primaryKey: '__PrimaryKey'
-});
-```
-
-[Сериализатор](efd3_serializer.html) для типа `Пользователь`:
-
-```javascript
-export default ApplicationSerializer.extend({
-  attrs: {  },
-  primaryKey: '__PrimaryKey'
-});
-```
+Основное предназначение [компонента лукапа](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/FlexberryLookup.html) - это выбор значения [мастера](fd_master-association.html). Посредством компонента лукапа есть возможность получить доступ к списку мастеровых объектов (этот список может быть представлен как в отдельном [модальном окне](efd3_modal-dialog.html), так и в выпадающем списке) и выбрать какой-то объект в качестве значения [мастеровой связи](fd_master-association.html).
 
 ### Настройка шаблона
 
@@ -94,259 +37,176 @@ export default ApplicationSerializer.extend({
 
 ## Обзор возможностей и API компонента
 
-### Список основных свойств
+После [генерации](efd3_generated-app-structure.html) компонент лукапа в [шаблоне](https://guides.emberjs.com/v3.1.0/templates/handlebars-basics/) [формы создания и редактирования объектов](efd3_editform.html) выглядит следующим образом:
 
-Свойство | Описание | Дефолтное значение
-:---------------------|:------------------------------------------------------------|:----------------
-`choose` | Определяет имя action'а, которое будет происходить по клику на кнопку 'choose'.|
-`remove` | Определяет имя action'а, которое будет происходить по клику на кнопку 'remove'.|
-`updateLookupValue` | Определяет имя action'а, которое будет происходить при изменении значения в лукапе.|
-`chooseText` | Определяет текст/html внутри кнопки 'choose'.|
-`removeText` | Определяет текст/html внутри кнопки 'remove'.|
-`chooseButtonClass` | Определяет css-class на кнопку 'choose'.|
-`removeButtonClass` | Определяет css-class на кнопку 'remove'.|
-`placeholder` | Определяет placeholder | t('flexberry-lookup.placeholder')
-`value` | Определяет выбранный экземпляр модели (мастеровой объект) |
-`relatedModel` | Определяет модель для которой будет редактироваться ссылка на мастеровой объект) |
-`relationName` | Определяет имя отношения |
-`projection` | Определяет, по какому представлению будут отображаться мастера в списке |
-`sizeClass` | Определяет css-class размера окна, возможные варианты: small, large, fullscreen | small
-`title` | Заголовок модального окна |
-`lookupLimitPredicate` | Определяет функцию ограничения |
-`lookupAdditionalLimitFunction` | Дополнительная функция ограничения для использования в GroupEdit относительно полей строки |
-`autocomplete` | Режим автокомплита, в режиме "Только для чтения" не работает | false
-`dropdown` | Режим выпадающего списка, в режиме "Только для чтения" не работает | false
-`dropdownIsSearch` | Режим поиска (автокомплита) для LookUp-а в режиме выпадающего списка | false
-`displayAttributeName` | Имя атрибута модели (свойства мастера), которое отображается для пользователя |
-`sorting` | Направление сортировки по полю 'displayAttributeName', в режиме автокомплита и в режиме выпадающего списка | 'asc'
-`minCharacters` | Минимальное количество символов для автокомпилита, в режиме автокомплита и в режиме выпадающего списка | 1
-`maxResults` | Максимальное количество отображаемых записей в режиме автокомплита и в режиме в режиме выпадающего списка, не обязательное свойство | 10
-
-### Возможность переопределить поведение при изменении значения лукапа.
-
-Если необходима дополнительная логика при изменении значения лукапа, то в контроллере формы, на которой расположен лукап, необходимо переопределить экшен updateLookupValue:
-
-```js
-  actions: {
-    updateLookupValue() {
-      // Базовая логика
-      this._super(...arguments);
-
-      // Дополнительная логика
-      // ...
-    }
-  }
+```hbs
+{% raw %}{{flexberry-lookup
+    choose="showLookupDialog"
+    remove="removeLookupValue"
+    value=model.myMaster
+    class=(if (v-get validationObject "myMaster" "isInvalid") "error")
+    displayAttributeName="intField"
+    autocomplete=true 
+    relationName="myMaster"
+    projection="MasterForChild1L"
+    title=(t "forms.neo-platform-gen-test-child1-e.myMaster-caption")
+    readonly=readonly
+    componentName="myMasterLookup"
+    data-test-neo-platform-gen-test-child1-e-myMaster=true
+}}{% endraw %}
 ```
+
+* `value` - значение мастера (это объект, выбранный экземпляр мастеровой модели).
+* `displayAttributeName` - отображаемое на форме поле выбранного мастера (требуется для работе в режиме автодополнения и выпадающего списка).
+* `autocomplete` - работа в режиме автодополнения, подробнее ниже.
+* `relationName` - название связи в модели, куда будет записано выбранное значение.
+* `projection` - имя [проекции](efd3_model.html), по которой будут грузиться списки мастеровых объектов.
+* `title` - заголовок модального окна для выбора значения (в данном примере значение локализовано).
+* `readonly` - флаг, определяющий, что компонент работает в режиме "только для чтения" (то есть изменить выбранное значение невозможно).
+* `componentName` - имя компонента.
+* `choose` и `remove` - это имена методов контроллера, которые обрабатывают события выбора или очистки значения лукапа и, соответственно, меняют значение поля модели. Обработчики `showLookupDialog` и `removeLookupValue` расположены в [специальном миксине контроллера FlexberryLookupMixin](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/FlexberryLookupMixin.html)
+
+Работу с настройками компонента лукапа можно посмотреть на [тестовом стенде](http://flexberry.github.io/ember-flexberry/dummy/dummy-test-3/#/components-examples/flexberry-lookup/settings-example).
+
+* `placeholder` - отображаемый в лукапе текст при отсутствии выбранного значения.
+* `chooseText` - текст/html внутри кнопки выбора значения.
+* `removeText` - текст/html внутри кнопки очистки значения.
+* `chooseButtonClass` - css-class для кнопки выбора значения.
+* `removeButtonClass` - css-class для кнопки очистки значения.
+
+* `relatedModel` - модель, чей атрибут отображает данный компонент (данное свойство наследовано от [базового компонента FlexberryBaseComponent](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/FlexberryBaseComponent.html)) (то есть модель ,для которой будет редактироваться ссылка на мастеровой объект).
+* `displayValue` - отображаемый для пользователя текст, соответствующий текущему выбранному значению. Этот текст может быть изменён, но это не изменит автоматически текущую модель.
+
+Компонент может работать в режиме автодополнения и выпадающего списка, настройка данных режимов рассмотрена ниже.
+
+> Компонент лукапа не может находиться одновременно в режиме выпадающего списка и автодополнения (за это отвечают соответствующие флаги), такая настройка приведёт к ошибке.
+> Более детальное описание устройства компонента лукапа при вызове модального окна представлено в статье [Модальный диалог](efd3_modal-dialog.html).
 
 ### Кнопка просмотра выбранного значения (preview)
 
-Для использования данной возможности LookUp требуется определить следующие свойства:
+Компонент лукапа предоставляет возможность осуществлять просмотр выбранного значения. Для использования данной возможности требуется определить следующие настройки:
 
 ```hbs
 {% raw %}{{flexberry-lookup
+  ...
   preview=(action "previewLookupValue")
   showPreviewButton=true
   previewFormRoute=previewFormRoute
-  // ...
 }}{% endraw %}
 ```
 
-Ниже указаны добавленные в LookUp свойства для работы кнопки просмотра:
-
-Свойство | Описание | Дефолтное значение
-:---------------------|:------------------------------------------------------------|:----------------
-`preview` | Определяет имя action'а, которое будет происходит по клику на кнопку 'preview'.|
-`showPreviewButton` | Флаг, определяющий, отображать ли кнопку просмотра. | false
-`previewFormRoute` | Определяет Route, в котором будет открыто выбранное значение.|
-`previewOnSeparateRoute` | Флаг, определяющий, открывать ли выбранное значение в отдельной странице (по умолчанию открывается в модальном окне)| false
-`previewButtonClass` | Определяет css-class на кнопку 'preview'.|
-`previewText` | Определяет текст/html внутри кнопки 'preview'.|
-`controllerForPreview` | Определяет Сontroller для выбранного значения (если значение не задано, сontroller берется из "previewFormRoute"). |
-
-### Пользовательские настройки для списка в LookUp-е (componentName)
-
-Для списка в LookUp-e можно использовать пользовательские настройки из [сервиса настроек пользователя](TODO).
-Они задаются в свойство `componentName` при задании шаблона.
-
-```hbs
-{% raw %}
-{{flexberry-lookup
-  componentName="lookUpClassLookup"
-  // ...
-}}{% endraw %}
-```
-
-### Блочная форма компонента
-
-{% include important.html content="В данный момент доступна только для мобильного шаблона." %}
-
-Возможно использовать компонент в блочной форме:
-
-```hbs
-{% raw %}{{#flexberry-lookup ...}}
-  {{model.employee1.firstName}}<br>
-  {{model.employee1.lastName}}
-{{/flexberry-lookup}}{% endraw %}
-```
-в этом случае прикладной программист может переопределить как будет выглядеть отображение мастера на форме
+* `preview` - указание метода контроллера, который обрабатывают событие вызова просмотра. Обработчик `previewLookupValue` расположен в [специальном миксине контроллера FlexberryLookupMixin](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/FlexberryLookupMixin.html)
+* `showPreviewButton` - флаг, определяющий, отображать ли в компоненте кнопку просмотра выбранного мастера (просмотр недоступен, если значение не выбрано).
+* `previewOnSeparateRoute` - флаг, определяющий, что просмотр выбранного мастера следует осуществлять на отдельном роуте (а не в модальном окне).
+* `previewFormRoute` - имя [роута](https://guides.emberjs.com/v3.1.0/routing/defining-your-routes/) [формы](efd3_editform.html), где будет происходить просмотр выбранного мастера (форма находится в режиме "только для чтения").
+* `previewText` -  текст/html внутри кнопки просмотра, по умолчанию "{% raw %}<i class="eye icon"></i>{% endraw %}".
+* `previewFormProjection` - имя проекции, по которой будет грузиться модель для просмотра (если данное свойство не указано, то будет взята используемая на роуте `previewFormRoute` проекция).
+* `controllerForPreview` - имя [контроллера](https://guides.emberjs.com/v3.1.0/controllers/) [формы](efd3_editform.html), где будет происходить просмотр выбранного мастера (если значение не указано, то будет взят соответствующий `previewFormRoute` контроллер).
 
 ## Настройка окна со списком значений
 
-Настройки модального окна LookUp-а определены в `components/lookup-field/lookup-field-mixin.js`.
+Технология Flexberry Ember позволяет осуществлять настройку модального окна, для этого есть следующие возможности:
+
+* `title` - заголовок модального окна (рекомендуется задавать локализованное значение).
+* `modalDialogSettings` - настройки внешнего вида модального окна, передаваемые непосредственно в [компонент модального диалога](efd3_modal-dialog.html), на базе которого оно реализовано.
+* `lookupWindowCustomProperties` - указание метода, возвращающего список настроек, которые будут переданы в модальное окно.
+
+### modalDialogSettings - настройки внешнего вида модального окна
+
+Для данной настройки можно указывать следующие опции:
 
 ```js
-lookupSettings: {
-	controllerName: undefined,
-	template: undefined,
-	contentTemplate: undefined,
-	loaderTemplate: undefined,
-	modalWindowWidth: undefined,
-	modalWindowHeight:undefined
+{
+    sizeClass: 'small'|'large'|'fullscreen',
+    useOkButton: true|false,
+    useCloseButton: true|false,
+    settings: modalSettings
 }
 ```
 
-В контроллере формы редактирования `controllers/edit-form.js` данные настройки заданы:
+* `sizeClass` - css-class размера модального окна, возможные варианты: 'small', 'large', 'fullscreen'. Если ничего не указано, то используется 'small'.
+* `useOkButton` - флаг, определяющий, следует ли на модальном окне отображать кнопку окончания выбора значения. Если ничего не указано, то используется 'true'.
+* `useCloseButton` - флаг, определяющий, следует ли на модальном окне отображать кнопку закрытия. Если ничего не указано, то используется 'true'.
+* `settings` - [настройки](https://semantic-ui.com/modules/modal.html#/settings), которые передаются компоненту [Semantic UI Modal](https://semantic-ui.com/modules/modal.html), на базе которого реализовано [модальное окно](efd3_modal-dialog.html).
 
-```js
-lookupSettings: {
-    controllerName: 'lookup-dialog',
-    template: 'lookup-dialog',
-    contentTemplate: 'lookup-dialog-content',
-    loaderTemplate: 'loading',
-    modalWindowWidth: 750,
-    modalWindowHeight:600
-},
-```
+> Настройка `modalDialogSettings` используется как для модального окна со списком для выбора значения, так и для модального окна предпросмотра выбранного значения.
 
-### Установка заголовка и размера окна, открываемого по LookUp-у
+### lookupWindowCustomProperties - настройки списка модального окна
 
-Если требуется изменить размер открываемого по LookUp-у модального окна, то можно переопределить заданные по умолчанию значения.
-
-* `modalWindowWidth` - это ширина открываемого по LookUp-у модального окна.
-* `modalWindowHeight` - это высота открываемого по LookUp-у модального окна.
-
-Заголовок окна, открываемого по LookUp-у, устанавливается в свойстве `title` компонента `lookup-field` в шаблоне соответствующей формы редактирования. Например, в шаблоне формы редактирования `employee.hbs` встраивание LookUp-а может выглядеть следующим образом:
-
-```hbs
-{% raw %}{{lookup-field/lookup-field
-  choose='showLookupDialog'
-  remove='removeLookupValue'
-  value=model.employee1.firstName
-  relationName='employee1'
-  projection='EmployeeL'
-  title='Employees'
-}}{% endraw %}
-```
-
-В результате заголовок из свойства `title` компонента `lookup-field` будет отображаться в модальном окне, открываемом по LookUp-у:
-
-![](/images/pages/products/flexberry-ember/flexberry-lookup/lookuptitle.png)
-
-### Настройка фильтрации и количества элементов на странице
-
-Параметры настройки фильтраци и/или количества элементов на странице осуществляется через событие `getLookupFolvProperties` в контроллере формы:
-
-```javascript
-getLookupFolvProperties: function(options) {
-    //...
-
-    if (methodArgs.relationName === 'type') {
-    return {
-        filterButton: true,
-        filterByAnyWord: true,
-        enableFiltres: true,
-        refreshButton: true,
-        perPage: 25,
-      };
-    }
-
-    // ...
-}
-```
-
-{% include note.html content="Необходимо выбрать тип поиска (`filterByAnyWord` или `filterByAllWords`), так на LookUp-форме использовать использовать можно только один из них." %}
-
-Далее указать событие в шаблоне настраевомого для LookUp списка:
+В [примере](http://flexberry.github.io/ember-flexberry/dummy/dummy-test-3/#/components-examples/flexberry-lookup/customizing-window-example) ниже настройка получает в качестве значение метод `getLookupFolvProperties` контроллера
 
 ```hbs
 {% raw %}{{flexberry-lookup
-    // ...
-    lookupWindowCustomProperties=(action 'getLookupFolvProperties')
+    ...
+    lookupWindowCustomProperties=(action "getLookupFolvProperties")
 }}{% endraw %}
 ```
 
-Реализация отображена на [ember-стенде](http://flexberry.github.io/ember-flexberry/dummy/develop/#/components-examples/flexberry-lookup/customizing-window-example).
+Реализация метода `getLookupFolvProperties` контроллера может быть следующая:
 
-### Настройка иерархии
+```js
+import Ember from 'ember';
+import EditFormController from 'ember-flexberry/controllers/edit-form';
 
-В контроллере формы редактирования указать:
-
-```javascript
 export default EditFormController.extend({
   actions: {
-    getLookupFolvProperties(options) {
-      if (options.relationName === 'type') { // Свойство LookUp-а.
+    getLookupFolvProperties: function(options) {
+      let methodArgs = Ember.merge({
+        projection: undefined, 
+        relationName: undefined, 
+        componentName: undefined,
+      }, options);
+
+      if (methodArgs.relationName === 'type') {
         return {
-          // Показывать ли кнопку переключения иерархии, если иерархия для списка доступна
-          // (при false кнопка показывается)
-          disableHierarchicalMode: false,
-
-          // Активировать иерархию при загрузке lookup-формы.
-          inHierarchicalMode: true,
-
-          // Свойство, по которому строится иерархия.
-          hierarchicalAttribute: 'Name',
+          filterButton: true
         };
       }
-    },
+
+      return undefined;
+    }
   }
 });
 ```
 
+В метод передаются следующие параметры:
+
+* projection - имя проекции, по которой будет строиться список на модальном окне.
+* relationName - имя связи, для которой открывается модальное окно.
+* componentName - компонент, открывающий модальное окно.
+
+Метод может возвращать различные настройки (по умолчанию данные настройки попадают для инициализации напрямую в [компонент списка](efd3_object-list-view.html) на модальной форме). Имена доступных настроек можно посмотреть [в документации](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/FlexberryObjectlistviewComponent.html), в частности, это:
+
+* `filterButton` - флаг, определяющий, отображать ли кнопку фильтрации на панели,
+* `refreshButton` - флаг, определяющий, отображать ли кнопку обновления на панели,
+* `perPage` - количество элементов, отображаемых на одной странице списка (по умолчанию 5),
+* и другие.
+
 ## Указание функции ограничения
 
-Задание ограничений на значения, отображаемые в списке для выбора, осуществляются посредством задания фильтра с помощью  [клиентского языка запросов](efd3_query-language.html). Данный фильтр задаётся в виде функции в свойство `lookupLimitPredicate` при задании шаблона.
+Для доступного списка мастеров можно задавать функцию ограничения (соответственно, объекты, не удовлетворяющие этому ограничению, отображаться не будут). Ограничение задаётся путём задания [предиката](efd3_query-language.html).
+
+В [примере](http://flexberry.github.io/ember-flexberry/dummy/dummy-test-3/#/components-examples/flexberry-lookup/limit-function-example) ниже ограничение возвращает [вычислимое свойство](https://api.emberjs.com/ember/3.1/classes/ComputedProperty) контроллера `lookupCustomLimitPredicate`
 
 ```hbs
-{% raw %}
-{{flexberry-lookup
-  lookupLimitPredicate=lookupCustomLimitPredicate
-  // ...
+{% raw %}{{flexberry-lookup
+    ...
+    lookupLimitPredicate=lookupCustomLimitPredicate
 }}{% endraw %}
 ```
 
-Рассмотрим задание ограничения на примере. Пусть у сущности `Employee` есть мастеровая ссылка `Employee1` типа `Employee`. Требуется по LookUp-у отобразить только те записи, у которых `FirstName` больше или равен `FirstName` текущей выбранной записи.
+Реализация [вычислимого свойства](https://api.emberjs.com/ember/3.1/classes/ComputedProperty) контроллера `lookupCustomLimitPredicate` может быть следующая:
 
-Модель `Employee` имеет следующий вид:
+```js
+import Ember from 'ember';
+import EditFormController from 'ember-flexberry/controllers/edit-form';
 
-```javascript
-var Model = BaseModel.extend({
-  firstName: DS.attr('string'),
-  lastName: DS.attr('string'),
-  birthDate: DS.attr('date'),
-  employee1: DS.belongsTo('employee', { inverse: null, async: false }),
-});
-```
-
-В контроллере типа `Employee` создадим вычислимое свойство `lookupCustomLimitPredicate`, которое будет возвращать фильтр, чтобы "отобразить только те записи, у которых `FirstName` больше или равен `FirstName` текущей выбранной записи".
-
-```javascript
 export default EditFormController.extend({
-  // Caption of this particular edit form.
-  title: 'Employee',
-
-  /**
-   * Current function to limit accessible values of model employee1.
-   *
-   * @property lookupCustomLimitPredicate
-   * @type String
-   * @default undefined
-   */
-  lookupCustomLimitPredicate: Ember.computed('model.employee1', function() {
-    let currentLookupValue = this.get('model.employee1');
+  lookupCustomLimitPredicate: Ember.computed('model.type', function() {
+    let currentLookupValue = this.get('model.type');
     if (currentLookupValue) {
-      let currentLookupText = this.get('model.employee1.firstName');
-      return new StringPredicate('firstName', Query.FilterOperator.Ge, currentLookupText);
+      let currentLookupText = this.get('model.type.name');
+      return new StringPredicate('name').contains(currentLookupText);
     }
 
     return undefined;
@@ -354,181 +214,169 @@ export default EditFormController.extend({
 });
 ```
 
-Далее соответствующее свойство необходимо указать в шаблоне формы:
-
-```hbs
-{% raw %}
-{{flexberry-lookup
-  lookupLimitPredicate=lookupCustomLimitPredicate
-  // ...
-}}{% endraw %}
-```
-
-### Пример задания ограничений в строке GE относительно элементов строки
-Если возникает необходимость ограничить лукап по значению в элемента в GroupEdit в той же строке, то это можно сделать с помощью lookupAdditionalLimitFunction.
+Также [задать функцию ограничения возможно через динамические свойства компонента](http://flexberry.github.io/ember-flexberry/dummy/dummy-test-3/#/components-examples/flexberry-lookup/limit-function-through-dynamic-properties-example) (эта возможность определена в [базовом компоненте FlexberryBaseComponent](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/FlexberryBaseComponent.html#property_dynamicProperties)), для этого в `dynamicProperties` передаётся структура вида:
 
 ```js
-  getCellComponent(attr, bindingPath, model) {
-    let cellComponent = this._super(...arguments);
-    if (attr.kind === 'belongsTo') {
-      switch (`${model.modelName}+${bindingPath}`) {
-        case 'ember-flexberry-dummy-vote+author':
-          cellComponent.componentProperties = this.get('lookupDynamicProperties');
-          break;      }
-    }
-    return cellComponent;
-  }
-});
+{
+    lookupLimitPredicate: null // Программно можно определять текущее ограничение.
+}
 ```
 
-```js
-  lookupDynamicProperties: Ember.computed(function() {
-    ...
-    lookupAdditionalLimitFunction = function (relationModel) {
-      return new StringPredicate('eMail').contains(relationModel.get('voteType'));
-    };
-
-    return {
-      ...
-      lookupAdditionalLimitFunction
-      ...
-    };
-  })
-```
-
-В данном примере отображаемые объекты лукапа ограничены полем GroupEdit 'voteType' по значению мастера 'eMail'.
-relationModel.get('...') - модель, для которой лукапом редактируется мастер.
+> Если компонент лукапа находится в компоненте [групэдит](https://flexberry.github.io/ru/ef3_groupedit_with_multiselect.html), то для задания функции ограничения следует воспользоваться настройкой [lookupAdditionalLimitFunction](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/FlexberryLookup.html#property_lookupAdditionalLimitFunction).
 
 ## Возможности сервиса lookup-events
 
-Сервис позволяет подписаться на следующие события:
+Для расширения возможностей лукапа [технология Flexberry Ember предоставляет сервис](efd3_service.html) [lookup-events](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/LookupEvents.html), содержащий [миксин `Evented`](https://api.emberjs.com/ember/3.1/classes/Evented), благодаря чему данный сервис позволяет подписываться на [события компонета лукапа](https://github.com/Flexberry/ember-flexberry/blob/develop/addon/services/lookup-events.js).
 
-Название | Описание
-:---------------------|:------------------------------------------------------------
-`lookupDialogOnShow` | Срабатывает, когда модальное окно начинает отображаться.
-`lookupDialogOnVisible` | Срабатывает после завершения показа модального окна.
-`lookupDialogOnHidden` | Срабатывает после того, как модальное окно закончило скрываться.
-`lookupOnChange` | Срабатывает при изменении значения поиска.
-`lookupDialogOnDataLoaded` | Срабатывает при загрузке данных для поиска.
-
-Пример, демонстрирующий, как можно подписаться на событие:
-
-```js
-import { inject as service } from '@ember/service';
-
-//...
-
-  /**
-    Service that triggers lookup events.
-
-    @property lookupEventsService
-    @type Service
-  */
-  lookupEventsService: service('lookup-events'),
-
-//...
-
-// Подписаться
-this.get('lookupEventsService').on('lookupDialogOnHidden', this, this._refreshDimmer);
-
-// Отписаться
-this.get('lookupEventsService').off('lookupDialogOnHidden', this, this._refreshDimmer);
-
-```
+* `lookupDialogOnShow` - событие взводится, когда модальное окно лукапа начинает отображаться. Событие передаёт следующие параметры: `componentName` - имя компонента лукапа.
+* `lookupDialogOnVisible` - событие взводится, когда модальное окно лукапа полностью отобразилось. Событие передаёт следующие параметры: `componentName` - имя компонента лукапа, `lookupDialog` - контекст модального окна.
+* `lookupDialogOnHidden` - событие взводится, когда модальное окно лукапа перестало отображаться. Событие передаёт следующие параметры: `componentName` - имя компонента лукапа.
+* `lookupOnChange` - событие взводится, когда значение лукапа было изменено. Событие передаёт следующие параметры: `componentName` - имя компонента лукапа, `newValue` - новое значение лукапа.
+* `lookupDialogOnDataLoaded` - событие взводится, когда в модальное окно лукапа заканчивают загружаться данные. Событие передаёт следующие параметры: `componentName` - имя компонента лукапа, `loadedData` - загруженные данные, `isInitialLoad` - флаг, определяющий, является ли загрузка первой (перезагрузки возможны при наложении фильтров, работе пэйджинга и др.).
 
 ## Режим выпадающего списка
 
-Чтобы лукап мог функционировать в режиме выпадающего списка, нужно у свойства 'dropdown' задать значение 'true'. Также существуют некоторые настройки для данного режима:
+Компонент лукапа [может работать в режиме выпадающего списка](http://flexberry.github.io/ember-flexberry/dummy/dummy-test-3/#/components-examples/flexberry-lookup/dropdown-mode-example) (соответственно, выозможность выбора значения через модальное окно при этом недоступна).
 
-Название | Описание | Дефолтное значение
-:---------------------|:------------------------------------------------------------|:----------------
-`dropdown` | Свойство, указывающее на то, что лукап находится в режиме выпадающего списка. | false
-`dropdownIsSearch` | Свойство, определяющее, имеется ли возможность поиска и автодополнения в режиме выпадающего списка. | false
-`dropdownSettings` | Настройки Semantic-ui для режима выпадающего списка. | undefined
-`dropdownClass` | CSS классы для лукапа в режиме выпадающего списка. | undefined
+Основные [настройки компонента лукапа](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/FlexberryLookup.html) для работы в режиме выпадающего списка:
 
-В шаблоне можно определить значения для свойств. Например:
+* `dropdown` - флаг, определяющий, что компонент работает в режиме выпадающего списка.
+* `dropdownClass` - CSS-классы для лукапа, работающего в режиме выпадающего списка.
+* `maxResults` - максимальное число записей, которое единовременно может увидеть пользователь, остальные записи (при наличии) доступны через прокрутку. Данная настройка по умолчанию имеет значение "10".
+* `dropdownIsSearch` - флаг, определяющий, что среди доступных значений будет производиться поиск, то есть пользователь в поле лукапа будет иметь возможность начать печатать некоторое значение, а в выпадающем окне будут отображаться только найденные возможные значения (поиск регистрозависимый).
+* `displayAttributeName` - имя отображаемого пользователю свойства (соответственно, если у нескольких мастеровых объектов одно и то же значение этого свойства, то на форме пользователь их отличить не сможет), данная настройка актуальна только при работе в режиме автодополнения или выпадающего списка.
+* `sorting` - направление сортировки доступных значений по полю `displayAttributeName`, может иметь значения `asc` (по возрастанию) или `desc` (по убыванию), по умолчанию имеет значение `asc`.
+* `autocompleteOrder` - порядок сортировки запрашиваемых элементов, может включать в том числе скрытые поля, содержит перечисление названий свойств и направлений сортировки. Например, `moderated asc, parent desc`. Если указан `autocompleteOrder`, то `sorting` не учитывается.
+
+Выпадающий список реализован на базе [Semantic UI Dropdown](https://semantic-ui.com/modules/dropdown.html), поэтому к компоненту лукапа можно применять [некоторые настройки Semantic UI Dropdown](https://semantic-ui.com/modules/dropdown.html#/settings), в частности:
+
+* `allowReselection` (по умолчанию false),
+* `allowAdditions` (по умолчанию false),
+* `hideAdditions` (по умолчанию true),
+* `minCharacters` (по умолчанию 1),
+* `match` (по умолчанию 'both'),
+* `selectOnKeydown` (по умолчанию true),
+* `forceSelection` (по умолчанию true),
+* `allowCategorySelection` (по умолчанию false),
+* `direction` (по умолчанию 'auto'),
+* `keepOnScreen` (по умолчанию true),
+* `fullTextSearch` (по умолчанию false),
+* `preserveHTML` (по умолчанию true),
+* `sortSelect` (по умолчанию false),
+* `showOnFocus` (по умолчанию true),
+* `allowTab` (по умолчанию true),
+* `transition` (по умолчанию 'auto'),
+* `duration` (по умолчанию 200).
+
+[Пример компонента лукапа, настроенного на работу в режиме выпадающего списка](http://flexberry.github.io/ember-flexberry/dummy/dummy-test-3/#/components-examples/flexberry-lookup/dropdown-mode-example):
 
 ```hbs
 {% raw %}{{flexberry-lookup
-    // ...
-    dropdown=true,
-    dropdownIsSearch=false,
-    dropdownSettings=(hash direction="upward")
+    value=model.type
+    projection="DropDownLookupExampleView"
+    displayAttributeName="name"
+    title="Master"
+    relationName="type"
+    choose="showLookupDialog"
+    remove="removeLookupValue"
+    readonly=readonly
+    lookupLimitPredicate=lookupCustomLimitPredicate
+    dropdown=true
+    sorting="desc"
+    direction="upward"
 }}{% endraw %}
 ```
 
-Реализация отображена на [ember-стенде](http://flexberry.github.io/ember-flexberry/dummy/develop/#/components-examples/flexberry-lookup/dropdown-mode-example).
+> Запрос записей для выпадающего списка производится по проекции, указанной в настройке `projection`.
+
+## Лукап с автодополнением
+
+Компонент лукапа в режиме работы с автодополнением позволяет как выбрать значение через модальное окно, так и путём набора значения прямо в поле компонента лукапа, при этом пользователю будет предоставлен список возможных значений (в этом отношении это имеет схожесть с работой в режиме выпадающего списка, поэтому некоторые настройки выпадающего списка актуальны и здесь).
+
+* `autocomplete` - флаг, определяющий, что компонент работает в режиме автодополнения.
+* `maxResults` - максимальное число записей, которое единовременно может увидеть пользователь. Данная настройка по умолчанию имеет значение "10". Доступность остальных записей в списке автодополнения зависит от наличия флага `usePaginationForAutocomplete`.
+* `usePaginationForAutocomplete` - флаг, определяющий, что для значений из автодополнения следует использовать пейджинг (что позволит пролистыванием страниц просмотреть все подходящие значения).
+* `displayAttributeName` - имя отображаемого пользователю свойства (соответственно, если у нескольких мастеровых объектов одно и то же значение этого свойства, то на форме пользователь их отличить не сможет), данная настройка актуальна только при работе в режиме автодополнения или выпадающего списка.
+* `sorting` - направление сортировки доступных значений по полю `displayAttributeName`, может иметь значения `asc` (по возрастанию) или `desc` (по убыванию), по умолчанию имеет значение `asc`.
+* `autocompleteOrder` - порядок сортировки запрашиваемых элементов, может включать в том числе скрытые поля, содержит перечисление названий свойств и направлений сортировки. Например, `moderated asc, parent desc`. Если указан `autocompleteOrder`, то `sorting` не учитывается.
+* `autocompletePersistValue` - флаг, определяющий, следует ли удалять набранное значение из поля лукапа, если такого нет в результатах поиска (удаление производится, если данный флаг имеет значение `false`) (при включении данной настройки `displayValue` должно быть забиндено на поле, в которое нужно сохранять отображаемое в компоненте лукапа значение: `displayValue=model.lookupDisplayValue`).
+* `autocompleteProjection` - имя проекции, по которой производится запрос для получения значений для автодополнения.
+* `autocompleteDirection` - направление открытия выпадающего списка с подходящими значениями (возможные значения: `downward`, `upward`, `auto`; по умолчанию `downward`).
+
+> Запрос записей для списка на модальном окне производится по проекции, указанной в настройке `projection`; запрос подходящих записей для выбора в режиме автодополнения производится по проекции, указанной в `autocompleteProjection`. Если `autocompleteProjection` не указано, то запрос производится по проекции, содержащей только поле `displayAttributeName`.
+
+Список автодополнения реализован на базе [Semantic UI Search](https://semantic-ui.com/modules/search.html).
+
+[Пример компонента лукапа, настроенного на работу в режиме автодополнения](http://flexberry.github.io/ember-flexberry/dummy/dummy-test-3/#/components-examples/flexberry-lookup/autocomplete-order-example):
+
+```hbs
+{% raw %}{{flexberry-lookup
+    readonly=readonly
+    value=model.type
+    projection="SettingLookupExampleView"
+    displayAttributeName="name"
+    autocompleteOrder="moderated asc, parent desc"
+    title=title
+    relatedModel=model
+    relationName="type"
+    choose="showLookupDialog"
+    remove="removeLookupValue"
+    autocomplete=true
+    placeholder=placeholder
+}}{% endraw %}
+```
 
 ## Установка сортировки по умолчанию
 
-Реализация отображена на [ember-стенде](http://flexberry.github.io/ember-flexberry/dummy/develop/#/components-examples/flexberry-lookup/default-ordering-example).
+Благодаря сервису настроек пользователя для компонента лукапа можно задать сортировку по умолчанию и использовать её на списке в модальном окне.
 
-## Лукап с автокомплитом
-
-Автодополнение в LookUp-е позволяет осуществлять ввод с клавиатуры части значения и последующий выбор из предложенных вариантов.
-
-Чтобы перевести LookUp в режим автодополнения, требуется добавить свойство `autocomplete`:
+[Данный пример доступен на тестовом стенде](http://flexberry.github.io/ember-flexberry/dummy/dummy-test-3/#/components-examples/flexberry-lookup/default-ordering-example).
 
 ```hbs
-{% raw %}
-{{flexberry-lookup
-  autocomplete=true
-  // ...
+{% raw %}{{flexberry-lookup
+    ...
+    lookupWindowCustomProperties=(action 'getLookupFolvProperties')
+    componentName=lookupComponentName
 }}{% endraw %}
 ```
 
-Ниже указаны добавленные в LookUp свойства для работы автодополнения.
+Контроллер для такого компонента лукапа может быть следующим (данный контроллер позволяет на списке в модальном окне создать кастомную кнопку с локализованным содержимым, при нажатии на которую применяется сортировка по умолчанию для данного компонента лукапа):
 
-Свойство | Описание | Дефолтное значение
-:--------------|:-----------------------------------------------------------|:-------------
-`autocomplete` | Режим автокомплита, в режиме "Только для чтения" не работает | false
-`minCharacters` | Минимальное количество символов для автокомпилита, в режиме автокомплита и в режиме выпадающего списка | 1
-`maxResults` | Максимальное количество отображаемых записей в режиме автокомплита и в режиме в режиме выпадающего списка (необязательное свойство) | 10
-`autocompleteProjection` | Имя проекции, по которому считываются поля в запросе для отображения записей (необязательное свойство). Используется для вычислимых полей | undefined
-`autocompletePersistValue` | Флаг, определяющий оставлять или нет введенное значение при потере фокуса, если из результатов автокомплита не было выбрано ни одно значение | false
+```js
+import Ember from 'ember';
+import EditFormController from 'ember-flexberry/controllers/edit-form';
+import serializeSortingParam from 'ember-flexberry/utils/serialize-sorting-param'; // Метод для сериализации сортировки.
+import { translationMacro as t } from 'ember-i18n'; // Метод для локализации текста.
 
-### Наложение сортировки на скрытые поля мастера
+export default EditFormController.extend({
+  lookupComponentName: 'lookupUserSettings', // Имя компонента лукапа, по этому имени ищется настройка по умолчанию.
 
-Если возникает необходимость сортировки скрытых полей при использовании автодополнения, то следует использовать свойство `autocompleteOrder`. Для этого в шаблоне приложения необходимо добавить данное свойство с указанием полей, по которым требуется отсортировать, и направления сортировки. К примеру:
+  actions: {
+    getLookupFolvProperties: function(options) { // Метод возвращает настройки, которые будут переданы списку на модальном окне.
+      let methodArgs = Ember.merge({
+        projection: undefined,
+        relationName: undefined
+      }, options);
 
-```hbs
-autocompleteOrder="moderated asc, parent desc"
+      if (methodArgs.relationName === 'type') { // На форме может быть несколько компонент лукапа. Проверяем, что сработал нужный.
+        return {
+          filterButton: true, // Флаг определяет, что на список на модальной форме будет добавлена кнопка фильтрации.
+          customButtons: [{ // Добавление кастомной кнопки.
+            i18n: this.get('i18n'),
+            buttonName: t('components.olv-toolbar.clear-sorting-button-text'), // Локализованное имя кнопки.
+            buttonAction: () => { // Обработка нажатия кастомной кнопки.
+              // Получение пользовательской настройки для компонента с заданным именем.
+              let defaultUserSetting = this.get('userSettingsService').getDefaultDeveloperUserSetting(this.get('lookupComponentName'));
+
+              // Указание данной сортировки в качестве текущей.
+              this.set('lookupController.sort', serializeSortingParam(defaultUserSetting.sorting || []));
+            },
+          }],
+        };
+      }
+
+      return undefined;
+    }
+  }
+});
 ```
-
-### Режим автокомплита с автоматическим выбором по введенному значению
-
-В данном режиме:
-1. При вводе в автокомплит значения, которого нет в справочнике, оно не обнуляется, но устанавливается пустая ссылка на справочник.
-2. При вводе в автокомплит значения, которое есть в справочнике, устанавливается ссылка на справочник.
-
-Это может быть полезно, если введенное в LookUp значение нужно сохранять в отдельное поле, даже если в справочнике LookUp-а данного значения нет.
-
-Для включения данного режима следует свойство `autocompletePersistValue` установить в true, а свойство `displayValue` забиндить на поле, в которое нужно сохранять отображаемое в LookUp-е значение.
-
-```hbs
-{% raw %}
-{{flexberry-lookup
-  ...
-
-  autocomplete=true
-  autocompletePersistValue=true
-  displayValue=model.lookupDisplayValue
-}}{% endraw %}
-```
-
-### Автозаполнение значения в LookUp-е.
-
-Автодополнение позволяет сразу подставлять подходящее по условию значение.
-
-Чтобы вкючить автодополнение в LookUp-е, требуется добавить свойство `autofillByLimit` и указать функцию ограничения в `lookupLimitPredicate`:
-
-```hbs
-{% raw %}
-{{flexberry-lookup
-  autofillByLimit=true
-  lookupLimitPredicate=lookupLimitPredicate
-  // ...
-}}{% endraw %}
-```
-В этом случае, если указанному ограничению соответствует только один объект, то оно оно сразу будет установлено. Если ранее было выбрано другое значение, автозаполнение заменит его, но только если ограничению соответствует один объект.

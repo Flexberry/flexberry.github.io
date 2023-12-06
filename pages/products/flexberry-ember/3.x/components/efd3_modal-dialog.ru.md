@@ -14,7 +14,7 @@ summary: Обзор возможностей, настроек и особенн
 
 Модальный диалог используется в таких компонентах технологии Flexberry Ember как:
 
-* [Компонент лукапа](efd3_lookup.html): выбор значения и просмотр выбранного значения в некоторых случаях производится на модальном диалоге.
+* [Компонент лукапа](ef3_flexberry-lookup.html): выбор значения и просмотр выбранного значения в некоторых случаях производится на модальном диалоге.
 * Файловый компонент: просмотр файла происходит в модальном окне.
 * [Списковый компонент](https://flexberry.github.io/ru/efd3_object-list-view.html) и [компонент групэдита](https://flexberry.github.io/ru/ef3_groupedit_with_multiselect.html): некоторые настройки, такие как, например, настройка фильтров, производятся в модальном окне.
 
@@ -36,10 +36,10 @@ summary: Обзор возможностей, настроек и особенн
 * при срабатывании [`onApprove`](https://semantic-ui.com/modules/modal.html#/settings) наружу прокидывается [Action](https://guides.emberjs.com/v3.1.0/components/triggering-changes-with-actions/), определённый для `ok`,
 * при срабатывании [`onHidden`](https://semantic-ui.com/modules/modal.html#/settings) наружу прокидывается [Action](https://guides.emberjs.com/v3.1.0/components/triggering-changes-with-actions/) определённый для `close`.
 
-Пример использования модального диалога, применяемый в [компоненте лукапа](efd3_lookup.html).
+Пример использования модального диалога, применяемый в [компоненте лукапа](ef3_flexberry-lookup.html).
 
-{% raw %}
 ```hbs
+{% raw %}
 {{#modal-dialog
   title=title
   sizeClass=modalDialogSettings.sizeClass
@@ -53,20 +53,20 @@ summary: Обзор возможностей, настроек и особенн
 }}
   {{outlet 'modal-content'}}
 {{/modal-dialog}}
-```
 {% endraw %}
+```
 
 ## Особенности устройства роутинга и компонента для отображения модального диалога
 
-Особенности устройства роутинга и компонента для отображения модального диалога будут рассмотрены на примере внутреннего устройства [компонента лукапа](efd3_lookup.html).
+Особенности устройства роутинга и компонента для отображения модального диалога будут рассмотрены на примере внутреннего устройства [компонента лукапа](ef3_flexberry-lookup.html).
 
-Пусть [компонент лукапа](efd3_lookup.html) располагается на [форме редактирования](efd3_editform.html) и настроен таким образом, что выбор значения осуществляется на списке в модальном окне.
+Пусть [компонент лукапа](ef3_flexberry-lookup.html) располагается на [форме редактирования](efd3_editform.html) и настроен таким образом, что выбор значения осуществляется на списке в модальном окне.
 
-* При нажатии на соответствующую кнопку [компонента лукапа](efd3_lookup.html) наружу прокидывается [Action](https://guides.emberjs.com/v3.1.0/components/triggering-changes-with-actions/) определённый для `choose`, это `showLookupDialog`.
-* Обработчик `showLookupDialog` находится в [миксине](https://api.emberjs.com/ember/3.1/classes/Mixin) [контроллера](https://guides.emberjs.com/v3.1.0/controllers/) текущей [формы редактирования](efd3_editform.html) [`FlexberryLookupMixin`](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/FlexberryLookupMixin.html), который в итоге [прокидывает наружу Action](https://api.emberjs.com/ember/3.25/classes/Controller/methods/send?anchor=send) `showModalDialog`.
-* Обработчик `showModalDialog` находится в [миксине](https://api.emberjs.com/ember/3.1/classes/Mixin) [роута](https://guides.emberjs.com/v3.1.0/routing/defining-your-routes/) всего приложения [ModalApplicationRoute](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/ModalApplicationRoute.html), который стартует рендеринг [шаблона](https://guides.emberjs.com/v3.1.0/templates/handlebars-basics/), где используется компонент модального диалога. Параметры для рендеринга заданы в [базовом контроллере формы редактирования `EditFormController`](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/EditFormController.html) и приведут к отображению [шаблона lookup-dialog](https://github.com/Flexberry/ember-flexberry/blob/develop/app/templates/lookup-dialog.hbs), который в разметке использует компонент модального диалога.
-* При срабатывании [`onVisible`](https://semantic-ui.com/modules/modal.html#/settings) (фактически - это окончание отрисовки модального окна) наружу прокидывается [Action](https://guides.emberjs.com/v3.1.0/components/triggering-changes-with-actions/) определённый для `created`, здесь это `createdModalDialog`. Обработчик `createdModalDialog` находится в [контроллере lookup-dialog](https://github.com/Flexberry/ember-flexberry/blob/develop/addon/controllers/lookup-dialog.js).
-* При скрытии модального окна (в результате любой из причины) срабатывает [`onHidden`](https://semantic-ui.com/modules/modal.html#/settings) и наружу прокидывается [Action](https://guides.emberjs.com/v3.1.0/components/triggering-changes-with-actions/) определённый для `close`, здесь это `removeModalDialog`. Обработчик `removeModalDialog` находится в [миксине](https://api.emberjs.com/ember/3.1/classes/Mixin) [роута](https://guides.emberjs.com/v3.1.0/routing/defining-your-routes/) всего приложения [ModalApplicationRoute](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/ModalApplicationRoute.html) и скрывает отрендеренный шаблон, содержащий модальный диалог.
+* При нажатии на соответствующую кнопку [компонента лукапа](ef3_flexberry-lookup.html) наружу прокидывается [Action](https://guides.emberjs.com/v3.1.0/components/triggering-changes-with-actions/) определённый для `choose`, это `showLookupDialog`.
+* Обработчик `showLookupDialog` находится в [миксине](https://api.emberjs.com/ember/3.1/classes/Mixin) [контроллера](https://guides.emberjs.com/v3.1.0/controllers/) текущей [формы редактирования](efd3_editform.html) [FlexberryLookupMixin](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/FlexberryLookupMixin.html), который в итоге [прокидывает наружу Action](https://api.emberjs.com/ember/3.25/classes/Controller/methods/send?anchor=send) `showModalDialog`.
+* Обработчик `showModalDialog` находится в [миксине](https://api.emberjs.com/ember/3.1/classes/Mixin) [роута](https://guides.emberjs.com/v3.1.0/routing/defining-your-routes/) всего приложения [ModalApplicationRoute](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/ModalApplicationRoute.html), который стартует рендеринг [шаблона](https://guides.emberjs.com/v3.1.0/templates/handlebars-basics/), где используется компонент модального диалога. Параметры для рендеринга заданы в [базовом контроллере формы редактирования EditFormController](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/EditFormController.html) и приведут к отображению [шаблона lookup-dialog](https://github.com/Flexberry/ember-flexberry/blob/develop/app/templates/lookup-dialog.hbs), который в разметке использует компонент модального диалога.
+* При срабатывании [onVisible](https://semantic-ui.com/modules/modal.html#/settings) (фактически - это окончание отрисовки модального окна) наружу прокидывается [Action](https://guides.emberjs.com/v3.1.0/components/triggering-changes-with-actions/) определённый для `created`, здесь это `createdModalDialog`. Обработчик `createdModalDialog` находится в [контроллере lookup-dialog](https://github.com/Flexberry/ember-flexberry/blob/develop/addon/controllers/lookup-dialog.js).
+* При скрытии модального окна (в результате любой из причины) срабатывает [onHidden](https://semantic-ui.com/modules/modal.html#/settings) и наружу прокидывается [Action](https://guides.emberjs.com/v3.1.0/components/triggering-changes-with-actions/) определённый для `close`, здесь это `removeModalDialog`. Обработчик `removeModalDialog` находится в [миксине](https://api.emberjs.com/ember/3.1/classes/Mixin) [роута](https://guides.emberjs.com/v3.1.0/routing/defining-your-routes/) всего приложения [ModalApplicationRoute](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/ModalApplicationRoute.html) и скрывает отрендеренный шаблон, содержащий модальный диалог.
 
 Таким образом, при использовании модального диалога типичным является то, что:
 
