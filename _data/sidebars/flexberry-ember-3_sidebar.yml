@@ -133,7 +133,6 @@ entries:
           - title: Flexberry multiple lookup 
             title_ru: Flexberry multiple lookup 
             url: /ef3_flexberry-multiple-lookup.html
->>>>>>> master
             output: web, pdf
 
       - title: Services

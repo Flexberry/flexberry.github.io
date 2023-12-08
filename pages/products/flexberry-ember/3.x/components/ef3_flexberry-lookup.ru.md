@@ -53,6 +53,7 @@ summary: Обзор возможностей и настроек для комп
     readonly=readonly
     componentName="myMasterLookup"
     data-test-neo-platform-gen-test-child1-e-myMaster=true
+    updateLookupValue=(action "updateLookupValue")
 }}{% endraw %}
 ```
 
@@ -64,6 +65,7 @@ summary: Обзор возможностей и настроек для комп
 * `title` - заголовок модального окна для выбора значения (в данном примере значение локализовано).
 * `readonly` - флаг, определяющий, что компонент работает в режиме "только для чтения" (то есть изменить выбранное значение невозможно).
 * `componentName` - имя компонента.
+* `updateLookupValue` - определение имени action, которое будет происходить при изменении значения в лукапе.
 * `choose` и `remove` - это имена методов контроллера, которые обрабатывают события выбора или очистки значения лукапа и, соответственно, меняют значение поля модели. Обработчики `showLookupDialog` и `removeLookupValue` расположены в [специальном миксине контроллера FlexberryLookupMixin](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/FlexberryLookupMixin.html)
 
 Работу с настройками компонента лукапа можно посмотреть на [тестовом стенде](http://flexberry.github.io/ember-flexberry/dummy/dummy-test-3/#/components-examples/flexberry-lookup/settings-example).
@@ -380,3 +382,19 @@ export default EditFormController.extend({
   }
 });
 ```
+
+## Возможность переопределить поведение при изменении значения лукапа
+
+Если необходима дополнительная логика при изменении значения лукапа, то в контроллере формы, на которой расположен лукап, следует переопределить экшен `updateLookupValue`:
+
+```js
+  actions: {
+    updateLookupValue() {
+      // Базовая логика
+      this._super(...arguments);
+
+      // Дополнительная логика
+      // ...
+    }
+  }
+  ```
