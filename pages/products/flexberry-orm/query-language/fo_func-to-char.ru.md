@@ -17,11 +17,11 @@ lang: ru
 * С двумя аргументами, где первый - какое-либо выражение, возвращающее значение, а второй - число, означающее длину результирующей строки.
 * С тремя аргументами, где первый - выражение, имеющее тип `DATETIME`, второй - длина строки, а третий - номер формата для отображения даты. Для задания последнего параметра можно использовать перечисление `ExternalLangDef.DateFormats`. В нем определены следующие значения:
 
-    * `German` (DD.MM.YY)
-    * `GermanWithCentury` (DD.MM.YYYY)
-    * `Month` (DD Mon YY - сокращенное название месяца)
-    * `MonthWithCentury` (DD Mon YYYY)
-    * `Time` (hh:mi:ss - время)
+  * `German` (DD.MM.YY)
+  * `GermanWithCentury` (DD.MM.YYYY)
+  * `Month` (DD Mon YY - сокращенное название месяца)
+  * `MonthWithCentury` (DD Mon YYYY)
+  * `Time` (hh:mi:ss - время)
 
 Кроме этого, можно использовать, другие форматы, задавая их числом. Полный список находится [здесь](http://msdn.microsoft.com/ru-ru/library/ms187928.aspx) (это возможно только для [MSSQLDataService](fo_mssql-data-service.html).
 

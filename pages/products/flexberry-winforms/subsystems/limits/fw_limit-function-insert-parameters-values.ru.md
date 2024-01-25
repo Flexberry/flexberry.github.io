@@ -10,22 +10,28 @@ lang: ru
 ---
 
 ## Вопрос
+
 Имеется [limitFunction](fo_limit-function.html) (класс `ICSSoft.STORMNET.FunctionalLanguage.Function`) с параметром @Дата. Как вместо этого параметра подставить текущую дату?
 
 ## Ответ
+
 Пусть задана функция `limitFunction` с параметром @Дата:
-```csharp 
-ExternalLangDef externalLangDef = ExternalLangDef.LanguageDef;
+
+```csharp
+IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+IDataService ds = mainUnityContainer.Resolve<IDataService>();
+ExternalLangDef languageDef = new ExternalLangDef(ds)
  
- ICSSoft.STORMNET.FunctionalLanguage.Function limitFunction = externalLangDef.GetFunction(
-   externalLangDef.funcEQ,
-   new ParameterDef("Дата", externalLangDef.DateTimeType, false, ""),
+ ICSSoft.STORMNET.FunctionalLanguage.Function limitFunction = languageDef.GetFunction(
+   languageDef.funcEQ,
+   new ParameterDef("Дата", languageDef.DateTimeType, false, ""),
    new DateTime(2000, 01, 01));
 ```
 
 Подробнее о [ExternalLangDef](fo_external-lang-def.html).
 
 ### Для Web
+
 Для подстановки параметров в функцию в классе `ICSSoft.STORMNET.Web.Tools.AdvLimitUtils` есть метод:
 
 ```csharp 
@@ -47,6 +53,7 @@ public static Function SubstituteParameters(Function function, IDictionary<strin
 ```
 
 ### Для Win
+
 Для подстановки параметров в ограничивающую функцию в классе `ICSSoft.STORMNET.Windows.Forms.AdvansedLimitExtension` есть метод:
 ```csharp 
 /// <summary>
@@ -63,6 +70,7 @@ public static Function SubstituteParameters(Function function, IDictionary<strin
 Но для этого метода нужен экземпляр класса `ICSSoft.STORMNET.Windows.Forms.AdvansedLimit` (объектная модель ограничения, включает в себя как ограничивающую функцию, так и определения параметров). 
 
 ### Пример
+
 ```csharp 
  AdvansedLimit advlimit = new AdvansedLimit {Function = limitFunction};
  advlimit.Parameters = new ParameterDef[1] { (ParameterDef)advlimit.Function.Parameters[0] };

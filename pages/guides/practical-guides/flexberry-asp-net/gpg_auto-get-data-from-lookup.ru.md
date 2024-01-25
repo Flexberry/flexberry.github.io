@@ -29,21 +29,23 @@ using ICSSoft.STORMNET.Windows.Forms;
 ```csharp
 protected override void PreApplyToControls()
 {
-	if (IsPostBack && (DataObject == null || DataObject.GetStatus(true) == ObjectStatus.Created))
-	{
-		var заказ = ctrlЗаказ.SelectedMasterPK;
-		ctrlЗаказ.MasterViewName = Заказ.Views.ЗаказL.Name;
-		
-		var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(СтрокаЗаказа), СтрокаЗаказа.Views.СтрокаЗаказаE);
-		lcs.LimitFunction = FunctionBuilder.BuildEquals<СтрокаЗаказа>(x => x.Заказ, заказ);
-		var строкиЗаказа = DataServiceProvider.DataService.LoadObjects(lcs);
+  if (IsPostBack && (DataObject == null || DataObject.GetStatus(true) == ObjectStatus.Created))
+    {
+      var заказ = ctrlЗаказ.SelectedMasterPK;
+      ctrlЗаказ.MasterViewName = Заказ.Views.ЗаказL.Name;
 
-		foreach (var s in строкиЗаказа)
-		{
-			var строкаЗаказа = (СтрокаЗаказа)s;
-			DataObject.ЗаписьВНакладной.Add(new ЗаписьВНакладной { Количество = строкаЗаказа.Количество, Товар = строкаЗаказа.Товар });
-		}
-	}
+      var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(СтрокаЗаказа), СтрокаЗаказа.Views.СтрокаЗаказаE);
+      lcs.LimitFunction = FunctionBuilder.BuildEquals<СтрокаЗаказа>(x => x.Заказ, заказ);
+      IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+      IDataService ds = mainUnityContainer.Resolve<IDataService>();
+      var строкиЗаказа = ds.LoadObjects(lcs);
+
+      foreach (var s in строкиЗаказа)
+        {
+          var строкаЗаказа = (СтрокаЗаказа)s;
+          DataObject.ЗаписьВНакладной.Add(new ЗаписьВНакладной { Количество = строкаЗаказа.Количество, Товар = строкаЗаказа.Товар });
+        }
+    }
 }
 ```
 

@@ -16,7 +16,7 @@ lang: ru
 4. При сохранении детейла на форме редактирования не происходит запись в БД - детейл запишется в БД вместе со своим мастером при его сохранении.
 5. В  случае, когда объект открыт на форме редактирования, запрещено его редактировать в `GroupEdit`(выдаётся предупреждение и выводится на передний план форма редактирования). Для согласованности отображения в `GroupEdit` изменённых на форме данных синхронизируется отображение данных при выходе с формы редактирования и при ее активации.
 
-{% include important.html content="GEEditorExt не входит в стандартную поставку Flexberry Winforms." %}
+> GEEditorExt не входит в стандартную поставку Flexberry Winforms.
 
 ## Как подключить GEEditorExt
 
@@ -24,7 +24,7 @@ lang: ru
 
 ![Пример диаграммы](/images/pages/products/flexberry-winforms/controls/groupedit/class-diagram_-customer-purchase2.jpg)
 
-{% include note.html content="Для редактирования детейлов необходимо сгенерировать соответствующую форму редактирования (при быстрой прототипизации она не создаётся)." %}
+> Для редактирования детейлов необходимо сгенерировать соответствующую форму редактирования (при быстрой прототипизации она не создаётся).
 
 1.В классе формы агрегатора объявляется переменную типа `GEEditorExt`:
 
@@ -55,7 +55,7 @@ public class WinformC__ПокупательE : ICSSoft.STORMNET.UI.BaseWinEdit, 
 }
 ```
 
-{% include note.html content="Вместо пунктов 1 и 2, если не надо совершать дополнительных действий с кнопками (скрывать их, переименовывать и т.п.) можно использовать метод-расширение у GroupEdit." %}
+> Вместо пунктов 1 и 2, если не надо совершать дополнительных действий с кнопками (скрывать их, переименовывать и т.п.) можно использовать метод-расширение у GroupEdit.
 
 3.В метод `GetEditor` формы агрегатора добавляется код, указывающий, какую форму поднимать для редактирования конкретного детейла:
 
@@ -110,7 +110,9 @@ public class C__ПокупкаE : ICSSoft.STORMNET.UI.BaseIndpdEdit
         if ((dobject.GetStatus(false) != ICSSoft.STORMNET.ObjectStatus.Created)
                     || dobject.Prototyped)
         {
-            ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(m_objView, dobject, false, false);
+            IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+            IDataService ds = mainUnityContainer.Resolve<IDataService>();
+            ds.LoadObject(m_objView, dobject, false, false);
             dobject.InitDataCopy();
         }
         // *** Start programmer edit section *** (PrepareDataObjectForEdit (DataObject) end)
@@ -132,7 +134,9 @@ ICSSoft.STORMNET.View дочитать_View = m_objView - ge_View;
 //если она открывалась ранее
 foreach (string altprop in dobject.GetAlteredPropertyNames())
     дочитать_View.RemoveProperty(altprop);
-ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(дочитать_View, dobject, false, false);
+IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+IDataService ds = mainUnityContainer.Resolve<IDataService>();
+ds.LoadObject(дочитать_View, dobject, false, false);
 return;
 ```
 

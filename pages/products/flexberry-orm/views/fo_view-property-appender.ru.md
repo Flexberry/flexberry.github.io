@@ -8,7 +8,7 @@ permalink: ru/fo_view-property-appender.html
 lang: ru
 ---
 
-Класс `AdvLimit.ExternalLangDef.ViewPropertyAppender` предназначен для того, чтобы расширять [представление](fd_view-definition.html) свойствами, которые находятся в [ограничении](fo_limit-function.html). 
+Класс `AdvLimit.ExternalLangDef.ViewPropertyAppender` предназначен для того, чтобы расширять [представление](fd_view-definition.html) свойствами, которые находятся в [ограничении](fo_limit-function.html).
 
 ## Основные методы
 

@@ -45,7 +45,9 @@ public override void Edited(ICSSoft.STORMNET.DataObject dataobject, string contp
             Э.ФИОСотрудника = Э.Сотрудник.ОпрПолноеФИО();
             if (р.Должность != null)
             {
-                DataServiceProvider.DataService.LoadObject(р.Должность);
+                IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+                IDataService ds = mainUnityContainer.Resolve<IDataService>();
+                ds.LoadObject(р.Должность);
                 Э.Должность = р.Должность.Наименование;
             }
             else Э.Должность = "";
@@ -86,7 +88,9 @@ public void ПоказатьСписок()
         LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Лицо), "ЛицоL");
         lcs.LimitFunction = lf;
 
-        ICSSoft.STORMNET.DataObject[] objs = DataServiceProvider.DataService.LoadObjects(lcs);
+        IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+        IDataService ds = mainUnityContainer.Resolve<IDataService>();
+        ICSSoft.STORMNET.DataObject[] objs = ds.LoadObjects(lcs);
 
         if (objs.Length == 0)
         {

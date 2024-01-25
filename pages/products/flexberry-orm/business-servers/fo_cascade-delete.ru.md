@@ -12,7 +12,7 @@ lang: ru
 
 Пусть дана следующая [диаграмма](fd_class-diagram.html):
 
-![](/images/pages/products/flexberry-orm/business-servers/kredit-diagramm.png)
+![kredit-diagramm](/images/pages/products/flexberry-orm/business-servers/kredit-diagramm.png)
 
 Если в базе данных есть объекты типа `Клиент`, ссылающиеся на `Адрес`, то без дополнительных настроек при попытке удаления объекта типа `Адрес` произойдёт ошибка. База данных не даст удалить такой объект.
 
@@ -65,37 +65,39 @@ lang: ru
 
 Необходимо доработать диаграмму классов таким образом, чтобы она поддерживала фиктивное удаление: добавить поле `Актуально:bool`.
 
-![](/images/pages/products/flexberry-orm/business-servers/kredit-diagramm-aktualno.png)
+![kredit-diagramm-aktualno](/images/pages/products/flexberry-orm/business-servers/kredit-diagramm-aktualno.png)
 
 Добавить логику в бизнес-сервера объектов (на примере `Адреса`):
 
 ```csharp
 if (UpdatedObject.GetStatus() == ObjectStatus.Deleted)
 {
-	// Не дадим объекту удалиться, но выставим флаг Актуальности.
-	UpdatedObject.SetStatus(ObjectStatus.Altered);
-	UpdatedObject.Актуально = false;
+  // Не дадим объекту удалиться, но выставим флаг Актуальности.
+  UpdatedObject.SetStatus(ObjectStatus.Altered);
+  UpdatedObject.Актуально = false;
 
-	// Найдем все объекты, ссылающиеся на "удаляемый" и удалим их.
-	var ds = (SQLDataService)DataServiceProvider.DataService;
-	var klients =
-		ds.Query<Клиент>(Клиент.Views.КлиентE)
-		  .Where(k => k.Прописка.__PrimaryKey == UpdatedObject.__PrimaryKey);
-	foreach (var k in klients)
-	{
-		k.SetStatus(ObjectStatus.Deleted);
-	}
+  // Найдем все объекты, ссылающиеся на "удаляемый" и удалим их.
+  IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+  IDataService ds = mainUnityContainer.Resolve<IDataService>();
+  var klients =
+    ds.Query<Клиент>(Клиент.Views.КлиентE)
+    .Where(k => k.Прописка.__PrimaryKey == UpdatedObject.__PrimaryKey);
+  foreach (var k in klients)
+  {
+    k.SetStatus(ObjectStatus.Deleted);
+  }
 
-	return klients.ToArray();
+return klients.ToArray();
 }
 ```
 
-{% include note.html content="Внимание! Cсылающиеся объекты отправленные на удаление, но они точно также перехватятся в своем бизнес-сервере и не удалятся." %}
+> Внимание! Cсылающиеся объекты отправленные на удаление, но они точно также перехватятся в своем бизнес-сервере и не удалятся."
 
 Далее, чтобы пользователю не выводились "удаленные" данные при просмотре списка объектов, требуется на соответствующий контрол наложить ограничение вида:
 
 ``` csharp
-var ds = (MSSQLDataService)DataServiceProvider.DataService;
+IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+IDataService ds = mainUnityContainer.Resolve<IDataService>();
 IQueryable<Клиент> limit1 = ds.Query<Адрес>(Адрес.Views.АдресL).Where(Address => Address.Актуально);
 Function onlyActual = LinqToLcs.GetLcs(limit1.Expression, Адрес.Views.АдресL).LimitFunction;
 ```

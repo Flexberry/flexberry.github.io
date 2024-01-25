@@ -31,12 +31,12 @@ using ICSSoft.STORMNET.FunctionalLanguage.SQLWhere;
 
 ## Наложение ограничений на перечислимый тип
 
-[Enumerations|Перечислимые типы) хранятся в базе как строки. Соответственно, при конструировании описания переменной ([VariableDef](fo_variable-def.html)) необходимо использовать `StringType`. В качестве аргумента для сравнения рекомендуется использовать `Caption` объекта перечисления, получить `Caption` можно при помощи класса `EnumCaption`, который является частью `ICSSoft.STORMNET`.
+[Перечислимые типы](fd_enumerations.html) хранятся в базе как строки. Соответственно, при конструировании описания переменной ([VariableDef](fo_variable-def.html)) необходимо использовать `StringType`. В качестве аргумента для сравнения рекомендуется использовать `Caption` объекта перечисления, получить `Caption` можно при помощи класса `EnumCaption`, который является частью `ICSSoft.STORMNET`.
 
 Например:
 
-![](/images/pages/products/flexberry-orm/query-language/Pol.PNG)
- 
+![Pol](/images/pages/products/flexberry-orm/query-language/Pol.PNG)
+
 Чтобы наложить ограничение на пол клиента, необходимо составить следующую функцию:
 
 ```csharp
@@ -53,30 +53,32 @@ var onlyMenFunction = ld.GetFunction(ld.funcEQ, new VariableDef(ld.StringType, I
 ### Пример
 
 ```csharp
-//ICSSoft.STORMNET.Windows.Forms.ExternalLangDef (ExternalLangDef.dll)
-//ICSSoft.STORMNET.Windows.Forms.ExternalLangDeflangdef = ExternalLangDef.LanguageDef;
+
 using ICSSoft.STORMNET.Windows.Forms;
 
-var langdef = ExternalLangDef.LanguageDef;
+IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+IDataService ds = mainUnityContainer.Resolve<IDataService>();
+ExternalLangDef languageDef = new ExternalLangDef(ds);
+
 var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof (Кредит), Кредит.Views.КредитE);
 
-lcs.LimitFunction = langdef.GetFunction(langdef.funcEQ,
-                                         langdef.GetFunction("YearPart", new VariableDef(langdef.DateTimeType, "ДатаВыдачи")), "2013");
+lcs.LimitFunction = languageDef.GetFunction(languageDef.funcEQ,
+                                         languageDef.GetFunction("YearPart", new VariableDef(languageDef.DateTimeType, "ДатаВыдачи")), "2013");
 
-var only2013year = DataServiceProvider.DataService.LoadObjects(lcs);
+var only2013year = ds.LoadObjects(lcs);
 
-lcs.LimitFunction = langdef.GetFunction(langdef.funcEQ,
-                                         langdef.GetFunction("MonthPart", new VariableDef(langdef.DateTimeType, "ДатаВыдачи")), "12");
+lcs.LimitFunction = languageDef.GetFunction(languageDef.funcEQ,
+                                         languageDef.GetFunction("MonthPart", new VariableDef(languageDef.DateTimeType, "ДатаВыдачи")), "12");
 
-var onlyDecember = DataServiceProvider.DataService.LoadObjects(lcs);
+var onlyDecember = ds.LoadObjects(lcs);
 
-lcs.LimitFunction = langdef.GetFunction(langdef.funcAND,
-                langdef.GetFunction(langdef.funcEQ, 
-                    langdef.GetFunction("YearPart", new VariableDef(langdef.DateTimeType, "ДатаВыдачи")), "2012"),
-                langdef.GetFunction(langdef.funcEQ, 
-                    langdef.GetFunction("MonthPart", new VariableDef(langdef.DateTimeType, "ДатаВыдачи")), "12"));
+lcs.LimitFunction = languageDef.GetFunction(languageDef.funcAND,
+                languageDef.GetFunction(languageDef.funcEQ, 
+                    languageDef.GetFunction("YearPart", new VariableDef(languageDef.DateTimeType, "ДатаВыдачи")), "2012"),
+                languageDef.GetFunction(languageDef.funcEQ, 
+                    languageDef.GetFunction("MonthPart", new VariableDef(languageDef.DateTimeType, "ДатаВыдачи")), "12"));
 
-var onlyDecember2012 = DataServiceProvider.DataService.LoadObjects(lcs);
+var onlyDecember2012 = ds.LoadObjects(lcs);
 ```
 
 ## Примеры использования
@@ -86,34 +88,42 @@ var onlyDecember2012 = DataServiceProvider.DataService.LoadObjects(lcs);
 ### Наложение ограничений на строковую переменную
 
 ```csharp
-var langdef = ExternalLangDef.LanguageDef;
+IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+IDataService ds = mainUnityContainer.Resolve<IDataService>();
+ExternalLangDef languageDef = new ExternalLangDef(ds);
 var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof (Личность), Личность.Views.ЛичностьE);
-lcs.LimitFunction = langdef.GetFunction(langdef.funcEQ,
-	            new VariableDef(langdef.StringType, Information.ExtractPropertyPath<Личность>(x => x.Фамилия)), "Петров");
-var клиентыФамилияПетров = DataServiceProvider.DataService.LoadObjects(lcs);
+lcs.LimitFunction = languageDef.GetFunction(languageDef.funcEQ,
+            new VariableDef(languageDef.StringType, Information.ExtractPropertyPath<Личность>(x => x.Фамилия)), "Петров");
+var клиентыФамилияПетров = ds.LoadObjects(lcs);
 ```
 
 ### Наложение ограничений на мастеровой объект (по ключу)
 
 ```csharp
-var langdef = ExternalLangDef.LanguageDef;
+IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+IDataService ds = mainUnityContainer.Resolve<IDataService>();
+ExternalLangDef languageDef = new ExternalLangDef(ds);
+
 var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof (Кредит), Кредит.Views.КредитE);
-lcs.LimitFunction = langdef.GetFunction(langdef.funcEQ,
-	            new VariableDef(langdef.GuidType, Information.ExtractPropertyPath<Кредит>(x => x.Личность)), "64F45BC3-339B-4FBA-A036-C5E9FE9EAE53");
-var кредиты = DataServiceProvider.DataService.LoadObjects(lcs);
+lcs.LimitFunction = languageDef.GetFunction(languageDef.funcEQ,
+            new VariableDef(languageDef.GuidType, Information.ExtractPropertyPath<Кредит>(x => x.Личность)), "64F45BC3-339B-4FBA-A036-C5E9FE9EAE53");
+var кредиты = ds.LoadObjects(lcs);
 ```
 
 ### Наложение ограничений на мастеровой объект (по полю мастера)
 
 ```csharp
-var langdef = ExternalLangDef.LanguageDef;
+IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+IDataService ds = mainUnityContainer.Resolve<IDataService>();
+ExternalLangDef languageDef = new ExternalLangDef(ds);
+
 var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof (Кредит), Кредит.Views.КредитE);
-lcs.LimitFunction = langdef.GetFunction(langdef.funcEQ,
-	            new VariableDef(langdef.GuidType, Information.ExtractPropertyPath<Кредит>(x => x.Личность.Фамилия)), "Петров");
-var кредиты = DataServiceProvider.DataService.LoadObjects(lcs);
+lcs.LimitFunction = languageDef.GetFunction(languageDef.funcEQ,
+            new VariableDef(languageDef.GuidType, Information.ExtractPropertyPath<Кредит>(x => x.Личность.Фамилия)), "Петров");
+var кредиты = ds.LoadObjects(lcs);
 ```
 
-{% include important.html content="Следует убедиться, что в представлении `КредитE` есть мастер `Личность` и его поле `Фамилия`, иначе произойдёт ошибка при выполнении запроса." %}
+> Следует убедиться, что в представлении `КредитE` есть мастер `Личность` и его поле `Фамилия`, иначе произойдёт ошибка при выполнении запроса.
 
 ## Список функций
 

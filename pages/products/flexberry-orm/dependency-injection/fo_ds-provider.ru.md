@@ -7,12 +7,14 @@ toc: true
 permalink: ru/fo_ds-provider.html
 lang: ru
 ---
+IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+IDataService ds = mainUnityContainer.Resolve<IDataService>();
 
-`DataServiceProvider.DataService` - это [сервис данных](fo_data-service.html), который инициализируется на основании параметров, заданных в файле конфигурации (`App.cobfig` или `Web.config`). Таким образом, `DataServiceProvider.DataService` является [сервисом данных](fo_data-service.html) по умолчанию.
+`IDataService` - это [сервис данных](fo_data-service.html), который инициализируется на основании параметров, заданных в файле конфигурации (`App.cobfig` или `Web.config`). Таким образом, `IDataService` является [сервисом данных](fo_data-service.html) по умолчанию.
 
-### Алгоритм инициализации DataServiceProvider.DataService
+### Алгоритм инициализации IDataService
 
-При инициализации `DataServiceProvider.DataService` используется следующий алгоритм (инициализация происходит, если нет закэшированного значения, либо стоит флаг, что всегда нужно возвращать новый сервис данных):
+При инициализации `IDataService` используется следующий алгоритм (инициализация происходит, если нет закэшированного значения, либо стоит флаг, что всегда нужно возвращать новый сервис данных):
 
 1.Производится попытка разрешить тип [сервиса данных](fo_data-service.html) через Unity. Например, чтобы использовался MSSQLDataService, в файле конфигурации требуется добавить следующее определение:
 
@@ -61,8 +63,7 @@ lang: ru
 </configuration>
 ```
 
-
-3.Далее получение DataServiceProvider.DataService происходит по старому алгоритму. Тип [сервиса данных](fo_data-service.html) - через настройку DataServiceType в файле конфигурации. А строка соединения определяется в зависимости от того, в каком режиме приложение, web или win.
+3.Далее получение IDataService происходит по старому алгоритму. Тип [сервиса данных](fo_data-service.html) - через настройку DataServiceType в файле конфигурации. А строка соединения определяется в зависимости от того, в каком режиме приложение, web или win.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

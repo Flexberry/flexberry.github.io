@@ -37,38 +37,39 @@ LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(type
 
 Чтобы вычитать набор данных из базы в память, необходимо
 
-1. Создать объект типа ICSSoft.STORMNET.Business.LoadingCustomizationStruct
+1.Создать объект типа ICSSoft.STORMNET.Business.LoadingCustomizationStruct
 
 ``` csharp
 LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(тип, представление);
 
 ```
-2. возможно вручную установить [представление](fd_view-definition.html)
+
+2.Возможно вручную установить [представление](fd_view-definition.html)
 
 ``` csharp
 lcs.View = Клиент.Views.КлиентE;
 ```
 
-3. Установить тип вычитываемых объектов
+3.Установить тип вычитываемых объектов
 
 ``` csharp
 lcs.LoadingTypes=new Type[) {typeof(Кредит)};
 ```
 
-4. Наложить [ограничение](fo_limit-function.html) на вычитываемые объекты (если ограничение не будет наложено - вычитаются все объекты такого типа)
+4.Наложить [ограничение](fo_limit-function.html) на вычитываемые объекты (если ограничение не будет наложено - вычитаются все объекты такого типа)
 
 ``` csharp
 lcs.LimitFunction = <Объект типа ICSSoft.STORMNET.FunctionalLanguage.Function>
 ```
 
-5. Настроить другие параметры чтения (не обязательно)
-6. Сделать запрос к серверу, используя метод [`LoadObjects` сервиса данных](fo_data-service.html)
+5.Настроить другие параметры чтения (не обязательно)
+6.Сделать запрос к серверу, используя метод [`LoadObjects` сервиса данных](fo_data-service.html)
 
 ``` csharp
-var credits = DataServiceProvider.DataService.LoadObjects(lcs).Cast<Кредит>();
+IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+IDataService ds = mainUnityContainer.Resolve<IDataService>();
 ```
 
 ## Пример
 
 Пример использования `LoadingCustomizationStruct` доступен по адресу: [https://github.com/Flexberry/FlexberryORM-DemoApp/blob/master/FlexberryORM/CDLIB/CDADMTEST/Form1.cs](https://github.com/Flexberry/FlexberryORM-DemoApp/blob/master/FlexberryORM/CDLIB/CDADMTEST/Form1.cs).
-

@@ -13,7 +13,7 @@ lang: ru
 1.Сконструировать [сервис данных](fo_data-service.html)
 
 ```csharp
-IDataService ds = new ODBCDataService();			
+IDataService ds = new ODBCDataService();
 ds.CustomizationString="DSN=LibNetSample";
 ```
 
@@ -22,5 +22,6 @@ ds.CustomizationString="DSN=LibNetSample";
 3.[Получить его у провайдера сервиса данных](fo_ds-provider.html).
 
 ```csharp
-IDataService ds = DataServiceProvider.DataService;
+IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+IDataService ds = mainUnityContainer.Resolve<IDataService>();
 ```

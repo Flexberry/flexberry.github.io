@@ -11,9 +11,9 @@ lang: ru
 
 В [расширенном редакторе ограничений](fa_advanced-limit-editor.html) есть поддержка выражений Пусто/Непусто (Пусто/Заполнено).
 
-![](/images/pages/products/flexberry-aspnet/controls/limit-editor/web-limit-editor-null.png)
+![Ограничение](/images/pages/products/flexberry-aspnet/controls/limit-editor/web-limit-editor-null.png)
 
-`Пусто` соответствует функции [funcIsNull](fo_func-is-null.html) из [SQLWhereLanguageDef](fo_function-list.html). 
+`Пусто` соответствует функции [funcIsNull](fo_func-is-null.html) из [SQLWhereLanguageDef](fo_function-list.html).
 
 `Непусто` соответствует функции funcNotIsNull из [ExternalLangDef](fo_external-lang-def.html).
 
@@ -28,10 +28,11 @@ lang: ru
 
 ## Несравнимые с null свойства и Пусто/Непусто
 
-Если имеется класс `Кредит` со свойством `СуммаКредита` вещественного типа, то при переводе в [LINQProvider|LinqProvider) оно будет представляться следующим образом:
+Если имеется класс `Кредит` со свойством `СуммаКредита` вещественного типа, то при переводе в [LinqProvider](https://flexberry.github.io/ru/fo_linq-provider.html) оно будет представляться следующим образом:
 
 ``` csharp
-var ds = (SQLDataService)DataServiceProvider.DataService;
+IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+IDataService ds = mainUnityContainer.Resolve<IDataService>();
 IQueryable<Кредит> limit = ds.Query<Кредит>(Кредит.Views.C__КредитE).Where(x => (x.СуммаКредита as object) == null);
 ```
 

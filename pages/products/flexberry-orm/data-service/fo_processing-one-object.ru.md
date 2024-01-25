@@ -17,27 +17,29 @@ lang: ru
 ```csharp
 static void Main(string[) args)
 {
-	//Сохранение одного объекта
-	Страна странакоторуюпишем = new Страна();
-	странакоторуюпишем.Наименование="Россия";
-	UpdateObject(странакоторуюпишем);
-	Console.WriteLine("Конец сохранения");			
-	//чтение одного объекта
-	Страна странакоторуючитаем = new Страна();
-	странакоторуючитаем.SetExistObjectPrimaryKey(странакоторуюпишем.__PrimaryKey);
-	LoadObject(странакоторуючитаем);
-	Console.WriteLine("Конец чтения, страна {0}", странакоторуючитаем.Наименование);			
-	Console.Read();
+  //Сохранение одного объекта
+  Страна странакоторуюпишем = new Страна();
+  странакоторуюпишем.Наименование="Россия";
+  UpdateObject(странакоторуюпишем);
+  Console.WriteLine("Конец сохранения");
+  //чтение одного объекта
+  Страна странакоторуючитаем = new Страна();
+  странакоторуючитаем.SetExistObjectPrimaryKey(странакоторуюпишем.__PrimaryKey);
+  LoadObject(странакоторуючитаем);
+  Console.WriteLine("Конец чтения, страна {0}", странакоторуючитаем.Наименование);
+  Console.Read();
 }
 private static void UpdateObject(DataObject dparam)
 {
-	IDataService ds = DataServiceProvider.DataService;			
-	ds.UpdateObject(ref dparam);
+  IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+  IDataService ds = mainUnityContainer.Resolve<IDataService>();
+  ds.UpdateObject(ref dparam);
 }
-private static void LoadObject(DataObject dparam)
+  private static void LoadObject(DataObject dparam)
 {
-	IDataService ds = DataServiceProvider.DataService;			
-	ds.LoadObject(dparam);
+  IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+  IDataService ds = mainUnityContainer.Resolve<IDataService>();
+  ds.LoadObject(dparam);
 }
 ```
 

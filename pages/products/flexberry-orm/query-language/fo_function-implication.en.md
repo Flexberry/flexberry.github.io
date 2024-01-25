@@ -14,12 +14,12 @@ hash: 14f3ec1abd5d086284697d694c1fb658c2f1fe7fed54b324cf1df98b5625d1cb
 
 The implication is a function that takes two logical operands: antecedents and consequences, can take the following values: 
 
-Prerequisite | Consequence | Result 
-:----------|:----------|:---------- 
-0 | 0 | 1 
-0 | 1 | 1 
-1 | 0 | 0 
-1 | 1 | 1 
+Prerequisite | Consequence | Result
+:----------|:----------|:----------
+0 | 0 | 1
+0 | 1 | 1
+1 | 0 | 0
+1 | 1 | 1
 
 Logically, the implication "If a, then b" is equal to "(not a) or b". 
 For example, a constraint of the form: "If nickname = snow leopard, then gender = male" would lead to the conclusion all cats with the male sex and all (not snow leopard). 

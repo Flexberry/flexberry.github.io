@@ -97,7 +97,7 @@ namespace ODataServiceTemplate
 }
 ```
 
- * In The Global.asax, add:
+* In The Global.asax, add:
 
 ```csharp
 namespace ODataServiceTemplate
@@ -122,9 +122,9 @@ namespace ODataServiceTemplate
 }
 ```
 
- * In order for code to compile, you may need to install additional NuGet packages in the app: [Microsoft.AspNet.WebApi.Cors](https://www.nuget.org/packages/Microsoft.AspNet.WebApi.Cors) and [microsoft.aspnet.webapi.webhost](https://www.nuget.org/packages/microsoft.aspnet.webapi.webhost/).
+* In order for code to compile, you may need to install additional NuGet packages in the app: [Microsoft.AspNet.WebApi.Cors](https://www.nuget.org/packages/Microsoft.AspNet.WebApi.Cors) and [microsoft.aspnet.webapi.webhost](https://www.nuget.org/packages/microsoft.aspnet.webapi.webhost/).
 
- * Add to web.config or to check the availability of the following records:
+* Add to web.config or to check the availability of the following records:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

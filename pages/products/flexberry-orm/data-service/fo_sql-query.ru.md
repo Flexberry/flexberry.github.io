@@ -13,8 +13,8 @@ lang: ru
 В технологии Flexberry существуют следующие способы доступа к базе данных:
 
 * [Сервис данных](fo_data-service.html). Для чтения данных возможно использование как
-	* [Функции ограничения](fo_limit-function.html),
-	* так и [LINQProvider](fo_linq-provider.html)).
+  * [Функции ограничения](fo_limit-function.html),
+  * так и [LINQProvider](fo_linq-provider.html).
 * ADO.NET. Позволяет выполнять SQL-запросы из кода.
 
  __Примечание__: ADO.NET `НЕ ИСПОЛЬЗУЕТСЯ` в проектах в случаях, когда без него можно обойтись. Даже если возникла острая необходимость использовать ADO.NET, следует проверить, нельзя ли обойтись без него. Возможно, подойдет использование [funcSQL](fo_func-sql.html).
@@ -25,7 +25,7 @@ lang: ru
 
 Из чего складывается текст SQL-запроса, генерируемого [сервисом данных](fo_data-service.html):
 
-* Настройки [LoadingCustomizationStruct](fo_loading-customization-struct.html) (работу по сортировке, наложению [limitFunction](fo_limit-function.html), подчёту агрегирующих значений и прочим аналогичным действиям необходимо перекладывать на сервер за счёт задания параметров `LoadingCustomizationStruct`.
+* Настройки [LoadingCustomizationStruct](fo_loading-customization-struct.html) (работу по сортировке, наложению [limitFunction](fo_limit-function.html), подчёту агрегирующих значений и прочим аналогичным действиям необходимо перекладывать на сервер за счёт задания параметров `LoadingCustomizationStruct`).
 * Атрибутивная разметка (например, атрибут `Storage` как классов, так и связей).
 * Реализация [Inheritance](fd_inheritance.html) с иcпользованием [TypeUsage](fo_type-usage-problem.html).
 * [Перехват запроса к БД](fo_intercept-formation-sql-query.html).
@@ -40,21 +40,23 @@ lang: ru
 Ниже представлен пример исполнения SQL-запросов через технологию ADO.Net:
 
 ``` csharp
-var connection = (SqlConnection)((SQLDataService)DataServiceProvider.DataService).GetConnection(); // Получение подключения.
+IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+IDataService ds = mainUnityContainer.Resolve<IDataService>();
+var connection = (SqlConnection)((SQLDataService)ds).GetConnection(); // Получение подключения.
 var command = new SqlCommand("SELECT SUM(purchase.\"Сумма\") "+
-	" FROM \"Покупатель\" customer join \"Покупка\" purchase on customer.\"primaryKey\" = purchase.\"Покупатель\" "+
-	" WHERE purchase.\"Покупатель\"=@Customer AND  purchase.\"Статус\" = \'Оплачено\' ", connection); //формирование запроса
+  " FROM \"Покупатель\" customer join \"Покупка\" purchase on customer.\"primaryKey\" = purchase.\"Покупатель\" "+
+  " WHERE purchase.\"Покупатель\"=@Customer AND  purchase.\"Статус\" = \'Оплачено\' ", connection); //формирование запроса
 var parameter = new SqlParameter("@Customer", SqlDbType.UniqueIdentifier);
 parameter.Value = ((KeyGuid)this.__PrimaryKey).Guid; // Определение значения параметра.
 command.Parameters.Add(parameter);
 
 try
 {
-	connection.Open();
-	var value = (decimal)command.ExecuteScalar(); // Исполнение запроса.
+  connection.Open();
+  var value = (decimal)command.ExecuteScalar(); // Исполнение запроса.
 }
 finally
 {
-	connection.Close();
+  connection.Close();
 }
 ```

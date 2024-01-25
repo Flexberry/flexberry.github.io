@@ -85,11 +85,13 @@ try
     Stopwatch stopwatch = new Stopwatch();
     stopwatch.Start();
 
-    // DataServiceProvider.DataService создает сервис данных, тип которого задан в конфигурационном файле (ключи DataServiceType, CustomizationStrings в секции appSettings).
+    // IDataService создает сервис данных, тип которого задан в конфигурационном файле (ключи DataServiceType, CustomizationStrings в секции appSettings).
     // Flexberry ORM сохраняет объекты данных в соответствии с их состоянием. Зависимости между объектами обрабатываются автоматически. Все запросы выполняются в одной транзакции. 
     // Таким образом, один вызов UpdateObjects соответствует одной транзакции БД.
     // Кроме этого, существует метод UpdateObject для обновления одиночного объекта (и графа объектов данных, на которые он ссылается).
-    DataServiceProvider.DataService.UpdateObjects(ref objectsToUpdateArray);
+    IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+    IDataService ds = mainUnityContainer.Resolve<IDataService>();
+    ds.UpdateObjects(ref objectsToUpdateArray);
 
     stopwatch.Stop();
     Console.WriteLine("Time taken for persistence: {0} ms.", stopwatch.ElapsedMilliseconds);

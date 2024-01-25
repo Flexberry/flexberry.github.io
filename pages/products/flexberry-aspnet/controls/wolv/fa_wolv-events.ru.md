@@ -30,7 +30,7 @@ public class WolvEventArgs : CancelEventArgs
 
 * Есть возможность настроить своё сообщение для пользователей после удаления объекта. Для формирования сообщения можно использовать список удаленных объектов и
   список объектов, которые не удалось удалить.
-* Также есть возможность передавать статус удаления меду событиями начала удаления и окончания удаления. 
+* Также есть возможность передавать статус удаления меду событиями начала удаления и окончания удаления.
 
 ## Аргументы событий
 
@@ -81,7 +81,7 @@ protected override void Preload()
 }
 ```
 
-{% include note.html content="При подписке на событие из кода, студия предложит автоматическую генерацию обработчика события. Если нажать клавишу `Tab` после того как
+> При подписке на событие из кода, студия предложит автоматическую генерацию обработчика события. Если нажать клавишу `Tab` после того как
 напечатано +=, то сгенерируется имя обработчика `WebObjectListView1_ObjectDeleting.`
 
 Если еще раз нажать клавишу `Tab`, будет сгенерирован шаблон обработчика:
@@ -89,7 +89,6 @@ protected override void Preload()
 ```csharp
 protected void WebObjectListView1_ObjectDeleting(WebObjectListView sender, WolvEventArgs args)
 ```
-" %}
 
 ### Второй этап. Обработка события
 
@@ -108,7 +107,9 @@ protected void WebObjectListView1_ObjectDeleting(WebObjectListView sender, WolvO
     {   // Пытаемся удалить (дальнейшая обработка происходит в Бизнес-сервере АдресБС.cs).
         // Если во время удаления произойдет ошибка, мы сможем ее обработать в блоке catch.
         // Если АдресБС.cs найдет учреждения, ссылающиеся на удаляемый адрес, он кинет ConfirmAdresDeletingException.
-        ICSSoft.STORMNET.Business.DataServiceProvider.DataService.UpdateObject(args.DataObj);
+        IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+        IDataService ds = mainUnityContainer .Resolve<IDataService>();
+        ICSSoft.STORMNET.Business.ds.UpdateObject(args.DataObj);
     }
     // Обрабатываем исключение бизнес-сервера
     catch (ConfirmAdresDeletingException ex)
@@ -150,7 +151,8 @@ public virtual ICSSoft.STORMNET.DataObject[] OnUpdateАдрес(IIS.MedicalInsti
     if (UpdatedObject.GetStatus() == ObjectStatus.Deleted)
     {
         //Получим список учреждений ссылающихся на удаляемый адрес
-        var ds = (SQLDataService)DataServiceProvider.DataService;
+        IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+        IDataService ds = mainUnityContainer.Resolve<IDataService>();
         МедицинскоеУчреждение[] mil = ds.Query<МедицинскоеУчреждение>(МедицинскоеУчреждение.Views.MIG_МедицинскоеУчреждениеE)
             .Where(o => o.Адрес.__PrimaryKey == UpdatedObject.__PrimaryKey)
             .ToArray();
@@ -246,7 +248,7 @@ public virtual ICSSoft.STORMNET.DataObject[] OnUpdateАдрес(IIS.MedicalInsti
 
 Пользователю будет выдано следующее окно подтверждения:
 
-![](/images/pages/products/flexberry-aspnet/controls/wolv/confirm-cascade-deleting.png)
+![confirm-cascade-deleting](/images/pages/products/flexberry-aspnet/controls/wolv/confirm-cascade-deleting.png)
 
 ### Пятый этап. Выполнить каскадное удаление объектов, если пользователь дал согласие
 
@@ -287,7 +289,9 @@ protected override void Preload()
                     return deletingAdres;
                 }).ToArray<Адрес>();
                 //Удаляем. (Дальнейшая обработка происходит в АдресБС)
-                DataServiceProvider.DataService.UpdateObjects(ref deletingAdreses);
+                IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+                IDataService ds = mainUnityContainer.Resolve<IDataService>();
+                ds.UpdateObjects(ref deletingAdreses);
             }
         }
     }

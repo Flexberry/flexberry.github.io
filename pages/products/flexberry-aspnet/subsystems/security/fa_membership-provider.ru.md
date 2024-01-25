@@ -51,7 +51,7 @@ lang: ru
 <!-- ... -->
 ```
 
-`CaseberryMembershipProvider ` располагается в сборке `CheckingLibrary.dll`
+`CaseberryMembershipProvider` располагается в сборке `CheckingLibrary.dll`
 Чтобы полномочия проверялись, узлу требуется наличие следующих сборок:
 
 * Security(Objects)
@@ -64,7 +64,7 @@ lang: ru
 * IIS.Аудит(BusinessServers)
 * AppSettingsService
 * CheckingLibrary
-* ExternalLangDef
+* ICSSoft.STORMNET.Business.ExternalLangDef
 * ICSSoft.STORMNET.AzManBridge
 * ICSSoft.STORMNET.Business
 * ICSSoft.STORMNET.Business.MSSQLDataService

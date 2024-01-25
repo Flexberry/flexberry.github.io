@@ -254,7 +254,9 @@ private void ContainerCloseHandler (object sender, StormNetUI.CloseEventArgs arg
 ```csharp
 Объект oОбъект = new Объект();
 oОбъект.__PrimaryKey = 'чего-то там';
-ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(oОбъект);
+IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+IDataService ds = mainUnityContainer.Resolve<IDataService>();
+ds.LoadObject(oОбъект);
 ICSSoft.STORMNET.UI.BaseIndpdEdit cont = (ICSSoft.STORMNET.UI.BaseIndpdEdit)Activator.CreateInstance(typeof(ОбъектE));
 ICSSoft.STORMNET.UI.ContRunner.RunEditForm(cont);
 cont.Edit(oОбъект, "", "");
@@ -265,7 +267,9 @@ cont.Edit(oОбъект, "", "");
 ```csharp
 Объект oОбъект = new Объект();
 oОбъект.__PrimaryKey = 'чего-то там';
-ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(oОбъект);
+IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+IDataService ds = mainUnityContainer.Resolve<IDataService>();
+ds.LoadObject(oОбъект);
 ICSSoft.STORMNET.UI.BaseIndpdEdit cont = (ICSSoft.STORMNET.UI.BaseIndpdEdit)Activator.CreateInstance(typeof(ОбъектE));
 ICSSoft.STORMNET.UI.ContRunner.RunEditForm(cont);
 cont.SaveEvent += (sr, ea) => { new BusinessService().UpdateObject(ea.dataobject); };

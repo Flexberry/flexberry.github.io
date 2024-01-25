@@ -14,7 +14,7 @@ lang: ru
 
 ## Пример
 
-![](/images/pages/products/flexberry-orm/additional-features/templates.PNG)
+![templates](/images/pages/products/flexberry-orm/additional-features/templates.PNG)
 
 Требуется проверять уникальность введенного номера кредитной карты.
 
@@ -24,7 +24,8 @@ lang: ru
 Код с применением [LinqProvider](fo_linq-provider.html):
 
 ```csharp
-var ds = (SQLDataService)DataServiceProvider.DataService;
+IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+IDataService ds = mainUnityContainer.Resolve<IDataService>();
 var кредитныеКарты = ds.Query<КредитнаяКарта>(КредитнаяКарта.Views.КредитнаяКартаE)
                      .Count(k => k.Клиент.__PrimaryKey == UpdatedObject.Клиент.__PrimaryKey 
                               && k.Номер == UpdatedObject.Номер);
@@ -35,7 +36,8 @@ var кредитныеКарты = ds.Query<КредитнаяКарта>(Кре
 Следует доработать условие, добавив сравнение с текущей картой, используя `LinqProvider`:
 
 ```csharp
-var ds = (SQLDataService)DataServiceProvider.DataService;
+IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+IDataService ds = mainUnityContainer.Resolve<IDataService>();
 var кредитныеКарты = ds.Query<КредитнаяКарта>(КредитнаяКарта.Views.КредитнаяКартаE)
                      .Count(k => k.Клиент.__PrimaryKey == UpdatedObject.Клиент.__PrimaryKey 
                               && k.Номер == UpdatedObject.Номер
