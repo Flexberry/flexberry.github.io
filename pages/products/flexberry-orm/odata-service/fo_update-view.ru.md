@@ -1,10 +1,10 @@
 ---
-title: Оптимизация работы ODataBackend
+title: Оптимизация запросов на обновление с помощью UpdateView
 sidebar: flexberry-orm_sidebar
 keywords: оптимизация, ODataBackend, OData, UpdateView, представление для обновления
 summary:
 toc: true
-permalink: ru/fo_optimization.html
+permalink: ru/fo_update-view.html
 lang: ru
 ---
 
