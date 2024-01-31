@@ -15,7 +15,7 @@ summary: Перечень компонентов, используемых дл�
 `flexberry-field` - компонент для отображения текстовых полей вместе с надписями.
 Общий вид компонента, в случае, если текущая тема оформления [Ghost](ef2_supported_themes.html#ghost-theme):
 
-![](/images/pages/products/flexberry-ember/3.x/components/flexberry-field.png)
+![flexberry-field](/images/pages/products/flexberry-ember/3.x/components/flexberry-field.png)
 
 Чтобы добавить `flexberry-field` на страницу, в шаблоне нужно указать:
 
@@ -50,7 +50,7 @@ summary: Перечень компонентов, используемых дл�
 `flexberry-textbox` - компонент для отображения текстовых полей в виде одной строки.
 Общий вид компонента, в случае, если текущая тема оформления [Ghost](ef2_supported_themes.html#ghost-theme):
 
-![](/images/pages/products/flexberry-ember/3.x/components/flexberry-textbox.png)
+![flexberry-textbox](/images/pages/products/flexberry-ember/3.x/components/flexberry-textbox.png)
 
 Чтобы добавить `flexberry-textbox` на страницу, в шаблоне нужно указать:
 
@@ -83,7 +83,7 @@ summary: Перечень компонентов, используемых дл�
 `flexberry-textarea` - компонент для отображения текстовых полей в виде области, в которую можно вводить несколько строк.
 Общий вид компонента, в случае, если текущая тема оформления [Ghost](ef2_supported_themes.html#ghost-theme):
 
-![](/images/pages/products/flexberry-ember/3.x/components/flexberry-textarea.png)
+![flexberry-textarea](/images/pages/products/flexberry-ember/3.x/components/flexberry-textarea.png)
 
 Чтобы добавить `flexberry-textarea` на страницу, в шаблоне нужно указать:
 
@@ -119,7 +119,7 @@ summary: Перечень компонентов, используемых дл�
 
 `flexberry-simpledatetime` - компонент для отображения даты/даты и времени.
 
-![](/images/pages/products/flexberry-ember/3.x/components/flexberry-simpledatetime.png)
+![flexberry-simpledatetime](/images/pages/products/flexberry-ember/3.x/components/flexberry-simpledatetime.png)
 
 Чтобы добавить `flexberry-simpledatetime` на страницу, в шаблоне нужно указать:
 
@@ -160,7 +160,7 @@ summary: Перечень компонентов, используемых дл�
 
 `flexberry-checkbox` - компонент для отображения логических данных.
 
-![](/images/pages/products/flexberry-ember/3.x/components/flexberry-checkbox.png)
+![flexberry-checkbox](/images/pages/products/flexberry-ember/3.x/components/flexberry-checkbox.png)
 
 Чтобы добавить `flexberry-checkbox` на страницу, в шаблоне нужно указать:
 
@@ -188,7 +188,7 @@ summary: Перечень компонентов, используемых дл�
 
 `flexberry-ddau-checkbox` - компонент для отображения логических данных.
 
-![](/images/pages/products/flexberry-ember/3.x/components/flexberry-checkbox.png)
+![components/flexberry-checkbox](/images/pages/products/flexberry-ember/3.x/components/flexberry-checkbox.png)
 
 Чтобы добавить `flexberry-ddau-checkbox` на страницу, в шаблоне нужно указать:
 
@@ -219,7 +219,7 @@ summary: Перечень компонентов, используемых дл�
 
 `flexberry-dropdown` - компонент для отображения перечисления.
 
-![](/images/pages/products/flexberry-ember/3.x/components/flexberry-dropdown.png)
+![flexberry-dropdown](/images/pages/products/flexberry-ember/3.x/components/flexberry-dropdown.png)
 
 Чтобы добавить flexberry-dropdown на страницу, в шаблоне нужно указать:
 
@@ -253,7 +253,7 @@ summary: Перечень компонентов, используемых дл�
 
 `flexberry-jsonarea` - компонент для отображения JSON.
 
-![](/images/pages/products/flexberry-ember/3.x/components/flexberry-jsonarea.png)
+![flexberry-jsonarea](/images/pages/products/flexberry-ember/3.x/components/flexberry-jsonarea.png)
 
 Чтобы добавить `flexberry-jsonarea` на страницу, в шаблоне нужно указать:
 
@@ -275,13 +275,13 @@ summary: Перечень компонентов, используемых дл�
 `classNames` | Определяет css-class на компонент.
 `placeholder` | Определяет placeholder.
 
-## Компоненты для управления формой:
+## Компоненты для управления формой
 
 ### flexberry-edit-panel
 
 `flexberry-edit-panel` - компонент для адаптивного отображения кнопок в тулбаре формы редактирования.
 
-![](/images/pages/products/flexberry-ember/3.x/components/flexberry-edit-panel.png)
+![flexberry-edit-panel](/images/pages/products/flexberry-ember/3.x/components/flexberry-edit-panel.png)
 
 Чтобы добавить `flexberry-edit-panel` на страницу, в шаблоне нужно указать:
 
@@ -327,7 +327,7 @@ summary: Перечень компонентов, используемых дл�
 
 `flexberry-button` - компонент для создания на веб-странице кнопки.
 
-![](/images/pages/products/flexberry-ember/3.x/components/flexberry-button.png)
+![flexberry-button](/images/pages/products/flexberry-ember/3.x/components/flexberry-button.png)
 
 Чтобы добавить `flexberry-button` на страницу, в шаблоне нужно указать:
 
@@ -358,7 +358,7 @@ summary: Перечень компонентов, используемых дл�
 
 `flexberry-ddau-slider` - компонент для создания на веб-странице ползунка.
 
-![](/images/pages/products/flexberry-ember/components/flexberry-ddau-slider.png)
+![flexberry-ddau-slider](/images/pages/products/flexberry-ember/components/flexberry-ddau-slider.png)
 
 Чтобы добавить `flexberry-ddau-slider` на страницу, в шаблоне нужно указать:
 
@@ -391,7 +391,7 @@ summary: Перечень компонентов, используемых дл�
 
 `flexberry-colorpicker` - компонент для выбора цветов на веб-странице.
 
-![](/images/pages/products/flexberry-ember/3.x/components/flexberry-colorpicker.png)
+![components/flexberry-colorpicker](/images/pages/products/flexberry-ember/3.x/components/flexberry-colorpicker.png)
 
 Чтобы добавить `flexberry-colorpicker` на страницу, в шаблоне нужно указать:
 
