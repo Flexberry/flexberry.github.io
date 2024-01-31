@@ -1,5 +1,5 @@
 ---
-title: Flexberry Objectlistview
+title: Компонент настройки списка
 sidebar: flexberry-ember-3_sidebar
 keywords: Flexberry Ember, OLV, списки
 toc: true
