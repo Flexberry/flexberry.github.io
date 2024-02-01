@@ -57,11 +57,11 @@ summary: Настройка и генерация метаданных прил�
 В процессе генерации типы .NET из карты типов будут автоматически заменены на соответствующие типы Javascript согласно этой таблицы:
 
 | Типы .NET | Типы Javascript
-|-----------|----------------|
-| bool, bool? | boolean |
-| decimal, decimal?, double, double?, short, short?, int, int?, long, long?, float, float?, ushort, ushort?, uint, uint?, ulong, ulong?, NullableInt, NullableDecimal | number |
-| DateTime, DateTime?, NullableDateTime | date |
-| Все остальные типы | number |
+|-----------|----------------
+| bool, bool? | boolean
+| decimal, decimal?, double, double?, short, short?, int, int?, long, long?, float, float?, ushort, ushort?, uint, uint?, ulong, ulong?, NullableInt, NullableDecimal | number
+| DateTime, DateTime?, NullableDateTime | date
+| Все остальные типы | number
 
 * `Создать представления, формы и приложение` - создание быстрого прототипа на базе реализованной [диаграммы классов](gpg_class-diagram.html) (часть созданных элементов может потребоваться [донастроить вручную](gpg_create-and-configure-application-structure.html)).
 
@@ -72,7 +72,7 @@ summary: Настройка и генерация метаданных прил�
     * `Компилировать` - сборка сгенерированного приложения (в общем случае это приводит к запуску команды [Ember CLI](https://cli.emberjs.com/release/) [`ember build -e development`](https://cli.emberjs.com/release/basic-use/cli-commands/)).
     * `Запустить сервер` - запуск сгенерированного приложения (в общем случае это приводит к запуску команды [Ember CLI](https://cli.emberjs.com/release/) [`ember serve`](https://cli.emberjs.com/release/basic-use/cli-commands/)).
     * `Открыть каталог` - открытие папки со сгенерированным кодом.
-  * `Apache Cordova` - генерация [фронтенда на Apache Cordova]()
+  * `Apache Cordova` - генерация фронтенда на Apache Cordova
     * `Генерировать проект Apache Cordova`
     * `Собрать мобильное приложение`
 
@@ -221,7 +221,7 @@ summary: Настройка и генерация метаданных прил�
 
 ### Метаданные перечислений
 
-Пример метаданных для [перечислимого типа]():
+Пример метаданных для перечислимого типа:
 
 ```json
 {
@@ -359,11 +359,46 @@ summary: Настройка и генерация метаданных прил�
 
 [Блюпринт `ember-flexberry`](https://github.com/Flexberry/ember-flexberry/tree/develop/blueprints/ember-flexberry) - это [стандартный блюпринт аддона](https://cli.emberjs.com/release/writing-addons/addon-blueprints/), который вызывается при установке этого аддона в приложение командой. Данный блюпринт вставляет в некоторые файлы код для настройки аддона `ember-flexberry` и устанавливает зависимости аддона.
 
-```
+```git
 ember install ember-flexberry
 ```
 
 Вызов [других блюпринтов для генерации](https://github.com/Flexberry/ember-flexberry/tree/develop/blueprints) рассмотрен ниже.
+
+### Генерация форм, унаследованных от базового класса
+
+Если приложение требует генерации форм, унаследованных от их базовых классов, необходимо в папке `vendor/flexberry/` создать директорию с именем `custom-generator-options` и создать в ней файл `generator-options.json` следующего вида:
+
+```JSON
+{
+    "editForms": {
+        "defaultForm": {
+            "baseRoute": {
+                "name": "EditFormRoute",
+                "path": "ember-flexberry/routes/edit-form"
+            },
+            "baseController": {
+                "name": "EditFormController",
+                "path": "ember-flexberry/controllers/edit-form"
+            }
+        }       
+    },
+    "listForms": {
+        "defaultForm": {
+            "baseRoute": {
+                "name": "ListFormRoute",
+                "path": "ember-flexberry/routes/list-form"
+            },
+            "baseController": {
+                "name": "ListFormController",
+                "path": "ember-flexberry/controllers/list-form"
+            }
+        }
+    }
+}
+```
+
+Файл `generator-options.json` определяет имена и расположения файлов, от которых будут наследоваться списковые формы и формы редактирования.
 
 ## Генерация клиентского приложения из командной строки
 
@@ -373,39 +408,41 @@ ember install ember-flexberry
 
 * Команды для генерации приложения по метаданным
 
-```
+```git
 ember g flexberry-application app --metadata-dir=vendor\flexberry
 ```
 
 `vendor\flexberry` - это путь до папки с метаданными и может быть иным в конкретном случае.
 
 Доступные флаги:
-- `--dummy` - генерация [форм](efd3_form.html) и [моделей](efd3_model.html) в аддон (в дамми-приложение).
-- `--new-theme=true` - генерация приложения с [новой темой оформления (ghost)]() (доступно, начиная с ember-flexberry@3.4.0).
-- `--skip-confirmation` - пропуск запросов на подтверждение перезаписи файлов в случае, когда блюпринт пытается добавить уже существующий файл.
+
+* `--dummy` - генерация [форм](efd3_form.html) и [моделей](efd3_model.html) в аддон (в дамми-приложение).
+* `--new-theme=true` - генерация приложения с новой темой оформления (ghost) (доступно, начиная с ember-flexberry@3.4.0).
+* `--skip-confirmation` - пропуск запросов на подтверждение перезаписи файлов в случае, когда блюпринт пытается добавить уже существующий файл.
 
 Алгоритм генерации нового Flexberry Ember приложения из командной строки:
-1. Создать новую папку
-2. Выполнить в ней команду [`ember init`](https://cli.emberjs.com/release/advanced-use/cli-commands-reference/#emberinit).
+
+1.Создать новую папку
+2.Выполнить в ней команду [`ember init`](https://cli.emberjs.com/release/advanced-use/cli-commands-reference/#emberinit).
 
 Если нужно сгенерировать приложение на версии ember, отличной от той, которая установлена глобально, то можно после создания новой папки для приложения сначала установить в нее ember нужной версии (`npm install ember-cli@версия` или `yarn add ember-cli@версия`), а потом уже вызывать [`ember init`](https://cli.emberjs.com/release/advanced-use/cli-commands-reference/#emberinit).
 
-4. Сгенерировать в эту папку только метаданные из [Flexberry Designer](fd_flexberry-designer.html)
-5. Выполнить в этой папке команду:
+4.Сгенерировать в эту папку только метаданные из [Flexberry Designer](fd_flexberry-designer.html)
+5.Выполнить в этой папке команду:
 
-```
+```git
 ember g flexberry-application app --metadata-dir=<относительный путь к папке с метаданными> --skip-confirmation
 ```
 
 * Генерация навигационного меню (сайтмапа) для приложения
 
-```
+```git
 ember g flexberry-core sitemap --metadata-dir=vendor\flexberry --file=sitemap.json
 ```
 
 * Генерация [модели](efd3_model.html) ([модель](efd3_model.html) и [сериалайзеры](efd3_serializer.html)):
 
-```
+```git
 ember g flexberry-model ${modelName} --metadata-dir=vendor\flexberry --file=${modelName}.json
 ember g flexberry-model-init ${modelName} --metadata-dir=vendor\flexberry --file=${modelName}.json
 ember g flexberry-serializer-init ${modelName} --metadata-dir=vendor\flexberry --file=${modelName}.json
@@ -419,15 +456,15 @@ ember g flexberry-serializer-init ${modelName} --metadata-dir=vendor\flexberry -
 
 * Генерация [списковых форм](efd3_listform.html) (форма и тесты):
 
-```
+```git
 ember g flexberry-list-form ${modelName}-l --metadata-dir=vendor\flexberry --file=${modelName}-l.json
 ember g controller-test ${modelName}-l --metadata-dir=vendor\flexberry --file=${modelName}-l.json
 ember g route-test ${modelName}-l --metadata-dir=vendor\flexberry --file=${modelName}-l.json
 ```
 
-5. Генерация [форм редактирования](efd3_editform.html) (форма и тесты):
+6.Генерация [форм редактирования](efd3_editform.html) (форма и тесты):
 
-```
+```git
 ember g flexberry-edit-form ${modelName}-e --metadata-dir=vendor\flexberry --file=${modelName}-e.json
 ember g controller-test ${modelName}-e --metadata-dir=vendor\flexberry --file=${modelName}-e.json
 ember g route-test ${modelName}-e --metadata-dir=vendor\flexberry --file=${modelName}-e.json
@@ -436,11 +473,11 @@ ember g route-test ${modelName}-e --metadata-dir=vendor\flexberry --file=${model
 Везде выше в командах `${modelName}` - это имя модели из метаданных.
 Например, если модель называется "customer", то последняя команда из списка будет выглядеть так:
 
-```
+```git
 ember g route-test customer-e --metadata-dir=vendor\flexberry --file=customer-e.json
 ```
 
-{% include important.html content="В случае, если пользователь изменил названия форм во [Flexberry Designer](fd_flexberry-designer.html) или создал их вручную, то имена форм будут отличаться от ${modelName}-l и ${modelName}-e. " %}
+> В случае, если пользователь изменил названия форм во [Flexberry Designer](fd_flexberry-designer.html) или создал их вручную, то имена форм будут отличаться от ${modelName}-l и ${modelName}-e.
 
 ## Генерация бакенда
 
@@ -450,7 +487,7 @@ ember g route-test customer-e --metadata-dir=vendor\flexberry --file=customer-e.
 
 Можно проект сразу открыть в Visual Studio, для этого: "вызов контекстного меню стадии -> `Backend` -> `Открыть в Visual Studio...`".
 
-{% include important.html content="После открытия [сгенерированного из Flexberry Designer проекта с бакендом](efd3_generated-app-structure.html) может оказаться, что в качестве проекта для запуска настроен проект с объектами данных. Эту настройку следует изменить: найти проект с OData -> вызов контекстного меню проекта -> `Set as startup project`. Также могут потребоваться [другие настройки окружения](efd3_generated-app-start.html), чтобы [запустить бакенд](efd3_generated-app-start.html). Основные особенности настройки ODataService указаны в [этой статье](fo_orm-odata-service.html)." %}
+> После открытия [сгенерированного из Flexberry Designer проекта с бакендом](efd3_generated-app-structure.html) может оказаться, что в качестве проекта для запуска настроен проект с объектами данных. Эту настройку следует изменить: найти проект с OData -> вызов контекстного меню проекта -> `Set as startup project`. Также могут потребоваться [другие настройки окружения](efd3_generated-app-start.html), чтобы [запустить бакенд](efd3_generated-app-start.html). Основные особенности настройки ODataService указаны в [этой статье](fo_orm-odata-service.html).
 
 ## Установка пакета ODataService «вручную» в приложение ASP.NET Web API
 
@@ -481,13 +518,13 @@ ember g route-test customer-e --metadata-dir=vendor\flexberry --file=customer-e.
 ![Добавление проектной ссылки](/images/pages/products/flexberry-ember/ember-flexberry/generation/FEOdata-addprojectreference.png)
 
 * Установить необходимые [Flexberry Nuget-пакеты](flexberry-nuget-packages.html). Это можно сделать, например, через менеджер пакетов в студии (версии пакетов должны соответствовать используемым в проекте с объектами).
-    * [NewPlatform.Flexberry.AspNet.WebApi.Cors](https://www.nuget.org/packages/NewPlatform.Flexberry.AspNet.WebApi.Cors/)
-    * [NewPlatform.Flexberry.LockService](https://www.nuget.org/packages/NewPlatform.Flexberry.LockService)
-    * [NewPlatform.Flexberry.LogService](fo_log-service-log4net.html)
-    * [NewPlatform.Flexberry.LogService.Objects](https://www.nuget.org/packages/NewPlatform.Flexberry.LogService.Objects)
-    * [NewPlatform.Flexberry.ORM](fo_flexberry-orm.html)
-    * [NewPlatform.Flexberry.ORM.ODataService](fo_orm-odata-service.html)
-    * [NewPlatform.Flexberry.UserSettingsService](https://www.nuget.org/packages/NewPlatform.Flexberry.UserSettingsService)
+  * [NewPlatform.Flexberry.AspNet.WebApi.Cors](https://www.nuget.org/packages/NewPlatform.Flexberry.AspNet.WebApi.Cors/)
+  * [NewPlatform.Flexberry.LockService](https://www.nuget.org/packages/NewPlatform.Flexberry.LockService)
+  * [NewPlatform.Flexberry.LogService](fo_log-service-log4net.html)
+  * [NewPlatform.Flexberry.LogService.Objects](https://www.nuget.org/packages/NewPlatform.Flexberry.LogService.Objects)
+  * [NewPlatform.Flexberry.ORM](fo_flexberry-orm.html)
+  * [NewPlatform.Flexberry.ORM.ODataService](fo_orm-odata-service.html)
+  * [NewPlatform.Flexberry.UserSettingsService](https://www.nuget.org/packages/NewPlatform.Flexberry.UserSettingsService)
 
 ![Установленные Flexberry Nuget-пакеты](/images/pages/products/flexberry-ember/ember-flexberry/generation/FEOdata-installedflexberry.png)
 
@@ -610,8 +647,8 @@ namespace ManualOdataAddingTest
 
 * Заменить в файле конфигурации Web.config секцию `appSettings` и добавить секцию `connectionStrings` (в случае, если используется БД, отличная от Postgres, то значения настроек будут несколько отличаться).
 
-{% raw %} 
 ```xml
+{% raw %}
 <appSettings>
     <add key="DataServiceType" value="ICSSoft.STORMNET.Business.PostgresDataService, ICSSoft.STORMNET.Business.PostgresDataService" />
     <add key="DefaultConnectionStringName" value="DefConnStr" />
@@ -619,13 +656,13 @@ namespace ManualOdataAddingTest
 <connectionStrings>
     <add name="DefConnStr" connectionString="Host=localhost;Port=5432;Database=ember3gentest;User ID=postgres;Password=lalalapassword;" />
 </connectionStrings>
-```
 {% endraw %}
+```
 
 * Заменить в файле конфигурации Web.config секцию `unity` (в случае, если используется БД, отличная от Postgres, то значения настроек будут несколько отличаться).
 
-{% raw %} 
 ```xml
+{% raw %}
 <unity xmlns="http://schemas.microsoft.com/practices/2010/unity">
     <container>
         <register type="ICSSoft.STORMNET.Security.ISecurityManager, ICSSoft.STORMNET.DataObject"
@@ -636,8 +673,8 @@ namespace ManualOdataAddingTest
         </register>
     </container>
 </unity>
-```
 {% endraw %}
+```
 
 * Запустить проект, который после запуска вернёт сообщение "403" (адрес запуска проекта [можно изменить](efd3_generated-app-start)).
 
@@ -647,4 +684,4 @@ namespace ManualOdataAddingTest
 
 ![Получение доступа к OData](/images/pages/products/flexberry-ember/ember-flexberry/generation/FEOdata-viewodata.png)
 
-{% include important.html content="При настройке проекта вручную нужно соблюдть согласованность версий .Net Framework, Nuget-пакетов и прочего. При генерации проекта эти заботы на себя берёт [Flexberry Designer](fd_flexberry-designer.html)." %}
+> При настройке проекта вручную нужно соблюдть согласованность версий .Net Framework, Nuget-пакетов и прочего. При генерации проекта эти заботы на себя берёт [Flexberry Designer](fd_flexberry-designer.html).
