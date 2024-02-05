@@ -633,9 +633,9 @@ entries:
       url: /fo_debugging-odatabackend-runtime.html
       output: web
 
-    - title: Optimize update queries with UpdateView
-      title_ru: Оптимизация запросов на обновление с помощью UpdateView
-      url: /fo_update-view.html
+    - title: Optimize update queries
+      title_ru: Оптимизация запросов на обновление
+      url: /fo_update-optimization.html
       output: web
 
   - title: Монитор SQL-запросов
