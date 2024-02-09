@@ -97,8 +97,8 @@ WHERE purchase."Покупатель" = StormMainObjectKey AND purchase."Ста�
 " WHERE purchase.\"Покупатель\" = StormMainObjectKey AND purchase.\"Статус\" = \'Оплачено\' ")]
 public virtual decimal СуммаОплаченныхПокупок
 {
-	get {	return null;	}
-	set {}
+	  get {	return null;	}
+	  set {}
 }
 ```
 В результате, поле `СуммаОплаченныхПокупок` будет вычисляться без необходимости [создавать объект данных](#для-чего-используется-dataserviceexpression) для каждого покупателя.
@@ -110,9 +110,9 @@ public virtual decimal СуммаОплаченныхПокупок
 ```csharp
 public class Покупатель : ICSSoft.STORMNET.DataObject
 {
-	private ICSSoft.STORMNET.UserDataTypes.NullableDecimal cashedPurchaseSum = null; // переменная кэша для поля СуммаОплаченныхПокупок
-	private ICSSoft.STORMNET.UserDataTypes.NullableDecimal cashedAvailableSum = null; //переменная кэша для поля ДоступнаяСумма
-	// ...
+	  private ICSSoft.STORMNET.UserDataTypes.NullableDecimal cashedPurchaseSum = null; // переменная кэша для поля СуммаОплаченныхПокупок
+	  private ICSSoft.STORMNET.UserDataTypes.NullableDecimal cashedAvailableSum = null; //переменная кэша для поля ДоступнаяСумма
+	  // ...
 }
 ```
 
@@ -125,14 +125,15 @@ public class Покупатель : ICSSoft.STORMNET.DataObject
 " WHERE purchase.\"Покупатель\" = StormMainObjectKey AND  purchase.\"Статус\" = \'Оплачено\' ")]
 public virtual decimal СуммаОплаченныхПокупок
 {
-	get => this.cashedPurchaseSum;
-	set
-	{
-		if (value != null)
-		{
-			this.cashedPurchaseSum = value;
-		}
-	}}
+    get => this.cashedPurchaseSum;
+    set
+    {
+        if (value != null)
+        {
+            this.cashedPurchaseSum = value;
+        }
+    }
+}
 ```
 
 #### Шаг 4: Дополнительные вычисляемые свойства
@@ -150,14 +151,14 @@ public virtual decimal СуммаОплаченныхПокупок
 [ICSSoft.STORMNET.NotStored()]
 public virtual decimal ДоступнаяСумма
 {
-	get => this.cashedAvailableSum;
-	set
-	{
-		if (value != null)
-		{
-			this.cashedAvailableSum = value;
-		}
-	}
+    get => this.cashedAvailableSum;
+    set
+    {
+        if (value != null)
+        {
+            this.cashedAvailableSum = value;
+        }
+    }
 }
 ```
 
