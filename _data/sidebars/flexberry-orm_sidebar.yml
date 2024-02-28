@@ -633,6 +633,11 @@ entries:
       url: /fo_debugging-odatabackend-runtime.html
       output: web
 
+    - title: Getting request parameters in OData function
+      title_ru: Получение параметров запроса в OData функции
+      url: /fo_query_parameters_in_odata_function.html
+      output: web
+
   - title: Монитор SQL-запросов
     output: web, pdf
     folderitems:
