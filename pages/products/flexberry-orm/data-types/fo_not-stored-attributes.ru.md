@@ -2,87 +2,217 @@
 title: Нехранимые (вычислимые) свойства объекта данных
 sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, DataServiceExpression, DSE, типы данных, объекты данных
-summary: Особенности использования вычислимых свойств во Flexberry ORM
 toc: true
 permalink: ru/fo_not-stored-attributes.html
 lang: ru
 ---
 
-## Нехранимое свойство
+## Введение
 
-Если свойство нехранимое (помечено [атрибутом `NotStored`](fo_attributes-class-data.html)), оно _не_ обрабатывается [сервисами данных](fo_data-service.html).
-Внутри аксессора `get` указывается какой-либо код (выражение), вычисляющий значение свойства.
+**Вычислимые свойства** - это специальные атрибуты объекта данных, значения которых вычисляются динамически на основе других свойств. Вычислимые свойства объекта не сохраняются в базе данных и их значение вычисляется через getter свойства или СУБД (если указан `DataServiceExpression` - специфическое SQL-выражение).
 
-### Нехранимое свойство и представления
+## Создание вычислимого свойства
 
-Разработчик должен внимательно следить, чтобы в [представление](fd_view-definition.html), с которым происходит загрузка объектов [сервисами данных](fo_data-service.html), попадали все свойства, от которых зависит вычислимый атрибут. 
+Вычислимые свойства могут быть сгенерированы через Flexberry Designer. Для создания вычислимого свойства необходимо:
 
-**Важно: Несоблюдение этого вызовет неверный счёт и ошибки.**
+1. Сделать свойство объекта нехранимым на уровне UML-модели.
 
-### Поведение сервиса данных при работе с вычислимым полем
+2. Указать `DataServiceExpression` для свойства
 
-Обычно [сервисы данных](fo_data-service.html) при закачке списков не используют объекты данных, когда возвращают данные в виде строк. Это делается с целью повышения производительности, поскольку экономия вычислительных ресурсов на создании объектов данных очень высока. Однако, выражение для счёта вычислимого атрибута указано непосредственно в свойстве объекта данных, поэтому, когда объект данных содержит вычислимые атрибуты, сервисы данных поступают так: создаётся объект данных, свойства означиваются согласно [представления](fd_view-definition.html), затем происходит конвертация в строку (поскольку сервис данных запросит значение вычислимого свойства, выполнится его счёт). Чтобы избежать счёта через объект данных и, соответственно, ускорить работу сервисов данных при закачке списков, применяется атрибут `DataServiceExpression`, которым для свойства назначается соответствие сервиса данных выражению, «понятному» этому сервису данных. Таким образом, если атрибут `DataServiceExpression` указан, то объект данных не создаётся, а счёт вычислимого атрибута «перекладывается» на сервис данных согласно переданному выражению.
+![Пример DSE в Flexberry Enterprise](/images/pages/products/flexberry-orm/data-types/flexberry-enterprise-data-service-expression.png)
 
-{% include warning.html content="создание выражения в DSE не отменяет, то что оно должно дублироваться в GET." %}
+Для этого, необходимо нажать на карандаш, и в выпадающем окошке заполнить необходимое количество DataServiceExpressions:
 
-### Правила использования вычислимого поля
+![Выпадающее окошко DSE](/images/pages/products/flexberry-orm/data-types/flexberry-enterprise-data-service-expression-modal.png)
 
-**Принято**, чтобы идентификаторы в выражении явно выделялись символом **@** (собака).
+_О том, как заполнять DSE, см. в разделе [Правила заполнения вычислимого свойства](#правила-заполнения-вычислимого-свойства)._
+
+Каждый `DataServiceExpression` определяет выражение для определённого сервиса данных (напр. `ICSSoft.STORMNET.Business.PostgresDataService`). Допускается использование `ICSSoft.STORMNET.Business.SQLDataService` (выражение будет работать для всех SQL-подобных сервисов данных).
+
+В результате, после генерации вычислимое свойство будет:
+
+1. Помечено [атрибутом `[NotStored]`](fo_attributes-class-data.html)
+2. Иметь логику вычисления в атрибутах `[DataServiceExpression]` (`SQL`) - каждый `DSE` соответствует своей СУБД
+3. Иметь пустой аксессор `get` объекта данных (`C#`)
+
+Для полноценной работы свойства необходимо **вручную заполнить**:
+
+1. Логику аксессора `get` объекта данных (`C#`) _(и для `set` - в случае необходимости)_
+2. `computed` свойство (в приложениях `ember-flexberry` - см. [Вычислимые свойства и проекции моделей](gpg_computable-properties-and-projections-of-models.html))
+
+### Пример вычислимого свойства
+
+```csharp
+[DataServiceExpression(typeof(SQLDataService),"'\"'+ @Наименование@+'\"'")]
+[NotStored]
+public string НаименованиеВКавычках
+{
+    get
+    {
+        return "\"" + Наименование + "\"";
+    }
+}
+```
+
+### Правила заполнения вычислимого свойства
+
+1. `DataServiceExpression` (`DSE`)
+
+- атрибуты объекта в выражении `DSE` должны быть выделены символом **@** (собака): `@Наименование@`
+- указывать `DSE` необязательно, но это будет влиять на производительность (см. [раздел](#поведение-сервиса-данных-при-работе-с-вычислимым-полем)) _в некоторых случаях при отсутствии `DSE` поле может быть не вычислено_
+- при определении `DataServiceExpression` необходимо указать тип сервиса данных, который поддерживает данное выражение: `DataServiceExpression(typeof(SQLDataService), ...)`
+
+#### Для чего используется `DataServiceExpression`
+> В некоторых случаях при загрузке объекта (при `LoadObjectStringedView`), [сервисы данных](fo_data-service.html) могут загружать данные в виде строк, не создавая при этом объектов данных. В таком случае для вычисления нехранимых свойств используется СУБД - применяется SQL-выражение из `DataServiceExpression`. Если `DataServiceExpression` не указан, сервису данных приходится создавать объект данных в C# (`DataObject`), чтобы получить значение вычислимых свойств через аксессоры `get`. Поэтому, для экономии ресурсов сервера, заполнение `DataServiceExpression` позволит вычислять нехранимые поля средствами СУБД (это гораздо экономнее, чем создавать `DataObject` для расчёта свойств).
 
 {% include important.html content="Вычислимые атрибуты, на которых накладываются полномочия __обязательно__ должны иметь `DataServiceExpression`" %}
 
-#### Пример вычислимого свойства
+2. Аксессор `get`.
+
+- Аксессор должен быть задан у каждого вычислимого свойства.
 
 ```csharp
-[NotStored]
-public Деньги Итого 
-{ 
-    get 
-         { 
-              return ИтогоДисконт + ИтогоВекселя - СуммаНДС;
-         }
-}
-```
-
-#### Пример вычислимого свойства с атрибутом DataServiceExpression
-
-```csharp
-[DataServiceExpression(typeof(SQLDataService),"'\"'+ @НАИМЕНОВАНИЕ@+'\"'")]
-[NotStored] 
-public string НАИМЕНОВАНИЕВКАВЫЧКАХ 
+public string ФИО
 {
-    get
-       {
-           return "\""+ НАИМЕНОВАНИЕ+"\"";
-       }
+    get => $"{Фамилия} {Имя} {Отчество}";
 }
 ```
 
-#### Пример использования детейлов
+> Если для загрузки объекта используется только метод `LoadObjectStringedView` и у свойства задан `DataServiceExpression`, аксессор задавать необязательно.
 
-Пример использования детейлов при определении значения вычислимого поля доступен в статье [Нехранимые (вычислимые) свойства объекта данных](fo_not-stored-attributes.html).
+3. `computed` свойство (для приложений `ember-flexberry`). Данное свойство задавать необязательно, но желательно - т.к. это позволит обновлять поле сразу же, не дожидаясь загрузки обновлённого значения с сервера - см. [подробнее](gpg_computable-properties-and-projections-of-models.html)
 
-## Первичные ключи в вычислимых полях
+### Загрузка вычислимых полей
+
+В [представлении](fd_view-definition.html), по которому происходит загрузка, должны присутствовать все свойства, от которых зависит вычислимый атрибут. Несоблюдение этого **приведёт к неверному расчёту значения свойства.**
+
+## Примеры
+
+- [Пример 1. Вычислимое свойство по детейлам](#пример-1-вычислимое-свойство-по-детейлам)
+- [Пример 2. Первичные ключи в DataServiceExpression](#пример-2-первичные-ключи-в-dataserviceexpression)
+- [Пример 3. Применение вычислимых полей в вычислимых полях](#пример-3-применение-вычислимых-полей-в-вычислимых-полях)
+
+### Пример 1. Вычислимое свойство по детейлам
+
+Будет разобран процесс создания вычислимого свойства по значениям детейлов на примере системы учета покупателей. В этой системе фиксируются покупки клиентов, каждая из которых может иметь статус `Передано в банк` или `Оплачено`. Необходимо добавить к покупателю поле `Сумма оплаченных покупок`, которое будет вычисляться автоматически.
+
+#### Шаг 1: Моделирование в Flexberry Designer
+
+В первую очередь, следует создать через Flexberry Designer [диаграмму классов](fd_class-diagram.html).
+
+![Пример диаграммы классов](/images/pages/products/flexberry-orm/data-types/class-diagram-customer-purchase.jpg)
+
+Поле `СуммаОплаченныхПокупок` класса `Покупатель` должно быть [нехранимым](fo_attributes-class-data.html). Затем в атрибуте
+[DataServiceExpression](fo_attributes-class-data.html) этого поля необходимо добавить SQL-выражение через Flexberry Designer.
+
+```sql
+"SELECT SUM(purchase."Сумма")
+FROM "Покупатель" customer join "Покупка" purchase on customer."primaryKey" = purchase."Покупатель"
+WHERE purchase."Покупатель" = StormMainObjectKey AND purchase."Статус" = 'Оплачено' "
+```
+
+> В поле `DataService` во Flexberry Designer необходимо указать `ICSSoft.STORMNET.Business.SQLDataService`, т.к. в выражении нет специфичных для Postgres или MSSQL функций.
+
+> Стоит отметить, что в ограничениях по значению перечисления, необходимо указывать заголовок значения. Например, в C# имеется значение `"ОплаченоПокупателем"`, и заголовок `"Оплачено покупателем"`. В ограничении необходимо использовать именно **заголовок** `"Оплачено покупателем"`.
+
+#### Шаг 2: Генерация программного кода
+
+В результате генерации будет создан следующий код:
+
+```csharp
+[ICSSoft.STORMNET.NotStored()]
+[DataServiceExpression(typeof(ICSSoft.STORMNET.Business.SQLDataService), "SELECT SUM(Purchase.\"Сумма\")"+
+" FROM \"Покупатель\" customer join \"Покупка\" Purchase on customer.\"primaryKey\" = Purchase.\"Покупатель\""+
+" WHERE Purchase.\"Покупатель\" = StormMainObjectKey AND Purchase.\"Статус\" = \'Оплачено\' ")]
+public virtual decimal СуммаОплаченныхПокупок
+{
+	  get {	throw new NotImplementedException();	} // логика вычисления в get должна быть реализована самостоятельно, иначе свойство не будет возвращать актуального значения в C# коде
+	  set {}
+}
+```
+
+В результате, поле `СуммаОплаченныхПокупок` будет вычисляться без необходимости [создавать объект данных](#для-чего-используется-dataserviceexpression) для каждого покупателя.
+
+#### Шаг 3: Оптимизация работы с кэшированным значением
+Для улучшения производительности и сохранения данных при редактировании объекта `Покупатель` рекомендуется реализовать кэширование значения вычислимого поля. Для этого в классе `Покупатель` следует создать приватные переменные для хранения кэшированных сумм.
+
+```csharp
+public class Покупатель : ICSSoft.STORMNET.DataObject
+{
+	  private ICSSoft.STORMNET.UserDataTypes.NullableDecimal cashedPurchaseSum = null; // переменная кэша для поля СуммаОплаченныхПокупок
+	  private ICSSoft.STORMNET.UserDataTypes.NullableDecimal cashedAvailableSum = null; //переменная кэша для поля ДоступнаяСумма
+	  // ...
+}
+```
+
+Затем необходимо скорректировать аксессоры свойства `СуммаОплаченныхПокупок` для использования кэшированного значения.
+
+```csharp
+[ICSSoft.STORMNET.NotStored()]
+[DataServiceExpression(typeof(ICSSoft.STORMNET.Business.SQLDataService), "SELECT SUM(purchase.\"Сумма\")"+
+" FROM \"Покупатель\" customer join \"Покупка\" purchase on customer.\"primaryKey\" = purchase.\"Покупатель\""+
+" WHERE purchase.\"Покупатель\" = StormMainObjectKey AND  purchase.\"Статус\" = \'Оплачено\' ")]
+public virtual decimal СуммаОплаченныхПокупок
+{
+    get => this.cashedPurchaseSum;
+    set
+    {
+        if (value != null)
+        {
+            this.cashedPurchaseSum = value;
+        }
+    }
+}
+```
+
+#### Шаг 4: Дополнительные вычисляемые свойства
+
+Пусть условие задачи будет расширено. Необходимо добавить поле `Доступная сумма`, которое показывает доступные средства на счету клиента после оплаты.
+
+Код свойства будет иметь следующий вид:
+
+```csharp
+// *** Start programmer edit section *** (Покупатель.ДоступнаяСумма CustomAttributes)
+[DataServiceExpression(typeof(SQLDataService), "SELECT @СуммаНаСчёте@ - SUM(purchase.\"Сумма\") "+
+	" FROM \"Покупатель\" customer join \"Покупка\" purchase on customer.\"primaryKey\" = purchase.\"Покупатель\" "+
+	" WHERE purchase.\"Покупатель\" = StormMainObjectKey AND  purchase.\"Статус\" = \'Передано в банк\' ")]
+// *** End programmer edit section *** (Покупатель.ДоступнаяСумма CustomAttributes)
+[ICSSoft.STORMNET.NotStored()]
+public virtual decimal ДоступнаяСумма
+{
+    get => this.cashedAvailableSum;
+    set
+    {
+        if (value != null)
+        {
+            this.cashedAvailableSum = value;
+        }
+    }
+}
+```
+
+{% include warning.html content="После изменения детейлов необходимо пересчитывать кэшированные значения для сохранения актуальности данных. Это позволяет сделать [SQL-запрос](fo_sql-query.html), обновляющий кэш при изменениях." %}
+
+### Пример 2. Первичные ключи в DataServiceExpression
 
 Использовать [первичные ключи](fo_primary-keys-objects.html) в вычислимых полях можно посредством указания [STORMMainObjectKey](fo_sql-query.html) без символа "@".
 
-Например, на списковой форме сообщение вида "Улица <Имя_Улицы> имеет первичный ключ <Первичный_Ключ_Улицы>".
+Например, выражение `DSE` для сообщения вида "Улица <Название> имеет первичный ключ <Первичный_Ключ_Улицы>" будет выглядеть следующим образом.
 
 ``` csharp
-[ICSSoft.STORMNET.NotStored())
-[DataServiceExpression(typeof(ICSSoft.STORMNET.Business.SQLDataService), "\'Улица \' + @Название@ + \' имеет первичный ключ \' +CAST(STORMMainObjectKey as varchar(max))"))
-public virtual string NotStoredName
+[DataServiceExpression(typeof(SQLDataService), "\'Улица \' + @Название@ + \' имеет первичный ключ \' +CAST(STORMMainObjectKey as varchar(max))")]
+//...
 ```
 
-При использовании данного свойства как мастерового в sql-запросе `STORMMainObjectKey` будет корректно заменён на `STORMJoinedMasterKey`.
+При использовании данного свойства как мастерового в sql-запросе `STORMMainObjectKey` будет корректно заменён на `STORMJoinedMasterKey`:
 
 ```sql
-('Улица ' + "IIS.TestStandWinforms.Дом"."Улица.Название" + ' имеет первичный ключ ' +CAST("STORMJoinedMasterKey0" as varchar(max))) as "Улица.NotStoredName"
+('Улица ' + "IIS.TestStandWinforms.Дом"."Улица.Название" + ' имеет первичный ключ ' + CAST("STORMJoinedMasterKey0" as varchar(max))) as "Улица.NotStoredName"
 ```
 
-## Применение вычислимых полей в вычислимых полях
+### Пример 3. Использование вычислимых полей в вычислимых полях
 
-В связи в архитектурными особенностями [генератора sql-запросов](fo_sql-query.html) во Flexberry ORM, использование вычислимых полей в вычислимых полях на настоящий момент __не поддерживается__.
+В связи в архитектурными особенностями [генератора sql-запросов](fo_sql-query.html) во Flexberry ORM, использование вычислимых полей внутри других вычислимых полей __не поддерживается__. При необходимости необходимо скопировать логику вычисления нужного поля:
 
 Например, есть класс `Дом` с [мастером](fd_master-association.html) `Улица`.
 
@@ -98,108 +228,8 @@ public virtual string NotStoredName
 'Корпус ' + @Корпус@ + ';' + @Улица.NotStoredName@
 ```
 
-Однако в таком варианте значение не будет подсчитано. Чтобы реализовать требуемую логику, можно расписать выражение, вычисляющее значение поля, следующим образом:
+В описанном выше примере значение не будет подсчитано. Для реализации требуемой логики, рекомендуется расписать выражение, вычисляющее значение поля, следующим образом:
 
 ```sql
 'Корпус ' + @Корпус@ + ';' + 'Улица ' + @Улица.Название@ + ' имеет первичный ключ ' +CAST(@Улица@ as varchar(max))
 ```
-
-## Пример создания нехранимого свойства данных
-
-Процесс создания вычислимого свойства с помощью `DataServiceExpression` хорошо иллюстрирует следущая задача: Есть система учёта покупателей, где хранится информация об их покупках. У покупок может быть два статуса: "Передано в банк" и "Оплачено". Необходимо определить у покупателя вычислимое поле "Сумма оплаченных покупок".
-
-В первую очередь следует создать во Flexberry Designer [диаграмму классов](fd_class-diagram.html).
-
-![](/images/pages/products/flexberry-orm/data-types/class-diagram-customer-purchase.jpg)
-
-Поле "СуммаОплаченныхПокупок" класса "Покупатель" [сделать нехранимым](fo_attributes-class-data.html), после чего в [атрибут DataService Expression](fo_attributes-class-data.html) данного поля добавить строку:
-
-`DataService : ICSSoft.STORMNET.Business.SQLDataService`;
-
-_DataService Expression:_ 
-
-```sql
-"SELECT SUM(purchase."Сумма")
-FROM "Покупатель" customer join "Покупка" purchase on customer."primaryKey" = purchase."Покупатель"
-WHERE purchase."Покупатель" = StormMainObjectKey AND purchase."Статус" = 'Оплачено' "
-```
-
-Сгенерировать программный код.
-
-### Работа с программным кодом
-
-Был сгенерирован следующий код:
-
-```csharp
-[ICSSoft.STORMNET.NotStored()]
-[DataServiceExpression(typeof(ICSSoft.STORMNET.Business.SQLDataService), "SELECT SUM(purchase.\"Сумма\")"+
-" FROM \"Покупатель\" customer join \"Покупка\" purchase on customer.\"primaryKey\" = purchase.\"Покупатель\""+
-" WHERE purchase.\"Покупатель\" = StormMainObjectKey AND  purchase.\"Статус\" = \'Оплачено\' ")]
-public virtual decimal СуммаОплаченныхПокупок
-{
-	get {	return null;	}
-	set {}
-}
-```
-
-В результате при просмотре списков покупателей нехранимое поле "СуммаОплаченныхПокупок" вычисляется [без создания объекта данных](fo_not-stored-attributes.html). 
-
-{% include note.html content="После редактирования объекта `Покупатель` в списке у соответствующего покупателя в поле `СуммаОплаченныхПокупок` отобразится пустая строка. Одним из вариантов решения данной проблемы может быть организация кэширования значения, для чего нужно создать private-переменную, где будет храниться кэшированное значение." %}
-
-```csharp
-public class Покупатель : ICSSoft.STORMNET.DataObject
-{
-	private ICSSoft.STORMNET.UserDataTypes.NullableDecimal cashedPurchaseSum = null; //переменная для хранения кэша поля СуммаОплаченныхПокупок
-	private ICSSoft.STORMNET.UserDataTypes.NullableDecimal cashedAvailableSum = null; //переменная для хранения кэша поля ДоступнаяСумма
-	//...
-}
-```
-
-Также нужно отредактировать код для `СуммаОплаченныхПокупок`.
-
-```csharp
-[ICSSoft.STORMNET.NotStored()]
-[DataServiceExpression(typeof(ICSSoft.STORMNET.Business.SQLDataService), "SELECT SUM(purchase.\"Сумма\")"+
-" FROM \"Покупатель\" customer join \"Покупка\" purchase on customer.\"primaryKey\" = purchase.\"Покупатель\""+
-" WHERE purchase.\"Покупатель\" = StormMainObjectKey AND  purchase.\"Статус\" = \'Оплачено\' ")]
-public virtual decimal СуммаОплаченныхПокупок
-{
-	get
-	{
-		return this.cashedPurchaseSum;
-	}
-	set
-	{
-		if (value != null)
-		{
-			this.cashedPurchaseSum= value;
-		}
-	}}
-```
-
-Если расширить условие задачи, что в поле "Доступная сумма" класса "Покупатель" необходимо записать доступную сумму на счёте (то есть сумма на счёте минус сумма платежей, что имеет статус "Передано в банк"), то программный код для данного поля объекта может иметь следующий вид (почему `this.СуммаНаСчёте` в выражении записано как `@СуммаНаСчёте@`, было объяснено в статье [Нехранимые (вычислимые) свойства объекта данных](fo_not-stored-attributes.html)):
-
-```csharp
-// *** Start programmer edit section *** (Покупатель.ДоступнаяСумма CustomAttributes)
-[DataServiceExpression(typeof(SQLDataService), "SELECT @СуммаНаСчёте@ - SUM(purchase.\"Сумма\") "+
-	" FROM \"Покупатель\" customer join \"Покупка\" purchase on customer.\"primaryKey\" = purchase.\"Покупатель\" "+
-	" WHERE purchase.\"Покупатель\" = StormMainObjectKey AND  purchase.\"Статус\" = \'Передано в банк\' ")]
-// *** End programmer edit section *** (Покупатель.ДоступнаяСумма CustomAttributes)
-[ICSSoft.STORMNET.NotStored()]
-public virtual decimal ДоступнаяСумма
-{
-	get
-	{
-		return this.cashedAvailableSum;
-	}
-	set
-	{
-		if (value != null)
-		{
-			this.cashedAvailableSum = value;
-		}
-	}
-}
-```
-
-{% include warning.html content="В приведённом примере опущено, что если значение детейлов изменится, то кэшированное значение необходимо пересчитать (например, с помощью [SQL-запроса](fo_sql-query.html))" %}
