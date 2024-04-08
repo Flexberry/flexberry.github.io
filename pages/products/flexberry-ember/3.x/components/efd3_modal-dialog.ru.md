@@ -27,8 +27,10 @@ summary: Обзор возможностей, настроек и особенн
 * `viewImageContent` - флаг, определяющий, что в модальном диалоге будет отображаться изображение, что изменит используемые css-классы разметки (используется, в частности, в окне просмотра файла в файловом контроле).
 * `useOkButton` - флаг, определяющий, следует ли на модальном окне отображать кнопку "Ок". Если ничего не указано, то используется 'true'.
 * `useCloseButton` - флаг, определяющий, следует ли на модальном окне отображать кнопку закрытия. Если ничего не указано, то используется 'true'.
-* `settings` - [настройки](https://semantic-ui.com/modules/modal.html#/settings), которые передаются внутреннему компоненту [Semantic UI Modal](https://semantic-ui.com/modules/modal.html).
 * `componentName` - имя компонента.
+* `useSidePageMode` - открывать модальное окошко в режиме `sidepage`
+* `settings` - [настройки](https://semantic-ui.com/modules/modal.html#/settings), которые передаются внутреннему компоненту [Semantic UI Modal](https://semantic-ui.com/modules/modal.html)
+  * _Параметр `context` позволяет изменить селектор области, которая должна быть закрыта фоном модального окна. По умолчанию параметр имеет значение `'.ember-application > .ember-view'` - т.е. весь экран._
 
 Если ничего не было переопределено, то:
 
@@ -55,6 +57,52 @@ summary: Обзор возможностей, настроек и особенн
 {{/modal-dialog}}
 {% endraw %}
 ```
+
+Дополнительные ссылки:
+- [Обучающее видео о modal-dialog (с 5:47)](https://youtu.be/_LKhIKZ21n8?si=LJhWXBuuV8QjvP-D&t=347).
+
+### Вызов модального окна через экшен
+Вызов модального окна через action (`showModalDialog`) позволяет показывать модальное окно через контроллер. Это рекомендуемый способ работы с модальными окнами `ember-flexberry`.
+
+Чтобы показать модальное окно, используя экшен (showModalDialog) необходимо:
+- вынести шаблон модального окошка в отдельный файл (напр. `/templates/my-modal.hbs`):
+```hbs
+{% raw %}
+{{#modal-dialog
+  title="Выберите запись"
+  sizeClass="fullscreen"
+  close='removeModalDialog'
+  created='createdModalDialog'
+  useOkButton=true
+  useCloseButton=false
+  componentName=componentName
+  settings=model.settings
+}}
+  {{#each model.records as record}}
+    {{record}}
+  {{/each}}
+{{/modal-dialog}}
+{% endraw %}
+```
+- вызвать action `showModalDialog`:
+```javascript
+this.send('showModalDialog', 'templates/my-modal',
+{
+  controller: 'my-modal-controller',
+  model: {
+    records: ['Запись 1', 'Запись 2', 'Запись 3'],
+    settings: {
+      closable: false
+    }
+  }
+});
+```
+с указанием:
+  * шаблона модального окна (`/templates/my-modal`)
+  * контроллера модального окна (`my-modal-controller` - находится в папке `controllers`; можно использовать любой `L` и `E` контроллер)
+  * передаваемых в модальное окошко данных (`model` - _данные можно передать только через параметр `model`_)
+
+В итоге, модальное окно отобразит данные согласно своему шаблону. Обратите внимание, в шаблон модального окна данные передаются через параметр `model` .
 
 ## Особенности устройства роутинга и компонента для отображения модального диалога
 
