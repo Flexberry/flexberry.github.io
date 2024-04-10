@@ -96,8 +96,13 @@ entries:
 
         folderitems:
           - title: Modal dialog
-            title_ru: Модальный диалог
+            title_ru: Модальное окно
             url: /efd3_modal-dialog.html
+            output: web, pdf
+
+          - title: Modal dialog
+            title_ru: Модальный диалог
+            url: /efd3_flexberry-dialog.html
             output: web, pdf
 
           - title: Flexberry Objectlistview
@@ -119,7 +124,7 @@ entries:
             title_ru: Flexberry tab bar
             url: /ef3_flexberry-tab-bar.html
             output: web, pdf
-          
+
           - title: Flexberry lookup
             title_ru: Компонент лукапа
             url: /ef3_flexberry-lookup.html
@@ -130,8 +135,8 @@ entries:
             url: /ef3_list-restriction-tools.html
             output: web, pdf
 
-          - title: Flexberry multiple lookup 
-            title_ru: Flexberry multiple lookup 
+          - title: Flexberry multiple lookup
+            title_ru: Flexberry multiple lookup
             url: /ef3_flexberry-multiple-lookup.html
             output: web, pdf
 
