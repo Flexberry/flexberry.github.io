@@ -109,6 +109,11 @@ entries:
             title_ru: Groupedit с функцией multiselect
             url: /ef3_groupedit_with_multiselect.html
             output: web, pdf
+          
+          - title: Groupedit configurate row
+            title_ru: Изменение в строке Groupedit
+            url: /ef3_groupedit_configurate_row.html
+            output: web, pdf
 
           - title: Setting up lists
             title_ru: Настройка списков
