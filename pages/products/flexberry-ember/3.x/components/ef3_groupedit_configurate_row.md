@@ -17,20 +17,22 @@ lang: ru
 
 Для реализации данной логики нужно: 
 1. Создать в контроллере [observer](https://guides.emberjs.com/v3.15.0/object-model/observers/), отлавливающий изменения в каждом поле столбца ``Enumeration``:
+
 ```javascript
   enumerationObserver: observer('model.details.@each.enumeration', function () {
-      const details = this.get('model.details').toArray();
+    const details = this.get('model.details').toArray();
 
-      details.forEach((detail) => {
-        let rowConfig = detail.rowConfig;
-        if (rowConfig) {
-          this.send('configurateRow', rowConfig, detail);
-        }
-      });
+    details.forEach((detail) => {
+      let rowConfig = detail.rowConfig;
+      if (rowConfig) {
+        this.send('configurateRow', rowConfig, detail);
+      }
+    });
   }),
 ```
 
 2. В экшене ``configurateRow``, к которому обращается ``enumerationObserver``, реализовать логику зависимости поля ``Flag`` от значения поля ``Enumeration`` соответствующей строки:
+
 ```javascript
   actions: {
     configurateRow(rowConfig, detail) {
