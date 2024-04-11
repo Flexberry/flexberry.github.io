@@ -241,15 +241,10 @@ ul#results-container a:hover {
 #search-input {
     padding: .5em;
     margin-left: 20px;
-    font-size: 0.8em;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    float: right;
-    background: transparent;
     opacity: 0.8;
-    color: #fff;
-    border-radius: 50px;
 }
 
 /* end search */
