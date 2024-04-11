@@ -1,3 +1,7 @@
 .DocSearch-Modal {
   margin: 200px auto auto;
 }
+
+.DocSearch-Button {
+  margin: 0;
+}

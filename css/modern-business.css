@@ -9,6 +9,13 @@
 html,
 body {
     height: 100%;
+    overflow: hidden;
+}
+
+html > body > .wrapper {
+    height: 100%;
+    position: relative;
+    overflow: auto;
 }
 
 body {
