@@ -409,11 +409,38 @@ let cellComponent = this.getCellComponent({
 console.log(cellComponent); // Выведет объект с настройками компонента для ячейки таблицы
 ```
 
-Подробнее можно посмотреть на [github.com](https://github.com/Flexberry/ember-flexberry/blob/develop/tests/dummy/app/controllers/components-examples/flexberry-groupedit/ember-flexberry-dummy-suggestion-edit-groupedit-with-lookup-with-computed-atribute.js).
+Подробнее на [github.com](https://github.com/Flexberry/ember-flexberry/blob/develop/tests/dummy/app/controllers/components-examples/flexberry-groupedit/ember-flexberry-dummy-suggestion-edit-groupedit-with-lookup-with-computed-atribute.js).
 
-## Динамическое обновление списка объектов в групэдите -
+## Динамическое обновление списка объектов в групэдите
 
-Дописать
+Доработка формы редактирования детейла для динамического обновления списка объектов осуществляется с помощью контроллера [EditFormController](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/EditFormController.html).
+
+**Свойства:**
+
+* `_itemsCounter` - счетчик созданных записей. Значение по умолчанию: 0.
+* `searchForContentChange`  - флаг, указывающий, что компонент должен отслеживать изменения в модели и отображать их. Значение по умолчанию: true.
+
+**События:**
+
+Наименование | Методы
+:--------|:----------------
+`addDetail` | `actions.addDetail` - добавляет запись детейла в конец массива. Создает новую запись в хранилище с использованием счетчика _itemsCounter и добавляет ее в соответствуюий список.
+`deleteDetail` | `actions.deleteDetail` - удаляет первый элемент массива списка детейлов.
+
+`getCellComponent(attr, bindingPath)` - метод для получения типа и атрибутов компонента, который будет встроен в ячейку таблицы [object-list-view]. В случае, если атрибут связан с внешним ключом (belongsTo) и путь привязки равен master, компонент для ячейки будет настроен определенным образом.
+
+* `attr` - атрибут проекции, связанный с текущей ячейкой таблицы,
+* `bindingPath` - путь к свойству модели, связанному с текущей ячейкой таблицы,
+* `modelClass` - класс модели записи данных, связанный с текущей строкой таблицы.
+
+*Возвращаемое значение:* объект, содержащий имя и свойства компонента, который будет использоваться для отображения текущей ячейки таблицы, где
+
+`componentName` - имя компонента,
+`componentProperties` - свойства компонента.
+
+Для использования контроллера необходимо его импортировать и применить в соответствующем месте приложения. События `addDetail` и `deleteDetail` можно вызвать, например, при обработке событий пользовательского интерфейса, связанных с добавлением или удалением детейлов. Метод `getCellComponent` используется автоматически фреймворком для конфигурации компонентов ячеек таблицы.
+
+Подробнее на [github.com](https://github.com/Flexberry/ember-flexberry/blob/develop/tests/dummy/app/controllers/components-examples/flexberry-groupedit/model-update-example.js).
 
 ## Дополнительные особенности реализации
 
