@@ -100,9 +100,84 @@ this.send('showModalDialog', 'templates/my-modal',
 с указанием:
   * шаблона модального окна (`/templates/my-modal`)
   * контроллера модального окна (`my-modal-controller` - находится в папке `controllers`; можно использовать любой `L` и `E` контроллер)
-  * передаваемых в модальное окошко данных (`model` - _данные можно передать только через параметр `model`_)
+  * передаваемых в модальное окошко данных (`model` - _данные можно передать только через объект `model`_)
 
-В итоге, модальное окно отобразит данные согласно своему шаблону. Обратите внимание, в шаблон модального окна данные передаются через параметр `model` .
+В итоге, модальное окно отобразит данные согласно своему шаблону. Обратите внимание, в шаблон модального окна данные передаются через объект `model`.
+
+## Отображение одного модального окна поверх другого
+Отображение двух модальных окон на странице может быть выполнено с помощью двух механизмов.
+
+### Способ 1. Использование логических переменных в шаблоне
+Чтобы отобразить два модальных окна, необходимо:
+1. добавить оба модальных окна в шаблон нужной страницы:
+2. перенести второе модальное окно в блок `#if <переменная>`, где `<переменная>` будет переключать видимость второго модального окна
+3. переключить `<переменную>` в первом модальном окне
+
+Итоговый пример выглядит так:
+```hbs
+{% raw %}
+{{#if showFirstModal}}
+  {{#modal-dialog
+    title="Первое окно"
+    close=(action set "showFirstModal" false)
+  }}
+    <button class="ui button" {{action set "showSecondModal" true}}>
+      Открыть второе окно
+    </button>
+  {{/modal-dialog}}
+{{/if}}
+
+{{#if showSecondModal}}
+  {{#modal-dialog
+    title="Второе окно"
+    close=(action set "showSecondModal" false)
+  }}
+    <p>Это второе окно!</p>
+  {{/modal-dialog}}
+{{/if}}
+{% endraw %}
+```
+
+Для активации первого окна, необходимо переключить `showFirstModal` в `true`. Для активации второго окна нажать кнопку `Открыть второе окно` внутри первого окна.
+
+### Способ 2. Использование showModalDialog
+Для отображения двух модальных окон, можно использовать action `showModalDialog` с указанием разных `outlet` для отрисовки.
+Для начала, необходимо иметь несколько `outlet` в `application.hbs` (напр. `modal` и `modal-second`, при чём outlet второго модального окна должен быть последним):
+```hbs
+{% raw %}
+<div class="ui main container">
+  {{outlet "editrecord-modal"}}
+  {{outlet "modal"}}
+  {{outlet "modal-second"}}
+</div>
+{% endraw %}
+```
+
+Для открытия второго модального окна, необходимо указать `view` и `outlet` для отрисовки:
+```javascript
+this.send('showModalDialog', 'templates/my-modal', { controller: 'my-modal-controller' }); //отрисовка первого модального окна в стандартный outlet modal
+this.send('showModalDialog', 'templates/my-second-modal', { controller: 'my-modal-controller' }, { view: 'application', outlet: 'modal-second' }); // отрисовка второго модального окна в outlet modal-second на странице application
+```
+
+После этого в шаблоне второго модального окна (`my-second-modal`), необходимо определить action для закрытия этого окна:
+```hbs
+{% raw %}
+{{#modal-dialog
+  close=(action "closeSecondModalDialog")
+  ...
+}}
+{{/modal-dialog}}
+{% endraw %}
+```
+
+И реализовать этот action следующим образом:
+```javascript
+actions: {
+  closeSecondModalDialog() {
+    this.send('removeModalDialog', { outlet: 'modal-second' });
+  }
+}
+```
 
 ## Особенности устройства роутинга и компонента для отображения модального окна
 
