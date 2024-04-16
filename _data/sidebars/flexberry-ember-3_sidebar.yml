@@ -30,9 +30,24 @@ entries:
         output: web, pdf
 
         folderitems:
+          - title: Generation of Flexberry Ember Application
+            title_ru: Генерация приложений
+            url: /efd3_app-generation.html
+            output: web, pdf
+
           - title: Structure of Flexberry Ember Application
             title_ru: Обзор структуры сгенерированных приложений
             url: /efd3_generated-app-structure.html
+            output: web, pdf
+
+          - title: Start of Flexberry Ember Application 
+            title_ru: Запуск сгенерированных приложений
+            url: /efd3_generated-app-start.html
+            output: web, pdf
+
+          - title: Regeneration of Flexberry Ember Application 
+            title_ru: Перегенерация приложений
+            url: /efd3_generated-app-regeneration.html
             output: web, pdf
 
       - title: Forms and routing
