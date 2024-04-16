@@ -471,7 +471,7 @@ console.log(cellComponent); // Выведет объект с настройка
 
 ### Вычислимые свойства в getCellComponent
 
-Что бы иметь возможность, изменять свойства, встроенного в ячейку компонента, этот компонент должен использовать миксин [DynamicPropertiesMixin](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/DynamicPropertiesMixin.html).
+Чтобы иметь возможность изменять свойства встроенного в ячейку компонента, этот компонент должен использовать миксин [DynamicPropertiesMixin](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/DynamicPropertiesMixin.html).
 
 Свойства компонента, описанные объектом `componentProperties`, в хуке контроллера `getCellComponent`, будут переданны с использованием свойства [`dynamicProperties`](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/DynamicPropertiesMixin.html#property_dynamicProperties) из миксина.
 Поэтому, при изменении свойств объекта `componentProperties`, эти изменения будут выполнены для компонента.
