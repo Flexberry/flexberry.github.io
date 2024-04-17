@@ -407,7 +407,7 @@ console.log(cellComponent); // Выведет объект с настройка
 
 Подробнее на [github.com](https://github.com/Flexberry/ember-flexberry/blob/develop/tests/dummy/app/controllers/components-examples/flexberry-groupedit/ember-flexberry-dummy-suggestion-edit-groupedit-with-lookup-with-computed-atribute.js).
 
-## Динамическое обновление списка объектов в групэдите
+## Обновление модели
 
 Доработка формы редактирования детейла для динамического обновления списка объектов осуществляется с помощью контроллера [EditFormController](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/EditFormController.html).
 
