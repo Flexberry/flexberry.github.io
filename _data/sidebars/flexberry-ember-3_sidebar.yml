@@ -105,6 +105,11 @@ entries:
             url: /efd3_object-list-view.html
             output: web, pdf
 
+          - title: Flexberry Groupedit
+            title_ru: Flexberry Groupedit
+            url: /ef3_groupedit.html
+            output: web, pdf
+
           - title: Groupedit with multiselect
             title_ru: Groupedit с функцией multiselect
             url: /ef3_groupedit_with_multiselect.html
