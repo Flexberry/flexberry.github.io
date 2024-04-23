@@ -13,7 +13,7 @@ lang: ru
 
 Рассмотрим задачу, согласно которой требуется, чтобы поле ``Flag`` становилось недоступно для изменения в том случае, если в поле ``Enumeration`` введено значение ``Block Flag``.
 
-![](/images/pages/products/flexberry-ember/3.x/components/groupedit-configurate-row.png)
+![Пример GroupEdit](/images/pages/products/flexberry-ember/3.x/components/groupedit-configurate-row.png)
 
 Для реализации данной логики нужно:
 1. Создать в контроллере [observer](https://guides.emberjs.com/v3.15.0/object-model/observers/), отлавливающий изменения в каждом поле столбца ``Enumeration``:
