@@ -1,5 +1,5 @@
 ---
-title: Flexberry tab bar
+title: Навигация
 sidebar: flexberry-ember-3_sidebar
 keywords: Flexberry Ember
 toc: true
@@ -7,17 +7,16 @@ permalink: ru/ef3_flexberry-tab-bar.html
 lang: ru
 summary: Свойства flexberry-tab-bar, настройка flexberry-tab-bar
 ---
-Доступно с версии ember-flexberry 3.8.0.
 
 ## Описание
 
-[flexberry-tab-bar](https://github.com/Flexberry/ember-flexberry/blob/master/addon/components/flexberry-tab-bar.js) - компонент, позволяющий организовать и осуществить навигацию между группами контента, которые связаны и находятся на одном уровне. В нем могут быть размещены поля формы, [список](ef2_object-list-view.html), [детейлы](ef2_groupedit.html) и другое.
+[flexberry-tab-bar](https://github.com/Flexberry/ember-flexberry/blob/master/addon/components/flexberry-tab-bar.js) - компонент, позволяющий организовать и осуществить навигацию между группами контента, которые связаны и находятся на одном уровне. В нем могут быть размещены поля формы, [список](efd3_object-list-view.html), [детейлы](ef3_groupedit.html) и другое.
 
 Общий вид компонента с отображением вкладок в формате с переполнением, в случае, если текущая тема оформления “Ghost”:
 
-![](/images/pages/products/flexberry-ember/3.x/components/flexberry-tab-bar.png)
+![components/flexberry-tab-bar](/images/pages/products/flexberry-ember/3.x/components/flexberry-tab-bar.png)
 
-Вы можете посмотреть [пример с реализацией](http://flexberry.github.io/ember-flexberry/dummy/dummy-test-2/?#/components-examples/flexberry-tab-bar/settings-example) на тестовом стенде.
+[Пример с реализацией](http://flexberry.github.io/ember-flexberry/dummy/dummy-test-2/?#/components-examples/flexberry-tab-bar/settings-example) доступен на тестовом стенде.
 
 ### Логика работы вкладок в формате с переполнением
 
@@ -50,6 +49,7 @@ summary: Свойства flexberry-tab-bar, настройка flexberry-tab-ba
 При загрузке страницы будет активна вкладка компонента, в которой указано свойство `active: true`.
 
 Массив вкладок `items`:
+
 ```javascript
 [
     { selector: 'tab1', caption: 'Tab №1', active: true },
