@@ -9,13 +9,13 @@ lang: ru
 
 ### Изменение поля в Groupedit в зависимости от значения в другом поле
 
-В ember-flexberry существует возможность настроить зависимость одного поля в groupedit от значения другого поля этой же строки. Логику зависимости можно определить согласно конкретной задаче. 
+В [ember-flexberry](https://flexberry.github.io/ru/ef3_landing_page.html) существует возможность настроить зависимость одного поля в groupedit от значения другого поля этой же строки. Логику зависимости можно определить согласно конкретной задаче. 
 
-Рассмотрим, например, задачу, в которой нужно, чтобы одно поле (например, ``Flag``) становилось недоступно для изменения в случае, если в другом поле введено (например, выбрано из списка в поле ``Enumeration``) определённое значение (например, ``Block Flag``).
+Рассмотрим задачу, согласно которой требуется, чтобы поле ``Flag`` становилось недоступно для изменения в том случае, если в поле ``Enumeration`` введено значение ``Block Flag``.
 
-![](/images/pages/products/flexberry-ember/3.x/components/groupedit-configurate-row-example.png)
+![](/images/pages/products/flexberry-ember/3.x/components/groupedit-configurate-row.png)
 
-Для реализации данной логики нужно: 
+Для реализации данной логики нужно:
 1. Создать в контроллере [observer](https://guides.emberjs.com/v3.15.0/object-model/observers/), отлавливающий изменения в каждом поле столбца ``Enumeration``:
 
 ```javascript
@@ -48,3 +48,4 @@ lang: ru
 ```
 
 [Реализация данного примера](http://flexberry.github.io/ember-flexberry/dummy/dummy-test-2/?#/components-examples/flexberry-groupedit/field-readonly-status-depend-on-another-field-value) доступна на тестовом стенде. Для блокировки поля ``Flag`` нужно выбрать ``Block Flag`` в списке поля ``Enumeration``.
+
