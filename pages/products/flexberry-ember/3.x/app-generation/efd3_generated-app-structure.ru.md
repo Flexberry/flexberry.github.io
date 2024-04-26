@@ -24,7 +24,8 @@ summary: Обзор структуры сгенерированных клиен
 
 Далее мы подробнее рассмотрим те элементы `Ember`-приложения, которые генерируются из [Flexberry Designer](fd_flexberry-designer.html).
 
-### Сгенерированные модели 
+### Сгенерированные модели
+
 При генерации приложения из [Flexberry Designer](fd_flexberry-designer.html) в клиентское приложение добавляются следующие [модели](efd3_model.html) (папка `models`):
 
 ![Модели в сгенерированном `Flexberry Ember`-приложении](/images/pages/products/flexberry-ember/ember-flexberry/generation/generated-models.png).
@@ -49,6 +50,7 @@ export default {};
 ```
 
 ### Сгенерированные сериализаторы
+
 При генерации приложения из [Flexberry Designer](fd_flexberry-designer.html) в клиентское приложение добавляются следующие [сериализаторы](efd3_serializer.html) (папка `serializers`):
 
 ![Cериализаторы в сгенерированном `Flexberry Ember`-приложении](/images/pages/products/flexberry-ember/ember-flexberry/generation/generated-serializers.png).
@@ -56,6 +58,7 @@ export default {};
 Каждой модели соответствует свой [сериализатор](efd3_serializer.html). Для каждой модели также генерируются [офлайн-сериализаторы](efd3_offline-serializer.html) для работы с офлайн-хранилищем.
 
 ### Сгенерированные миксины
+
 При генерации приложения из [Flexberry Designer](fd_flexberry-designer.html) в клиентское приложение добавляются следующие [миксины](efd3_mixin.html) (папка `mixins`):
 
 ![Миксины в сгенерированном `Flexberry Ember`-приложении](/images/pages/products/flexberry-ember/ember-flexberry/generation/generated-mixins.png).
@@ -63,16 +66,19 @@ export default {};
 Миксины при генерации добавляются во вложенную папку `regenerated`. При каждом запуске перегенерации из [Flexberry Designer](fd_flexberry-designer.html) данные миксины будут обновлены, что нужно учитывать, чтобы новый программный код не был утерян. В миксины вынесены как части [моделей](efd3_model.html), так и [сериализаторов](efd3_serializer.html), в том числе [офлайн-сериализаторов](efd3_offline-serializer.html).
 
 ### Сгенерированные адаптеры
+
 При генерации приложения из [Flexberry Designer](fd_flexberry-designer.html) в клиентское приложение добавляются следующие [адаптеры](efd3_application-adapter.html) (папка `adapters`), в том числе [адаптер для работы в офлайн-режиме](efd3_application-adapter-ofline.html):
 
 ![Адаптеры в сгенерированном `Flexberry Ember`-приложении](/images/pages/products/flexberry-ember/ember-flexberry/generation/generated-adapters.png).
 
 ### Сгенерированные сервисы
+
 При генерации приложения из [Flexberry Designer](fd_flexberry-designer.html) в клиентское приложение добавляется переопределенный [сервис store](efd3_store-service.html) (папка `services`), который позволяет приложению работать как в онлайн-режиме, так и в офлайн-режиме.
 
 ![Сервисы в сгенерированном `Flexberry Ember`-приложении](/images/pages/products/flexberry-ember/ember-flexberry/generation/generated-services.png).
 
 ### Сгенерированные перечисления и трансформации
+
 При генерации приложения из [Flexberry Designer](fd_flexberry-designer.html) в клиентское приложение добавляются следующие [перечисления](efd3_enum.html) (папка `enums`):
 
 ![Перечисления в сгенерированном `Flexberry Ember`-приложении](/images/pages/products/flexberry-ember/ember-flexberry/generation/generated-enums.png).
@@ -82,6 +88,7 @@ export default {};
 ![Трансформации в сгенерированном `Flexberry Ember`-приложении](/images/pages/products/flexberry-ember/ember-flexberry/generation/generated-transforms.png).
 
 ### Сгенерированные контроллеры
+
 При генерации в клиентское приложение добавляются следующие [контроллеры](efd3_controller.html) (папка `controllers`):
 
 ![Контроллеры в сгенерированном `Flexberry Ember`-приложении](/images/pages/products/flexberry-ember/ember-flexberry/generation/generated-controllers.png).
@@ -93,6 +100,7 @@ export default {};
 В контроллер `application` сгенерирован код для работы с меню (в нем определяется структура меню, заданная во [Flexberry Designer](fd_flexberry-designer.html)), а также необходимый для смены локализации код.
 
 ### Сгенерированные роуты
+
 При генерации приложения из [Flexberry Designer](fd_flexberry-designer.html) в клиентское приложение добавляются следующие [роуты](efd3_route.html) (папка `routes`):
 
 ![Роуты в сгенерированном `Flexberry Ember`-приложении](/images/pages/products/flexberry-ember/ember-flexberry/generation/generated-routes.png).
@@ -100,6 +108,7 @@ export default {};
 Роуты генерируются для списковых форм, форм редактирования, заданных на соответствующей диаграмме классов во [Flexberry Designer](fd_flexberry-designer.html) (эту диаграмму мы рассматривали ранее, когда говорили о сгенерированных контроллерах). Для форм создания записей по аналогии с генерацией контроллеров отдельно генерируется роут `new` в папку с именем соответствующей формы редактирования.
 
 ### Сгенерированные шаблоны
+
 При генерации приложения из [Flexberry Designer](fd_flexberry-designer.html) в клиентское приложение добавляются следующие [шаблоны](efd3_template.html) (папка `templates`):
 
 ![Шаблоны в сгенерированном `Flexberry Ember`-приложении](/images/pages/products/flexberry-ember/ember-flexberry/generation/generated-templates.png).
@@ -115,6 +124,7 @@ export default {};
 По сравнению с рассмотренной структурой папки `templates` в "чистом" `Ember`-приложении присутствует только шаблон `application` со стандартной разметкой "из коробки".
 
 ### Сгенерированные файлы локализации
+
 При генерации приложения из [Flexberry Designer](fd_flexberry-designer.html) в клиентское приложение добавляются следующие [файлы локализации](efd3_locale.html) (папка `locales`):
 
 ![Файлы локализации в сгенерированном `Flexberry Ember`-приложении](/images/pages/products/flexberry-ember/ember-flexberry/generation/generated-locales.png).
@@ -122,6 +132,7 @@ export default {};
 Генерируются файлы локализации для русского и английского языков для форм (папка `forms`) и моделей (папка `models`), а также для приложения в целом (`translations.js`).
 
 ### Сгенерированные стили
+
 При генерации приложения из [Flexberry Designer](fd_flexberry-designer.html) в клиентское приложение добавляются следующие [стили](efd3_style.html) (папка `styles`):
 
 ![Стили в сгенерированном `Flexberry Ember`-приложении](/images/pages/products/flexberry-ember/ember-flexberry/generation/generated-styles.png).
@@ -129,9 +140,11 @@ export default {};
 В "чистом" `Ember`-приложении "из коробки" присутствует только пустой файл `app.css`.
 
 ### Сгенерированные компоненты
+
 При генерации приложения из [Flexberry Designer](fd_flexberry-designer.html) в клиентское приложение не добавляются новые [компоненты](efd3_component.html) (папка `components`). Однако на сгенерированных формах используются компоненты, которые определены в аддоне [ember-flexberry](https://github.com/Flexberry/ember-flexberry).
 
 ### Сгенерированные хэлперы
+
 При генерации приложения из [Flexberry Designer](fd_flexberry-designer.html) в клиентское приложение не добавляются [хэлперы](efd3_helper.html) (папка `helpers`). Однако в шаблонах сгенерированных форм используются хелперы, которые определены в аддоне [ember-flexberry](https://github.com/Flexberry/ember-flexberry).
 
 ## Структура сгенерированного серверного приложения
@@ -141,6 +154,7 @@ export default {};
 ![Структура сгенерированного серверного приложения](/images/pages/products/flexberry-ember/ember-flexberry/generation/generated-backend-app.png).
 
 ## Правила написания кода
+
 К внесениям изменений в прикладной код необходимо подходить ответственно, поскольку он может быть утерян при последующих перегенерациях.
 
 Код для объектов данных на бэкенде должен быть заключён в [скобки программиста](fo_programmer-brackets.html). Аналогичного механизма для остальных частей сгенерированных приложений (как клиентского, так и серверного) пока не предусмотрено, поэтому возможны следующие варианты решения данной проблемы:

@@ -1,5 +1,5 @@
 ---
-title: Flexberry multiple lookup 
+title: Выбор нескольких значений мастера 
 keywords: ember, multiple lookup, flexberry-multiple-lookup
 sidebar: flexberry-ember-3_sidebar
 toc: false

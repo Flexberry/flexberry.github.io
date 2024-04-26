@@ -9,6 +9,7 @@ summary: Предназначение, структура, функции, ос�
 ---
 
 ## Описание
+
 **Форма редактирования** предназначена для редактирования объекта.
 
 **Форма создания** - для создания нового объекта (хотя в общем случае это очень близкие по логике работы формы).
@@ -18,6 +19,7 @@ summary: Предназначение, структура, функции, ос�
 Чтобы создать форму редактирования [модели по проекции](efd3_model.html), необходимо определить соответствующие [роуты](https://guides.emberjs.com/v3.1.0/routing/defining-your-routes/), [контроллеры](https://guides.emberjs.com/v3.1.0/controllers/) и [шаблоны](https://guides.emberjs.com/v3.1.0/templates/handlebars-basics/).
 
 ### Базовые элементы
+
 Реализованные в технологии `Flexberry Ember` **базовые элементы** для форм редактирования и создания представляют собой:
 
 * [базовый контроллер `EditFormController`](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/EditFormController.html),
@@ -75,7 +77,7 @@ var NeoPlatgormGenTestChild1ENewController = NeoPlatgormGenTestChild1EController
 export default NeoPlatgormGenTestChild1ENewController;
 ```
 
-В случае, если у [модели](efd3_model.html) есть детейлы, у которых есть мастера, то в контроллере формы редактирования дополнительно переопределён метод `getCellComponent`, определяющий, какой именно компонент осуществляет редактирование различных полей детейла. 
+В случае, если у [модели](efd3_model.html) есть детейлы, у которых есть мастера, то в контроллере формы редактирования дополнительно переопределён метод `getCellComponent`, определяющий, какой именно компонент осуществляет редактирование различных полей детейла.
 
 ```js
 import EditFormController from 'ember-flexberry/controllers/edit-form';
@@ -134,8 +136,8 @@ export default EditFormController.extend({
 
 Для форм создания и редактирования используется один [шаблон](https://guides.emberjs.com/v3.1.0/templates/handlebars-basics/). Типичный шаблон для формы выглядит следующим образом:
 
-{% raw %}
 ```hbs
+{% raw %}
 <h3 class="ui header">{{t "forms.neo-platform-gen-test-agregator-class-e.caption"}}</h3> <!-- Локализованный заголовок формы -->
 
 <form class="ui form flexberry-vertical-form" role="form">
@@ -180,20 +182,20 @@ export default EditFormController.extend({
   </div>
   ...
 </form>
-```
 {% endraw %}
+```
 
 ## Вычитка данных
 
 Вычитка данных для формы редактирования осуществляется в [базовом роуте `EditFormRoute`](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/EditFormRoute.html). В общем случае вычитывается [модель по проекции](efd3_model.html).
 
-
 ## Cохранение данных
+
 Сохранения данных для формы создания и редактирования осуществляется в [базовом контроллере `EditFormController`](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/EditFormController.html).
 
 Алгоритм сохранения следующий:
 
-* Если у текущей модели есть агрегатор (например, такое возможно в [офлайн-режиме]()), то вызывается сохранение соответствующего агрегатора.
+* Если у текущей модели есть агрегатор (например, такое возможно в офлайн-режиме), то вызывается сохранение соответствующего агрегатора.
 * Если у текущей модели есть детейлы, которые были изменены, то происходит [Batch Update](https://devblogs.microsoft.com/odata/all-in-one-with-odata-batch/).
 * Если у текущей модели нет детейлов или они не были изменены, то происходит отправка сведений об изменённых полях модели на сервер (+ отправляются мастеровые поля).
 
@@ -340,15 +342,14 @@ module.exports = function(environment) {
 
 Существует ряд возможностей кастомизировать логику сохранения на форме редактирования.
 
-1. Переопределение методов [базового контроллера формы редактирования `EditFormController`](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/EditFormController.html), вызываемых при сохранении:
+1.Переопределение методов [базового контроллера формы редактирования `EditFormController`](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/EditFormController.html), вызываемых при сохранении:
 
 * [`onSaveActionStarted`](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/EditFormController.html#method_onSaveActionStarted.) - вызывается перед началом сохранения.
 * [`onSaveActionFulfilled`](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/EditFormController.html#method_onSaveActionFulfilled.) - вызывается после успешного завершения сохранения.
 * [`onSaveActionRejected`](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/EditFormController.html#method_onSaveActionRejected.) - вызывается после отказа при сохранении.
 * [`onSaveActionAlways`](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/EditFormController.html#method_onSaveActionAlways.) - вызывается после сохранения (не важно, успешного или нет).
 
-
-2. Переопределение обработчиков нажатия кнопок [базового контроллера формы редактирования `EditFormController`](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/EditFormController.html):
+2.Переопределение обработчиков нажатия кнопок [базового контроллера формы редактирования `EditFormController`](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/EditFormController.html):
 
 * [`actions.save`](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/EditFormController.html#method_actions.save) - обработчик нажатия кнопки "Сохранить".
 * [`actions.saveAndClose`](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/EditFormController.html#method_actions.saveAndClose) - обработчик нажатия кнопки "Сохранить и закрыть".
@@ -380,7 +381,7 @@ onSaveActionRejected() {
 
 ## Несколько списков на форме редактирования
 
-На форме редактирования можно расположить несколько [списков, представленных компонентом ObjectListViewComponent](), [пример такой формы есть на тестовом стенде](http://flexberry.github.io/ember-flexberry/dummy/dummy-test-3/#/ember-flexberry-dummy-multi-list-user-edit/new).
+На форме редактирования можно расположить несколько списков, представленных компонентом ObjectListViewComponent, [пример такой формы есть на тестовом стенде](http://flexberry.github.io/ember-flexberry/dummy/dummy-test-3/#/ember-flexberry-dummy-multi-list-user-edit/new).
 
 Настройка формы редактирования аналогична [настройке, когда на списковой форме располагаются несколько списков](efd3_listform.html). Для этого нужно в [роуте](https://guides.emberjs.com/v3.1.0/routing/defining-your-routes/) соответствующей формы редактирования использовать специальные [миксины](https://api.emberjs.com/ember/3.1/classes/Mixin) [MultiListRouteMixin](https://github.com/Flexberry/ember-flexberry/blob/develop/addon/mixins/multi-list-route.js) и [MultiListModelEditMixin](https://github.com/Flexberry/ember-flexberry/blob/develop/addon/mixins/multi-list-model-edit.js), после чего корректно задать `multiListSettings` и `developerUserSettings`.
 
@@ -452,8 +453,8 @@ export default EditFormController.extend(EditFormControllerOperationsIndicationM
 
 [Шаблон](https://guides.emberjs.com/v3.1.0/templates/handlebars-basics/) такой формы редактирования также требуется оформить особым образом. Настройки списков берутся из соответствующих `settings`, также дополнительно нужно пробросить некоторые action'ы.
 
-{% raw %}
 ```hbs
+{% raw %}
 {{flexberry-error error=error}}
 <h3 class="ui header">{{t "forms.ember-flexberry-dummy-application-user-edit.caption"}}</h3>
 <form class="ui form flexberry-vertical-form" role="form">
@@ -599,5 +600,5 @@ export default EditFormController.extend(EditFormControllerOperationsIndicationM
       {{/with}}
     </div>
 </form>
-```
 {% endraw %}
+```

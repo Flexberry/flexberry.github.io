@@ -16,7 +16,7 @@ summary: Настройка панели управления, пользова�
 
 Общий вид компонента Flexberry Objectlistview с использованием пользовательского компонента в тулбаре, если текущая тема оформления “Ghost”:
 
-![](/images/pages/products/flexberry-ember/3.x/components/toolbar-custom-components.png)
+![toolbar-custom-components](/images/pages/products/flexberry-ember/3.x/components/toolbar-custom-components.png)
 
 Вы можете посмотреть [пример с реализацией](http://flexberry.github.io/ember-flexberry/dummy/dummy-test-2/?#/components-examples/flexberry-objectlistview/toolbar-custom-components-example) на тестовом стенде.
 
