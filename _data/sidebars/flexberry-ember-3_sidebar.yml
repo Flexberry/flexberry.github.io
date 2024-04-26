@@ -180,3 +180,13 @@ entries:
         output: web, pdf
 
         folderitems:
+
+      - title: Additional addons
+        title_ru: Дополнительные аддоны
+        output: web, pdf
+
+        folderitems:
+          - title: Ember flexberry tinymce
+            title_ru: Ember flexberry tinymce
+            url: /ef3_ember_flexberry_tinymce.html
+            output: web, pdf
