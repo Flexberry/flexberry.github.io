@@ -104,7 +104,7 @@ __После смены значения в xml-файле, проект нуж�
   <basetype name="System.DateTime" width="100" />
   <basetype name="System.Guid?" cut="false" />
   <type name="IIS.ISOGD.Адрес">
-    <toolbar fixedwidth="300px" width="200" minwidth="100px" />
+    <toolbar fixedwidth="300px" width="200" minwidth="100" />
     <property name="ПервичныйКлюч" width="10" cut="false" filter="false" sort="false" align="ПоЦентру" noteditbyclick="true"/>
     <property name="ТерриторияПроп" width="180" cut="false" />
     <property name="УлицаПроп" width="100" cut="false" />
