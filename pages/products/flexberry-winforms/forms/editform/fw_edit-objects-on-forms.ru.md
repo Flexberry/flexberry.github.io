@@ -117,7 +117,8 @@ void form1_NextEvent(object sender, EventArgs e)
 private void GetNextOrPrevObj(bool next)
 {
     KeyGuid pk = (KeyGuid)((BaseWinEdit)Editor).DataObject.__PrimaryKey;
-    IDataService ds = DataServiceProvider.DataService;
+    IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+    IDataService ds = mainUnityContainer.Resolve<IDataService>();
 
     LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Планета), "ПланетаE");
     lcs.ColumnsSort = new[] { new ColumnsSortDef("primaryKey", SortOrder.Asc) };

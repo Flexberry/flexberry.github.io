@@ -165,7 +165,9 @@ public override void Edited(ICSSoft.STORMNET.DataObject dataobject, string contp
             {
                 ДежурнаяГруппаСмены ДежГрСмены = (ДежурнаяГруппаСмены)ДежурныеГруппыСмены.EditManager.DataObject;
                 ДежурнаяГруппа ДежГр = ((ЧленДежурнойГруппы)dataobject).ДежураяГруппа;
-                ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject("ДежурнаяГруппаE", ДежГр);
+                IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+                IDataService ds = mainUnityContainer.Resolve<IDataService>();
+                ds.LoadObject("ДежурнаяГруппаE", ДежГр);
                 ДежГрСмены.НомерГруппы = ДежГр.НомерГруппы;
                 ДежГрСмены.ТипДежурнойГруппы = ДежГр.ТипДежурнойГруппы;
                 ДежГрСмены.Руководитель = ДежГр.Руководитель;

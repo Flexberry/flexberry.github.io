@@ -8,7 +8,7 @@ permalink: ru/fo_intercept-formation-sql-query.html
 lang: ru
 ---
 
-[SQLDataService](fo_sql-data-service.html) позволяет осуществлять перехват формирования SQL-запроса к БД за счёт применения [делегатов OnGenerateSQLSelect, AfterGenerateSQLSelectQuery, OnCreateCommand](fo_sql-data-service.html). 
+[SQLDataService](fo_sql-data-service.html) позволяет осуществлять перехват формирования SQL-запроса к БД за счёт применения [делегатов OnGenerateSQLSelect, AfterGenerateSQLSelectQuery, OnCreateCommand](fo_sql-data-service.html).
 
 `Примеры перехватов формирования SQL-запросов`:
 
@@ -17,13 +17,15 @@ static void Main()
 {
     //...
     // создаем датасервис
-    ICSSoft.STORMNET.Business.SQLDataService ds = (ICSSoft.STORMNET.Business.SQLDataService)ICSSoft.STORMNET.Business.DataServiceProvider.DataService; 
+    IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+    IDataService ds = mainUnityContainer.Resolve<IDataService>();
+    ICSSoft.STORMNET.Business.SQLDataService sqldataservice = (ICSSoft.STORMNET.Business.SQLDataService)ds; 
     // перед формированием 
-    ds.OnGenerateSQLSelect+=new ICSSoft.STORMNET.Business.OnGenerateSQLSelectEventHandler(ds_OnGenerateSQLSelect);  
+    sqldataservice.OnGenerateSQLSelect+=new ICSSoft.STORMNET.Business.OnGenerateSQLSelectEventHandler(ds_OnGenerateSQLSelect);  
     // после формирования
-    ds.AfterGenerateSQLSelectQuery+=new ICSSoft.STORMNET.Business.AfterGenerateSQLSelectQueryEventHandler(ds_AfterGenerateSQLSelectQuery); 
+    sqldataservice.AfterGenerateSQLSelectQuery+=new ICSSoft.STORMNET.Business.AfterGenerateSQLSelectQueryEventHandler(ds_AfterGenerateSQLSelectQuery); 
     // строка посылается на выполение ...
-    ds.OnCreateCommand+=new ICSSoft.STORMNET.Business.OnCreateCommandEventHandler(ds_OnCreateCommand);
+    sqldataservice.OnCreateCommand+=new ICSSoft.STORMNET.Business.OnCreateCommandEventHandler(ds_OnCreateCommand);
     //...
 } 
 public static void ds_OnGenerateSQLSelect(object sender, ICSSoft.STORMNET.Business.GenerateSQLSelectQueryEventArgs e)

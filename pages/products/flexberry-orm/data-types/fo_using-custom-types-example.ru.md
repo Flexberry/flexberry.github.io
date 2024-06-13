@@ -110,21 +110,22 @@ public virtual IIS.CDLIB.Dollar Price
 ### Пример загрузки и сохранения объекта с собственными типами
 
 ```csharp
-IDataService dataService = DataServiceProvider.DataService;
-OrmSample ormSample = new OrmSample(dataService);
+IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+IDataService ds = mainUnityContainer.Resolve<IDataService>();
+OrmSample ormSample = new OrmSample(ds);
 object primaryKey = ormSample.GetSomeObjectPrimaryKey(typeof(CDDA));
 
 CDDA cdda = new CDDA();
 cdda.SetExistObjectPrimaryKey(primaryKey);
 
 // Загрузка объекта из БД по представлению CD_E.
-dataService.LoadObject(CD.Views.CD_E, cdda);
+ds.LoadObject(CD.Views.CD_E, cdda);
 
 // Изменим цену.
 cdda.Price = new Dollar(0, 55);
 
 // Сохраним объект в БД.
-dataService.UpdateObject(cdda);
+ds.UpdateObject(cdda);
 
 Console.WriteLine(string.Format("'{0}' price is {1}", cdda.Name, cdda.Price));
 ```

@@ -9,7 +9,7 @@ lang: ru
 
 Для подстановки параметров в функцию в классе `ICSSoft.STORMNET.Web.Tools.AdvLimitUtils` есть метод:
 
-```csharp 
+```csharp
 /// <summary>
 /// Подставить конкретные значения вместо параметров функции.
 /// </summary>
@@ -17,17 +17,19 @@ lang: ru
 /// <param name="paramValues">Справочник значений параметров (название параметра - значение).</param>  
 /// <returns>Функция, в которой все параметры заменены на соответствующие значения.</returns>
 public static Function SubstituteParameters(Function function, IDictionary<string, object> paramValues)
-``` 
+```
 
 ## Пример
 
 ```csharp
-ExternalLangDef externalLangDef = ExternalLangDef.LanguageDef;
+IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+IDataService ds = mainUnityContainer.Resolve<IDataService>();
+ExternalLangDef languageDef = new ExternalLangDef(ds)
  
  // Ограничивающая функция.
- ICSSoft.STORMNET.FunctionalLanguage.Function limitFunction = externalLangDef.GetFunction(
-   externalLangDef.funcEQ,
-   new ParameterDef("Дата", externalLangDef.DateTimeType, false, "")); 
+ ICSSoft.STORMNET.FunctionalLanguage.Function limitFunction = languageDef.GetFunction(
+   languageDef.funcEQ,
+   new ParameterDef("Дата", languageDef.DateTimeType, false, "")); 
 
  // Функция с подставленным значением параметра.
  limitFunction = AdvLimitUtils.SubstituteParameters(

@@ -16,7 +16,7 @@ lang: ru
 
 Чтобы указать на [диаграмме классов](fd_class-diagram.html) значение по умолчанию для полей скалярных типов достаточно определить его в [DefaultValue](fo_attributes-class-data.html) у соответствующего поля (обратите внимание на особенности генерации для [DefaultValue](fo_attributes-class-data.html)).
 
-{% include note.html content="Если тип значения по умолчанию не будет соответствовать типу поля, то проект будет сгенерирован, но не скомпилируется." %}
+> Если тип значения по умолчанию не будет соответствовать типу поля, то проект будет сгенерирован, но не скомпилируется.
 
 ### Cкалярные nullable-типы
 
@@ -27,7 +27,8 @@ Generic Nullable-типы могут быть инициализированы �
 ```cs
 private System.Nullable<System.DateTime> fRelease = System.DateTime.Now;
 ```
-{% include note.html content="Обратите внимание, что задать по умолчанию `null` не получится." %}
+
+> Обратите внимание, что задать по умолчанию `null` не получится.
 
 ### Комплексные типы
 
@@ -35,7 +36,7 @@ private System.Nullable<System.DateTime> fRelease = System.DateTime.Now;
 
 ### Синонимы типов
 
-Для [синонимов типов](fd_typedef.html) задание значения по умолчанию на диаграмме классов происходит аналогично тому, как это происходит у типов, синонимами которых они являются. 
+Для [синонимов типов](fd_typedef.html) задание значения по умолчанию на диаграмме классов происходит аналогично тому, как это происходит у типов, синонимами которых они являются.
 
 ## Задание значения по умолчанию в программном коде
 
@@ -50,12 +51,12 @@ private System.Nullable<System.DateTime> fRelease = System.DateTime.Now;
 ```csharp
 public class WinformC__ПациентE : ICSSoft.STORMNET.UI.BaseWinEdit, IIS.BSTest.DPDIC__ПациентE
 {
-	private void WinformC__ПациентE_DataObjectOnFormLoaded(object sender, EventArgs e)
-	{
-		((Пациент) this.DataObject).ФИО = "ФИОПациента"; //задаём значения по умолчанию
-		...
-	}
-	//...
+  private void WinformC__ПациентE_DataObjectOnFormLoaded(object sender, EventArgs e)
+  {
+    ((Пациент) this.DataObject).ФИО = "ФИОПациента"; //задаём значения по умолчанию
+    ...
+  }
+  //...
 }
 ```
 
@@ -64,41 +65,44 @@ public class WinformC__ПациентE : ICSSoft.STORMNET.UI.BaseWinEdit, IIS.BS
 ```csharp
 public class Пациент : ICSSoft.STORMNET.DataObject
 {
-	private fФИО = "ФИОПациента"; //установка значения по умолчанию
-	public string ФИО 
-	{
-		get
-		{
-			return fФИО;
-		}
-		
-		set
-		{
-			fФИО = value;
-		}
-	}
-	//...
+  private fФИО = "ФИОПациента"; //установка значения по умолчанию
+  public string ФИО 
+  {
+    get
+    {
+      return fФИО;
+    }
+
+    set
+    {
+      fФИО = value;
+    }
+  }
+//...
 }
 ```
 
 ### Задание значения по умолчанию в бизнес-сервере
+
 Код формы:
 
 ```csharp
 public class WinformC__ЗаписьНаПриёмE : ICSSoft.STORMNET.UI.BaseWinEdit, IIS.BSTest.DPDIC__ЗаписьНаПриёмE
 {
-	private void WinformC__ЗаписьНаПриёмE_DataObjectOnFormLoaded(object sender, EventArgs e)
-	{
-		//определяем, какие бизнес-сервера определены для объекта типа "ЗаписьНаПриём"
-		BusinessServer[] businessServers = BusinessServerProvider.GetBusinessServer(typeof(ЗаписьНаПриём), DataServiceObjectEvents.OnAllEvents, DataServiceProvider.DataService);
-		if (businessServers.Length>0) 
-		{
-			TestBS curBS = (TestBS) businessServers[0]; //берём первый и единственный (в данном случае единственный)
-			curBS.InitializeRecord(this.DataObject as ЗаписьНаПриём); //задаём значения по умолчанию
-			EditManager.Change(); //применяем внесённые изменения
-		}
-	}
-	//...
+  private void WinformC__ЗаписьНаПриёмE_DataObjectOnFormLoaded(object sender, EventArgs e)
+  {
+    //определяем, какие бизнес-сервера определены для объекта типа "ЗаписьНаПриём"
+    IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+    IDataService ds = mainUnityContainer.Resolve<IDataService>();
+    BusinessServer[] businessServers = BusinessServerProvider.GetBusinessServer(typeof(ЗаписьНаПриём), DataServiceObjectEvents.OnAllEvents, ds);
+    if (businessServers.Length>0) 
+      {
+        TestBS curBS = (TestBS) businessServers[0]; //берём первый и единственный (в данном случае единственный)
+        curBS.InitializeRecord(this.DataObject as ЗаписьНаПриём); //задаём значения по умолчанию
+        EditManager.Change(); //применяем внесённые изменения
+      }
+  }
+//...
 }
 ```
 
@@ -107,10 +111,10 @@ public class WinformC__ЗаписьНаПриёмE : ICSSoft.STORMNET.UI.BaseWin
 ```csharp
 public class TestBS : ICSSoft.STORMNET.Business.BusinessServer
 {
-	public void InitializeRecord(IIS.BSTest.ЗаписьНаПриём RecordToInitialize)
-	{
-		RecordToInitialize.Дата = new DateTime(2012,12,12); //установка значения по умолчанию
-	}
-	//...
+  public void InitializeRecord(IIS.BSTest.ЗаписьНаПриём RecordToInitialize)
+  {
+    RecordToInitialize.Дата = new DateTime(2012,12,12); //установка значения по умолчанию
+  }
+  //...
 }
 ```

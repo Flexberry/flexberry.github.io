@@ -18,11 +18,11 @@ lang: ru
 
 Пусть дана следующая диаграмма:
 
-![](/images/pages/products/flexberry-orm/business-servers/kredit-diagramm.png)
+![kredit-diagramm](/images/pages/products/flexberry-orm/business-servers/kredit-diagramm.png)
 
 Если в базе данных есть объекты типа `Клиент`, ссылающиеся на него, то при попытке удаления объекта типа `Адрес` будет выведена ошибка:
 
-![](/images/pages/products/flexberry-orm/business-servers/delete-error.png)
+![delete-error](/images/pages/products/flexberry-orm/business-servers/delete-error.png)
 
 База данных не даст удалить такой объект, а пользователю выдастся неинформативное сообщение.
 
@@ -42,7 +42,8 @@ lang: ru
 if (UpdatedObject.GetStatus() == ObjectStatus.Deleted)
 {
     // Найдем количество клиентов, ссылающихся на удаляемый адрес.
-    var ds = (MSSQLDataService)DataServiceProvider.DataService;
+    IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+    IDataService ds = mainUnityContainer.Resolve<IDataService>();
     var clientsCount = ds.Query<Клиент>(Клиент.Views.КлиентE).Where(k => k.Прописка.__PrimaryKey == UpdatedObject.__PrimaryKey).Count();
 
     // Если клиентов не 0, выкинем исключение.
@@ -55,6 +56,6 @@ if (UpdatedObject.GetStatus() == ObjectStatus.Deleted)
 
 В результате, при попытке удалить адрес, по которому прописаны клиенты, пользователю выдастся следующее сообщение:
 
-![](/images/pages/products/flexberry-orm/business-servers/delete-error-plus.png)
+![delete-error-plus](/images/pages/products/flexberry-orm/business-servers/delete-error-plus.png)
 
 Сообщение изменилось на более информативное.

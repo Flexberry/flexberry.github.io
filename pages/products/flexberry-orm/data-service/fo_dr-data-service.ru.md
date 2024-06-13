@@ -15,9 +15,8 @@ lang: ru
 Экземпляр DRDataService можно получить через [UnityFactory](fo_unity-factory.html), выполнив следующий код:
 
 ```csharp
- IUnityContainer container = UnityFactory.CreateContainer();
- IDataService dataService = container.Resolve<IDataService>("DRDataService");
- dataService.CustomizationString = DataServiceProvider.DataService.CustomizationString;
+IDataService dataService = container.Resolve<IDataService>("DRDataService");
+// Resolve<IDataService>("DRDataService") приходит со строкой соединения
 ```
 
 ## Настройка DataService

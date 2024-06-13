@@ -81,7 +81,9 @@ private void CustomToolbarButtonClickHandler(object sender, ToolBarBtnEventArgs 
     {
         var objects = eventArgs.PrimaryKeys.Select(x => new Город { __PrimaryKey = Guid.Parse(x) })
                             .Cast<DataObject>().ToArray();
-        DataServiceProvider.DataService.LoadObjects(objects, Город.Views.ГородL, true);
+        IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+        IDataService ds = mainUnityContainer.Resolve<IDataService>();
+        ds.LoadObjects(objects, Город.Views.ГородL, true);
 
         SelectedCitiesLabel.Visible = SelectedCitiesList.Visible = true;
         foreach (var obj in objects)
@@ -234,7 +236,9 @@ private void CustomToolbarButtonClickHandler(object sender, ToolBarBtnEventArgs 
     {
         var objects = eventArgs.PrimaryKeys.Select(x => new Город { __PrimaryKey = Guid.Parse(x) })
                             .Cast<DataObject>().ToArray();
-        DataServiceProvider.DataService.LoadObjects(objects, Город.Views.ГородL, true);
+        IUnityContainer mainUnityContainer = ...; // Получение основного контейнера для работы с Unity.
+        IDataService ds = mainUnityContainer.Resolve<IDataService>();
+        ds.LoadObjects(objects, Город.Views.ГородL, true);
 
         SelectedCitiesLabel.Visible = SelectedCitiesList.Visible = true;
         foreach (var obj in objects)
