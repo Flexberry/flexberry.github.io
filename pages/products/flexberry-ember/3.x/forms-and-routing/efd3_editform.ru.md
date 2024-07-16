@@ -605,11 +605,17 @@ export default EditFormController.extend(EditFormControllerOperationsIndicationM
 
 ## Ограничение мультисписков по полю модели
 
+Под термином "мультисписок" понимается нескольких списков на одной форме редактирования или лист-форме.
+
 Рассмотрим применение ограничений для мультисписков на примере, в котором требуется на форме редактирования пользователя вывести других пользователей, имеющих похожие e-mail адреса. 
 
 Реализация ограничений (фильтров) для имеющегося мультисписка в зависимости от параметров [модели](efd3_model.html), происходит в [роуте](https://guides.emberjs.com/v3.1.0/routing/defining-your-routes/) следующим образом.
 
-* Реализовать функцию для формирования предиката, условия по выборке данных.
+* Реализовать функцию для формирования предиката - условия по выборке данных. Т.е. для нашей задачи будут объединены в один `ComplexPredicate` два предика: 
+  - `SimplePredicate('eMail', FilterOperator.Eq, email)` - условие на совпадение e-mail адресов.
+  - `SimplePredicate('id', FilterOperator.Neq, id)` - условие на несовпадение идентификаторов пользователей адресов.
+
+Кроме того, этот комплексный предикат будет применяться только для компоненты `MultiUserList`, которая представляет собой дополнительный список на форме редактирования пользователя. Как задавать несколько списков (дополнительные), рассказано в предыдущей главе.
 
 ```js
   objectListViewLimitPredicate(component) {
@@ -644,7 +650,7 @@ export default EditFormController.extend(EditFormControllerOperationsIndicationM
   },
 ```
 
-* Реализовать функцию для получения моделей данных для мультисписков.
+* Реализовать функцию для получения моделей данных для мультисписков. Данная функция представляет собой модифицированный вариант функции `beforeModel`, реализованной в миксине [MultiListModelEditMixin](https://github.com/Flexberry/ember-flexberry/blob/develop/addon/mixins/multi-list-model-edit.js). Отличительной особенностью является передача разрезолвленной модели `model` в функцию получения предиката `objectListViewLimitPredicate`, про которую было сказано выше. В данном случае передаётся разрезолвленная модель для формирования условия по полю e-mail адреса.
 
 ```js
   getMultiListModels(transition, model) {
@@ -657,8 +663,8 @@ export default EditFormController.extend(EditFormControllerOperationsIndicationM
 
       return advLimitService.getAdvLimitsFromStore(Object.keys(developerUserSettings));
     }).then(() => {
-      let userSettingsService = this.get('userSettingsService');
-      let listComponentNames = userSettingsService.getListComponentNames();
+      const userSettingsService = this.get('userSettingsService');
+      const listComponentNames = userSettingsService.getListComponentNames();
       let result = {};
       listComponentNames.forEach(function(componentName) {
         this.get('colsConfigMenu').updateNamedSettingTrigger(componentName);
@@ -666,19 +672,20 @@ export default EditFormController.extend(EditFormControllerOperationsIndicationM
         let settings = this.get(`multiListSettings.${componentName}`);
 
         if (!isNone(settings)) {
-          let filtersPredicate = this._filtersPredicate(componentName);
-          let sorting = userSettingsService.getCurrentSorting(componentName);
-          let perPage = userSettingsService.getCurrentPerPage(componentName);
+          const filtersPredicate = this._filtersPredicate(componentName);
+          const sorting = userSettingsService.getCurrentSorting(componentName);
+          const perPage = userSettingsService.getCurrentPerPage(componentName);
           set(settings, 'filtersPredicate', filtersPredicate);
           set(settings, 'perPage', perPage);
           set(settings, 'sorting', sorting);
 
-          let limitPredicate =
+          const limitPredicate =
             this.objectListViewLimitPredicate({ modelName: settings.modelName, projectionName: settings.projectionName, params: settings, model: model });
 
           const advLimit = advLimitService.getCurrentAdvLimit(componentName);
 
-          let queryParameters = {
+          // OLV-settings.
+          const queryParameters = {
             componentName: componentName,
             modelName: settings.modelName,
             projectionName: settings.projectionName,
@@ -706,7 +713,7 @@ export default EditFormController.extend(EditFormControllerOperationsIndicationM
             this.includeSorting(hashModel[componentName], get(settings, 'sorting'));
             set(settings, 'model', hashModel[componentName]);
             if (isNone(get(settings, 'sort'))) {
-              let sortQueryParam = serializeSortingParam(get(settings, 'sorting'), get(settings, 'sortDefaultValue'));
+              const sortQueryParam = serializeSortingParam(get(settings, 'sorting'), get(settings, 'sortDefaultValue'));
               set(settings, 'sort', sortQueryParam);
             }
           }
@@ -715,10 +722,10 @@ export default EditFormController.extend(EditFormControllerOperationsIndicationM
         return hashModel;
       });
     });
-  }
+  },
 ```
 
-* Вызвать созданную функцию для получения модели в хуке [afterModel](http://emberjs.com/api/classes/Ember.Route.html#method_afterModel).
+* Вызвать созданную функцию для получения модели в хуке [afterModel](http://emberjs.com/api/classes/Ember.Route.html#method_afterModel). Вызов `getMultiListModels` выполняется в хуке [afterModel](http://emberjs.com/api/classes/Ember.Route.html#method_afterModel), т.к. тут уже будет разрезолвленная основная модель формы.
 
 ```js
   afterModel(model, transition) {
