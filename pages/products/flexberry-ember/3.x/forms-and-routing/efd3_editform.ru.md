@@ -602,3 +602,129 @@ export default EditFormController.extend(EditFormControllerOperationsIndicationM
 </form>
 {% endraw %}
 ```
+
+## Ограничение мультисписков по полю модели
+
+Рассмотрим применение ограничений для мультисписков на примере, в котором требуется на форме редактирования пользователя вывести других пользователей, имеющих похожие e-mail адреса. 
+
+Реализация ограничений (фильтров) для имеющегося мультисписка в зависимости от параметров [модели](efd3_model.html), происходит в [роуте](https://guides.emberjs.com/v3.1.0/routing/defining-your-routes/) следующим образом.
+
+* Реализовать функцию для формирования предиката, условия по выборке данных.
+
+```js
+  objectListViewLimitPredicate(component) {
+    if (component.params.componentName === 'MultiUserList') {
+      return this.getMultiUserListPredicate(component);
+    }
+
+    return null;
+  },
+
+  getMultiUserListPredicate(component) {
+    let email = '';
+
+    if (this.currentModel) {
+      email = this.currentModel.eMail;
+    }
+
+    if (component.model) {
+      email = component.model.eMail;
+    }
+
+    if (isEmpty(email)) {
+      return new FalsePredicate();
+    }
+
+    const { id } = this.paramsFor(this.get('routeName'));
+
+    return new ComplexPredicate(Condition.And,
+      new SimplePredicate('eMail', FilterOperator.Eq, email),
+      new SimplePredicate('id', FilterOperator.Neq, id)
+    );
+  },
+```
+
+* Реализовать функцию для получения моделей данных для мультисписков.
+
+```js
+  getMultiListModels(transition, model) {
+    const advLimitService = this.get('advLimit');
+
+    return resolve(this._super(...arguments)).then(() => {
+      const developerUserSettings = this.get('developerUserSettings');
+      const webPage = transition.targetName;
+      advLimitService.setCurrentAppPage(webPage);
+
+      return advLimitService.getAdvLimitsFromStore(Object.keys(developerUserSettings));
+    }).then(() => {
+      let userSettingsService = this.get('userSettingsService');
+      let listComponentNames = userSettingsService.getListComponentNames();
+      let result = {};
+      listComponentNames.forEach(function(componentName) {
+        this.get('colsConfigMenu').updateNamedSettingTrigger(componentName);
+        this.get('colsConfigMenu').updateNamedAdvLimitTrigger(componentName);
+        let settings = this.get(`multiListSettings.${componentName}`);
+
+        if (!isNone(settings)) {
+          let filtersPredicate = this._filtersPredicate(componentName);
+          let sorting = userSettingsService.getCurrentSorting(componentName);
+          let perPage = userSettingsService.getCurrentPerPage(componentName);
+          set(settings, 'filtersPredicate', filtersPredicate);
+          set(settings, 'perPage', perPage);
+          set(settings, 'sorting', sorting);
+
+          let limitPredicate =
+            this.objectListViewLimitPredicate({ modelName: settings.modelName, projectionName: settings.projectionName, params: settings, model: model });
+
+          const advLimit = advLimitService.getCurrentAdvLimit(componentName);
+
+          let queryParameters = {
+            componentName: componentName,
+            modelName: settings.modelName,
+            projectionName: settings.projectionName,
+            perPage: settings.perPage,
+            page: settings.page || 1,
+            sorting: settings.sorting,
+            filter: settings.filter,
+            filterCondition: settings.filterCondition,
+            filterProjectionName: settings.filterProjectionName,
+            filters: settings.filtersPredicate,
+            predicate: limitPredicate,
+            advLimit: advLimit,
+            hierarchicalAttribute: settings.inHierarchicalMode ? settings.hierarchicalAttribute : null,
+            hierarchyPaging: settings.hierarchyPaging
+          };
+
+          result[componentName] = this.reloadList(queryParameters);
+        }
+      }, this);
+
+      return hash(result).then(hashModel => {
+        listComponentNames.forEach(function(componentName) {
+          let settings = this.get(`multiListSettings.${componentName}`);
+          if (!isNone(settings)) {
+            this.includeSorting(hashModel[componentName], get(settings, 'sorting'));
+            set(settings, 'model', hashModel[componentName]);
+            if (isNone(get(settings, 'sort'))) {
+              let sortQueryParam = serializeSortingParam(get(settings, 'sorting'), get(settings, 'sortDefaultValue'));
+              set(settings, 'sort', sortQueryParam);
+            }
+          }
+        }, this);
+
+        return hashModel;
+      });
+    });
+  }
+```
+
+* Вызвать созданную функцию для получения модели в хуке [afterModel](http://emberjs.com/api/classes/Ember.Route.html#method_afterModel).
+
+```js
+  afterModel(model, transition) {
+    this._super(...arguments);
+    this.getMultiListModels(transition, model);
+  },
+``` 
+
+Реализацию ограничения мультисписков по полю модели можно посмотреть на [тестовом стенде](https://flexberry.github.io/ember-flexberry/dummy/develop/#/ember-flexberry-dummy-application-user-list), перейдя на форму редактирования пользователя приложения.
