@@ -10,7 +10,7 @@ summary: Описание аддона Ember flexberry infinite scroll
 
 ## Описание аддона
 
-`ember-flexberry-infinite-scroll` - аддон для [ember-flexberry](https://github.com/Flexberry/ember-flexberry/tree/develop) с компонентом бесконечной прокрутки.
+[`ember-flexberry-infinite-scroll`](https://github.com/Flexberry/ember-flexberry-infinite-scroll) - аддон для [ember-flexberry](https://github.com/Flexberry/ember-flexberry/tree/develop) с компонентом бесконечной прокрутки.
 
 ## Установка
 
