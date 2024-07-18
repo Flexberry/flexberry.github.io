@@ -36,12 +36,17 @@ ember install ember-flexberry-infinite-scroll
 
 где:
 
-* modelProjection - название проекции, где определены отображаемые на списке свойства модели.
-* infiniteModel - название модели, чьи свойства будут отображены на списке.
-* estimateRowHeight - высота ячеек таблицы компонента.
-* bufferSize - сколько дополнительных строк (сверх видимых) должно быть загружено и отображено (помогает сгладить переходы между страницами и обеспечивает более плавную прокрутку).
+* `modelProjection` - объект проекции, где определены отображаемые на списке свойства модели.
+* `infiniteModel` - массив записей из модели, отображаемых в данных момент.
+* `estimateRowHeight` - высота ячеек таблицы компонента.
+* `bufferSize` - сколько дополнительных строк (сверх видимых) должно быть загружено и отображено (помогает сгладить переходы между страницами и обеспечивает более плавную прокрутку).
 
-В контроллере прописываем модель и экшен догрузки. Контроллер может выглядеть так:
+В контроллере прописываем вычислимое свойство записей модели и экшен догрузки `lastReached`.
+
+Событие `lastReached` срабатывает, когда пользователь прокручивает таблицу до последней видимой строки.
+Это позволяет обнаружить, когда пользователь достиг конца таблицы, и загрузить дополнительные данные, чтобы продолжить отображение.
+
+Контроллер может выглядеть так:
 
 ```js
 import Controller from '@ember/controller';
@@ -58,8 +63,8 @@ export default Controller.extend({
     lastReached() {
       let infiniteModel = this.get('infiniteModel');
       if (this.get('model.meta.count') > infiniteModel.length) {
-        const modelName = this.get('modelName');
-        const projectionName = this.get('projectionName');
+        const modelName = this.get('modelName'); // название модели строкой
+        const projectionName = this.get('projectionName'); // название проекции строкой
         const store = this.store;
         const builder = new Builder(store)
           .from(modelName)
