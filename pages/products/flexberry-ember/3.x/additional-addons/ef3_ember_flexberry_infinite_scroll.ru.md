@@ -18,13 +18,14 @@ summary: Описание аддона Ember flexberry infinite scroll
 ember install ember-flexberry-infinite-scroll
 ```
 
-Требуется версия node 12 или выше.
+> Требуется версия node 12 или выше.
 
 ## Использование
 
 В шаблоне для использования компонента прописать:
 
 ```hbs
+{% raw %}
 {{flexberry-infinite-scroll
   modelProjection=modelProjection
   content=infiniteModel
@@ -32,6 +33,7 @@ ember install ember-flexberry-infinite-scroll
   estimateRowHeight=20
   bufferSize=1
 }}
+{% endraw %}
 ```
 
 где:
