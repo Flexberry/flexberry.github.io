@@ -111,7 +111,7 @@ export default EditFormController.extend({
 
 Для работы в режиме *только для чтения* в [базовом контроллере формы редактирования `EditFormController`](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/EditFormController.html) добавлено свойство [`readonly`](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/EditFormController.html#property_readonly).
 
-Чтобы открыть форму редактирования только на чтение, можно:
+Для отрытия формы редактирования только на чтение можно:
 
 * Передать GET-параметр в строке запроса, например, так: `http://localhost:4200/orders/10251?readonly=true`.
 * Переопределить определение значение свойства `readonly` в контроллере.
@@ -271,7 +271,7 @@ GET http://localhost:6500/odata/NeoPlatformGenTestDetail1ForChild1s(15ca1447-3b6
 
 Установка блокировки на редактируемый на форме объект происходит в [методе роута `beforeModel`](https://api.emberjs.com/ember/3.1/classes/Route/methods/beforeModel?anchor=beforeModel), а снятие - на [событие роута `willTransition`](https://api.emberjs.com/ember/3.1/classes/Route/events/willTransition?anchor=willTransition), если задана настройка снятия блокировок при закрытии формы.
 
-Если пользователь пытается открыть на редактирование объект, для которой установлена блокировка, то пользователю форма будет открыта в режиме "только для чтения" или произойдёт возврат на родительский роут. Это поведение определяется настройками сервиса блокировок и может быть [переопределено](https://github.com/Flexberry/ember-flexberry/blob/develop/addon/mixins/lock-route.js) в роуте формы редактирования:
+Если пользователь пытается открыть на редактирование объект, для которого установлена блокировка, то пользователю форма будет открыта в режиме "только для чтения" или произойдёт возврат на родительский роут. Это поведение определяется настройками сервиса блокировок и может быть [переопределено](https://github.com/Flexberry/ember-flexberry/blob/develop/addon/mixins/lock-route.js) в роуте формы редактирования:
 
 ```javascript
 import EditFormRoute from 'ember-flexberry/routes/edit-form';
@@ -611,11 +611,12 @@ export default EditFormController.extend(EditFormControllerOperationsIndicationM
 
 Реализация ограничений (фильтров) для имеющегося мультисписка в зависимости от параметров [модели](efd3_model.html), происходит в [роуте](https://guides.emberjs.com/v3.1.0/routing/defining-your-routes/) следующим образом.
 
-* Реализовать функцию для формирования предиката - условия по выборке данных. Т.е. для нашей задачи будут объединены в один `ComplexPredicate` два предика: 
-  - `SimplePredicate('eMail', FilterOperator.Eq, email)` - условие на совпадение e-mail адресов.
-  - `SimplePredicate('id', FilterOperator.Neq, id)` - условие на несовпадение идентификаторов пользователей.
+* Реализовать функцию для формирования предиката - условия по выборке данных. Т.е. для нашей задачи будут объединены в один `ComplexPredicate` два предиката:
 
-Кроме того, этот комплексный предикат будет применяться только для компоненты `MultiUserList`, которая представляет собой дополнительный список на форме редактирования пользователя. Как задавать несколько списков (дополнительные), рассказано в предыдущей главе.
+  * `SimplePredicate('eMail', FilterOperator.Eq, email)` - условие на совпадение e-mail адресов.
+  * `SimplePredicate('id', FilterOperator.Neq, id)` - условие на несовпадение идентификаторов пользователей.
+
+Кроме того, этот комплексный предикат будет применяться только для компонента `MultiUserList`, который представляет собой дополнительный список на форме редактирования пользователя. Как задавать несколько списков (дополнительные), рассказано в главе [Несколько списков на форме редактирования](#несколько-списков-на-форме-редактирования).
 
 ```js
   objectListViewLimitPredicate(component) {
@@ -650,7 +651,7 @@ export default EditFormController.extend(EditFormControllerOperationsIndicationM
   },
 ```
 
-* Реализовать функцию для получения моделей данных для мультисписков. Данная функция представляет собой модифицированный вариант функции `beforeModel`, реализованной в миксине [MultiListModelEditMixin](https://github.com/Flexberry/ember-flexberry/blob/develop/addon/mixins/multi-list-model-edit.js). Отличительной особенностью является передача разрезолвленной модели `model` в функцию получения предиката `objectListViewLimitPredicate`, про которую было сказано выше. В данном случае передаётся разрезолвленная модель для формирования условия по полю e-mail адреса.
+* Реализовать функцию для получения моделей данных для мультисписков. Данная функция представляет собой модифицированный вариант функции `beforeModel`, реализованной в миксине [MultiListModelEditMixin](https://github.com/Flexberry/ember-flexberry/blob/develop/addon/mixins/multi-list-model-edit.js). Отличительной особенностью является передача разрезолвленной модели `model` в функцию получения предиката `objectListViewLimitPredicate`. В данном случае передаётся разрезолвленная модель для формирования условия по полю e-mail адреса.
 
 ```js
   getMultiListModels(transition, model) {
@@ -732,6 +733,6 @@ export default EditFormController.extend(EditFormControllerOperationsIndicationM
     this._super(...arguments);
     this.getMultiListModels(transition, model);
   },
-``` 
+```
 
 Реализацию ограничения мультисписков по полю модели можно посмотреть на [тестовом стенде](https://flexberry.github.io/ember-flexberry/dummy/develop/#/ember-flexberry-dummy-application-user-list), перейдя на форму редактирования пользователя приложения.
