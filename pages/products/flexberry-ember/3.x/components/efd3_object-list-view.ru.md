@@ -101,18 +101,20 @@ action=customActionName
 `editFormRoute`| Задаёт имя роута формы редактирования, в котором будет открываться модель.  
 `singleColumnHeaderTitle`| Заголовок для мобильного представления компонента, вместо названий колонок. Если не задан или равен "", то шапка таблицы в компоненте скрывается.  
 `colsConfigButton`| Флаг (`true`/`false`) включающий/выключающий отображение кнопок пользовательских настроек.  
-`bottomPagination`| Флаг, определяющий положение пагинации верху/снизу.
-`tableStriped`| Флаг, определяющий, будут ли строки таблицы раскрашены через одну ("зебра"). Значение по умолчанию: true.
-`_availableHierarchicalMode`| Флаг, включающий настройку иерархического списка. Значение по умолчанию: false.
-`disableHierarchicalMode`| Флаг, отключающий настройку иерархического списка. Значение по умолчанию: false.
-`hierarchicalIndent`| Отступ в пикселях для вложенных элементов. Значение по умолчанию: 20.
-`hierarchyPaging`| Флаг, используемый для включения/отключения иерархической пейджинга. Значение по умолчанию: false.
-`hierarchicalAttribute`| Имя атрибута для построения иерархии.
-`inHierarchicalMode`| Флаг указывающий, когда компонент находится в иерархическом режиме. Значение по умолчанию: false.
-`onEditForm`| Флаг указывающий, размещен ли компонент на форме редактирования. Значение по умолчанию: false.
+`bottomPagination`| Флаг, определяющий положение пагинации верху/снизу.  
+`tableStriped`| Флаг, определяющий, будут ли строки таблицы раскрашены через одну ("зебра"). Значение по умолчанию: true.  
+`_availableHierarchicalMode`| Флаг, включающий настройку иерархического списка. Значение по умолчанию: false.  
+`disableHierarchicalMode`| Флаг, отключающий настройку иерархического списка. Значение по умолчанию: false.  
+`hierarchicalIndent`| Отступ в пикселях для вложенных элементов. Значение по умолчанию: 20.  
+`hierarchyPaging`| Флаг, используемый для включения/отключения иерархической пейджинга. Значение по умолчанию: false.  
+`hierarchicalAttribute`| Имя атрибута для построения иерархии.  
+`inHierarchicalMode`| Флаг указывающий, когда компонент находится в иерархическом режиме. Значение по умолчанию: false.  
+`onEditForm`| Флаг указывающий, размещен ли компонент на форме редактирования. Значение по умолчанию: false.  
+
 Значения по умолчанию:
 
 ```javascript
+{% raw %}
 action: 'rowClick',
 createNewButton: false,
 refreshButton: false,
@@ -125,6 +127,7 @@ showDeleteMenuItemInRow: false,
 showEditMenuItemInRow: true,
 colsConfigButton: true,
 bottomPagination: true
+{% endraw %}
 ```
 
 ## Настройки списка по умолчанию
@@ -216,13 +219,13 @@ export default ListFormController.extend({
 
 ## Раскраска строк
 
-У компонента есть свойство раскраски строк `tableStriped`. При включенном свойстве строки таблицы окрашиваются через одну для удобства восприятия. По умолчанию это свойство включено для браузерных версий и выключено для мобильной.
+У компонента существует свойство раскраски строк `tableStriped`. При включенном свойстве строки таблицы окрашиваются через одну для удобства восприятия. По умолчанию это свойство включено для браузерных версий и выключено для мобильной.
 
 ## Ограничение длины текста в ячейках
 
 Есть возможность задавать длину текста в ячейках спискового компонента. Пример можно посмотреть на [тестовом стенде](https://flexberry.github.io/ember-flexberry/dummy/dummy-test-2/#/components-examples/flexberry-objectlistview/limited-text-size-example).
 
-Чтобы задавать длину текста в ячейках, нужно прописать настройку `maxTextLength` и/или `cutBySpaces`в `getCellComponent` в контроллере:
+Длину текста можно задать, прописав настройку `maxTextLength` и/или `cutBySpaces`в `getCellComponent` в контроллере:
 
 ```js
 /**
@@ -431,11 +434,14 @@ getCellComponent: function(attr) {
 
 ## Иерархический список
 
-Для спискового объекта есть возможность задать отображение иерархий (когда у детейла есть детейл). Примеры есть на тестовом стенде: [Пример иерархии на списке](https://flexberry.github.io/ember-flexberry/dummy/dummy-test-2/#/components-examples/flexberry-objectlistview/hierarchy-example), [Пример иерархии c пейджингом на списке](https://flexberry.github.io/ember-flexberry/dummy/dummy-test-2/#/components-examples/flexberry-objectlistview/hierarchy-paging-example).
+Для спискового объекта есть возможность задать отображение иерархий (когда у детейла есть детейл). Примеры есть на тестовом стенде:
+
+* [Пример иерархии на списке](https://flexberry.github.io/ember-flexberry/dummy/dummy-test-2/#/components-examples/flexberry-objectlistview/hierarchy-example)
+* [Пример иерархии c пейджингом на списке](https://flexberry.github.io/ember-flexberry/dummy/dummy-test-2/#/components-examples/flexberry-objectlistview/hierarchy-paging-example).
 
 Атрибуты, влияющие на настройку иерархии:
 
-Наименование компонента |Краткое описание компонента  |Краткое описание компонента 
+Наименование компонента |Краткое описание компонента  |Значение по умолчанию
 :-----------------------|:------------------------------ |:------------------------------  
 `_availableHierarchicalMode`| Флаг, включающий настройку иерархического списка. | false
 `disableHierarchicalMode`| Флаг, отключающий настройку иерархического списка. | false
@@ -444,9 +450,10 @@ getCellComponent: function(attr) {
 `hierarchicalAttribute`| Имя атрибута для построения иерархии. Если указано, будет предпринята попытка построить эту иерархию атрибутов. | undefined
 `inHierarchicalMode`| Флаг указывающий, когда компонент находится в иерархическом режиме. | false
 
-Чтобы включить иерархию на списке, достаточно прописать в шаблоне компонента `disableHierarchicalMode=true`. Однако настройка может выглядеть и так:
+Для отображения списка в иерархическом режиме достаточно прописать в шаблоне компонента `disableHierarchicalMode=true`. Однако, настройка может выглядеть и так:
 
 ```hbs
+{% raw %}
 {{flexberry-objectlistview
   ...
   disableHierarchicalMode=false
@@ -454,15 +461,17 @@ getCellComponent: function(attr) {
   hierarchicalAttribute='parent'
   hierarchyPaging=true
 }}
+{% endraw %}
 ```
 
 ## Размещение компонента списка на форме редактирования
 
-Списковый компонент можно разместить на форме редактирования. Можно посмотреть [пример](https://flexberry.github.io/ember-flexberry/dummy/dummy-test-2/#/components-examples/flexberry-objectlistview/on-edit-form?sort=%2Bname) на тестовом стенде, открыв любую запись на редактирование.
+Списковый компонент можно разместить на форме редактирования. Это показывает [пример](https://flexberry.github.io/ember-flexberry/dummy/dummy-test-2/#/components-examples/flexberry-objectlistview/on-edit-form?sort=%2Bname) на тестовом стенде при открытии любой записи на редактирование.
 
-Чтобы разместить flexberry-objectlistview на форме редактирования, нужно прописать компонент в шаблоне нужной эдит форме с атрибутом `onEditForm=true`, в роуте эдит форме прописать в `developerUserSettings` списковый компонент, в контроллере эдит формы прописать свойства спискового компонента (используя `OlvOnEditMixin` миксин):
+Для расположения flexberry-objectlistview на форме редактирования нужно прописать компонент в шаблоне нужной эдит форме с атрибутом `onEditForm=true`, в роуте эдит форме прописать в `developerUserSettings` списковый компонент, в контроллере эдит формы прописать свойства спискового компонента (используя `OlvOnEditMixin` миксин):
 
 ```hbs
+{% raw %}
 {{!-- templates/example/edit-form.hbs --}}
 
 {{flexberry-objectlistview
@@ -476,9 +485,11 @@ getCellComponent: function(attr) {
   customButtons=customButtons
   userButtonAddAction=(action 'userButtonAddAction')
 }}
+{% endraw %}
 ```
 
 ```js
+{% raw %}
 // routes/example/edit-form.js
 
 import EditFormRoute from 'ember-flexberry/routes/edit-form';
@@ -504,9 +515,11 @@ export default EditFormRoute.extend({
    */
   modelName: 'example-model-name'
 });
+{% endraw %}
 ```
 
 ```js
+{% raw %}
 // controlles/example/edit-from.js
 
 import EditFormController from 'ember-flexberry/controllers/edit-form';
@@ -575,4 +588,5 @@ export default EditFormController.extend(OlvOnEditMixin, {
     },
   },
 });
+{% endraw %}
 ```
