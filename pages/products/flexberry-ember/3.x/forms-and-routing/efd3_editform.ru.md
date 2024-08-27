@@ -111,7 +111,7 @@ export default EditFormController.extend({
 
 Для работы в режиме *только для чтения* в [базовом контроллере формы редактирования `EditFormController`](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/EditFormController.html) добавлено свойство [`readonly`](http://flexberry.github.io/ember-flexberry/autodoc/develop/classes/EditFormController.html#property_readonly).
 
-Чтобы открыть форму редактирования только на чтение, можно:
+Для отрытия формы редактирования только на чтение можно:
 
 * Передать GET-параметр в строке запроса, например, так: `http://localhost:4200/orders/10251?readonly=true`.
 * Переопределить определение значение свойства `readonly` в контроллере.
@@ -271,7 +271,7 @@ GET http://localhost:6500/odata/NeoPlatformGenTestDetail1ForChild1s(15ca1447-3b6
 
 Установка блокировки на редактируемый на форме объект происходит в [методе роута `beforeModel`](https://api.emberjs.com/ember/3.1/classes/Route/methods/beforeModel?anchor=beforeModel), а снятие - на [событие роута `willTransition`](https://api.emberjs.com/ember/3.1/classes/Route/events/willTransition?anchor=willTransition), если задана настройка снятия блокировок при закрытии формы.
 
-Если пользователь пытается открыть на редактирование объект, для которой установлена блокировка, то пользователю форма будет открыта в режиме "только для чтения" или произойдёт возврат на родительский роут. Это поведение определяется настройками сервиса блокировок и может быть [переопределено](https://github.com/Flexberry/ember-flexberry/blob/develop/addon/mixins/lock-route.js) в роуте формы редактирования:
+Если пользователь пытается открыть на редактирование объект, для которого установлена блокировка, то пользователю форма будет открыта в режиме "только для чтения" или произойдёт возврат на родительский роут. Это поведение определяется настройками сервиса блокировок и может быть [переопределено](https://github.com/Flexberry/ember-flexberry/blob/develop/addon/mixins/lock-route.js) в роуте формы редактирования:
 
 ```javascript
 import EditFormRoute from 'ember-flexberry/routes/edit-form';
@@ -602,3 +602,137 @@ export default EditFormController.extend(EditFormControllerOperationsIndicationM
 </form>
 {% endraw %}
 ```
+
+## Ограничение мультисписков по полю модели
+
+Под термином "мультисписок" понимается нескольких списков на одной форме редактирования или лист-форме.
+
+Рассмотрим применение ограничений для мультисписков на примере, в котором требуется на форме редактирования пользователя вывести других пользователей, имеющих похожие e-mail адреса. 
+
+Реализация ограничений (фильтров) для имеющегося мультисписка в зависимости от параметров [модели](efd3_model.html), происходит в [роуте](https://guides.emberjs.com/v3.1.0/routing/defining-your-routes/) следующим образом.
+
+* Реализовать функцию для формирования предиката - условия по выборке данных. Т.е. для нашей задачи будут объединены в один `ComplexPredicate` два предиката:
+
+  * `SimplePredicate('eMail', FilterOperator.Eq, email)` - условие на совпадение e-mail адресов.
+  * `SimplePredicate('id', FilterOperator.Neq, id)` - условие на несовпадение идентификаторов пользователей.
+
+Кроме того, этот комплексный предикат будет применяться только для компонента `MultiUserList`, который представляет собой дополнительный список на форме редактирования пользователя. Как задавать несколько списков (дополнительные), рассказано в главе [Несколько списков на форме редактирования](#несколько-списков-на-форме-редактирования).
+
+```js
+  objectListViewLimitPredicate(component) {
+    if (component.params.componentName === 'MultiUserList') {
+      return this.getMultiUserListPredicate(component);
+    }
+
+    return null;
+  },
+
+  getMultiUserListPredicate(component) {
+    let email = '';
+
+    if (this.currentModel) {
+      email = this.currentModel.eMail;
+    }
+
+    if (component.model) {
+      email = component.model.eMail;
+    }
+
+    if (isEmpty(email)) {
+      return new FalsePredicate();
+    }
+
+    const { id } = this.paramsFor(this.get('routeName'));
+
+    return new ComplexPredicate(Condition.And,
+      new SimplePredicate('eMail', FilterOperator.Eq, email),
+      new SimplePredicate('id', FilterOperator.Neq, id)
+    );
+  },
+```
+
+* Реализовать функцию для получения моделей данных для мультисписков. Данная функция представляет собой модифицированный вариант функции `beforeModel`, реализованной в миксине [MultiListModelEditMixin](https://github.com/Flexberry/ember-flexberry/blob/develop/addon/mixins/multi-list-model-edit.js). Отличительной особенностью является передача разрезолвленной модели `model` в функцию получения предиката `objectListViewLimitPredicate`. В данном случае передаётся разрезолвленная модель для формирования условия по полю e-mail адреса.
+
+```js
+  getMultiListModels(transition, model) {
+    const advLimitService = this.get('advLimit');
+
+    return resolve(this._super(...arguments)).then(() => {
+      const developerUserSettings = this.get('developerUserSettings');
+      const webPage = transition.targetName;
+      advLimitService.setCurrentAppPage(webPage);
+
+      return advLimitService.getAdvLimitsFromStore(Object.keys(developerUserSettings));
+    }).then(() => {
+      const userSettingsService = this.get('userSettingsService');
+      const listComponentNames = userSettingsService.getListComponentNames();
+      let result = {};
+      listComponentNames.forEach(function(componentName) {
+        this.get('colsConfigMenu').updateNamedSettingTrigger(componentName);
+        this.get('colsConfigMenu').updateNamedAdvLimitTrigger(componentName);
+        let settings = this.get(`multiListSettings.${componentName}`);
+
+        if (!isNone(settings)) {
+          const filtersPredicate = this._filtersPredicate(componentName);
+          const sorting = userSettingsService.getCurrentSorting(componentName);
+          const perPage = userSettingsService.getCurrentPerPage(componentName);
+          set(settings, 'filtersPredicate', filtersPredicate);
+          set(settings, 'perPage', perPage);
+          set(settings, 'sorting', sorting);
+
+          const limitPredicate =
+            this.objectListViewLimitPredicate({ modelName: settings.modelName, projectionName: settings.projectionName, params: settings, model: model });
+
+          const advLimit = advLimitService.getCurrentAdvLimit(componentName);
+
+          // OLV-settings.
+          const queryParameters = {
+            componentName: componentName,
+            modelName: settings.modelName,
+            projectionName: settings.projectionName,
+            perPage: settings.perPage,
+            page: settings.page || 1,
+            sorting: settings.sorting,
+            filter: settings.filter,
+            filterCondition: settings.filterCondition,
+            filterProjectionName: settings.filterProjectionName,
+            filters: settings.filtersPredicate,
+            predicate: limitPredicate,
+            advLimit: advLimit,
+            hierarchicalAttribute: settings.inHierarchicalMode ? settings.hierarchicalAttribute : null,
+            hierarchyPaging: settings.hierarchyPaging
+          };
+
+          result[componentName] = this.reloadList(queryParameters);
+        }
+      }, this);
+
+      return hash(result).then(hashModel => {
+        listComponentNames.forEach(function(componentName) {
+          let settings = this.get(`multiListSettings.${componentName}`);
+          if (!isNone(settings)) {
+            this.includeSorting(hashModel[componentName], get(settings, 'sorting'));
+            set(settings, 'model', hashModel[componentName]);
+            if (isNone(get(settings, 'sort'))) {
+              const sortQueryParam = serializeSortingParam(get(settings, 'sorting'), get(settings, 'sortDefaultValue'));
+              set(settings, 'sort', sortQueryParam);
+            }
+          }
+        }, this);
+
+        return hashModel;
+      });
+    });
+  },
+```
+
+* Вызвать созданную функцию для получения модели в хуке [afterModel](http://emberjs.com/api/classes/Ember.Route.html#method_afterModel). Вызов `getMultiListModels` выполняется в хуке [afterModel](http://emberjs.com/api/classes/Ember.Route.html#method_afterModel), т.к. тут уже будет разрезолвленная основная модель формы.
+
+```js
+  afterModel(model, transition) {
+    this._super(...arguments);
+    this.getMultiListModels(transition, model);
+  },
+```
+
+Реализацию ограничения мультисписков по полю модели можно посмотреть на [тестовом стенде](https://flexberry.github.io/ember-flexberry/dummy/develop/#/ember-flexberry-dummy-application-user-list), перейдя на форму редактирования пользователя приложения.
