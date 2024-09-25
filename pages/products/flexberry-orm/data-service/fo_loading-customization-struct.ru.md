@@ -29,7 +29,7 @@ LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(type
 * `LimitFunction` — [ограничение на зачитываемые объекты данных](fo_limit-function.html), с сервера будут возвращены только те объекты, что удовлетворяют данному ограничению;
 * `Distinct` — получение различных данных (используется, например, с методом [LoadRawValues SQLDataService](fo_standard-data-services.html)).
 * `LoadingBufferSize` — размер порции при [порционном чтении](fo_reading-portion.html);
-* `RowNumber` — указание диапазона индексов загружаемых объектов, `lcs.RowNumber = new RowNumberDef(2, 5);` (удобно, например, для постраничного вывода).
+* `RowNumber` — указание диапазона индексов загружаемых объектов, `lcs.RowNumber = new RowNumberDef(2, 5);` (удобно, например, для постраничного вывода). Нумерация строк начинается с 1. Первый параметр номер строки, с которой начинать загрузку, второй параметр - номер строки, на которой заканчивать загрузку включительно.
 
 {% include note.html content="__Представление и ограничение:__ Представление `View` должно содержать в себе все свойства, которые используются в ограничении `LimitFunction`, чтобы не произошло ошибки или неверного счёта. Если есть потребность расширить [представление](fd_view-definition.html) в соответствии с функцией ограничения `LimitFunction`, можно воспользоваться специальным классом [ViewPropertyAppender](fo_view-property-appender.html)." %}
 
