@@ -200,3 +200,8 @@ entries:
             title_ru: Ember flexberry tinymce
             url: /ef3_ember_flexberry_tinymce.html
             output: web, pdf
+
+          - title: Ember flexberry infinite scroll
+            title_ru: Ember flexberry infinite scroll
+            url: /ef3_ember_flexberry_infinite_scroll.html
+            output: web, pdf
