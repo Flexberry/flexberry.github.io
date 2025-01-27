@@ -140,48 +140,6 @@ else
 * Значение десятичной настройки (`DecimalVal`): Необязательное значение типа decimal, представляющее значение десятичной настройки.
 * Значение даты и времени настройки (`DateTimeVal`): Необязательное значение типа DateTime, представляющее значение настройки типа дата и время.
 
-__Пример использования:__
-
-Пример ниже демонстрирует, как можно использовать `UserSetting` в контексте сервиса `UserSettingsService` для создания и сохранения пользовательских настроек.
-
-```csharp
-using ICSSoft.Services;
-using ICSSoft.STORMNET;
-using System;
-
-namespace ExampleApp
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            // Получить текущий экземпляр службы настроек
-            IUserSettingsService userSettingsService = UserSettingsService.Current;
-
-            // Создать новый объект настройки
-            var userSetting = new UserSetting
-            {
-                AppName = "MyApplication",
-                UserName = "JohnDoe",
-                ModuleName = "SettingsModule",
-                SettName = "FontSize",
-                StrVal = "14px", // Строковое значение настройки
-                SettLastAccessTime = DateTime.Now
-            };
-
-            // Сохранить настройку с использованием сервиса
-            ...
-
-            // Загрузить настройку
-            ...
-
-            // Удалить настройку
-            ...
-        }
-    }
-}
-```
-
 ### Интерфейс IUserSettingsService
 
 Интерфейс `IUserSettingsService` предоставляет методы для работы с пользовательскими настройками в приложении. Он позволяет загружать, сохранять и удалять различные типы настроек (строковые, целочисленные, логические и т.д.) для различных модулей приложения. Интерфейс используется сервисом `UserSettingsService`, который реализует все его методы.
