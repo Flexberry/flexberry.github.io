@@ -12,5 +12,5 @@ lang: ru
 ## Практикумы
 
 * [Практическое руководство по созданию UML-диаграмм во Flexberry Designer](gpg_practical-guides-uml.html)
-* [Практическое руководство по созданию веб-приложений с помощью Flexberry Designer Enterprise](gpg_practical-guide.md)
+* [Практическое руководство по созданию веб-приложений с помощью Flexberry Designer Enterprise](gpg_practical-guide.html)
 * [Практическое руководство по созданию веб-приложений на Flexberry Ember](gpg_setting-language-and-structure.html)
