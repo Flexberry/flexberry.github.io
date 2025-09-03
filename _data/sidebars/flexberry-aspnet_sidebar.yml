@@ -863,4 +863,109 @@ entries:
       title_ru: Генерация форм во Flexberry ASP.NET
       url: /fa_form-generation.html
       output: web, pdf
+    
+    - title: Flexberry ASP.NET Tutorial
+      title_ru: Практическое руководство по веб-разработке на Flexberry ASP.NET
+      output: web
+
+      folderitems:
+        - title: Preparatory stage of web application development
+          title_ru: Подготовительный этап разработки веб-приложений
+          url: /gpg_preparatory-stage.html
+          output: web
+
+        - title: Configuring the script generator for the database
+          title_ru: Настройка генератора скриптов для БД
+          url: /gpg_configuring-script-generator-db.html
+          output: web
+
+        - title: Prototyping
+          title_ru: Создание прототипа
+          url: /gpg_prototype-creating.html
+          output: web
+
+        - title: Configuring the application structure
+          title_ru: Настройка структуры приложения
+          url: /gpg_configuring-application-structure.html
+          output: web
+
+        - title: Configuring code generation (CSharp)
+          title_ru: Настройка кодогенерации (CSharp)
+          url: /gpg_configuring-generation.html
+          output: web
+
+        - title: Generating a Web-application
+          title_ru: Генерация веб-приложения
+          url: /gpg_generation-application.html
+          output: web
+
+        - title: Launching the Web-application
+          title_ru: Запуск веб-приложения
+          url: /gpg_start-application.html
+          output: web
+
+        - title: Enabling the ASP.NET State Service
+          title_ru: Включение службы ASP.NET State Service
+          url: /gpg_asp-net-state-service.html
+          output: web
+
+        - title: Identifying the roles of users and their functions
+          title_ru: Определение ролей пользователей и их функций
+          url: /gpg_identifying-roles.html
+          output: web
+
+        - title: Adding user roles from an application
+          title_ru: Добавление ролей пользователей из приложения
+          url: /gpg_adding-user-roles.html
+          output: web
+
+        - title: Configuring the paths for generating web application forms
+          title_ru: Настройка путей генерации форм веб-приложения
+          url: /gpg_configuring-paths-generating.html
+          output: web
+
+        - title: Customize the application menu for different user roles
+          title_ru: Настройка меню приложения для разных ролей пользователей
+          url: /gpg_customize-application-menu.html
+          output: web
+
+        - title: Limitfunction for Lookup
+          title_ru: Наложение ограничения на LookUp
+          url: /gpg_limitfunction-for-lookup.html
+          output: web
+
+        - title: Specifying the current date
+          title_ru: Указание текущей даты
+          url: /gpg_date-time-now.html
+          output: web
+
+        - title: Automatic calculation
+          title_ru: Автоматическое вычисление
+          url: /gpg_auto-calculation.html
+          output: web
+
+        - title: Limitfunction for Lookup in AGE
+          title_ru: Наложение ограничения на LookUp в AGE, связывание лукапов.
+          url: /gpg_limit-function-for-lookup-in-age.html
+          output: web
+
+        - title: Exception handling
+          title_ru: Обработка исключений
+          url: /gpg_set-exception.html
+          output: web
+
+        - title: Automatic retrieval of data from LookUp
+          title_ru: Автоматическое получение данных из LookUp
+          url: /gpg_auto-get-data-from-lookup.html
+          output: web
+
+        - title: Working with the business-server
+          title_ru: Работа с бизнес-сервером
+          url: /gpg_business-server.html
+          output: web
+
+        - title: Lock an item on an editing form
+          title_ru: Блокировка элемента на форме редактирования
+          url: /gpg_set-ctrl-read-only.html
+          output: web
  
