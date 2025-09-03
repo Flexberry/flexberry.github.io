@@ -21,7 +21,7 @@ lang: ru
 
 ![Дефолтное значение даты создания класса Document](/images/pages/guides/flexberry-ember/2-3-autocomplete-and-data-types/2-3-2.png)
 
-В открывшейся форме можно увидеть заданное по умолчанию значение для атрибута "CreateDate". Установить следующие свойства для **атрибута "Number"**:
+В открывшейся форме можно увидеть заданное по умолчанию значение для атрибута "CreateDate(DataZapolneniya)". Установить следующие свойства для **атрибута "Number(Nomer)"**
 
 > DefaultValue → 1,  
 > Autoincrement → +,  
@@ -39,23 +39,23 @@ lang: ru
 
 **Самостоятельно:** изменить свойства атрибутов следующих классов:
 
-Класс **Order**
+Класс заказа **Order**
 
 > Status ‒ New
 
-Класс **Invoice**
+Класс накладной **Invoice**
 
 > Status ‒ New
 
-Класс **Storehouse**
+Класс склада **Storehouse**
 
 > Number ‒ с 1, инкремент
 
-Класс **Product**
+Класс товара **Product**
 
 > ProductCode ‒ с 1, инкремент
 
-Класс **Employee**
+Класс сотрудника **Employee**
 
 > Number ‒ с 1, инкремент
 
