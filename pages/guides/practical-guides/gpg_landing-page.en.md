@@ -14,7 +14,6 @@ The practical guides will help to familiarize yourself with the platform Flexber
 ## Workshops
 
 * [Practical guide for creating UML diagrams in Flexberry Designer](gpg_practical-guides-uml.html)
-* [Practical guide for creating web applications on Flexberry ASP.NET](gpg_preparatory-stage.html)
 * [Practical guide for creating web applications on Flexberry Ember](gpg_setting-language-and-structure.html)
 
 

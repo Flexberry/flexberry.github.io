@@ -17,11 +17,11 @@ lang: ru
 
 Помимо даты создания документа при создании нового заявления или накладной потребуется также проставлять им уникальный номер и автоматически устанавливать статус "Новый". Для этого откроем список атрибутов класса "Документ":
 
-*`Document → [ПКМ] → ORM: Редактировать свойства → Атрибуты`*
+*`Document → Выделить класс → Открыть форму редактирования (шестеренка) → Правка → Атрибуты → Кнопка редактирования в строке атрибута`*
 
 ![Дефолтное значение даты создания класса Document](/images/pages/guides/flexberry-ember/2-3-autocomplete-and-data-types/2-3-2.png)
 
-В открывшейся форме можно увидеть заданное по умолчанию значение для атрибута "CreateDate". Установить следующие свойства для **атрибута "Number"**:
+В открывшейся форме можно увидеть заданное по умолчанию значение для атрибута "CreateDate(DataZapolneniya)". Установить следующие свойства для **атрибута "Number(Nomer)"**
 
 > DefaultValue → 1,  
 > Autoincrement → +,  
@@ -39,23 +39,23 @@ lang: ru
 
 **Самостоятельно:** изменить свойства атрибутов следующих классов:
 
-Класс **Order**
+Класс заказа **Order**
 
 > Status ‒ New
 
-Класс **Invoice**
+Класс накладной **Invoice**
 
 > Status ‒ New
 
-Класс **Storehouse**
+Класс склада **Storehouse**
 
 > Number ‒ с 1, инкремент
 
-Класс **Product**
+Класс товара **Product**
 
 > ProductCode ‒ с 1, инкремент
 
-Класс **Employee**
+Класс сотрудника **Employee**
 
 > Number ‒ с 1, инкремент
 
@@ -65,18 +65,18 @@ lang: ru
 
 ## Настройка вычислимых атрибутов
 
-Ранее был создан вычислимый атрибут на диаграмме классов ‒ это атрибут "TotalSum" (Стоимость заказа) класса "Order" (Заказ). Он помечен символом "/":
+Ранее был создан вычислимый атрибут на диаграмме классов ‒ это атрибут "Cena" (Стоимость заказа) класса "Order" (Заказ). Он помечен символом "/":
 
-![Нехранимый атрибут TotalSum класса Order](/images/pages/guides/flexberry-ember/2-3-autocomplete-and-data-types/2-3-5.png)
+![Нехранимый атрибут Cena класса Order](/images/pages/guides/flexberry-ember/2-3-autocomplete-and-data-types/2-3-5.png)
 
 Для реализации такого атрибута, необходимо добавить ему [`DataServiceExpression`](fo_not-stored-attributes.html), но, так как `DataServiceExpression` вычисляются не во всех запросах, также необходимо реализовать логику этого атрибута в коде.
 
-Чтобы добавить `DataServiceExpression`, следует открыть окно редактирования свойств класса напротив нужного атрибута в столбце `«DataService Expression»`, нажать на кнопку `«...»`. В открывшемся окне можно задать несколько значений для разных типов сервисов данных.
-В столбце `«DataService»` нужно указать тип сервиса данных, с которым будет использоваться `SQL`-выражение; в столбце `«DataService Expression»` - само `SQL`-выражение.
+Для указания `DataServiceExpression` следует открыть окно редактирования свойств класса (кликнуть на классе, выбрать "шестеренку") в строке нужного атрибута в столбце `«DataService Expression»`, нажать на кнопку редактирования. В открывшемся окне можно задать несколько значений для разных типов сервисов данных: для этого нажать кнопку `Создать DataServiceExpression`.
+В столбце `«DataService»` нужно указать тип сервиса данных, с которым будет использоваться `SQL`-выражение; в столбце `«DataService Expression»` - само `SQL`-выражение (SELECT SUM(CenaSNalogami * Kolichestvo) FROM OrderItem WHERE OrderItem.Order_m0 = STORMMainObjectKey).
 
-![Добавление DataServiceExpression для атрибута TotalSum класса Order](/images/pages/guides/flexberry-ember/2-3-autocomplete-and-data-types/2-3-6.png)
+![Добавление DataServiceExpression для атрибута Cena класса Order](/images/pages/guides/flexberry-ember/2-3-autocomplete-and-data-types/2-3-6.png)
 
-Для атрибута `TotalSum` можно написать универсальное `SQL`-выражение, которое будет работать с любым `SQL`-совместимым сервисом данных, поэтому достаточно одного выражения с указанием `SQLDataService` в качестве типа сервиса данных.
+Для атрибута `Cena` можно написать универсальное `SQL`-выражение, которое будет работать с любым `SQL`-совместимым сервисом данных, поэтому достаточно одного выражения с указанием `SQLDataService` в качестве типа сервиса данных.
 
 Остаётся реализовать логику этого атрибута в коде. Сами вычисления довольно просты, но если необходимые для вычисления данные не будут загружены, результат вычислений будет неверный.
 
@@ -84,19 +84,19 @@ lang: ru
 
 ```csharp
 /// <summary>
-/// TotalSum.
+/// Cena.
 /// </summary>
-// *** Start programmer edit section *** (Order.TotalSum CustomAttributes)
+// *** Start programmer edit section *** (Order.Cena CustomAttributes)
 
-// *** End programmer edit section *** (Order.TotalSum CustomAttributes)
+// *** End programmer edit section *** (Order.Cena CustomAttributes)
 [ICSSoft.STORMNET.NotStored()]
-[DataServiceExpression(typeof(SQLDataService), "SELECT SUM(PriceWTaxes * Amount) FROM OrderItem WHERE OrderItem.Order_m0 = STORMM" +
+[DataServiceExpression(typeof(SQLDataService), "SELECT SUM(CenaSNalogami * Kolichestvo) FROM OrderItem WHERE OrderItem.Order_m0 = STORMM" +
     "ainObjectKey")]
-public virtual double TotalSum
+public virtual double Cena
 {
     get
     {
-        // *** Start programmer edit section *** (Order.TotalSum Get)
+        // *** Start programmer edit section *** (Order.Cena Get)
         if (!CheckLoadedProperty(nameof(OrderItem)))
         {
             throw new InvalidOperationException($"The '{nameof(OrderItem)}' property not loaded.");
@@ -105,24 +105,24 @@ public virtual double TotalSum
         double sum = 0;
         foreach (OrderItem item in OrderItem)
         {
-            sum += item.PriceWTaxes * item.Amount;
+            sum += item.CenaSNalogami * item.Kolichestvo;
         }
 
         return sum;
-        // *** End programmer edit section *** (Order.TotalSum Get)
+        // *** End programmer edit section *** (Order.Cena Get)
     }
     set
     {
-        // *** Start programmer edit section *** (Order.TotalSum Set)
+        // *** Start programmer edit section *** (Order.Cena Set)
 
-        // *** End programmer edit section *** (Order.TotalSum Set)
+        // *** End programmer edit section *** (Order.Cena Set)
     }
 }
 ```
 
-Для обеспечения загрузки необходимых данных нужно добавить свойства, используемые в вычислениях, в те представления, в которых присутствует атрибут `TotalSum`.
+Для обеспечения загрузки необходимых данных нужно добавить свойства, используемые в вычислениях, в те представления, в которых присутствует атрибут `Cena`.
 
-Добавить отдельное представление в класс `OrderItem` со свойствами `Amount` и `PriceWTaxes`:
+Добавить отдельное представление в класс `OrderItem` со свойствами `Kolichestvo` и `CenaSNalogami`:
 
 ![Добавление представления для класса OrderItem](/images/pages/guides/flexberry-ember/2-3-autocomplete-and-data-types/2-3-6-1.png)
 
@@ -144,7 +144,7 @@ public virtual double TotalSum
 
 Проверить, есть ли такой вариант среди типов, доступных "из коробки" во Flexberry Designer, можно,  открыв карту типов:
 
-*`Стадия (ember) → Ember → [ПКМ] → Свойства модели → Карта типов`*
+*`Настройка → Настройка проекта → Кнопка "Карта типов"`*
 
 ![Свойства модели](/images/pages/guides/flexberry-ember/2-3-autocomplete-and-data-types/2-3-8.png)
 
@@ -158,27 +158,22 @@ public virtual double TotalSum
 
 На созданной диаграмме создадать **новый класс** с **именем "tDateTime"** и **стереотипом "typedef"** (данный класс можно сразу свернуть, т.к. у него не будет никаких атрибутов и методов):
 
-![Создание типа данных tDateTime](/images/pages/guides/flexberry-ember/2-3-autocomplete-and-data-types/2-3-11.png)
-
 Теперь нужно определить, с какими типами данных новый тип будет сопоставляться при генерации приложения. Для этого снова открыть карту типов:
 
-*`Стадия (ember) → [ПКМ] → Ember → Свойства модели → Карта типов`*
+*`Настройка → Настройка проекта → Кнопка "Карта типов"`*
 
-![Карта типов модели с типом tDateTime](/images/pages/guides/flexberry-ember/2-3-autocomplete-and-data-types/2-3-12.png)
+![Карта типов модели с типом tDateTime](/images/pages/guides/flexberry-ember/2-3-autocomplete-and-data-types/2-3-11.png)
 
-После создания класса со стереотипом "typedef", в карте типов появился соответствующий тип данных. Присвоить ему значение **System.DateTime?** в поле "отображается в". Поле "файл со сборкой" оставить пустым (для системных типов это поле заполнять не требуется).
+После создания класса со стереотипом "typedef", в карте типов появился соответствующий тип данных. Присвоить ему значение **System.DateTime?** в поле **"C#"**.
+Заполнить значение для  **PostgreSQL** (требуется указать сопоставление нового типа данных с типом **TIMESTAMP(3)**).
 
-> Обязательно сохранить свойства модели!
+![Карта типов БД PostgreSQL](/images/pages/guides/flexberry-ember/2-3-autocomplete-and-data-types/2-3-12.png)
 
-Аналогичные действия нужно выполнить и в карте типов для **базы данных** (требуется указать сопоставление нового типа данных с типом **TIMESTAMP(3)**):
-
-*`Стадия (ember) → [ПКМ] → Ember → Storage → PostgreSQL → Настройка БД → Карта типов`*
-
-![Карта типов БД PostgreSQL](/images/pages/guides/flexberry-ember/2-3-autocomplete-and-data-types/2-3-13.png)
+> Обязательно сохранить свойства модели (верхний правый угол страницы)!
 
 Далее заменить соответствующие типы данных у атрибутов на диаграмме классов:
 
-![Карта типов БД](/images/pages/guides/flexberry-ember/2-3-autocomplete-and-data-types/2-3-14.png)
+![Карта типов БД](/images/pages/guides/flexberry-ember/2-3-autocomplete-and-data-types/2-3-13.png)
 
 > Можно не заменять тип данных у атрибута \"CreateDate\" класса \"Document\", т.к. этот атрибут по умолчанию заполняется текущей датой.
 
@@ -188,7 +183,7 @@ public virtual double TotalSum
 
 Итоговый вариант диаграммы классов перед генерацией приложений и базы данных выглядит следующим образом:
 
-![Диаграмма классов "Сущности"](/images/pages/guides/flexberry-ember/2-3-autocomplete-and-data-types/2-3-15.png)
+![Диаграмма классов "Сущности"](/images/pages/guides/flexberry-ember/2-3-autocomplete-and-data-types/2-3-14.png)
 
 ## Перейти
 
