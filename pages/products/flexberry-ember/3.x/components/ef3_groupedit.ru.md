@@ -10,18 +10,18 @@ summary: Свойства, особенности реализации, наст
 
 ## Назначение компонента
 
-`flexberry-groupedit` – экомпонент на базе технологии Ember.js для работы с [детейлами](fo_detail-associations-properties.html) на форме редактирования. Этот компонент предоставляет возможность создания, редактирования, удаления записей. Кроме того, он поддерживает некоторые дополнительные возможности: настройка внешнего вида (например, изменение размера столбцов, пользовательские кнопки), обработка действий над строками и многое другое.
+`flexberry-groupedit` – компонент на базе технологии Ember.js для работы с [детейлами](fo_detail-associations-properties.html) на форме редактирования. Этот компонент предоставляет возможность создания, редактирования, удаления записей. Кроме того, он поддерживает некоторые дополнительные возможности: настройка внешнего вида (например, изменение размера столбцов, пользовательские кнопки), обработка действий над строками и многое другое.
 
 Пример использования `flexberry-groupedit` в шаблоне:
 
- ```handlebars
-{{flexberry-groupedit
+ ```hbs
+{% raw %}{{flexberry-groupedit
   componentName="userVotesGroupEdit"
   modelProjection=modelProjection.attributes.userVotes
   content=model.userVotes
   readonly=readonly
   orderable=false
-}}
+}}{% endraw %}
 ```
 
 ## Обзор возможностей и API компонента
@@ -42,8 +42,8 @@ summary: Свойства, особенности реализации, наст
 `showAsteriskInRow`| Флаг, определяющий, показывать ли звездочку в первой колонке измененных строк. Значение по умолчанию: true.
 `showCheckBoxInRow`| Флаг, определяющий, показывать ли чекбокс в первой колонке каждой строки. Он позволяет выделять отдельные строки и работать со всеми выделенными объектами (например, удалять). Значение по умолчанию: true.
 `showDeleteButtonInRow`| Флаг, определяющий, отображать ли кнопку `-` для удаления записи в браузерном и мобильном шаблоне. Значение по умолчанию: false.
-`showEditMenuItemInRow`| Флаг, определяющий, отображать ли пункт контекстного меню `Редактировать запись`. Данная настройка используется в режиме работы для мобильного устройства. Значение по умолчанию: false.
-`showDeleteMenuItemInRow`| Флаг, определяющий, отображать ли пункт контекстного, меню мобильного шаблона `flexberry-groupedit`, `Удалить запись`. Значение по умолчанию: false.
+`showEditMenuItemInRow`| Флаг, определяющий, отображать ли пункт контекстного меню `Редактировать запись`. Рекомендуется использовать данную настройку в режиме работы для мобильного устройства. Значение по умолчанию: false. Контекстное меню отображается в крайнем правом столбце для каждой записи.
+`showDeleteMenuItemInRow`| Флаг, определяющий, отображать ли пункт контекстного `Удалить запись`. Рекомендуется использовать данную настройку в режиме работы для мобильного устройства.Значение по умолчанию: false. Контекстное меню отображается в крайнем правом столбце для каждой записи.
 `singleColumnHeaderTitle`| Заголовок для мобильного представления `flexberry-groupedit`, вместо названий колонок.
 `rowClickable`| Флаг, определяющий, являются ли строки таблицы кликабельными. Значение по умолчанию: false.
 `immediateDelete`| Флаг, определяющий, следует ли немедленно отправлять DELETE-запрос на сервер (для каждой удаленной записи) или нет.
@@ -54,23 +54,22 @@ summary: Свойства, особенности реализации, наст
 `action`| Имя действия для обработки событий клика по строкам. Значение по умолчанию: 'groupEditRowClick'.
 `buttonClass`| CSS-классы, применяемые к кнопкам панели инструментов и кнопкам строк.
 `cellComponent`| Метод, определяющий, каким контролом редактируется компонент.
-`customButtons`| Массив конфигураций пользовательских кнопок.
+`customButtons`| Массив конфигураций пользовательских кнопок. Заданные кнопки будут добавлены на панель инструментов компонента.
 `customTableClass`| Пользовательские CSS-классы для таблицы. Значение по умолчанию: ''.
-`defaultSettingsButton`| Флаг, определяющий, будет ли показана кнопка настроек по умолчанию на панели инструментов. Значение по умолчанию: true.
-`defaultSortingButton`| Флаг, определяющий, будет ли показана кнопка сортировки по умолчанию. Значение по умолчанию: true.
+`defaultSettingsButton`| Флаг, определяющий, будет ли показана кнопка настроек по умолчанию на панели инструментов. Значение по умолчанию: true. Нажатие кнопки применит настройки отображение табличных данных, заданные по умолчанию `DEFAULT` и определяющие ширину столбцов, их отображение и порядок сортировки. 
+`defaultSortingButton`| Флаг, определяющий, будет ли показана кнопка сортировки по умолчанию. Значение по умолчанию: true. Нажатие кнопки применит настройки сортировки табличных данных, заданные по умолчанию `DEFAULT`.
 `editFormRoute`| Роут формы редактирования, который будет открыт после клика по соответствующей строке (именно тот, по которому был клик).
 
 **Дополнительные свойства:**
 
 Свойство | Краткое описание
 :--------|:----------------
-`editOnSeparateRoute` | Флаг, определяющий, следует ли редактировать записи на отдельном роуте. Значение по умолчанию: false.
+`editOnSeparateRoute` | Флаг, определяющий, следует ли редактировать записи на отдельном роуте. Значение по умолчанию: false. Роут формы редактирования задаётся через свойство `editFormRoute` компонента.
 `menuInRowAdditionalItems` | Дополнительные пункты для выпадающего меню в последней колонке каждой строки. Значение по умолчанию: null.
-`mainModelProjection` | Основная проекция модели, используемая для поддержки локализации подписей.
+`mainModelProjection` | Основная проекция модели, используемая для поддержки локализации подписей. Если не задана, то используется для локализации проекция модели из `modelProjection`.
 `saveBeforeRouteLeave` | Необходимо ли сохранять текущую модель перед переходом на роут детейла. Значение по умолчанию: false.
 `searchForContentChange` | Отслеживание изменений в модели для соответствующего обновления компонента. Значение по умолчанию: true.
 `showValidationMessagesInRow` | Показывать ли сообщения валидации в каждой строке. Значение по умолчанию: false.
-`useSidePageMode` | Флаг, определяющий режим для модальных окон, используемых компонентом. Значение по умолчанию: false.
 `appConfigSettingsPath` | Путь к настройкам компонента в конфигурации приложения. Значение по умолчанию: 'APP.components.flexberryGroupedit'.
 `sorting` | Массив с данными сортировки. Значение по умолчанию: null.
 `minAutoColumnWidth` | Минимальная ширина столбцов, если она не задана в пользовательских настройках. Значение по умолчанию: 100.
@@ -96,8 +95,7 @@ summary: Свойства, особенности реализации, наст
 В [шаблоне](efd3_template.html) формы редактирования агрегатора у контрола `flexberry-groupedit` определить следующие свойства:
 
 ```hbs
-{% raw %}
-{{flexberry-groupedit
+{% raw %}{{flexberry-groupedit
   ...
   rowClickable=true
   rowClick='rowClick'
@@ -206,6 +204,10 @@ var Model = BaseModel.extend({
 }
 ```
 
+В данном примере `cellComponent` представляет собой объект, в котором задаются название и настройки встраиваемого компонента в ячейку:
+* поле `componentName` определяет название компонента;
+* поле `componentProperties` содержит индивидуальные настройки компонента.
+
 Если на прикладной форме редактирования требуется встраивать прикладной компонент в ячейки groupedit, то необходимо будет переопределить метод `getCellComponent` в прикладном контроллере, унаследованном от базового контроллера формы редактирования (`ember-flexberry/controllers/edit-form.js`).
 
 ```javascript
@@ -269,7 +271,7 @@ export default EditFormController.extend({
 * `sortByColumn` - действие (action) контроллера, которое должно быть выполнено для сортировки по столбцу.
 * `addColumnToSorting` - действие (action) контроллера, которое должно быть выполнено для добавления сортировки по столбцу.
 
-Использовать сортировку в шаблоне можно, если в контроллере шаблона были определены действия (action) с именами `sortByColumn` и `addColumnToSorting`. Синтаксис `addColumnToSorting=(action \"addColumnToSorting\")` определяет, что используется ember closure action.
+Использовать сортировку в шаблоне можно, если в контроллере шаблона были определены действия (action) с именами `sortByColumn` и `addColumnToSorting`. Синтаксис `addColumnToSorting=(action \"addColumnToSorting\")` определяет, что используется [ember closure action](https://guides.emberjs.com/v3.12.0/components/triggering-changes-with-actions/#toc_passing-the-action-to-the-component).
 
 ## Возможности сервиса detail-interaction
 
@@ -321,45 +323,93 @@ let lastAgregator = detailInteractionService.getLastValue('modelCurrentAgregator
 
 ## Пользовательские кнопки в панели управления
 
-EditFormController - расширяет стандартный контроллер формы редактирования и позволяет создавать пользовательские кнопки для панели управления групэдита.
+EditFormController - расширяет стандартный контроллер формы редактирования и позволяет создавать пользовательские кнопки для панели управления groupedit.
 
-Пример определения пользовательской кнопки в шаблоне:
+Для создания пользовательских кнопок на панели управления groupedit нужно:
 
-<YourCustomComponent
-  @clickCounter={{this.clickCounter}}
-  @messageForUser={{this.messageForUser}}
-  @hiButtonState={{this.hiButtonState}}
-  @onCustomButtonClick={{this.actions.customButtonActionTest}}
-  @onToggleHiButton={{this.actions.toggleHideCustomButton}}
-/>
+В шаблоне для компонента groupedit задать значение свойства `customButtons` и события для создаваемых кнопок.
 
-Где `YourCustomComponent` - компонент, который будет использовать эти данные и методы.
+```hbs
+{% raw %}{{flexberry-groupedit
+  ...
+  customButtons=customButtons
+  customButtonActionTest=(action "customButtonActionTest")
+  toggleHideCustomButton=(action "toggleHideCustomButton")
+}}{% endraw %}
+```
 
-Свойства:
+В контроллере определить значение `customButtons` (вычисляемое свойство) - массив объектов, описывающих пользовательские кнопки. Включает в себя перевод текста кнопок и их состояния (активна/неактивна). Зависит от текущего языка интерфейса и состояния пользовательской кнопки.
 
-* `clickCounter` (по умолчанию 1 ) - счётчик нажатий на пользовательскую кнопку.
-* `messageForUser` - сообщение для пользователя, которое отображается после нажатия на пользовательскую кнопку.
-* `hiButtonState` (по умолчанию true) - состояние пользовательской кнопки; неактивна (true) или активна (false).
-* `customButtons` (вычесляемое свойство) - массив объектов, описывающих пользовательские кнопки. Включает в себя перевод текста кнопок и их состояния (активна/неактивна). Зависит от текущего языка интерфейса и состояния пользовательской кнопки.
+```javascript
+  customButtons: computed('i18n.locale', 'hiButtonState', function() {
+    let i18n = this.get('i18n');
+    let hiButtonState = this.get('hiButtonState');
+    let togglerButtonType = hiButtonState ? 'enable' : 'disable';
+    let hiButtonText = i18n.t('forms.components-examples.flexberry-groupedit.custom-buttons-example.custom-button-name');
+    let togglerButtonText = i18n.t(`forms.components-examples.flexberry-groupedit.custom-buttons-example.${togglerButtonType}-button-name`);
+    return [{
+      buttonName: hiButtonText,
+      buttonAction: 'customButtonActionTest',
+      buttonClasses: 'test-click-button',
+      buttonTitle: hiButtonText,
+      disabled: hiButtonState,
+    }, {
+      buttonName: togglerButtonText,
+      buttonAction: 'toggleHideCustomButton',
+      buttonClasses: 'toggle-hi-button',
+      buttonTitle: togglerButtonText,
+      disabled: false,
+    }];
+  }),
+```
 
-События:
+В данном коде представляют интерес:
+
+* `i18n` - сервис локализации. Используется для получения локализованных подписей к заданным кнопкам.
+* `hiButtonState` - состояние пользовательской кнопки. Неактивна (true) или активна (false). По умолчанию true.
+
+Настройки кнопки:
+
+* `buttonName` - название кнопки.
+* `buttonAction` - событие, привязанное к кнопке.
+* `buttonClasses` - связанный стилевой класс.
+* `buttonTitle` - текст кнопки.
+* `disabled` - статус кнопки: активна (false) или неактивна (true).
+
+В контроллере также необходимо реализовать связанные события.
+
+```javascript
+  actions: {
+    ...
+    customButtonActionTest() {
+      let i18n = this.get('i18n');
+      let clickCounter = this.get('clickCounter');
+      this.set('clickCounter', clickCounter + 1);
+      this.set('messageForUser', i18n.t('forms.components-examples.flexberry-groupedit.custom-buttons-example.custom-message').string + ' ' + clickCounter);
+    },
+
+    toggleHideCustomButton() {
+      this.toggleProperty('hiButtonState');
+    },
+  },
+```
+
+В данном случае:
 
 * `customButtonActionTest` - обработчик нажатия на пользовательскую кнопку. Увеличивает счётчик нажатий (clickCounter) и обновляет сообщение для пользователя
 (messageForUser), добавляя в него количество нажатий.
 * `toggleHideCustomButton` - переключает состояние пользовательской кнопки (hiButtonState) между активным и неактивным состоянием.
 
-Для дополнения панели управленияа пользовательскими кнопками необходимо определить соответствующие события и свойства для созданной формы редактирования.
-
 > Для корректного отображения текста кнопок и сообщений необходимо определить соответствующую локализацию.
 
-## Настройка лукапов в групэдите
+## Настройка лукапов в groupedit
 
-Настройка лукапов для групэдита является дополнительной возможностью работы с детейлами на основе [базового контроллера](https://github.com/Flexberry/ember-flexberry/blob/develop/addon/controllers/edit-form.js) и [миксина для формы редактирования](https://github.com/Flexberry/ember-flexberry/blob/develop/addon/mixins/edit-form-route-operations-indication.js), благодаря чему становится доступной настройка формы редактирования детейла для работы с компонентами [flexberry-lookup](ef3_flexberry-lookup.html) для выбора связанных данных по аналогии со стандартной формой редактирования, включая переходы между роутами.
+Настройка лукапов для groupedit является дополнительной возможностью работы с детейлами на основе [базового контроллера](https://github.com/Flexberry/ember-flexberry/blob/develop/addon/controllers/edit-form.js) и [миксина для формы редактирования](https://github.com/Flexberry/ember-flexberry/blob/develop/addon/mixins/edit-form-route-operations-indication.js), благодаря чему становится доступной настройка формы редактирования детейла для работы с компонентами [flexberry-lookup](ef3_flexberry-lookup.html) для выбора связанных данных по аналогии со стандартной формой редактирования, включая переходы между роутами.
 
 Свойства:
 
-* `parentRoute` - определяет имя роута для перехода после закрытия формы редактирования. Для него может быть установлено значение по умолчанию.
-* `checkboxValue` - может быть использовано для управления режимом только для чтения компонента flexberry-lookup. Значение по умолчанию: false.
+* `parentRoute` - определяет имя роута для перехода после закрытия формы редактирования. Для него может быть установлено значение по умолчанию, которое представляет собой имя существующего роута.
+* `checkboxValue` - используется для включения / отключения режима "только для чтения" компонента flexberry-lookup. Значение по умолчанию: false (режим "только для чтения" - отключен). 
 * `fieldvalue` - значение поля, применяемое для ограничения поиска в компоненте flexberry-lookup. Для него может быть установлено значение по умолчанию.
 * `lookupDynamicProperties` (вычисляемое) - определяет динамические настройки для компонента flexberry-lookup внутри компонента flexberry-groupedit. Включает в себя функции выбора и удаления значения, атрибуты для отображения, связь с моделью, проекцию, автодополнение и функции ограничения поиска. Только для чтения.
 
@@ -449,8 +499,7 @@ console.log(cellComponent); // Выведет объект с настройка
 Настройка данного варианта аналогичная описываемому выше способу. В шаблоне контрола при этом нужно выставить один дополнительный флаг `saveBeforeRouteLeave`.
 
 ```hbs
-{% raw %}
-{{flexberry-groupedit
+{% raw %}{{flexberry-groupedit
   ...
   rowClickable=true
   rowClick='rowClick'
@@ -461,7 +510,7 @@ console.log(cellComponent); // Выведет объект с настройка
 
 `saveBeforeRouteLeave` - флаг, определяющий, следует ли сохранять текущую модель при переходах между агрегатором и детейлом. По умолчанию имеет значение `false`.
 
-О том, как функционируют кнопки на такой детейловой форме, описано в статье [Формы редактирования и создания](ef2_edit-form.html).
+О том, как функционируют кнопки на такой детейловой форме, описано в статье [Формы редактирования и создания](efd3_editform.html).
 
 ### Вычислимые свойства в getCellComponent
 
@@ -516,3 +565,43 @@ export default Controller.extend({
 2. При вставке/удалении строк в groupedit осуществляется автоматический пересчет ordered-атрибута по всем строкам.
 3. В groupedit, когда в модели есть ordered-атрибут, появляется возможность перемещать строки вверх-вниз через стрелочки. При этом производится автоматический пересчет значения ordered-атрибута тех строк, у которых изменилась позиция.
 4. Если ordered-атрибут отображается в ГЕ для пользователя, то соответствующее значение данного атрибута будет readonly.
+
+## Динамическое обновление модели в groupedit
+
+Существует возможность реализации динамического изменения groupedit в зависимости, например, от выбранного значения в object-list-view, расположенного на той же форме, что и groupedit.
+
+Рассмотрим такой пример подробнее. Для его реализации необходимо выполнить ряд действий.
+
+Добавить в шаблон соответствующие компоненты, где нужно добавить связанное событие (`action`) или переопределить `objectListViewRowClick` в контроллере и задать режим компонеты как `lookupform`. 
+
+```hbs
+{% raw %}...
+{{flexberry-objectlistview
+  content=model
+  modelName=modelName
+  modelProjection=modelProjection
+  ...
+  action=(action "objectListViewRowClick")
+  componentMode="lookupform"
+}}
+...
+{{flexberry-groupedit
+  componentName="suggestionUserVotesGroupEdit"
+  content=modelGroupedit
+  mainModelProjection=modelProjection
+  modelProjection=modelProjection.attributes.userVotes
+  ...
+}}{% endraw %}
+```
+
+В контроллере реализовать связанное событие или переопределить `objectListViewRowClick`, в котором обновляется модель в зависимости от выбранной записи в objectlistview.
+
+```javascript
+  actions: {
+    objectListViewRowClick(record) {
+      this.set('modelGroupedit', record.get('userVotes'));
+    }
+  }
+```
+
+Реализацию примера можно посмотреть на [тестовом стенде](https://flexberry.github.io/ember-flexberry/dummy/dummy-test-2/#/components-examples/flexberry-groupedit/dynamic-groupedit).
