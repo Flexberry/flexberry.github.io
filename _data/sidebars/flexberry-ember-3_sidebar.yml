@@ -80,9 +80,9 @@ entries:
             url: /efd3_query-language.html
             output: web, pdf
 
-          - title: Model validation
-            title_ru: Валидация моделей
-            url: /efd3_model-validation.html
+          - title: Data validation
+            title_ru: Валидация данных
+            url: /efd3_validations.html
             output: web, pdf
 
           - title: Support for transactional work with data
