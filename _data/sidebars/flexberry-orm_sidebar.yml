@@ -411,6 +411,10 @@ entries:
       title_ru: FuncToChar
       url: /fo_func-to-char.html
       output: web
+    - title: FuncCurrentUser
+      title_ru: FuncCurrentUser
+      url: /fo_func-currentser.html
+      output: web
     - title: SQLWhereLanguageDef
       title_ru: SQLWhereLanguageDef
       url: /fo_function-list.html
