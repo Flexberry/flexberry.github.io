@@ -4,7 +4,7 @@ sidebar: flexberry-orm_sidebar
 keywords: CurrentUser, Flexberry ORM, Ограничения
 summary: Параметры и пример использования функции FuncCurrentUser
 toc: true
-permalink: ru/fo_func-currentser.ru.html
+permalink: ru/fo_func-currentuser.ru.html
 lang: ru
 ---
 
@@ -55,7 +55,7 @@ private class TestCurrentUser : ICurrentUser
 
     public string Domain { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-    public string FriendlyName { get => "Greate One"; set => throw new NotImplementedException(); }
+    public string FriendlyName { get => "Great One"; set => throw new NotImplementedException(); }
 }
 ```
 

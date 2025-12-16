@@ -413,7 +413,7 @@ entries:
       output: web
     - title: FuncCurrentUser
       title_ru: FuncCurrentUser
-      url: /fo_func-currentser.html
+      url: /fo_func-currentuser.html
       output: web
     - title: SQLWhereLanguageDef
       title_ru: SQLWhereLanguageDef
