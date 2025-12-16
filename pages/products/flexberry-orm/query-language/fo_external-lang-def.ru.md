@@ -65,6 +65,6 @@ lang: ru
 ### Разное
 
 * [funcToChar](fo_func-to-char.html) - функция преобразования выражения в строку.
-* `funcCurrentUser`
+* [funcCurrentUser](fo_func-currentuser.html) 
 * [funcImplication](fo_function-implication.html) - функция импликации.
 * `ExternalLangDef.ExistViewName` - строковая константа, которая используется для обозначения имени представления, когда строятся ограничения на детейлы.
