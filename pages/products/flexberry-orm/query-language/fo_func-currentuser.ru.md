@@ -4,7 +4,7 @@ sidebar: flexberry-orm_sidebar
 keywords: CurrentUser, Flexberry ORM, Ограничения
 summary: Параметры и пример использования функции FuncCurrentUser
 toc: true
-permalink: ru/fo_func-currentuser.ru.html
+permalink: ru/fo_func-currentuser.html
 lang: ru
 ---
 
