@@ -52,6 +52,7 @@ $client.DownloadFile("$downloadPath/stop-flexberry-service-bus.cmd", "$pwd\stop-
 * Скачивание контейнеров: все необходимые контейнеры будут загружены при первом запуске.
 * Настройка контейнеров:
 [замена Web.config для административного приложения шины](fsb_editor.html), [замена App.Config для сервиса шины](fsb_service.html).
+* Для административного приложения шины строку подключения к базе данных можно задать через переменную окружения `ESB_CONNECTION_STRING` (например, в файле конфигурации Docker Compose).
 * Запуск контейнеров:
 для старта требуется выполнить командный файл [start-flexberry-service-bus.cmd](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus/blob/develop/Docker/start-flexberry-service-bus.cmd).
 * Остановка контейнеров:

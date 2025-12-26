@@ -54,6 +54,7 @@ Additionally ###
 * The downloading of containers: all containers will be downloaded when you first start. 
 * Set up containers: 
 [replace Web.config for the administrative application bus](fsb_editor.html), [replacement App.Config for the service bus](fsb_service.html). 
+* For the administration application, the database connection string can be set via the environment variable `ESB_CONNECTION_STRING` (for example, in Docker Compose configuration file).
 * Running containers: 
 to start you want to run the command file [start-flexberry-service-bus.cmd](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus/blob/develop/Docker/start-flexberry-service-bus.cmd).
 * Stop containers: 
