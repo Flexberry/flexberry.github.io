@@ -109,6 +109,7 @@ lang: ru
                     <li><a href="https://htmlacademy.ru/">Интерактивные онлайн-курсы по фронтенду</a><i> — HTML Academy</i></li>
                     <li><a href="https://webref.ru/course/html5-form">Формы в HTML</a><i> — WebReference.ru</i></li>
                     <li><a href="http://www.w3schools.com/html/">HTML5 Tutorial</a><i> — W3Schools</i></li>
+                    <li><a href="https://www.scaler.com/topics/html/">Learn HTML in Detail</a><i> — Scaler Topics</i></li>
                 </div>   
             </div>
         </div>
