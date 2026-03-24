@@ -13,12 +13,15 @@ body {
 }
 
 html > body > .wrapper {
-    height: 85%;
+    flex: 1 1 auto;
+    min-height: 0;
     position: relative;
     overflow: auto;
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
