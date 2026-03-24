@@ -15,7 +15,7 @@ body {
 html > body > .wrapper {
     height: 85%;
     position: relative;
-    overflow: auto;    
+    overflow: auto;
 }
 
 body {

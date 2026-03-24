@@ -130,7 +130,6 @@
             <div id="facetAttributeLang" style="visibility: hidden;">{{ page.lang }}</div>
         </div>
     </div>
-    {% if site.google_analytics %} {% include google_analytics.html %} {% endif %} {{site.data.alerts.hr_shaded}} {% include footer.html %}
 
     <!-- Algolia DocSearch -->
     <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
@@ -146,5 +145,6 @@
         });
     </script>
 </body>
+{% if site.google_analytics %} {% include google_analytics.html %} {% endif %} {{site.data.alerts.hr_shaded}} {% include footer.html %}
 
 </html>
