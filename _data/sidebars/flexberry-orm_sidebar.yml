@@ -728,6 +728,10 @@ entries:
       title_ru: Особенности определения загруженности свойств
       url: /fo_definition-loaded-properties.html
       output: web
+    - title: System of notifications about object updates
+      title_ru: Система уведомлений об обновлении объектов
+      url: /fo_object-update-notification.html
+      output: web
     - title: ISpecialEmptyValue
       title_ru: ISpecialEmptyValue
       url: /fo_i-special-empty-value.html
