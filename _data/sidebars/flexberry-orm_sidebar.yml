@@ -347,6 +347,10 @@ entries:
       title_ru: Пример использования собственных типов
       url: /fo_using-custom-types-example.html
       output: web
+    - title: DateOnly and TimeOnly support
+      title_ru: Поддержка DateOnly и TimeOnly
+      url: /fo_date-only-time-only.html
+      output: web
 
   - title: Язык запросов
     output: web, pdf
