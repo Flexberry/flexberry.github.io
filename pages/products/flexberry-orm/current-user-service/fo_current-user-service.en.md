@@ -42,7 +42,7 @@ The user name if not explicitly set, calculated via the login.
 
 ## rewriting service the current user 
 
-If you want to change the way of working with the current user (e.g., store the user ID in the cache, and a web application), we need to implement the interface `ICSSoft.Services.CurrentUserService IUser` and assign it the handler. For mapping you can use the method `ICSSoft.Services.CurrentUserService.ResolveUser<T>()` and settings in the configuration file (use [UnityFactory](fo_unity-factory.html)): 
+If you want to change the way of working with the current user (e.g., store the user ID in the cache, and a web application), we need to implement the interface `ICSSoft.Services.CurrentUserService IUser` and assign it the handler. For mapping you can use the method `ICSSoft.Services.CurrentUserService ResolveUser<T>()` and settings in the configuration file (use [UnityFactory](fo_unity-factory.html)): 
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -126,6 +126,83 @@ If the class `IIS.TryAccessSystem.ClassOtherUser` contains an override of the se
 </configuration>
 ``` 
 
+## New approach: ICurrentUser with DI
+
+Starting from the latest versions, Flexberry ORM migrates from static `CurrentUserService` to the `ICurrentUser` interface with dependency injection (DI).
+
+### ICurrentUser Interface
+
+The new current user interface is located in the `NewPlatform.Flexberry.ORM.CurrentUserService` namespace:
+
+```csharp
+namespace NewPlatform.Flexberry.ORM.CurrentUserService
+{
+    public interface ICurrentUser
+    {
+        string Login { get; set; }           // User login (e.g., "vpupkin")
+        string Domain { get; set; }          // User domain
+        string FriendlyName { get; set; }    // User friendly name (e.g., "Vasya Pupkin")
+    }
+}
+```
+
+### Stubs for DI
+
+For testing and fallback usage, the following stubs are available:
+
+```csharp
+// EmptyCurrentUser - default stub
+var currentUser = new EmptyCurrentUser 
+{ 
+    Login = "admin", 
+    Domain = "DOMAIN",
+    FriendlyName = "Admin User"
+};
+
+// Usage in services
+var auditService = new AuditService(currentUser);
+var lockService = new LockService(dataService, currentUser);
+```
+
+### Extension Methods
+
+Convenience extension methods are available:
+
+```csharp
+var currentUser = new EmptyCurrentUser 
+{ 
+    Login = "vpupkin", 
+    Domain = "COMPANY",
+    FriendlyName = "Vasya Pupkin"
+};
+
+string logonName = currentUser.GetDownLevelLogonName();
+// Result: "COMPANY\\vpupkin"
+```
+
+### Code Migration
+
+**Before (old approach):**
+```csharp
+CurrentUserService.CurrentUser.FriendlyName
+LockService.ClearAllUserLocks()
+```
+
+**After (new DI approach):**
+```csharp
+currentUser.FriendlyName  // via dependency injection
+var lockService = new LockService(dataService, currentUser);
+lockService.ClearAllUserLocks()
+```
+
+### Updated Classes
+
+The following classes have been updated to use `ICurrentUser`:
+
+* `AuditService` - constructor now requires `ICurrentUser`
+* `LockService` - constructor requires `ICurrentUser` and is no longer static
+* `ExternalLangDef` - uses `CurrentUser` instead of `CurrentUserService`
+
 ## Possible errors 
 
 `CurrentUserService` may generate an error and report that it can not find the Assembly `Microsoft.Practices.Unity`. 
@@ -133,5 +210,3 @@ If the class `IIS.TryAccessSystem.ClassOtherUser` contains an override of the se
 This is due to the fact that this build is really not in the folder with the binaries of the project, as it is not copied there when building the project. However, it is often that it is in the global folder with the assemblies of the operating system. 
 
 To correct the situation you must have a reference to this Assembly (Reference) in the project to put the property `CopyLocal` = `true`.
-
-

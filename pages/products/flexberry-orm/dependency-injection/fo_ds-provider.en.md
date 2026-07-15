@@ -1,8 +1,8 @@
 --- 
 title: Receiving service data 
 sidebar: flexberry-orm_sidebar 
-keywords: Dataserviceprovider, DataService, connectionstring config, app.config web.config 
-summary: How to configure the data service and get its authority from anywhere in the application 
+keywords: Dataserviceprovider, DataService, connectionstring, config, app.config, web.config 
+summary: How to configure the data service and get its instance from anywhere in the application 
 toc: true 
 permalink: en/fo_ds-provider.html 
 lang: en 
@@ -10,7 +10,7 @@ autotranslated: true
 hash: 44521544d5e3234f0d31b8a66b6803ed7b139f8e127dbe772d433632ea2ae457 
 --- 
 
-`DataServiceProvider.DataService` is [service data](fo_data-service.html), which is initialized based on the settings specified in the configuration file (`App.cobfig` or `Web.config`). Thus, `DataServiceProvider.DataService` is [service data](fo_data-service.html) by default. 
+`DataServiceProvider.DataService` is [service data](fo_data-service.html), which is initialized based on the settings specified in the configuration file (`App.config` or `Web.config`). Thus, `DataServiceProvider.DataService` is [service data](fo_data-service.html) by default. 
 
 ### Algorithm initialization DataServiceProvider.DataService 
 
@@ -36,7 +36,7 @@ Initialization `DataServiceProvider.DataService` use the following algorithm (in
 </configuration>
 ``` 
 
-2.If the type of [data service](fo_data-service.html) was resolved via Unity, is determined by the connection string. First, in the web style, then win in style. 
+2.If the type of [data service](fo_data-service.html) was resolved via Unity, is determined by the connection string. First, in the web style, then win in style.
 
 **web style**: 
 
@@ -61,10 +61,10 @@ Initialization `DataServiceProvider.DataService` use the following algorithm (in
     <add key="CustomizationStrings" value="SERVER=server;Trusted_connection=yes;DATABASE=dbname;"/>
   </appSettings>
 </configuration>
-``` 
+```
 
 
-3.Next, get DataServiceProvider.DataService occurs in the old algorithm. Type [service data](fo_data-service.html) - setting DataServiceType in the configuration file. And the connection string is determined depending on in which mode the app, web or win. 
+3.Next, get DataServiceProvider.DataService occurs in the old algorithm. Type [service data](fo_data-service.html) - setting DataServiceType in the configuration file. And the connection string is determined depending on in which mode the app, web or win.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -73,13 +73,47 @@ Initialization `DataServiceProvider.DataService` use the following algorithm (in
     <add key="DataServiceType" value="ICSSoft.STORMNET.Business.MSSQLDataService, ICSSoft.STORMNET.Business.MSSQLDataService" />
   </appSettings>
 </configuration>
-``` 
+```
 
-## connection String 
+## Connection strings 
 
 You can read more about connection strings for LocalDB can be read in [this article](fd_sql-express-local-db.html). 
 
-About the connection strings in General can be found in [msdn](https://msdn.microsoft.com/ru-ru/library/ms254500(v=vs.110).aspx). 
+About the connection strings in General can be found in [msdn](https://msdn.microsoft.com/ru-ru/library/ms254500(v=vs.110).aspx).
 
+## Migration to built-in .NET DI
 
+Starting from the latest versions, Flexberry ORM migrates from Unity DI to the built-in .NET dependency injection system.
 
+### Key changes:
+
+* `ExternalLangDef.LanguageDef` - removed static property. Use constructor with `IDataService`:
+  ```csharp
+  // Before
+  ExternalLangDef langdef = ExternalLangDef.LanguageDef;
+  
+  // After
+  ExternalLangDef langdef = new ExternalLangDef(dataService);
+  ```
+
+* `UnityFactory` - no longer used for resolving dependencies:
+  ```csharp
+  // Before
+  IUnityContainer container = UnityFactory.GetContainer();
+  IViewGenerator resolvedType = container.Resolve<IViewGenerator>();
+  
+  // After
+  IViewGenerator resolvedType = DetailVariableDef.ViewGenerator;
+  ```
+
+* New services for built-in DI:
+  * `IBusinessServerProvider` - provider for business servers
+  * `EmptyBusinessServerProvider` - stub for business server provider
+  * `ICurrentUser` - current user interface (see [Current User Service](fo_current-user-service.html))
+
+### Migration steps:
+
+1. Replace `ExternalLangDef.LanguageDef` with `new ExternalLangDef(dataService)`
+2. Update data service constructors to pass `IBusinessServerProvider`
+3. Set `DetailVariableDef.ViewGenerator` instead of using `UnityFactory`
+4. Remove `UnityFactory` dependencies from all projects
