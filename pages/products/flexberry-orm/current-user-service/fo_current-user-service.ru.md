@@ -124,6 +124,83 @@ namespace IIS.TryAccessSystem
 </configuration>
 ```
 
+## Новый подход: ICurrentUser с DI
+
+Начиная с последних версий, Flexberry ORM переходит от статического `CurrentUserService` к интерфейсу `ICurrentUser` с внедрением зависимостей (DI).
+
+### Интерфейс ICurrentUser
+
+Новый интерфейс текущего пользователя находится в пространстве имён `NewPlatform.Flexberry.ORM.CurrentUserService`:
+
+```csharp
+namespace NewPlatform.Flexberry.ORM.CurrentUserService
+{
+    public interface ICurrentUser
+    {
+        string Login { get; set; }           // Логин пользователя (например, "vpupkin")
+        string Domain { get; set; }          // Домен пользователя
+        string FriendlyName { get; set; }    // Имя пользователя (например, "Vasya Pupkin")
+    }
+}
+```
+
+### Заглушки для DI
+
+Для тестирования и резервного использования доступны заглушки:
+
+```csharp
+// EmptyCurrentUser - заглушка по умолчанию
+var currentUser = new EmptyCurrentUser 
+{ 
+    Login = "admin", 
+    Domain = "DOMAIN",
+    FriendlyName = "Admin User"
+};
+
+// Использование в сервисах
+var auditService = new AuditService(currentUser);
+var lockService = new LockService(dataService, currentUser);
+```
+
+### Extension methods
+
+Для удобства работы доступны extension methods:
+
+```csharp
+var currentUser = new EmptyCurrentUser 
+{ 
+    Login = "vpupkin", 
+    Domain = "COMPANY",
+    FriendlyName = "Vasya Pupkin"
+};
+
+string logonName = currentUser.GetDownLevelLogonName();
+// Результат: "COMPANY\\vpupkin"
+```
+
+### Миграция кода
+
+**Было (старый подход):**
+```csharp
+CurrentUserService.CurrentUser.FriendlyName
+LockService.ClearAllUserLocks()
+```
+
+**Стало (новый DI-подход):**
+```csharp
+currentUser.FriendlyName  // через внедрение зависимости
+var lockService = new LockService(dataService, currentUser);
+lockService.ClearAllUserLocks()
+```
+
+### Изменённые классы
+
+Следующие классы обновлены для использования `ICurrentUser`:
+
+* `AuditService` - конструктор теперь требует `ICurrentUser`
+* `LockService` - конструктор требует `ICurrentUser` и стал нестатическим
+* `ExternalLangDef` - использование `CurrentUser` вместо `CurrentUserService`
+
 ## Возможные ошибки
 
 `CurrentUserService` может выдавать ошибку и сообщать, что не может найти сборку `Microsoft.Practices.Unity`.

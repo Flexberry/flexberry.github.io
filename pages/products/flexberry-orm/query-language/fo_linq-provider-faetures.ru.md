@@ -91,6 +91,23 @@ List<Перелом> objss = ds.Query<Перелом>(Перелом.Views.Пе�
 List<Перелом> objss = ds.Query<Перелом>(Перелом.Views.ПереломE).Where(o => o.Дата.DayOfWeek == DayOfWeek.Sunday).ToList();
 ```
 
+#### DateOnly и TimeOnly (.NET 6+)
+
+Начиная с .NET 6, LINQProvider поддерживает типы `DateOnly` и `TimeOnly`:
+
+| Функция | Описание |
+|---------|----------|
+| `DayNumber` | Номер дня от 0001-01-01 |
+| `DayOfYear` | День года (DOY) |
+| `Second` | Секунды |
+
+**Пример с DateOnly:**
+
+``` csharp
+DateOnly date = new DateOnly(2024, 12, 31);
+IQueryable<MyObject> query = ds.Query<MyObject>().Where(o => o.DateAttr == date);
+```
+
 #### NullableDateTime
 
 Чтобы произвести сравнение `NullableDateTime` с `DateTime` нужно привести их к одному типу __вне__ Linq-запроса.
@@ -233,3 +250,7 @@ var кредиты = ds.Query<Кредит>(Кредит.Views.КредитL.Nam
 ``` csharp
 ds.Query<Порода>(Порода.Views.КотенокE).Where(x => x.Кошка.Лапа.Cast<Лапа>().Any(o => o.ТипЛапы.Название == "передняя")).ToList();
 ```
+
+## Конвертация LINQ в LCS
+
+Подробнее о конвертации LINQ-запросов в LCS (Language Control System) см. [LCS в LINQ](fo_lcs-to-linq.html).

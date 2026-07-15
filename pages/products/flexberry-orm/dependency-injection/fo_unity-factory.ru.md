@@ -37,3 +37,39 @@ IService serviceInstance = container.Resolve<IService>();
 
 * [Сервис текущего пользователя](fo_current-user-service.html).
 * [DRDataService](fo_dr-data-service.html)
+
+## Миграция с Unity DI на встроенную DI-систему .NET
+
+Начиная с последних версий, Flexberry ORM переходит от Unity DI к встроенной системе внедрения зависимостей .NET.
+
+### Основные изменения:
+
+* `UnityFactory` больше не используется для резолва зависимостей. Замените на явное DI:
+  ```csharp
+  // Было
+  IUnityContainer container = UnityFactory.GetContainer();
+  IViewGenerator resolvedType = container.Resolve<IViewGenerator>();
+  
+  // Стало
+  IViewGenerator resolvedType = DetailVariableDef.ViewGenerator;
+  ```
+
+* Удалено перечисление `AppMode` - уход от Win/Web-специфичной логики.
+
+* `CurrentUserService` заменён на интерфейс `ICurrentUser`:
+  ```csharp
+  // Было
+  CurrentUserService.CurrentUser
+  
+  // Стало
+  ICurrentUser currentUser; // внедряется через конструктор
+  ```
+
+### Шаги миграции:
+
+1. Заменить `UnityFactory.GetContainer()` на явное внедрение зависимостей
+2. Обновить конструкторы data services для передачи `IBusinessServerProvider`
+3. Использовать `EmptyAuditService`, `EmptyBusinessServerProvider`, `EmptyCurrentUser` как заглушки
+4. Удалить зависимости от `UnityFactory` из всех проектов
+
+Подробнее: [Сервис текущего пользователя](fo_current-user-service.html).

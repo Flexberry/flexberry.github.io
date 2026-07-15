@@ -48,7 +48,7 @@ List<DataObject> data = query.Cast<DataObject>().ToList();
 
 To work with strings [Linq provider](fo_linq-provider.html) allows you to use the Contains methods as well as options of StartsWith, EndsWith a single operator. The use of other options StartsWith and EndsWith will throw an exception `MethodSignatureException`. 
 
-**Choose cats whose names contain the string “Osh”** 
+**Choose cats whose names contain the string "Osh"** 
 
 ``` csharp
 List<Кошка> cat = ds.Query<Кошка>(Кошка.Views.КошкаE).Where(o => o.Кличка.Contains("Osh")).ToList();
@@ -93,7 +93,24 @@ List<Перелом> objss = ds.Query<Перелом>(Перелом.Views.Пе�
 List<Перелом> objss = ds.Query<Перелом>(Перелом.Views.ПереломE).Where(o => o.Дата.DayOfWeek == DayOfWeek.Sunday).ToList();
 ``` 
 
-#### NullableDateTime 
+#### DateOnly and TimeOnly (.NET 6+)
+
+Starting from .NET 6, LINQProvider supports `DateOnly` and `TimeOnly` types:
+
+| Function | Description |
+|----------|-------------|
+| `DayNumber` | Day number from 0001-01-01 |
+| `DayOfYear` | Day of year (DOY) |
+| `Second` | Seconds component |
+
+**Example with DateOnly:**
+
+``` csharp
+DateOnly date = new DateOnly(2024, 12, 31);
+IQueryable<MyObject> query = ds.Query<MyObject>().Where(o => o.DateAttr == date);
+```
+
+### NullableDateTime 
 
 To make the comparison with `NullableDateTime` `DateTime` you need to bring them to the same type __out__ Linq query.
 
@@ -236,5 +253,6 @@ var кредиты = ds.Query<Кредит>(Кредит.Views.КредитL.Nam
 ds.Query<Порода>(Порода.Views.КотенокE).Where(x => x.Кошка.Лапа.Cast<Лапа>().Any(o => o.ТипЛапы.Название == "front")).ToList();
 ``` 
 
+## LINQ to LCS conversion
 
-
+For detailed information about converting LINQ queries to LCS (Language Control System) see [LCS to LINQ](fo_lcs-to-linq.html).
