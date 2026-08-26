@@ -1,0 +1,18 @@
+# https://editorconfig.org
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Бинарные файлы не трогаем (editorconfig применяется к текстовым)
+[*.{png,jpg,jpeg,gif,svg,ico,bmp,woff,woff2,ttf,eot,otf,pdf,doc,docx,zip,rar,enc}]
+end_of_line = unset
+insert_final_newline = false
+trim_trailing_whitespace = false
+
+# Markdown: допускается произвольная длина строк (MD013 отключён в .markdownlint.json)
+[*.md]
+trim_trailing_whitespace = unset
