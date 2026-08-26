@@ -11,7 +11,6 @@ lang: ru
 ## Краткое описание
 
 * Стандарты OGC
-* Leaflet
 * GeoServer
 * Яндекс.Карты, Google maps, 2GIS, OSM
 

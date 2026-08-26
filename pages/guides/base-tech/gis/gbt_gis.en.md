@@ -12,7 +12,6 @@ hash: f8cf8340f4fcae1879b33278c5be32ce86bb6b9e4acdc8624bb5bc0484158966
 
 ## Brief description 
 * OGC standards 
-* Leaflet 
 * GeoServer 
 * Yandex.Maps, Google maps, 2GIS, OSM 
 

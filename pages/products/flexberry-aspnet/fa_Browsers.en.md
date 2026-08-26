@@ -43,7 +43,7 @@ In order to work properly it is necessary to support processing of touches.
 What are the advantages of this: 
 
 * the functionality is the same as for desktop browsers. 
-* Toolkit for the development of the same: asp.net, javaScript, leaflet. 
+* Toolkit for the development of the same: asp.net, javaScript. 
 
 Cons: 
 
