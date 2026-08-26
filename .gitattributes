@@ -1,0 +1,66 @@
+# Стандартизация окончаний строк: все текстовые файлы хранятся с LF.
+# git автоматически конвертирует CRLF -> LF в хранилище и выдаёт LF при checkout
+# независимо от core.autocrlf.
+* text=auto eol=lf
+
+# --- Текстовые форматы (LF) ---
+*.md       text eol=lf
+*.markdown text eol=lf
+*.yml      text eol=lf
+*.yaml     text eol=lf
+*.html     text eol=lf
+*.htm      text eol=lf
+*.css      text eol=lf
+*.scss     text eol=lf
+*.sass     text eol=lf
+*.js       text eol=lf
+*.mjs      text eol=lf
+*.cjs      text eol=lf
+*.ts       text eol=lf
+*.json     text eol=lf
+*.xml      text eol=lf
+*.ini      text eol=lf
+*.cfg      text eol=lf
+*.conf     text eol=lf
+*.txt      text eol=lf
+*.cmd      text eol=lf
+*.bat      text eol=lf
+*.sh       text eol=lf
+*.rb       text eol=lf
+*.py       text eol=lf
+*.cs       text eol=lf
+*.editorconfig text eol=lf
+.gitattributes  text eol=lf
+.gitignore      text eol=lf
+.gitmodules     text eol=lf
+.prettierignore text eol=lf
+
+# Файлы без расширения, которые являются текстом
+Gemfile
+Gemfile.lock
+LICENSE
+README
+Rakefile
+
+# --- Бинарные форматы (не распознавать как текст) ---
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.svg   binary
+*.ico   binary
+*.bmp   binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.eot   binary
+*.otf   binary
+*.pdf   binary
+*.doc   binary
+*.docx  binary
+*.xls   binary
+*.xlsx  binary
+*.zip   binary
+*.rar   binary
+*.7z    binary
+*.enc   binary

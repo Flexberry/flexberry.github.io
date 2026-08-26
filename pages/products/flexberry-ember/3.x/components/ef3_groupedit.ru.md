@@ -15,13 +15,13 @@ summary: Свойства, особенности реализации, наст
 Пример использования `flexberry-groupedit` в шаблоне:
 
  ```handlebars
-{{flexberry-groupedit
+{% raw %}{{flexberry-groupedit
   componentName="userVotesGroupEdit"
   modelProjection=modelProjection.attributes.userVotes
   content=model.userVotes
   readonly=readonly
   orderable=false
-}}
+}}{% endraw %}
 ```
 
 ## Обзор возможностей и API компонента
