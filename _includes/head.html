@@ -25,7 +25,7 @@
 <link rel="stylesheet" href="{{ "/css/syntax.css" | prepend: site.baseurl}}">
 
 
-<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="{{ "/css/font-awesome.min.css" | prepend: site.baseurl}}">
 <!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
 <link rel="stylesheet" href="{{ "/css/fonts.css" | prepend: site.baseurl}}">
 <link rel="stylesheet" href="{{ "/css/modern-business.css" | prepend: site.baseurl}}">
@@ -33,13 +33,13 @@
 <link rel="stylesheet" href="{{ "/css/customstyles.css" | prepend: site.baseurl}}">
 <link rel="stylesheet" href="{{ "/css/theme-flexberry.css" | prepend: site.baseurl}}">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="{{ "/js/jquery.min.js" | prepend: site.baseurl}}"></script>
+<script src="{{ "/js/jquery.cookie.min.js" | prepend: site.baseurl}}"></script>
 <script src="{{ "/js/jquery.navgoco.min.js" | prepend: site.baseurl}}"></script>
 
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="{{ "/js/bootstrap.min.js" | prepend: site.baseurl}}"></script>
+<script src="{{ "/js/anchor.min.js" | prepend: site.baseurl}}"></script>
 <script src="{{ "/js/toc.js" | prepend: site.baseurl}}"></script>
 <script src="{{ "/js/customscripts.js" | prepend: site.baseurl}}"></script>
 
@@ -48,12 +48,12 @@
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<script src="{{ "/js/html5shiv.min.js" | prepend: site.baseurl}}"></script>
+<script src="{{ "/js/respond.min.js" | prepend: site.baseurl}}"></script>
 <![endif]-->
 
 <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "feed.xml" | prepend: site.url }}">
 
 <!-- Algolia DocSearch -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+<link rel="stylesheet" href="{{ "/css/docsearch.css" | prepend: site.baseurl}}" />
 <link rel="stylesheet" href="{{ "/css/algolia-customization.css" | prepend: site.baseurl}}">
