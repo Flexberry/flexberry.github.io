@@ -1,0 +1,25 @@
+# Build context for `docker compose -f docker/docker-compose.yml build` is the
+# repository root. Everything listed here is excluded from the context that is
+# sent to the Docker daemon, keeping image builds fast (the generated _site can
+# be hundreds of MB) without affecting the jekyll-bundle runtime volume.
+
+# Version control
+.git
+.gitignore
+.gitattributes
+.gitmodules
+
+# Generated / local
+_site/
+.jekyll-cache/
+jekyll-server.log
+.playwright-mcp/
+.vscode/
+docker/
+*.md.swp
+*~
+.DS_Store
+
+# Node / tooling artifacts
+node_modules/
+package-lock.json

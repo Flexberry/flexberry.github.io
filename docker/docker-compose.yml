@@ -1,0 +1,30 @@
+# Flexberry PLATFORM documentation site — local Jekyll dev server.
+#
+# Usage (run from the repository root):
+#   docker compose -f docker/docker-compose.yml up      # start at http://localhost:4000
+#   docker compose -f docker/docker-compose.yml down    # stop (volume jekyll-bundle is kept)
+#
+# The jekyll/jekyll image ships with a complete gemset, so no install is needed
+# for the default Gemfile (bundle check below just confirms it). The
+# jekyll-bundle named volume caches anything extra on /usr/local/bundle across
+# restarts. --force_polling makes auto-regeneration pick up file changes even on
+# bind mounts (inotify does not surface from Windows/Docker Desktop).
+services:
+  jekyll:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: flexberry-docs-jekyll:latest
+    container_name: flexberry-docs
+    command: >
+      sh -c "bundle check || bundle install; exec jekyll serve --livereload --incremental --force_polling"
+    ports:
+      - "4000:4000"
+    volumes:
+      - ..:/srv/jekyll
+      - jekyll-bundle:/usr/local/bundle
+    environment:
+      - JEKYLL_ENV=development
+
+volumes:
+  jekyll-bundle:
