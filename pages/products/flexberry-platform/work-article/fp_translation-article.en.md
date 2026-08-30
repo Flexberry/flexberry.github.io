@@ -9,8 +9,6 @@ autotranslated: true
 hash: 1f0d7249d67cf4229788592811e770d8da7c8cbbb2ca668b8aa1b0efe653be8b 
 --- 
 
-{% include note.html content="In case of any questions contact [chat](https://gitter.im/Flexberry/PlatformDevelopment)." %} 
-
 ## Connect to GitHub 
 
 Esli check on GitHub, which you made earlier, go to "connecting to a content editor"._ 
