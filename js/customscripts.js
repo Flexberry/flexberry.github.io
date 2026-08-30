@@ -25,6 +25,9 @@ $( document ).ready(function() {
       $("#sidebar").toggleClass("active");
       $(this).toggleClass("active");
     });
+
+    // подставить текущий год в копирайт футера
+    $('#copyright-year').text(new Date().getFullYear());
 });
 
 // needed for nav tabs on pages. See Formatting > Nav tabs for more details.
