@@ -14,6 +14,7 @@ Gemfile.lock
 _site
 .sass-cache
 .jekyll-metadata
+.jekyll-cache
 _algolia_api_key
 
 ### Linux ###
@@ -61,3 +62,7 @@ Temporary Items
 
 # Visual Studio Code files
 .vscode/settings.json
+
+# Local dev / temporary files
+jekyll-server.log
+.playwright-mcp/

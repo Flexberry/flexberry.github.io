@@ -38,12 +38,6 @@
             $('[data-toggle="tooltip"]').tooltip()
         })
     </script>
-    <script>
-        ((window.gitter = {}).chat = {}).options = {
-          room: 'Flexberry/PlatformUsage'
-        };
-    </script>
-    <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
     {% if page.datatable == true %}
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.5/css/jquery.dataTables.css">
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.js"></script>
@@ -76,6 +70,9 @@
                 <i class="fa fa-github fa-lg"></i> {% if page.lang == "ru" %} Редактировать{% else %} Edit me{% endif %}
             </a>
             <div id="sticky-panel">
+                <a id="ai-banner" href="https://ai.flexberry.ru" target="_blank" class="ai-banner" role="button" aria-label="Flexberry AI">
+                    <span class="ai-letters">AI</span>
+                </a>
                 {% if page.lang == "ru" %}
                 <div id="html-academy" class="webinar">
                     <div>Профессия «Фронтенд-разработчик»</div>
@@ -96,11 +93,13 @@
                 </div>
             </div>
             <div id="facetAttributeLang" style="visibility: hidden;">{{ page.lang }}</div>
+
+            {{site.data.alerts.hr_shaded}} {% include footer.html %}
         </div>
     </div>
 
     <!-- Algolia DocSearch -->
-    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    <script src="{{ "/js/docsearch.js" | prepend: site.baseurl}}"></script>
     <script type="text/javascript"> docsearch({
             appId: '6B8NQD4J1U',
             apiKey: '390b847470dac15dbc26699d58ee9d56',
@@ -112,7 +111,7 @@
             debug: false // Set debug to true if you want to inspect the dropdown
         });
     </script>
-</body>
-{% if site.google_analytics %} {% include google_analytics.html %} {% endif %} {{site.data.alerts.hr_shaded}} {% include footer.html %}
 
+{% if site.google_analytics %} {% include google_analytics.html %} {% endif %}
+</body>
 </html>

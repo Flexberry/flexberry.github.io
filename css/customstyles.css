@@ -314,7 +314,7 @@ footer {
     font-size: smaller;
     margin: 0;
     padding: 20px 0;
-    background: #f4f4f4;
+    background: #ffffff;
 }
 
 /* FAQ page */
@@ -572,11 +572,9 @@ hr.shaded {
     border: 0;
     box-shadow: inset 0 6px 6px -6px rgba(0,0,0,0.5);
     margin-top: 0;
-    background: white;
+    background: #ffffff;
     width: 100%;
     margin-bottom: 0;
-    position: absolute;
-    background: #f4f4f4;
 }
 
 .fa-6x{font-size:900%;}
@@ -1219,8 +1217,4 @@ footer .fa {
 footer .copyright {
   text-align: right;
   margin: 10px 0;
-}
-
-.gitter-chat-embed {
-  z-index: 1031;
 }

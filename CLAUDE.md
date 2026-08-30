@@ -11,7 +11,8 @@ The bulk of the work here is writing and organizing **Markdown documentation**, 
 ## Building and running the site
 
 - **Run locally (recommended):** `bundle exec jekyll serve` → visit http://localhost:4000
-- **Run via Docker:** start Docker, then `.\run-jekyll.cmd` (mounts the repo into `jekyll/jekyll:3.8.3` and serves on port 4000)
+- **Run via Docker (compose, preferred):** from the repo root, `docker compose -f docker/docker-compose.yml up` → visit http://localhost:4000. Serves with `--livereload --incremental --force_polling` (polling so file changes on Windows/Docker bind-mounts are picked up) and caches installed gems in the `jekyll-bundle` named volume across restarts. Down with `docker compose -f docker/docker-compose.yml down` (stop with `down -v` to also clear the bundle cache).
+- **Run via Docker (legacy one-liner):** `.\run-jekyll.cmd` — mounts the repo into `jekyll/jekyll:3.8.3` and serves on port 4000.
 - **Build (CI / production):** `bundle exec jekyll build`
 - Dependencies: `gem 'github-pages'` and `jekyll-seo-tag` in [Gemfile](Gemfile)
 
