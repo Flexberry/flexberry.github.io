@@ -388,13 +388,100 @@ export default EditFormController.extend({
 Если необходима дополнительная логика при изменении значения лукапа, то в контроллере формы, на которой расположен лукап, следует переопределить экшен `updateLookupValue`:
 
 ```js
-  actions: {
-    updateLookupValue() {
-      // Базовая логика
-      this._super(...arguments);
+actions: {
+  updateLookupValue(updateData) {
+    // Базовая логика
+    this._super(...arguments);
 
-      // Дополнительная логика
-      // ...
+    // Дополнительная логика
+    // ...
+  }
+}
+```
+
+Объект `updateData` имеет формат:
+
+```js
+{
+  relationName: /* Значение атрибута relationName. Название связи в модели, куда записывается выбранное значение. */,
+  modelToLookup: /* Значение атрибута relatedModel. Модель, чей атрибут отображает данный компонент. */,
+  newRelationValue: /* Значение атрибута value. Новое значение мастера. */,
+  componentName: /* Значение атрибута componentName. Имя компонента. */
+}
+```
+
+Данное событие срабатывает каждый раз когда меняется значение атрибута `value` лукапа:
+
+* Выбор значения в лукапе;
+* Выбор значения по autocomplete;
+* Выбор значения в DropDown режиме.
+
+## Возможность переопределить поведение при очистке значения лукапа
+
+Если необходима дополнительная логика при очистке значения лукапа, то в лукапе следует указать событие или функцию в свойстве `remove`. Обычно это `removeLookupValue`:
+
+```js
+{% raw %}{{flexberry-lookup
+    ...
+    remove="removeLookupValue"
+    ...
+}}{% endraw %}
+```
+
+Тогда функция будет выглядеть так:
+
+```js
+removeLookupValue(removeData) {
+  // Дополнительная логика
+  // ...
+}
+```
+
+Объект `removeData` имеет формат:
+
+```js
+{
+  relationName: /* Значение атрибута relationName. Название связи в модели, куда записывается выбранное значение. */,
+  modelToLookup: /* Значение атрибута relatedModel. Модель, чей атрибут отображает данный компонент. */
+}
+```
+
+Данное событие срабатывает каждый раз когда очищается значение атрибута `value` лукапа:
+
+* Очистка значения в лукапе. Например, по кнопке "Очистить";
+* Выбор значения по autocomplete, которое не соответствует никакому объекту лукапа;
+
+## Настройка событий лукапа для groupEdit
+
+Для возможности настройки событий лукапа, находящегося внутри `flexberry-gropedit`, необходимо в контроллер добавить метод `getCellComponent`.
+
+Пример:
+
+```js
+getCellComponent(attr, bindingPath, model) {
+  let cellComponent = this._super(...arguments);
+  
+  // Признак мастеровой связи.
+  if (attr.kind === 'belongsTo') {
+    let updateLookupValue = this.get('actions.updateLookupValue').bind(this);
+
+    switch (`${model.modelName}+${bindingPath}`) {
+      // ${Имя модели лукапа}+${Имя свойства, которое редактирует лукап}
+      case 'test-project-test-model+testAttr':
+        cellComponent.componentProperties = {
+          ...
+          remove: 'removeLookupValue',
+          updateLookupValue: updateLookupValue
+          ...
+        };
+        break;
+
+        ...
     }
   }
-  ```
+
+  ...
+
+  return cellComponent;
+},
+```
